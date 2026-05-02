@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0d1117">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>ã¿ãã³ãæ ª V4</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --cyan: #58a6ff;
+  --green: #3fb950;
+  --red: #f85149;
+  --orange: #d29922;
+  --gold: #e3b341;
+  --purple: #bc8cff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+.header {
+  background: linear-gradient(135deg, #0d1117 0%, #1a2332 100%);
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+.header h1 { font-size: 18px; color: var(--cyan); }
+.header .date { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.tabs {
+  display: flex;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tab {
+  flex: 1;
+  padding: 10px 4px 8px;
+  text-align: center;
+  font-size: 10px;
+  color: var(--text2);
+  cursor: pointer;
+  transition: color 0.2s;
+  border: none; background: none;
+}
+.tab.active { color: var(--cyan); }
+.tab .icon { font-size: 20px; display: block; margin-bottom: 2px; }
+.page { display: none; padding: 12px; }
+.page.active { display: block; }
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+.card-title {
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card-title .emoji { font-size: 16px; }
+
+/* Market Health */
+.health-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.health-item {
+  background: rgba(88,166,255,0.08);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.health-item .label { font-size: 11px; color: var(--text2); }
+.health-item .value { font-size: 20px; font-weight: 700; margin: 4px 0; }
+.health-item .status { font-size: 11px; font-weight: 600; }
+.status-on { color: var(--green); }
+.status-off { color: var(--red); }
+
+/* CDE Tracker */
+.cde-hero {
+  background: linear-gradient(135deg, rgba(227,179,65,0.15), rgba(227,179,65,0.05));
+  border: 1px solid rgba(227,179,65,0.3);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.cde-price { font-size: 32px; font-weight: 800; color: var(--gold); }
+.cde-change { font-size: 14px; margin-left: 8px; }
+.cde-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.cde-stat { text-align: center; }
+.cde-stat .label { font-size: 11px; color: var(--text2); }
+.cde-stat .val { font-size: 16px; font-weight: 700; }
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--green));
+  border-radius: 4px;
+  transition: width 0.5s;
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text2);
+  margin-top: 4px;
+}
+
+/* Signal List */
+.signal-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.signal-item:last-child { border-bottom: none; }
+.signal-badge {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 13px;
+  margin-right: 12px; flex-shrink: 0;
+}
+.badge-buy { background: rgba(63,185,80,0.15); color: var(--green); }
+.badge-watch { background: rgba(88,166,255,0.15); color: var(--cyan); }
+.badge-caution { background: rgba(210,153,34,0.15); color: var(--orange); }
+.badge-sell { background: rgba(248,81,73,0.15); color: var(--red); }
+.badge-earn { background: rgba(188,140,255,0.15); color: var(--purple); }
+.signal-info { flex: 1; min-width: 0; }
+.signal-ticker { font-size: 15px; font-weight: 700; }
+.signal-name { font-size: 11px; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.signal-right { text-align: right; flex-shrink: 0; margin-left: 8px; }
+.signal-price { font-size: 15px; font-weight: 600; }
+.signal-sepa { font-size: 11px; color: var(--text2); }
+
+/* 4AI Consensus */
+.ai-row {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.ai-row:last-child { border-bottom: none; }
+.ai-ticker { font-size: 16px; font-weight: 800; }
+.ai-scores { display: flex; flex-wrap: wrap; gap: 6px; }
+.ai-chip {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.chip-grok { background: rgba(29,155,240,0.2); color: #1d9bf0; }
+.chip-gemini { background: rgba(66,133,244,0.2); color: #4285f4; }
+.chip-gpt { background: rgba(16,163,127,0.2); color: #10a37f; }
+.chip-perp { background: rgba(188,140,255,0.2); color: var(--purple); }
+.chip-sepa { background: rgba(63,185,80,0.2); color: var(--green); }
+.ai-verdict { font-size: 11px; color: var(--text2); margin-top: 4px; }
+
+/* Earnings Calendar */
+.earn-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.earn-item:last-child { border-bottom: none; }
+.earn-date {
+  width: 48px; height: 48px;
+  background: rgba(188,140,255,0.12);
+  border-radius: 10px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  margin-right: 12px; flex-shrink: 0;
+}
+.earn-month { font-size: 10px; color: var(--purple); text-transform: uppercase; }
+.earn-day { font-size: 20px; font-weight: 800; color: var(--purple); }
+.earn-info { flex: 1; }
+.earn-ticker { font-size: 15px; font-weight: 700; }
+.earn-note { font-size: 11px; color: var(--text2); margin-top: 2px; }
+.earn-days-left {
+  font-size: 12px; font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+.days-urgent { background: rgba(248,81,73,0.15); color: var(--red); }
+.days-soon { background: rgba(210,153,34,0.15); color: var(--orange); }
+
+/* Scenario */
+.scenario {
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.scenario-base { background: rgba(88,166,255,0.08); }
+.scenario-bull { background: rgba(63,185,80,0.08); }
+.scenario-bear { background: rgba(248,81,73,0.08); }
+.scenario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.scenario-name { font-size: 14px; font-weight: 700; }
+.scenario-prob { font-size: 13px; font-weight: 600; }
+.scenario-detail { font-size: 12px; color: var(--text2); line-height: 1.5; }
+
+/* Silver */
+.silver-box {
+  background: linear-gradient(135deg, rgba(192,192,192,0.1), rgba(192,192,192,0.03));
+  border: 1px solid rgba(192,192,192,0.2);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.silver-price { font-size: 28px; font-weight: 800; color: #c0c0c0; }
+.silver-label { font-size: 11px; color: var(--text2); }
+
+/* Risk Rules */
+.rule-item { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.rule-item:last-child { border-bottom: none; }
+.rule-name { font-size: 13px; font-weight: 600; color: var(--cyan); }
+.rule-desc { font-size: 12px; color: var(--text2); margin-top: 2px; }
+
+/* Update time */
+.update-time {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text2);
+  padding: 16px 0;
+}
+
+/* Pull to refresh indicator */
+.refresh-hint {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text2);
+  padding: 8px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body { max-width: 480px; margin: 0 auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>ð¤ ã¿ãã³ãæ ª V4</h1>
+  <div class="date" id="scanDate">èª­ã¿è¾¼ã¿ä¸­...</div>
+</div>
+
+<!-- ===== Page 1: Dashboard ===== -->
+<div class="page active" id="page-dash">
+  <!-- Market Health -->
+  <div class="card">
+    <div class="card-title"><span class="emoji">ð</span> å¸å ´å¥åº·åº¦</div>
+    <div class="health-grid">
+      <div class="health-item">
+        <div class="label">S&P 500</div>
+        <div class="value" id="sp500Price">â</div>
+        <div class="status" id="sp500Status">â</div>
+      </div>
+      <div class="health-item">
+        <div class="label">Russell 2000</div>
+        <div class="value" id="russPrice">â</div>
+        <div class="status" id="russStatus">â</div>
+      </div>
+      <div class="health-item">
+        <div class="label">VIX</div>
+        <div class="value" id="vixValue">16.99</div>
+        <div class="status status-on" id="vixStatus">ä½ãã©</div>
+      </div>
+      <div class="health-item">
+        <div class="label">å°åãå¤å®</div>
+        <div class="value" id="marketJudge">â</div>
+        <div class="status" id="marketMode">â</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Silver -->
+  <div class="silver-box">
+    <div class="silver-label">éã¹ãããä¾¡æ ¼</div>
+    <div class="silver-price" id="silverPrice">$73-74</div>
+    <div class="silver-label">COMEXå¨åº«ï¼æ¸å°ãã¬ã³ãï¼ç©çã¹ã¯ã¤ã¼ãºé²è¡ä¸­ï¼</div>
+  </div>
+
+  <!-- CDE Hero -->
+  <div class="cde-hero">
+    <div class="card-title"><span class="emoji">â­</span> CDE æè¦éæ</div>
+    <div>
+      <span class="cde-price" id="cdePrice">$17.64</span>
+      <span class="cde-change" id="cdeChange" style="color:var(--red)">-1.59%</span>
+    </div>
+    <div class="cde-stats">
+      <div class="cde-stat">
+        <div class="label">å«ã¿ç</div>
+        <div class="val" id="cdeProfit" style="color:var(--green)">+$9,468</div>
+      </div>
+      <div class="cde-stat">
+        <div class="label">æçç</div>
+        <div class="val" id="cdeProfitPct" style="color:var(--green)">+111%</div>
+      </div>
+      <div class="cde-stat">
+        <div class="label">ä¿æ</div>
+        <div class="val">1,020æ ª</div>
+      </div>
+      <div class="cde-stat">
+        <div class="label">æ±ºç®</div>
+        <div class="val" id="cdeEarnings" style="color:var(--orange)">5/6</div>
+      </div>
+    </div>
+    <div style="margin-top:12px;font-size:12px;color:var(--text2)">æ©æ ªåé²æï¼ç®æ¨: $16.72ï¼</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="cdeProgress" style="width:100%"></div>
+    </div>
+    <div class="progress-label">
+      <span>$8.36 åå¾</span>
+      <span id="cdeProgressLabel">â éææ¸ã¿</span>
+      <span>$16.72 ç®æ¨</span>
+    </div>
+  </div>
+
+  <!-- Action Items -->
+  <div class="card">
+    <div class="card-title"><span class="emoji">ð¯</span> æ¬æ¥ã®ã¢ã¯ã·ã§ã³</div>
+    <div id="actionItems" style="font-size:13px;line-height:1.8">
+      <div style="padding:6px 0;border-bottom:1px solid var(--border)">
+        <span style="color:var(--red);font-weight:700">1.</span> CDE 510æ ªå©ç¢º â æ©æ ªåå®é
+      </div>
+      <div style="padding:6px 0;border-bottom:1px solid var(--border)">
+        <span style="color:var(--green);font-weight:700">2.</span> NVT $150æ¼ãç®ã§åå¼¾1/3
+      </div>
+      <div style="padding:6px 0;border-bottom:1px solid var(--border)">
+        <span style="color:var(--cyan);font-weight:700">3.</span> FORM ä¿æç¶ç¶ï¼PGæå¼·ï¼
+      </div>
+      <div style="padding:6px 0;border-bottom:1px solid var(--border)">
+        <span style="color:var(--orange);font-weight:700">4.</span> MP æ±ºç®5/7å¾ã¡
+      </div>
+      <div style="padding:6px 0">
+        <span style="color:var(--purple);font-weight:700">5.</span> ASX RSI77.5éç±æ³¨æ
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 2: Signals ===== -->
+<div class="page" id="page-signal">
+  <div class="card" style="padding:0">
+    <div class="card-title" style="padding:14px 14px 0"><span class="emoji">ð¯</span> å£²è²·ã·ã°ãã«</div>
+    <div id="signalList"></div>
+  </div>
+</div>
+
+<!-- ===== Page 3: 4AI ===== -->
+<div class="page" id="page-ai">
+  <div class="card">
+    <div class="card-title"><span class="emoji">ð§ </span> 4AI ã³ã³ã»ã³ãµã¹ã»ã©ã³ã­ã³ã°</div>
+    <div id="aiConsensus"></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="emoji">ð</span> ãªã¹ã¯ã·ããªãª (ChatGPT)</div>
+    <div class="scenario scenario-base">
+      <div class="scenario-header">
+        <span class="scenario-name" style="color:var(--cyan)">ãã¼ã¹</span>
+        <span class="scenario-prob" style="color:var(--cyan)">60%</span>
+      </div>
+      <div class="scenario-detail">S&P500 +8-12%ãFRBå©ä¸ã1-2åãAIæè³ç¶ç¶</div>
+    </div>
+    <div class="scenario scenario-bull">
+      <div class="scenario-header">
+        <span class="scenario-name" style="color:var(--green)">ãã«</span>
+        <span class="scenario-prob" style="color:var(--green)">20%</span>
+      </div>
+      <div class="scenario-detail">S&P500 +20-25%ãå©ä¸ã3åä»¥ä¸ãAIå éãCDE +30-50%</div>
+    </div>
+    <div class="scenario scenario-bear">
+      <div class="scenario-header">
+        <span class="scenario-name" style="color:var(--red)">ãã¢</span>
+        <span class="scenario-prob" style="color:var(--red)">20%</span>
+      </div>
+      <div class="scenario-detail">S&P500 -15-25%ãã¤ã³ãã¬åçãå°æ¹¾å±æ©ãWPMä»¥å¤ä¸è½</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 4: Earnings ===== -->
+<div class="page" id="page-earn">
+  <div class="card" style="padding:0">
+    <div class="card-title" style="padding:14px 14px 0"><span class="emoji">ð</span> æ±ºç®ã«ã¬ã³ãã¼</div>
+    <div id="earningsList"></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="emoji">ð¡ï¸</span> ãªã¹ã¯ç®¡çã«ã¼ã«</div>
+    <div id="riskRules">
+      <div class="rule-item"><div class="rule-name">21MAå²ã â æåã</div><div class="rule-desc">ç¿æ¥ãä¸ãªãå®è¡</div></div>
+      <div class="rule-item"><div class="rule-name">8%ã«ã¼ã«</div><div class="rule-desc">ã¨ã³ããªã¼ãã8%ä¸è½ã§æ©æ¢°çã«æåã</div></div>
+      <div class="rule-item"><div class="rule-name">çæã®æ</div><div class="rule-desc">å¿ã1/3ãã¤ã¨ã³ããªã¼ãä½å2/3ãå¸¸ã«æ®ã</div></div>
+      <div class="rule-item"><div class="rule-name">æ©æ ªã«ã¼ã«</div><div class="rule-desc">2åã§ååå©ç¢ºâæ®ãã¯é±è¶³ã¹ãã¼ã¸3å²ãã¾ã§ä¿æ</div></div>
+      <div class="rule-item"><div class="rule-name">ãã³ãã³ç¦æ­¢</div><div class="rule-desc">æåãå¾ã«åä¸æããããã¾ãè²·ããæè»æ§ãæã¤</div></div>
+      <div class="rule-item"><div class="rule-name">VIX 25è¶</div><div class="rule-desc">æ¢å­ãã¸ã·ã§ã³ç¸®å°ãæ¤è¨</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Page 5: Team ===== -->
+<div class="page" id="page-team">
+  <div class="card">
+    <div class="card-title"><span class="emoji">ð</span> CPOãã¼ã ï¼æã¡å ´çè«ï¼</div>
+    <div id="teamLineup"></div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="emoji">ð</span> ãã¯ã­ç°å¢</div>
+    <div style="font-size:13px;line-height:1.8;color:var(--text2)">
+      <div><strong style="color:var(--text)">FRBéå©:</strong> 4.25-4.50%ï¼å¾å1-2åå©ä¸ãäºæ³ï¼</div>
+      <div><strong style="color:var(--text)">CPI:</strong> 2.8%ã§é«æ­¢ã¾ã</div>
+      <div><strong style="color:var(--text)">ãã«:</strong> è»åå¾åâã³ã¢ãã£ãã£è¿½ãé¢¨</div>
+      <div><strong style="color:var(--text)">ãµã¤ã¯ã«:</strong> å¾æâæçæï¼AIæè³ãããå¼ï¼</div>
+    </div>
+  </div>
+  <div class="update-time" id="updateTime">æçµæ´æ°: â</div>
+</div>
+
+<!-- Tab Bar -->
+<div class="tabs">
+  <button class="tab active" onclick="switchPage('dash')">
+    <span class="icon">ð</span>ããã·ã¥
+  </button>
+  <button class="tab" onclick="switchPage('signal')">
+    <span class="icon">ð¯</span>ã·ã°ãã«
+  </button>
+  <button class="tab" onclick="switchPage('ai')">
+    <span class="icon">ð§ </span>4AI
+  </button>
+  <button class="tab" onclick="switchPage('earn')">
+    <span class="icon">ð</span>æ±ºç®
+  </button>
+  <button class="tab" onclick="switchPage('team')">
+    <span class="icon">ð</span>ãã¼ã 
+  </button>
+</div>
+
+<script>
+// ============================================================
+// Scan Data (embedded â updated by daily scan pipeline)
+// ============================================================
+const SCAN_DATA = {
+  "scan_date": "2026-05-02 09:17",
+  "market_health": {
+    "S&P500": {"price": 7230, "above_21MA": true, "status": "ãªã¹ã¯ãªã³"},
+    "Russell2000": {"price": 279.28, "above_21MA": true, "status": "ãªã¹ã¯ãªã³"}
+  },
+  "vix": 16.99,
+  "silver": "$73-74/oz",
+  "cde": {
+    "price": 17.64, "change_pct": -1.59,
+    "shares": 1020, "avg_cost": 8.3573,
+    "onkabu_target": 16.72,
+    "earnings_date": "5/6", "days_until": 4
+  },
+  "signals": [
+    {"ticker":"CDE","name":"Coeur Mining","type":"SELL_PARTIAL","price":17.64,"sepa":"3.0","theme":"éé","note":"æ©æ ªå: 510æ ªå©ç¢º"},
+    {"ticker":"FORM","name":"FormFactor","type":"BUY","price":137.37,"sepa":"9.0","theme":"CPO","note":"PGå¸ä»¤å¡ Q1+32%ãã¼ã"},
+    {"ticker":"NVT","name":"nVent Electric","type":"BUY","price":158.92,"sepa":"9.0","theme":"é»å","note":"Q1 EPS+15%ãã¼ã"},
+    {"ticker":"KEYS","name":"Keysight Tech","type":"BUY","price":352.41,"sepa":"9.0","theme":"CPO","note":"SGæ»æ AIè¨æ¸¬"},
+    {"ticker":"COHR","name":"Coherent Corp","type":"BUY","price":329.50,"sepa":"9.0","theme":"åå­¦","note":"EMAä¸æ åå­¦åå¾©"},
+    {"ticker":"ATEYY","name":"Advantest ADR","type":"BUY","price":181.37,"sepa":"9.0","theme":"CPO","note":"PFåå° å®å®æ¨ç§»"},
+    {"ticker":"ASX","name":"ASE Technology","type":"BUY","price":31.59,"sepa":"9.0","theme":"CPO","note":"SFä¸è½ RSI77.5æ³¨æ"},
+    {"ticker":"AEHR","name":"Aehr Test Systems","type":"BUY","price":93.07,"sepa":"9.0","theme":"CPO","note":"Cå®å ãã©ã³ã¹è¯å¥½"},
+    {"ticker":"MP","name":"MP Materials","type":"BUY","price":66.63,"sepa":"8.0","theme":"è³æº","note":"5/7æ±ºç® é»å­è»¢æ?"},
+    {"ticker":"SLB","name":"Schlumberger","type":"BUY","price":56.92,"sepa":"9.0","theme":"ã¨ãã«ã®ã¼","note":"ã¨ãã«ã®ã¼ãã¼ã"},
+    {"ticker":"ROKU","name":"Roku","type":"BUY","price":123.58,"sepa":"9.0","theme":"ããã¯","note":"ããã¯æé·"},
+    {"ticker":"TVTX","name":"Travere Therapeutics","type":"BUY","price":44.12,"sepa":"9.0","theme":"ãã¤ãª","note":"ãã¤ãª RSI77.1"},
+    {"ticker":"ROIV","name":"Roivant Sciences","type":"WATCH","price":27.83,"sepa":"6.0","theme":"ãã¤ãª","note":"RSIä½ä¸ 21MAåå¾©å¾ã¡"},
+    {"ticker":"FCX","name":"Freeport-McMoRan","type":"WATCH","price":56.55,"sepa":"6.0","theme":"é","note":"21MAå¤§å¹å²ã"},
+    {"ticker":"AG","name":"First Majestic","type":"HOLD","price":19.85,"sepa":"5.0","theme":"éé","note":"SEPAåºæºæªé"},
+    {"ticker":"ERO","name":"Ero Copper","type":"HOLD","price":25.21,"sepa":"5.0","theme":"é","note":"RSI10.7 å£²ãããã"}
+  ],
+  "ai_consensus": [
+    {"rank":1,"ticker":"FORM","sepa":"9.0","grok":"+8","gemini":"68pt","gpt":"+15-25%","verdict":"æå¼·: Q1ãã¼ã+HBMççº"},
+    {"rank":2,"ticker":"NVT","sepa":"9.0","grok":"+8","gemini":"81pt","gpt":"+10-15%","verdict":"æ±ºç®ãã¼ã: Q1 EPS+15%"},
+    {"rank":3,"ticker":"KEYS","sepa":"9.0","grok":"+6","gemini":"65pt","gpt":"+5-10%","verdict":"AIè¨æ¸¬ãæé·éåæ³¨æ"},
+    {"rank":4,"ticker":"ATEYY","sepa":"9.0","grok":"â","gemini":"â","gpt":"â","verdict":"CPOå®å®åå°"},
+    {"rank":5,"ticker":"COHR","sepa":"9.0","grok":"â","gemini":"58pt","gpt":"+5-15%","verdict":"åå­¦åå¾©ãè² åµæ³¨æ"},
+    {"rank":6,"ticker":"MP","sepa":"8.0","grok":"+8","gemini":"42pt","gpt":"+0-10%","verdict":"ãã¼ãâãã¡ã³ãâ"},
+    {"rank":7,"ticker":"CDE","sepa":"3.0","grok":"+6","gemini":"52pt","gpt":"+10-20%","verdict":"æ©æ ªåæåªå"}
+  ],
+  "earnings": [
+    {"date":"5/6","ticker":"CDE","name":"Coeur Mining","strategy":"æ©æ ªåå¤æ­","note":"EPSäºæ³$0.44ãé$73-74è¿½ãé¢¨","days":4},
+    {"date":"5/7","ticker":"MP","name":"MP Materials","strategy":"é»å­è»¢æç¢ºèª","note":"EPSäºæ³-$0.04ãQ4ã¯åGAAPé»å­","days":5}
+  ],
+  "team": [
+    {"pos":"PG","role":"å¸ä»¤å¡","ticker":"FORM","price":137.37,"rsi":57.8,"sepa":"9.0","status":"Q1+32%ãã¼ã"},
+    {"pos":"SG","role":"æ»æ","ticker":"KEYS","price":352.41,"rsi":66.9,"sepa":"9.0","status":"AIè¨æ¸¬éè¦"},
+    {"pos":"SF","role":"ä¸è½","ticker":"ASX","price":31.59,"rsi":77.5,"sepa":"9.0","status":"RSIéç±æ³¨æ"},
+    {"pos":"PF","role":"åå°","ticker":"ATEYY","price":181.37,"rsi":60.4,"sepa":"9.0","status":"å®å®æ¨ç§»"},
+    {"pos":"C","role":"å®å","ticker":"AEHR","price":93.07,"rsi":69.2,"sepa":"9.0","status":"ãã©ã³ã¹è¯å¥½"}
+  ]
+};
+
+// ============================================================
+// Page Switching
+// ============================================================
+function switchPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ============================================================
+// Render Functions
+// ============================================================
+function render() {
+  const d = SCAN_DATA;
+
+  // Header
+  document.getElementById('scanDate').textContent = d.scan_date + ' ã¹ã­ã£ã³';
+
+  // Market Health
+  const sp = d.market_health["S&P500"];
+  document.getElementById('sp500Price').textContent = '$' + sp.price.toLocaleString();
+  document.getElementById('sp500Status').textContent = sp.status;
+  document.getElementById('sp500Status').className = 'status ' + (sp.above_21MA ? 'status-on' : 'status-off');
+  const rs = d.market_health["Russell2000"];
+  document.getElementById('russPrice').textContent = '$' + rs.price.toLocaleString();
+  document.getElementById('russStatus').textContent = rs.status;
+  document.getElementById('russStatus').className = 'status ' + (rs.above_21MA ? 'status-on' : 'status-off');
+
+  const bothOn = sp.above_21MA && rs.above_21MA;
+  document.getElementById('marketJudge').textContent = bothOn ? 'ð¢' : 'ð´';
+  document.getElementById('marketJudge').style.fontSize = '28px';
+  document.getElementById('marketMode').textContent = bothOn ? 'æµãåºã¢ã¼ã' : 'æ·±ãåºã¢ã¼ã';
+  document.getElementById('marketMode').className = 'status ' + (bothOn ? 'status-on' : 'status-off');
+
+  // Silver
+  document.getElementById('silverPrice').textContent = d.silver;
+
+  // CDE
+  const cde = d.cde;
+  document.getElementById('cdePrice').textContent = '$' + cde.price.toFixed(2);
+  const profit = (cde.price - cde.avg_cost) * cde.shares;
+  const profitPct = ((cde.price - cde.avg_cost) / cde.avg_cost * 100);
+  document.getElementById('cdeProfit').textContent = (profit >= 0 ? '+' : '') + '$' + Math.round(profit).toLocaleString();
+  document.getElementById('cdeProfitPct').textContent = (profitPct >= 0 ? '+' : '') + profitPct.toFixed(0) + '%';
+  const progressPct = Math.min(100, ((cde.price - cde.avg_cost) / (cde.onkabu_target - cde.avg_cost)) * 100);
+  document.getElementById('cdeProgress').style.width = progressPct + '%';
+  document.getElementById('cdeProgressLabel').textContent = cde.price >= cde.onkabu_target ? 'â éææ¸ã¿' : Math.round(progressPct) + '%';
+
+  // Signals
+  const signalHtml = d.signals.map(s => {
+    let badgeClass = 'badge-buy', label = 'è²·ã';
+    if (s.type === 'WATCH') { badgeClass = 'badge-watch'; label = 'ã¦ã©ãã'; }
+    else if (s.type === 'HOLD') { badgeClass = 'badge-caution'; label = 'æ§å­è¦'; }
+    else if (s.type === 'SELL_PARTIAL') { badgeClass = 'badge-sell'; label = 'å©ç¢º'; }
+    else if (s.type === 'EARNINGS') { badgeClass = 'badge-earn'; label = 'æ±ºç®'; }
+    return `<div class="signal-item">
+      <div class="signal-badge ${badgeClass}">${label}</div>
+      <div class="signal-info">
+        <div class="signal-ticker">${s.ticker} <span style="font-size:11px;color:var(--text2);font-weight:400">${s.theme}</span></div>
+        <div class="signal-name">${s.note}</div>
+      </div>
+      <div class="signal-right">
+        <div class="signal-price">$${s.price.toFixed(2)}</div>
+        <div class="signal-sepa">SEPA ${s.sepa}</div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('signalList').innerHTML = signalHtml;
+
+  // 4AI Consensus
+  const aiHtml = d.ai_consensus.map(a => {
+    const chips = [];
+    chips.push(`<span class="ai-chip chip-sepa">SEPA ${a.sepa}</span>`);
+    if (a.grok !== 'â') chips.push(`<span class="ai-chip chip-grok">Grok ${a.grok}</span>`);
+    if (a.gemini !== 'â') chips.push(`<span class="ai-chip chip-gemini">Gemini ${a.gemini}</span>`);
+    if (a.gpt !== 'â') chips.push(`<span class="ai-chip chip-gpt">GPT ${a.gpt}</span>`);
+    return `<div class="ai-row">
+      <div>
+        <div class="ai-ticker">${a.rank}. ${a.ticker}</div>
+      </div>
+      <div>
+        <div class="ai-scores">${chips.join('')}</div>
+        <div class="ai-verdict">${a.verdict}</div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('aiConsensus').innerHTML = aiHtml;
+
+  // Earnings
+  const earnHtml = d.earnings.map(e => {
+    const parts = e.date.split('/');
+    const urgentClass = e.days <= 3 ? 'days-urgent' : 'days-soon';
+    return `<div class="earn-item">
+      <div class="earn-date">
+        <div class="earn-month">${parts[0]}æ</div>
+        <div class="earn-day">${parts[1]}</div>
+      </div>
+      <div class="earn-info">
+        <div class="earn-ticker">${e.ticker} â ${e.name}</div>
+        <div class="earn-note">${e.strategy}: ${e.note}</div>
+      </div>
+      <div class="earn-days-left ${urgentClass}">${e.days}æ¥å¾</div>
+    </div>`;
+  }).join('');
+  document.getElementById('earningsList').innerHTML = earnHtml;
+
+  // Team
+  const teamHtml = d.team.map(t => {
+    const rsiColor = t.rsi > 75 ? 'var(--orange)' : t.rsi < 40 ? 'var(--red)' : 'var(--green)';
+    return `<div style="display:flex;align-items:center;padding:12px 0;border-bottom:1px solid var(--border)">
+      <div style="width:48px;text-align:center;flex-shrink:0">
+        <div style="font-size:18px;font-weight:800;color:var(--cyan)">${t.pos}</div>
+        <div style="font-size:10px;color:var(--text2)">${t.role}</div>
+      </div>
+      <div style="flex:1;margin-left:12px">
+        <div style="font-size:15px;font-weight:700">${t.ticker} <span style="font-size:12px;color:var(--text2);font-weight:400">$${t.price.toFixed(2)}</span></div>
+        <div style="font-size:11px;color:var(--text2)">${t.status}</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="font-size:13px;font-weight:600;color:var(--green)">SEPA ${t.sepa}</div>
+        <div style="font-size:11px;color:${rsiColor}">RSI ${t.rsi}</div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('teamLineup').innerHTML = teamHtml;
+
+  // Update time
+  document.getElementById('updateTime').textContent = 'æçµæ´æ°: ' + d.scan_date;
+}
+
+// ============================================================
+// Init
+// ============================================================
+document.addEventListener('DOMContentLoaded', render);
+
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>
