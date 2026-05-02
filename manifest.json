@@ -1,0 +1,22 @@
+{
+    "name": "タチコマ株 V4",
+    "short_name": "タチコマ株",
+    "description": "瀧本メソッド 4AI統合投資ダッシュボード",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#0d1117",
+    "theme_color": "#0d1117",
+    "orientation": "portrait",
+    "icons": [
+          {
+                  "src": "icon-192.png",
+                  "sizes": "192x192",
+                  "type": "image/png"
+          },
+          {
+                  "src": "icon-512.png",
+                  "sizes": "512x512",
+                  "type": "image/png"
+          }
+    ]
+}
