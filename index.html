@@ -267,6 +267,61 @@ body {
   display: none;
 }
 
+/* Leader cards */
+.leader-row {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.leader-row:last-child { border-bottom: none; }
+.leader-rank {
+  font-size: 16px; font-weight: 800;
+  color: var(--text2);
+  text-align: center;
+}
+.leader-info { min-width: 0; }
+.leader-ticker {
+  font-size: 15px; font-weight: 700;
+  display: flex; align-items: center; gap: 6px;
+}
+.leader-pin {
+  font-size: 9px;
+  background: rgba(63,185,80,0.2);
+  color: var(--green);
+  padding: 1px 5px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+.leader-name {
+  font-size: 11px; color: var(--text2);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  margin-top: 2px;
+}
+.leader-sector {
+  font-size: 10px;
+  color: var(--text2);
+  margin-top: 2px;
+}
+.leader-score-pill {
+  text-align: center;
+  min-width: 56px;
+}
+.leader-score-num {
+  font-size: 18px; font-weight: 800;
+  color: var(--green);
+}
+.leader-score-label { font-size: 9px; color: var(--text2); }
+.leader-score-bar {
+  display: flex; height: 4px; margin-top: 6px;
+  border-radius: 2px; overflow: hidden;
+  background: var(--border);
+  width: 56px;
+}
+.leader-score-bar div { height: 100%; }
+
 /* Tappable rows */
 .signal-item, .ai-row, .team-row {
   cursor: pointer;
@@ -559,6 +614,28 @@ body {
   <div class="update-time" id="updateTime">最終更新: —</div>
 </div>
 
+<!-- ===== Page 6: Leaders (先導株) ===== -->
+<div class="page" id="page-leaders">
+  <div class="card" id="leadersSummary">
+    <div class="card-title"><span class="emoji">🔍</span> 先導株スクリーナー</div>
+    <div id="leadersSummaryBody" style="font-size:12px;color:var(--text2);line-height:1.6">
+      （データなし）
+    </div>
+  </div>
+  <div class="card" style="padding:0">
+    <div class="card-title" style="padding:14px 14px 0"><span class="emoji">🏆</span> 先導株 Top 30</div>
+    <div id="leadersList"></div>
+  </div>
+  <div class="card" style="border-color:rgba(88,166,255,0.3)">
+    <div class="card-title" style="color:var(--cyan)">📘 ミネルヴィニ判定基準</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.7">
+      Stage 2 (30pt): 50/150/200MA配列＋上昇トレンド ／ 先導性 (25pt): 52週高値95%以上＋12Mリターン ／
+      VCP・押し目 (20pt): ボラ収縮＋押し目浅さ ／ ファンダ (25pt): ROE/売上/EPS/マージン/アキュムレーション。
+      <br>絶対フィルタ: 株価&lt;$12 / 平均出来高&lt;100k / 200MA下向きは即失格。
+    </div>
+  </div>
+</div>
+
 <!-- ===== Detail Modal (Bottom Sheet) ===== -->
 <div class="detail-overlay" id="detailOverlay" onclick="closeDetail()"></div>
 <div class="detail-sheet" id="detailSheet" onclick="event.stopPropagation()">
@@ -581,6 +658,9 @@ body {
   </button>
   <button class="tab" onclick="switchPage('team')">
     <span class="icon">🏀</span>チーム
+  </button>
+  <button class="tab" onclick="switchPage('leaders')">
+    <span class="icon">🔍</span>発見
   </button>
 </div>
 
@@ -1917,7 +1997,28 @@ const SCAN_DATA = {
         ]
       },
       "earnings": null,
-      "ai_only": true
+      "ai_only": true,
+      "leader_score": 95,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 20
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9965,
+        "return_12m": 1.0855,
+        "contraction_ratio": 0.198,
+        "pullback_pct": 0.0035,
+        "roe": 0.334,
+        "revenue_growth": 0.295,
+        "eps_growth": 0.316,
+        "op_margin": 0.449,
+        "accumulation": "weak"
+      }
     },
     "WPM": {
       "ticker": "WPM",
@@ -1965,7 +2066,1742 @@ const SCAN_DATA = {
       },
       "earnings": null,
       "ai_only": true
+    },
+    "AAMI": {
+      "ticker": "AAMI",
+      "name": "Acadian Asset Management Inc.",
+      "theme": "Asset Management",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 97pt",
+      "price": 65.49,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 97,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 22
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9605,
+        "return_12m": 1.3588,
+        "contraction_ratio": 0.254,
+        "pullback_pct": 0.0395,
+        "roe": 1.117,
+        "revenue_growth": 0.393,
+        "eps_growth": 0.264,
+        "op_margin": 0.251,
+        "accumulation": "mild"
+      },
+      "market_cap": 2333342464
+    },
+    "ADEA": {
+      "ticker": "ADEA",
+      "name": "Adeia Inc.",
+      "theme": "Software - Application",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 97pt",
+      "price": 33.0,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 97,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 22
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 1.6526,
+        "contraction_ratio": 0.383,
+        "pullback_pct": 0.0,
+        "roe": 0.253,
+        "revenue_growth": 0.533,
+        "eps_growth": 1.067,
+        "op_margin": 0.631,
+        "accumulation": "mild"
+      },
+      "market_cap": 3653222912
+    },
+    "FCFS": {
+      "ticker": "FCFS",
+      "name": "FirstCash Holdings, Inc.",
+      "theme": "Credit Services",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 96pt",
+      "price": 219.93,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 96,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 21
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 0.6604,
+        "contraction_ratio": 0.198,
+        "pullback_pct": 0.0,
+        "roe": 0.163,
+        "revenue_growth": 0.257,
+        "eps_growth": 0.299,
+        "op_margin": 0.167,
+        "accumulation": "mild"
+      },
+      "market_cap": 9641001984
+    },
+    "ANET": {
+      "ticker": "ANET",
+      "name": "Arista Networks, Inc.",
+      "theme": "Computer Hardware",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 95pt",
+      "price": 172.7,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 95,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 20
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9717,
+        "return_12m": 0.8974,
+        "contraction_ratio": 0.144,
+        "pullback_pct": 0.0283,
+        "roe": 0.314,
+        "revenue_growth": 0.289,
+        "eps_growth": 0.191,
+        "op_margin": 0.415,
+        "accumulation": "mild"
+      },
+      "market_cap": 217458556928
+    },
+    "AROC": {
+      "ticker": "AROC",
+      "name": "Archrock, Inc.",
+      "theme": "Oil & Gas Equipment & Services",
+      "sector": "Energy",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 95pt",
+      "price": 39.02,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 95,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 20
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 0.6409,
+        "contraction_ratio": 0.396,
+        "pullback_pct": 0.0,
+        "roe": 0.229,
+        "revenue_growth": 0.155,
+        "eps_growth": 0.954,
+        "op_margin": 0.432,
+        "accumulation": "mild"
+      },
+      "market_cap": 6838169600
+    },
+    "ATEN": {
+      "ticker": "ATEN",
+      "name": "A10 Networks, Inc.",
+      "theme": "Software - Infrastructure",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 95pt",
+      "price": 26.85,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 95,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 20
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9545,
+        "return_12m": 0.659,
+        "contraction_ratio": 0.361,
+        "pullback_pct": 0.0455,
+        "roe": 0.214,
+        "revenue_growth": 0.134,
+        "eps_growth": 0.294,
+        "op_margin": 0.173,
+        "accumulation": "mild"
+      },
+      "market_cap": 1926729216
+    },
+    "ENVA": {
+      "ticker": "ENVA",
+      "name": "Enova International, Inc.",
+      "theme": "Credit Services",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 95pt",
+      "price": 170.93,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 95,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 20
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9846,
+        "return_12m": 0.8019,
+        "contraction_ratio": 0.144,
+        "pullback_pct": 0.0154,
+        "roe": 0.251,
+        "revenue_growth": 0.258,
+        "eps_growth": 0.286,
+        "op_margin": 0.266,
+        "accumulation": "weak"
+      },
+      "market_cap": 4253575168
+    },
+    "DOCN": {
+      "ticker": "DOCN",
+      "name": "DigitalOcean Holdings, Inc.",
+      "theme": "Software - Infrastructure",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 93pt",
+      "price": 102.82,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 93,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 18
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 2.1579,
+        "contraction_ratio": 0.287,
+        "pullback_pct": 0.0,
+        "roe": null,
+        "revenue_growth": 0.183,
+        "eps_growth": 0.901,
+        "op_margin": 0.16,
+        "accumulation": "strong"
+      },
+      "market_cap": 10729620480
+    },
+    "ELA": {
+      "ticker": "ELA",
+      "name": "Envela Corporation",
+      "theme": "Luxury Goods",
+      "sector": "Consumer Cyclical",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 93pt",
+      "price": 17.8,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 93,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 16,
+        "fundamentals": 22
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9611,
+        "return_12m": 1.5948,
+        "contraction_ratio": 0.408,
+        "pullback_pct": 0.0389,
+        "roe": 0.244,
+        "revenue_growth": 0.666,
+        "eps_growth": 2.845,
+        "op_margin": 0.094,
+        "accumulation": "strong"
+      },
+      "market_cap": 462149856
+    },
+    "AMD": {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "theme": "Semiconductors",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 92pt",
+      "price": 360.54,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 92,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 17
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 2.6492,
+        "contraction_ratio": 0.266,
+        "pullback_pct": 0.0,
+        "roe": 0.071,
+        "revenue_growth": 0.341,
+        "eps_growth": 2.171,
+        "op_margin": 0.171,
+        "accumulation": "mild"
+      },
+      "market_cap": 587828363264
+    },
+    "BK": {
+      "ticker": "BK",
+      "name": "The Bank of New York Mellon Cor",
+      "theme": "Banks - Diversified",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 92pt",
+      "price": 133.78,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 92,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 17
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9738,
+        "return_12m": 0.6593,
+        "contraction_ratio": 0.155,
+        "pullback_pct": 0.0262,
+        "roe": 0.135,
+        "revenue_growth": 0.134,
+        "eps_growth": 0.418,
+        "op_margin": 0.376,
+        "accumulation": "mild"
+      },
+      "market_cap": 91823783936
+    },
+    "ECPG": {
+      "ticker": "ECPG",
+      "name": "Encore Capital Group Inc",
+      "theme": "Credit Services",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 92pt",
+      "price": 83.3,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 92,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 17
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9881,
+        "return_12m": 1.3366,
+        "contraction_ratio": 0.201,
+        "pullback_pct": 0.0119,
+        "roe": 0.295,
+        "revenue_growth": 0.783,
+        "eps_growth": null,
+        "op_margin": 0.366,
+        "accumulation": "mild"
+      },
+      "market_cap": 1788608000
+    },
+    "FFBC": {
+      "ticker": "FFBC",
+      "name": "First Financial Bancorp.",
+      "theme": "Banks - Regional",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 91pt",
+      "price": 30.41,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 91,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 22,
+        "vcp_pullback": 20,
+        "fundamentals": 19
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9847,
+        "return_12m": 0.3168,
+        "contraction_ratio": 0.382,
+        "pullback_pct": 0.0133,
+        "roe": 0.102,
+        "revenue_growth": 0.326,
+        "eps_growth": 0.315,
+        "op_margin": 0.372,
+        "accumulation": "mild"
+      },
+      "market_cap": 3191007488
+    },
+    "ADI": {
+      "ticker": "ADI",
+      "name": "Analog Devices, Inc.",
+      "theme": "Semiconductors",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 90pt",
+      "price": 397.69,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 90,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 15
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9847,
+        "return_12m": 1.0331,
+        "contraction_ratio": 0.248,
+        "pullback_pct": 0.0153,
+        "roe": 0.079,
+        "revenue_growth": 0.304,
+        "eps_growth": 1.167,
+        "op_margin": 0.331,
+        "accumulation": "weak"
+      },
+      "market_cap": 194153906176
+    },
+    "ARWR": {
+      "ticker": "ARWR",
+      "name": "Arrowhead Pharmaceuticals, Inc.",
+      "theme": "Biotechnology",
+      "sector": "Healthcare",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 90pt",
+      "price": 74.81,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 90,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 15
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 4.1879,
+        "contraction_ratio": 0.342,
+        "pullback_pct": 0.0,
+        "roe": 0.755,
+        "revenue_growth": 104.613,
+        "eps_growth": null,
+        "op_margin": 0.155,
+        "accumulation": "weak"
+      },
+      "market_cap": 10475807744
+    },
+    "FDX": {
+      "ticker": "FDX",
+      "name": "FedEx Corporation",
+      "theme": "Integrated Freight & Logistics",
+      "sector": "Industrials",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 90pt",
+      "price": 393.67,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 90,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 15
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9761,
+        "return_12m": 0.8315,
+        "contraction_ratio": 0.333,
+        "pullback_pct": 0.0239,
+        "roe": 0.159,
+        "revenue_growth": 0.083,
+        "eps_growth": 0.173,
+        "op_margin": 0.069,
+        "accumulation": "strong"
+      },
+      "market_cap": 93932322816
+    },
+    "ABCB": {
+      "ticker": "ABCB",
+      "name": "Ameris Bancorp",
+      "theme": "Banks - Regional",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 89pt",
+      "price": 85.56,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 89,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 22,
+        "vcp_pullback": 20,
+        "fundamentals": 17
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9982,
+        "return_12m": 0.4304,
+        "contraction_ratio": 0.201,
+        "pullback_pct": 0.0012,
+        "roe": 0.11,
+        "revenue_growth": 0.128,
+        "eps_growth": 0.283,
+        "op_margin": 0.484,
+        "accumulation": "mild"
+      },
+      "market_cap": 5759924224
+    },
+    "AGX": {
+      "ticker": "AGX",
+      "name": "Argan, Inc.",
+      "theme": "Engineering & Construction",
+      "sector": "Industrials",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 89pt",
+      "price": 702.27,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 89,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 16,
+        "fundamentals": 18
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 3.3129,
+        "contraction_ratio": 0.554,
+        "pullback_pct": 0.0,
+        "roe": 0.338,
+        "revenue_growth": 0.127,
+        "eps_growth": 0.558,
+        "op_margin": 0.182,
+        "accumulation": "weak"
+      },
+      "market_cap": 9804015616
+    },
+    "BEN": {
+      "ticker": "BEN",
+      "name": "Franklin Resources, Inc.",
+      "theme": "Asset Management",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 88pt",
+      "price": 29.84,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 88,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 13
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9957,
+        "return_12m": 0.5727,
+        "contraction_ratio": 0.365,
+        "pullback_pct": 0.0043,
+        "roe": 0.067,
+        "revenue_growth": 0.087,
+        "eps_growth": 0.872,
+        "op_margin": 0.172,
+        "accumulation": "mild"
+      },
+      "market_cap": 15505972224
+    },
+    "DIOD": {
+      "ticker": "DIOD",
+      "name": "Diodes Incorporated",
+      "theme": "Semiconductors",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 88pt",
+      "price": 108.24,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 88,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 13
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 1.6368,
+        "contraction_ratio": 0.331,
+        "pullback_pct": 0.0,
+        "roe": 0.036,
+        "revenue_growth": 0.154,
+        "eps_growth": 0.241,
+        "op_margin": 0.034,
+        "accumulation": "strong"
+      },
+      "market_cap": 4979750400
+    },
+    "FIX": {
+      "ticker": "FIX",
+      "name": "Comfort Systems USA, Inc.",
+      "theme": "Engineering & Construction",
+      "sector": "Industrials",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 88pt",
+      "price": 1867.02,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 88,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 13
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 3.333,
+        "contraction_ratio": 0.334,
+        "pullback_pct": 0.0,
+        "roe": 0.533,
+        "revenue_growth": 0.01,
+        "eps_growth": 0.388,
+        "op_margin": 0.079,
+        "accumulation": "weak"
+      },
+      "market_cap": 65723629568
+    },
+    "FN": {
+      "ticker": "FN",
+      "name": "Fabrinet",
+      "theme": "Electronic Components",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 88pt",
+      "price": 706.53,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 88,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 16,
+        "fundamentals": 17
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.981,
+        "return_12m": 2.2371,
+        "contraction_ratio": 0.415,
+        "pullback_pct": 0.019,
+        "roe": 0.187,
+        "revenue_growth": 0.359,
+        "eps_growth": 0.307,
+        "op_margin": 0.101,
+        "accumulation": "weak"
+      },
+      "market_cap": 25312227328
+    },
+    "FRT": {
+      "ticker": "FRT",
+      "name": "Federal Realty Investment Trust",
+      "theme": "REIT - Retail",
+      "sector": "Real Estate",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 88pt",
+      "price": 115.32,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 88,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 22,
+        "vcp_pullback": 16,
+        "fundamentals": 20
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 0.2496,
+        "contraction_ratio": 0.552,
+        "pullback_pct": 0.0,
+        "roe": 0.148,
+        "revenue_growth": 0.103,
+        "eps_growth": 1.525,
+        "op_margin": 0.341,
+        "accumulation": "strong"
+      },
+      "market_cap": 10023317504
+    },
+    "ECVT": {
+      "ticker": "ECVT",
+      "name": "Ecovyst Inc.",
+      "theme": "Specialty Chemicals",
+      "sector": "Basic Materials",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 87pt",
+      "price": 14.36,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 87,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 12
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9958,
+        "return_12m": 1.1725,
+        "contraction_ratio": 0.277,
+        "pullback_pct": 0.0042,
+        "roe": 0.01,
+        "revenue_growth": 0.34,
+        "eps_growth": null,
+        "op_margin": 0.125,
+        "accumulation": "strong"
+      },
+      "market_cap": 1588016256
+    },
+    "ESOA": {
+      "ticker": "ESOA",
+      "name": "Energy Services of America Corp",
+      "theme": "Engineering & Construction",
+      "sector": "Industrials",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 87pt",
+      "price": 16.84,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 87,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 12
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9906,
+        "return_12m": 0.8054,
+        "contraction_ratio": 0.244,
+        "pullback_pct": 0.0094,
+        "roe": 0.037,
+        "revenue_growth": 0.134,
+        "eps_growth": 2.2,
+        "op_margin": 0.043,
+        "accumulation": "mild"
+      },
+      "market_cap": 314235072
+    },
+    "FRST": {
+      "ticker": "FRST",
+      "name": "Primis Financial Corp.",
+      "theme": "Banks - Regional",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 87pt",
+      "price": 14.7,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 87,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 12
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9906,
+        "return_12m": 0.6937,
+        "contraction_ratio": 0.187,
+        "pullback_pct": 0.0094,
+        "roe": 0.115,
+        "revenue_growth": -0.227,
+        "eps_growth": -0.676,
+        "op_margin": 0.251,
+        "accumulation": "strong"
+      },
+      "market_cap": 364149440
+    },
+    "GATX": {
+      "ticker": "GATX",
+      "name": "GATX Corporation",
+      "theme": "Rental & Leasing Services",
+      "sector": "Industrials",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 87pt",
+      "price": 196.35,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 87,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 22,
+        "vcp_pullback": 20,
+        "fundamentals": 15
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.978,
+        "return_12m": 0.336,
+        "contraction_ratio": 0.137,
+        "pullback_pct": 0.022,
+        "roe": 0.11,
+        "revenue_growth": 0.086,
+        "eps_growth": 0.258,
+        "op_margin": 0.31,
+        "accumulation": "mild"
+      },
+      "market_cap": 6975065600
+    },
+    "ATEX": {
+      "ticker": "ATEX",
+      "name": "Anterix Inc.",
+      "theme": "Telecom Services",
+      "sector": "Communication Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 86pt",
+      "price": 49.59,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 86,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 11
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 0.6619,
+        "contraction_ratio": 0.303,
+        "pullback_pct": 0.0,
+        "roe": 0.427,
+        "revenue_growth": 0.004,
+        "eps_growth": null,
+        "op_margin": -6.186,
+        "accumulation": "strong"
+      },
+      "market_cap": 928963904
+    },
+    "AZZ": {
+      "ticker": "AZZ",
+      "name": "AZZ Inc.",
+      "theme": "Specialty Business Services",
+      "sector": "Industrials",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 86pt",
+      "price": 143.53,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 86,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 11
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9791,
+        "return_12m": 0.5979,
+        "contraction_ratio": 0.352,
+        "pullback_pct": 0.0209,
+        "roe": 0.266,
+        "revenue_growth": 0.094,
+        "eps_growth": -0.218,
+        "op_margin": 0.154,
+        "accumulation": "weak"
+      },
+      "market_cap": 4288720640
     }
+  },
+  "leaders": {
+    "scan_date": "20260503",
+    "universe": "all",
+    "threshold": 75,
+    "total_scanned": 2441,
+    "leaders_count": 105,
+    "top": [
+      {
+        "ticker": "AAMI",
+        "name": "Acadian Asset Management Inc.",
+        "sector": "Financial Services",
+        "industry": "Asset Management",
+        "price": 65.49,
+        "score": 97,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 22
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ADEA",
+        "name": "Adeia Inc.",
+        "sector": "Technology",
+        "industry": "Software - Application",
+        "price": 33.0,
+        "score": 97,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 22
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "FCFS",
+        "name": "FirstCash Holdings, Inc.",
+        "sector": "Financial Services",
+        "industry": "Credit Services",
+        "price": 219.93,
+        "score": 96,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 21
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ANET",
+        "name": "Arista Networks, Inc.",
+        "sector": "Technology",
+        "industry": "Computer Hardware",
+        "price": 172.7,
+        "score": 95,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 20
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "AROC",
+        "name": "Archrock, Inc.",
+        "sector": "Energy",
+        "industry": "Oil & Gas Equipment & Services",
+        "price": 39.02,
+        "score": 95,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 20
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ATEN",
+        "name": "A10 Networks, Inc.",
+        "sector": "Technology",
+        "industry": "Software - Infrastructure",
+        "price": 26.85,
+        "score": 95,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 20
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "AVGO",
+        "name": "Broadcom Inc.",
+        "sector": "Technology",
+        "industry": "Semiconductors",
+        "price": 421.28,
+        "score": 95,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 20
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ENVA",
+        "name": "Enova International, Inc.",
+        "sector": "Financial Services",
+        "industry": "Credit Services",
+        "price": 170.93,
+        "score": 95,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 20
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "DOCN",
+        "name": "DigitalOcean Holdings, Inc.",
+        "sector": "Technology",
+        "industry": "Software - Infrastructure",
+        "price": 102.82,
+        "score": 93,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 18
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ELA",
+        "name": "Envela Corporation",
+        "sector": "Consumer Cyclical",
+        "industry": "Luxury Goods",
+        "price": 17.8,
+        "score": 93,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 16,
+          "fundamentals": 22
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "AMD",
+        "name": "Advanced Micro Devices, Inc.",
+        "sector": "Technology",
+        "industry": "Semiconductors",
+        "price": 360.54,
+        "score": 92,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 17
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "BK",
+        "name": "The Bank of New York Mellon Cor",
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified",
+        "price": 133.78,
+        "score": 92,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 17
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ECPG",
+        "name": "Encore Capital Group Inc",
+        "sector": "Financial Services",
+        "industry": "Credit Services",
+        "price": 83.3,
+        "score": 92,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 17
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "FFBC",
+        "name": "First Financial Bancorp.",
+        "sector": "Financial Services",
+        "industry": "Banks - Regional",
+        "price": 30.41,
+        "score": 91,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 22,
+          "vcp_pullback": 20,
+          "fundamentals": 19
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ADI",
+        "name": "Analog Devices, Inc.",
+        "sector": "Technology",
+        "industry": "Semiconductors",
+        "price": 397.69,
+        "score": 90,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 15
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ARWR",
+        "name": "Arrowhead Pharmaceuticals, Inc.",
+        "sector": "Healthcare",
+        "industry": "Biotechnology",
+        "price": 74.81,
+        "score": 90,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 15
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "FDX",
+        "name": "FedEx Corporation",
+        "sector": "Industrials",
+        "industry": "Integrated Freight & Logistics",
+        "price": 393.67,
+        "score": 90,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 15
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ABCB",
+        "name": "Ameris Bancorp",
+        "sector": "Financial Services",
+        "industry": "Banks - Regional",
+        "price": 85.56,
+        "score": 89,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 22,
+          "vcp_pullback": 20,
+          "fundamentals": 17
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "AGX",
+        "name": "Argan, Inc.",
+        "sector": "Industrials",
+        "industry": "Engineering & Construction",
+        "price": 702.27,
+        "score": 89,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 16,
+          "fundamentals": 18
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "BEN",
+        "name": "Franklin Resources, Inc.",
+        "sector": "Financial Services",
+        "industry": "Asset Management",
+        "price": 29.84,
+        "score": 88,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 13
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "DIOD",
+        "name": "Diodes Incorporated",
+        "sector": "Technology",
+        "industry": "Semiconductors",
+        "price": 108.24,
+        "score": 88,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 13
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "FIX",
+        "name": "Comfort Systems USA, Inc.",
+        "sector": "Industrials",
+        "industry": "Engineering & Construction",
+        "price": 1867.02,
+        "score": 88,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 13
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "FN",
+        "name": "Fabrinet",
+        "sector": "Technology",
+        "industry": "Electronic Components",
+        "price": 706.53,
+        "score": 88,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 16,
+          "fundamentals": 17
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "FRT",
+        "name": "Federal Realty Investment Trust",
+        "sector": "Real Estate",
+        "industry": "REIT - Retail",
+        "price": 115.32,
+        "score": 88,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 22,
+          "vcp_pullback": 16,
+          "fundamentals": 20
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ECVT",
+        "name": "Ecovyst Inc.",
+        "sector": "Basic Materials",
+        "industry": "Specialty Chemicals",
+        "price": 14.36,
+        "score": 87,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 12
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ESOA",
+        "name": "Energy Services of America Corp",
+        "sector": "Industrials",
+        "industry": "Engineering & Construction",
+        "price": 16.84,
+        "score": 87,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 12
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "FRST",
+        "name": "Primis Financial Corp.",
+        "sector": "Financial Services",
+        "industry": "Banks - Regional",
+        "price": 14.7,
+        "score": 87,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 12
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "GATX",
+        "name": "GATX Corporation",
+        "sector": "Industrials",
+        "industry": "Rental & Leasing Services",
+        "price": 196.35,
+        "score": 87,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 22,
+          "vcp_pullback": 20,
+          "fundamentals": 15
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ATEX",
+        "name": "Anterix Inc.",
+        "sector": "Communication Services",
+        "industry": "Telecom Services",
+        "price": 49.59,
+        "score": 86,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 11
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "AZZ",
+        "name": "AZZ Inc.",
+        "sector": "Industrials",
+        "industry": "Specialty Business Services",
+        "price": 143.53,
+        "score": 86,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 11
+        },
+        "in_watchlist": false
+      }
+    ]
   }
 };
 
@@ -2099,8 +3935,52 @@ function render() {
   }).join('');
   document.getElementById('teamLineup').innerHTML = teamHtml;
 
+  // Leaders
+  renderLeaders(d);
+
   // Update time
   document.getElementById('updateTime').textContent = '最終更新: ' + d.scan_date;
+}
+
+function renderLeaders(d) {
+  const ld = d.leaders;
+  const summary = document.getElementById('leadersSummaryBody');
+  const list = document.getElementById('leadersList');
+  if (!ld || !ld.top || !ld.top.length) {
+    summary.innerHTML = '<span style="color:var(--text2)">先導株データ未生成（discover_leaders.py を実行してください）</span>';
+    list.innerHTML = '<div style="padding:14px;color:var(--text2);font-size:12px">データなし</div>';
+    return;
+  }
+  const universeLabel = ({sp500: 'S&P500', nasdaq100: 'Nasdaq100', russell2000: 'Russell2000', all: 'S&P500+Nasdaq100+Russell2000'})[ld.universe] || ld.universe;
+  summary.innerHTML = `
+    <div>📡 ユニバース: <strong style="color:var(--text)">${universeLabel}</strong> (${ld.total_scanned}銘柄スキャン)</div>
+    <div>🎯 閾値: ${ld.threshold}pt以上 → <strong style="color:var(--green)">${ld.leaders_count}銘柄が先導株候補</strong></div>
+    <div>📅 スキャン日: ${ld.scan_date}</div>
+  `;
+  list.innerHTML = ld.top.map((l, i) => {
+    const b = l.breakdown || {};
+    const stage2 = b.stage2 || 0, lead = b.leadership || 0, vcp = b.vcp_pullback || 0, fund = b.fundamentals || 0;
+    const sum = Math.max(stage2 + lead + vcp + fund, 1);
+    const w = (v) => (v / sum * 100).toFixed(1);
+    return `<div class="leader-row" data-ticker="${l.ticker}">
+      <div class="leader-rank">${i + 1}</div>
+      <div class="leader-info">
+        <div class="leader-ticker">${l.ticker} ${l.in_watchlist ? '<span class="leader-pin">WL</span>' : ''}</div>
+        <div class="leader-name">${l.name || ''}</div>
+        <div class="leader-sector">${l.sector || ''} ・ $${(l.price || 0).toFixed(2)}</div>
+      </div>
+      <div class="leader-score-pill">
+        <div class="leader-score-num">${l.score}</div>
+        <div class="leader-score-label">pt</div>
+        <div class="leader-score-bar">
+          <div style="width:${w(stage2)}%;background:var(--cyan)" title="Stage2 ${stage2}"></div>
+          <div style="width:${w(lead)}%;background:var(--gold)" title="先導性 ${lead}"></div>
+          <div style="width:${w(vcp)}%;background:var(--purple)" title="VCP ${vcp}"></div>
+          <div style="width:${w(fund)}%;background:var(--green)" title="Fund ${fund}"></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
 }
 
 // ============================================================
@@ -2139,7 +4019,9 @@ function buildSnipeGuide(d) {
   const mode = bothOn ? '浅い床モード（10/25日線で初弾）' : '深い床モード（75/200日線まで引きつけ）';
   const sig = d.signal || '';
   let action;
-  if (d.ai_only) {
+  if (d.leader_only) {
+    action = `先導株候補（${d.leader_score}pt）。WATCHLIST追加 → 4AI取材で深掘り → 初弾1/3エントリー検討`;
+  } else if (d.ai_only) {
     action = `ウォッチリスト追加検討案件。テクニカル基準を確認後、初弾エントリー判断を再評価`;
   } else if (d.ticker === 'CDE') {
     action = `恩株化判定: $16.72到達なら510株利確 → 残510株は週足ステージ3割れまで保有`;
@@ -2150,8 +4032,8 @@ function buildSnipeGuide(d) {
   } else {
     action = `現状エントリーNG。基準充足を待つ`;
   }
-  const stopLine = d.ai_only
-    ? '⚠️ 損切ライン: ウォッチリスト追加後にローカルスキャンで取得'
+  const stopLine = (d.ai_only || d.leader_only)
+    ? '⚠️ 損切ライン: ウォッチリスト追加 → 翌日のローカルスキャンで自動算出'
     : `⛔ 損切: ${d.stop_loss_8pct || '—'} (8%) / ${d.stop_loss_21ma || '—'} (21MA)`;
   return `<div>地合い: <strong style="color:${bothOn ? 'var(--green)' : 'var(--red)'}">${mode}</strong></div>
           <div style="margin-top:6px">${action}</div>
@@ -2164,6 +4046,7 @@ function renderDetail(d) {
   if (d.position) tags.push(`<span class="detail-tag" style="background:rgba(63,185,80,0.12);color:var(--green)">持ち場 ${d.position}</span>`);
   if (d.rating) tags.push(`<span class="detail-tag" style="background:rgba(227,179,65,0.12);color:var(--gold)">${d.rating}</span>`);
   if (d.signal) tags.push(`<span class="detail-tag" style="background:rgba(188,140,255,0.12);color:var(--purple)">${d.signal}</span>`);
+  if (d.leader_score) tags.push(`<span class="detail-tag" style="background:rgba(63,185,80,0.18);color:var(--green)">🏆 先導株 ${d.leader_score}pt</span>`);
 
   const priceText = (d.price && d.price > 0) ? `$${d.price.toFixed(2)}` : '価格未取得';
   let html = `
@@ -2180,8 +4063,19 @@ function renderDetail(d) {
     </div>
   `;
 
-  // AI-only banner (WATCHLIST外でAIコンセンサス上位の銘柄)
-  if (d.ai_only) {
+  // Leader-only / AI-only / Technical の3分岐
+  if (d.leader_only) {
+    html += `
+      <div class="detail-section" style="border-color:rgba(63,185,80,0.3);background:rgba(63,185,80,0.05)">
+        <div style="font-size:12px;color:var(--green);line-height:1.5">
+          🔍 ミネルヴィニ式スクリーナーで <strong>${d.leader_score || '?'}pt</strong> を獲得した先導株候補です。
+          ウォッチリスト外のため、テクニカル/4AIの個別取材データは未取得。
+          採用検討時は <code>config.py</code> の <code>WATCHLIST</code> に追記し、
+          翌日以降の <code>daily_scan.py</code> + 4AI取材で深掘りしてください。
+        </div>
+      </div>
+    `;
+  } else if (d.ai_only) {
     html += `
       <div class="detail-section" style="border-color:rgba(188,140,255,0.3);background:rgba(188,140,255,0.05)">
         <div style="font-size:12px;color:var(--purple);line-height:1.5">
@@ -2215,6 +4109,49 @@ function renderDetail(d) {
           </div>
         </div>
         ${d.short_cover ? `<div style="font-size:11px;color:var(--text2);margin-top:8px">ショートカバー判定: ${d.short_cover}</div>` : ''}
+      </div>
+    `;
+  }
+
+  // Leader breakdown (常に leader_score があれば表示)
+  if (d.leader_score) {
+    const b = d.leader_breakdown || {};
+    const ld = d.leader_details || {};
+    const fmtPct = v => (v == null) ? '—' : (v * 100).toFixed(1) + '%';
+    const fmtRatio = v => (v == null) ? '—' : v.toFixed(3);
+    html += `
+      <div class="detail-section" style="border-color:rgba(63,185,80,0.3)">
+        <div class="detail-section-title" style="color:var(--green)">🔍 ミネルヴィニ式スコア ${d.leader_score}pt</div>
+        <div class="detail-grid">
+          <div class="detail-stat">
+            <div class="label">Stage 2 (30pt)</div>
+            <div class="val" style="color:var(--cyan)">${b.stage2 ?? 0}</div>
+          </div>
+          <div class="detail-stat">
+            <div class="label">先導性 (25pt)</div>
+            <div class="val" style="color:var(--gold)">${b.leadership ?? 0}</div>
+          </div>
+          <div class="detail-stat">
+            <div class="label">VCP/押し目 (20pt)</div>
+            <div class="val" style="color:var(--purple)">${b.vcp_pullback ?? 0}</div>
+          </div>
+          <div class="detail-stat">
+            <div class="label">ファンダ (25pt)</div>
+            <div class="val" style="color:var(--green)">${b.fundamentals ?? 0}</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--text2);margin-top:10px;line-height:1.7">
+          52週高値接近: <strong style="color:var(--text)">${ld.pct_to_52w_high != null ? (ld.pct_to_52w_high * 100).toFixed(1) + '%' : '—'}</strong>
+          ・ 12Mリターン: <strong style="color:var(--text)">${ld.return_12m != null ? (ld.return_12m * 100).toFixed(1) + '%' : '—'}</strong>
+          <br>収縮率(5d/20d): <strong style="color:var(--text)">${fmtRatio(ld.contraction_ratio)}</strong>
+          ・ 押し目: <strong style="color:var(--text)">${fmtPct(ld.pullback_pct)}</strong>
+          <br>ROE: <strong style="color:var(--text)">${fmtPct(ld.roe)}</strong>
+          ・ 売上成長: <strong style="color:var(--text)">${fmtPct(ld.revenue_growth)}</strong>
+          ・ EPS成長: <strong style="color:var(--text)">${fmtPct(ld.eps_growth)}</strong>
+          <br>営業利益率: <strong style="color:var(--text)">${fmtPct(ld.op_margin)}</strong>
+          ・ MA配列: <strong style="color:var(--text)">${ld.ma_alignment || '—'}</strong>
+          ・ 出来高: <strong style="color:var(--text)">${ld.accumulation || '—'}</strong>
+        </div>
       </div>
     `;
   }
@@ -2347,7 +4284,7 @@ function renderDetail(d) {
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   render();
-  ['signalList', 'aiConsensus', 'teamLineup', 'earningsList'].forEach(id => {
+  ['signalList', 'aiConsensus', 'teamLineup', 'earningsList', 'leadersList'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
     el.addEventListener('click', (e) => {
