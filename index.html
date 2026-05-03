@@ -50,16 +50,16 @@ body {
 }
 .tab {
   flex: 1;
-  padding: 10px 4px 8px;
+  padding: 8px 2px 6px;
   text-align: center;
-  font-size: 10px;
+  font-size: 9px;
   color: var(--text2);
   cursor: pointer;
   transition: color 0.2s;
   border: none; background: none;
 }
 .tab.active { color: var(--cyan); }
-.tab .icon { font-size: 20px; display: block; margin-bottom: 2px; }
+.tab .icon { font-size: 18px; display: block; margin-bottom: 2px; }
 .page { display: none; padding: 12px; }
 .page.active { display: block; }
 
@@ -267,6 +267,199 @@ body {
   display: none;
 }
 
+/* Market Pulse (Put/Call Ratio) */
+.pulse-card {
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+}
+.pulse-card.pulse-green { background: linear-gradient(135deg, rgba(63,185,80,0.18), rgba(63,185,80,0.05)); border-color: rgba(63,185,80,0.4); }
+.pulse-card.pulse-lime { background: linear-gradient(135deg, rgba(132,204,22,0.18), rgba(132,204,22,0.05)); border-color: rgba(132,204,22,0.4); }
+.pulse-card.pulse-yellow { background: linear-gradient(135deg, rgba(234,179,8,0.18), rgba(234,179,8,0.05)); border-color: rgba(234,179,8,0.4); }
+.pulse-card.pulse-orange { background: linear-gradient(135deg, rgba(210,153,34,0.2), rgba(210,153,34,0.05)); border-color: rgba(210,153,34,0.4); }
+.pulse-card.pulse-red { background: linear-gradient(135deg, rgba(248,81,73,0.22), rgba(248,81,73,0.05)); border-color: rgba(248,81,73,0.5); }
+.pulse-card.pulse-gray { background: var(--card); border-color: var(--border); }
+.pulse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.pulse-block { text-align: center; padding: 6px; }
+.pulse-symbol { font-size: 11px; color: var(--text2); }
+.pulse-value { font-size: 28px; font-weight: 800; }
+.pulse-label { font-size: 11px; font-weight: 600; margin-top: 2px; }
+
+/* My Tab — Watchlist / Holdings / Cash */
+.my-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+.my-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.my-section-title .count {
+  font-size: 11px;
+  color: var(--text2);
+  font-weight: 400;
+  margin-left: auto;
+}
+.my-input-row {
+  display: flex; gap: 6px;
+  margin-bottom: 10px;
+}
+.my-input {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 13px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+}
+.my-input:focus { outline: 1px solid var(--cyan); }
+.my-input.small { max-width: 90px; }
+.my-btn {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--cyan);
+  color: var(--bg);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.my-btn.danger { background: var(--red); color: white; }
+.my-btn.ghost { background: transparent; color: var(--text2); border: 1px solid var(--border); }
+.my-btn.ghost.danger { color: var(--red); border-color: rgba(248,81,73,0.4); background: transparent; }
+.my-btn:active { opacity: 0.7; }
+
+.wl-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 8px 5px 10px;
+  background: rgba(88,166,255,0.12);
+  color: var(--cyan);
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 4px 4px 0;
+  cursor: pointer;
+}
+.wl-chip .x {
+  background: rgba(248,81,73,0.2);
+  color: var(--red);
+  border-radius: 50%;
+  width: 16px; height: 16px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+  cursor: pointer;
+}
+
+.hold-row {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.hold-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 6px;
+}
+.hold-ticker { font-size: 16px; font-weight: 800; color: var(--cyan); cursor: pointer; }
+.hold-shares { font-size: 11px; color: var(--text2); }
+.hold-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+  margin: 8px 0;
+}
+.hold-stat { text-align: center; }
+.hold-stat .label { font-size: 10px; color: var(--text2); }
+.hold-stat .val { font-size: 13px; font-weight: 700; margin-top: 2px; }
+.hold-action {
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 8px;
+  border-left: 3px solid var(--cyan);
+}
+.hold-action.act-hold { background: rgba(63,185,80,0.08); border-left-color: var(--green); }
+.hold-action.act-stop { background: rgba(248,81,73,0.1); border-left-color: var(--red); }
+.hold-action.act-take { background: rgba(227,179,65,0.1); border-left-color: var(--gold); }
+.hold-action.act-trim { background: rgba(210,153,34,0.1); border-left-color: var(--orange); }
+.hold-action.act-earn { background: rgba(188,140,255,0.1); border-left-color: var(--purple); }
+.hold-action .head {
+  font-size: 13px; font-weight: 700;
+  margin-bottom: 4px;
+}
+.hold-action .reason {
+  font-size: 11px; color: var(--text2); line-height: 1.5;
+}
+.hold-controls {
+  display: flex; gap: 6px; margin-top: 8px;
+}
+
+.cash-row {
+  display: flex; align-items: center; gap: 10px;
+}
+.cash-display {
+  font-size: 24px; font-weight: 800; color: var(--green);
+}
+
+/* Position recommendation */
+.pos-summary {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  margin-bottom: 10px;
+}
+.pos-stat {
+  background: rgba(88,166,255,0.05);
+  border: 1px solid rgba(88,166,255,0.2);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.pos-stat .label { font-size: 11px; color: var(--text2); }
+.pos-stat .val { font-size: 20px; font-weight: 800; margin: 4px 0; }
+.pos-bar {
+  display: flex; height: 12px;
+  border-radius: 6px; overflow: hidden;
+  background: var(--border);
+  margin: 8px 0;
+}
+.pos-bar .equity { background: var(--cyan); }
+.pos-bar .cash { background: var(--green); }
+
+/* Entry point block (in detail modal) */
+.entry-section {
+  background: rgba(63,185,80,0.05);
+  border: 1px solid rgba(63,185,80,0.2);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.entry-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  margin-top: 8px;
+}
+.entry-stat {
+  background: rgba(255,255,255,0.02);
+  padding: 8px;
+  border-radius: 6px;
+}
+.entry-stat .label { font-size: 10px; color: var(--text2); }
+.entry-stat .val { font-size: 13px; font-weight: 700; margin-top: 2px; }
+
+/* Add buttons in modal */
+.add-actions {
+  display: flex; gap: 6px; margin-top: 12px;
+}
+.add-actions .my-btn { flex: 1; }
+
 /* Leader cards */
 .leader-row {
   display: grid;
@@ -471,6 +664,26 @@ body {
     </div>
   </div>
 
+  <!-- Market Pulse (Put/Call Ratio) -->
+  <div class="pulse-card pulse-gray" id="pulseCard">
+    <div class="card-title"><span class="emoji">⚖️</span> マーケットパルス（P/C Ratio）</div>
+    <div class="pulse-grid">
+      <div class="pulse-block">
+        <div class="pulse-symbol">SPY</div>
+        <div class="pulse-value" id="pulseSpyVal">—</div>
+        <div class="pulse-label" id="pulseSpyLabel">未取得</div>
+      </div>
+      <div class="pulse-block">
+        <div class="pulse-symbol">QQQ</div>
+        <div class="pulse-value" id="pulseQqqVal">—</div>
+        <div class="pulse-label" id="pulseQqqLabel">未取得</div>
+      </div>
+    </div>
+    <div style="font-size:10px;color:var(--text2);margin-top:8px;line-height:1.5">
+      &lt;0.7 強気 ／ 0.7-0.79 やや強気 ／ 0.8-0.89 中立〜弱気 ／ 0.9-0.99 下落リスク高 ／ ≥1.0 危険水域
+    </div>
+  </div>
+
   <!-- Silver -->
   <div class="silver-box">
     <div class="silver-label">銀スポット価格</div>
@@ -534,6 +747,90 @@ body {
         <span style="color:var(--purple);font-weight:700">5.</span> ASX RSI77.5過熱注意
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ===== Page MY: Watchlist + Holdings + Cash ===== -->
+<div class="page" id="page-my">
+  <!-- Position Summary -->
+  <div class="my-section" id="posSummarySection">
+    <div class="my-section-title">
+      <span>💼</span> ポジションサマリ
+      <span class="count" id="posSummaryUpdated"></span>
+    </div>
+    <div class="pos-summary">
+      <div class="pos-stat">
+        <div class="label">現物評価額</div>
+        <div class="val" id="posEquityVal" style="color:var(--cyan)">$0</div>
+        <div class="label" id="posEquityPct">0%</div>
+      </div>
+      <div class="pos-stat">
+        <div class="label">キャッシュ</div>
+        <div class="val" id="posCashVal" style="color:var(--green)">$0</div>
+        <div class="label" id="posCashPct">0%</div>
+      </div>
+    </div>
+    <div class="pos-bar">
+      <div class="equity" id="posBarEquity" style="width:0%"></div>
+      <div class="cash" id="posBarCash" style="width:0%"></div>
+    </div>
+    <div id="posRecommendation" style="font-size:12px;color:var(--text2);line-height:1.6;margin-top:8px"></div>
+    <div id="posSellSuggestions" style="margin-top:8px"></div>
+  </div>
+
+  <!-- Holdings -->
+  <div class="my-section">
+    <div class="my-section-title">
+      <span>📋</span> 持ち株
+      <span class="count" id="holdingsCount">0件</span>
+    </div>
+    <div class="my-input-row">
+      <input class="my-input small" id="holdTickerIn" type="text" placeholder="ティッカー" maxlength="6" />
+      <input class="my-input small" id="holdSharesIn" type="number" placeholder="株数" min="1" />
+      <input class="my-input small" id="holdPriceIn" type="number" placeholder="単価$" step="0.01" min="0" />
+      <button class="my-btn" onclick="addHoldingFromForm()">＋</button>
+    </div>
+    <div class="my-input-row">
+      <input class="my-input" id="holdDateIn" type="date" />
+      <button class="my-btn ghost" onclick="document.getElementById('holdDateIn').valueAsDate = new Date()">今日</button>
+    </div>
+    <div id="holdingsList"></div>
+  </div>
+
+  <!-- Watchlist -->
+  <div class="my-section">
+    <div class="my-section-title">
+      <span>👁️</span> ウォッチリスト
+      <span class="count" id="watchlistCount">0銘柄</span>
+    </div>
+    <div class="my-input-row">
+      <input class="my-input" id="wlTickerIn" type="text" placeholder="ティッカー（例: NVDA）" maxlength="6" />
+      <button class="my-btn" onclick="addWatchlistFromForm()">＋ 追加</button>
+    </div>
+    <div id="watchlistChips" style="line-height: 1.9"></div>
+    <div style="margin-top:10px;display:flex;gap:6px">
+      <button class="my-btn ghost" onclick="resetWatchlist()" style="font-size:11px">初期16銘柄に戻す</button>
+      <button class="my-btn ghost" onclick="copyWatchlistAsConfig()" style="font-size:11px">config.py 形式でコピー</button>
+    </div>
+  </div>
+
+  <!-- Cash -->
+  <div class="my-section">
+    <div class="my-section-title">
+      <span>💵</span> キャッシュ残高
+    </div>
+    <div class="cash-row">
+      <input class="my-input" id="cashIn" type="number" placeholder="残高 (USD)" step="100" />
+      <button class="my-btn" onclick="saveCashFromForm()">保存</button>
+    </div>
+    <div style="font-size:11px;color:var(--text2);margin-top:6px">
+      現在: <span id="cashCurrent" class="cash-display">$0</span>
+    </div>
+  </div>
+
+  <div style="font-size:10px;color:var(--text2);text-align:center;padding:12px;line-height:1.6">
+    📦 データはこのブラウザの localStorage に保存されます。<br>
+    異なるデバイス間では同期されません。
   </div>
 </div>
 
@@ -646,6 +943,9 @@ body {
 <div class="tabs">
   <button class="tab active" onclick="switchPage('dash')">
     <span class="icon">📊</span>ダッシュ
+  </button>
+  <button class="tab" onclick="switchPage('my')">
+    <span class="icon">📁</span>マイ
   </button>
   <button class="tab" onclick="switchPage('signal')">
     <span class="icon">🎯</span>シグナル
@@ -1857,13 +2157,13 @@ const SCAN_DATA = {
     },
     "NVDA": {
       "ticker": "NVDA",
-      "name": "",
+      "name": "NVIDIA Corporation",
       "theme": "AIランキング上位",
-      "sector": "",
+      "sector": "Technology",
       "position": null,
       "rating": "",
       "signal": "AIコンセンサス上位",
-      "price": 0,
+      "price": 198.45,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -1905,13 +2205,13 @@ const SCAN_DATA = {
     },
     "TSM": {
       "ticker": "TSM",
-      "name": "",
+      "name": "Taiwan Semiconductor Manufactur",
       "theme": "AIランキング上位",
-      "sector": "",
+      "sector": "Technology",
       "position": null,
       "rating": "",
       "signal": "AIコンセンサス上位",
-      "price": 0,
+      "price": 397.67,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -1953,13 +2253,13 @@ const SCAN_DATA = {
     },
     "AVGO": {
       "ticker": "AVGO",
-      "name": "",
+      "name": "Broadcom Inc.",
       "theme": "AIランキング上位",
-      "sector": "",
+      "sector": "Technology",
       "position": null,
       "rating": "",
       "signal": "AIコンセンサス上位",
-      "price": 0,
+      "price": 421.28,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -2022,13 +2322,13 @@ const SCAN_DATA = {
     },
     "WPM": {
       "ticker": "WPM",
-      "name": "",
+      "name": "Wheaton Precious Metals Corp",
       "theme": "AIランキング上位",
-      "sector": "",
+      "sector": "Basic Materials",
       "position": null,
       "rating": "",
       "signal": "AIコンセンサス上位",
-      "price": 0,
+      "price": 125.84,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -3802,6 +4102,46 @@ const SCAN_DATA = {
         "in_watchlist": false
       }
     ]
+  },
+  "market_pulse": {
+    "updated_at": "2026-05-04T00:49:38",
+    "spy": {
+      "symbol": "SPY",
+      "expiries_used": 4,
+      "put_volume": 794446,
+      "call_volume": 657165,
+      "put_oi": 220214,
+      "call_oi": 125058,
+      "pcr_volume": 1.209,
+      "pcr_oi": 1.761
+    },
+    "qqq": {
+      "symbol": "QQQ",
+      "expiries_used": 4,
+      "put_volume": 442453,
+      "call_volume": 209470,
+      "put_oi": 134759,
+      "call_oi": 127190,
+      "pcr_volume": 2.112,
+      "pcr_oi": 1.06
+    },
+    "spy_classification": {
+      "level": "danger",
+      "label": "危険水域 — これじゃダメじゃん",
+      "color": "red"
+    },
+    "qqq_classification": {
+      "level": "danger",
+      "label": "危険水域 — これじゃダメじゃん",
+      "color": "red"
+    },
+    "thresholds": {
+      "bullish": "< 0.7",
+      "mildly_bullish": "0.7 - 0.79",
+      "neutral_bearish": "0.8 - 0.89",
+      "high_risk": "0.9 - 0.99",
+      "danger": ">= 1.0"
+    }
   }
 };
 
@@ -3938,6 +4278,12 @@ function render() {
   // Leaders
   renderLeaders(d);
 
+  // Market Pulse (P/C Ratio)
+  renderMarketPulse(d);
+
+  // My tab (watchlist + holdings + cash)
+  renderMyTab();
+
   // Update time
   document.getElementById('updateTime').textContent = '最終更新: ' + d.scan_date;
 }
@@ -3981,6 +4327,366 @@ function renderLeaders(d) {
       </div>
     </div>`;
   }).join('');
+}
+
+// ============================================================
+// LocalStorage helpers + Watchlist / Holdings / Cash management
+// ============================================================
+const LS_KEYS = {
+  watchlist: 'tachikoma.watchlist',
+  holdings: 'tachikoma.holdings',
+  cash: 'tachikoma.cash',
+};
+
+const SEED_WATCHLIST = [
+  'FORM','KEYS','ASX','ATEYY','AEHR','COHR','ROIV','TVTX',
+  'AG','CDE','MP','FCX','ERO','NVT','SLB','ROKU'
+];
+
+function lsGet(key, fallback) {
+  try {
+    const v = localStorage.getItem(key);
+    return v == null ? fallback : JSON.parse(v);
+  } catch (e) {
+    return fallback;
+  }
+}
+function lsSet(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); }
+  catch (e) { console.warn('localStorage set failed', e); }
+}
+
+function getWatchlist() {
+  let wl = lsGet(LS_KEYS.watchlist, null);
+  if (wl == null) {
+    wl = [...SEED_WATCHLIST];
+    lsSet(LS_KEYS.watchlist, wl);
+  }
+  return wl;
+}
+function setWatchlist(wl) {
+  lsSet(LS_KEYS.watchlist, wl);
+  renderMyTab();
+}
+function addToWatchlist(ticker) {
+  ticker = (ticker || '').toUpperCase().trim();
+  if (!ticker || !/^[A-Z][A-Z0-9.\-]*$/.test(ticker)) return false;
+  const wl = getWatchlist();
+  if (wl.includes(ticker)) return false;
+  wl.push(ticker);
+  setWatchlist(wl);
+  return true;
+}
+function removeFromWatchlist(ticker) {
+  const wl = getWatchlist().filter(t => t !== ticker);
+  setWatchlist(wl);
+}
+function resetWatchlist() {
+  if (!confirm('ウォッチリストを初期16銘柄に戻します。よろしいですか？')) return;
+  setWatchlist([...SEED_WATCHLIST]);
+}
+function copyWatchlistAsConfig() {
+  const wl = getWatchlist();
+  const lines = wl.map(t => `    "${t}":  {"name": "...", "sector": "...", "theme": "...", "position": None},`);
+  const text = 'WATCHLIST = {\n' + lines.join('\n') + '\n}';
+  navigator.clipboard.writeText(text).then(
+    () => alert('config.py 形式でクリップボードにコピーしました。'),
+    () => alert('コピーに失敗しました。手動で選択してください:\n\n' + text)
+  );
+}
+
+function getHoldings() { return lsGet(LS_KEYS.holdings, []); }
+function setHoldings(hs) { lsSet(LS_KEYS.holdings, hs); renderMyTab(); }
+function addHolding(h) {
+  const hs = getHoldings();
+  hs.push(h);
+  setHoldings(hs);
+}
+function removeHolding(idx) {
+  if (!confirm(`${getHoldings()[idx]?.ticker} を持ち株から削除します。よろしいですか？`)) return;
+  const hs = getHoldings();
+  hs.splice(idx, 1);
+  setHoldings(hs);
+}
+function getCash() { return Number(lsGet(LS_KEYS.cash, 0)) || 0; }
+function setCash(v) {
+  const n = Number(v) || 0;
+  lsSet(LS_KEYS.cash, n);
+  renderMyTab();
+}
+
+function addWatchlistFromForm() {
+  const inp = document.getElementById('wlTickerIn');
+  const v = inp.value;
+  if (addToWatchlist(v)) {
+    inp.value = '';
+  } else {
+    alert('追加できませんでした（無効なティッカー、または既に登録済み）');
+  }
+}
+
+function addHoldingFromForm() {
+  const t = document.getElementById('holdTickerIn').value.toUpperCase().trim();
+  const s = parseInt(document.getElementById('holdSharesIn').value, 10);
+  const p = parseFloat(document.getElementById('holdPriceIn').value);
+  const d = document.getElementById('holdDateIn').value || new Date().toISOString().slice(0, 10);
+  if (!t || !s || !p) { alert('ティッカー / 株数 / 単価 をすべて入力してください'); return; }
+  if (s < 1 || p <= 0) { alert('株数と単価は正の値を入れてください'); return; }
+  addHolding({ ticker: t, shares: s, purchase_price: p, purchase_date: d });
+  document.getElementById('holdTickerIn').value = '';
+  document.getElementById('holdSharesIn').value = '';
+  document.getElementById('holdPriceIn').value = '';
+}
+
+function saveCashFromForm() {
+  const v = parseFloat(document.getElementById('cashIn').value);
+  if (isNaN(v) || v < 0) { alert('正の数値を入力してください'); return; }
+  setCash(v);
+  document.getElementById('cashIn').value = '';
+}
+
+// ============================================================
+// Daily action engine — per-holding recommendation
+// ============================================================
+function _safeFloat(s) {
+  if (s == null) return null;
+  const n = parseFloat(String(s).replace(/[^\d.\-]/g, ''));
+  return isNaN(n) ? null : n;
+}
+
+function evaluateHolding(h) {
+  const d = (SCAN_DATA.details || {})[h.ticker];
+  const currentPrice = d && d.price > 0 ? d.price : null;
+  const cost = h.purchase_price;
+  const shares = h.shares;
+  const value = (currentPrice || 0) * shares;
+  const profit = currentPrice != null ? (currentPrice - cost) * shares : null;
+  const profitPct = currentPrice != null ? ((currentPrice - cost) / cost) * 100 : null;
+
+  // Default action
+  let action = { tier: 'unknown', label: '価格未取得', cls: 'act-hold', reasons: ['SCAN_DATA に詳細データなし。WATCHLIST に追加して翌日のスキャンで取得してください'] };
+
+  if (currentPrice == null) return { d, currentPrice, value, profit, profitPct, action };
+
+  const reasons = [];
+  let tier = 'hold';
+  let label = '🟢 保有継続';
+  let cls = 'act-hold';
+
+  // 8% rule (Minervini Ch.8 Q8-4)
+  if (profitPct != null && profitPct <= -8) {
+    tier = 'stop';
+    label = '🔴 損切実行';
+    cls = 'act-stop';
+    reasons.push(`Minervini 8%ルール抵触（含み損 ${profitPct.toFixed(1)}%）。即時撤退で損失を限定（Ch.8 Q8-4）`);
+  }
+  // 21MA stop loss
+  if (d && d.stop_loss_21ma) {
+    const sl21 = _safeFloat(d.stop_loss_21ma);
+    if (sl21 && currentPrice < sl21) {
+      tier = 'stop';
+      label = '🔴 損切実行';
+      cls = 'act-stop';
+      reasons.push(`21MAサポート割れ（現値 $${currentPrice.toFixed(2)} < 21MA $${sl21.toFixed(2)}）。Ryan流の手仕舞いシグナル（Ch.9 Q9-21）`);
+    }
+  }
+  // 100% gain (CDE 恩株化 etc.)
+  if (profitPct != null && profitPct >= 100 && tier === 'hold') {
+    tier = 'take';
+    label = '🟡 半分利確（恩株化）';
+    cls = 'act-take';
+    reasons.push(`含み益 +${profitPct.toFixed(0)}%（リスクの2倍以上）。半分利確 → 残りはステージ3割れまで保有（Ch.9 Q9-21、恩株ルール）`);
+  }
+  // RSI overheat
+  const rsi = _safeFloat(d && d.rsi);
+  if (rsi != null && rsi > 80 && tier === 'hold') {
+    tier = 'trim';
+    label = '🟠 一部利確（過熱）';
+    cls = 'act-trim';
+    reasons.push(`RSI ${rsi.toFixed(1)} で過熱。climax-run警戒、1/3〜半分の部分利確検討（Ch.9 Q9-15）`);
+  }
+  // Earnings within 3 days
+  if (d && d.earnings && d.earnings.days != null && d.earnings.days <= 3 && tier !== 'stop') {
+    tier = 'earn';
+    label = `🟣 決算${d.earnings.days}日後 — 判断要`;
+    cls = 'act-earn';
+    reasons.push(`決算 ${d.earnings.date} 接近（${d.earnings.days}日後）。Zanger流は決算前日に全手仕舞い、Minerviniは大ポジ・含み損銘柄は撤退（Ch.9 Q9-18）`);
+  }
+  // Signal change to WATCH/HOLD
+  if (d && (d.signal === 'ウォッチ' || d.signal === '様子見' || d.signal === '見送り') && tier === 'hold') {
+    tier = 'trim';
+    label = '🟠 シグナル悪化 — 縮小検討';
+    cls = 'act-trim';
+    reasons.push(`シグナルが買いから「${d.signal}」に変化。半分縮小し、ステージ崩壊なら全撤退（Ch.9 Q9-12）`);
+  }
+  // Stage 2 ok
+  if (tier === 'hold') {
+    if (d && d.signal === '買いシグナル') {
+      reasons.push('Stage 2 継続中。ストップロス維持しつつホールド');
+    } else if (rsi != null) {
+      reasons.push(`RSI ${rsi.toFixed(1)} 健全レンジ。シグナル変化を監視`);
+    } else {
+      reasons.push('現状維持。ストップロスのチェックを推奨');
+    }
+  }
+
+  // Special: CDE flagship reminder
+  if (h.ticker === 'CDE' && currentPrice >= 16.72) {
+    reasons.unshift(`💎 CDE 恩株化目標 $16.72 到達（現値 $${currentPrice.toFixed(2)}）。${shares}株のうち半分（${Math.floor(shares/2)}株）利確で残りはコストゼロ化`);
+  }
+
+  return { d, currentPrice, value, profit, profitPct, action: { tier, label, cls, reasons } };
+}
+
+function renderMyTab() {
+  // Watchlist
+  const wl = getWatchlist();
+  document.getElementById('watchlistCount').textContent = `${wl.length}銘柄`;
+  document.getElementById('watchlistChips').innerHTML = wl.length === 0
+    ? '<span style="color:var(--text2);font-size:12px">空。ティッカーを入力して追加してください</span>'
+    : wl.map(t => `<span class="wl-chip" onclick="openDetail('${t}')">${t}<span class="x" onclick="event.stopPropagation();removeFromWatchlist('${t}')">×</span></span>`).join('');
+
+  // Cash
+  const cash = getCash();
+  document.getElementById('cashCurrent').textContent = '$' + cash.toLocaleString();
+
+  // Holdings + daily action
+  const holdings = getHoldings();
+  document.getElementById('holdingsCount').textContent = `${holdings.length}件`;
+
+  const evaluations = holdings.map((h, i) => ({ idx: i, h, ev: evaluateHolding(h) }));
+
+  document.getElementById('holdingsList').innerHTML = holdings.length === 0
+    ? '<div style="color:var(--text2);font-size:12px;text-align:center;padding:20px">持ち株なし。上のフォームから追加してください</div>'
+    : evaluations.map(({ idx, h, ev }) => {
+      const profitColor = ev.profitPct == null ? 'var(--text2)' : ev.profitPct >= 0 ? 'var(--green)' : 'var(--red)';
+      const reasonsHtml = ev.action.reasons.map(r => `<div>・ ${r}</div>`).join('');
+      return `<div class="hold-row">
+        <div class="hold-head">
+          <div class="hold-ticker" onclick="openDetail('${h.ticker}')">${h.ticker}</div>
+          <div class="hold-shares">${h.shares}株 @ $${h.purchase_price.toFixed(2)} (${h.purchase_date})</div>
+        </div>
+        <div class="hold-grid">
+          <div class="hold-stat">
+            <div class="label">現在値</div>
+            <div class="val">${ev.currentPrice ? '$' + ev.currentPrice.toFixed(2) : '—'}</div>
+          </div>
+          <div class="hold-stat">
+            <div class="label">評価額</div>
+            <div class="val">$${ev.value.toLocaleString(undefined, {maximumFractionDigits: 0})}</div>
+          </div>
+          <div class="hold-stat">
+            <div class="label">損益</div>
+            <div class="val" style="color:${profitColor}">
+              ${ev.profitPct != null ? (ev.profitPct >= 0 ? '+' : '') + ev.profitPct.toFixed(1) + '%' : '—'}
+            </div>
+          </div>
+        </div>
+        <div class="hold-action ${ev.action.cls}">
+          <div class="head">${ev.action.label}</div>
+          <div class="reason">${reasonsHtml}</div>
+        </div>
+        <div class="hold-controls">
+          <button class="my-btn ghost" onclick="openDetail('${h.ticker}')" style="font-size:11px">詳細</button>
+          <button class="my-btn ghost danger" onclick="removeHolding(${idx})" style="font-size:11px">削除</button>
+        </div>
+      </div>`;
+    }).join('');
+
+  // Position summary + recommendation
+  renderPositionSummary(evaluations, cash);
+}
+
+function renderPositionSummary(evaluations, cash) {
+  const equity = evaluations.reduce((s, e) => s + e.ev.value, 0);
+  const total = equity + cash;
+  const eqPct = total > 0 ? (equity / total) * 100 : 0;
+  const cashPct = total > 0 ? (cash / total) * 100 : 0;
+
+  document.getElementById('posEquityVal').textContent = '$' + equity.toLocaleString(undefined, {maximumFractionDigits: 0});
+  document.getElementById('posCashVal').textContent = '$' + cash.toLocaleString();
+  document.getElementById('posEquityPct').textContent = eqPct.toFixed(0) + '%';
+  document.getElementById('posCashPct').textContent = cashPct.toFixed(0) + '%';
+  document.getElementById('posBarEquity').style.width = eqPct + '%';
+  document.getElementById('posBarCash').style.width = cashPct + '%';
+  document.getElementById('posSummaryUpdated').textContent = total > 0 ? `合計 $${total.toLocaleString(undefined, {maximumFractionDigits: 0})}` : '';
+
+  // Recommendation
+  const mh = SCAN_DATA.market_health;
+  const bothOn = mh && mh['S&P500'] && mh['S&P500'].above_21MA && mh['Russell2000'] && mh['Russell2000'].above_21MA;
+  const pulse = SCAN_DATA.market_pulse;
+  const pcr = pulse && pulse.spy ? pulse.spy.pcr_volume : null;
+
+  let recTarget = bothOn ? '70-90%' : '30-50%';
+  let regimeNote = bothOn ? '地合い良好（S&P500/Russell2000 共に21MA上、浅い床モード）' : '地合い悪化（21MA割れ、深い床モード）';
+  let pcrNote = '';
+  if (pcr != null) {
+    if (pcr < 0.7) { pcrNote = `P/C ${pcr.toFixed(2)} は強気。アクセル踏み目安 80-100%`; recTarget = '80-100%'; }
+    else if (pcr < 0.8) { pcrNote = `P/C ${pcr.toFixed(2)} はやや強気。${recTarget} を目安`; }
+    else if (pcr < 0.9) { pcrNote = `P/C ${pcr.toFixed(2)} は中立〜弱気。${recTarget} で慎重に`; }
+    else if (pcr < 1.0) { pcrNote = `P/C ${pcr.toFixed(2)} は下落リスク高。現物比率を 40-60% に下げる検討`; recTarget = '40-60%'; }
+    else { pcrNote = `P/C ${pcr.toFixed(2)} は危険水域（これじゃダメじゃん）。現物比率を 20-40% まで下げ、防御モード`; recTarget = '20-40%'; }
+  }
+
+  let evalText;
+  const eqMin = parseInt(recTarget.split('-')[0], 10);
+  const eqMax = parseInt(recTarget.split('-')[1], 10);
+  if (total === 0) {
+    evalText = '<span style="color:var(--text2)">持ち株とキャッシュを入力すると推奨ポジションが計算されます</span>';
+  } else if (eqPct < eqMin) {
+    evalText = `<span style="color:var(--cyan)">⬆️ 現物比率 ${eqPct.toFixed(0)}% は推奨下限（${eqMin}%）を下回っています。新規エントリー余力あり</span>`;
+  } else if (eqPct > eqMax) {
+    evalText = `<span style="color:var(--orange)">⬇️ 現物比率 ${eqPct.toFixed(0)}% は推奨上限（${eqMax}%）を超えています。一部利確またはキャッシュ化検討</span>`;
+  } else {
+    evalText = `<span style="color:var(--green)">✅ 現物比率 ${eqPct.toFixed(0)}% は推奨レンジ（${recTarget}）内です</span>`;
+  }
+
+  document.getElementById('posRecommendation').innerHTML = `
+    <div>📊 <strong>地合い:</strong> ${regimeNote}</div>
+    <div style="margin-top:4px">⚖️ <strong>パルス:</strong> ${pcrNote || 'P/C データ未取得'}</div>
+    <div style="margin-top:4px">🎯 <strong>推奨レンジ:</strong> 現物 ${recTarget} / キャッシュ ${100-eqMax}-${100-eqMin}%</div>
+    <div style="margin-top:6px">${evalText}</div>
+  `;
+
+  // Sell suggestions: holdings with stop/trim/earn/profit-target action
+  const flagged = evaluations.filter(e => ['stop', 'trim', 'take', 'earn'].includes(e.ev.action.tier));
+  if (flagged.length > 0 && total > 0) {
+    document.getElementById('posSellSuggestions').innerHTML = `
+      <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--border)">
+        <div style="font-size:12px;color:var(--orange);font-weight:600;margin-bottom:4px">🔔 売却・縮小検討対象</div>
+        ${flagged.map(({ h, ev }) => `<div style="font-size:11px;color:var(--text2);line-height:1.5">
+          ・ <strong style="color:var(--text)">${h.ticker}</strong> ${ev.action.label}
+        </div>`).join('')}
+      </div>
+    `;
+  } else {
+    document.getElementById('posSellSuggestions').innerHTML = '';
+  }
+}
+
+// ============================================================
+// Market Pulse renderer
+// ============================================================
+function renderMarketPulse(d) {
+  const card = document.getElementById('pulseCard');
+  const pulse = d.market_pulse;
+  if (!pulse) {
+    card.className = 'pulse-card pulse-gray';
+    document.getElementById('pulseSpyVal').textContent = '—';
+    document.getElementById('pulseSpyLabel').textContent = '未取得（fetch_market_pulse.py を実行）';
+    document.getElementById('pulseQqqVal').textContent = '—';
+    document.getElementById('pulseQqqLabel').textContent = '未取得';
+    return;
+  }
+  const spy = pulse.spy, qqq = pulse.qqq;
+  const sCls = pulse.spy_classification, qCls = pulse.qqq_classification;
+  // Card border color follows SPY (broader market signal)
+  card.className = 'pulse-card ' + (sCls ? 'pulse-' + sCls.color : 'pulse-gray');
+
+  document.getElementById('pulseSpyVal').textContent = spy && spy.pcr_volume != null ? spy.pcr_volume.toFixed(2) : '—';
+  document.getElementById('pulseSpyLabel').textContent = sCls ? sCls.label : '—';
+  document.getElementById('pulseQqqVal').textContent = qqq && qqq.pcr_volume != null ? qqq.pcr_volume.toFixed(2) : '—';
+  document.getElementById('pulseQqqLabel').textContent = qCls ? qCls.label : '—';
 }
 
 // ============================================================
@@ -4266,6 +4972,11 @@ function renderDetail(d) {
     `;
   }
 
+  // エントリーポイント（買い方推奨、価格があるすべての銘柄）
+  if (d.price && d.price > 0) {
+    html += renderEntryPoint(d);
+  }
+
   // 狙撃の掟ガイド
   html += `
     <div class="detail-section" style="border-color:var(--cyan)">
@@ -4276,7 +4987,128 @@ function renderDetail(d) {
     </div>
   `;
 
+  // 追加ボタン (Watchlist + 持株)
+  const inWL = getWatchlist().includes(d.ticker);
+  html += `
+    <div class="add-actions">
+      <button class="my-btn ${inWL ? 'ghost' : ''}" onclick="event.stopPropagation();handleAddWatchClick('${d.ticker}')">${inWL ? '✓ ウォッチ済み' : '+ ウォッチに追加'}</button>
+      <button class="my-btn" style="background:var(--green);color:white" onclick="event.stopPropagation();handleAddHoldingClick('${d.ticker}', ${d.price || 0})">+ 持株に追加</button>
+    </div>
+  `;
+
   return html;
+}
+
+function renderEntryPoint(d) {
+  const price = d.price;
+  // ピボット: 直近5日のレンジ収縮ゾーン上端を推定（leader_details.contraction_ratio）
+  // 簡易計算: 現値を pivot の 0-3% 内とみなし、推奨買値帯を提示
+  const pctTo52 = (d.leader_details && d.leader_details.pct_to_52w_high) || null;
+
+  // Stop-loss
+  const sl21 = _safeFloat(d.stop_loss_21ma) || price * 0.96;
+  const sl8 = _safeFloat(d.stop_loss_8pct) || price * 0.92;
+  const stopBest = Math.max(sl21, sl8);  // 高い方（=損失小さい方）が安全
+  const riskPct = ((price - stopBest) / price) * 100;
+  const riskUSD = price - stopBest;
+
+  // Buy zone
+  const lowBuy = price;
+  const highBuy = price * 1.005;  // pivot + 0.5% 以内
+  const maxChase = price * 1.05;  // 5%超は追わない (Ch.7 Q7-11)
+
+  // Profit targets
+  const target2x = price + (riskUSD * 2);
+  const target6x = price + (riskUSD * 6);
+
+  const inPivotZone = pctTo52 != null && pctTo52 >= 0.95;
+  const zoneNote = inPivotZone
+    ? '<span style="color:var(--green)">✅ 52週高値95%以上のピボットゾーン内</span>'
+    : pctTo52 != null
+      ? `<span style="color:var(--orange)">⚠️ 52週高値の${(pctTo52*100).toFixed(0)}%（ピボットゾーン外）— ${pctTo52 < 0.85 ? '深い押し目から再上昇待ち' : 'ピボット接近を待つ'}</span>`
+      : '';
+
+  return `
+    <div class="entry-section">
+      <div class="detail-section-title" style="color:var(--green);margin-bottom:8px">📍 エントリーポイント（推奨買い方）</div>
+      <div class="entry-grid">
+        <div class="entry-stat">
+          <div class="label">推奨買値帯</div>
+          <div class="val" style="color:var(--cyan)">$${lowBuy.toFixed(2)} - $${highBuy.toFixed(2)}</div>
+        </div>
+        <div class="entry-stat">
+          <div class="label">追わない上限</div>
+          <div class="val" style="color:var(--orange)">$${maxChase.toFixed(2)}</div>
+        </div>
+        <div class="entry-stat">
+          <div class="label">推奨損切</div>
+          <div class="val" style="color:var(--red)">$${stopBest.toFixed(2)}</div>
+        </div>
+        <div class="entry-stat">
+          <div class="label">リスク</div>
+          <div class="val">${riskPct.toFixed(1)}% / $${riskUSD.toFixed(2)}</div>
+        </div>
+        <div class="entry-stat">
+          <div class="label">利益目標 (2R)</div>
+          <div class="val" style="color:var(--green)">$${target2x.toFixed(2)}</div>
+        </div>
+        <div class="entry-stat">
+          <div class="label">理想目標 (6R)</div>
+          <div class="val" style="color:var(--gold)">$${target6x.toFixed(2)}</div>
+        </div>
+      </div>
+      ${zoneNote ? `<div style="font-size:11px;margin-top:8px">${zoneNote}</div>` : ''}
+      <div style="font-size:11px;color:var(--text2);margin-top:8px;line-height:1.6">
+        💡 <strong style="color:var(--text)">買い方</strong>:
+        ピボット +1¢〜30¢で <strong>初弾1/3</strong> エントリー → ${stopBest.toFixed(2)}を即損切設定 →
+        21MA接近時に <strong>残り2/3</strong> を打診 → 含み益+100% で半分利確（恩株化）
+      </div>
+    </div>
+  `;
+}
+
+// 追加ボタンのクリックハンドラ
+function handleAddWatchClick(ticker) {
+  if (getWatchlist().includes(ticker)) {
+    if (confirm(`${ticker} はウォッチ済みです。削除しますか？`)) {
+      removeFromWatchlist(ticker);
+      closeDetail();
+    }
+    return;
+  }
+  if (addToWatchlist(ticker)) {
+    closeDetail();
+    setTimeout(() => switchPageProgrammatic('my'), 100);
+  }
+}
+
+function handleAddHoldingClick(ticker, defaultPrice) {
+  const sharesStr = prompt(`${ticker} の株数を入力してください:`);
+  if (!sharesStr) return;
+  const shares = parseInt(sharesStr, 10);
+  if (!shares || shares < 1) { alert('株数は1以上の整数を入れてください'); return; }
+  const priceStr = prompt(`${ticker} の購入単価を入力してください (デフォルト: 現在値 $${defaultPrice}):`, defaultPrice);
+  if (!priceStr) return;
+  const price = parseFloat(priceStr);
+  if (!price || price <= 0) { alert('単価は正の数値を入れてください'); return; }
+  const dateStr = prompt('購入日を入力してください (YYYY-MM-DD、空欄で今日):', new Date().toISOString().slice(0, 10));
+  const date = dateStr || new Date().toISOString().slice(0, 10);
+  addHolding({ ticker, shares, purchase_price: price, purchase_date: date });
+  closeDetail();
+  setTimeout(() => switchPageProgrammatic('my'), 100);
+}
+
+function switchPageProgrammatic(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  const page = document.getElementById('page-' + name);
+  if (page) page.classList.add('active');
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(t => {
+    if (t.getAttribute('onclick') && t.getAttribute('onclick').includes(`'${name}'`)) {
+      t.classList.add('active');
+    }
+  });
 }
 
 // ============================================================
