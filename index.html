@@ -460,6 +460,66 @@ body {
 }
 .add-actions .my-btn { flex: 1; }
 
+/* Theme rotation panel */
+.rotation-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+.rotation-section { margin-bottom: 14px; }
+.rotation-section:last-child { margin-bottom: 0; }
+.rotation-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.rotation-title .desc { font-size: 10px; color: var(--text2); font-weight: 400; margin-left: auto; }
+.rotation-row {
+  display: grid;
+  grid-template-columns: 22px 24px 1fr auto auto;
+  gap: 8px;
+  padding: 6px 4px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  align-items: center;
+  cursor: pointer;
+}
+.rotation-row:last-child { border-bottom: none; }
+.rotation-rank {
+  font-size: 11px;
+  color: var(--text2);
+  text-align: center;
+  font-weight: 700;
+}
+.rotation-icon { font-size: 18px; line-height: 1; text-align: center; }
+.rotation-name { font-size: 12px; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rotation-name .top-tic { font-size: 10px; color: var(--text2); font-weight: 400; }
+.rotation-rank-shift {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text2);
+  white-space: nowrap;
+}
+.rotation-rank-shift.up { color: var(--green); }
+.rotation-rank-shift.down { color: var(--red); }
+.rotation-ret {
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 56px;
+  text-align: right;
+}
+.rotation-empty {
+  font-size: 11px; color: var(--text2);
+  padding: 8px;
+  text-align: center;
+  font-style: italic;
+}
+
 /* Themes tab */
 .theme-period {
   display: flex; gap: 4px;
@@ -1049,6 +1109,35 @@ body {
     </div>
   </div>
 
+  <!-- 資金フロー分析（ローテーション） -->
+  <div class="rotation-panel" id="rotationPanel">
+    <div style="font-size:14px;font-weight:700;margin-bottom:6px">📊 資金フロー分析（6M→1Mのランク変動）</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.5;margin-bottom:10px">
+      テーマ間のローテーションをランキング順位の変動で測定。Δ＝6Mランクから1Mランクまで何位上昇したか。
+    </div>
+
+    <div class="rotation-section">
+      <div class="rotation-title" style="color:var(--green)">🚀 資金流入加速 <span class="desc">(新興テーマへ資金シフト)</span></div>
+      <div id="rotInflow"></div>
+    </div>
+
+    <div class="rotation-section">
+      <div class="rotation-title" style="color:var(--gold)">🔥 継続強気 <span class="desc">(1M&6M共に上位1/3)</span></div>
+      <div id="rotPersistent"></div>
+    </div>
+
+    <div class="rotation-section">
+      <div class="rotation-title" style="color:var(--orange)">⚠️ 資金流出加速 <span class="desc">(かつての主役が失速)</span></div>
+      <div id="rotOutflow"></div>
+    </div>
+
+    <div class="rotation-section">
+      <div class="rotation-title" style="color:var(--red)">💀 資金消失 <span class="desc">(1M&6M陰性+vol×0.85未満)</span></div>
+      <div id="rotVanishing"></div>
+    </div>
+  </div>
+
+  <div style="font-size:14px;font-weight:700;margin:14px 4px 8px">🏷️ テーマ別ランキング</div>
   <div class="theme-period">
     <button id="themeP1m" onclick="setThemePeriod('1m')">1ヶ月</button>
     <button id="themeP3m" class="active" onclick="setThemePeriod('3m')">3ヶ月</button>
@@ -4376,42 +4465,42 @@ const SCAN_DATA = {
   },
   "themes": {
     "scan_date": "20260504",
-    "updated_at": "2026-05-04T01:41:05",
-    "theme_count": 15,
-    "unique_tickers_analyzed": 83,
-    "duration_sec": 2,
+    "updated_at": "2026-05-04T01:55:32",
+    "theme_count": 34,
+    "unique_tickers_analyzed": 134,
+    "duration_sec": 5,
     "themes": [
       {
-        "id": "semi_test_cpo",
-        "name": "半導体テスト・パッケージング(CPO)",
+        "id": "semi_test",
+        "name": "半導体テスト・プローブ",
         "icon": "🔬",
-        "description": "AI HBM/プローブカード/光学接続の裏方銘柄",
-        "member_count": 8,
+        "description": "FORM/AEHRなどのテスト装置・プローブカード",
+        "member_count": 5,
         "tickers_failed": [],
-        "avg_return_1m": 42.65,
-        "avg_return_3m": 80.06,
-        "avg_return_6m": 129.67,
-        "avg_vol_accel": 1.3,
-        "winners_1m": 8,
-        "winners_3m": 8,
-        "winners_6m": 8,
-        "concentration_1m": 0.094,
-        "concentration_3m": 0.029,
-        "concentration_6m": 0.504,
+        "avg_return_1m": 48.35,
+        "avg_return_3m": 101.82,
+        "avg_return_6m": 150.36,
+        "avg_vol_accel": 1.39,
+        "winners_1m": 5,
+        "winners_3m": 5,
+        "winners_6m": 5,
+        "concentration_1m": 0.0,
+        "concentration_3m": 0.092,
+        "concentration_6m": 0.577,
         "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
+          "level": "buying",
+          "label": "🟢 機関買い増し",
+          "color": "green"
         },
         "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
+          "level": "buying",
+          "label": "🟢 機関買い増し",
+          "color": "green"
         },
         "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
+          "level": "buying",
+          "label": "🟢 機関買い増し",
+          "color": "green"
         },
         "top_ticker": "AEHR",
         "top_return_6m": 244.7,
@@ -4432,24 +4521,6 @@ const SCAN_DATA = {
             "return_3m": 94.88,
             "return_6m": 187.87,
             "vol_accel": 1.39,
-            "above_200ma": null
-          },
-          {
-            "ticker": "COHR",
-            "price": 329.5,
-            "return_1m": 32.97,
-            "return_3m": 55.29,
-            "return_6m": 138.66,
-            "vol_accel": 1.28,
-            "above_200ma": null
-          },
-          {
-            "ticker": "ASX",
-            "price": 31.59,
-            "return_1m": 40.52,
-            "return_3m": 66.44,
-            "return_6m": 118.92,
-            "vol_accel": 0.93,
             "above_200ma": null
           },
           {
@@ -4478,23 +4549,175 @@ const SCAN_DATA = {
             "return_6m": 98.82,
             "vol_accel": 1.08,
             "above_200ma": null
-          },
-          {
-            "ticker": "ATEYY",
-            "price": 181.37,
-            "return_1m": 25.95,
-            "return_3m": 9.64,
-            "return_6m": 27.94,
-            "vol_accel": 1.24,
-            "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 3,
+        "rank_3m": 1,
+        "rank_6m": 2,
+        "rotation_6m_to_1m": -1,
+        "rotation_3m_to_1m": -2
       },
       {
-        "id": "ai_semiconductor",
-        "name": "AI半導体（GPU・カスタムチップ）",
+        "id": "optical_coherent",
+        "name": "光通信・コヒーレント",
+        "icon": "🌈",
+        "description": "AIデータセンター内の光配線、コヒーレント光学",
+        "member_count": 5,
+        "tickers_failed": [],
+        "avg_return_1m": 31.29,
+        "avg_return_3m": 75.3,
+        "avg_return_6m": 146.11,
+        "avg_vol_accel": 1.07,
+        "winners_1m": 5,
+        "winners_3m": 5,
+        "winners_6m": 5,
+        "concentration_1m": 0.833,
+        "concentration_3m": 0.332,
+        "concentration_6m": 0.112,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "LITE",
+        "top_return_6m": 343.31,
+        "members": [
+          {
+            "ticker": "LITE",
+            "price": 949.93,
+            "return_1m": 24.23,
+            "return_3m": 142.43,
+            "return_6m": 343.31,
+            "vol_accel": 1.24,
+            "above_200ma": null
+          },
+          {
+            "ticker": "CIEN",
+            "price": 535.29,
+            "return_1m": 28.86,
+            "return_3m": 112.58,
+            "return_6m": 182.82,
+            "vol_accel": 0.86,
+            "above_200ma": null
+          },
+          {
+            "ticker": "COHR",
+            "price": 329.5,
+            "return_1m": 32.97,
+            "return_3m": 55.29,
+            "return_6m": 138.66,
+            "vol_accel": 1.28,
+            "above_200ma": null
+          },
+          {
+            "ticker": "FN",
+            "price": 706.53,
+            "return_1m": 32.07,
+            "return_3m": 44.35,
+            "return_6m": 59.16,
+            "vol_accel": 1.05,
+            "above_200ma": null
+          },
+          {
+            "ticker": "ANET",
+            "price": 172.7,
+            "return_1m": 38.33,
+            "return_3m": 21.84,
+            "return_6m": 6.59,
+            "vol_accel": 0.94,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 8,
+        "rank_3m": 2,
+        "rank_6m": 3,
+        "rotation_6m_to_1m": -5,
+        "rotation_3m_to_1m": -6
+      },
+      {
+        "id": "memory_dram_hbm",
+        "name": "メモリ・DRAM/HBM",
+        "icon": "💾",
+        "description": "AI需要の波及先。HBMはAI半導体の連動株",
+        "member_count": 3,
+        "tickers_failed": [],
+        "avg_return_1m": 54.71,
+        "avg_return_3m": 60.63,
+        "avg_return_6m": 173.31,
+        "avg_vol_accel": 1.07,
+        "winners_1m": 3,
+        "winners_3m": 3,
+        "winners_6m": 3,
+        "concentration_1m": 0.729,
+        "concentration_3m": 0.57,
+        "concentration_6m": 0.809,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "WDC",
+        "top_return_6m": 205.61,
+        "members": [
+          {
+            "ticker": "WDC",
+            "price": 431.52,
+            "return_1m": 44.94,
+            "return_3m": 72.53,
+            "return_6m": 205.61,
+            "vol_accel": 0.84,
+            "above_200ma": null
+          },
+          {
+            "ticker": "STX",
+            "price": 726.93,
+            "return_1m": 71.8,
+            "return_3m": 78.62,
+            "return_6m": 174.87,
+            "vol_accel": 1.08,
+            "above_200ma": null
+          },
+          {
+            "ticker": "MU",
+            "price": 542.21,
+            "return_1m": 47.4,
+            "return_3m": 30.75,
+            "return_6m": 139.45,
+            "vol_accel": 1.29,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 2,
+        "rank_3m": 3,
+        "rank_6m": 1,
+        "rotation_6m_to_1m": -1,
+        "rotation_3m_to_1m": 1
+      },
+      {
+        "id": "ai_gpu",
+        "name": "AI半導体・GPU/カスタム",
         "icon": "🤖",
-        "description": "AI推論・学習向けGPU/カスタムチップ。データセンター需要の中核",
+        "description": "AI推論・学習用GPU、カスタムASIC。データセンター需要の核",
         "member_count": 6,
         "tickers_failed": [],
         "avg_return_1m": 41.45,
@@ -4579,25 +4802,108 @@ const SCAN_DATA = {
             "vol_accel": 0.92,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 4,
+        "rank_3m": 4,
+        "rank_6m": 16,
+        "rotation_6m_to_1m": 12,
+        "rotation_3m_to_1m": 0
       },
       {
-        "id": "ai_infra_power",
-        "name": "AIインフラ・電力",
-        "icon": "⚡",
-        "description": "AIデータセンターの電力・冷却・送配電",
-        "member_count": 6,
+        "id": "ai_servers_cooling",
+        "name": "AIサーバー・液冷",
+        "icon": "🖥️",
+        "description": "SMCI/DELL/HPE 等のAIサーバー、液冷ソリューション",
+        "member_count": 4,
         "tickers_failed": [],
-        "avg_return_1m": 24.16,
-        "avg_return_3m": 43.42,
-        "avg_return_6m": 57.61,
-        "avg_vol_accel": 0.99,
-        "winners_1m": 6,
-        "winners_3m": 6,
-        "winners_6m": 6,
-        "concentration_1m": 0.715,
-        "concentration_3m": 0.496,
-        "concentration_6m": 0.556,
+        "avg_return_1m": 22.63,
+        "avg_return_3m": 46.82,
+        "avg_return_6m": 16.22,
+        "avg_vol_accel": 1.23,
+        "winners_1m": 4,
+        "winners_3m": 3,
+        "winners_6m": 3,
+        "concentration_1m": 0.846,
+        "concentration_3m": 0.099,
+        "concentration_6m": 0.0,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "VRT",
+        "top_return_6m": 64.86,
+        "members": [
+          {
+            "ticker": "VRT",
+            "price": 328.31,
+            "return_1m": 26.58,
+            "return_3m": 76.38,
+            "return_6m": 64.86,
+            "vol_accel": 1.38,
+            "above_200ma": null
+          },
+          {
+            "ticker": "DELL",
+            "price": 210.17,
+            "return_1m": 24.47,
+            "return_3m": 84.22,
+            "return_6m": 29.43,
+            "vol_accel": 1.03,
+            "above_200ma": null
+          },
+          {
+            "ticker": "HPE",
+            "price": 28.57,
+            "return_1m": 19.14,
+            "return_3m": 33.62,
+            "return_6m": 19.19,
+            "vol_accel": 1.02,
+            "above_200ma": null
+          },
+          {
+            "ticker": "SMCI",
+            "price": 27.09,
+            "return_1m": 20.35,
+            "return_3m": -6.94,
+            "return_6m": -48.59,
+            "vol_accel": 1.48,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 12,
+        "rank_3m": 5,
+        "rank_6m": 20,
+        "rotation_6m_to_1m": 8,
+        "rotation_3m_to_1m": -7
+      },
+      {
+        "id": "datacenter_power",
+        "name": "データセンター電力・送配電",
+        "icon": "⚡",
+        "description": "NVT/ETN/GEV — AI電力需要逼迫の受益銘柄",
+        "member_count": 5,
+        "tickers_failed": [],
+        "avg_return_1m": 23.68,
+        "avg_return_3m": 36.83,
+        "avg_return_6m": 56.16,
+        "avg_vol_accel": 0.91,
+        "winners_1m": 5,
+        "winners_3m": 5,
+        "winners_6m": 5,
+        "concentration_1m": 0.679,
+        "concentration_3m": 0.552,
+        "concentration_6m": 0.495,
         "inst_signal_1m": {
           "level": "neutral",
           "label": "⚪ 中立",
@@ -4644,15 +4950,6 @@ const SCAN_DATA = {
             "above_200ma": null
           },
           {
-            "ticker": "VRT",
-            "price": 328.31,
-            "return_1m": 26.58,
-            "return_3m": 76.38,
-            "return_6m": 64.86,
-            "vol_accel": 1.38,
-            "above_200ma": null
-          },
-          {
             "ticker": "NVT",
             "price": 158.92,
             "return_1m": 31.25,
@@ -4670,25 +4967,246 @@ const SCAN_DATA = {
             "vol_accel": 0.83,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 11,
+        "rank_3m": 6,
+        "rank_6m": 7,
+        "rotation_6m_to_1m": -4,
+        "rotation_3m_to_1m": -5
+      },
+      {
+        "id": "foundry_packaging",
+        "name": "ファウンドリ・パッケージング",
+        "icon": "🏭",
+        "description": "TSMCを中心とする受託製造、CoWoS等の先端実装",
+        "member_count": 4,
+        "tickers_failed": [],
+        "avg_return_1m": 32.1,
+        "avg_return_3m": 31.23,
+        "avg_return_6m": 63.63,
+        "avg_vol_accel": 1.08,
+        "winners_1m": 4,
+        "winners_3m": 4,
+        "winners_6m": 4,
+        "concentration_1m": 0.585,
+        "concentration_3m": 0.21,
+        "concentration_6m": 0.323,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "ASX",
+        "top_return_6m": 118.92,
+        "members": [
+          {
+            "ticker": "ASX",
+            "price": 31.59,
+            "return_1m": 40.52,
+            "return_3m": 66.44,
+            "return_6m": 118.92,
+            "vol_accel": 0.93,
+            "above_200ma": null
+          },
+          {
+            "ticker": "UMC",
+            "price": 13.05,
+            "return_1m": 45.48,
+            "return_3m": 28.19,
+            "return_6m": 76.59,
+            "vol_accel": 1.1,
+            "above_200ma": null
+          },
+          {
+            "ticker": "TSM",
+            "price": 397.67,
+            "return_1m": 16.45,
+            "return_3m": 20.64,
+            "return_6m": 31.07,
+            "vol_accel": 1.04,
+            "above_200ma": null
+          },
+          {
+            "ticker": "ATEYY",
+            "price": 181.37,
+            "return_1m": 25.95,
+            "return_3m": 9.64,
+            "return_6m": 27.94,
+            "vol_accel": 1.24,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 7,
+        "rank_3m": 7,
+        "rank_6m": 5,
+        "rotation_6m_to_1m": -2,
+        "rotation_3m_to_1m": 0
+      },
+      {
+        "id": "semi_materials",
+        "name": "半導体材料・薬液",
+        "icon": "🧪",
+        "description": "ENTG/MKSI など材料・部品供給",
+        "member_count": 3,
+        "tickers_failed": [],
+        "avg_return_1m": 30.42,
+        "avg_return_3m": 28.92,
+        "avg_return_6m": 89.05,
+        "avg_vol_accel": 0.89,
+        "winners_1m": 3,
+        "winners_3m": 3,
+        "winners_6m": 3,
+        "concentration_1m": 0.359,
+        "concentration_3m": 0.447,
+        "concentration_6m": 0.61,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "AMKR",
+        "top_return_6m": 118.34,
+        "members": [
+          {
+            "ticker": "AMKR",
+            "price": 71.09,
+            "return_1m": 52.91,
+            "return_3m": 47.37,
+            "return_6m": 118.34,
+            "vol_accel": 1.01,
+            "above_200ma": null
+          },
+          {
+            "ticker": "MKSI",
+            "price": 279.38,
+            "return_1m": 18.4,
+            "return_3m": 18.79,
+            "return_6m": 98.07,
+            "vol_accel": 0.72,
+            "above_200ma": null
+          },
+          {
+            "ticker": "ENTG",
+            "price": 142.29,
+            "return_1m": 19.95,
+            "return_3m": 20.6,
+            "return_6m": 50.74,
+            "vol_accel": 0.93,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 9,
+        "rank_3m": 8,
+        "rank_6m": 4,
+        "rotation_6m_to_1m": -5,
+        "rotation_3m_to_1m": -1
+      },
+      {
+        "id": "biotech_smid",
+        "name": "バイオベンチャー",
+        "icon": "🧫",
+        "description": "ROIV/TVTX/ARWR — カタリスト前の小中型",
+        "member_count": 3,
+        "tickers_failed": [],
+        "avg_return_1m": 19.76,
+        "avg_return_3m": 26.18,
+        "avg_return_6m": 60.4,
+        "avg_vol_accel": 0.92,
+        "winners_1m": 2,
+        "winners_3m": 3,
+        "winners_6m": 3,
+        "concentration_1m": 0.0,
+        "concentration_3m": 0.345,
+        "concentration_6m": 0.637,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "ARWR",
+        "top_return_6m": 85.68,
+        "members": [
+          {
+            "ticker": "ARWR",
+            "price": 74.81,
+            "return_1m": 18.9,
+            "return_3m": 7.9,
+            "return_6m": 85.68,
+            "vol_accel": 0.72,
+            "above_200ma": null
+          },
+          {
+            "ticker": "ROIV",
+            "price": 27.83,
+            "return_1m": -0.04,
+            "return_3m": 28.72,
+            "return_6m": 48.35,
+            "vol_accel": 0.87,
+            "above_200ma": null
+          },
+          {
+            "ticker": "TVTX",
+            "price": 44.12,
+            "return_1m": 40.42,
+            "return_3m": 41.91,
+            "return_6m": 47.16,
+            "vol_accel": 1.18,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 14,
+        "rank_3m": 9,
+        "rank_6m": 6,
+        "rotation_6m_to_1m": -8,
+        "rotation_3m_to_1m": -5
       },
       {
         "id": "oilfield_services",
         "name": "油田サービス",
         "icon": "🛠️",
-        "description": "シェールリスタート・メンテナンス需要",
-        "member_count": 4,
+        "description": "SLB/HAL/BKR — シェール再起動の受益",
+        "member_count": 5,
         "tickers_failed": [],
-        "avg_return_1m": 15.27,
-        "avg_return_3m": 27.93,
-        "avg_return_6m": 51.0,
-        "avg_vol_accel": 0.99,
-        "winners_1m": 4,
-        "winners_3m": 4,
-        "winners_6m": 4,
-        "concentration_1m": 0.629,
-        "concentration_3m": 0.588,
-        "concentration_6m": 0.896,
+        "avg_return_1m": 13.49,
+        "avg_return_3m": 24.09,
+        "avg_return_6m": 46.99,
+        "avg_vol_accel": 1.01,
+        "winners_1m": 5,
+        "winners_3m": 5,
+        "winners_6m": 5,
+        "concentration_1m": 0.532,
+        "concentration_3m": 0.454,
+        "concentration_6m": 0.786,
         "inst_signal_1m": {
           "level": "neutral",
           "label": "⚪ 中立",
@@ -4742,14 +5260,99 @@ const SCAN_DATA = {
             "return_6m": 44.27,
             "vol_accel": 0.95,
             "above_200ma": null
+          },
+          {
+            "ticker": "NOV",
+            "price": 19.86,
+            "return_1m": 6.37,
+            "return_3m": 8.75,
+            "return_6m": 30.95,
+            "vol_accel": 1.09,
+            "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 16,
+        "rank_3m": 10,
+        "rank_6m": 9,
+        "rotation_6m_to_1m": -7,
+        "rotation_3m_to_1m": -6
+      },
+      {
+        "id": "ai_networking",
+        "name": "AIネットワーキング",
+        "icon": "🕸️",
+        "description": "ANETを中心とするAIスイッチ・ルーター",
+        "member_count": 3,
+        "tickers_failed": [
+          "JNPR"
+        ],
+        "avg_return_1m": 20.9,
+        "avg_return_3m": 20.8,
+        "avg_return_6m": 10.8,
+        "avg_vol_accel": 0.94,
+        "winners_1m": 3,
+        "winners_3m": 3,
+        "winners_6m": 2,
+        "concentration_1m": 0.217,
+        "concentration_3m": 0.878,
+        "concentration_6m": 0.0,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "CSCO",
+        "top_return_6m": 30.16,
+        "members": [
+          {
+            "ticker": "CSCO",
+            "price": 91.85,
+            "return_1m": 18.5,
+            "return_3m": 17.91,
+            "return_6m": 30.16,
+            "vol_accel": 0.96,
+            "above_200ma": null
+          },
+          {
+            "ticker": "ANET",
+            "price": 172.7,
+            "return_1m": 38.33,
+            "return_3m": 21.84,
+            "return_6m": 6.59,
+            "vol_accel": 0.94,
+            "above_200ma": null
+          },
+          {
+            "ticker": "NET",
+            "price": 217.5,
+            "return_1m": 5.88,
+            "return_3m": 22.64,
+            "return_6m": -4.35,
+            "vol_accel": 0.93,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 13,
+        "rank_3m": 11,
+        "rank_6m": 22,
+        "rotation_6m_to_1m": 9,
+        "rotation_3m_to_1m": -2
       },
       {
         "id": "oil_majors",
-        "name": "石油大手",
+        "name": "石油大手・統合",
         "icon": "🛢️",
-        "description": "原油価格・配当成長・自社株買い",
+        "description": "XOM/CVX — 配当成長・自社株買い",
         "member_count": 5,
         "tickers_failed": [],
         "avg_return_1m": -3.68,
@@ -4825,13 +5428,18 @@ const SCAN_DATA = {
             "vol_accel": 1.07,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 28,
+        "rank_3m": 12,
+        "rank_6m": 12,
+        "rotation_6m_to_1m": -16,
+        "rotation_3m_to_1m": -16
       },
       {
         "id": "rare_earth",
         "name": "レアアース・戦略金属",
         "icon": "💎",
-        "description": "中国脱却テーマ。米政府支援・防衛供給網",
+        "description": "MP/USAR — 中国脱却テーマ・国防供給網",
         "member_count": 2,
         "tickers_failed": [],
         "avg_return_1m": 57.77,
@@ -4880,22 +5488,183 @@ const SCAN_DATA = {
             "vol_accel": 0.76,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 1,
+        "rank_3m": 13,
+        "rank_6m": 18,
+        "rotation_6m_to_1m": 17,
+        "rotation_3m_to_1m": 12
       },
       {
-        "id": "biotech",
-        "name": "バイオテック・遺伝子治療",
-        "icon": "🧬",
-        "description": "新薬・遺伝子治療・希少疾患のカタリスト銘柄",
-        "member_count": 8,
+        "id": "crypto_infra",
+        "name": "暗号資産インフラ",
+        "icon": "🪙",
+        "description": "COIN/MSTR/MARA/RIOT — BTC連動",
+        "member_count": 4,
         "tickers_failed": [],
-        "avg_return_1m": 2.95,
-        "avg_return_3m": 8.33,
-        "avg_return_6m": 24.82,
-        "avg_vol_accel": 0.94,
+        "avg_return_1m": 36.2,
+        "avg_return_3m": 14.19,
+        "avg_return_6m": -34.16,
+        "avg_vol_accel": 0.95,
+        "winners_1m": 4,
+        "winners_3m": 3,
+        "winners_6m": 0,
+        "concentration_1m": 0.525,
+        "concentration_3m": 0.246,
+        "concentration_6m": 0.638,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "RIOT",
+        "top_return_6m": -16.55,
+        "members": [
+          {
+            "ticker": "RIOT",
+            "price": 18.5,
+            "return_1m": 47.41,
+            "return_3m": 19.59,
+            "return_6m": -16.55,
+            "vol_accel": 1.0,
+            "above_200ma": null
+          },
+          {
+            "ticker": "MSTR",
+            "price": 177.17,
+            "return_1m": 44.3,
+            "return_3m": 18.34,
+            "return_6m": -35.66,
+            "vol_accel": 0.87,
+            "above_200ma": null
+          },
+          {
+            "ticker": "MARA",
+            "price": 11.46,
+            "return_1m": 42.54,
+            "return_3m": 20.63,
+            "return_6m": -39.3,
+            "vol_accel": 1.05,
+            "above_200ma": null
+          },
+          {
+            "ticker": "COIN",
+            "price": 191.25,
+            "return_1m": 10.56,
+            "return_3m": -1.79,
+            "return_6m": -45.14,
+            "vol_accel": 0.89,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 5,
+        "rank_3m": 14,
+        "rank_6m": 32,
+        "rotation_6m_to_1m": 27,
+        "rotation_3m_to_1m": 9
+      },
+      {
+        "id": "semi_equipment",
+        "name": "半導体製造装置",
+        "icon": "⚙️",
+        "description": "AMAT/LRCX/KLAC/ASML — 装置・露光",
+        "member_count": 4,
+        "tickers_failed": [],
+        "avg_return_1m": 11.09,
+        "avg_return_3m": 13.16,
+        "avg_return_6m": 49.92,
+        "avg_vol_accel": 0.93,
+        "winners_1m": 4,
+        "winners_3m": 4,
+        "winners_6m": 4,
+        "concentration_1m": 0.587,
+        "concentration_3m": 0.255,
+        "concentration_6m": 0.692,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "AMAT",
+        "top_return_6m": 65.57,
+        "members": [
+          {
+            "ticker": "AMAT",
+            "price": 389.08,
+            "return_1m": 9.97,
+            "return_3m": 20.86,
+            "return_6m": 65.57,
+            "vol_accel": 0.87,
+            "above_200ma": null
+          },
+          {
+            "ticker": "LRCX",
+            "price": 256.72,
+            "return_1m": 15.63,
+            "return_3m": 10.09,
+            "return_6m": 60.24,
+            "vol_accel": 0.87,
+            "above_200ma": null
+          },
+          {
+            "ticker": "KLAC",
+            "price": 1726.26,
+            "return_1m": 13.58,
+            "return_3m": 21.05,
+            "return_6m": 40.16,
+            "vol_accel": 0.9,
+            "above_200ma": null
+          },
+          {
+            "ticker": "ASML",
+            "price": 1427.02,
+            "return_1m": 5.18,
+            "return_3m": 0.63,
+            "return_6m": 33.73,
+            "vol_accel": 1.07,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 19,
+        "rank_3m": 15,
+        "rank_6m": 8,
+        "rotation_6m_to_1m": -11,
+        "rotation_3m_to_1m": -4
+      },
+      {
+        "id": "gene_crispr",
+        "name": "遺伝子・CRISPR",
+        "icon": "🧪",
+        "description": "CRSP/NTLA/EDIT/BEAM/MRNA",
+        "member_count": 5,
+        "tickers_failed": [],
+        "avg_return_1m": 6.85,
+        "avg_return_3m": 12.8,
+        "avg_return_6m": 17.32,
+        "avg_vol_accel": 0.95,
         "winners_1m": 3,
-        "winners_3m": 6,
-        "winners_6m": 7,
+        "winners_3m": 5,
+        "winners_6m": 3,
         "concentration_1m": 0.0,
         "concentration_3m": 0.0,
         "concentration_6m": 0.0,
@@ -4927,48 +5696,12 @@ const SCAN_DATA = {
             "above_200ma": null
           },
           {
-            "ticker": "ROIV",
-            "price": 27.83,
-            "return_1m": -0.04,
-            "return_3m": 28.72,
-            "return_6m": 48.35,
-            "vol_accel": 0.87,
-            "above_200ma": null
-          },
-          {
-            "ticker": "TVTX",
-            "price": 44.12,
-            "return_1m": 40.42,
-            "return_3m": 41.91,
-            "return_6m": 47.16,
-            "vol_accel": 1.18,
-            "above_200ma": null
-          },
-          {
-            "ticker": "BIIB",
-            "price": 187.06,
-            "return_1m": 1.78,
-            "return_3m": 3.99,
-            "return_6m": 26.51,
-            "vol_accel": 1.01,
-            "above_200ma": null
-          },
-          {
-            "ticker": "REGN",
-            "price": 701.42,
-            "return_1m": -9.76,
-            "return_3m": -5.29,
-            "return_6m": 7.69,
-            "vol_accel": 0.97,
-            "above_200ma": null
-          },
-          {
-            "ticker": "VRTX",
-            "price": 423.92,
-            "return_1m": -5.22,
-            "return_3m": -9.79,
-            "return_6m": 1.61,
-            "vol_accel": 0.84,
+            "ticker": "BEAM",
+            "price": 30.7,
+            "return_1m": 26.75,
+            "return_3m": 11.15,
+            "return_6m": 23.94,
+            "vol_accel": 1.25,
             "above_200ma": null
           },
           {
@@ -4981,6 +5714,15 @@ const SCAN_DATA = {
             "above_200ma": null
           },
           {
+            "ticker": "EDIT",
+            "price": 2.9,
+            "return_1m": 11.11,
+            "return_3m": 45.73,
+            "return_6m": -4.61,
+            "vol_accel": 0.85,
+            "above_200ma": null
+          },
+          {
             "ticker": "CRSP",
             "price": 51.63,
             "return_1m": 5.78,
@@ -4989,23 +5731,226 @@ const SCAN_DATA = {
             "vol_accel": 0.87,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 24,
+        "rank_3m": 16,
+        "rank_6m": 19,
+        "rotation_6m_to_1m": -5,
+        "rotation_3m_to_1m": -8
       },
       {
-        "id": "megacap_tech",
-        "name": "メガキャップAI/プラットフォーム",
-        "icon": "🏢",
-        "description": "Big Tech のAI戦略と業績モメンタム",
-        "member_count": 5,
+        "id": "apple_ecosystem",
+        "name": "Apple単独",
+        "icon": "🍎",
+        "description": "AAPL — 独自テーマ。AI機能・iPhone需要",
+        "member_count": 1,
         "tickers_failed": [],
-        "avg_return_1m": 16.8,
-        "avg_return_3m": 3.18,
-        "avg_return_6m": 3.84,
-        "avg_vol_accel": 1.05,
-        "winners_1m": 5,
-        "winners_3m": 3,
-        "winners_6m": 3,
-        "concentration_1m": 0.342,
+        "avg_return_1m": 9.59,
+        "avg_return_3m": 8.06,
+        "avg_return_6m": 4.07,
+        "avg_vol_accel": 1.0,
+        "winners_1m": 1,
+        "winners_3m": 1,
+        "winners_6m": 1,
+        "concentration_1m": null,
+        "concentration_3m": null,
+        "concentration_6m": null,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "AAPL",
+        "top_return_6m": 4.07,
+        "members": [
+          {
+            "ticker": "AAPL",
+            "price": 280.14,
+            "return_1m": 9.59,
+            "return_3m": 8.06,
+            "return_6m": 4.07,
+            "vol_accel": 1.0,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 21,
+        "rank_3m": 17,
+        "rank_6m": 23,
+        "rotation_6m_to_1m": 2,
+        "rotation_3m_to_1m": -4
+      },
+      {
+        "id": "commercial_space",
+        "name": "商業宇宙",
+        "icon": "🚀",
+        "description": "RKLB/ASTS/BKSY — 衛星・打上",
+        "member_count": 3,
+        "tickers_failed": [],
+        "avg_return_1m": 11.13,
+        "avg_return_3m": 7.75,
+        "avg_return_6m": 25.54,
+        "avg_vol_accel": 1.18,
+        "winners_1m": 2,
+        "winners_3m": 1,
+        "winners_6m": 2,
+        "concentration_1m": 0.0,
+        "concentration_3m": 0.0,
+        "concentration_6m": 0.0,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "BKSY",
+        "top_return_6m": 68.96,
+        "members": [
+          {
+            "ticker": "BKSY",
+            "price": 35.55,
+            "return_1m": 28.71,
+            "return_3m": 61.08,
+            "return_6m": 68.96,
+            "vol_accel": 1.43,
+            "above_200ma": null
+          },
+          {
+            "ticker": "RKLB",
+            "price": 78.81,
+            "return_1m": 20.28,
+            "return_3m": -1.57,
+            "return_6m": 19.12,
+            "vol_accel": 1.07,
+            "above_200ma": null
+          },
+          {
+            "ticker": "ASTS",
+            "price": 70.89,
+            "return_1m": -15.6,
+            "return_3m": -36.26,
+            "return_6m": -11.45,
+            "vol_accel": 1.05,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 18,
+        "rank_3m": 18,
+        "rank_6m": 15,
+        "rotation_6m_to_1m": -3,
+        "rotation_3m_to_1m": 0
+      },
+      {
+        "id": "copper_majors",
+        "name": "銅大手・多角化",
+        "icon": "🟫",
+        "description": "FCX/SCCO/BHP/RIO — メジャーマイナー",
+        "member_count": 4,
+        "tickers_failed": [],
+        "avg_return_1m": 0.6,
+        "avg_return_3m": 4.02,
+        "avg_return_6m": 35.09,
+        "avg_vol_accel": 0.73,
+        "winners_1m": 2,
+        "winners_3m": 2,
+        "winners_6m": 4,
+        "concentration_1m": 0.0,
+        "concentration_3m": 0.0,
+        "concentration_6m": 0.773,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "RIO",
+        "top_return_6m": 42.45,
+        "members": [
+          {
+            "ticker": "RIO",
+            "price": 100.58,
+            "return_1m": 6.09,
+            "return_3m": 13.58,
+            "return_6m": 42.45,
+            "vol_accel": 0.7,
+            "above_200ma": null
+          },
+          {
+            "ticker": "BHP",
+            "price": 79.06,
+            "return_1m": 7.48,
+            "return_3m": 17.3,
+            "return_6m": 39.09,
+            "vol_accel": 0.65,
+            "above_200ma": null
+          },
+          {
+            "ticker": "FCX",
+            "price": 56.55,
+            "return_1m": -7.39,
+            "return_3m": -5.9,
+            "return_6m": 34.67,
+            "vol_accel": 0.83,
+            "above_200ma": null
+          },
+          {
+            "ticker": "SCCO",
+            "price": 171.18,
+            "return_1m": -3.8,
+            "return_3m": -8.9,
+            "return_6m": 24.16,
+            "vol_accel": 0.75,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 26,
+        "rank_3m": 19,
+        "rank_6m": 14,
+        "rotation_6m_to_1m": -12,
+        "rotation_3m_to_1m": -7
+      },
+      {
+        "id": "megacap_ai_leaders",
+        "name": "メガキャップAI主導",
+        "icon": "🏢",
+        "description": "MSFT/GOOGL/META/AMZN — AI投資の本丸",
+        "member_count": 4,
+        "tickers_failed": [],
+        "avg_return_1m": 18.6,
+        "avg_return_3m": 1.96,
+        "avg_return_6m": 3.78,
+        "avg_vol_accel": 1.07,
+        "winners_1m": 4,
+        "winners_3m": 2,
+        "winners_6m": 2,
+        "concentration_1m": 0.361,
         "concentration_3m": 0.0,
         "concentration_6m": 0.0,
         "inst_signal_1m": {
@@ -5045,15 +5990,6 @@ const SCAN_DATA = {
             "above_200ma": null
           },
           {
-            "ticker": "AAPL",
-            "price": 280.14,
-            "return_1m": 9.59,
-            "return_3m": 8.06,
-            "return_6m": 4.07,
-            "vol_accel": 1.0,
-            "above_200ma": null
-          },
-          {
             "ticker": "META",
             "price": 608.75,
             "return_1m": 5.1,
@@ -5071,18 +6007,181 @@ const SCAN_DATA = {
             "vol_accel": 1.07,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 15,
+        "rank_3m": 20,
+        "rank_6m": 24,
+        "rotation_6m_to_1m": 9,
+        "rotation_3m_to_1m": 5
+      },
+      {
+        "id": "silver_miners",
+        "name": "銀鉱（採掘）",
+        "icon": "🥈",
+        "description": "銀価格・産業需要（太陽光・EV）+貴金属性",
+        "member_count": 5,
+        "tickers_failed": [],
+        "avg_return_1m": -4.71,
+        "avg_return_3m": -0.91,
+        "avg_return_6m": 42.65,
+        "avg_vol_accel": 0.81,
+        "winners_1m": 1,
+        "winners_3m": 1,
+        "winners_6m": 4,
+        "concentration_1m": 0.0,
+        "concentration_3m": 0.0,
+        "concentration_6m": 0.129,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "SVM",
+        "top_return_6m": 93.38,
+        "members": [
+          {
+            "ticker": "SVM",
+            "price": 12.26,
+            "return_1m": 10.45,
+            "return_3m": 21.75,
+            "return_6m": 93.38,
+            "vol_accel": 0.61,
+            "above_200ma": null
+          },
+          {
+            "ticker": "AG",
+            "price": 19.85,
+            "return_1m": -10.46,
+            "return_3m": -4.73,
+            "return_6m": 57.08,
+            "vol_accel": 0.62,
+            "above_200ma": null
+          },
+          {
+            "ticker": "PAAS",
+            "price": 51.81,
+            "return_1m": -6.78,
+            "return_3m": -4.86,
+            "return_6m": 48.04,
+            "vol_accel": 0.69,
+            "above_200ma": null
+          },
+          {
+            "ticker": "FSM",
+            "price": 9.48,
+            "return_1m": -9.11,
+            "return_3m": -3.07,
+            "return_6m": 18.06,
+            "vol_accel": 0.89,
+            "above_200ma": null
+          },
+          {
+            "ticker": "CDE",
+            "price": 17.65,
+            "return_1m": -7.64,
+            "return_3m": -13.65,
+            "return_6m": -3.29,
+            "vol_accel": 1.25,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 29,
+        "rank_3m": 21,
+        "rank_6m": 10,
+        "rotation_6m_to_1m": -19,
+        "rotation_3m_to_1m": -8
+      },
+      {
+        "id": "fintech_payments",
+        "name": "フィンテック決済",
+        "icon": "💳",
+        "description": "V/MA/SQ/PYPL — 決済プラットフォーム",
+        "member_count": 3,
+        "tickers_failed": [
+          "SQ"
+        ],
+        "avg_return_1m": 7.95,
+        "avg_return_3m": -3.24,
+        "avg_return_6m": -13.69,
+        "avg_vol_accel": 0.84,
+        "winners_1m": 3,
+        "winners_3m": 1,
+        "winners_6m": 0,
+        "concentration_1m": 0.212,
+        "concentration_3m": 0.0,
+        "concentration_6m": 0.108,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "V",
+        "top_return_6m": -3.49,
+        "members": [
+          {
+            "ticker": "V",
+            "price": 328.03,
+            "return_1m": 9.89,
+            "return_3m": 2.14,
+            "return_6m": -3.49,
+            "vol_accel": 0.98,
+            "above_200ma": null
+          },
+          {
+            "ticker": "MA",
+            "price": 495.46,
+            "return_1m": 0.95,
+            "return_3m": -7.88,
+            "return_6m": -10.37,
+            "vol_accel": 0.94,
+            "above_200ma": null
+          },
+          {
+            "ticker": "PYPL",
+            "price": 50.44,
+            "return_1m": 13.02,
+            "return_3m": -3.98,
+            "return_6m": -27.22,
+            "vol_accel": 0.61,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 22,
+        "rank_3m": 22,
+        "rank_6m": 28,
+        "rotation_6m_to_1m": 6,
+        "rotation_3m_to_1m": 0
       },
       {
         "id": "cybersecurity",
         "name": "サイバーセキュリティ",
         "icon": "🔒",
-        "description": "ゼロトラスト・SaaS型セキュリティの長期成長",
+        "description": "PANW/ZS/CRWD — ゼロトラスト",
         "member_count": 6,
         "tickers_failed": [],
-        "avg_return_1m": 6.47,
-        "avg_return_3m": -1.01,
-        "avg_return_6m": -17.49,
+        "avg_return_1m": 7.48,
+        "avg_return_3m": -3.68,
+        "avg_return_6m": -18.72,
         "avg_vol_accel": 1.03,
         "winners_1m": 5,
         "winners_3m": 4,
@@ -5118,12 +6217,12 @@ const SCAN_DATA = {
             "above_200ma": null
           },
           {
-            "ticker": "NET",
-            "price": 217.5,
-            "return_1m": 5.88,
-            "return_3m": 22.64,
-            "return_6m": -4.35,
-            "vol_accel": 0.93,
+            "ticker": "S",
+            "price": 14.9,
+            "return_1m": 11.95,
+            "return_3m": 6.58,
+            "return_6m": -11.73,
+            "vol_accel": 0.94,
             "above_200ma": null
           },
           {
@@ -5162,13 +6261,18 @@ const SCAN_DATA = {
             "vol_accel": 1.17,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 23,
+        "rank_3m": 23,
+        "rank_6m": 29,
+        "rotation_6m_to_1m": 6,
+        "rotation_3m_to_1m": 0
       },
       {
         "id": "quantum_computing",
         "name": "量子コンピューティング",
         "icon": "🌀",
-        "description": "量子ハードウェア・量子クラウド。長期テーマ・高ボラ",
+        "description": "IONQ/RGTI/QBTS — 高ボラ長期テーマ",
         "member_count": 4,
         "tickers_failed": [],
         "avg_return_1m": 35.23,
@@ -5235,13 +6339,183 @@ const SCAN_DATA = {
             "vol_accel": 0.93,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 6,
+        "rank_3m": 24,
+        "rank_6m": 33,
+        "rotation_6m_to_1m": 27,
+        "rotation_3m_to_1m": 18
       },
       {
-        "id": "ev_autonomous",
+        "id": "biotech_majors",
+        "name": "バイオ大手",
+        "icon": "🧬",
+        "description": "REGN/VRTX/BIIB/GILD — 安定収益のバイオ",
+        "member_count": 4,
+        "tickers_failed": [],
+        "avg_return_1m": -4.84,
+        "avg_return_3m": -4.46,
+        "avg_return_6m": 12.07,
+        "avg_vol_accel": 0.92,
+        "winners_1m": 1,
+        "winners_3m": 1,
+        "winners_6m": 4,
+        "concentration_1m": 0.003,
+        "concentration_3m": 0.0,
+        "concentration_6m": 0.122,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "BIIB",
+        "top_return_6m": 26.51,
+        "members": [
+          {
+            "ticker": "BIIB",
+            "price": 187.06,
+            "return_1m": 1.78,
+            "return_3m": 3.99,
+            "return_6m": 26.51,
+            "vol_accel": 1.01,
+            "above_200ma": null
+          },
+          {
+            "ticker": "GILD",
+            "price": 131.65,
+            "return_1m": -6.17,
+            "return_3m": -6.73,
+            "return_6m": 12.47,
+            "vol_accel": 0.85,
+            "above_200ma": null
+          },
+          {
+            "ticker": "REGN",
+            "price": 701.42,
+            "return_1m": -9.76,
+            "return_3m": -5.29,
+            "return_6m": 7.69,
+            "vol_accel": 0.97,
+            "above_200ma": null
+          },
+          {
+            "ticker": "VRTX",
+            "price": 423.92,
+            "return_1m": -5.22,
+            "return_3m": -9.79,
+            "return_6m": 1.61,
+            "vol_accel": 0.84,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 30,
+        "rank_3m": 25,
+        "rank_6m": 21,
+        "rotation_6m_to_1m": -9,
+        "rotation_3m_to_1m": -5
+      },
+      {
+        "id": "gold_miners",
+        "name": "金鉱（採掘大手）",
+        "icon": "🥇",
+        "description": "金価格・利下げ期待・地政学プレイ",
+        "member_count": 5,
+        "tickers_failed": [],
+        "avg_return_1m": -6.66,
+        "avg_return_3m": -5.76,
+        "avg_return_6m": 36.64,
+        "avg_vol_accel": 0.89,
+        "winners_1m": 1,
+        "winners_3m": 1,
+        "winners_6m": 5,
+        "concentration_1m": 0.146,
+        "concentration_3m": 0.0,
+        "concentration_6m": 0.577,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "GOLD",
+        "top_return_6m": 58.97,
+        "members": [
+          {
+            "ticker": "GOLD",
+            "price": 42.63,
+            "return_1m": 1.96,
+            "return_3m": -17.5,
+            "return_6m": 58.97,
+            "vol_accel": 0.77,
+            "above_200ma": null
+          },
+          {
+            "ticker": "AU",
+            "price": 92.76,
+            "return_1m": -10.39,
+            "return_3m": 1.56,
+            "return_6m": 41.62,
+            "vol_accel": 0.92,
+            "above_200ma": null
+          },
+          {
+            "ticker": "NEM",
+            "price": 108.62,
+            "return_1m": -4.54,
+            "return_3m": -3.12,
+            "return_6m": 37.01,
+            "vol_accel": 0.98,
+            "above_200ma": null
+          },
+          {
+            "ticker": "KGC",
+            "price": 29.55,
+            "return_1m": -7.71,
+            "return_3m": -6.25,
+            "return_6m": 28.02,
+            "vol_accel": 0.81,
+            "above_200ma": null
+          },
+          {
+            "ticker": "AEM",
+            "price": 183.56,
+            "return_1m": -12.62,
+            "return_3m": -3.47,
+            "return_6m": 17.56,
+            "vol_accel": 0.95,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 31,
+        "rank_3m": 26,
+        "rank_6m": 11,
+        "rotation_6m_to_1m": -20,
+        "rotation_3m_to_1m": -5
+      },
+      {
+        "id": "ev_pure_play",
         "name": "EV・自動運転",
         "icon": "🚗",
-        "description": "EV普及・自動運転商用化・バッテリー革新",
+        "description": "TSLA/RIVN/LCID/NIO/XPEV",
         "member_count": 5,
         "tickers_failed": [],
         "avg_return_1m": -8.56,
@@ -5317,25 +6591,32 @@ const SCAN_DATA = {
             "vol_accel": 2.21,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 33,
+        "rank_3m": 27,
+        "rank_6m": 30,
+        "rotation_6m_to_1m": -3,
+        "rotation_3m_to_1m": -6
       },
       {
-        "id": "precious_metals",
-        "name": "金銀・貴金属採掘",
-        "icon": "🥇",
-        "description": "金銀価格・地政学リスク・利下げ期待の連動",
-        "member_count": 8,
-        "tickers_failed": [],
-        "avg_return_1m": -6.97,
-        "avg_return_3m": -7.25,
-        "avg_return_6m": 34.48,
-        "avg_vol_accel": 0.89,
+        "id": "silver_streaming",
+        "name": "貴金属ストリーミング/ETF",
+        "icon": "💿",
+        "description": "WPM/FNV — 採掘リスクなしのキャッシュフロー",
+        "member_count": 4,
+        "tickers_failed": [
+          "SAND"
+        ],
+        "avg_return_1m": -7.94,
+        "avg_return_3m": -7.35,
+        "avg_return_6m": 35.73,
+        "avg_vol_accel": 0.84,
         "winners_1m": 1,
         "winners_3m": 0,
-        "winners_6m": 7,
-        "concentration_1m": 0.378,
-        "concentration_3m": 0.266,
-        "concentration_6m": 0.394,
+        "winners_6m": 4,
+        "concentration_1m": 0.272,
+        "concentration_3m": 0.421,
+        "concentration_6m": 0.564,
         "inst_signal_1m": {
           "level": "neutral",
           "label": "⚪ 中立",
@@ -5351,43 +6632,16 @@ const SCAN_DATA = {
           "label": "⚪ 中立",
           "color": "gray"
         },
-        "top_ticker": "GOLD",
-        "top_return_6m": 58.97,
+        "top_ticker": "SLV",
+        "top_return_6m": 57.97,
         "members": [
           {
-            "ticker": "GOLD",
-            "price": 42.63,
-            "return_1m": 1.96,
-            "return_3m": -17.5,
-            "return_6m": 58.97,
-            "vol_accel": 0.77,
-            "above_200ma": null
-          },
-          {
-            "ticker": "AG",
-            "price": 19.85,
-            "return_1m": -10.46,
-            "return_3m": -4.73,
-            "return_6m": 57.08,
-            "vol_accel": 0.62,
-            "above_200ma": null
-          },
-          {
-            "ticker": "PAAS",
-            "price": 51.81,
-            "return_1m": -6.78,
-            "return_3m": -4.86,
-            "return_6m": 48.04,
-            "vol_accel": 0.69,
-            "above_200ma": null
-          },
-          {
-            "ticker": "NEM",
-            "price": 108.62,
-            "return_1m": -4.54,
-            "return_3m": -3.12,
-            "return_6m": 37.01,
-            "vol_accel": 0.98,
+            "ticker": "SLV",
+            "price": 68.29,
+            "return_1m": 0.22,
+            "return_3m": -9.48,
+            "return_6m": 57.97,
+            "vol_accel": 0.29,
             "above_200ma": null
           },
           {
@@ -5400,80 +6654,67 @@ const SCAN_DATA = {
             "above_200ma": null
           },
           {
-            "ticker": "KGC",
-            "price": 29.55,
-            "return_1m": -7.71,
-            "return_3m": -6.25,
-            "return_6m": 28.02,
-            "vol_accel": 0.81,
+            "ticker": "RGLD",
+            "price": 230.59,
+            "return_1m": -12.61,
+            "return_3m": -12.27,
+            "return_6m": 30.92,
+            "vol_accel": 1.14,
             "above_200ma": null
           },
           {
-            "ticker": "AEM",
-            "price": 183.56,
-            "return_1m": -12.62,
-            "return_3m": -3.47,
-            "return_6m": 17.56,
-            "vol_accel": 0.95,
-            "above_200ma": null
-          },
-          {
-            "ticker": "CDE",
-            "price": 17.65,
-            "return_1m": -7.64,
-            "return_3m": -13.65,
-            "return_6m": -3.29,
-            "vol_accel": 1.25,
+            "ticker": "FNV",
+            "price": 226.44,
+            "return_1m": -11.37,
+            "return_3m": -3.22,
+            "return_6m": 21.62,
+            "vol_accel": 0.9,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 32,
+        "rank_3m": 28,
+        "rank_6m": 13,
+        "rotation_6m_to_1m": -19,
+        "rotation_3m_to_1m": -4
       },
       {
-        "id": "copper_metals",
-        "name": "銅・産業金属",
-        "icon": "🟫",
-        "description": "電化・AI・EV需要での銅構造需給",
-        "member_count": 4,
+        "id": "copper_juniors",
+        "name": "銅マイナー・成長",
+        "icon": "⛏️",
+        "description": "ERO/TECK/IVN — 成長フェーズの銅銘柄",
+        "member_count": 2,
         "tickers_failed": [
-          "FM"
+          "IVN"
         ],
-        "avg_return_1m": -3.08,
-        "avg_return_3m": -7.89,
-        "avg_return_6m": 27.13,
-        "avg_vol_accel": 0.73,
+        "avg_return_1m": -0.57,
+        "avg_return_3m": -8.39,
+        "avg_return_6m": 24.85,
+        "avg_vol_accel": 0.68,
         "winners_1m": 1,
         "winners_3m": 1,
-        "winners_6m": 4,
+        "winners_6m": 2,
         "concentration_1m": 0.0,
         "concentration_3m": 0.0,
-        "concentration_6m": 0.713,
+        "concentration_6m": 0.586,
         "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
+          "level": "fading",
+          "label": "🟡 関心薄れ",
+          "color": "yellow"
         },
         "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
+          "level": "fading",
+          "label": "🟡 関心薄れ",
+          "color": "yellow"
         },
         "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
+          "level": "fading",
+          "label": "🟡 関心薄れ",
+          "color": "yellow"
         },
-        "top_ticker": "FCX",
-        "top_return_6m": 34.67,
+        "top_ticker": "TECK",
+        "top_return_6m": 32.12,
         "members": [
-          {
-            "ticker": "FCX",
-            "price": 56.55,
-            "return_1m": -7.39,
-            "return_3m": -5.9,
-            "return_6m": 34.67,
-            "vol_accel": 0.83,
-            "above_200ma": null
-          },
           {
             "ticker": "TECK",
             "price": 57.95,
@@ -5481,15 +6722,6 @@ const SCAN_DATA = {
             "return_3m": 7.99,
             "return_6m": 32.12,
             "vol_accel": 0.78,
-            "above_200ma": null
-          },
-          {
-            "ticker": "SCCO",
-            "price": 171.18,
-            "return_1m": -3.8,
-            "return_3m": -8.9,
-            "return_6m": 24.16,
-            "vol_accel": 0.75,
             "above_200ma": null
           },
           {
@@ -5501,115 +6733,29 @@ const SCAN_DATA = {
             "vol_accel": 0.57,
             "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 27,
+        "rank_3m": 29,
+        "rank_6m": 17,
+        "rotation_6m_to_1m": -10,
+        "rotation_3m_to_1m": 2
       },
       {
-        "id": "defense_aerospace",
-        "name": "防衛・宇宙",
-        "icon": "🛡️",
-        "description": "地政学リスク・国防予算・宇宙開発",
-        "member_count": 6,
-        "tickers_failed": [],
-        "avg_return_1m": -6.5,
-        "avg_return_3m": -9.16,
-        "avg_return_6m": -2.55,
-        "avg_vol_accel": 0.95,
-        "winners_1m": 1,
-        "winners_3m": 0,
-        "winners_6m": 3,
-        "concentration_1m": 0.0,
-        "concentration_3m": 0.097,
-        "concentration_6m": 0.0,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "LMT",
-        "top_return_6m": 7.02,
-        "members": [
-          {
-            "ticker": "LMT",
-            "price": 512.77,
-            "return_1m": -16.98,
-            "return_3m": -18.72,
-            "return_6m": 7.02,
-            "vol_accel": 0.92,
-            "above_200ma": null
-          },
-          {
-            "ticker": "BA",
-            "price": 227.38,
-            "return_1m": 9.68,
-            "return_3m": -2.71,
-            "return_6m": 6.46,
-            "vol_accel": 0.89,
-            "above_200ma": null
-          },
-          {
-            "ticker": "GD",
-            "price": 345.84,
-            "return_1m": -0.88,
-            "return_3m": -1.04,
-            "return_6m": 1.57,
-            "vol_accel": 1.17,
-            "above_200ma": null
-          },
-          {
-            "ticker": "RTX",
-            "price": 173.99,
-            "return_1m": -10.65,
-            "return_3m": -13.12,
-            "return_6m": -0.62,
-            "vol_accel": 0.84,
-            "above_200ma": null
-          },
-          {
-            "ticker": "NOC",
-            "price": 568.14,
-            "return_1m": -18.49,
-            "return_3m": -17.67,
-            "return_6m": -2.17,
-            "vol_accel": 0.88,
-            "above_200ma": null
-          },
-          {
-            "ticker": "PLTR",
-            "price": 144.07,
-            "return_1m": -1.65,
-            "return_3m": -1.72,
-            "return_6m": -27.53,
-            "vol_accel": 0.98,
-            "above_200ma": null
-          }
-        ]
-      },
-      {
-        "id": "uranium_nuclear",
-        "name": "原子力・ウラン",
+        "id": "uranium_miners",
+        "name": "ウラン採掘",
         "icon": "☢️",
-        "description": "原子力ルネッサンス・SMR・電力需要逼迫",
-        "member_count": 6,
+        "description": "原子力ルネッサンス。CCJ/UEC/UUUU",
+        "member_count": 5,
         "tickers_failed": [],
-        "avg_return_1m": 17.74,
-        "avg_return_3m": -9.65,
-        "avg_return_6m": -9.11,
-        "avg_vol_accel": 0.86,
-        "winners_1m": 6,
+        "avg_return_1m": 11.99,
+        "avg_return_3m": -9.27,
+        "avg_return_6m": -0.75,
+        "avg_vol_accel": 0.79,
+        "winners_1m": 5,
         "winners_3m": 0,
         "winners_6m": 3,
-        "concentration_1m": 0.162,
-        "concentration_3m": 0.033,
+        "concentration_1m": 0.55,
+        "concentration_3m": 0.0,
         "concentration_6m": 0.0,
         "inst_signal_1m": {
           "level": "neutral",
@@ -5673,7 +6819,274 @@ const SCAN_DATA = {
             "return_6m": -47.13,
             "vol_accel": 0.8,
             "above_200ma": null
+          }
+        ],
+        "rank_1m": 17,
+        "rank_3m": 30,
+        "rank_6m": 26,
+        "rotation_6m_to_1m": 9,
+        "rotation_3m_to_1m": 13
+      },
+      {
+        "id": "defense_aerospace",
+        "name": "防衛・宇宙",
+        "icon": "🛡️",
+        "description": "PLTR/RTX/LMT/NOC — 国防予算+地政学",
+        "member_count": 5,
+        "tickers_failed": [],
+        "avg_return_1m": -9.73,
+        "avg_return_3m": -10.45,
+        "avg_return_6m": -4.35,
+        "avg_vol_accel": 0.96,
+        "winners_1m": 0,
+        "winners_3m": 0,
+        "winners_6m": 2,
+        "concentration_1m": 0.15,
+        "concentration_3m": 0.182,
+        "concentration_6m": 0.0,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "LMT",
+        "top_return_6m": 7.02,
+        "members": [
+          {
+            "ticker": "LMT",
+            "price": 512.77,
+            "return_1m": -16.98,
+            "return_3m": -18.72,
+            "return_6m": 7.02,
+            "vol_accel": 0.92,
+            "above_200ma": null
           },
+          {
+            "ticker": "GD",
+            "price": 345.84,
+            "return_1m": -0.88,
+            "return_3m": -1.04,
+            "return_6m": 1.57,
+            "vol_accel": 1.17,
+            "above_200ma": null
+          },
+          {
+            "ticker": "RTX",
+            "price": 173.99,
+            "return_1m": -10.65,
+            "return_3m": -13.12,
+            "return_6m": -0.62,
+            "vol_accel": 0.84,
+            "above_200ma": null
+          },
+          {
+            "ticker": "NOC",
+            "price": 568.14,
+            "return_1m": -18.49,
+            "return_3m": -17.67,
+            "return_6m": -2.17,
+            "vol_accel": 0.88,
+            "above_200ma": null
+          },
+          {
+            "ticker": "PLTR",
+            "price": 144.07,
+            "return_1m": -1.65,
+            "return_3m": -1.72,
+            "return_6m": -27.53,
+            "vol_accel": 0.98,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 34,
+        "rank_3m": 31,
+        "rank_6m": 27,
+        "rotation_6m_to_1m": -7,
+        "rotation_3m_to_1m": -3
+      },
+      {
+        "id": "glp1_obesity",
+        "name": "GLP-1 肥満薬",
+        "icon": "💊",
+        "description": "LLY/NVO — 肥満治療メガトレンド",
+        "member_count": 2,
+        "tickers_failed": [],
+        "avg_return_1m": 10.61,
+        "avg_return_3m": -15.21,
+        "avg_return_6m": 3.67,
+        "avg_vol_accel": 0.88,
+        "winners_1m": 2,
+        "winners_3m": 0,
+        "winners_6m": 1,
+        "concentration_1m": 0.0,
+        "concentration_3m": 0.233,
+        "concentration_6m": 0.0,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "LLY",
+        "top_return_6m": 18.79,
+        "members": [
+          {
+            "ticker": "LLY",
+            "price": 963.33,
+            "return_1m": 0.92,
+            "return_3m": -6.96,
+            "return_6m": 18.79,
+            "vol_accel": 1.05,
+            "above_200ma": null
+          },
+          {
+            "ticker": "NVO",
+            "price": 43.88,
+            "return_1m": 20.29,
+            "return_3m": -23.46,
+            "return_6m": -11.45,
+            "vol_accel": 0.7,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 20,
+        "rank_3m": 32,
+        "rank_6m": 25,
+        "rotation_6m_to_1m": 5,
+        "rotation_3m_to_1m": 12
+      },
+      {
+        "id": "saas_data",
+        "name": "SaaS データ・観測",
+        "icon": "📊",
+        "description": "NOW/MDB/SNOW/DDOG — エンタープライズSaaS",
+        "member_count": 4,
+        "tickers_failed": [],
+        "avg_return_1m": 0.94,
+        "avg_return_3m": -17.32,
+        "avg_return_6m": -32.57,
+        "avg_vol_accel": 1.08,
+        "winners_1m": 2,
+        "winners_3m": 1,
+        "winners_6m": 0,
+        "concentration_1m": 0.0,
+        "concentration_3m": 0.0,
+        "concentration_6m": 0.4,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "DDOG",
+        "top_return_6m": -9.92,
+        "members": [
+          {
+            "ticker": "DDOG",
+            "price": 140.53,
+            "return_1m": 18.42,
+            "return_3m": 8.67,
+            "return_6m": -9.92,
+            "vol_accel": 0.86,
+            "above_200ma": null
+          },
+          {
+            "ticker": "MDB",
+            "price": 263.46,
+            "return_1m": 5.65,
+            "return_3m": -29.05,
+            "return_6m": -22.63,
+            "vol_accel": 0.83,
+            "above_200ma": null
+          },
+          {
+            "ticker": "SNOW",
+            "price": 141.0,
+            "return_1m": -7.92,
+            "return_3m": -26.83,
+            "return_6m": -47.72,
+            "vol_accel": 1.27,
+            "above_200ma": null
+          },
+          {
+            "ticker": "NOW",
+            "price": 91.16,
+            "return_1m": -12.38,
+            "return_3m": -22.09,
+            "return_6m": -50.01,
+            "vol_accel": 1.38,
+            "above_200ma": null
+          }
+        ],
+        "rank_1m": 25,
+        "rank_3m": 33,
+        "rank_6m": 31,
+        "rotation_6m_to_1m": 6,
+        "rotation_3m_to_1m": 8
+      },
+      {
+        "id": "smr_nuclear",
+        "name": "SMR・小型原子炉",
+        "icon": "⚛️",
+        "description": "OKLO/NNE/SMR — AI電力需要への解の一つ",
+        "member_count": 3,
+        "tickers_failed": [],
+        "avg_return_1m": 26.51,
+        "avg_return_3m": -20.83,
+        "avg_return_6m": -57.95,
+        "avg_vol_accel": 1.18,
+        "winners_1m": 3,
+        "winners_3m": 0,
+        "winners_6m": 0,
+        "concentration_1m": 0.345,
+        "concentration_3m": 0.544,
+        "concentration_6m": 0.792,
+        "inst_signal_1m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_3m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "inst_signal_6m": {
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
+        },
+        "top_ticker": "OKLO",
+        "top_return_6m": -50.91,
+        "members": [
           {
             "ticker": "OKLO",
             "price": 70.4,
@@ -5682,10 +7095,342 @@ const SCAN_DATA = {
             "return_6m": -50.91,
             "vol_accel": 1.24,
             "above_200ma": null
+          },
+          {
+            "ticker": "NNE",
+            "price": 23.41,
+            "return_1m": 14.75,
+            "return_3m": -20.36,
+            "return_6m": -51.06,
+            "vol_accel": 1.04,
+            "above_200ma": null
+          },
+          {
+            "ticker": "SMR",
+            "price": 12.14,
+            "return_1m": 18.32,
+            "return_3m": -30.55,
+            "return_6m": -71.88,
+            "vol_accel": 1.25,
+            "above_200ma": null
           }
-        ]
+        ],
+        "rank_1m": 10,
+        "rank_3m": 34,
+        "rank_6m": 34,
+        "rotation_6m_to_1m": 24,
+        "rotation_3m_to_1m": 24
       }
-    ]
+    ],
+    "rotation": {
+      "inflow_top": [
+        {
+          "id": "quantum_computing",
+          "name": "量子コンピューティング",
+          "icon": "🌀",
+          "avg_return_1m": 35.23,
+          "avg_return_3m": -3.86,
+          "avg_return_6m": -36.0,
+          "avg_vol_accel": 1.06,
+          "rank_1m": 6,
+          "rank_3m": 24,
+          "rank_6m": 33,
+          "rotation_6m_to_1m": 27,
+          "rotation_3m_to_1m": 18,
+          "top_ticker": "IBM",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "crypto_infra",
+          "name": "暗号資産インフラ",
+          "icon": "🪙",
+          "avg_return_1m": 36.2,
+          "avg_return_3m": 14.19,
+          "avg_return_6m": -34.16,
+          "avg_vol_accel": 0.95,
+          "rank_1m": 5,
+          "rank_3m": 14,
+          "rank_6m": 32,
+          "rotation_6m_to_1m": 27,
+          "rotation_3m_to_1m": 9,
+          "top_ticker": "RIOT",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "smr_nuclear",
+          "name": "SMR・小型原子炉",
+          "icon": "⚛️",
+          "avg_return_1m": 26.51,
+          "avg_return_3m": -20.83,
+          "avg_return_6m": -57.95,
+          "avg_vol_accel": 1.18,
+          "rank_1m": 10,
+          "rank_3m": 34,
+          "rank_6m": 34,
+          "rotation_6m_to_1m": 24,
+          "rotation_3m_to_1m": 24,
+          "top_ticker": "OKLO",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "rare_earth",
+          "name": "レアアース・戦略金属",
+          "icon": "💎",
+          "avg_return_1m": 57.77,
+          "avg_return_3m": 15.41,
+          "avg_return_6m": 17.32,
+          "avg_vol_accel": 0.82,
+          "rank_1m": 1,
+          "rank_3m": 13,
+          "rank_6m": 18,
+          "rotation_6m_to_1m": 17,
+          "rotation_3m_to_1m": 12,
+          "top_ticker": "USAR",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "ai_gpu",
+          "name": "AI半導体・GPU/カスタム",
+          "icon": "🤖",
+          "avg_return_1m": 41.45,
+          "avg_return_3m": 51.77,
+          "avg_return_6m": 24.87,
+          "avg_vol_accel": 1.35,
+          "rank_1m": 4,
+          "rank_3m": 4,
+          "rank_6m": 16,
+          "rotation_6m_to_1m": 12,
+          "rotation_3m_to_1m": 0,
+          "top_ticker": "MRVL",
+          "inst_signal_3m": {
+            "level": "buying",
+            "label": "🟢 機関買い増し",
+            "color": "green"
+          }
+        }
+      ],
+      "persistent_strong": [
+        {
+          "id": "semi_test",
+          "name": "半導体テスト・プローブ",
+          "icon": "🔬",
+          "avg_return_1m": 48.35,
+          "avg_return_3m": 101.82,
+          "avg_return_6m": 150.36,
+          "avg_vol_accel": 1.39,
+          "rank_1m": 3,
+          "rank_3m": 1,
+          "rank_6m": 2,
+          "rotation_6m_to_1m": -1,
+          "rotation_3m_to_1m": -2,
+          "top_ticker": "AEHR",
+          "inst_signal_3m": {
+            "level": "buying",
+            "label": "🟢 機関買い増し",
+            "color": "green"
+          }
+        },
+        {
+          "id": "optical_coherent",
+          "name": "光通信・コヒーレント",
+          "icon": "🌈",
+          "avg_return_1m": 31.29,
+          "avg_return_3m": 75.3,
+          "avg_return_6m": 146.11,
+          "avg_vol_accel": 1.07,
+          "rank_1m": 8,
+          "rank_3m": 2,
+          "rank_6m": 3,
+          "rotation_6m_to_1m": -5,
+          "rotation_3m_to_1m": -6,
+          "top_ticker": "LITE",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "memory_dram_hbm",
+          "name": "メモリ・DRAM/HBM",
+          "icon": "💾",
+          "avg_return_1m": 54.71,
+          "avg_return_3m": 60.63,
+          "avg_return_6m": 173.31,
+          "avg_vol_accel": 1.07,
+          "rank_1m": 2,
+          "rank_3m": 3,
+          "rank_6m": 1,
+          "rotation_6m_to_1m": -1,
+          "rotation_3m_to_1m": 1,
+          "top_ticker": "WDC",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "datacenter_power",
+          "name": "データセンター電力・送配電",
+          "icon": "⚡",
+          "avg_return_1m": 23.68,
+          "avg_return_3m": 36.83,
+          "avg_return_6m": 56.16,
+          "avg_vol_accel": 0.91,
+          "rank_1m": 11,
+          "rank_3m": 6,
+          "rank_6m": 7,
+          "rotation_6m_to_1m": -4,
+          "rotation_3m_to_1m": -5,
+          "top_ticker": "GEV",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "foundry_packaging",
+          "name": "ファウンドリ・パッケージング",
+          "icon": "🏭",
+          "avg_return_1m": 32.1,
+          "avg_return_3m": 31.23,
+          "avg_return_6m": 63.63,
+          "avg_vol_accel": 1.08,
+          "rank_1m": 7,
+          "rank_3m": 7,
+          "rank_6m": 5,
+          "rotation_6m_to_1m": -2,
+          "rotation_3m_to_1m": 0,
+          "top_ticker": "ASX",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        }
+      ],
+      "outflow_top": [
+        {
+          "id": "gold_miners",
+          "name": "金鉱（採掘大手）",
+          "icon": "🥇",
+          "avg_return_1m": -6.66,
+          "avg_return_3m": -5.76,
+          "avg_return_6m": 36.64,
+          "avg_vol_accel": 0.89,
+          "rank_1m": 31,
+          "rank_3m": 26,
+          "rank_6m": 11,
+          "rotation_6m_to_1m": -20,
+          "rotation_3m_to_1m": -5,
+          "top_ticker": "GOLD",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "silver_miners",
+          "name": "銀鉱（採掘）",
+          "icon": "🥈",
+          "avg_return_1m": -4.71,
+          "avg_return_3m": -0.91,
+          "avg_return_6m": 42.65,
+          "avg_vol_accel": 0.81,
+          "rank_1m": 29,
+          "rank_3m": 21,
+          "rank_6m": 10,
+          "rotation_6m_to_1m": -19,
+          "rotation_3m_to_1m": -8,
+          "top_ticker": "SVM",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "silver_streaming",
+          "name": "貴金属ストリーミング/ETF",
+          "icon": "💿",
+          "avg_return_1m": -7.94,
+          "avg_return_3m": -7.35,
+          "avg_return_6m": 35.73,
+          "avg_vol_accel": 0.84,
+          "rank_1m": 32,
+          "rank_3m": 28,
+          "rank_6m": 13,
+          "rotation_6m_to_1m": -19,
+          "rotation_3m_to_1m": -4,
+          "top_ticker": "SLV",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "oil_majors",
+          "name": "石油大手・統合",
+          "icon": "🛢️",
+          "avg_return_1m": -3.68,
+          "avg_return_3m": 18.3,
+          "avg_return_6m": 36.11,
+          "avg_vol_accel": 1.07,
+          "rank_1m": 28,
+          "rank_3m": 12,
+          "rank_6m": 12,
+          "rotation_6m_to_1m": -16,
+          "rotation_3m_to_1m": -16,
+          "top_ticker": "OXY",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        },
+        {
+          "id": "copper_majors",
+          "name": "銅大手・多角化",
+          "icon": "🟫",
+          "avg_return_1m": 0.6,
+          "avg_return_3m": 4.02,
+          "avg_return_6m": 35.09,
+          "avg_vol_accel": 0.73,
+          "rank_1m": 26,
+          "rank_3m": 19,
+          "rank_6m": 14,
+          "rotation_6m_to_1m": -12,
+          "rotation_3m_to_1m": -7,
+          "top_ticker": "RIO",
+          "inst_signal_3m": {
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
+          }
+        }
+      ],
+      "vanishing": []
+    }
   }
 };
 
@@ -5855,8 +7600,10 @@ function renderThemes(d) {
   const themes = (d.themes && d.themes.themes) || [];
   if (!themes.length) {
     list.innerHTML = '<div style="color:var(--text2);font-size:12px;text-align:center;padding:20px">データなし — analyze_themes.py を実行してください</div>';
+    renderRotationPanel(d);
     return;
   }
+  renderRotationPanel(d);
   const p = _themePeriod;
   const retKey = 'avg_return_' + p;
   const winKey = 'winners_' + p;
@@ -5880,6 +7627,67 @@ function renderThemes(d) {
       card.classList.toggle('expanded');
     });
   });
+}
+
+function renderRotationPanel(d) {
+  const rot = d.themes && d.themes.rotation;
+  const empty = '<div class="rotation-empty">該当なし</div>';
+  if (!rot) {
+    ['rotInflow','rotPersistent','rotOutflow','rotVanishing'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = empty;
+    });
+    return;
+  }
+
+  function rowsInflow(items) {
+    if (!items || !items.length) return empty;
+    return items.map((t, i) => `<div class="rotation-row" onclick="switchPageProgrammatic('themes');setTimeout(()=>{},50)">
+      <div class="rotation-rank">${i + 1}</div>
+      <div class="rotation-icon">${t.icon}</div>
+      <div class="rotation-name">${t.name} <span class="top-tic">→ ${t.top_ticker || '-'}</span></div>
+      <div class="rotation-rank-shift up">6M#${t.rank_6m}→1M#${t.rank_1m} (${t.rotation_6m_to_1m >= 0 ? '+' : ''}${t.rotation_6m_to_1m})</div>
+      <div class="rotation-ret" style="color:var(--green)">${t.avg_return_1m != null ? (t.avg_return_1m >= 0 ? '+' : '') + t.avg_return_1m.toFixed(1) + '%' : '—'}</div>
+    </div>`).join('');
+  }
+
+  function rowsPersistent(items) {
+    if (!items || !items.length) return empty;
+    return items.map((t, i) => `<div class="rotation-row">
+      <div class="rotation-rank">${i + 1}</div>
+      <div class="rotation-icon">${t.icon}</div>
+      <div class="rotation-name">${t.name} <span class="top-tic">→ ${t.top_ticker || '-'}</span></div>
+      <div class="rotation-rank-shift">6M#${t.rank_6m} 3M#${t.rank_3m} 1M#${t.rank_1m}</div>
+      <div class="rotation-ret" style="color:var(--gold)">${t.avg_return_3m != null ? (t.avg_return_3m >= 0 ? '+' : '') + t.avg_return_3m.toFixed(1) + '%' : '—'}</div>
+    </div>`).join('');
+  }
+
+  function rowsOutflow(items) {
+    if (!items || !items.length) return empty;
+    return items.map((t, i) => `<div class="rotation-row">
+      <div class="rotation-rank">${i + 1}</div>
+      <div class="rotation-icon">${t.icon}</div>
+      <div class="rotation-name">${t.name} <span class="top-tic">→ ${t.top_ticker || '-'}</span></div>
+      <div class="rotation-rank-shift down">6M#${t.rank_6m}→1M#${t.rank_1m} (${t.rotation_6m_to_1m})</div>
+      <div class="rotation-ret" style="color:var(--orange)">${t.avg_return_1m != null ? (t.avg_return_1m >= 0 ? '+' : '') + t.avg_return_1m.toFixed(1) + '%' : '—'}</div>
+    </div>`).join('');
+  }
+
+  function rowsVanishing(items) {
+    if (!items || !items.length) return empty;
+    return items.map((t, i) => `<div class="rotation-row">
+      <div class="rotation-rank">${i + 1}</div>
+      <div class="rotation-icon">${t.icon}</div>
+      <div class="rotation-name">${t.name} <span class="top-tic">vol×${(t.avg_vol_accel || 0).toFixed(2)}</span></div>
+      <div class="rotation-rank-shift down">1M ${(t.avg_return_1m || 0).toFixed(1)}% / 6M ${(t.avg_return_6m || 0).toFixed(1)}%</div>
+      <div class="rotation-ret" style="color:var(--red)">💀</div>
+    </div>`).join('');
+  }
+
+  document.getElementById('rotInflow').innerHTML = rowsInflow(rot.inflow_top);
+  document.getElementById('rotPersistent').innerHTML = rowsPersistent(rot.persistent_strong);
+  document.getElementById('rotOutflow').innerHTML = rowsOutflow(rot.outflow_top);
+  document.getElementById('rotVanishing').innerHTML = rowsVanishing(rot.vanishing);
 }
 
 function renderThemeCard(t, p, retKey, winKey, concKey, sigKey) {
