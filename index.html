@@ -267,8 +267,116 @@ body {
   display: none;
 }
 
+/* Tappable rows */
+.signal-item, .ai-row, .team-row {
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(88,166,255,0.1);
+  transition: background 0.15s;
+}
+.signal-item:active, .ai-row:active, .team-row:active {
+  background: rgba(88,166,255,0.06);
+}
+
+/* Detail Modal (bottom sheet) */
+.detail-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.detail-overlay.show { opacity: 1; pointer-events: auto; }
+.detail-sheet {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  max-height: 88vh;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-radius: 16px 16px 0 0;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(.2,.7,.2,1);
+  z-index: 201;
+  padding: 12px 14px calc(20px + env(safe-area-inset-bottom));
+}
+.detail-sheet.show { transform: translateY(0); }
+.detail-handle {
+  width: 44px; height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 0 auto 12px;
+}
+.detail-close {
+  position: absolute; top: 12px; right: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px; line-height: 1;
+  z-index: 1;
+}
+.detail-header { margin-bottom: 14px; padding-right: 36px; }
+.detail-ticker { font-size: 26px; font-weight: 800; color: var(--cyan); }
+.detail-name { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.detail-price-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-top: 8px;
+}
+.detail-price { font-size: 22px; font-weight: 700; }
+.detail-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.detail-tag {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: rgba(88,166,255,0.12);
+  color: var(--cyan);
+}
+.detail-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.detail-section-title {
+  font-size: 12px;
+  color: var(--text2);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+.detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.detail-stat {
+  background: rgba(255,255,255,0.02);
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.detail-stat .label { font-size: 10px; color: var(--text2); }
+.detail-stat .val { font-size: 13px; font-weight: 600; margin-top: 2px; }
+.detail-list { font-size: 12px; line-height: 1.6; list-style: none; padding: 0; margin: 4px 0; }
+.detail-list li { padding-left: 14px; position: relative; }
+.detail-list li::before {
+  content: '•'; position: absolute; left: 4px; color: var(--cyan);
+}
+.detail-scenario {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.detail-scenario:last-child { border-bottom: none; }
+.detail-scenario-tag {
+  font-size: 11px; font-weight: 700;
+  padding: 2px 8px; border-radius: 10px;
+  display: inline-block;
+}
+
 @media (min-width: 768px) {
   body { max-width: 480px; margin: 0 auto; }
+  .detail-overlay, .detail-sheet { max-width: 480px; left: 50%; transform: translateX(-50%); }
+  .detail-sheet { transform: translate(-50%, 100%); }
+  .detail-sheet.show { transform: translate(-50%, 0); }
 }
 </style>
 </head>
@@ -451,6 +559,12 @@ body {
   <div class="update-time" id="updateTime">最終更新: —</div>
 </div>
 
+<!-- ===== Detail Modal (Bottom Sheet) ===== -->
+<div class="detail-overlay" id="detailOverlay" onclick="closeDetail()"></div>
+<div class="detail-sheet" id="detailSheet" onclick="event.stopPropagation()">
+  <div id="detailContent"></div>
+</div>
+
 <!-- Tab Bar -->
 <div class="tabs">
   <button class="tab active" onclick="switchPage('dash')">
@@ -477,55 +591,1180 @@ body {
 const SCAN_DATA = {
   "scan_date": "2026-05-02 09:17",
   "market_health": {
-    "S&P500": {"price": 7230, "above_21MA": true, "status": "リスクオン"},
-    "Russell2000": {"price": 279.28, "above_21MA": true, "status": "リスクオン"}
+    "S&P500": {
+      "price": 720.6500244140625,
+      "above_21MA": true,
+      "status": "リスクオン"
+    },
+    "Russell2000": {
+      "price": 279.2799987792969,
+      "above_21MA": true,
+      "status": "リスクオン"
+    }
   },
-  "vix": 16.99,
-  "silver": "$73-74/oz",
+  "vix": 0,
+  "silver": "",
   "cde": {
-    "price": 17.64, "change_pct": -1.59,
-    "shares": 1020, "avg_cost": 8.3573,
+    "price": 17.649999618530273,
+    "change_pct": 0,
+    "shares": 1020,
+    "avg_cost": 8.3573,
     "onkabu_target": 16.72,
-    "earnings_date": "5/6", "days_until": 4
+    "earnings_date": "5/7",
+    "days_until": 5
   },
   "signals": [
-    {"ticker":"CDE","name":"Coeur Mining","type":"SELL_PARTIAL","price":17.64,"sepa":"3.0","theme":"金銀","note":"恩株化: 510株利確"},
-    {"ticker":"FORM","name":"FormFactor","type":"BUY","price":137.37,"sepa":"9.0","theme":"CPO","note":"PG司令塔 Q1+32%ビート"},
-    {"ticker":"NVT","name":"nVent Electric","type":"BUY","price":158.92,"sepa":"9.0","theme":"電力","note":"Q1 EPS+15%ビート"},
-    {"ticker":"KEYS","name":"Keysight Tech","type":"BUY","price":352.41,"sepa":"9.0","theme":"CPO","note":"SG攻撃 AI計測"},
-    {"ticker":"COHR","name":"Coherent Corp","type":"BUY","price":329.50,"sepa":"9.0","theme":"光学","note":"EMA上昇 光学回復"},
-    {"ticker":"ATEYY","name":"Advantest ADR","type":"BUY","price":181.37,"sepa":"9.0","theme":"CPO","note":"PF土台 安定推移"},
-    {"ticker":"ASX","name":"ASE Technology","type":"BUY","price":31.59,"sepa":"9.0","theme":"CPO","note":"SF万能 RSI77.5注意"},
-    {"ticker":"AEHR","name":"Aehr Test Systems","type":"BUY","price":93.07,"sepa":"9.0","theme":"CPO","note":"C守備 バランス良好"},
-    {"ticker":"MP","name":"MP Materials","type":"BUY","price":66.63,"sepa":"8.0","theme":"資源","note":"5/7決算 黒字転換?"},
-    {"ticker":"SLB","name":"Schlumberger","type":"BUY","price":56.92,"sepa":"9.0","theme":"エネルギー","note":"エネルギーテーマ"},
-    {"ticker":"ROKU","name":"Roku","type":"BUY","price":123.58,"sepa":"9.0","theme":"テック","note":"テック成長"},
-    {"ticker":"TVTX","name":"Travere Therapeutics","type":"BUY","price":44.12,"sepa":"9.0","theme":"バイオ","note":"バイオ RSI77.1"},
-    {"ticker":"ROIV","name":"Roivant Sciences","type":"WATCH","price":27.83,"sepa":"6.0","theme":"バイオ","note":"RSI低下 21MA回復待ち"},
-    {"ticker":"FCX","name":"Freeport-McMoRan","type":"WATCH","price":56.55,"sepa":"6.0","theme":"銅","note":"21MA大幅割れ"},
-    {"ticker":"AG","name":"First Majestic","type":"HOLD","price":19.85,"sepa":"5.0","theme":"金銀","note":"SEPA基準未達"},
-    {"ticker":"ERO","name":"Ero Copper","type":"HOLD","price":25.21,"sepa":"5.0","theme":"銅","note":"RSI10.7 売られすぎ"}
+    {
+      "ticker": "FORM",
+      "name": "FormFactor",
+      "type": "BUY",
+      "price": 137.3699951171875,
+      "sepa": "9.0",
+      "theme": "CPO",
+      "note": "持ち場:PG"
+    },
+    {
+      "ticker": "KEYS",
+      "name": "Keysight Technologies",
+      "type": "BUY",
+      "price": 352.4100036621094,
+      "sepa": "9.0",
+      "theme": "CPO",
+      "note": "持ち場:SG"
+    },
+    {
+      "ticker": "ASX",
+      "name": "ASE Technology",
+      "type": "BUY",
+      "price": 31.59000015258789,
+      "sepa": "9.0",
+      "theme": "CPO",
+      "note": "RSI77.5過熱 / 持ち場:SF"
+    },
+    {
+      "ticker": "ATEYY",
+      "name": "Advantest (ADR)",
+      "type": "BUY",
+      "price": 181.3699951171875,
+      "sepa": "9.0",
+      "theme": "CPO",
+      "note": "持ち場:PF"
+    },
+    {
+      "ticker": "AEHR",
+      "name": "Aehr Test Systems",
+      "type": "BUY",
+      "price": 93.06999969482422,
+      "sepa": "9.0",
+      "theme": "CPO",
+      "note": "持ち場:C"
+    },
+    {
+      "ticker": "COHR",
+      "name": "Coherent Corp",
+      "type": "BUY",
+      "price": 329.5,
+      "sepa": "9.0",
+      "theme": "半導体・光学",
+      "note": "半導体・光学"
+    },
+    {
+      "ticker": "TVTX",
+      "name": "Travere Therapeutics",
+      "type": "BUY",
+      "price": 44.119998931884766,
+      "sepa": "9.0",
+      "theme": "バイオ",
+      "note": "RSI77.1過熱"
+    },
+    {
+      "ticker": "NVT",
+      "name": "nVent Electric",
+      "type": "BUY",
+      "price": 158.9199981689453,
+      "sepa": "9.0",
+      "theme": "電力",
+      "note": "RSI78.3過熱"
+    },
+    {
+      "ticker": "SLB",
+      "name": "Schlumberger",
+      "type": "BUY",
+      "price": 56.91999816894531,
+      "sepa": "9.0",
+      "theme": "エネルギー",
+      "note": "エネルギー"
+    },
+    {
+      "ticker": "ROKU",
+      "name": "Roku",
+      "type": "BUY",
+      "price": 123.58000183105469,
+      "sepa": "9.0",
+      "theme": "テック",
+      "note": "テック"
+    },
+    {
+      "ticker": "MP",
+      "name": "MP Materials",
+      "type": "BUY",
+      "price": 66.62999725341797,
+      "sepa": "8.0",
+      "theme": "資源・銅",
+      "note": "資源・銅"
+    },
+    {
+      "ticker": "ROIV",
+      "name": "Roivant Sciences",
+      "type": "WATCH",
+      "price": 27.829999923706055,
+      "sepa": "6.0",
+      "theme": "バイオ",
+      "note": "バイオ"
+    },
+    {
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan",
+      "type": "WATCH",
+      "price": 56.54999923706055,
+      "sepa": "6.0",
+      "theme": "資源・銅",
+      "note": "RSI26.5低下"
+    },
+    {
+      "ticker": "AG",
+      "name": "First Majestic Silver",
+      "type": "HOLD",
+      "price": 19.850000381469727,
+      "sepa": "5.0",
+      "theme": "金銀",
+      "note": "金銀"
+    },
+    {
+      "ticker": "ERO",
+      "name": "Ero Copper",
+      "type": "HOLD",
+      "price": 25.209999084472656,
+      "sepa": "5.0",
+      "theme": "資源・銅",
+      "note": "RSI10.7低下"
+    },
+    {
+      "ticker": "CDE",
+      "name": "Coeur Mining",
+      "type": "SELL_PARTIAL",
+      "price": 17.649999618530273,
+      "sepa": "3.0",
+      "theme": "金銀",
+      "note": "RSI36.8低下"
+    }
   ],
   "ai_consensus": [
-    {"rank":1,"ticker":"FORM","sepa":"9.0","grok":"+8","gemini":"68pt","gpt":"+15-25%","verdict":"最強: Q1ビート+HBM爆発"},
-    {"rank":2,"ticker":"NVT","sepa":"9.0","grok":"+8","gemini":"81pt","gpt":"+10-15%","verdict":"決算ビート: Q1 EPS+15%"},
-    {"rank":3,"ticker":"KEYS","sepa":"9.0","grok":"+6","gemini":"65pt","gpt":"+5-10%","verdict":"AI計測。成長鈍化注意"},
-    {"rank":4,"ticker":"ATEYY","sepa":"9.0","grok":"—","gemini":"—","gpt":"—","verdict":"CPO安定土台"},
-    {"rank":5,"ticker":"COHR","sepa":"9.0","grok":"—","gemini":"58pt","gpt":"+5-15%","verdict":"光学回復。負債注意"},
-    {"rank":6,"ticker":"MP","sepa":"8.0","grok":"+8","gemini":"42pt","gpt":"+0-10%","verdict":"テーマ◎ファンダ✕"},
-    {"rank":7,"ticker":"CDE","sepa":"3.0","grok":"+6","gemini":"52pt","gpt":"+10-20%","verdict":"恩株化最優先"}
+    {
+      "rank": 1,
+      "ticker": "NVDA",
+      "sepa": "—",
+      "grok": "+8",
+      "gemini": "92pt",
+      "gpt": "+15-25%",
+      "verdict": ""
+    },
+    {
+      "rank": 2,
+      "ticker": "TSM",
+      "sepa": "—",
+      "grok": "+8",
+      "gemini": "90pt",
+      "gpt": "+10-20%",
+      "verdict": ""
+    },
+    {
+      "rank": 3,
+      "ticker": "AVGO",
+      "sepa": "—",
+      "grok": "+8",
+      "gemini": "89pt",
+      "gpt": "+10-20%",
+      "verdict": ""
+    },
+    {
+      "rank": 4,
+      "ticker": "WPM",
+      "sepa": "—",
+      "grok": "+6",
+      "gemini": "85pt",
+      "gpt": "+5-10%",
+      "verdict": ""
+    },
+    {
+      "rank": 5,
+      "ticker": "NVT",
+      "sepa": "9.0",
+      "grok": "+8",
+      "gemini": "81pt",
+      "gpt": "+10-15%",
+      "verdict": "買い寄りの押し目買い・ホールド"
+    },
+    {
+      "rank": 6,
+      "ticker": "FCX",
+      "sepa": "6.0",
+      "grok": "+5",
+      "gemini": "74pt",
+      "gpt": "+5-15%",
+      "verdict": ""
+    },
+    {
+      "rank": 7,
+      "ticker": "FORM",
+      "sepa": "9.0",
+      "grok": "+8",
+      "gemini": "68pt",
+      "gpt": "+15-25%",
+      "verdict": "押し目買いの成長株"
+    },
+    {
+      "rank": 8,
+      "ticker": "KEYS",
+      "sepa": "9.0",
+      "grok": "+6",
+      "gemini": "65pt",
+      "gpt": "+5-10%",
+      "verdict": ""
+    },
+    {
+      "rank": 9,
+      "ticker": "COHR",
+      "sepa": "9.0",
+      "grok": "+5",
+      "gemini": "58pt",
+      "gpt": "+5-15%",
+      "verdict": ""
+    },
+    {
+      "rank": 10,
+      "ticker": "CDE",
+      "sepa": "3.0",
+      "grok": "+6",
+      "gemini": "52pt",
+      "gpt": "+10-20%",
+      "verdict": ""
+    }
   ],
   "earnings": [
-    {"date":"5/6","ticker":"CDE","name":"Coeur Mining","strategy":"恩株化判断","note":"EPS予想$0.44。銀$73-74追い風","days":4},
-    {"date":"5/7","ticker":"MP","name":"MP Materials","strategy":"黒字転換確認","note":"EPS予想-$0.04。Q4は初GAAP黒字","days":5}
+    {
+      "date": "5/5",
+      "ticker": "TVTX",
+      "name": "Travere Therapeutics",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 3
+    },
+    {
+      "date": "5/5",
+      "ticker": "ERO",
+      "name": "Ero Copper",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 3
+    },
+    {
+      "date": "5/7",
+      "ticker": "COHR",
+      "name": "Coherent Corp",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 5
+    },
+    {
+      "date": "5/7",
+      "ticker": "CDE",
+      "name": "Coeur Mining",
+      "strategy": "決算カタリスト狙い",
+      "note": "金銀価格上昇の業績反映確認",
+      "days": 5
+    },
+    {
+      "date": "5/8",
+      "ticker": "MP",
+      "name": "MP Materials",
+      "strategy": "黒字転換確認",
+      "note": "売上$627M、純利益$110M予想。変曲点",
+      "days": 6
+    },
+    {
+      "date": "5/12",
+      "ticker": "AG",
+      "name": "First Majestic Silver",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 10
+    },
+    {
+      "date": "5/20",
+      "ticker": "KEYS",
+      "name": "Keysight Technologies",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 18
+    },
+    {
+      "date": "5/28",
+      "ticker": "ROIV",
+      "name": "Roivant Sciences",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 26
+    },
+    {
+      "date": "7/22",
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 81
+    },
+    {
+      "date": "7/24",
+      "ticker": "SLB",
+      "name": "Schlumberger",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 83
+    },
+    {
+      "date": "7/30",
+      "ticker": "FORM",
+      "name": "FormFactor",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 89
+    },
+    {
+      "date": "7/30",
+      "ticker": "ASX",
+      "name": "ASE Technology",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 89
+    },
+    {
+      "date": "7/31",
+      "ticker": "NVT",
+      "name": "nVent Electric",
+      "strategy": "決算前ポジション構築",
+      "note": "電力需要増テーマの確認",
+      "days": 90
+    },
+    {
+      "date": "7/31",
+      "ticker": "ROKU",
+      "name": "Roku",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 90
+    }
   ],
   "team": [
-    {"pos":"PG","role":"司令塔","ticker":"FORM","price":137.37,"rsi":57.8,"sepa":"9.0","status":"Q1+32%ビート"},
-    {"pos":"SG","role":"攻撃","ticker":"KEYS","price":352.41,"rsi":66.9,"sepa":"9.0","status":"AI計測需要"},
-    {"pos":"SF","role":"万能","ticker":"ASX","price":31.59,"rsi":77.5,"sepa":"9.0","status":"RSI過熱注意"},
-    {"pos":"PF","role":"土台","ticker":"ATEYY","price":181.37,"rsi":60.4,"sepa":"9.0","status":"安定推移"},
-    {"pos":"C","role":"守備","ticker":"AEHR","price":93.07,"rsi":69.2,"sepa":"9.0","status":"バランス良好"}
-  ]
+    {
+      "pos": "PG",
+      "role": "司令塔",
+      "ticker": "FORM",
+      "price": 137.3699951171875,
+      "rsi": 57.8,
+      "sepa": "9.0",
+      "status": "安定推移"
+    },
+    {
+      "pos": "SG",
+      "role": "攻撃",
+      "ticker": "KEYS",
+      "price": 352.4100036621094,
+      "rsi": 66.9,
+      "sepa": "9.0",
+      "status": "安定推移"
+    },
+    {
+      "pos": "SF",
+      "role": "万能",
+      "ticker": "ASX",
+      "price": 31.59000015258789,
+      "rsi": 77.5,
+      "sepa": "9.0",
+      "status": "RSI過熱注意"
+    },
+    {
+      "pos": "PF",
+      "role": "土台",
+      "ticker": "ATEYY",
+      "price": 181.3699951171875,
+      "rsi": 60.4,
+      "sepa": "9.0",
+      "status": "安定推移"
+    },
+    {
+      "pos": "C",
+      "role": "守備",
+      "ticker": "AEHR",
+      "price": 93.06999969482422,
+      "rsi": 69.2,
+      "sepa": "9.0",
+      "status": "安定推移"
+    }
+  ],
+  "details": {
+    "FORM": {
+      "ticker": "FORM",
+      "name": "FormFactor",
+      "theme": "CPO",
+      "sector": "半導体",
+      "position": "PG",
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 137.3699951171875,
+      "sepa_score": "9.0/9.0",
+      "rsi": "57.8",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$130.68",
+      "stop_loss_8pct": "$126.38",
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "AI HBM・プローブカード需要爆発",
+          "決算大幅ビート",
+          "半導体テスト装置の強さ"
+        ]
+      },
+      "perplexity": {
+        "judgment": "押し目買いの成長株",
+        "reason": "AI/HBMテスト需要で2四半期連続レコード。Q2ガイダンスも強い。ただしサイクル銘柄なのでボラティリティ注意",
+        "drivers": [
+          "AI向けロジック＆HBMテスト需要爆発",
+          "DRAM（特にHBM）向け売上が過去最高更新",
+          "Foundry & Logic向けプローブカード需要拡大",
+          "AI時代のテストボトルネック解消ポジション"
+        ],
+        "risks": [
+          "顧客CAPEXサイクル依存（TSMC/Samsung/SK hynix）",
+          "生産能力のピーク・ボトルネック → 追加投資でマージン圧迫",
+          "AI関連半導体ブーム一服・HBM在庫調整リスク"
+        ],
+        "latest_earnings": {
+          "quarter": "2026 Q1（4月末発表）",
+          "revenue_actual": "2.261億ドル",
+          "yoy_revenue_growth": "+32%",
+          "qoq_growth": "+5.1%（過去最高）",
+          "eps_actual": 0.56,
+          "eps_estimate": 0.45,
+          "eps_surprise": "+25%",
+          "revenue_surprise": "+0.23%",
+          "note": "2四半期連続のレコード決算"
+        },
+        "next_earnings": {
+          "quarter": "2026 Q2",
+          "revenue_guidance": "2.40億ドル±500万ドル",
+          "eps_guidance": "0.61ドル±0.04ドル",
+          "analyst_consensus_eps": "0.58〜0.61ドル"
+        },
+        "analyst_ratings": null
+      },
+      "gemini": {
+        "rank": 7,
+        "score": 68,
+        "revenue_growth": "+12%",
+        "eps_growth": "+15%",
+        "net_margin": "14%",
+        "roe": "12%",
+        "per": 35,
+        "debt_equity": 0.1
+      },
+      "chatgpt": {
+        "base": "+15-25%。HBMテスト需要で高成長継続",
+        "bull": "+30-40%。HBM/先端テスト独占で急成長",
+        "bear": "-25-40%。半導体サイクル反転で需要急減",
+        "geo_risk": "高",
+        "geo_notes": [
+          "us_china: medium",
+          "taiwan: high"
+        ]
+      },
+      "earnings": {
+        "date": "7/30",
+        "days": 89,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.56286,
+        "revenue_estimate": 239999780
+      }
+    },
+    "KEYS": {
+      "ticker": "KEYS",
+      "name": "Keysight Technologies",
+      "theme": "CPO",
+      "sector": "半導体・計測",
+      "position": "SG",
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 352.4100036621094,
+      "sepa_score": "9.0/9.0",
+      "rsi": "66.9",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$329.19",
+      "stop_loss_8pct": "$324.22",
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "AIテスト機器需要急増",
+          "アナリスト目標株価引き上げ",
+          "半導体テストセクター成長"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 8,
+        "score": 65,
+        "revenue_growth": "+5%",
+        "eps_growth": "+8%",
+        "net_margin": "18%",
+        "roe": "20%",
+        "per": 28,
+        "debt_equity": 0.4
+      },
+      "chatgpt": {
+        "base": "+5-10%。緩やかな回復",
+        "bull": null,
+        "bear": null,
+        "geo_risk": "中",
+        "geo_notes": [
+          "us_china: medium"
+        ]
+      },
+      "earnings": {
+        "date": "5/20",
+        "days": 18,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 2.32049,
+        "revenue_estimate": 1705224330
+      }
+    },
+    "ASX": {
+      "ticker": "ASX",
+      "name": "ASE Technology",
+      "theme": "CPO",
+      "sector": "半導体パッケージ",
+      "position": "SF",
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 31.59000015258789,
+      "sepa_score": "9.0/9.0",
+      "rsi": "77.5",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$28.27",
+      "stop_loss_8pct": "$29.06",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "7/30",
+        "days": 89,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.23908,
+        "revenue_estimate": 189189993870
+      }
+    },
+    "ATEYY": {
+      "ticker": "ATEYY",
+      "name": "Advantest (ADR)",
+      "theme": "CPO",
+      "sector": "半導体テスト",
+      "position": "PF",
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 181.3699951171875,
+      "sepa_score": "9.0/9.0",
+      "rsi": "60.4",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$173.05",
+      "stop_loss_8pct": "$166.86",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null
+    },
+    "AEHR": {
+      "ticker": "AEHR",
+      "name": "Aehr Test Systems",
+      "theme": "CPO",
+      "sector": "半導体テスト",
+      "position": "C",
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 93.06999969482422,
+      "sepa_score": "9.0/9.0",
+      "rsi": "69.2",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$77.98",
+      "stop_loss_8pct": "$85.62",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null
+    },
+    "COHR": {
+      "ticker": "COHR",
+      "name": "Coherent Corp",
+      "theme": "半導体・光学",
+      "sector": "光学・レーザー",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 329.5,
+      "sepa_score": "9.0/9.0",
+      "rsi": "58.1",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$310.14",
+      "stop_loss_8pct": "$303.14",
+      "grok": {
+        "score": 5,
+        "judgment": "やや強気",
+        "reasons": [
+          "光学・フォトニクスAI応用",
+          "Buyレーティング開始",
+          "決算・競合比較"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 9,
+        "score": 58,
+        "revenue_growth": "+10%",
+        "eps_growth": "+15%",
+        "net_margin": "6%",
+        "roe": "5%",
+        "per": 40,
+        "debt_equity": 1.45
+      },
+      "chatgpt": {
+        "base": "+5-15%。光学需要回復",
+        "bull": null,
+        "bear": null,
+        "geo_risk": "中",
+        "geo_notes": [
+          "us_china: medium"
+        ]
+      },
+      "earnings": {
+        "date": "5/7",
+        "days": 5,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 1.394,
+        "revenue_estimate": 1780315440
+      }
+    },
+    "TVTX": {
+      "ticker": "TVTX",
+      "name": "Travere Therapeutics",
+      "theme": "バイオ",
+      "sector": "バイオテック",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 44.119998931884766,
+      "sepa_score": "9.0/9.0",
+      "rsi": "77.1",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$38.07",
+      "stop_loss_8pct": "$40.59",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "5/5",
+        "days": 3,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": -0.04667,
+        "revenue_estimate": 136774160
+      }
+    },
+    "NVT": {
+      "ticker": "NVT",
+      "name": "nVent Electric",
+      "theme": "電力",
+      "sector": "電力インフラ",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 158.9199981689453,
+      "sepa_score": "9.0/9.0",
+      "rsi": "78.3",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$135.84",
+      "stop_loss_8pct": "$146.21",
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "データセンター需要急増",
+          "決算ビート＆ガイダンス大幅上げ",
+          "株価記録更新の勢い"
+        ]
+      },
+      "perplexity": {
+        "judgment": "買い寄りの押し目買い・ホールド",
+        "reason": "AIデータセンター向けテーマは2026年も継続性高い。決算ビート実績良好。ただしPER35倍の高値圏なので10〜20%調整を待つのがベター",
+        "drivers": [
+          "AIデータセンター向け電力インフラ需要急増",
+          "液冷ソリューション（AIサーバー冷却）",
+          "送配電・産業設備の電気接続需要"
+        ],
+        "risks": [
+          "AI投資サイクル変動リスク",
+          "PER約35倍の高バリュエーション",
+          "マージン維持（粗利率38.6%）"
+        ],
+        "latest_earnings": {
+          "quarter": "2025 Q3",
+          "eps_actual": 0.91,
+          "revenue_actual": "10.5億ドル",
+          "vs_consensus": "ビート（EPS・売上ともに上回る）",
+          "yoy_revenue_growth": "21.5%"
+        },
+        "next_earnings": {
+          "quarter": "2025 Q4",
+          "eps_estimate": 0.9,
+          "revenue_estimate": "10億ドル",
+          "note": "Q3からわずかに減速した水準"
+        },
+        "analyst_ratings": {
+          "buy": 13,
+          "total": 14,
+          "target_price": 124,
+          "current_price_approx": 117,
+          "upside": "+6%"
+        }
+      },
+      "gemini": {
+        "rank": 5,
+        "score": 81,
+        "revenue_growth": "+26%",
+        "eps_growth": "+30%",
+        "net_margin": "15%",
+        "roe": "18%",
+        "per": 28,
+        "debt_equity": 0.6
+      },
+      "chatgpt": {
+        "base": "+10-15%。データセンター電力需要で安定成長",
+        "bull": "+20-30%。AI電力インフラ特需",
+        "bear": "-15-25%。設備投資削減の影響",
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "7/31",
+        "days": 90,
+        "strategy": "決算前ポジション構築",
+        "note": "電力需要増テーマの確認",
+        "eps_estimate": 1.11288,
+        "revenue_estimate": 1178285040
+      }
+    },
+    "SLB": {
+      "ticker": "SLB",
+      "name": "Schlumberger",
+      "theme": "エネルギー",
+      "sector": "エネルギー",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 56.91999816894531,
+      "sepa_score": "9.0/9.0",
+      "rsi": "75.0",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$53.70",
+      "stop_loss_8pct": "$52.37",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "7/24",
+        "days": 83,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.52551,
+        "revenue_estimate": 8689539640
+      }
+    },
+    "ROKU": {
+      "ticker": "ROKU",
+      "name": "Roku",
+      "theme": "テック",
+      "sector": "テック",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 123.58000183105469,
+      "sepa_score": "9.0/9.0",
+      "rsi": "74.0",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$110.63",
+      "stop_loss_8pct": "$113.69",
+      "grok": {
+        "score": 5,
+        "judgment": "やや強気",
+        "reasons": [
+          "決算ビート＆プラットフォーム成長",
+          "1億世帯到達",
+          "高PER・バリュエーション懸念"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 11,
+        "score": 45,
+        "revenue_growth": "+15%",
+        "eps_growth": "赤字",
+        "net_margin": "-8%",
+        "roe": "-12%",
+        "per": "N/A",
+        "debt_equity": 0.14
+      },
+      "chatgpt": {
+        "base": "-5-+10%。広告市場次第",
+        "bull": "+15-25%。広告市場回復＋利下げで成長株再評価",
+        "bear": "-30-50%。広告費削減で赤字拡大",
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "7/31",
+        "days": 90,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.57,
+        "revenue_estimate": 1297534180
+      }
+    },
+    "MP": {
+      "ticker": "MP",
+      "name": "MP Materials",
+      "theme": "資源・銅",
+      "sector": "レアアース",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 66.62999725341797,
+      "sepa_score": "8.0/9.0",
+      "rsi": "63.1",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$61.12",
+      "stop_loss_8pct": "$61.30",
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "米国レアアース唯一の生産者",
+          "政府（DoD）投資・支援",
+          "中国依存脱却の戦略的価値"
+        ]
+      },
+      "perplexity": {
+        "judgment": "ハイボラ前提の中長期テーマ株（ポジション小さめ推奨）",
+        "reason": "米国唯一のレアアース生産者としての戦略的価値は高いが、ビジネスの安定性はNVT・FORMより低い",
+        "drivers": [],
+        "risks": [],
+        "latest_earnings": null,
+        "next_earnings": null,
+        "analyst_ratings": null
+      },
+      "gemini": {
+        "rank": 12,
+        "score": 42,
+        "revenue_growth": "-5%",
+        "eps_growth": "-15%",
+        "net_margin": "5%",
+        "roe": "3%",
+        "per": 60,
+        "debt_equity": 0.44
+      },
+      "chatgpt": {
+        "base": "+0-10%。レアアース需要は長期テーマ",
+        "bull": "+20-40%。DoD大型契約＋レアアース価格上昇",
+        "bear": "-25-40%。レアアース需要減＋高ボラ",
+        "geo_risk": "低",
+        "geo_notes": [
+          "rare_earth: 受益"
+        ]
+      },
+      "earnings": {
+        "date": "5/8",
+        "days": 6,
+        "strategy": "黒字転換確認",
+        "note": "売上$627M、純利益$110M予想。変曲点",
+        "eps_estimate": -0.03646,
+        "revenue_estimate": 75457260
+      }
+    },
+    "ROIV": {
+      "ticker": "ROIV",
+      "name": "Roivant Sciences",
+      "theme": "バイオ",
+      "sector": "バイオテック",
+      "position": null,
+      "rating": "○",
+      "signal": "ウォッチ",
+      "price": 27.829999923706055,
+      "sepa_score": "6.0/9.0",
+      "rsi": "41.5",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$28.25",
+      "stop_loss_8pct": "$25.60",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "5/28",
+        "days": 26,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": -0.34975,
+        "revenue_estimate": 3912900
+      }
+    },
+    "FCX": {
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan",
+      "theme": "資源・銅",
+      "sector": "銅",
+      "position": null,
+      "rating": "○",
+      "signal": "ウォッチ",
+      "price": 56.54999923706055,
+      "sepa_score": "6.0/9.0",
+      "rsi": "26.5",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$61.97",
+      "stop_loss_8pct": "$52.03",
+      "grok": {
+        "score": 5,
+        "judgment": "やや強気",
+        "reasons": [
+          "銅価格高騰＋AIインフラ需要",
+          "生産遅延・ガイダンス懸念",
+          "長期銅供給逼迫"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 6,
+        "score": 74,
+        "revenue_growth": "+15%",
+        "eps_growth": "+25%",
+        "net_margin": "12%",
+        "roe": "14%",
+        "per": 25,
+        "debt_equity": 0.5
+      },
+      "chatgpt": {
+        "base": "+5-15%。銅価格は高水準維持",
+        "bull": "+20-30%。銅需給逼迫で価格高騰",
+        "bear": "-20-30%。景気後退→銅需要減少",
+        "geo_risk": "低",
+        "geo_notes": [
+          "middle_east: 受益"
+        ]
+      },
+      "earnings": {
+        "date": "7/22",
+        "days": 81,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.56347,
+        "revenue_estimate": 6743894970
+      }
+    },
+    "AG": {
+      "ticker": "AG",
+      "name": "First Majestic Silver",
+      "theme": "金銀",
+      "sector": "貴金属・銀",
+      "position": null,
+      "rating": "△",
+      "signal": "様子見",
+      "price": 19.850000381469727,
+      "sepa_score": "5.0/9.0",
+      "rsi": "43.8",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$20.59",
+      "stop_loss_8pct": "$18.26",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "5/12",
+        "days": 10,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.3225
+      }
+    },
+    "ERO": {
+      "ticker": "ERO",
+      "name": "Ero Copper",
+      "theme": "資源・銅",
+      "sector": "銅",
+      "position": null,
+      "rating": "△",
+      "signal": "様子見",
+      "price": 25.209999084472656,
+      "sepa_score": "5.0/9.0",
+      "rsi": "10.7",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$27.46",
+      "stop_loss_8pct": "$23.19",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "5/5",
+        "days": 3,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.52283,
+        "revenue_estimate": 338939330
+      }
+    },
+    "CDE": {
+      "ticker": "CDE",
+      "name": "Coeur Mining",
+      "theme": "金銀",
+      "sector": "貴金属・金銀",
+      "position": null,
+      "rating": "×",
+      "signal": "見送り",
+      "price": 17.649999618530273,
+      "sepa_score": "3.0/9.0",
+      "rsi": "36.8",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$18.91",
+      "stop_loss_8pct": "$16.24",
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "アナリストBuyアップグレード",
+          "銀鉱山セクターの注目",
+          "業績回復期待"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 10,
+        "score": 52,
+        "revenue_growth": "+25%",
+        "eps_growth": "黒字転換",
+        "net_margin": "4%",
+        "roe": "2%",
+        "per": "N/A",
+        "debt_equity": 0.85
+      },
+      "chatgpt": {
+        "base": "+10-20%。黒字転換で再評価",
+        "bull": "+30-50%。金銀高騰＋黒字拡大のダブル効果",
+        "bear": "-15-25%。金は上昇するが銀は産業需要減で軟調",
+        "geo_risk": "低",
+        "geo_notes": [
+          "middle_east: 受益"
+        ]
+      },
+      "earnings": {
+        "date": "5/7",
+        "days": 5,
+        "strategy": "決算カタリスト狙い",
+        "note": "金銀価格上昇の業績反映確認",
+        "eps_estimate": 0.37003,
+        "revenue_estimate": 833180000
+      }
+    }
+  }
 };
 
 // ============================================================
@@ -584,7 +1823,7 @@ function render() {
     else if (s.type === 'HOLD') { badgeClass = 'badge-caution'; label = '様子見'; }
     else if (s.type === 'SELL_PARTIAL') { badgeClass = 'badge-sell'; label = '利確'; }
     else if (s.type === 'EARNINGS') { badgeClass = 'badge-earn'; label = '決算'; }
-    return `<div class="signal-item">
+    return `<div class="signal-item" data-ticker="${s.ticker}">
       <div class="signal-badge ${badgeClass}">${label}</div>
       <div class="signal-info">
         <div class="signal-ticker">${s.ticker} <span style="font-size:11px;color:var(--text2);font-weight:400">${s.theme}</span></div>
@@ -605,7 +1844,7 @@ function render() {
     if (a.grok !== '—') chips.push(`<span class="ai-chip chip-grok">Grok ${a.grok}</span>`);
     if (a.gemini !== '—') chips.push(`<span class="ai-chip chip-gemini">Gemini ${a.gemini}</span>`);
     if (a.gpt !== '—') chips.push(`<span class="ai-chip chip-gpt">GPT ${a.gpt}</span>`);
-    return `<div class="ai-row">
+    return `<div class="ai-row" data-ticker="${a.ticker}">
       <div>
         <div class="ai-ticker">${a.rank}. ${a.ticker}</div>
       </div>
@@ -621,7 +1860,7 @@ function render() {
   const earnHtml = d.earnings.map(e => {
     const parts = e.date.split('/');
     const urgentClass = e.days <= 3 ? 'days-urgent' : 'days-soon';
-    return `<div class="earn-item">
+    return `<div class="earn-item" data-ticker="${e.ticker}" style="cursor:pointer">
       <div class="earn-date">
         <div class="earn-month">${parts[0]}月</div>
         <div class="earn-day">${parts[1]}</div>
@@ -638,7 +1877,7 @@ function render() {
   // Team
   const teamHtml = d.team.map(t => {
     const rsiColor = t.rsi > 75 ? 'var(--orange)' : t.rsi < 40 ? 'var(--red)' : 'var(--green)';
-    return `<div style="display:flex;align-items:center;padding:12px 0;border-bottom:1px solid var(--border)">
+    return `<div class="team-row" data-ticker="${t.ticker}" style="display:flex;align-items:center;padding:12px 0;border-bottom:1px solid var(--border)">
       <div style="width:48px;text-align:center;flex-shrink:0">
         <div style="font-size:18px;font-weight:800;color:var(--cyan)">${t.pos}</div>
         <div style="font-size:10px;color:var(--text2)">${t.role}</div>
@@ -660,9 +1899,244 @@ function render() {
 }
 
 // ============================================================
+// Detail Modal
+// ============================================================
+function rsiColorOf(rsi) {
+  const v = parseFloat(rsi);
+  if (isNaN(v)) return 'var(--text)';
+  if (v > 75) return 'var(--orange)';
+  if (v < 40) return 'var(--red)';
+  return 'var(--green)';
+}
+
+function openDetail(ticker) {
+  const d = SCAN_DATA.details && SCAN_DATA.details[ticker];
+  if (!d) {
+    console.warn('No detail data for', ticker);
+    return;
+  }
+  document.getElementById('detailContent').innerHTML = renderDetail(d);
+  document.getElementById('detailOverlay').classList.add('show');
+  document.getElementById('detailSheet').classList.add('show');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('detailSheet').scrollTop = 0;
+}
+
+function closeDetail() {
+  document.getElementById('detailOverlay').classList.remove('show');
+  document.getElementById('detailSheet').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function buildSnipeGuide(d) {
+  const market = SCAN_DATA.market_health;
+  const bothOn = market['S&P500'].above_21MA && market['Russell2000'].above_21MA;
+  const mode = bothOn ? '浅い床モード（10/25日線で初弾）' : '深い床モード（75/200日線まで引きつけ）';
+  const sig = d.signal || '';
+  let action;
+  if (d.ticker === 'CDE') {
+    action = `恩株化判定: $16.72到達なら510株利確 → 残510株は週足ステージ3割れまで保有`;
+  } else if (sig === '買いシグナル') {
+    action = `初弾 1/3 エントリー候補。残り2/3は ${d.stop_loss_21ma || '21MA'} 接近時に打診`;
+  } else if (sig === 'ウォッチ') {
+    action = `21MA回復 / VCP収縮確認まで待機。エントリーNG`;
+  } else {
+    action = `現状エントリーNG。基準充足を待つ`;
+  }
+  return `<div>地合い: <strong style="color:${bothOn ? 'var(--green)' : 'var(--red)'}">${mode}</strong></div>
+          <div style="margin-top:6px">${action}</div>
+          <div style="margin-top:6px;color:var(--text2)">⛔ 損切: ${d.stop_loss_8pct || '—'} (8%) / ${d.stop_loss_21ma || '—'} (21MA)</div>`;
+}
+
+function renderDetail(d) {
+  const tags = [];
+  if (d.theme) tags.push(`<span class="detail-tag">${d.theme}</span>`);
+  if (d.position) tags.push(`<span class="detail-tag" style="background:rgba(63,185,80,0.12);color:var(--green)">持ち場 ${d.position}</span>`);
+  if (d.rating) tags.push(`<span class="detail-tag" style="background:rgba(227,179,65,0.12);color:var(--gold)">${d.rating}</span>`);
+  if (d.signal) tags.push(`<span class="detail-tag" style="background:rgba(188,140,255,0.12);color:var(--purple)">${d.signal}</span>`);
+
+  let html = `
+    <div class="detail-handle"></div>
+    <button class="detail-close" onclick="closeDetail()">✕</button>
+    <div class="detail-header">
+      <div class="detail-ticker">${d.ticker}</div>
+      <div class="detail-name">${d.name || ''}${d.sector ? ' ・ ' + d.sector : ''}</div>
+      <div class="detail-price-row">
+        <div class="detail-price">$${(d.price || 0).toFixed(2)}</div>
+        <div style="font-size:13px;color:var(--text2)">SEPA ${d.sepa_score || '—'}</div>
+      </div>
+      <div class="detail-tags">${tags.join('')}</div>
+    </div>
+  `;
+
+  // Technical
+  html += `
+    <div class="detail-section">
+      <div class="detail-section-title">📊 テクニカル</div>
+      <div class="detail-grid">
+        <div class="detail-stat">
+          <div class="label">RSI</div>
+          <div class="val" style="color:${rsiColorOf(d.rsi)}">${d.rsi || '—'}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="label">VCP</div>
+          <div class="val" style="font-size:11px">${d.vcp || '—'}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="label">21MA損切</div>
+          <div class="val" style="color:var(--orange)">${d.stop_loss_21ma || '—'}</div>
+        </div>
+        <div class="detail-stat">
+          <div class="label">8%損切</div>
+          <div class="val" style="color:var(--red)">${d.stop_loss_8pct || '—'}</div>
+        </div>
+      </div>
+      ${d.short_cover ? `<div style="font-size:11px;color:var(--text2);margin-top:8px">ショートカバー判定: ${d.short_cover}</div>` : ''}
+    </div>
+  `;
+
+  // Earnings
+  if (d.earnings) {
+    const e = d.earnings;
+    html += `
+      <div class="detail-section" style="border-color:rgba(188,140,255,0.3)">
+        <div class="detail-section-title" style="color:var(--purple)">📅 決算 ${e.date} (${e.days}日後)</div>
+        <div style="font-size:13px;font-weight:600;color:var(--purple)">${e.strategy}</div>
+        ${e.note ? `<div style="font-size:12px;color:var(--text2);margin-top:4px;line-height:1.5">${e.note}</div>` : ''}
+      </div>
+    `;
+  }
+
+  // Grok
+  if (d.grok) {
+    const g = d.grok;
+    const reasons = (g.reasons || []).map(r => `<li>${r}</li>`).join('');
+    html += `
+      <div class="detail-section">
+        <div class="detail-section-title"><span class="ai-chip chip-grok">Grok</span> センチメント</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px">
+          <span style="font-size:18px;font-weight:700;color:#1d9bf0">+${g.score != null ? g.score : '?'}</span>
+          <span style="font-size:13px;color:var(--text2)">${g.judgment || ''}</span>
+        </div>
+        ${reasons ? `<ul class="detail-list">${reasons}</ul>` : ''}
+      </div>
+    `;
+  }
+
+  // Perplexity
+  if (d.perplexity) {
+    const p = d.perplexity;
+    const drivers = (p.drivers || []).map(r => `<li>${r}</li>`).join('');
+    const risks = (p.risks || []).map(r => `<li style="color:var(--orange)">${r}</li>`).join('');
+    let earnBlock = '';
+    if (p.latest_earnings) {
+      const le = p.latest_earnings;
+      const parts = [];
+      if (le.quarter) parts.push(le.quarter);
+      if (le.eps_actual) parts.push(`EPS $${le.eps_actual}`);
+      if (le.vs_consensus) parts.push(le.vs_consensus);
+      if (le.yoy_revenue_growth) parts.push(`YoY ${le.yoy_revenue_growth}`);
+      earnBlock = `<div style="font-size:11px;color:var(--text2);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)">
+        直近決算: ${parts.join(' / ')}
+      </div>`;
+    }
+    let analystBlock = '';
+    if (p.analyst_ratings) {
+      const a = p.analyst_ratings;
+      analystBlock = `<div style="font-size:11px;color:var(--text2);margin-top:4px">
+        アナリスト: Buy ${a.buy || '?'}/${a.total || '?'} ・ 目標 $${a.target_price || '?'} (${a.upside || ''})
+      </div>`;
+    }
+    html += `
+      <div class="detail-section">
+        <div class="detail-section-title"><span class="ai-chip chip-perp">Perplexity</span> Deep Research</div>
+        <div style="font-size:13px;font-weight:600;color:var(--purple)">${p.judgment || ''}</div>
+        <div style="font-size:12px;color:var(--text2);margin-top:4px;line-height:1.5">${p.reason || ''}</div>
+        ${analystBlock}
+        ${drivers ? `<div style="font-size:11px;color:var(--text2);margin-top:8px">📈 成長ドライバー</div><ul class="detail-list">${drivers}</ul>` : ''}
+        ${risks ? `<div style="font-size:11px;color:var(--text2);margin-top:6px">⚠️ リスク</div><ul class="detail-list">${risks}</ul>` : ''}
+        ${earnBlock}
+      </div>
+    `;
+  }
+
+  // Gemini
+  if (d.gemini) {
+    const gm = d.gemini;
+    html += `
+      <div class="detail-section">
+        <div class="detail-section-title"><span class="ai-chip chip-gemini">Gemini</span> ファンダ #${gm.rank} (${gm.score}pt)</div>
+        <div class="detail-grid">
+          <div class="detail-stat"><div class="label">売上成長</div><div class="val">${gm.revenue_growth || '—'}</div></div>
+          <div class="detail-stat"><div class="label">EPS成長</div><div class="val">${gm.eps_growth || '—'}</div></div>
+          <div class="detail-stat"><div class="label">純利益率</div><div class="val">${gm.net_margin || '—'}</div></div>
+          <div class="detail-stat"><div class="label">ROE</div><div class="val">${gm.roe || '—'}</div></div>
+          <div class="detail-stat"><div class="label">PER</div><div class="val">${gm.per != null ? gm.per : '—'}</div></div>
+          <div class="detail-stat"><div class="label">D/E</div><div class="val">${gm.debt_equity != null ? gm.debt_equity : '—'}</div></div>
+        </div>
+      </div>
+    `;
+  }
+
+  // ChatGPT
+  if (d.chatgpt) {
+    const c = d.chatgpt;
+    const geoColor = (c.geo_risk === '極高' || c.geo_risk === '高') ? 'var(--red)'
+                   : c.geo_risk === '中' ? 'var(--orange)' : 'var(--green)';
+    html += `
+      <div class="detail-section">
+        <div class="detail-section-title"><span class="ai-chip chip-gpt">ChatGPT</span> シナリオ別インパクト</div>
+        ${c.base ? `<div class="detail-scenario">
+          <span class="detail-scenario-tag" style="background:rgba(88,166,255,0.15);color:var(--cyan)">ベース 60%</span>
+          <div style="font-size:12px;line-height:1.5;margin-top:4px">${c.base}</div>
+        </div>` : ''}
+        ${c.bull ? `<div class="detail-scenario">
+          <span class="detail-scenario-tag" style="background:rgba(63,185,80,0.15);color:var(--green)">ブル 20%</span>
+          <div style="font-size:12px;line-height:1.5;margin-top:4px">${c.bull}</div>
+        </div>` : ''}
+        ${c.bear ? `<div class="detail-scenario">
+          <span class="detail-scenario-tag" style="background:rgba(248,81,73,0.15);color:var(--red)">ベア 20%</span>
+          <div style="font-size:12px;line-height:1.5;margin-top:4px">${c.bear}</div>
+        </div>` : ''}
+        <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--border);font-size:11px;color:var(--text2)">
+          地政学リスク: <span style="color:${geoColor};font-weight:700">${c.geo_risk}</span>${c.geo_notes && c.geo_notes.length ? ' ・ ' + c.geo_notes.join(', ') : ''}
+        </div>
+      </div>
+    `;
+  }
+
+  // 狙撃の掟ガイド
+  html += `
+    <div class="detail-section" style="border-color:var(--cyan)">
+      <div class="detail-section-title" style="color:var(--cyan)">🎯 狙撃の掟（適用ガイド）</div>
+      <div style="font-size:12px;line-height:1.7">
+        ${buildSnipeGuide(d)}
+      </div>
+    </div>
+  `;
+
+  return html;
+}
+
+// ============================================================
 // Init
 // ============================================================
-document.addEventListener('DOMContentLoaded', render);
+document.addEventListener('DOMContentLoaded', () => {
+  render();
+  ['signalList', 'aiConsensus', 'teamLineup', 'earningsList'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('click', (e) => {
+      const target = e.target.closest('[data-ticker]');
+      if (target && target.dataset.ticker) {
+        openDetail(target.dataset.ticker);
+      }
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeDetail();
+  });
+});
 
 // Register Service Worker
 if ('serviceWorker' in navigator) {

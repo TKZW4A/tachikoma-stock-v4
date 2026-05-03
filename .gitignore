@@ -1,0 +1,13 @@
+# ローカル運用ツール（GitHub Pages には不要）
+update_app.py
+auto_deploy.sh
+
+# Python キャッシュ
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# ローカル一時ファイル
+*.local-backup
