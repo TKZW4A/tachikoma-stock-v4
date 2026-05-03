@@ -931,6 +931,32 @@ body {
 
 <!-- ===== Page MY: Watchlist + Holdings + Cash ===== -->
 <div class="page" id="page-my">
+  <!-- Manual Run -->
+  <div class="my-section" style="border-color:rgba(63,185,80,0.3);background:linear-gradient(135deg,rgba(63,185,80,0.06),rgba(88,166,255,0.04))">
+    <div class="my-section-title">
+      <span>🔄</span> 手動スキャン実行
+      <span class="count">スケジュール: 平日 7:08 自動</span>
+    </div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:10px">
+      スケジュールを待たずに即時パイプラインを動かしたい時用。<br>
+      ボタンを押すとコマンドがクリップボードにコピーされます。ターミナルに貼って実行してください。
+    </div>
+    <div id="manualCmdBox" style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;color:var(--cyan);word-break:break-all;margin-bottom:10px;line-height:1.5">
+      cd ~/Documents/Claude/Projects/米株式/takimoto_app &amp;&amp; ./auto_deploy.sh
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button class="my-btn" onclick="copyManualRunCommand('full')">📋 フル版（全工程）</button>
+      <button class="my-btn ghost" onclick="copyManualRunCommand('fast')">📋 軽量版（--skip-leaders）</button>
+      <button class="my-btn ghost" onclick="copyManualRunCommand('local')">📋 ローカル確認のみ（--skip-push）</button>
+    </div>
+    <div style="font-size:10px;color:var(--text2);line-height:1.5;margin-top:10px;padding-top:8px;border-top:1px solid var(--border)">
+      ⏱️ <strong>フル版</strong> ≈ 2-3分（全パイプライン: yfinance系 + 先導株 + テーマ + PWA + push） ／
+      <strong>軽量版</strong> ≈ 30秒（先導株スクリーナーをスキップ） ／
+      <strong>ローカル版</strong> ≈ 軽量＋ push せずローカルで確認のみ<br>
+      💡 1-tap 起動したい場合: Apple Shortcut で <code>shortcuts://run-shortcut?name=tachikoma-deploy</code> を作成しておくと、PWA から URL スキーム経由で起動可能
+    </div>
+  </div>
+
   <!-- Position Summary -->
   <div class="my-section" id="posSummarySection">
     <div class="my-section-title">
@@ -7942,6 +7968,23 @@ function saveFxFromForm() {
   if (isNaN(v) || v <= 0) { alert('正の数値（例: 150）を入力してください'); return; }
   setFxRate(v);
   document.getElementById('fxIn').value = '';
+}
+
+function copyManualRunCommand(mode) {
+  const base = 'cd ~/Documents/Claude/Projects/米株式/takimoto_app && ./auto_deploy.sh';
+  const cmd = mode === 'fast' ? `${base} --skip-leaders`
+            : mode === 'local' ? `${base} --skip-push`
+            : base;
+  const box = document.getElementById('manualCmdBox');
+  if (box) box.textContent = cmd;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(cmd).then(
+      () => alert(`✅ クリップボードにコピーしました\n\n${cmd}\n\nターミナルに貼って実行してください。`),
+      () => alert(`コピーに失敗しました。手動で選択してコピーしてください:\n\n${cmd}`)
+    );
+  } else {
+    alert(`コピー機能が使えません。手動で選択してください:\n\n${cmd}`);
+  }
 }
 
 // ============================================================
