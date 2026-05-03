@@ -669,18 +669,19 @@ body {
     <div class="card-title"><span class="emoji">⚖️</span> マーケットパルス（P/C Ratio）</div>
     <div class="pulse-grid">
       <div class="pulse-block">
-        <div class="pulse-symbol">SPY</div>
+        <div class="pulse-symbol">個別株（Equity相当）</div>
         <div class="pulse-value" id="pulseSpyVal">—</div>
         <div class="pulse-label" id="pulseSpyLabel">未取得</div>
       </div>
       <div class="pulse-block">
-        <div class="pulse-symbol">QQQ</div>
+        <div class="pulse-symbol">インデックス（参考）</div>
         <div class="pulse-value" id="pulseQqqVal">—</div>
         <div class="pulse-label" id="pulseQqqLabel">未取得</div>
       </div>
     </div>
     <div style="font-size:10px;color:var(--text2);margin-top:8px;line-height:1.5">
-      &lt;0.7 強気 ／ 0.7-0.79 やや強気 ／ 0.8-0.89 中立〜弱気 ／ 0.9-0.99 下落リスク高 ／ ≥1.0 危険水域
+      &lt;0.7 強気 ／ 0.7-0.79 やや強気 ／ 0.8-0.89 中立〜弱気 ／ 0.9-0.99 下落リスク高 ／ ≥1.0 危険水域<br>
+      <span style="opacity:0.7">※ 個別株 = メガキャップ15銘柄を集計（CBOE Equity P/C 相当）／ インデックス = SPY/QQQ/IWM（機関ヘッジ反映）</span>
     </div>
   </div>
 
@@ -814,17 +815,26 @@ body {
     </div>
   </div>
 
-  <!-- Cash -->
+  <!-- Cash + FX rate -->
   <div class="my-section">
     <div class="my-section-title">
-      <span>💵</span> キャッシュ残高
+      <span>💴</span> キャッシュ残高（円）
     </div>
     <div class="cash-row">
-      <input class="my-input" id="cashIn" type="number" placeholder="残高 (USD)" step="100" />
+      <input class="my-input" id="cashIn" type="number" placeholder="残高 (¥)" step="10000" />
       <button class="my-btn" onclick="saveCashFromForm()">保存</button>
     </div>
     <div style="font-size:11px;color:var(--text2);margin-top:6px">
-      現在: <span id="cashCurrent" class="cash-display">$0</span>
+      現在: <span id="cashCurrent" class="cash-display">¥0</span>
+      <span id="cashUsdEquiv" style="color:var(--text2);font-size:11px;margin-left:6px"></span>
+    </div>
+    <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border)">
+      <div style="font-size:11px;color:var(--text2);margin-bottom:4px">為替レート (USD/JPY)</div>
+      <div class="cash-row">
+        <input class="my-input small" id="fxIn" type="number" placeholder="例: 150" step="0.5" />
+        <button class="my-btn" onclick="saveFxFromForm()">保存</button>
+        <span style="font-size:13px;color:var(--text2)">現在: <strong id="fxCurrent" style="color:var(--text)">150</strong>円/$</span>
+      </div>
     </div>
   </div>
 
@@ -4104,31 +4114,112 @@ const SCAN_DATA = {
     ]
   },
   "market_pulse": {
-    "updated_at": "2026-05-04T00:49:38",
-    "spy": {
-      "symbol": "SPY",
-      "expiries_used": 4,
-      "put_volume": 794446,
-      "call_volume": 657165,
-      "put_oi": 220214,
-      "call_oi": 125058,
-      "pcr_volume": 1.209,
-      "pcr_oi": 1.761
+    "updated_at": "2026-05-04T01:21:14",
+    "methodology": "CBOE-Equity-equivalent: aggregate option volume of 15 large-cap individual stocks (nearest 2 expiries each)",
+    "equity_basket": {
+      "label": "equity",
+      "tickers_used": [
+        "AAPL",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "NVDA",
+        "META",
+        "TSLA",
+        "AMD",
+        "NFLX",
+        "AVGO",
+        "JPM",
+        "BAC",
+        "XOM",
+        "WMT",
+        "COST"
+      ],
+      "tickers_failed": [],
+      "expiries_per_ticker": 2,
+      "put_volume": 817689,
+      "call_volume": 1770393,
+      "put_oi": 1289973,
+      "call_oi": 1740342,
+      "pcr_volume": 0.462,
+      "pcr_oi": 0.741
     },
-    "qqq": {
-      "symbol": "QQQ",
-      "expiries_used": 4,
-      "put_volume": 442453,
-      "call_volume": 209470,
-      "put_oi": 134759,
-      "call_oi": 127190,
-      "pcr_volume": 2.112,
-      "pcr_oi": 1.06
+    "index_basket": {
+      "label": "index",
+      "tickers_used": [
+        "SPY",
+        "QQQ",
+        "IWM"
+      ],
+      "tickers_failed": [],
+      "expiries_per_ticker": 2,
+      "put_volume": 1239116,
+      "call_volume": 883265,
+      "put_oi": 347737,
+      "call_oi": 230269,
+      "pcr_volume": 1.403,
+      "pcr_oi": 1.51
     },
-    "spy_classification": {
+    "equity_classification": {
+      "level": "bullish",
+      "label": "強気（上昇期待）",
+      "color": "green"
+    },
+    "index_classification": {
       "level": "danger",
       "label": "危険水域 — これじゃダメじゃん",
       "color": "red"
+    },
+    "spy": {
+      "label": "equity",
+      "tickers_used": [
+        "AAPL",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "NVDA",
+        "META",
+        "TSLA",
+        "AMD",
+        "NFLX",
+        "AVGO",
+        "JPM",
+        "BAC",
+        "XOM",
+        "WMT",
+        "COST"
+      ],
+      "tickers_failed": [],
+      "expiries_per_ticker": 2,
+      "put_volume": 817689,
+      "call_volume": 1770393,
+      "put_oi": 1289973,
+      "call_oi": 1740342,
+      "pcr_volume": 0.462,
+      "pcr_oi": 0.741,
+      "symbol": "EQUITY-BASKET"
+    },
+    "qqq": {
+      "label": "index",
+      "tickers_used": [
+        "SPY",
+        "QQQ",
+        "IWM"
+      ],
+      "tickers_failed": [],
+      "expiries_per_ticker": 2,
+      "put_volume": 1239116,
+      "call_volume": 883265,
+      "put_oi": 347737,
+      "call_oi": 230269,
+      "pcr_volume": 1.403,
+      "pcr_oi": 1.51,
+      "symbol": "INDEX-BASKET"
+    },
+    "spy_classification": {
+      "level": "bullish",
+      "label": "強気（上昇期待）",
+      "color": "green"
     },
     "qqq_classification": {
       "level": "danger",
@@ -4335,8 +4426,10 @@ function renderLeaders(d) {
 const LS_KEYS = {
   watchlist: 'tachikoma.watchlist',
   holdings: 'tachikoma.holdings',
-  cash: 'tachikoma.cash',
+  cash: 'tachikoma.cash',     // 単位: 円 (JPY)
+  fxrate: 'tachikoma.fxrate', // USD/JPY
 };
+const FX_DEFAULT = 150;
 
 const SEED_WATCHLIST = [
   'FORM','KEYS','ASX','ATEYY','AEHR','COHR','ROIV','TVTX',
@@ -4408,12 +4501,24 @@ function removeHolding(idx) {
   hs.splice(idx, 1);
   setHoldings(hs);
 }
-function getCash() { return Number(lsGet(LS_KEYS.cash, 0)) || 0; }
+function getCash() { return Number(lsGet(LS_KEYS.cash, 0)) || 0; }   // 円
 function setCash(v) {
   const n = Number(v) || 0;
   lsSet(LS_KEYS.cash, n);
   renderMyTab();
 }
+function getFxRate() {
+  const v = Number(lsGet(LS_KEYS.fxrate, FX_DEFAULT));
+  return v > 0 ? v : FX_DEFAULT;
+}
+function setFxRate(v) {
+  const n = Number(v) || FX_DEFAULT;
+  if (n <= 0) return;
+  lsSet(LS_KEYS.fxrate, n);
+  renderMyTab();
+}
+function fmtJPY(n) { return '¥' + Math.round(n).toLocaleString(); }
+function fmtUSD(n) { return '$' + Math.round(n).toLocaleString(); }
 
 function addWatchlistFromForm() {
   const inp = document.getElementById('wlTickerIn');
@@ -4443,6 +4548,13 @@ function saveCashFromForm() {
   if (isNaN(v) || v < 0) { alert('正の数値を入力してください'); return; }
   setCash(v);
   document.getElementById('cashIn').value = '';
+}
+
+function saveFxFromForm() {
+  const v = parseFloat(document.getElementById('fxIn').value);
+  if (isNaN(v) || v <= 0) { alert('正の数値（例: 150）を入力してください'); return; }
+  setFxRate(v);
+  document.getElementById('fxIn').value = '';
 }
 
 // ============================================================
@@ -4546,9 +4658,12 @@ function renderMyTab() {
     ? '<span style="color:var(--text2);font-size:12px">空。ティッカーを入力して追加してください</span>'
     : wl.map(t => `<span class="wl-chip" onclick="openDetail('${t}')">${t}<span class="x" onclick="event.stopPropagation();removeFromWatchlist('${t}')">×</span></span>`).join('');
 
-  // Cash
+  // Cash + FX
   const cash = getCash();
-  document.getElementById('cashCurrent').textContent = '$' + cash.toLocaleString();
+  const fx = getFxRate();
+  document.getElementById('cashCurrent').textContent = fmtJPY(cash);
+  document.getElementById('cashUsdEquiv').textContent = cash > 0 ? `(≈ ${fmtUSD(cash / fx)} @ ${fx}円/$)` : '';
+  document.getElementById('fxCurrent').textContent = fx;
 
   // Holdings + daily action
   const holdings = getHoldings();
@@ -4597,19 +4712,24 @@ function renderMyTab() {
   renderPositionSummary(evaluations, cash);
 }
 
-function renderPositionSummary(evaluations, cash) {
-  const equity = evaluations.reduce((s, e) => s + e.ev.value, 0);
-  const total = equity + cash;
-  const eqPct = total > 0 ? (equity / total) * 100 : 0;
-  const cashPct = total > 0 ? (cash / total) * 100 : 0;
+function renderPositionSummary(evaluations, cashJpy) {
+  // 現物評価額は USD ベース → JPY 換算で統一
+  const fx = getFxRate();
+  const equityUsd = evaluations.reduce((s, e) => s + e.ev.value, 0);
+  const equityJpy = equityUsd * fx;
+  const totalJpy = equityJpy + cashJpy;
+  const eqPct = totalJpy > 0 ? (equityJpy / totalJpy) * 100 : 0;
+  const cashPct = totalJpy > 0 ? (cashJpy / totalJpy) * 100 : 0;
 
-  document.getElementById('posEquityVal').textContent = '$' + equity.toLocaleString(undefined, {maximumFractionDigits: 0});
-  document.getElementById('posCashVal').textContent = '$' + cash.toLocaleString();
+  document.getElementById('posEquityVal').textContent = fmtJPY(equityJpy);
+  document.getElementById('posCashVal').textContent = fmtJPY(cashJpy);
   document.getElementById('posEquityPct').textContent = eqPct.toFixed(0) + '%';
   document.getElementById('posCashPct').textContent = cashPct.toFixed(0) + '%';
   document.getElementById('posBarEquity').style.width = eqPct + '%';
   document.getElementById('posBarCash').style.width = cashPct + '%';
-  document.getElementById('posSummaryUpdated').textContent = total > 0 ? `合計 $${total.toLocaleString(undefined, {maximumFractionDigits: 0})}` : '';
+  document.getElementById('posSummaryUpdated').textContent = totalJpy > 0
+    ? `合計 ${fmtJPY(totalJpy)}（株式 ${fmtUSD(equityUsd)} × ${fx}円）`
+    : '';
 
   // Recommendation
   const mh = SCAN_DATA.market_health;
