@@ -8138,7 +8138,7 @@ function renderPositionSummary(evaluations, cashJpy) {
   let evalText;
   const eqMin = parseInt(recTarget.split('-')[0], 10);
   const eqMax = parseInt(recTarget.split('-')[1], 10);
-  if (total === 0) {
+  if (totalJpy === 0) {
     evalText = '<span style="color:var(--text2)">持ち株とキャッシュを入力すると推奨ポジションが計算されます</span>';
   } else if (eqPct < eqMin) {
     evalText = `<span style="color:var(--cyan)">⬆️ 現物比率 ${eqPct.toFixed(0)}% は推奨下限（${eqMin}%）を下回っています。新規エントリー余力あり</span>`;
@@ -8157,7 +8157,7 @@ function renderPositionSummary(evaluations, cashJpy) {
 
   // Sell suggestions: holdings with stop/trim/earn/profit-target action
   const flagged = evaluations.filter(e => ['stop', 'trim', 'take', 'earn'].includes(e.ev.action.tier));
-  if (flagged.length > 0 && total > 0) {
+  if (flagged.length > 0 && totalJpy > 0) {
     document.getElementById('posSellSuggestions').innerHTML = `
       <div style="margin-top:10px;padding-top:8px;border-top:1px solid var(--border)">
         <div style="font-size:12px;color:var(--orange);font-weight:600;margin-bottom:4px">🔔 売却・縮小検討対象</div>
