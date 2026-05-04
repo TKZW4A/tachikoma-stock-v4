@@ -11,3 +11,6 @@ __pycache__/
 
 # ローカル一時ファイル
 *.local-backup
+
+# Claude Code preview server config (host-local)
+.claude/
