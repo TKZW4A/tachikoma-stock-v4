@@ -903,62 +903,10 @@ body {
     <div class="silver-label">COMEX在庫：減少トレンド（物理スクイーズ進行中）</div>
   </div>
 
-  <!-- CDE Hero -->
-  <div class="cde-hero">
-    <div class="card-title"><span class="emoji">⭐</span> CDE 旗艦銘柄</div>
-    <div>
-      <span class="cde-price" id="cdePrice">$17.64</span>
-      <span class="cde-change" id="cdeChange" style="color:var(--red)">-1.59%</span>
-    </div>
-    <div class="cde-stats">
-      <div class="cde-stat">
-        <div class="label">含み益</div>
-        <div class="val" id="cdeProfit" style="color:var(--green)">+$9,468</div>
-      </div>
-      <div class="cde-stat">
-        <div class="label">損益率</div>
-        <div class="val" id="cdeProfitPct" style="color:var(--green)">+111%</div>
-      </div>
-      <div class="cde-stat">
-        <div class="label">保有</div>
-        <div class="val">1,020株</div>
-      </div>
-      <div class="cde-stat">
-        <div class="label">決算</div>
-        <div class="val" id="cdeEarnings" style="color:var(--orange)">5/6</div>
-      </div>
-    </div>
-    <div style="margin-top:12px;font-size:12px;color:var(--text2)">恩株化進捗（目標: $16.72）</div>
-    <div class="progress-bar">
-      <div class="progress-fill" id="cdeProgress" style="width:100%"></div>
-    </div>
-    <div class="progress-label">
-      <span>$8.36 取得</span>
-      <span id="cdeProgressLabel">✅ 達成済み</span>
-      <span>$16.72 目標</span>
-    </div>
-  </div>
-
-  <!-- Action Items -->
+  <!-- Action Items (dynamic from holdings) -->
   <div class="card">
-    <div class="card-title"><span class="emoji">🎯</span> 本日のアクション</div>
-    <div id="actionItems" style="font-size:13px;line-height:1.8">
-      <div style="padding:6px 0;border-bottom:1px solid var(--border)">
-        <span style="color:var(--red);font-weight:700">1.</span> CDE 510株利確 → 恩株化完遂
-      </div>
-      <div style="padding:6px 0;border-bottom:1px solid var(--border)">
-        <span style="color:var(--green);font-weight:700">2.</span> NVT $150押し目で初弾1/3
-      </div>
-      <div style="padding:6px 0;border-bottom:1px solid var(--border)">
-        <span style="color:var(--cyan);font-weight:700">3.</span> FORM 保有継続（PG最強）
-      </div>
-      <div style="padding:6px 0;border-bottom:1px solid var(--border)">
-        <span style="color:var(--orange);font-weight:700">4.</span> MP 決算5/7待ち
-      </div>
-      <div style="padding:6px 0">
-        <span style="color:var(--purple);font-weight:700">5.</span> ASX RSI77.5過熱注意
-      </div>
-    </div>
+    <div class="card-title"><span class="emoji">🎯</span> 本日のアクション（持ち株ベース）</div>
+    <div id="actionItems" style="font-size:13px;line-height:1.8"></div>
   </div>
 </div>
 
@@ -6584,17 +6532,6 @@ function render() {
   // Silver
   document.getElementById('silverPrice').textContent = d.silver;
 
-  // CDE
-  const cde = d.cde;
-  document.getElementById('cdePrice').textContent = '$' + cde.price.toFixed(2);
-  const profit = (cde.price - cde.avg_cost) * cde.shares;
-  const profitPct = ((cde.price - cde.avg_cost) / cde.avg_cost * 100);
-  document.getElementById('cdeProfit').textContent = (profit >= 0 ? '+' : '') + '$' + Math.round(profit).toLocaleString();
-  document.getElementById('cdeProfitPct').textContent = (profitPct >= 0 ? '+' : '') + profitPct.toFixed(0) + '%';
-  const progressPct = Math.min(100, ((cde.price - cde.avg_cost) / (cde.onkabu_target - cde.avg_cost)) * 100);
-  document.getElementById('cdeProgress').style.width = progressPct + '%';
-  document.getElementById('cdeProgressLabel').textContent = cde.price >= cde.onkabu_target ? '✅ 達成済み' : Math.round(progressPct) + '%';
-
   // Signals
   const signalHtml = d.signals.map(s => {
     let badgeClass = 'badge-buy', label = '買い';
@@ -6691,8 +6628,39 @@ function render() {
   // My tab (watchlist + holdings + cash)
   renderMyTab();
 
+  // Today's actions (dynamic from holdings)
+  renderTodayActions();
+
   // Update time
   document.getElementById('updateTime').textContent = '最終更新: ' + d.scan_date;
+}
+
+function renderTodayActions() {
+  const el = document.getElementById('actionItems');
+  if (!el) return;
+  const holdings = getHoldings();
+  if (!holdings.length) {
+    el.innerHTML = '<div style="color:var(--text2);font-size:12px;line-height:1.6">「📁 マイ」タブに持ち株を登録すると、評価額・損益と当日アクション提案がここに表示されます。</div>';
+    return;
+  }
+  // Ensure stubs so evaluateHolding works for non-WL tickers
+  holdings.forEach(h => ensureHoldingStub(h.ticker, h.current_price));
+  const colorMap = {stop:'var(--red)', take:'var(--gold)', trim:'var(--orange)', earn:'var(--purple)', hold:'var(--green)', unknown:'var(--text2)'};
+  const evals = holdings.map(h => ({h, ev: evaluateHolding(h)}));
+  // 並び順: stop > take > earn > trim > hold > unknown
+  const tierOrder = {stop:0, take:1, earn:2, trim:3, hold:4, unknown:5};
+  evals.sort((a,b) => (tierOrder[a.ev.action.tier] ?? 9) - (tierOrder[b.ev.action.tier] ?? 9));
+  el.innerHTML = evals.map(({h, ev}, i) => {
+    const c = colorMap[ev.action.tier] || 'var(--text2)';
+    const profitTxt = ev.profitPct != null
+      ? `（${ev.profitPct >= 0 ? '+' : ''}${ev.profitPct.toFixed(1)}%）`
+      : '';
+    return `<div style="padding:6px 0;border-bottom:1px solid var(--border);cursor:pointer" onclick="openDetail('${h.ticker}')">
+      <span style="color:${c};font-weight:700">${i+1}.</span>
+      <strong>${h.ticker}</strong> ${ev.action.label}
+      <span style="font-size:11px;color:var(--text2);margin-left:6px">${profitTxt}</span>
+    </div>`;
+  }).join('');
 }
 
 // ============================================================
@@ -7027,7 +6995,7 @@ function copyWatchlistAsConfig() {
 }
 
 function getHoldings() { return lsGet(LS_KEYS.holdings, []); }
-function setHoldings(hs) { lsSet(LS_KEYS.holdings, hs); renderMyTab(); }
+function setHoldings(hs) { lsSet(LS_KEYS.holdings, hs); renderMyTab(); renderTodayActions(); }
 function addHolding(h) {
   const hs = getHoldings();
   hs.push(h);
@@ -7258,10 +7226,6 @@ function evaluateHolding(h) {
     }
   }
 
-  // Special: CDE flagship reminder
-  if (h.ticker === 'CDE' && currentPrice >= 16.72) {
-    reasons.unshift(`💎 CDE 恩株化目標 $16.72 到達（現値 $${currentPrice.toFixed(2)}）。${shares}株のうち半分（${Math.floor(shares/2)}株）利確で残りはコストゼロ化`);
-  }
 
   return { d, currentPrice, priceSource, value, profit, profitPct, action: { tier, label, cls, reasons } };
 }
@@ -7500,8 +7464,6 @@ function buildSnipeGuide(d) {
     action = `先導株候補（${d.leader_score}pt）。WATCHLIST追加 → 4AI取材で深掘り → 初弾1/3エントリー検討`;
   } else if (d.ai_only) {
     action = `ウォッチリスト追加検討案件。テクニカル基準を確認後、初弾エントリー判断を再評価`;
-  } else if (d.ticker === 'CDE') {
-    action = `恩株化判定: $16.72到達なら510株利確 → 残510株は週足ステージ3割れまで保有`;
   } else if (sig === '買いシグナル') {
     action = `初弾 1/3 エントリー候補。残り2/3は ${d.stop_loss_21ma || '21MA'} 接近時に打診`;
   } else if (sig === 'ウォッチ') {
