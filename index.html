@@ -1276,7 +1276,7 @@ body {
 // Scan Data (embedded — updated by daily scan pipeline)
 // ============================================================
 const SCAN_DATA = {
-  "scan_date": "2026-05-05 22:05",
+  "scan_date": "2026-05-06 12:52",
   "market_health": {
     "S&P500": {
       "price": 723.77001953125,
@@ -1298,7 +1298,7 @@ const SCAN_DATA = {
     "avg_cost": 8.3573,
     "onkabu_target": 16.72,
     "earnings_date": "5/7",
-    "days_until": 2
+    "days_until": 1
   },
   "signals": [
     {
@@ -1311,16 +1311,6 @@ const SCAN_DATA = {
       "note": "RSI34.6低下"
     },
     {
-      "ticker": "FORM",
-      "name": "FormFactor",
-      "type": "BUY",
-      "price": 145.0,
-      "sepa": "9.0",
-      "theme": "CPO",
-      "note": "持ち場:PG",
-      "rank": 1
-    },
-    {
       "ticker": "KEYS",
       "name": "Keysight Technologies",
       "type": "BUY",
@@ -1328,23 +1318,33 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:SG",
+      "rank": 1
+    },
+    {
+      "ticker": "SLB",
+      "name": "Schlumberger",
+      "type": "BUY",
+      "price": 56.0,
+      "sepa": "9.0",
+      "theme": "エネルギー",
+      "note": "エネルギー",
       "rank": 2
     },
     {
-      "ticker": "COHR",
-      "name": "Coherent Corp",
+      "ticker": "FORM",
+      "name": "FormFactor",
       "type": "BUY",
-      "price": 335.7300109863281,
+      "price": 145.0,
       "sepa": "9.0",
-      "theme": "半導体・光学",
-      "note": "半導体・光学",
+      "theme": "CPO",
+      "note": "持ち場:PG",
       "rank": 3
     },
     {
       "ticker": "ATEYY",
       "name": "Advantest (ADR)",
       "type": "BUY",
-      "price": 186.5,
+      "price": 186.02000427246094,
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:PF",
@@ -1361,6 +1361,16 @@ const SCAN_DATA = {
       "rank": 5
     },
     {
+      "ticker": "COHR",
+      "name": "Coherent Corp",
+      "type": "BUY",
+      "price": 335.7300109863281,
+      "sepa": "9.0",
+      "theme": "半導体・光学",
+      "note": "半導体・光学",
+      "rank": 6
+    },
+    {
       "ticker": "TVTX",
       "name": "Travere Therapeutics",
       "type": "BUY",
@@ -1368,16 +1378,6 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "バイオ",
       "note": "バイオ",
-      "rank": 6
-    },
-    {
-      "ticker": "SLB",
-      "name": "Schlumberger",
-      "type": "BUY",
-      "price": 56.0,
-      "sepa": "9.0",
-      "theme": "エネルギー",
-      "note": "エネルギー",
       "rank": 7
     },
     {
@@ -1462,36 +1462,36 @@ const SCAN_DATA = {
       "rank": 1,
       "ticker": "NVDA",
       "sepa": "—",
-      "grok": "—",
+      "grok": "+6",
       "gemini": "98pt",
-      "gpt": "—",
+      "gpt": "AI設備投資の中核",
       "verdict": ""
     },
     {
       "rank": 2,
       "ticker": "AVGO",
       "sepa": "—",
-      "grok": "—",
+      "grok": "+4",
       "gemini": "92pt",
-      "gpt": "—",
+      "gpt": "AI ASIC、ネットワーク、",
       "verdict": ""
     },
     {
       "rank": 3,
       "ticker": "TSM",
       "sepa": "—",
-      "grok": "—",
-      "gemini": "88pt",
-      "gpt": "—",
+      "grok": "+5",
+      "gemini": "90pt",
+      "gpt": "先端半導体需要の中心",
       "verdict": ""
     },
     {
       "rank": 4,
       "ticker": "WPM",
       "sepa": "—",
-      "grok": "—",
+      "grok": "+3",
       "gemini": "85pt",
-      "gpt": "—",
+      "gpt": "金銀価格上昇局面で安定性が高い",
       "verdict": ""
     },
     {
@@ -1499,80 +1499,89 @@ const SCAN_DATA = {
       "ticker": "NVT",
       "sepa": "8.6",
       "grok": "—",
-      "gemini": "78pt",
-      "gpt": "—",
+      "gemini": "82pt",
+      "gpt": "電力インフラ・冷却・データセン",
       "verdict": ""
     },
     {
       "rank": 6,
-      "ticker": "FCX",
-      "sepa": "6.0",
+      "ticker": "ASX",
+      "sepa": "8.6",
       "grok": "—",
-      "gemini": "74pt",
-      "gpt": "—",
+      "gemini": "78pt",
+      "gpt": "半導体後工程・先端パッケージ需",
       "verdict": ""
     },
     {
       "rank": 7,
-      "ticker": "FORM",
-      "sepa": "9.0",
-      "grok": "—",
-      "gemini": "68pt",
-      "gpt": "—",
+      "ticker": "FCX",
+      "sepa": "6.0",
+      "grok": "+4",
+      "gemini": "75pt",
+      "gpt": "銅価格に高感応",
       "verdict": ""
     },
     {
       "rank": 8,
       "ticker": "KEYS",
       "sepa": "9.0",
-      "grok": "—",
-      "gemini": "65pt",
-      "gpt": "—",
-      "verdict": ""
+      "grok": "+7",
+      "gemini": "72pt",
+      "gpt": "電子計測・通信CAPEX回復待",
+      "verdict": {
+        "consensus_rating": "Buy",
+        "detail": {
+          "buy": 6,
+          "hold": 3,
+          "sell": 0
+        },
+        "consensus_12m_price_target_usd": 187.38,
+        "price_target_range_usd": {
+          "low": 164,
+          "high": 205
+        },
+        "implied_12m_upside_pct": 10.55
+      }
     },
     {
       "rank": 9,
-      "ticker": "COHR",
+      "ticker": "SLB",
       "sepa": "9.0",
       "grok": "—",
-      "gemini": "60pt",
-      "gpt": "—",
+      "gemini": "70pt",
+      "gpt": "原油・天然ガス開発投資に連動",
       "verdict": ""
     },
     {
       "rank": 10,
-      "ticker": "MP",
-      "sepa": "8.0",
-      "grok": "—",
-      "gemini": "52pt",
-      "gpt": "—",
-      "verdict": ""
+      "ticker": "FORM",
+      "sepa": "9.0",
+      "grok": "+5",
+      "gemini": "65pt",
+      "gpt": "半導体テスト需要に連動",
+      "verdict": {
+        "consensus_rating": "Buy",
+        "detail": {
+          "buy": 6,
+          "hold": 2,
+          "sell": 0
+        },
+        "consensus_12m_price_target_usd": 82,
+        "price_target_range_usd": {
+          "low": 45,
+          "high": 100
+        }
+      }
     }
   ],
   "earnings": [
-    {
-      "date": "5/5",
-      "ticker": "TVTX",
-      "name": "Travere Therapeutics",
-      "strategy": "決算カタリスト狙い",
-      "note": "",
-      "days": 0
-    },
-    {
-      "date": "5/5",
-      "ticker": "ERO",
-      "name": "Ero Copper",
-      "strategy": "決算カタリスト狙い",
-      "note": "",
-      "days": 0
-    },
     {
       "date": "5/7",
       "ticker": "COHR",
       "name": "Coherent Corp",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 2
+      "days": 1
     },
     {
       "date": "5/7",
@@ -1580,7 +1589,7 @@ const SCAN_DATA = {
       "name": "Coeur Mining",
       "strategy": "決算カタリスト狙い",
       "note": "金銀価格上昇の業績反映確認",
-      "days": 2
+      "days": 1
     },
     {
       "date": "5/8",
@@ -1588,7 +1597,7 @@ const SCAN_DATA = {
       "name": "MP Materials",
       "strategy": "黒字転換確認",
       "note": "売上$627M、純利益$110M予想。変曲点",
-      "days": 3
+      "days": 2
     },
     {
       "date": "5/12",
@@ -1596,7 +1605,7 @@ const SCAN_DATA = {
       "name": "First Majestic Silver",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 7
+      "days": 6
     },
     {
       "date": "5/20",
@@ -1604,7 +1613,7 @@ const SCAN_DATA = {
       "name": "Keysight Technologies",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 15
+      "days": 14
     },
     {
       "date": "5/28",
@@ -1612,7 +1621,7 @@ const SCAN_DATA = {
       "name": "Roivant Sciences",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 23
+      "days": 22
     },
     {
       "date": "7/22",
@@ -1620,7 +1629,7 @@ const SCAN_DATA = {
       "name": "Freeport-McMoRan",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 78
+      "days": 77
     },
     {
       "date": "7/24",
@@ -1628,7 +1637,7 @@ const SCAN_DATA = {
       "name": "Schlumberger",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 80
+      "days": 79
     },
     {
       "date": "7/30",
@@ -1636,12 +1645,20 @@ const SCAN_DATA = {
       "name": "FormFactor",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 86
+      "days": 85
     },
     {
       "date": "7/30",
       "ticker": "ASX",
       "name": "ASE Technology",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 85
+    },
+    {
+      "date": "7/31",
+      "ticker": "ERO",
+      "name": "Ero Copper",
       "strategy": "決算カタリスト狙い",
       "note": "",
       "days": 86
@@ -1652,7 +1669,7 @@ const SCAN_DATA = {
       "name": "nVent Electric",
       "strategy": "決算前ポジション構築",
       "note": "電力需要増テーマの確認",
-      "days": 87
+      "days": 86
     },
     {
       "date": "7/31",
@@ -1660,7 +1677,7 @@ const SCAN_DATA = {
       "name": "Roku",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 87
+      "days": 86
     }
   ],
   "team": [
@@ -1686,8 +1703,8 @@ const SCAN_DATA = {
       "pos": "PF",
       "role": "土台",
       "ticker": "ATEYY",
-      "price": 186.5,
-      "rsi": 57.0,
+      "price": 186.02000427246094,
+      "rsi": 56.8,
       "sepa": "9.0",
       "status": "安定推移"
     },
@@ -1726,18 +1743,69 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$132.28",
       "stop_loss_8pct": "$133.40",
-      "grok": null,
-      "perplexity": null,
+      "grok": {
+        "score": 5,
+        "judgment": "強気",
+        "reasons": [
+          "決算後押し目からの回復と上昇トレンド",
+          "大口コールオプション購入（$635k aggressive）が観測",
+          "テクニカルアナリストからポジティブ言及"
+        ]
+      },
+      "perplexity": {
+        "judgment": {
+          "consensus_rating": "Buy",
+          "detail": {
+            "buy": 6,
+            "hold": 2,
+            "sell": 0
+          },
+          "consensus_12m_price_target_usd": 82,
+          "price_target_range_usd": {
+            "low": 45,
+            "high": 100
+          }
+        },
+        "reason": null,
+        "drivers": [
+          "HBM4や2.5D/3D実装などアドバンストパッケージングのテスト需要増加",
+          "売上の約15%をR&Dに投じる高い研究開発投資",
+          "AIデータセンター・高性能コンピューティング向けテスト需要拡大"
+        ],
+        "risks": [
+          "半導体サイクル・設備投資に対する高い感応度",
+          "米中摩擦など地政学リスク",
+          "技術トレンド変化による陳腐化リスク"
+        ],
+        "latest_earnings": {
+          "latest_actual": {
+            "period": "Q1 2026",
+            "revenue_million_usd": 226.1,
+            "revenue_yoy_growth_pct": 5.1,
+            "eps_usd": 0.56,
+            "eps_surprise_pct": 27.27,
+            "notes": "四半期売上は過去最高でガイダンス上限を上回り、EPS・売上ともコンセンサスをビート。"
+          },
+          "next_guidance_consensus": {
+            "next_earnings_date": "2026-05-06",
+            "consensus_next_year_eps_growth_pct": 41.11,
+            "eps_this_year_usd": 0.9,
+            "eps_next_year_usd": 1.27
+          }
+        },
+        "next_earnings": null,
+        "analyst_ratings": null
+      },
       "gemini": {
-        "rank": 7,
-        "score": 68,
-        "revenue_growth": "中程度",
-        "eps_growth": "中程度",
-        "net_margin": "中程度",
-        "roe": "低〜中程度",
-        "per": "やや高い",
-        "debt_equity": "低い",
-        "filter_status": "除外推奨。RSが弱い場合またはオーバーヘッド・レジスタンスが厚い場合は避ける。"
+        "rank": 10,
+        "score": 65,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "FAIL"
       },
       "chatgpt": {
         "base": null,
@@ -1748,7 +1816,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/30",
-        "days": 86,
+        "days": 85,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.61,
@@ -1807,18 +1875,74 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$333.46",
       "stop_loss_8pct": "$327.46",
-      "grok": null,
-      "perplexity": null,
+      "grok": {
+        "score": 7,
+        "judgment": "強気",
+        "reasons": [
+          "過去1年で+142%の驚異的なモメンタム",
+          "52週高値更新とEV充電テスト技術のニュース",
+          "NVIDIA主要サプライヤーとして位置づけ"
+        ]
+      },
+      "perplexity": {
+        "judgment": {
+          "consensus_rating": "Buy",
+          "detail": {
+            "buy": 6,
+            "hold": 3,
+            "sell": 0
+          },
+          "consensus_12m_price_target_usd": 187.38,
+          "price_target_range_usd": {
+            "low": 164,
+            "high": 205
+          },
+          "implied_12m_upside_pct": 10.55
+        },
+        "reason": null,
+        "drivers": [
+          "AIアクセラレータ・ハイパフォーマンスサーバー向け高速通信テスト需要急拡大",
+          "6G、量子コンピューティング、自動車ADAS/EV等複数成長市場への分散",
+          "Spirent買収やソフトウェアサブスクリプション比率上昇によるマージン改善"
+        ],
+        "risks": [
+          "電子計測市場での激しい競争",
+          "クロスボーダーM&A審査の長期化リスク",
+          "米中摩擦・関税・輸出規制など地政学リスク"
+        ],
+        "latest_earnings": {
+          "latest_actual": {
+            "period": "Q1 2026 (FY2026 1Q)",
+            "revenue_billion_usd": 1.63,
+            "eps_non_gaap_usd": 2.01,
+            "roe_pct": 19.3,
+            "net_margin_pct": 15.71
+          },
+          "guidance": {
+            "q2_2026_revenue_guidance_billion_usd": {
+              "low": 1.69,
+              "high": 1.71
+            },
+            "q2_2026_eps_non_gaap_guidance_usd": {
+              "low": 2.27,
+              "high": 2.33
+            },
+            "fy2026_eps_guidance_non_gaap_usd": 8.59
+          }
+        },
+        "next_earnings": null,
+        "analyst_ratings": null
+      },
       "gemini": {
         "rank": 8,
-        "score": 65,
-        "revenue_growth": "鈍化傾向",
-        "eps_growth": "停滞",
-        "net_margin": "良好",
-        "roe": "良好",
-        "per": "適正水準",
-        "debt_equity": "中程度",
-        "filter_status": "除外。30週MAを下回っている可能性が高い。"
+        "score": 72,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "FAIL (RS弱含み)"
       },
       "chatgpt": {
         "base": null,
@@ -1829,7 +1953,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "5/20",
-        "days": 15,
+        "days": 14,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 2.32049,
@@ -1881,13 +2005,13 @@ const SCAN_DATA = {
       "position": "PF",
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 186.5,
+      "price": 186.02000427246094,
       "sepa_score": "9.0/9.0",
-      "rsi": "57.0",
+      "rsi": "56.8",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$174.96",
-      "stop_loss_8pct": "$171.58",
+      "stop_loss_21ma": "$174.92",
+      "stop_loss_8pct": "$171.14",
       "grok": null,
       "perplexity": null,
       "gemini": null,
@@ -1918,21 +2042,21 @@ const SCAN_DATA = {
           "c8_above_50ma": true
         },
         "tt_metrics": {
-          "price": 186.5,
-          "ma50": 161.83,
-          "ma150": 144.43,
+          "price": 186.02,
+          "ma50": 161.82,
+          "ma150": 144.42,
           "ma200": 128.64,
-          "pct_above_52w_low": 320.7,
-          "pct_to_52w_high": 0.9515,
+          "pct_above_52w_low": 319.6,
+          "pct_to_52w_high": 0.9491,
           "rs_rating": 99.0
         },
         "rs_rating": 99.0,
         "early_stage_2": true,
-        "ma30w": 144.43,
+        "ma30w": 144.42,
         "ma30w_trend": "up",
-        "ma30w_slope_pct": 8.75,
+        "ma30w_slope_pct": 8.74,
         "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0485,
+        "pct_from_52w_high": 0.0509,
         "days_since_break": 25,
         "break_volume_surge": false
       }
@@ -1952,9 +2076,48 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$79.81",
       "stop_loss_8pct": "$83.89",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "High Tight Flagなどの強気テクニカルパターン",
+          "AI/データセンター向けバックログ記録更新",
+          "トレーダーから再参入候補として注目"
+        ]
+      },
+      "perplexity": {
+        "judgment": {
+          "consensus_rating": "Buy",
+          "notes": "半導体テスト装置のニッチプレーヤーとしてAI需要恩恵"
+        },
+        "reason": null,
+        "drivers": [
+          "SiC（炭化ケイ素）パワー半導体テスト需要の急拡大",
+          "AI/データセンター向けバックログ記録更新",
+          "EV市場拡大に伴うパワー半導体テスト需要"
+        ],
+        "risks": [
+          "SiC市場への依存度が高い",
+          "大手顧客集中リスク",
+          "競合参入リスク"
+        ],
+        "latest_earnings": {
+          "notes": "AI/データセンター向けバックログ記録更新。High Tight Flag形成中。SiCテスト装置の需要拡大が成長ドライバー。"
+        },
+        "next_earnings": null,
+        "analyst_ratings": null
+      },
+      "gemini": {
+        "rank": 15,
+        "score": 30,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "FAIL"
+      },
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -2016,18 +2179,26 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$314.10",
       "stop_loss_8pct": "$308.87",
-      "grok": null,
+      "grok": {
+        "score": null,
+        "judgment": "中立",
+        "reasons": [
+          "実質的な議論が少なくスパム投稿が多い",
+          "AI/光学関連で散発的言及のみ",
+          "明確な強気弱気材料なし"
+        ]
+      },
       "perplexity": null,
       "gemini": {
-        "rank": 9,
+        "rank": 11,
         "score": 60,
-        "revenue_growth": "統合により拡大",
-        "eps_growth": "圧迫",
-        "net_margin": "低い",
-        "roe": "低い",
-        "per": "割高",
-        "debt_equity": "高い",
-        "filter_status": "除外。上値抵抗線が厚く上昇余地が限定的。"
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "FAIL"
       },
       "chatgpt": {
         "base": null,
@@ -2038,10 +2209,10 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "5/7",
-        "days": 2,
+        "days": 1,
         "strategy": "決算カタリスト狙い",
         "note": "",
-        "eps_estimate": 1.394,
+        "eps_estimate": 1.39433,
         "revenue_estimate": 1780315440
       },
       "stage_info": {
@@ -2097,9 +2268,27 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$39.24",
       "stop_loss_8pct": "$41.22",
-      "grok": null,
+      "grok": {
+        "score": -3,
+        "judgment": "弱気",
+        "reasons": [
+          "$400M株式オファリング発表（希薄化懸念）",
+          "バイオ株としての資金調達ニュース",
+          "実質議論少なくスパム中心"
+        ]
+      },
       "perplexity": null,
-      "gemini": null,
+      "gemini": {
+        "rank": 16,
+        "score": 25,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "FAIL"
+      },
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -2107,14 +2296,7 @@ const SCAN_DATA = {
         "geo_risk": "低",
         "geo_notes": []
       },
-      "earnings": {
-        "date": "5/5",
-        "days": 0,
-        "strategy": "決算カタリスト狙い",
-        "note": "",
-        "eps_estimate": 0.215,
-        "revenue_estimate": 159049340
-      },
+      "earnings": null,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -2168,9 +2350,27 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$54.07",
       "stop_loss_8pct": "$51.52",
-      "grok": null,
+      "grok": {
+        "score": null,
+        "judgment": "中立",
+        "reasons": [
+          "スパム投稿がほとんど",
+          "エネルギーサービス株としての具体論なし",
+          "低話題性"
+        ]
+      },
       "perplexity": null,
-      "gemini": null,
+      "gemini": {
+        "rank": 9,
+        "score": 70,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "FAIL"
+      },
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -2180,7 +2380,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/24",
-        "days": 80,
+        "days": 79,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.52551,
@@ -2239,18 +2439,26 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$113.15",
       "stop_loss_8pct": "$114.46",
-      "grok": null,
+      "grok": {
+        "score": null,
+        "judgment": "中立",
+        "reasons": [
+          "ストリーミングセクターのウォッチリスト入り",
+          "投稿数が少なく話題性低い",
+          "明確なセンチメント材料なし"
+        ]
+      },
       "perplexity": null,
       "gemini": {
-        "rank": 11,
-        "score": 45,
-        "revenue_growth": "鈍化",
-        "eps_growth": "赤字",
-        "net_margin": "マイナス",
-        "roe": "マイナス",
-        "per": "算出不可",
-        "debt_equity": "低い",
-        "filter_status": "除外。30週MA下落、弱いRS。底当て買いは厳禁。"
+        "rank": 14,
+        "score": 35,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "FAIL"
       },
       "chatgpt": {
         "base": null,
@@ -2261,7 +2469,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/31",
-        "days": 87,
+        "days": 86,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.56375,
@@ -2320,9 +2528,27 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$29.07",
       "stop_loss_8pct": "$30.76",
-      "grok": null,
+      "grok": {
+        "score": null,
+        "judgment": "中立",
+        "reasons": [
+          "半導体パッケージング企業としての言及少ない",
+          "スパムが大半",
+          "NVIDIAサプライチェーンでの文脈でも限定的"
+        ]
+      },
       "perplexity": null,
-      "gemini": null,
+      "gemini": {
+        "rank": 6,
+        "score": 78,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "PASS / 監視"
+      },
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -2332,7 +2558,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/30",
-        "days": 86,
+        "days": 85,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.23908,
@@ -2391,18 +2617,26 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$141.11",
       "stop_loss_8pct": "$155.86",
-      "grok": null,
+      "grok": {
+        "score": null,
+        "judgment": "中立",
+        "reasons": [
+          "投資家プロモーション投稿が大半",
+          "実質的な投資家議論がほとんどない",
+          "市場での話題性が低い"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 5,
-        "score": 78,
-        "revenue_growth": "堅調",
-        "eps_growth": "堅調",
-        "net_margin": "適正水準",
-        "roe": "良好",
-        "per": "適正水準",
-        "debt_equity": "中程度",
-        "filter_status": "条件付き適格。RSが強い場合のみ候補。"
+        "score": 82,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "PASS"
       },
       "chatgpt": {
         "base": null,
@@ -2413,11 +2647,11 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/31",
-        "days": 87,
+        "days": 86,
         "strategy": "決算前ポジション構築",
         "note": "電力需要増テーマの確認",
-        "eps_estimate": 1.11988,
-        "revenue_estimate": 1188085040
+        "eps_estimate": 1.15843,
+        "revenue_estimate": 1254105320
       },
       "stage_info": {
         "stage": 2,
@@ -2472,18 +2706,26 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$62.17",
       "stop_loss_8pct": "$62.62",
-      "grok": null,
+      "grok": {
+        "score": 1,
+        "judgment": "中立",
+        "reasons": [
+          "非エネルギー鉱物ウォッチリスト入り",
+          "スパム投稿が多数",
+          "レアアース関連での議論は限定的"
+        ]
+      },
       "perplexity": null,
       "gemini": {
-        "rank": 10,
-        "score": 52,
-        "revenue_growth": "マイナス",
-        "eps_growth": "大幅減",
-        "net_margin": "低下傾向",
-        "roe": "低下傾向",
-        "per": "高い",
-        "debt_equity": "中程度",
-        "filter_status": "除外。セクター自体が下落傾向。"
+        "rank": 12,
+        "score": 50,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "FAIL"
       },
       "chatgpt": {
         "base": null,
@@ -2494,11 +2736,11 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "5/8",
-        "days": 3,
+        "days": 2,
         "strategy": "黒字転換確認",
         "note": "売上$627M、純利益$110M予想。変曲点",
         "eps_estimate": -0.03646,
-        "revenue_estimate": 75457260
+        "revenue_estimate": 75456000
       },
       "stage_info": {
         "stage": 3,
@@ -2565,7 +2807,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "5/28",
-        "days": 23,
+        "days": 22,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": -0.34975,
@@ -2624,18 +2866,26 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$61.05",
       "stop_loss_8pct": "$53.07",
-      "grok": null,
+      "grok": {
+        "score": 4,
+        "judgment": "強気",
+        "reasons": [
+          "非エネルギー鉱物セクターの強さとしてウォッチリスト入り",
+          "本日+3.89%上昇と回復基調",
+          "商品/鉱業株のターンアラウンド候補"
+        ]
+      },
       "perplexity": null,
       "gemini": {
-        "rank": 6,
-        "score": 74,
-        "revenue_growth": "市況変動あり",
-        "eps_growth": "市況変動あり",
-        "net_margin": "良好",
-        "roe": "市況依存",
-        "per": "サイクリカル",
-        "debt_equity": "改善傾向",
-        "filter_status": "条件付き適格。銅セクター全体の下落傾向がないか確認必須。"
+        "rank": 7,
+        "score": 75,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "PASS / 監視"
       },
       "chatgpt": {
         "base": null,
@@ -2646,7 +2896,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/22",
-        "days": 78,
+        "days": 77,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.56347,
@@ -2717,7 +2967,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "5/12",
-        "days": 7,
+        "days": 6,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.3225
@@ -2786,12 +3036,12 @@ const SCAN_DATA = {
         "geo_notes": []
       },
       "earnings": {
-        "date": "5/5",
-        "days": 0,
+        "date": "7/31",
+        "days": 86,
         "strategy": "決算カタリスト狙い",
         "note": "",
-        "eps_estimate": 0.81524,
-        "revenue_estimate": 365660500
+        "eps_estimate": 0.98,
+        "revenue_estimate": 338757000
       },
       "stage_info": {
         "stage": 2,
@@ -2846,18 +3096,26 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$18.64",
       "stop_loss_8pct": "$15.76",
-      "grok": null,
+      "grok": {
+        "score": null,
+        "judgment": "中立",
+        "reasons": [
+          "ほとんどスパム投稿のみ",
+          "鉱業株としての具体的な議論なし",
+          "話題性が低い"
+        ]
+      },
       "perplexity": null,
       "gemini": {
-        "rank": 12,
-        "score": 40,
-        "revenue_growth": "不安定",
-        "eps_growth": "赤字傾向",
-        "net_margin": "マイナス",
-        "roe": "マイナス",
-        "per": "算出不可",
-        "debt_equity": "高い",
-        "filter_status": "除外。ファンダメンタルズが脆弱。"
+        "rank": 13,
+        "score": 45,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "FAIL"
       },
       "chatgpt": {
         "base": null,
@@ -2868,11 +3126,11 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "5/7",
-        "days": 2,
+        "days": 1,
         "strategy": "決算カタリスト狙い",
         "note": "金銀価格上昇の業績反映確認",
-        "eps_estimate": 0.35003,
-        "revenue_estimate": 833180000
+        "eps_estimate": 0.35878,
+        "revenue_estimate": 783890000
       },
       "stage_info": {
         "stage": 2,
@@ -2927,27 +3185,33 @@ const SCAN_DATA = {
       "short_cover": "",
       "stop_loss_21ma": "",
       "stop_loss_8pct": "",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "AIチップの中心企業として常に議論される",
+          "ポートフォリオ追加意欲の投稿多数",
+          "市場ベンチマークとして位置づけ"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 1,
         "score": 98,
-        "revenue_growth": "極めて高い",
-        "eps_growth": "極めて高い",
-        "net_margin": "非常に高い（50%超）",
-        "roe": "非常に高い（70%超）",
-        "per": "高い（成長プレミアム）",
-        "debt_equity": "低い",
-        "filter_status": "適格。ただし追っかけ買いは厳禁。出来高を伴う明確なブレイクアウト時のみエントリー可。"
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "PASS"
       },
       "chatgpt": {
         "base": null,
         "bull": null,
         "bear": null,
-        "geo_risk": "中",
-        "geo_notes": [
-          "US_China: 言及あり"
-        ]
+        "geo_risk": "低",
+        "geo_notes": []
       },
       "earnings": null,
       "ai_only": true,
@@ -3004,27 +3268,33 @@ const SCAN_DATA = {
       "short_cover": "",
       "stop_loss_21ma": "",
       "stop_loss_8pct": "",
-      "grok": null,
+      "grok": {
+        "score": 4,
+        "judgment": "強気",
+        "reasons": [
+          "AIインフラ関連での言及",
+          "Broadcomとしてネットワーク/カスタムチップ強み",
+          "AI投資家ポートフォリオ常連"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 2,
         "score": 92,
-        "revenue_growth": "高い",
-        "eps_growth": "安定して高い",
-        "net_margin": "高い",
-        "roe": "高い",
-        "per": "やや高い",
-        "debt_equity": "中程度（買収影響）",
-        "filter_status": "適格。30週MAが上向きであることを確認し、上値抵抗線を抜けるタイミングでのみ検討。"
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "PASS"
       },
       "chatgpt": {
         "base": null,
         "bull": null,
         "bear": null,
-        "geo_risk": "中",
-        "geo_notes": [
-          "US_China: 言及あり"
-        ]
+        "geo_risk": "低",
+        "geo_notes": []
       },
       "earnings": null,
       "ai_only": true,
@@ -3039,10 +3309,10 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9852,
-        "return_12m": 1.0918,
-        "contraction_ratio": 0.242,
-        "pullback_pct": 0.0148,
+        "pct_to_52w_high": 1.0,
+        "return_12m": 1.1531,
+        "contraction_ratio": 0.286,
+        "pullback_pct": 0.0,
         "roe": 0.334,
         "revenue_growth": 0.295,
         "eps_growth": 0.316,
@@ -3102,28 +3372,33 @@ const SCAN_DATA = {
       "short_cover": "",
       "stop_loss_21ma": "",
       "stop_loss_8pct": "",
-      "grok": null,
+      "grok": {
+        "score": 5,
+        "judgment": "強気",
+        "reasons": [
+          "AIキャペックスと供給チェーンでのポジティブ言及",
+          "NVIDIA主要ファブとして重要視",
+          "半導体セクター強気ムード"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 3,
-        "score": 88,
-        "revenue_growth": "安定",
-        "eps_growth": "安定",
-        "net_margin": "高い（約40%）",
-        "roe": "高い（25%超）",
-        "per": "適正水準",
-        "debt_equity": "低い",
-        "filter_status": "適格。市場全体が強気であることを前提に、出来高を伴う上昇を確認。"
+        "score": 90,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "PASS"
       },
       "chatgpt": {
         "base": null,
         "bull": null,
         "bear": null,
-        "geo_risk": "中",
-        "geo_notes": [
-          "US_China: 言及あり",
-          "Taiwan: 言及あり"
-        ]
+        "geo_risk": "低",
+        "geo_notes": []
       },
       "earnings": null,
       "ai_only": true,
@@ -3180,18 +3455,26 @@ const SCAN_DATA = {
       "short_cover": "",
       "stop_loss_21ma": "",
       "stop_loss_8pct": "",
-      "grok": null,
+      "grok": {
+        "score": 3,
+        "judgment": "強気",
+        "reasons": [
+          "金/貴金属ロイヤリティ企業としてポジティブ文脈",
+          "明日決算発表を控え注目",
+          "銀・銅エクスポージャーとして言及"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 4,
         "score": 85,
-        "revenue_growth": "中程度",
-        "eps_growth": "市況依存",
-        "net_margin": "極めて高い（ストリーミング）",
-        "roe": "中程度",
-        "per": "高い",
-        "debt_equity": "極めて低い",
-        "filter_status": "条件付き適格。貴金属セクターが明確な上昇トレンドにある場合のみ。"
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": "PASS"
       },
       "chatgpt": {
         "base": null,
@@ -3248,7 +3531,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 97pt",
-      "price": 67.55,
+      "price": 68.34,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -3272,17 +3555,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9908,
-        "return_12m": 1.4139,
-        "contraction_ratio": 0.207,
-        "pullback_pct": 0.0092,
+        "pct_to_52w_high": 1.0,
+        "return_12m": 1.3679,
+        "contraction_ratio": 0.366,
+        "pullback_pct": 0.0,
         "roe": 1.117,
         "revenue_growth": 0.393,
         "eps_growth": 0.264,
         "op_margin": 0.251,
         "accumulation": "mild"
       },
-      "market_cap": 2406738176,
+      "market_cap": 2434884864,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -3329,7 +3612,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 96pt",
-      "price": 25.51,
+      "price": 26.15,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -3353,17 +3636,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9857,
-        "return_12m": 0.6395,
-        "contraction_ratio": 0.454,
-        "pullback_pct": 0.0143,
+        "pct_to_52w_high": 1.0,
+        "return_12m": 0.6828,
+        "contraction_ratio": 0.415,
+        "pullback_pct": 0.0,
         "roe": 0.239,
         "revenue_growth": 2.6,
         "eps_growth": 9.017,
         "op_margin": 0.791,
         "accumulation": "strong"
       },
-      "market_cap": 565301120,
+      "market_cap": 579483456,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -3410,7 +3693,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 96pt",
-      "price": 221.51,
+      "price": 224.72,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -3435,8 +3718,8 @@ const SCAN_DATA = {
         "ma_stacking": true,
         "ma_slopes_up": "both",
         "pct_to_52w_high": 1.0,
-        "return_12m": 0.652,
-        "contraction_ratio": 0.279,
+        "return_12m": 0.6929,
+        "contraction_ratio": 0.35,
         "pullback_pct": 0.0,
         "roe": 0.163,
         "revenue_growth": 0.257,
@@ -3444,7 +3727,7 @@ const SCAN_DATA = {
         "op_margin": 0.167,
         "accumulation": "mild"
       },
-      "market_cap": 9710264320,
+      "market_cap": 9850980352,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -3491,7 +3774,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 95pt",
-      "price": 172.62,
+      "price": 170.22,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -3515,17 +3798,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9712,
-        "return_12m": 0.9099,
-        "contraction_ratio": 0.168,
-        "pullback_pct": 0.0288,
+        "pct_to_52w_high": 0.9577,
+        "return_12m": 0.8753,
+        "contraction_ratio": 0.123,
+        "pullback_pct": 0.0423,
         "roe": 0.314,
         "revenue_growth": 0.289,
         "eps_growth": 0.191,
         "op_margin": 0.415,
         "accumulation": "mild"
       },
-      "market_cap": 217357811712,
+      "market_cap": 214335815680,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -3572,7 +3855,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 95pt",
-      "price": 38.87,
+      "price": 39.83,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -3596,17 +3879,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9962,
-        "return_12m": 0.679,
-        "contraction_ratio": 0.264,
-        "pullback_pct": 0.0038,
+        "pct_to_52w_high": 1.0,
+        "return_12m": 0.7061,
+        "contraction_ratio": 0.394,
+        "pullback_pct": 0.0,
         "roe": 0.229,
         "revenue_growth": 0.155,
         "eps_growth": 0.954,
         "op_margin": 0.432,
         "accumulation": "mild"
       },
-      "market_cap": 6811881984,
+      "market_cap": 6980120576,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -3653,7 +3936,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 95pt",
-      "price": 27.04,
+      "price": 27.13,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -3677,17 +3960,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9613,
-        "return_12m": 0.6536,
-        "contraction_ratio": 0.363,
-        "pullback_pct": 0.0387,
+        "pct_to_52w_high": 0.9645,
+        "return_12m": 0.6124,
+        "contraction_ratio": 0.121,
+        "pullback_pct": 0.0355,
         "roe": 0.214,
         "revenue_growth": 0.134,
         "eps_growth": 0.294,
         "op_margin": 0.173,
         "accumulation": "mild"
       },
-      "market_cap": 1940363392,
+      "market_cap": 1946821632,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -3726,15 +4009,15 @@ const SCAN_DATA = {
         "break_volume_surge": false
       }
     },
-    "ADEA": {
-      "ticker": "ADEA",
-      "name": "Adeia Inc.",
-      "theme": "Software - Application",
-      "sector": "Technology",
+    "ENVA": {
+      "ticker": "ENVA",
+      "name": "Enova International, Inc.",
+      "theme": "Credit Services",
+      "sector": "Financial Services",
       "position": null,
       "rating": "",
-      "signal": "先導株候補 93pt",
-      "price": 33.63,
+      "signal": "先導株候補 95pt",
+      "price": 169.28,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -3747,28 +4030,28 @@ const SCAN_DATA = {
       "chatgpt": null,
       "earnings": null,
       "leader_only": true,
-      "leader_score": 93,
+      "leader_score": 95,
       "leader_breakdown": {
         "stage2": 30,
         "leadership": 25,
-        "vcp_pullback": 16,
-        "fundamentals": 22
+        "vcp_pullback": 20,
+        "fundamentals": 20
       },
       "leader_details": {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 1.0,
-        "return_12m": 1.7602,
-        "contraction_ratio": 0.419,
-        "pullback_pct": 0.0,
-        "roe": 0.253,
-        "revenue_growth": 0.533,
-        "eps_growth": 1.067,
-        "op_margin": 0.631,
-        "accumulation": "mild"
+        "pct_to_52w_high": 0.9751,
+        "return_12m": 0.8295,
+        "contraction_ratio": 0.245,
+        "pullback_pct": 0.0249,
+        "roe": 0.251,
+        "revenue_growth": 0.258,
+        "eps_growth": 0.286,
+        "op_margin": 0.266,
+        "accumulation": "weak"
       },
-      "market_cap": 3722966528,
+      "market_cap": 4212515072,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -3783,39 +4066,201 @@ const SCAN_DATA = {
           "c6_within_25pct_of_52w_high": true,
           "c7_rs_rating_70plus": true,
           "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 169.28,
+          "ma50": 147.54,
+          "ma150": 142.14,
+          "ma200": 135.12,
+          "pct_above_52w_low": 86.7,
+          "pct_to_52w_high": 0.9751,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": true,
+        "ma30w": 142.14,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 4.06,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0249,
+        "days_since_break": 24,
+        "break_volume_surge": false
+      }
+    },
+    "CCNE": {
+      "ticker": "CCNE",
+      "name": "CNB Financial Corporation",
+      "theme": "Banks - Regional",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 94pt",
+      "price": 30.79,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 94,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 22,
+        "vcp_pullback": 20,
+        "fundamentals": 22
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9821,
+        "return_12m": 0.4153,
+        "contraction_ratio": 0.379,
+        "pullback_pct": 0.0179,
+        "roe": 0.108,
+        "revenue_growth": 0.486,
+        "eps_growth": 0.769,
+        "op_margin": 0.425,
+        "accumulation": "strong"
+      },
+      "market_cap": 912468544,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": false,
           "c7_rs_line_up_6w": false,
           "c7_rs_line_up_13w": true,
           "c8_above_50ma": true
         },
         "tt_metrics": {
-          "price": 27.83,
-          "ma50": 25.42,
-          "ma150": 19.22,
-          "ma200": 18.1,
-          "pct_above_52w_low": 138.5,
-          "pct_to_52w_high": 0.8274,
-          "rs_rating": 99.0
+          "price": 30.79,
+          "ma50": 29.23,
+          "ma150": 27.06,
+          "ma200": 26.4,
+          "pct_above_52w_low": 47.2,
+          "pct_to_52w_high": 0.9821,
+          "rs_rating": 70.9
         },
-        "rs_rating": 99.0,
+        "rs_rating": 70.9,
         "early_stage_2": false,
-        "ma30w": 19.22,
+        "ma30w": 27.06,
         "ma30w_trend": "up",
-        "ma30w_slope_pct": 10.72,
+        "ma30w_slope_pct": 2.79,
         "price_above_ma30w": true,
-        "pct_from_52w_high": 0.1726,
+        "pct_from_52w_high": 0.0179,
         "days_since_break": null,
         "break_volume_surge": false
       }
     },
-    "GRC": {
-      "ticker": "GRC",
-      "name": "Gorman-Rupp Company (The)",
-      "theme": "Specialty Industrial Machinery",
-      "sector": "Industrials",
+    "CUBI": {
+      "ticker": "CUBI",
+      "name": "Customers Bancorp, Inc",
+      "theme": "Banks - Regional",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 94pt",
+      "price": 77.2,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 94,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 19
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9506,
+        "return_12m": 0.5366,
+        "contraction_ratio": 0.302,
+        "pullback_pct": 0.0149,
+        "roe": 0.14,
+        "revenue_growth": 0.764,
+        "eps_growth": 5.793,
+        "op_margin": 0.487,
+        "accumulation": "mild"
+      },
+      "market_cap": 2600168704,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 77.2,
+          "ma50": 71.52,
+          "ma150": 71.32,
+          "ma200": 70.06,
+          "pct_above_52w_low": 53.8,
+          "pct_to_52w_high": 0.9506,
+          "rs_rating": 93.8
+        },
+        "rs_rating": 93.8,
+        "early_stage_2": false,
+        "ma30w": 71.32,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 1.61,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0494,
+        "days_since_break": 24,
+        "break_volume_surge": false
+      }
+    },
+    "CTRA": {
+      "ticker": "CTRA",
+      "name": "Coterra Energy Inc.",
+      "theme": "Oil & Gas E&P",
+      "sector": "Energy",
       "position": null,
       "rating": "",
       "signal": "先導株候補 93pt",
-      "price": 75.68,
+      "price": 35.63,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -3839,17 +4284,98 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9857,
-        "return_12m": 1.1085,
-        "contraction_ratio": 0.244,
-        "pullback_pct": 0.0143,
+        "pct_to_52w_high": 0.9813,
+        "return_12m": 0.6071,
+        "contraction_ratio": 0.106,
+        "pullback_pct": 0.0078,
+        "roe": 0.123,
+        "revenue_growth": 0.234,
+        "eps_growth": 0.206,
+        "op_margin": 0.333,
+        "accumulation": "strong"
+      },
+      "market_cap": 27055876096,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 35.63,
+          "ma50": 33.05,
+          "ma150": 28.33,
+          "ma200": 27.12,
+          "pct_above_52w_low": 63.1,
+          "pct_to_52w_high": 0.9813,
+          "rs_rating": 81.8
+        },
+        "rs_rating": 81.8,
+        "early_stage_2": false,
+        "ma30w": 28.33,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 5.15,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0187,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
+    },
+    "GRC": {
+      "ticker": "GRC",
+      "name": "Gorman-Rupp Company (The)",
+      "theme": "Specialty Industrial Machinery",
+      "sector": "Industrials",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 93pt",
+      "price": 77.43,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 93,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 18
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 1.1484,
+        "contraction_ratio": 0.377,
+        "pullback_pct": 0.0,
         "roe": 0.145,
         "revenue_growth": 0.077,
         "eps_growth": 0.466,
         "op_margin": 0.154,
         "accumulation": "strong"
       },
-      "market_cap": 1998727296,
+      "market_cap": 2044945152,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -3896,7 +4422,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 92pt",
-      "price": 397.02,
+      "price": 404.77,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -3920,17 +4446,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.983,
-        "return_12m": 1.0386,
-        "contraction_ratio": 0.248,
-        "pullback_pct": 0.017,
+        "pct_to_52w_high": 1.0,
+        "return_12m": 1.1009,
+        "contraction_ratio": 0.264,
+        "pullback_pct": 0.0,
         "roe": 0.079,
         "revenue_growth": 0.304,
         "eps_growth": 1.167,
         "op_margin": 0.331,
         "accumulation": "mild"
       },
-      "market_cap": 193826816000,
+      "market_cap": 197610389504,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -3969,15 +4495,15 @@ const SCAN_DATA = {
         "break_volume_surge": false
       }
     },
-    "BK": {
-      "ticker": "BK",
-      "name": "The Bank of New York Mellon Cor",
-      "theme": "Banks - Diversified",
-      "sector": "Financial Services",
+    "AMD": {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "theme": "Semiconductors",
+      "sector": "Technology",
       "position": null,
       "rating": "",
       "signal": "先導株候補 92pt",
-      "price": 131.88,
+      "price": 355.26,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -4001,17 +4527,98 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.96,
-        "return_12m": 0.6349,
-        "contraction_ratio": 0.188,
-        "pullback_pct": 0.04,
+        "pct_to_52w_high": 0.9854,
+        "return_12m": 2.6023,
+        "contraction_ratio": 0.182,
+        "pullback_pct": 0.0146,
+        "roe": 0.071,
+        "revenue_growth": 0.341,
+        "eps_growth": 2.171,
+        "op_margin": 0.171,
+        "accumulation": "mild"
+      },
+      "market_cap": 579219816448,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 355.26,
+          "ma50": 241.38,
+          "ma150": 229.22,
+          "ma200": 213.28,
+          "pct_above_52w_low": 260.2,
+          "pct_to_52w_high": 0.9854,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": true,
+        "ma30w": 229.22,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 8.98,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0146,
+        "days_since_break": 24,
+        "break_volume_surge": false
+      }
+    },
+    "BK": {
+      "ticker": "BK",
+      "name": "The Bank of New York Mellon Cor",
+      "theme": "Banks - Diversified",
+      "sector": "Financial Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 92pt",
+      "price": 132.36,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 92,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 17
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9635,
+        "return_12m": 0.6264,
+        "contraction_ratio": 0.241,
+        "pullback_pct": 0.0365,
         "roe": 0.135,
         "revenue_growth": 0.134,
         "eps_growth": 0.418,
         "op_margin": 0.376,
         "accumulation": "mild"
       },
-      "market_cap": 90519674880,
+      "market_cap": 90849124352,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -4050,87 +4657,6 @@ const SCAN_DATA = {
         "break_volume_surge": false
       }
     },
-    "CSTM": {
-      "ticker": "CSTM",
-      "name": "Constellium SE",
-      "theme": "Aluminum",
-      "sector": "Basic Materials",
-      "position": null,
-      "rating": "",
-      "signal": "先導株候補 92pt",
-      "price": 30.84,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
-      "earnings": null,
-      "leader_only": true,
-      "leader_score": 92,
-      "leader_breakdown": {
-        "stage2": 30,
-        "leadership": 25,
-        "vcp_pullback": 20,
-        "fundamentals": 17
-      },
-      "leader_details": {
-        "ma_alignment": "full",
-        "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9569,
-        "return_12m": 1.7935,
-        "contraction_ratio": 0.272,
-        "pullback_pct": 0.0431,
-        "roe": 0.457,
-        "revenue_growth": 0.244,
-        "eps_growth": 4.469,
-        "op_margin": 0.091,
-        "accumulation": "mild"
-      },
-      "market_cap": 4198879744,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇 (TT全条件適合)",
-        "tt_pass": true,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": true,
-          "c7_rs_rating_90plus": true,
-          "c7_rs_line_up_6w": true,
-          "c7_rs_line_up_13w": true,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 32.96,
-          "ma50": 27.37,
-          "ma150": 21.67,
-          "ma200": 19.84,
-          "pct_above_52w_low": 206.0,
-          "pct_to_52w_high": 1.0,
-          "rs_rating": 99.0
-        },
-        "rs_rating": 99.0,
-        "early_stage_2": false,
-        "ma30w": 21.67,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 11.23,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0,
-        "days_since_break": null,
-        "break_volume_surge": false
-      }
-    },
     "ECPG": {
       "ticker": "ECPG",
       "name": "Encore Capital Group Inc",
@@ -4139,7 +4665,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 92pt",
-      "price": 83.19,
+      "price": 84.41,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -4163,17 +4689,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9868,
-        "return_12m": 1.3434,
-        "contraction_ratio": 0.203,
-        "pullback_pct": 0.0132,
+        "pct_to_52w_high": 1.0,
+        "return_12m": 1.5579,
+        "contraction_ratio": 0.258,
+        "pullback_pct": 0.0,
         "roe": 0.295,
         "revenue_growth": 0.783,
         "eps_growth": null,
         "op_margin": 0.366,
         "accumulation": "mild"
       },
-      "market_cap": 1786246144,
+      "market_cap": 1812441856,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -4212,15 +4738,15 @@ const SCAN_DATA = {
         "break_volume_surge": false
       }
     },
-    "CSX": {
-      "ticker": "CSX",
-      "name": "CSX Corporation",
-      "theme": "Railroads",
-      "sector": "Industrials",
+    "CSCO": {
+      "ticker": "CSCO",
+      "name": "Cisco Systems, Inc.",
+      "theme": "Communication Equipment",
+      "sector": "Technology",
       "position": null,
       "rating": "",
       "signal": "先導株候補 91pt",
-      "price": 44.72,
+      "price": 94.3,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -4244,17 +4770,98 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9684,
-        "return_12m": 0.5947,
-        "contraction_ratio": 0.158,
-        "pullback_pct": 0.0316,
+        "pct_to_52w_high": 1.0,
+        "return_12m": 0.629,
+        "contraction_ratio": 0.392,
+        "pullback_pct": 0.0,
+        "roe": 0.238,
+        "revenue_growth": 0.097,
+        "eps_growth": 0.312,
+        "op_margin": 0.249,
+        "accumulation": "weak"
+      },
+      "market_cap": 372474937344,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 94.3,
+          "ma50": 82.09,
+          "ma150": 77.19,
+          "ma200": 74.63,
+          "pct_above_52w_low": 62.9,
+          "pct_to_52w_high": 1.0,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 77.19,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 3.87,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
+    },
+    "CSX": {
+      "ticker": "CSX",
+      "name": "CSX Corporation",
+      "theme": "Railroads",
+      "sector": "Industrials",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 91pt",
+      "price": 45.03,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 91,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 16
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9751,
+        "return_12m": 0.6275,
+        "contraction_ratio": 0.184,
+        "pullback_pct": 0.0249,
         "roe": 0.237,
         "revenue_growth": 0.017,
         "eps_growth": 0.265,
         "op_margin": 0.362,
         "accumulation": "weak"
       },
-      "market_cap": 83095969792,
+      "market_cap": 83671990272,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -4301,7 +4908,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 91pt",
-      "price": 30.01,
+      "price": 30.44,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -4325,17 +4932,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9717,
-        "return_12m": 0.3017,
-        "contraction_ratio": 0.382,
-        "pullback_pct": 0.0263,
+        "pct_to_52w_high": 0.9857,
+        "return_12m": 0.3326,
+        "contraction_ratio": 0.282,
+        "pullback_pct": 0.0123,
         "roe": 0.102,
         "revenue_growth": 0.326,
         "eps_growth": 0.315,
         "op_margin": 0.372,
         "accumulation": "mild"
       },
-      "market_cap": 3149034240,
+      "market_cap": 3194155520,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇途中 (TT未適合)",
@@ -4382,7 +4989,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 90pt",
-      "price": 15.77,
+      "price": 16.04,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -4406,17 +5013,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9604,
-        "return_12m": 0.9092,
+        "pct_to_52w_high": 0.9769,
+        "return_12m": 0.9754,
         "contraction_ratio": 0.667,
-        "pullback_pct": 0.0396,
+        "pullback_pct": 0.0231,
         "roe": 0.599,
         "revenue_growth": 0.288,
         "eps_growth": 150.732,
         "op_margin": 0.557,
         "accumulation": "mild"
       },
-      "market_cap": 2049127424,
+      "market_cap": 2084210816,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -4463,7 +5070,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 90pt",
-      "price": 69.01,
+      "price": 67.78,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -4487,17 +5094,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9905,
-        "return_12m": 0.9159,
-        "contraction_ratio": 0.19,
-        "pullback_pct": 0.0095,
+        "pct_to_52w_high": 0.9761,
+        "return_12m": 0.8942,
+        "contraction_ratio": 0.158,
+        "pullback_pct": 0.0239,
         "roe": 0.172,
         "revenue_growth": 0.025,
         "eps_growth": 1.325,
         "op_margin": 0.123,
         "accumulation": "mild"
       },
-      "market_cap": 68462661632,
+      "market_cap": 67242414080,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -4518,33 +5125,33 @@ const SCAN_DATA = {
         },
         "tt_metrics": {
           "price": 67.78,
-          "ma50": 62.31,
-          "ma150": 54.13,
-          "ma200": 51.79,
-          "pct_above_52w_low": 89.6,
-          "pct_to_52w_high": 0.9729,
+          "ma50": 62.11,
+          "ma150": 53.95,
+          "ma200": 51.62,
+          "pct_above_52w_low": 90.2,
+          "pct_to_52w_high": 0.9761,
           "rs_rating": 99.0
         },
         "rs_rating": 99.0,
         "early_stage_2": false,
-        "ma30w": 54.13,
+        "ma30w": 53.95,
         "ma30w_trend": "up",
         "ma30w_slope_pct": 4.75,
         "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0271,
+        "pct_from_52w_high": 0.0239,
         "days_since_break": null,
         "break_volume_surge": false
       }
     },
-    "CTRA": {
-      "ticker": "CTRA",
-      "name": "Coterra Energy Inc.",
-      "theme": "Oil & Gas E&P",
-      "sector": "Energy",
+    "COCO": {
+      "ticker": "COCO",
+      "name": "The Vita Coco Company, Inc.",
+      "theme": "Beverages - Non-Alcoholic",
+      "sector": "Consumer Defensive",
       "position": null,
       "rating": "",
       "signal": "先導株候補 90pt",
-      "price": 35.86,
+      "price": 67.79,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -4559,107 +5166,26 @@ const SCAN_DATA = {
       "leader_only": true,
       "leader_score": 90,
       "leader_breakdown": {
-        "stage2": 30,
-        "leadership": 22,
-        "vcp_pullback": 20,
-        "fundamentals": 18
-      },
-      "leader_details": {
-        "ma_alignment": "full",
-        "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9876,
-        "return_12m": 0.4677,
-        "contraction_ratio": 0.255,
-        "pullback_pct": 0.0014,
-        "roe": 0.123,
-        "revenue_growth": 0.234,
-        "eps_growth": 0.206,
-        "op_margin": 0.333,
-        "accumulation": "strong"
-      },
-      "market_cap": 27230527488,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇 (TT全条件適合)",
-        "tt_pass": true,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": true,
-          "c7_rs_rating_90plus": false,
-          "c7_rs_line_up_6w": false,
-          "c7_rs_line_up_13w": true,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 35.63,
-          "ma50": 33.05,
-          "ma150": 28.33,
-          "ma200": 27.12,
-          "pct_above_52w_low": 63.1,
-          "pct_to_52w_high": 0.9813,
-          "rs_rating": 81.8
-        },
-        "rs_rating": 81.8,
-        "early_stage_2": false,
-        "ma30w": 28.33,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 5.15,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0187,
-        "days_since_break": null,
-        "break_volume_surge": false
-      }
-    },
-    "DBRG": {
-      "ticker": "DBRG",
-      "name": "DigitalBridge Group, Inc.",
-      "theme": "Asset Management",
-      "sector": "Financial Services",
-      "position": null,
-      "rating": "",
-      "signal": "先導株候補 90pt",
-      "price": 15.54,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
-      "earnings": null,
-      "leader_only": true,
-      "leader_score": 90,
-      "leader_breakdown": {
-        "stage2": 30,
+        "stage2": 25,
         "leadership": 25,
         "vcp_pullback": 20,
-        "fundamentals": 15
+        "fundamentals": 20
       },
       "leader_details": {
         "ma_alignment": "full",
         "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9955,
-        "return_12m": 0.7437,
-        "contraction_ratio": 0.214,
-        "pullback_pct": 0.0045,
-        "roe": -0.002,
-        "revenue_growth": 0.589,
-        "eps_growth": null,
-        "op_margin": 0.293,
-        "accumulation": "strong"
+        "ma_slopes_up": "partial",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 0.9369,
+        "contraction_ratio": 0.085,
+        "pullback_pct": 0.0,
+        "roe": 0.263,
+        "revenue_growth": 0.373,
+        "eps_growth": 0.613,
+        "op_margin": 0.187,
+        "accumulation": "weak"
       },
-      "market_cap": 3025065984,
+      "market_cap": 3871666176,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -4674,27 +5200,27 @@ const SCAN_DATA = {
           "c6_within_25pct_of_52w_high": true,
           "c7_rs_rating_70plus": true,
           "c7_rs_rating_90plus": true,
-          "c7_rs_line_up_6w": false,
-          "c7_rs_line_up_13w": false,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
           "c8_above_50ma": true
         },
         "tt_metrics": {
-          "price": 15.6,
-          "ma50": 15.47,
-          "ma150": 13.94,
-          "ma200": 13.27,
-          "pct_above_52w_low": 81.5,
-          "pct_to_52w_high": 0.9994,
+          "price": 67.79,
+          "ma50": 53.62,
+          "ma150": 50.93,
+          "ma200": 47.4,
+          "pct_above_52w_low": 109.9,
+          "pct_to_52w_high": 1.0,
           "rs_rating": 99.0
         },
         "rs_rating": 99.0,
-        "early_stage_2": false,
-        "ma30w": 13.94,
+        "early_stage_2": true,
+        "ma30w": 50.93,
         "ma30w_trend": "up",
         "ma30w_slope_pct": 4.02,
         "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0006,
-        "days_since_break": null,
+        "pct_from_52w_high": 0.0,
+        "days_since_break": 8,
         "break_volume_surge": false
       }
     },
@@ -4706,7 +5232,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 90pt",
-      "price": 35.52,
+      "price": 36.25,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -4730,17 +5256,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9513,
-        "return_12m": 0.3862,
-        "contraction_ratio": 0.245,
-        "pullback_pct": 0.0487,
+        "pct_to_52w_high": 0.9708,
+        "return_12m": 0.4298,
+        "contraction_ratio": 0.356,
+        "pullback_pct": 0.0292,
         "roe": 0.085,
         "revenue_growth": 0.181,
         "eps_growth": 0.659,
         "op_margin": 0.441,
         "accumulation": "strong"
       },
-      "market_cap": 1566911232,
+      "market_cap": 1599114112,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -4779,15 +5305,15 @@ const SCAN_DATA = {
         "break_volume_surge": false
       }
     },
-    "FN": {
-      "ticker": "FN",
-      "name": "Fabrinet",
-      "theme": "Electronic Components",
-      "sector": "Technology",
+    "DHT": {
+      "ticker": "DHT",
+      "name": "DHT Holdings, Inc.",
+      "theme": "Oil & Gas Midstream",
+      "sector": "Energy",
       "position": null,
       "rating": "",
       "signal": "先導株候補 90pt",
-      "price": 717.8,
+      "price": 19.1,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -4811,17 +5337,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9967,
-        "return_12m": 2.2494,
-        "contraction_ratio": 0.493,
-        "pullback_pct": 0.0033,
-        "roe": 0.187,
-        "revenue_growth": 0.359,
-        "eps_growth": 0.307,
-        "op_margin": 0.101,
-        "accumulation": "mild"
+        "pct_to_52w_high": 0.972,
+        "return_12m": 0.7663,
+        "contraction_ratio": 0.432,
+        "pullback_pct": 0.0,
+        "roe": 0.194,
+        "revenue_growth": 0.097,
+        "eps_growth": 0.206,
+        "op_margin": 0.474,
+        "accumulation": "strong"
       },
-      "market_cap": 25715986432,
+      "market_cap": 3075895296,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -4841,34 +5367,34 @@ const SCAN_DATA = {
           "c8_above_50ma": true
         },
         "tt_metrics": {
-          "price": 660.32,
-          "ma50": 596.63,
-          "ma150": 499.67,
-          "ma200": 459.16,
-          "pct_above_52w_low": 225.9,
-          "pct_to_52w_high": 0.9169,
+          "price": 19.1,
+          "ma50": 18.15,
+          "ma150": 14.62,
+          "ma200": 13.83,
+          "pct_above_52w_low": 82.7,
+          "pct_to_52w_high": 0.972,
           "rs_rating": 99.0
         },
         "rs_rating": 99.0,
         "early_stage_2": false,
-        "ma30w": 499.67,
+        "ma30w": 14.62,
         "ma30w_trend": "up",
-        "ma30w_slope_pct": 9.46,
+        "ma30w_slope_pct": 6.11,
         "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0831,
+        "pct_from_52w_high": 0.028,
         "days_since_break": null,
         "break_volume_surge": false
       }
     },
-    "FVCB": {
-      "ticker": "FVCB",
-      "name": "FVCBankcorp, Inc.",
-      "theme": "Banks - Regional",
-      "sector": "Financial Services",
+    "GEV": {
+      "ticker": "GEV",
+      "name": "GE Vernova Inc.",
+      "theme": "Specialty Industrial Machinery",
+      "sector": "Industrials",
       "position": null,
       "rating": "",
       "signal": "先導株候補 90pt",
-      "price": 15.68,
+      "price": 1095.21,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -4884,187 +5410,25 @@ const SCAN_DATA = {
       "leader_score": 90,
       "leader_breakdown": {
         "stage2": 30,
-        "leadership": 22,
-        "vcp_pullback": 20,
-        "fundamentals": 18
-      },
-      "leader_details": {
-        "ma_alignment": "full",
-        "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9728,
-        "return_12m": 0.3891,
-        "contraction_ratio": 0.357,
-        "pullback_pct": 0.0063,
-        "roe": 0.093,
-        "revenue_growth": 0.167,
-        "eps_growth": 0.25,
-        "op_margin": 0.455,
-        "accumulation": "strong"
-      },
-      "market_cap": 282151072,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇途中 (TT未適合)",
-        "tt_pass": false,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": false,
-          "c7_rs_rating_90plus": false,
-          "c7_rs_line_up_6w": false,
-          "c7_rs_line_up_13w": false,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 15.75,
-          "ma50": 15.23,
-          "ma150": 14.04,
-          "ma200": 13.78,
-          "pct_above_52w_low": 42.0,
-          "pct_to_52w_high": 0.9772,
-          "rs_rating": 69.2
-        },
-        "rs_rating": 69.2,
-        "early_stage_2": false,
-        "ma30w": 14.04,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 2.37,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0228,
-        "days_since_break": null,
-        "break_volume_surge": false
-      }
-    },
-    "ABCB": {
-      "ticker": "ABCB",
-      "name": "Ameris Bancorp",
-      "theme": "Banks - Regional",
-      "sector": "Financial Services",
-      "position": null,
-      "rating": "",
-      "signal": "先導株候補 89pt",
-      "price": 85.08,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
-      "earnings": null,
-      "leader_only": true,
-      "leader_score": 89,
-      "leader_breakdown": {
-        "stage2": 30,
-        "leadership": 22,
-        "vcp_pullback": 20,
-        "fundamentals": 17
-      },
-      "leader_details": {
-        "ma_alignment": "full",
-        "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9926,
-        "return_12m": 0.43,
-        "contraction_ratio": 0.221,
-        "pullback_pct": 0.0068,
-        "roe": 0.11,
-        "revenue_growth": 0.128,
-        "eps_growth": 0.283,
-        "op_margin": 0.484,
-        "accumulation": "mild"
-      },
-      "market_cap": 5727610880,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇 (TT全条件適合)",
-        "tt_pass": true,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": true,
-          "c7_rs_rating_90plus": false,
-          "c7_rs_line_up_6w": true,
-          "c7_rs_line_up_13w": true,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 86.58,
-          "ma50": 80.01,
-          "ma150": 77.61,
-          "ma200": 75.86,
-          "pct_above_52w_low": 47.3,
-          "pct_to_52w_high": 1.0,
-          "rs_rating": 81.2
-        },
-        "rs_rating": 81.2,
-        "early_stage_2": false,
-        "ma30w": 77.61,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 1.91,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0,
-        "days_since_break": 26,
-        "break_volume_surge": false
-      }
-    },
-    "AGX": {
-      "ticker": "AGX",
-      "name": "Argan, Inc.",
-      "theme": "Engineering & Construction",
-      "sector": "Industrials",
-      "position": null,
-      "rating": "",
-      "signal": "先導株候補 89pt",
-      "price": 697.15,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
-      "earnings": null,
-      "leader_only": true,
-      "leader_score": 89,
-      "leader_breakdown": {
-        "stage2": 30,
         "leadership": 25,
-        "vcp_pullback": 16,
-        "fundamentals": 18
+        "vcp_pullback": 20,
+        "fundamentals": 15
       },
       "leader_details": {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9927,
-        "return_12m": 3.2398,
-        "contraction_ratio": 0.574,
-        "pullback_pct": 0.0073,
-        "roe": 0.338,
-        "revenue_growth": 0.127,
-        "eps_growth": 0.558,
-        "op_margin": 0.182,
+        "pct_to_52w_high": 0.9527,
+        "return_12m": 1.7356,
+        "contraction_ratio": 0.151,
+        "pullback_pct": 0.0473,
+        "roe": 0.757,
+        "revenue_growth": 0.163,
+        "eps_growth": 18.165,
+        "op_margin": 0.055,
         "accumulation": "weak"
       },
-      "market_cap": 9732538368,
+      "market_cap": 294304808960,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -5084,183 +5448,21 @@ const SCAN_DATA = {
           "c8_above_50ma": true
         },
         "tt_metrics": {
-          "price": 720.0,
-          "ma50": 540.7,
-          "ma150": 402.51,
-          "ma200": 359.99,
-          "pct_above_52w_low": 337.9,
-          "pct_to_52w_high": 1.0,
+          "price": 1095.21,
+          "ma50": 932.99,
+          "ma150": 743.64,
+          "ma200": 713.13,
+          "pct_above_52w_low": 178.6,
+          "pct_to_52w_high": 0.9527,
           "rs_rating": 99.0
         },
         "rs_rating": 99.0,
         "early_stage_2": false,
-        "ma30w": 402.51,
+        "ma30w": 743.64,
         "ma30w_trend": "up",
-        "ma30w_slope_pct": 15.79,
+        "ma30w_slope_pct": 8.66,
         "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0,
-        "days_since_break": null,
-        "break_volume_surge": false
-      }
-    },
-    "CATY": {
-      "ticker": "CATY",
-      "name": "Cathay General Bancorp",
-      "theme": "Banks - Regional",
-      "sector": "Financial Services",
-      "position": null,
-      "rating": "",
-      "signal": "先導株候補 89pt",
-      "price": 56.39,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
-      "earnings": null,
-      "leader_only": true,
-      "leader_score": 89,
-      "leader_breakdown": {
-        "stage2": 30,
-        "leadership": 22,
-        "vcp_pullback": 20,
-        "fundamentals": 17
-      },
-      "leader_details": {
-        "ma_alignment": "full",
-        "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9996,
-        "return_12m": 0.3588,
-        "contraction_ratio": 0.329,
-        "pullback_pct": 0.0004,
-        "roe": 0.114,
-        "revenue_growth": 0.141,
-        "eps_growth": 0.316,
-        "op_margin": 0.615,
-        "accumulation": "mild"
-      },
-      "market_cap": 3781305088,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇途中 (TT未適合)",
-        "tt_pass": false,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": false,
-          "c7_rs_rating_90plus": false,
-          "c7_rs_line_up_6w": true,
-          "c7_rs_line_up_13w": true,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 57.11,
-          "ma50": 51.4,
-          "ma150": 49.67,
-          "ma200": 49.06,
-          "pct_above_52w_low": 40.4,
-          "pct_to_52w_high": 1.0,
-          "rs_rating": 65.4
-        },
-        "rs_rating": 65.4,
-        "early_stage_2": false,
-        "ma30w": 49.67,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 1.72,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0,
-        "days_since_break": 30,
-        "break_volume_surge": false
-      }
-    },
-    "CAT": {
-      "ticker": "CAT",
-      "name": "Caterpillar, Inc.",
-      "theme": "Farm & Heavy Construction Machinery",
-      "sector": "Industrials",
-      "position": null,
-      "rating": "",
-      "signal": "先導株候補 89pt",
-      "price": 874.78,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
-      "earnings": null,
-      "leader_only": true,
-      "leader_score": 89,
-      "leader_breakdown": {
-        "stage2": 30,
-        "leadership": 25,
-        "vcp_pullback": 16,
-        "fundamentals": 18
-      },
-      "leader_details": {
-        "ma_alignment": "full",
-        "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9828,
-        "return_12m": 1.7367,
-        "contraction_ratio": 0.479,
-        "pullback_pct": 0.0172,
-        "roe": 0.513,
-        "revenue_growth": 0.222,
-        "eps_growth": 0.302,
-        "op_margin": 0.178,
-        "accumulation": "weak"
-      },
-      "market_cap": 402916671488,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇 (TT全条件適合)",
-        "tt_pass": true,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": true,
-          "c7_rs_rating_90plus": true,
-          "c7_rs_line_up_6w": true,
-          "c7_rs_line_up_13w": true,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 904.59,
-          "ma50": 754.55,
-          "ma150": 648.44,
-          "ma200": 593.57,
-          "pct_above_52w_low": 185.5,
-          "pct_to_52w_high": 1.0,
-          "rs_rating": 99.0
-        },
-        "rs_rating": 99.0,
-        "early_stage_2": false,
-        "ma30w": 648.44,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 8.77,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0,
+        "pct_from_52w_high": 0.0473,
         "days_since_break": null,
         "break_volume_surge": false
       }
@@ -5273,7 +5475,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 89pt",
-      "price": 43.31,
+      "price": 43.78,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -5297,17 +5499,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9595,
-        "return_12m": 0.9021,
-        "contraction_ratio": 0.417,
-        "pullback_pct": 0.0405,
+        "pct_to_52w_high": 0.9699,
+        "return_12m": 0.9324,
+        "contraction_ratio": 0.468,
+        "pullback_pct": 0.0301,
         "roe": 0.397,
         "revenue_growth": 0.188,
         "eps_growth": 0.249,
         "op_margin": 0.324,
         "accumulation": "mild"
       },
-      "market_cap": 1340219008,
+      "market_cap": 1354763008,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -5346,168 +5548,6 @@ const SCAN_DATA = {
         "break_volume_surge": false
       }
     },
-    "CNOB": {
-      "ticker": "CNOB",
-      "name": "ConnectOne Bancorp, Inc.",
-      "theme": "Banks - Regional",
-      "sector": "Financial Services",
-      "position": null,
-      "rating": "",
-      "signal": "先導株候補 89pt",
-      "price": 29.45,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
-      "earnings": null,
-      "leader_only": true,
-      "leader_score": 89,
-      "leader_breakdown": {
-        "stage2": 30,
-        "leadership": 22,
-        "vcp_pullback": 20,
-        "fundamentals": 17
-      },
-      "leader_details": {
-        "ma_alignment": "full",
-        "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9896,
-        "return_12m": 0.286,
-        "contraction_ratio": 0.312,
-        "pullback_pct": 0.0104,
-        "roe": 0.069,
-        "revenue_growth": 0.655,
-        "eps_growth": 0.475,
-        "op_margin": 0.539,
-        "accumulation": "mild"
-      },
-      "market_cap": 1480996224,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇途中 (TT未適合)",
-        "tt_pass": false,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": false,
-          "c7_rs_rating_90plus": false,
-          "c7_rs_line_up_6w": true,
-          "c7_rs_line_up_13w": true,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 30.08,
-          "ma50": 27.35,
-          "ma150": 26.32,
-          "ma200": 25.78,
-          "pct_above_52w_low": 40.4,
-          "pct_to_52w_high": 1.0,
-          "rs_rating": 52.9
-        },
-        "rs_rating": 52.9,
-        "early_stage_2": false,
-        "ma30w": 26.32,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 2.03,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0,
-        "days_since_break": 33,
-        "break_volume_surge": true
-      }
-    },
-    "CUBI": {
-      "ticker": "CUBI",
-      "name": "Customers Bancorp, Inc",
-      "theme": "Banks - Regional",
-      "sector": "Financial Services",
-      "position": null,
-      "rating": "",
-      "signal": "先導株候補 89pt",
-      "price": 76.51,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
-      "earnings": null,
-      "leader_only": true,
-      "leader_score": 89,
-      "leader_breakdown": {
-        "stage2": 30,
-        "leadership": 20,
-        "vcp_pullback": 20,
-        "fundamentals": 19
-      },
-      "leader_details": {
-        "ma_alignment": "full",
-        "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9421,
-        "return_12m": 0.5046,
-        "contraction_ratio": 0.198,
-        "pullback_pct": 0.0237,
-        "roe": 0.14,
-        "revenue_growth": 0.764,
-        "eps_growth": 5.793,
-        "op_margin": 0.487,
-        "accumulation": "mild"
-      },
-      "market_cap": 2576929024,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇 (TT全条件適合)",
-        "tt_pass": true,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": true,
-          "c7_rs_rating_90plus": true,
-          "c7_rs_line_up_6w": true,
-          "c7_rs_line_up_13w": false,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 77.2,
-          "ma50": 71.52,
-          "ma150": 71.32,
-          "ma200": 70.06,
-          "pct_above_52w_low": 53.8,
-          "pct_to_52w_high": 0.9506,
-          "rs_rating": 93.8
-        },
-        "rs_rating": 93.8,
-        "early_stage_2": false,
-        "ma30w": 71.32,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 1.61,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0494,
-        "days_since_break": 24,
-        "break_volume_surge": false
-      }
-    },
     "DELL": {
       "ticker": "DELL",
       "name": "Dell Technologies Inc.",
@@ -5516,7 +5556,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "先導株候補 89pt",
-      "price": 211.64,
+      "price": 216.32,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -5540,17 +5580,17 @@ const SCAN_DATA = {
         "ma_alignment": "full",
         "ma_stacking": true,
         "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9794,
-        "return_12m": 1.277,
-        "contraction_ratio": 0.152,
-        "pullback_pct": 0.0206,
+        "pct_to_52w_high": 1.0,
+        "return_12m": 1.3375,
+        "contraction_ratio": 0.269,
+        "pullback_pct": 0.0,
         "roe": null,
         "revenue_growth": 0.395,
         "eps_growth": 0.573,
         "op_margin": 0.096,
         "accumulation": "mild"
       },
-      "market_cap": 137605939200,
+      "market_cap": 140648824832,
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -5588,21 +5628,264 @@ const SCAN_DATA = {
         "days_since_break": 47,
         "break_volume_surge": true
       }
+    },
+    "GOOG": {
+      "ticker": "GOOG",
+      "name": "Alphabet Inc.",
+      "theme": "Internet Content & Information",
+      "sector": "Communication Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 89pt",
+      "price": 384.27,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 89,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 16,
+        "fundamentals": 18
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 1.3341,
+        "contraction_ratio": 0.532,
+        "pullback_pct": 0.0,
+        "roe": 0.389,
+        "revenue_growth": 0.218,
+        "eps_growth": 0.82,
+        "op_margin": 0.361,
+        "accumulation": "weak"
+      },
+      "market_cap": 4655601418240,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 384.27,
+          "ma50": 316.93,
+          "ma150": 305.06,
+          "ma200": 283.0,
+          "pct_above_52w_low": 152.4,
+          "pct_to_52w_high": 1.0,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": true,
+        "ma30w": 305.06,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 4.81,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0,
+        "days_since_break": 24,
+        "break_volume_surge": false
+      }
+    },
+    "GOOGL": {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "theme": "Internet Content & Information",
+      "sector": "Communication Services",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 89pt",
+      "price": 388.43,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 89,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 16,
+        "fundamentals": 18
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 1.3879,
+        "contraction_ratio": 0.541,
+        "pullback_pct": 0.0,
+        "roe": 0.389,
+        "revenue_growth": 0.218,
+        "eps_growth": 0.82,
+        "op_margin": 0.361,
+        "accumulation": "weak"
+      },
+      "market_cap": 4706001747968,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 388.43,
+          "ma50": 318.38,
+          "ma150": 305.13,
+          "ma200": 282.89,
+          "pct_above_52w_low": 157.5,
+          "pct_to_52w_high": 1.0,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": true,
+        "ma30w": 305.13,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 4.95,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0,
+        "days_since_break": 24,
+        "break_volume_surge": false
+      }
+    },
+    "ASC": {
+      "ticker": "ASC",
+      "name": "Ardmore Shipping Corporation",
+      "theme": "Marine Shipping",
+      "sector": "Industrials",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 88pt",
+      "price": 19.06,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 88,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 13
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 1.0,
+        "return_12m": 0.958,
+        "contraction_ratio": 0.354,
+        "pullback_pct": 0.0,
+        "roe": 0.065,
+        "revenue_growth": 0.011,
+        "eps_growth": 0.807,
+        "op_margin": 0.174,
+        "accumulation": "mild"
+      },
+      "market_cap": 777697856,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 19.06,
+          "ma50": 15.81,
+          "ma150": 13.31,
+          "ma200": 12.82,
+          "pct_above_52w_low": 104.7,
+          "pct_to_52w_high": 1.0,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 13.31,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 4.51,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     }
   },
   "leaders": {
-    "scan_date": "20260505",
+    "scan_date": "20260506",
     "universe": "all",
     "threshold": 75,
-    "total_scanned": 2440,
-    "leaders_count": 177,
+    "total_scanned": 2439,
+    "leaders_count": 186,
     "top": [
       {
         "ticker": "AAMI",
         "name": "Acadian Asset Management Inc.",
         "sector": "Financial Services",
         "industry": "Asset Management",
-        "price": 67.55,
+        "price": 68.34,
         "score": 97,
         "breakdown": {
           "stage2": 30,
@@ -5617,7 +5900,7 @@ const SCAN_DATA = {
         "name": "Carter Bankshares, Inc.",
         "sector": "Financial Services",
         "industry": "Banks - Regional",
-        "price": 25.51,
+        "price": 26.15,
         "score": 96,
         "breakdown": {
           "stage2": 30,
@@ -5632,7 +5915,7 @@ const SCAN_DATA = {
         "name": "FirstCash Holdings, Inc.",
         "sector": "Financial Services",
         "industry": "Credit Services",
-        "price": 221.51,
+        "price": 224.72,
         "score": 96,
         "breakdown": {
           "stage2": 30,
@@ -5647,7 +5930,7 @@ const SCAN_DATA = {
         "name": "Arista Networks, Inc.",
         "sector": "Technology",
         "industry": "Computer Hardware",
-        "price": 172.62,
+        "price": 170.22,
         "score": 95,
         "breakdown": {
           "stage2": 30,
@@ -5662,7 +5945,7 @@ const SCAN_DATA = {
         "name": "Archrock, Inc.",
         "sector": "Energy",
         "industry": "Oil & Gas Equipment & Services",
-        "price": 38.87,
+        "price": 39.83,
         "score": 95,
         "breakdown": {
           "stage2": 30,
@@ -5677,7 +5960,7 @@ const SCAN_DATA = {
         "name": "A10 Networks, Inc.",
         "sector": "Technology",
         "industry": "Software - Infrastructure",
-        "price": 27.04,
+        "price": 27.13,
         "score": 95,
         "breakdown": {
           "stage2": 30,
@@ -5692,7 +5975,7 @@ const SCAN_DATA = {
         "name": "Broadcom Inc.",
         "sector": "Technology",
         "industry": "Semiconductors",
-        "price": 416.5,
+        "price": 427.36,
         "score": 95,
         "breakdown": {
           "stage2": 30,
@@ -5703,17 +5986,62 @@ const SCAN_DATA = {
         "in_watchlist": false
       },
       {
-        "ticker": "ADEA",
-        "name": "Adeia Inc.",
-        "sector": "Technology",
-        "industry": "Software - Application",
-        "price": 33.63,
+        "ticker": "ENVA",
+        "name": "Enova International, Inc.",
+        "sector": "Financial Services",
+        "industry": "Credit Services",
+        "price": 169.28,
+        "score": 95,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 20
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "CCNE",
+        "name": "CNB Financial Corporation",
+        "sector": "Financial Services",
+        "industry": "Banks - Regional",
+        "price": 30.79,
+        "score": 94,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 22,
+          "vcp_pullback": 20,
+          "fundamentals": 22
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "CUBI",
+        "name": "Customers Bancorp, Inc",
+        "sector": "Financial Services",
+        "industry": "Banks - Regional",
+        "price": 77.2,
+        "score": 94,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 19
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "CTRA",
+        "name": "Coterra Energy Inc.",
+        "sector": "Energy",
+        "industry": "Oil & Gas E&P",
+        "price": 35.63,
         "score": 93,
         "breakdown": {
           "stage2": 30,
           "leadership": 25,
-          "vcp_pullback": 16,
-          "fundamentals": 22
+          "vcp_pullback": 20,
+          "fundamentals": 18
         },
         "in_watchlist": false
       },
@@ -5722,7 +6050,7 @@ const SCAN_DATA = {
         "name": "Gorman-Rupp Company (The)",
         "sector": "Industrials",
         "industry": "Specialty Industrial Machinery",
-        "price": 75.68,
+        "price": 77.43,
         "score": 93,
         "breakdown": {
           "stage2": 30,
@@ -5737,7 +6065,22 @@ const SCAN_DATA = {
         "name": "Analog Devices, Inc.",
         "sector": "Technology",
         "industry": "Semiconductors",
-        "price": 397.02,
+        "price": 404.77,
+        "score": 92,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 17
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "AMD",
+        "name": "Advanced Micro Devices, Inc.",
+        "sector": "Technology",
+        "industry": "Semiconductors",
+        "price": 355.26,
         "score": 92,
         "breakdown": {
           "stage2": 30,
@@ -5752,22 +6095,7 @@ const SCAN_DATA = {
         "name": "The Bank of New York Mellon Cor",
         "sector": "Financial Services",
         "industry": "Banks - Diversified",
-        "price": 131.88,
-        "score": 92,
-        "breakdown": {
-          "stage2": 30,
-          "leadership": 25,
-          "vcp_pullback": 20,
-          "fundamentals": 17
-        },
-        "in_watchlist": false
-      },
-      {
-        "ticker": "CSTM",
-        "name": "Constellium SE",
-        "sector": "Basic Materials",
-        "industry": "Aluminum",
-        "price": 30.84,
+        "price": 132.36,
         "score": 92,
         "breakdown": {
           "stage2": 30,
@@ -5782,7 +6110,7 @@ const SCAN_DATA = {
         "name": "Encore Capital Group Inc",
         "sector": "Financial Services",
         "industry": "Credit Services",
-        "price": 83.19,
+        "price": 84.41,
         "score": 92,
         "breakdown": {
           "stage2": 30,
@@ -5793,11 +6121,26 @@ const SCAN_DATA = {
         "in_watchlist": false
       },
       {
+        "ticker": "CSCO",
+        "name": "Cisco Systems, Inc.",
+        "sector": "Technology",
+        "industry": "Communication Equipment",
+        "price": 94.3,
+        "score": 91,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 16
+        },
+        "in_watchlist": false
+      },
+      {
         "ticker": "CSX",
         "name": "CSX Corporation",
         "sector": "Industrials",
         "industry": "Railroads",
-        "price": 44.72,
+        "price": 45.03,
         "score": 91,
         "breakdown": {
           "stage2": 30,
@@ -5812,7 +6155,7 @@ const SCAN_DATA = {
         "name": "First Financial Bancorp.",
         "sector": "Financial Services",
         "industry": "Banks - Regional",
-        "price": 30.01,
+        "price": 30.44,
         "score": 91,
         "breakdown": {
           "stage2": 30,
@@ -5827,7 +6170,7 @@ const SCAN_DATA = {
         "name": "Aurinia Pharmaceuticals Inc",
         "sector": "Healthcare",
         "industry": "Biotechnology",
-        "price": 15.77,
+        "price": 16.04,
         "score": 90,
         "breakdown": {
           "stage2": 30,
@@ -5842,7 +6185,7 @@ const SCAN_DATA = {
         "name": "Baker Hughes Company",
         "sector": "Energy",
         "industry": "Oil & Gas Equipment & Services",
-        "price": 69.01,
+        "price": 67.78,
         "score": 90,
         "breakdown": {
           "stage2": 30,
@@ -5853,32 +6196,17 @@ const SCAN_DATA = {
         "in_watchlist": false
       },
       {
-        "ticker": "CTRA",
-        "name": "Coterra Energy Inc.",
-        "sector": "Energy",
-        "industry": "Oil & Gas E&P",
-        "price": 35.86,
+        "ticker": "COCO",
+        "name": "The Vita Coco Company, Inc.",
+        "sector": "Consumer Defensive",
+        "industry": "Beverages - Non-Alcoholic",
+        "price": 67.79,
         "score": 90,
         "breakdown": {
-          "stage2": 30,
-          "leadership": 22,
-          "vcp_pullback": 20,
-          "fundamentals": 18
-        },
-        "in_watchlist": false
-      },
-      {
-        "ticker": "DBRG",
-        "name": "DigitalBridge Group, Inc.",
-        "sector": "Financial Services",
-        "industry": "Asset Management",
-        "price": 15.54,
-        "score": 90,
-        "breakdown": {
-          "stage2": 30,
+          "stage2": 25,
           "leadership": 25,
           "vcp_pullback": 20,
-          "fundamentals": 15
+          "fundamentals": 20
         },
         "in_watchlist": false
       },
@@ -5887,7 +6215,7 @@ const SCAN_DATA = {
         "name": "Dime Community Bancshares, Inc.",
         "sector": "Financial Services",
         "industry": "Banks - Regional",
-        "price": 35.52,
+        "price": 36.25,
         "score": 90,
         "breakdown": {
           "stage2": 30,
@@ -5898,11 +6226,11 @@ const SCAN_DATA = {
         "in_watchlist": false
       },
       {
-        "ticker": "FN",
-        "name": "Fabrinet",
-        "sector": "Technology",
-        "industry": "Electronic Components",
-        "price": 717.8,
+        "ticker": "DHT",
+        "name": "DHT Holdings, Inc.",
+        "sector": "Energy",
+        "industry": "Oil & Gas Midstream",
+        "price": 19.1,
         "score": 90,
         "breakdown": {
           "stage2": 30,
@@ -5913,77 +6241,17 @@ const SCAN_DATA = {
         "in_watchlist": false
       },
       {
-        "ticker": "FVCB",
-        "name": "FVCBankcorp, Inc.",
-        "sector": "Financial Services",
-        "industry": "Banks - Regional",
-        "price": 15.68,
+        "ticker": "GEV",
+        "name": "GE Vernova Inc.",
+        "sector": "Industrials",
+        "industry": "Specialty Industrial Machinery",
+        "price": 1095.21,
         "score": 90,
         "breakdown": {
           "stage2": 30,
-          "leadership": 22,
-          "vcp_pullback": 20,
-          "fundamentals": 18
-        },
-        "in_watchlist": false
-      },
-      {
-        "ticker": "ABCB",
-        "name": "Ameris Bancorp",
-        "sector": "Financial Services",
-        "industry": "Banks - Regional",
-        "price": 85.08,
-        "score": 89,
-        "breakdown": {
-          "stage2": 30,
-          "leadership": 22,
-          "vcp_pullback": 20,
-          "fundamentals": 17
-        },
-        "in_watchlist": false
-      },
-      {
-        "ticker": "AGX",
-        "name": "Argan, Inc.",
-        "sector": "Industrials",
-        "industry": "Engineering & Construction",
-        "price": 697.15,
-        "score": 89,
-        "breakdown": {
-          "stage2": 30,
           "leadership": 25,
-          "vcp_pullback": 16,
-          "fundamentals": 18
-        },
-        "in_watchlist": false
-      },
-      {
-        "ticker": "CATY",
-        "name": "Cathay General Bancorp",
-        "sector": "Financial Services",
-        "industry": "Banks - Regional",
-        "price": 56.39,
-        "score": 89,
-        "breakdown": {
-          "stage2": 30,
-          "leadership": 22,
           "vcp_pullback": 20,
-          "fundamentals": 17
-        },
-        "in_watchlist": false
-      },
-      {
-        "ticker": "CAT",
-        "name": "Caterpillar, Inc.",
-        "sector": "Industrials",
-        "industry": "Farm & Heavy Construction Machinery",
-        "price": 874.78,
-        "score": 89,
-        "breakdown": {
-          "stage2": 30,
-          "leadership": 25,
-          "vcp_pullback": 16,
-          "fundamentals": 18
+          "fundamentals": 15
         },
         "in_watchlist": false
       },
@@ -5992,7 +6260,7 @@ const SCAN_DATA = {
         "name": "CBL & Associates Properties, In",
         "sector": "Real Estate",
         "industry": "REIT - Retail",
-        "price": 43.31,
+        "price": 43.78,
         "score": 89,
         "breakdown": {
           "stage2": 30,
@@ -6003,41 +6271,11 @@ const SCAN_DATA = {
         "in_watchlist": false
       },
       {
-        "ticker": "CNOB",
-        "name": "ConnectOne Bancorp, Inc.",
-        "sector": "Financial Services",
-        "industry": "Banks - Regional",
-        "price": 29.45,
-        "score": 89,
-        "breakdown": {
-          "stage2": 30,
-          "leadership": 22,
-          "vcp_pullback": 20,
-          "fundamentals": 17
-        },
-        "in_watchlist": false
-      },
-      {
-        "ticker": "CUBI",
-        "name": "Customers Bancorp, Inc",
-        "sector": "Financial Services",
-        "industry": "Banks - Regional",
-        "price": 76.51,
-        "score": 89,
-        "breakdown": {
-          "stage2": 30,
-          "leadership": 20,
-          "vcp_pullback": 20,
-          "fundamentals": 19
-        },
-        "in_watchlist": false
-      },
-      {
         "ticker": "DELL",
         "name": "Dell Technologies Inc.",
         "sector": "Technology",
         "industry": "Computer Hardware",
-        "price": 211.64,
+        "price": 216.32,
         "score": 89,
         "breakdown": {
           "stage2": 30,
@@ -6046,11 +6284,56 @@ const SCAN_DATA = {
           "fundamentals": 14
         },
         "in_watchlist": false
+      },
+      {
+        "ticker": "GOOG",
+        "name": "Alphabet Inc.",
+        "sector": "Communication Services",
+        "industry": "Internet Content & Information",
+        "price": 384.27,
+        "score": 89,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 16,
+          "fundamentals": 18
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "Alphabet Inc.",
+        "sector": "Communication Services",
+        "industry": "Internet Content & Information",
+        "price": 388.43,
+        "score": 89,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 16,
+          "fundamentals": 18
+        },
+        "in_watchlist": false
+      },
+      {
+        "ticker": "ASC",
+        "name": "Ardmore Shipping Corporation",
+        "sector": "Industrials",
+        "industry": "Marine Shipping",
+        "price": 19.06,
+        "score": 88,
+        "breakdown": {
+          "stage2": 30,
+          "leadership": 25,
+          "vcp_pullback": 20,
+          "fundamentals": 13
+        },
+        "in_watchlist": false
       }
     ]
   },
   "market_pulse": {
-    "updated_at": "2026-05-05T18:08:18",
+    "updated_at": "2026-05-06T12:52:53",
     "methodology": "CBOE-Equity-equivalent: aggregate option volume of 15 large-cap individual stocks (nearest 2 expiries each)",
     "equity_basket": {
       "label": "equity",
@@ -6073,12 +6356,12 @@ const SCAN_DATA = {
       ],
       "tickers_failed": [],
       "expiries_per_ticker": 2,
-      "put_volume": 1322804,
-      "call_volume": 2292389,
-      "put_oi": 5337,
-      "call_oi": 8253,
-      "pcr_volume": 0.577,
-      "pcr_oi": 0.647
+      "put_volume": 1924226,
+      "call_volume": 4018233,
+      "put_oi": 2389351,
+      "call_oi": 3280415,
+      "pcr_volume": 0.479,
+      "pcr_oi": 0.728
     },
     "index_basket": {
       "label": "index",
@@ -6089,12 +6372,12 @@ const SCAN_DATA = {
       ],
       "tickers_failed": [],
       "expiries_per_ticker": 2,
-      "put_volume": 1595620,
-      "call_volume": 1149232,
-      "put_oi": 0,
-      "call_oi": 0,
-      "pcr_volume": 1.388,
-      "pcr_oi": null
+      "put_volume": 1429305,
+      "call_volume": 917086,
+      "put_oi": 353071,
+      "call_oi": 238093,
+      "pcr_volume": 1.559,
+      "pcr_oi": 1.483
     },
     "equity_classification": {
       "level": "bullish",
@@ -6127,12 +6410,12 @@ const SCAN_DATA = {
       ],
       "tickers_failed": [],
       "expiries_per_ticker": 2,
-      "put_volume": 1322804,
-      "call_volume": 2292389,
-      "put_oi": 5337,
-      "call_oi": 8253,
-      "pcr_volume": 0.577,
-      "pcr_oi": 0.647,
+      "put_volume": 1924226,
+      "call_volume": 4018233,
+      "put_oi": 2389351,
+      "call_oi": 3280415,
+      "pcr_volume": 0.479,
+      "pcr_oi": 0.728,
       "symbol": "EQUITY-BASKET"
     },
     "qqq": {
@@ -6144,12 +6427,12 @@ const SCAN_DATA = {
       ],
       "tickers_failed": [],
       "expiries_per_ticker": 2,
-      "put_volume": 1595620,
-      "call_volume": 1149232,
-      "put_oi": 0,
-      "call_oi": 0,
-      "pcr_volume": 1.388,
-      "pcr_oi": null,
+      "put_volume": 1429305,
+      "call_volume": 917086,
+      "put_oi": 353071,
+      "call_oi": 238093,
+      "pcr_volume": 1.559,
+      "pcr_oi": 1.483,
       "symbol": "INDEX-BASKET"
     },
     "spy_classification": {
@@ -6171,1080 +6454,33 @@ const SCAN_DATA = {
     }
   },
   "themes": {
-    "scan_date": "20260505",
-    "updated_at": "2026-05-05T18:12:21",
-    "theme_count": 21,
-    "unique_tickers_analyzed": 28,
-    "duration_sec": 139,
+    "scan_date": "20260506",
+    "updated_at": "2026-05-06T12:57:12",
+    "theme_count": 1,
+    "unique_tickers_analyzed": 1,
+    "duration_sec": 165,
     "themes": [
-      {
-        "id": "datacenter_power",
-        "name": "データセンター電力・送配電",
-        "icon": "⚡",
-        "description": "NVT/ETN/GEV — AI電力需要逼迫の受益銘柄",
-        "member_count": 2,
-        "tickers_failed": [
-          "ETN",
-          "GEV",
-          "ENS"
-        ],
-        "avg_return_1m": 36.61,
-        "avg_return_3m": 49.63,
-        "avg_return_6m": 61.69,
-        "avg_vol_accel": 0.99,
-        "winners_1m": 2,
-        "winners_3m": 2,
-        "winners_6m": 2,
-        "concentration_1m": 0.941,
-        "concentration_3m": 0.746,
-        "concentration_6m": 0.879,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "PWR",
-        "top_return_6m": 66.95,
-        "members": [
-          {
-            "ticker": "PWR",
-            "price": 757.34,
-            "return_1m": 35.09,
-            "return_3m": 58.55,
-            "return_6m": 66.95,
-            "vol_accel": 1.01,
-            "above_200ma": null
-          },
-          {
-            "ticker": "NVT",
-            "price": 162.69,
-            "return_1m": 38.12,
-            "return_3m": 40.71,
-            "return_6m": 56.43,
-            "vol_accel": 0.98,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 4,
-        "rank_3m": 1,
-        "rank_6m": 2,
-        "rotation_6m_to_1m": -2,
-        "rotation_3m_to_1m": -3
-      },
-      {
-        "id": "semi_test",
-        "name": "半導体テスト・プローブ",
-        "icon": "🔬",
-        "description": "FORM/AEHRなどのテスト装置・プローブカード",
-        "member_count": 1,
-        "tickers_failed": [
-          "FORM",
-          "KEYS",
-          "AEHR",
-          "TER"
-        ],
-        "avg_return_1m": 38.98,
-        "avg_return_3m": 47.98,
-        "avg_return_6m": 118.57,
-        "avg_vol_accel": 0.91,
-        "winners_1m": 1,
-        "winners_3m": 1,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "ONTO",
-        "top_return_6m": 118.57,
-        "members": [
-          {
-            "ticker": "ONTO",
-            "price": 299.55,
-            "return_1m": 38.98,
-            "return_3m": 47.98,
-            "return_6m": 118.57,
-            "vol_accel": 0.91,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 3,
-        "rank_3m": 2,
-        "rank_6m": 1,
-        "rotation_6m_to_1m": -2,
-        "rotation_3m_to_1m": -1
-      },
-      {
-        "id": "oilfield_services",
-        "name": "油田サービス",
-        "icon": "🛠️",
-        "description": "SLB/HAL/BKR — シェール再起動の受益",
-        "member_count": 1,
-        "tickers_failed": [
-          "SLB",
-          "HAL",
-          "BKR",
-          "NOV"
-        ],
-        "avg_return_1m": 20.88,
-        "avg_return_3m": 42.43,
-        "avg_return_6m": 55.44,
-        "avg_vol_accel": 1.01,
-        "winners_1m": 1,
-        "winners_3m": 1,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "PUMP",
-        "top_return_6m": 55.44,
-        "members": [
-          {
-            "ticker": "PUMP",
-            "price": 16.85,
-            "return_1m": 20.88,
-            "return_3m": 42.43,
-            "return_6m": 55.44,
-            "vol_accel": 1.01,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 7,
-        "rank_3m": 3,
-        "rank_6m": 3,
-        "rotation_6m_to_1m": -4,
-        "rotation_3m_to_1m": -4
-      },
-      {
-        "id": "oil_majors",
-        "name": "石油大手・統合",
-        "icon": "🛢️",
-        "description": "XOM/CVX — 配当成長・自社株買い",
-        "member_count": 1,
-        "tickers_failed": [
-          "XOM",
-          "CVX",
-          "COP",
-          "EOG"
-        ],
-        "avg_return_1m": -4.29,
-        "avg_return_3m": 38.26,
-        "avg_return_6m": 49.65,
-        "avg_vol_accel": 1.1,
-        "winners_1m": 0,
-        "winners_3m": 1,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "OXY",
-        "top_return_6m": 49.65,
-        "members": [
-          {
-            "ticker": "OXY",
-            "price": 60.27,
-            "return_1m": -4.29,
-            "return_3m": 38.26,
-            "return_6m": 49.65,
-            "vol_accel": 1.1,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 16,
-        "rank_3m": 4,
-        "rank_6m": 4,
-        "rotation_6m_to_1m": -12,
-        "rotation_3m_to_1m": -12
-      },
-      {
-        "id": "biotech_smid",
-        "name": "バイオベンチャー",
-        "icon": "🧫",
-        "description": "ROIV/TVTX/ARWR — カタリスト前の小中型",
-        "member_count": 1,
-        "tickers_failed": [
-          "TVTX",
-          "ARWR"
-        ],
-        "avg_return_1m": 0.11,
-        "avg_return_3m": 29.26,
-        "avg_return_6m": 44.84,
-        "avg_vol_accel": 0.76,
-        "winners_1m": 1,
-        "winners_3m": 1,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "ROIV",
-        "top_return_6m": 44.84,
-        "members": [
-          {
-            "ticker": "ROIV",
-            "price": 28.36,
-            "return_1m": 0.11,
-            "return_3m": 29.26,
-            "return_6m": 44.84,
-            "vol_accel": 0.76,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 14,
-        "rank_3m": 5,
-        "rank_6m": 5,
-        "rotation_6m_to_1m": -9,
-        "rotation_3m_to_1m": -9
-      },
-      {
-        "id": "crypto_infra",
-        "name": "暗号資産インフラ",
-        "icon": "🪙",
-        "description": "COIN/MSTR/MARA/RIOT — BTC連動",
-        "member_count": 1,
-        "tickers_failed": [
-          "COIN",
-          "MSTR",
-          "MARA"
-        ],
-        "avg_return_1m": 45.26,
-        "avg_return_3m": 21.93,
-        "avg_return_6m": -11.43,
-        "avg_vol_accel": 1.0,
-        "winners_1m": 1,
-        "winners_3m": 1,
-        "winners_6m": 0,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "RIOT",
-        "top_return_6m": -11.43,
-        "members": [
-          {
-            "ticker": "RIOT",
-            "price": 18.68,
-            "return_1m": 45.26,
-            "return_3m": 21.93,
-            "return_6m": -11.43,
-            "vol_accel": 1.0,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 1,
-        "rank_3m": 6,
-        "rank_6m": 16,
-        "rotation_6m_to_1m": 15,
-        "rotation_3m_to_1m": 5
-      },
-      {
-        "id": "ai_gpu",
-        "name": "AI半導体・GPU/カスタム",
-        "icon": "🤖",
-        "description": "AI推論・学習用GPU、カスタムASIC。データセンター需要の核",
-        "member_count": 2,
-        "tickers_failed": [
-          "AVGO",
-          "AMD",
-          "MRVL",
-          "ARM"
-        ],
-        "avg_return_1m": 22.34,
-        "avg_return_3m": 8.98,
-        "avg_return_6m": -3.04,
-        "avg_vol_accel": 1.15,
-        "winners_1m": 2,
-        "winners_3m": 2,
-        "winners_6m": 0,
-        "concentration_1m": 0.338,
-        "concentration_3m": 0.678,
-        "concentration_6m": 0.592,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "NVDA",
-        "top_return_6m": -2.16,
-        "members": [
-          {
-            "ticker": "NVDA",
-            "price": 198.48,
-            "return_1m": 11.89,
-            "return_3m": 6.94,
-            "return_6m": -2.16,
-            "vol_accel": 0.89,
-            "above_200ma": null
-          },
-          {
-            "ticker": "QCOM",
-            "price": 168.38,
-            "return_1m": 32.79,
-            "return_3m": 11.03,
-            "return_6m": -3.91,
-            "vol_accel": 1.41,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 6,
-        "rank_3m": 7,
-        "rank_6m": 14,
-        "rotation_6m_to_1m": 8,
-        "rotation_3m_to_1m": 1
-      },
-      {
-        "id": "commercial_space",
-        "name": "商業宇宙",
-        "icon": "🚀",
-        "description": "RKLB/ASTS/BKSY — 衛星・打上",
-        "member_count": 1,
-        "tickers_failed": [
-          "ASTS",
-          "BKSY"
-        ],
-        "avg_return_1m": 18.57,
-        "avg_return_3m": 8.31,
-        "avg_return_6m": 31.83,
-        "avg_vol_accel": 1.05,
-        "winners_1m": 1,
-        "winners_3m": 1,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "RKLB",
-        "top_return_6m": 31.83,
-        "members": [
-          {
-            "ticker": "RKLB",
-            "price": 80.31,
-            "return_1m": 18.57,
-            "return_3m": 8.31,
-            "return_6m": 31.83,
-            "vol_accel": 1.05,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 9,
-        "rank_3m": 8,
-        "rank_6m": 7,
-        "rotation_6m_to_1m": -2,
-        "rotation_3m_to_1m": -1
-      },
-      {
-        "id": "gene_crispr",
-        "name": "遺伝子・CRISPR",
-        "icon": "🧪",
-        "description": "CRSP/NTLA/EDIT/BEAM/MRNA",
-        "member_count": 1,
-        "tickers_failed": [
-          "CRSP",
-          "EDIT",
-          "BEAM",
-          "MRNA"
-        ],
-        "avg_return_1m": 5.64,
-        "avg_return_3m": 6.2,
-        "avg_return_6m": 13.09,
-        "avg_vol_accel": 1.25,
-        "winners_1m": 1,
-        "winners_3m": 1,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "NTLA",
-        "top_return_6m": 13.09,
-        "members": [
-          {
-            "ticker": "NTLA",
-            "price": 13.87,
-            "return_1m": 5.64,
-            "return_3m": 6.2,
-            "return_6m": 13.09,
-            "vol_accel": 1.25,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 13,
-        "rank_3m": 9,
-        "rank_6m": 11,
-        "rotation_6m_to_1m": -2,
-        "rotation_3m_to_1m": -4
-      },
-      {
-        "id": "uranium_miners",
-        "name": "ウラン採掘",
-        "icon": "☢️",
-        "description": "原子力ルネッサンス。CCJ/UEC/UUUU",
-        "member_count": 1,
-        "tickers_failed": [
-          "CCJ",
-          "UEC",
-          "UUUU",
-          "LEU"
-        ],
-        "avg_return_1m": 6.22,
-        "avg_return_3m": 2.64,
-        "avg_return_6m": 27.4,
-        "avg_vol_accel": 0.64,
-        "winners_1m": 1,
-        "winners_3m": 1,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "inst_signal_3m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "inst_signal_6m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "top_ticker": "NXE",
-        "top_return_6m": 27.4,
-        "members": [
-          {
-            "ticker": "NXE",
-            "price": 12.46,
-            "return_1m": 6.22,
-            "return_3m": 2.64,
-            "return_6m": 27.4,
-            "vol_accel": 0.64,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 12,
-        "rank_3m": 10,
-        "rank_6m": 10,
-        "rotation_6m_to_1m": -2,
-        "rotation_3m_to_1m": -2
-      },
-      {
-        "id": "ev_pure_play",
-        "name": "EV・自動運転",
-        "icon": "🚗",
-        "description": "TSLA/RIVN/LCID/NIO/XPEV",
-        "member_count": 1,
-        "tickers_failed": [
-          "TSLA",
-          "LCID",
-          "NIO",
-          "XPEV"
-        ],
-        "avg_return_1m": -5.78,
-        "avg_return_3m": 0.48,
-        "avg_return_6m": 11.7,
-        "avg_vol_accel": 0.82,
-        "winners_1m": 0,
-        "winners_3m": 1,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "RIVN",
-        "top_return_6m": 11.7,
-        "members": [
-          {
-            "ticker": "RIVN",
-            "price": 14.51,
-            "return_1m": -5.78,
-            "return_3m": 0.48,
-            "return_6m": 11.7,
-            "vol_accel": 0.82,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 17,
-        "rank_3m": 11,
-        "rank_6m": 12,
-        "rotation_6m_to_1m": -5,
-        "rotation_3m_to_1m": -6
-      },
-      {
-        "id": "cybersecurity",
-        "name": "サイバーセキュリティ",
-        "icon": "🔒",
-        "description": "PANW/ZS/CRWD — ゼロトラスト",
-        "member_count": 3,
-        "tickers_failed": [
-          "ZS",
-          "CRWD",
-          "FTNT"
-        ],
-        "avg_return_1m": 8.81,
-        "avg_return_3m": 0.42,
-        "avg_return_6m": -11.96,
-        "avg_vol_accel": 0.96,
-        "winners_1m": 2,
-        "winners_3m": 2,
-        "winners_6m": 0,
-        "concentration_1m": 0.0,
-        "concentration_3m": 0.0,
-        "concentration_6m": 0.701,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "S",
-        "top_return_6m": -8.29,
-        "members": [
-          {
-            "ticker": "S",
-            "price": 15.6,
-            "return_1m": 17.03,
-            "return_3m": 8.41,
-            "return_6m": -8.29,
-            "vol_accel": 0.87,
-            "above_200ma": null
-          },
-          {
-            "ticker": "OKTA",
-            "price": 77.24,
-            "return_1m": -3.68,
-            "return_3m": -12.36,
-            "return_6m": -12.14,
-            "vol_accel": 1.27,
-            "above_200ma": null
-          },
-          {
-            "ticker": "PANW",
-            "price": 184.56,
-            "return_1m": 13.08,
-            "return_3m": 5.21,
-            "return_6m": -15.44,
-            "vol_accel": 0.74,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 11,
-        "rank_3m": 12,
-        "rank_6m": 17,
-        "rotation_6m_to_1m": 6,
-        "rotation_3m_to_1m": 1
-      },
       {
         "id": "quantum_computing",
         "name": "量子コンピューティング",
         "icon": "🌀",
         "description": "IONQ/RGTI/QBTS — 高ボラ長期テーマ",
-        "member_count": 2,
+        "member_count": 1,
         "tickers_failed": [
           "IONQ",
-          "IBM"
+          "RGTI",
+          "QBTS"
         ],
-        "avg_return_1m": 35.41,
-        "avg_return_3m": -0.15,
-        "avg_return_6m": -50.22,
-        "avg_vol_accel": 0.94,
-        "winners_1m": 2,
-        "winners_3m": 0,
-        "winners_6m": 0,
-        "concentration_1m": 0.574,
-        "concentration_3m": 0.151,
-        "concentration_6m": 0.77,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "QBTS",
-        "top_return_6m": -42.07,
-        "members": [
-          {
-            "ticker": "QBTS",
-            "price": 20.92,
-            "return_1m": 46.09,
-            "return_3m": -0.24,
-            "return_6m": -42.07,
-            "vol_accel": 0.92,
-            "above_200ma": null
-          },
-          {
-            "ticker": "RGTI",
-            "price": 17.7,
-            "return_1m": 24.74,
-            "return_3m": -0.06,
-            "return_6m": -58.37,
-            "vol_accel": 0.96,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 5,
-        "rank_3m": 13,
-        "rank_6m": 21,
-        "rotation_6m_to_1m": 16,
-        "rotation_3m_to_1m": 8
-      },
-      {
-        "id": "copper_majors",
-        "name": "銅大手・多角化",
-        "icon": "🟫",
-        "description": "FCX/SCCO/BHP/RIO — メジャーマイナー",
-        "member_count": 2,
-        "tickers_failed": [
-          "FCX",
-          "BHP"
-        ],
-        "avg_return_1m": -1.03,
-        "avg_return_3m": -1.53,
-        "avg_return_6m": 31.2,
-        "avg_vol_accel": 0.68,
-        "winners_1m": 1,
-        "winners_3m": 1,
-        "winners_6m": 2,
-        "concentration_1m": 0.0,
-        "concentration_3m": 0.0,
-        "concentration_6m": 0.582,
-        "inst_signal_1m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "inst_signal_3m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "inst_signal_6m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "top_ticker": "RIO",
-        "top_return_6m": 40.43,
-        "members": [
-          {
-            "ticker": "RIO",
-            "price": 98.63,
-            "return_1m": 4.43,
-            "return_3m": 9.59,
-            "return_6m": 40.43,
-            "vol_accel": 0.66,
-            "above_200ma": null
-          },
-          {
-            "ticker": "SCCO",
-            "price": 166.3,
-            "return_1m": -6.48,
-            "return_3m": -12.64,
-            "return_6m": 21.97,
-            "vol_accel": 0.7,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 15,
-        "rank_3m": 14,
-        "rank_6m": 8,
-        "rotation_6m_to_1m": -7,
-        "rotation_3m_to_1m": -1
-      },
-      {
-        "id": "fintech_payments",
-        "name": "フィンテック決済",
-        "icon": "💳",
-        "description": "V/MA/SQ/PYPL — 決済プラットフォーム",
-        "member_count": 1,
-        "tickers_failed": [
-          "V",
-          "MA",
-          "SQ"
-        ],
-        "avg_return_1m": 11.14,
-        "avg_return_3m": -3.42,
-        "avg_return_6m": -25.42,
-        "avg_vol_accel": 0.57,
-        "winners_1m": 1,
-        "winners_3m": 0,
-        "winners_6m": 0,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "inst_signal_3m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "inst_signal_6m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "top_ticker": "PYPL",
-        "top_return_6m": -25.42,
-        "members": [
-          {
-            "ticker": "PYPL",
-            "price": 50.39,
-            "return_1m": 11.14,
-            "return_3m": -3.42,
-            "return_6m": -25.42,
-            "vol_accel": 0.57,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 10,
-        "rank_3m": 15,
-        "rank_6m": 19,
-        "rotation_6m_to_1m": 9,
-        "rotation_3m_to_1m": 5
-      },
-      {
-        "id": "silver_miners",
-        "name": "銀鉱（採掘）",
-        "icon": "🥈",
-        "description": "銀価格・産業需要（太陽光・EV）+貴金属性",
-        "member_count": 1,
-        "tickers_failed": [
-          "AG",
-          "SVM",
-          "FSM",
-          "CDE"
-        ],
-        "avg_return_1m": -8.36,
-        "avg_return_3m": -4.45,
-        "avg_return_6m": 44.23,
-        "avg_vol_accel": 0.57,
-        "winners_1m": 0,
-        "winners_3m": 0,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "inst_signal_3m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "inst_signal_6m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "top_ticker": "PAAS",
-        "top_return_6m": 44.23,
-        "members": [
-          {
-            "ticker": "PAAS",
-            "price": 51.11,
-            "return_1m": -8.36,
-            "return_3m": -4.45,
-            "return_6m": 44.23,
-            "vol_accel": 0.57,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 20,
-        "rank_3m": 16,
-        "rank_6m": 6,
-        "rotation_6m_to_1m": -14,
-        "rotation_3m_to_1m": -4
-      },
-      {
-        "id": "biotech_majors",
-        "name": "バイオ大手",
-        "icon": "🧬",
-        "description": "REGN/VRTX/BIIB/GILD — 安定収益のバイオ",
-        "member_count": 1,
-        "tickers_failed": [
-          "VRTX",
-          "BIIB",
-          "GILD"
-        ],
-        "avg_return_1m": -6.91,
-        "avg_return_3m": -5.95,
-        "avg_return_6m": 8.7,
-        "avg_vol_accel": 0.92,
-        "winners_1m": 0,
-        "winners_3m": 0,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "REGN",
-        "top_return_6m": 8.7,
-        "members": [
-          {
-            "ticker": "REGN",
-            "price": 709.21,
-            "return_1m": -6.91,
-            "return_3m": -5.95,
-            "return_6m": 8.7,
-            "vol_accel": 0.92,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 19,
-        "rank_3m": 17,
-        "rank_6m": 13,
-        "rotation_6m_to_1m": -6,
-        "rotation_3m_to_1m": -2
-      },
-      {
-        "id": "smr_nuclear",
-        "name": "SMR・小型原子炉",
-        "icon": "⚛️",
-        "description": "OKLO/NNE/SMR — AI電力需要への解の一つ",
-        "member_count": 1,
-        "tickers_failed": [
-          "NNE",
-          "SMR"
-        ],
-        "avg_return_1m": 42.53,
-        "avg_return_3m": -6.82,
-        "avg_return_6m": -50.07,
-        "avg_vol_accel": 1.22,
-        "winners_1m": 1,
-        "winners_3m": 0,
-        "winners_6m": 0,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "OKLO",
-        "top_return_6m": -50.07,
-        "members": [
-          {
-            "ticker": "OKLO",
-            "price": 68.6,
-            "return_1m": 42.53,
-            "return_3m": -6.82,
-            "return_6m": -50.07,
-            "vol_accel": 1.22,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 2,
-        "rank_3m": 18,
-        "rank_6m": 20,
-        "rotation_6m_to_1m": 18,
-        "rotation_3m_to_1m": 16
-      },
-      {
-        "id": "defense_aerospace",
-        "name": "防衛・宇宙",
-        "icon": "🛡️",
-        "description": "PLTR/RTX/LMT/NOC — 国防予算+地政学",
-        "member_count": 2,
-        "tickers_failed": [
-          "LMT",
-          "NOC",
-          "GD"
-        ],
-        "avg_return_1m": -6.76,
-        "avg_return_3m": -7.45,
-        "avg_return_6m": -13.39,
-        "avg_vol_accel": 0.9,
+        "avg_return_1m": -7.18,
+        "avg_return_3m": -21.74,
+        "avg_return_6m": -24.66,
+        "avg_vol_accel": 0.98,
         "winners_1m": 0,
         "winners_3m": 0,
         "winners_6m": 0,
-        "concentration_1m": 0.0,
-        "concentration_3m": 0.0,
-        "concentration_6m": 0.0,
+        "concentration_1m": null,
+        "concentration_3m": null,
+        "concentration_6m": null,
         "inst_signal_1m": {
           "level": "neutral",
           "label": "⚪ 中立",
@@ -7260,302 +6496,43 @@ const SCAN_DATA = {
           "label": "⚪ 中立",
           "color": "gray"
         },
-        "top_ticker": "RTX",
-        "top_return_6m": -1.84,
+        "top_ticker": "IBM",
+        "top_return_6m": -24.66,
         "members": [
           {
-            "ticker": "RTX",
-            "price": 172.9,
-            "return_1m": -11.88,
-            "return_3m": -13.73,
-            "return_6m": -1.84,
-            "vol_accel": 0.81,
-            "above_200ma": null
-          },
-          {
-            "ticker": "PLTR",
-            "price": 146.03,
-            "return_1m": -1.64,
-            "return_3m": -1.17,
-            "return_6m": -24.94,
+            "ticker": "IBM",
+            "price": 229.03,
+            "return_1m": -7.18,
+            "return_3m": -21.74,
+            "return_6m": -24.66,
             "vol_accel": 0.98,
             "above_200ma": null
           }
         ],
-        "rank_1m": 18,
-        "rank_3m": 19,
-        "rank_6m": 18,
+        "rank_1m": 1,
+        "rank_3m": 1,
+        "rank_6m": 1,
         "rotation_6m_to_1m": 0,
-        "rotation_3m_to_1m": 1
-      },
-      {
-        "id": "silver_streaming",
-        "name": "貴金属ストリーミング/ETF",
-        "icon": "💿",
-        "description": "WPM/FNV — 採掘リスクなしのキャッシュフロー",
-        "member_count": 1,
-        "tickers_failed": [
-          "WPM",
-          "FNV",
-          "SAND",
-          "SLV"
-        ],
-        "avg_return_1m": -13.03,
-        "avg_return_3m": -11.8,
-        "avg_return_6m": 28.96,
-        "avg_vol_accel": 0.88,
-        "winners_1m": 0,
-        "winners_3m": 0,
-        "winners_6m": 1,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_3m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "inst_signal_6m": {
-          "level": "neutral",
-          "label": "⚪ 中立",
-          "color": "gray"
-        },
-        "top_ticker": "RGLD",
-        "top_return_6m": 28.96,
-        "members": [
-          {
-            "ticker": "RGLD",
-            "price": 228.42,
-            "return_1m": -13.03,
-            "return_3m": -11.8,
-            "return_6m": 28.96,
-            "vol_accel": 0.88,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 21,
-        "rank_3m": 20,
-        "rank_6m": 9,
-        "rotation_6m_to_1m": -12,
-        "rotation_3m_to_1m": -1
-      },
-      {
-        "id": "glp1_obesity",
-        "name": "GLP-1 肥満薬",
-        "icon": "💊",
-        "description": "LLY/NVO — 肥満治療メガトレンド",
-        "member_count": 1,
-        "tickers_failed": [
-          "LLY"
-        ],
-        "avg_return_1m": 20.04,
-        "avg_return_3m": -21.91,
-        "avg_return_6m": -8.04,
-        "avg_vol_accel": 0.69,
-        "winners_1m": 1,
-        "winners_3m": 0,
-        "winners_6m": 0,
-        "concentration_1m": null,
-        "concentration_3m": null,
-        "concentration_6m": null,
-        "inst_signal_1m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "inst_signal_3m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "inst_signal_6m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
-        },
-        "top_ticker": "NVO",
-        "top_return_6m": -8.04,
-        "members": [
-          {
-            "ticker": "NVO",
-            "price": 44.39,
-            "return_1m": 20.04,
-            "return_3m": -21.91,
-            "return_6m": -8.04,
-            "vol_accel": 0.69,
-            "above_200ma": null
-          }
-        ],
-        "rank_1m": 8,
-        "rank_3m": 21,
-        "rank_6m": 15,
-        "rotation_6m_to_1m": 7,
-        "rotation_3m_to_1m": 13
+        "rotation_3m_to_1m": 0
       }
     ],
     "rotation": {
-      "inflow_top": [
-        {
-          "id": "smr_nuclear",
-          "name": "SMR・小型原子炉",
-          "icon": "⚛️",
-          "avg_return_1m": 42.53,
-          "avg_return_3m": -6.82,
-          "avg_return_6m": -50.07,
-          "avg_vol_accel": 1.22,
-          "rank_1m": 2,
-          "rank_3m": 18,
-          "rank_6m": 20,
-          "rotation_6m_to_1m": 18,
-          "rotation_3m_to_1m": 16,
-          "top_ticker": "OKLO",
-          "inst_signal_3m": {
-            "level": "neutral",
-            "label": "⚪ 中立",
-            "color": "gray"
-          }
-        },
+      "inflow_top": [],
+      "persistent_strong": [
         {
           "id": "quantum_computing",
           "name": "量子コンピューティング",
           "icon": "🌀",
-          "avg_return_1m": 35.41,
-          "avg_return_3m": -0.15,
-          "avg_return_6m": -50.22,
-          "avg_vol_accel": 0.94,
-          "rank_1m": 5,
-          "rank_3m": 13,
-          "rank_6m": 21,
-          "rotation_6m_to_1m": 16,
-          "rotation_3m_to_1m": 8,
-          "top_ticker": "QBTS",
-          "inst_signal_3m": {
-            "level": "neutral",
-            "label": "⚪ 中立",
-            "color": "gray"
-          }
-        },
-        {
-          "id": "crypto_infra",
-          "name": "暗号資産インフラ",
-          "icon": "🪙",
-          "avg_return_1m": 45.26,
-          "avg_return_3m": 21.93,
-          "avg_return_6m": -11.43,
-          "avg_vol_accel": 1.0,
+          "avg_return_1m": -7.18,
+          "avg_return_3m": -21.74,
+          "avg_return_6m": -24.66,
+          "avg_vol_accel": 0.98,
           "rank_1m": 1,
-          "rank_3m": 6,
-          "rank_6m": 16,
-          "rotation_6m_to_1m": 15,
-          "rotation_3m_to_1m": 5,
-          "top_ticker": "RIOT",
-          "inst_signal_3m": {
-            "level": "neutral",
-            "label": "⚪ 中立",
-            "color": "gray"
-          }
-        },
-        {
-          "id": "fintech_payments",
-          "name": "フィンテック決済",
-          "icon": "💳",
-          "avg_return_1m": 11.14,
-          "avg_return_3m": -3.42,
-          "avg_return_6m": -25.42,
-          "avg_vol_accel": 0.57,
-          "rank_1m": 10,
-          "rank_3m": 15,
-          "rank_6m": 19,
-          "rotation_6m_to_1m": 9,
-          "rotation_3m_to_1m": 5,
-          "top_ticker": "PYPL",
-          "inst_signal_3m": {
-            "level": "fading",
-            "label": "🟡 関心薄れ",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "ai_gpu",
-          "name": "AI半導体・GPU/カスタム",
-          "icon": "🤖",
-          "avg_return_1m": 22.34,
-          "avg_return_3m": 8.98,
-          "avg_return_6m": -3.04,
-          "avg_vol_accel": 1.15,
-          "rank_1m": 6,
-          "rank_3m": 7,
-          "rank_6m": 14,
-          "rotation_6m_to_1m": 8,
-          "rotation_3m_to_1m": 1,
-          "top_ticker": "NVDA",
-          "inst_signal_3m": {
-            "level": "neutral",
-            "label": "⚪ 中立",
-            "color": "gray"
-          }
-        }
-      ],
-      "persistent_strong": [
-        {
-          "id": "datacenter_power",
-          "name": "データセンター電力・送配電",
-          "icon": "⚡",
-          "avg_return_1m": 36.61,
-          "avg_return_3m": 49.63,
-          "avg_return_6m": 61.69,
-          "avg_vol_accel": 0.99,
-          "rank_1m": 4,
           "rank_3m": 1,
-          "rank_6m": 2,
-          "rotation_6m_to_1m": -2,
-          "rotation_3m_to_1m": -3,
-          "top_ticker": "PWR",
-          "inst_signal_3m": {
-            "level": "neutral",
-            "label": "⚪ 中立",
-            "color": "gray"
-          }
-        },
-        {
-          "id": "semi_test",
-          "name": "半導体テスト・プローブ",
-          "icon": "🔬",
-          "avg_return_1m": 38.98,
-          "avg_return_3m": 47.98,
-          "avg_return_6m": 118.57,
-          "avg_vol_accel": 0.91,
-          "rank_1m": 3,
-          "rank_3m": 2,
           "rank_6m": 1,
-          "rotation_6m_to_1m": -2,
-          "rotation_3m_to_1m": -1,
-          "top_ticker": "ONTO",
-          "inst_signal_3m": {
-            "level": "neutral",
-            "label": "⚪ 中立",
-            "color": "gray"
-          }
-        },
-        {
-          "id": "oilfield_services",
-          "name": "油田サービス",
-          "icon": "🛠️",
-          "avg_return_1m": 20.88,
-          "avg_return_3m": 42.43,
-          "avg_return_6m": 55.44,
-          "avg_vol_accel": 1.01,
-          "rank_1m": 7,
-          "rank_3m": 3,
-          "rank_6m": 3,
-          "rotation_6m_to_1m": -4,
-          "rotation_3m_to_1m": -4,
-          "top_ticker": "PUMP",
+          "rotation_6m_to_1m": 0,
+          "rotation_3m_to_1m": 0,
+          "top_ticker": "IBM",
           "inst_signal_3m": {
             "level": "neutral",
             "label": "⚪ 中立",
@@ -7563,108 +6540,7 @@ const SCAN_DATA = {
           }
         }
       ],
-      "outflow_top": [
-        {
-          "id": "silver_miners",
-          "name": "銀鉱（採掘）",
-          "icon": "🥈",
-          "avg_return_1m": -8.36,
-          "avg_return_3m": -4.45,
-          "avg_return_6m": 44.23,
-          "avg_vol_accel": 0.57,
-          "rank_1m": 20,
-          "rank_3m": 16,
-          "rank_6m": 6,
-          "rotation_6m_to_1m": -14,
-          "rotation_3m_to_1m": -4,
-          "top_ticker": "PAAS",
-          "inst_signal_3m": {
-            "level": "fading",
-            "label": "🟡 関心薄れ",
-            "color": "yellow"
-          }
-        },
-        {
-          "id": "silver_streaming",
-          "name": "貴金属ストリーミング/ETF",
-          "icon": "💿",
-          "avg_return_1m": -13.03,
-          "avg_return_3m": -11.8,
-          "avg_return_6m": 28.96,
-          "avg_vol_accel": 0.88,
-          "rank_1m": 21,
-          "rank_3m": 20,
-          "rank_6m": 9,
-          "rotation_6m_to_1m": -12,
-          "rotation_3m_to_1m": -1,
-          "top_ticker": "RGLD",
-          "inst_signal_3m": {
-            "level": "neutral",
-            "label": "⚪ 中立",
-            "color": "gray"
-          }
-        },
-        {
-          "id": "oil_majors",
-          "name": "石油大手・統合",
-          "icon": "🛢️",
-          "avg_return_1m": -4.29,
-          "avg_return_3m": 38.26,
-          "avg_return_6m": 49.65,
-          "avg_vol_accel": 1.1,
-          "rank_1m": 16,
-          "rank_3m": 4,
-          "rank_6m": 4,
-          "rotation_6m_to_1m": -12,
-          "rotation_3m_to_1m": -12,
-          "top_ticker": "OXY",
-          "inst_signal_3m": {
-            "level": "neutral",
-            "label": "⚪ 中立",
-            "color": "gray"
-          }
-        },
-        {
-          "id": "biotech_smid",
-          "name": "バイオベンチャー",
-          "icon": "🧫",
-          "avg_return_1m": 0.11,
-          "avg_return_3m": 29.26,
-          "avg_return_6m": 44.84,
-          "avg_vol_accel": 0.76,
-          "rank_1m": 14,
-          "rank_3m": 5,
-          "rank_6m": 5,
-          "rotation_6m_to_1m": -9,
-          "rotation_3m_to_1m": -9,
-          "top_ticker": "ROIV",
-          "inst_signal_3m": {
-            "level": "neutral",
-            "label": "⚪ 中立",
-            "color": "gray"
-          }
-        },
-        {
-          "id": "copper_majors",
-          "name": "銅大手・多角化",
-          "icon": "🟫",
-          "avg_return_1m": -1.03,
-          "avg_return_3m": -1.53,
-          "avg_return_6m": 31.2,
-          "avg_vol_accel": 0.68,
-          "rank_1m": 15,
-          "rank_3m": 14,
-          "rank_6m": 8,
-          "rotation_6m_to_1m": -7,
-          "rotation_3m_to_1m": -1,
-          "top_ticker": "RIO",
-          "inst_signal_3m": {
-            "level": "fading",
-            "label": "🟡 関心薄れ",
-            "color": "yellow"
-          }
-        }
-      ],
+      "outflow_top": [],
       "vanishing": []
     }
   }
