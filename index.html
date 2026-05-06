@@ -7032,6 +7032,38 @@ function addHolding(h) {
   const hs = getHoldings();
   hs.push(h);
   setHoldings(hs);
+  ensureHoldingStub(h.ticker, h.current_price);
+}
+
+function ensureHoldingStub(ticker, currentPrice) {
+  // SCAN_DATA.details に持ち株スタブを作成（詳細モーダルが開けるように）
+  if (!SCAN_DATA.details) SCAN_DATA.details = {};
+  if (!SCAN_DATA.details[ticker]) {
+    SCAN_DATA.details[ticker] = {
+      ticker,
+      name: '',
+      sector: '',
+      theme: '持ち株',
+      position: null,
+      rating: '',
+      signal: '持ち株',
+      price: (currentPrice && currentPrice > 0) ? currentPrice : 0,
+      sepa_score: '',
+      rsi: '',
+      vcp: '',
+      short_cover: '',
+      stop_loss_21ma: '',
+      stop_loss_8pct: '',
+      grok: null,
+      perplexity: null,
+      gemini: null,
+      chatgpt: null,
+      earnings: null,
+      holding_only: true,
+    };
+  } else if (currentPrice && currentPrice > 0 && (SCAN_DATA.details[ticker].price ?? 0) <= 0) {
+    SCAN_DATA.details[ticker].price = currentPrice;
+  }
 }
 function removeHolding(idx) {
   if (!confirm(`${getHoldings()[idx]?.ticker} を持ち株から削除します。よろしいですか？`)) return;
@@ -7081,6 +7113,25 @@ function addHoldingFromForm() {
   document.getElementById('holdPriceIn').value = '';
 }
 
+function updateHoldingPrice(idx) {
+  const hs = getHoldings();
+  if (!hs[idx]) return;
+  const h = hs[idx];
+  const cur = h.current_price ? `（前回入力: $${h.current_price}）` : '';
+  const v = prompt(`${h.ticker} の現在値を入力してください（USD）${cur}`, h.current_price || '');
+  if (!v) return;
+  const price = parseFloat(v);
+  if (!price || price <= 0) { alert('正の数値を入れてください'); return; }
+  hs[idx].current_price = price;
+  hs[idx].current_price_updated_at = new Date().toISOString();
+  setHoldings(hs);
+  // SCAN_DATA.details にも反映
+  ensureHoldingStub(h.ticker, price);
+  if (SCAN_DATA.details[h.ticker] && (SCAN_DATA.details[h.ticker].price ?? 0) <= 0) {
+    SCAN_DATA.details[h.ticker].price = price;
+  }
+}
+
 function saveCashFromForm() {
   const v = parseFloat(document.getElementById('cashIn').value);
   if (isNaN(v) || v < 0) { alert('正の数値を入力してください'); return; }
@@ -7123,7 +7174,14 @@ function _safeFloat(s) {
 
 function evaluateHolding(h) {
   const d = (SCAN_DATA.details || {})[h.ticker];
-  const currentPrice = d && d.price > 0 ? d.price : null;
+  // 価格優先順: SCAN_DATA.details の price > holdings.current_price (手動入力)
+  let currentPrice = d && d.price > 0 ? d.price : null;
+  // holding_only stub から price を取った場合は手動扱い（実体はユーザー入力）
+  let priceSource = currentPrice != null ? ((d && d.holding_only) ? 'manual' : 'auto') : null;
+  if (currentPrice == null && h.current_price && h.current_price > 0) {
+    currentPrice = h.current_price;
+    priceSource = 'manual';
+  }
   const cost = h.purchase_price;
   const shares = h.shares;
   const value = (currentPrice || 0) * shares;
@@ -7131,9 +7189,12 @@ function evaluateHolding(h) {
   const profitPct = currentPrice != null ? ((currentPrice - cost) / cost) * 100 : null;
 
   // Default action
-  let action = { tier: 'unknown', label: '価格未取得', cls: 'act-hold', reasons: ['SCAN_DATA に詳細データなし。WATCHLIST に追加して翌日のスキャンで取得してください'] };
+  let action = { tier: 'unknown', label: '価格未取得', cls: 'act-hold', reasons: [
+    `${h.ticker} の価格が SCAN_DATA に無く、手動入力もされていません。`,
+    '「💰 価格更新」ボタンから手動入力するか、WATCHLIST に追加して翌日のスキャンで自動取得を待ってください。'
+  ] };
 
-  if (currentPrice == null) return { d, currentPrice, value, profit, profitPct, action };
+  if (currentPrice == null) return { d, currentPrice, priceSource, value, profit, profitPct, action };
 
   const reasons = [];
   let tier = 'hold';
@@ -7202,10 +7263,13 @@ function evaluateHolding(h) {
     reasons.unshift(`💎 CDE 恩株化目標 $16.72 到達（現値 $${currentPrice.toFixed(2)}）。${shares}株のうち半分（${Math.floor(shares/2)}株）利確で残りはコストゼロ化`);
   }
 
-  return { d, currentPrice, value, profit, profitPct, action: { tier, label, cls, reasons } };
+  return { d, currentPrice, priceSource, value, profit, profitPct, action: { tier, label, cls, reasons } };
 }
 
 function renderMyTab() {
+  // Ensure detail stubs exist for all holdings (for opening detail modal)
+  getHoldings().forEach(h => ensureHoldingStub(h.ticker, h.current_price));
+
   // Watchlist
   const wl = getWatchlist();
   document.getElementById('watchlistCount').textContent = `${wl.length}銘柄`;
@@ -7231,6 +7295,12 @@ function renderMyTab() {
     : evaluations.map(({ idx, h, ev }) => {
       const profitColor = ev.profitPct == null ? 'var(--text2)' : ev.profitPct >= 0 ? 'var(--green)' : 'var(--red)';
       const reasonsHtml = ev.action.reasons.map(r => `<div>・ ${r}</div>`).join('');
+      const priceLabel = ev.priceSource === 'manual'
+        ? '<span style="font-size:9px;color:var(--orange);font-weight:600;margin-left:4px">手動</span>'
+        : '';
+      const updatedAt = h.current_price_updated_at
+        ? `<div style="font-size:9px;color:var(--text2);margin-top:1px">${new Date(h.current_price_updated_at).toLocaleString('ja-JP', {month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})} 更新</div>`
+        : '';
       return `<div class="hold-row">
         <div class="hold-head">
           <div class="hold-ticker" onclick="openDetail('${h.ticker}')">${h.ticker}</div>
@@ -7238,8 +7308,9 @@ function renderMyTab() {
         </div>
         <div class="hold-grid">
           <div class="hold-stat">
-            <div class="label">現在値</div>
+            <div class="label">現在値${priceLabel}</div>
             <div class="val">${ev.currentPrice ? '$' + ev.currentPrice.toFixed(2) : '—'}</div>
+            ${updatedAt}
           </div>
           <div class="hold-stat">
             <div class="label">評価額</div>
@@ -7257,6 +7328,7 @@ function renderMyTab() {
           <div class="reason">${reasonsHtml}</div>
         </div>
         <div class="hold-controls">
+          <button class="my-btn" onclick="updateHoldingPrice(${idx})" style="font-size:11px">💰 価格更新</button>
           <button class="my-btn ghost" onclick="openDetail('${h.ticker}')" style="font-size:11px">詳細</button>
           <button class="my-btn ghost danger" onclick="removeHolding(${idx})" style="font-size:11px">削除</button>
         </div>
