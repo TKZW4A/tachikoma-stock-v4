@@ -1259,6 +1259,16 @@ const SCAN_DATA = {
       "note": "RSI38.1低下"
     },
     {
+      "ticker": "NVT",
+      "name": "nVent Electric",
+      "type": "BUY",
+      "price": 166.72999572753906,
+      "sepa": "9.0",
+      "theme": "電力",
+      "note": "RSI79.8過熱",
+      "rank": 1
+    },
+    {
       "ticker": "FORM",
       "name": "FormFactor",
       "type": "BUY",
@@ -1266,7 +1276,7 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:PG",
-      "rank": 1
+      "rank": 2
     },
     {
       "ticker": "KEYS",
@@ -1276,7 +1286,7 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:SG",
-      "rank": 2
+      "rank": 3
     },
     {
       "ticker": "ASX",
@@ -1286,7 +1296,7 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:SF",
-      "rank": 3
+      "rank": 4
     },
     {
       "ticker": "ATEYY",
@@ -1296,7 +1306,7 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:PF",
-      "rank": 4
+      "rank": 5
     },
     {
       "ticker": "AEHR",
@@ -1306,7 +1316,7 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:C",
-      "rank": 5
+      "rank": 6
     },
     {
       "ticker": "TVTX",
@@ -1316,16 +1326,6 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "バイオ",
       "note": "バイオ",
-      "rank": 6
-    },
-    {
-      "ticker": "NVT",
-      "name": "nVent Electric",
-      "type": "BUY",
-      "price": 166.72999572753906,
-      "sepa": "9.0",
-      "theme": "電力",
-      "note": "RSI79.8過熱",
       "rank": 7
     },
     {
@@ -1349,16 +1349,6 @@ const SCAN_DATA = {
       "rank": 9
     },
     {
-      "ticker": "MP",
-      "name": "MP Materials",
-      "type": "BUY",
-      "price": 69.12999725341797,
-      "sepa": "8.0",
-      "theme": "資源・銅",
-      "note": "資源・銅",
-      "rank": 10
-    },
-    {
       "ticker": "COHR",
       "name": "Coherent Corp",
       "type": "BUY",
@@ -1366,6 +1356,16 @@ const SCAN_DATA = {
       "sepa": "8.0",
       "theme": "半導体・光学",
       "note": "RSI39.7低下",
+      "rank": 10
+    },
+    {
+      "ticker": "MP",
+      "name": "MP Materials",
+      "type": "BUY",
+      "price": 69.12999725341797,
+      "sepa": "8.0",
+      "theme": "資源・銅",
+      "note": "資源・銅",
       "rank": 11
     },
     {
@@ -1406,7 +1406,98 @@ const SCAN_DATA = {
       "note": "RSI39.7低下"
     }
   ],
-  "ai_consensus": [],
+  "ai_consensus": [
+    {
+      "rank": 1,
+      "ticker": "NVDA",
+      "sepa": "—",
+      "grok": "+9",
+      "gemini": "98pt",
+      "gpt": "+15-25%",
+      "verdict": "Strong Buy"
+    },
+    {
+      "rank": 2,
+      "ticker": "AVGO",
+      "sepa": "—",
+      "grok": "+8",
+      "gemini": "92pt",
+      "gpt": "+10-20%",
+      "verdict": "Buy"
+    },
+    {
+      "rank": 3,
+      "ticker": "NVT",
+      "sepa": "9.0",
+      "grok": "+7",
+      "gemini": "89pt",
+      "gpt": "+15-20%",
+      "verdict": "Buy (目標株価上方修正連発)"
+    },
+    {
+      "rank": 4,
+      "ticker": "TSM",
+      "sepa": "—",
+      "grok": "+8",
+      "gemini": "88pt",
+      "gpt": "+10-20%",
+      "verdict": ""
+    },
+    {
+      "rank": 5,
+      "ticker": "FORM",
+      "sepa": "9.0",
+      "grok": "+7",
+      "gemini": "85pt",
+      "gpt": "+15-25%",
+      "verdict": ""
+    },
+    {
+      "rank": 6,
+      "ticker": "FCX",
+      "sepa": "6.0",
+      "grok": "+6",
+      "gemini": "82pt",
+      "gpt": "+5-10%",
+      "verdict": ""
+    },
+    {
+      "rank": 7,
+      "ticker": "COHR",
+      "sepa": "8.0",
+      "grok": "+6",
+      "gemini": "80pt",
+      "gpt": "—",
+      "verdict": ""
+    },
+    {
+      "rank": 8,
+      "ticker": "WPM",
+      "sepa": "—",
+      "grok": "+5",
+      "gemini": "78pt",
+      "gpt": "+0-10%",
+      "verdict": ""
+    },
+    {
+      "rank": 9,
+      "ticker": "CDE",
+      "sepa": "5.0",
+      "grok": "+5",
+      "gemini": "75pt",
+      "gpt": "+5-10%",
+      "verdict": ""
+    },
+    {
+      "rank": 10,
+      "ticker": "KEYS",
+      "sepa": "9.0",
+      "grok": "+6",
+      "gemini": "73pt",
+      "gpt": "—",
+      "verdict": ""
+    }
+  ],
   "earnings": [
     {
       "date": "5/8",
@@ -1568,10 +1659,37 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$134.80",
       "stop_loss_8pct": "$133.11",
-      "grok": null,
+      "grok": {
+        "score": 7,
+        "judgment": "強気",
+        "reasons": [
+          "AI HBM テスト需要で記録的決算継続",
+          "プローブカードのリーダー",
+          "決算後の出来高増加"
+        ]
+      },
       "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
+      "gemini": {
+        "rank": 5,
+        "score": 85,
+        "revenue_growth": "28.0%",
+        "eps_growth": "22.0%",
+        "net_margin": "25.0%",
+        "roe": "18.0%",
+        "per": 171.4,
+        "debt_equity": 0.1,
+        "filter_status": "Pass (Record Revenue, Price > 30w MA)"
+      },
+      "chatgpt": {
+        "base": "+15-25%",
+        "bull": "+30-40%",
+        "bear": "-25-40%",
+        "geo_risk": "中",
+        "geo_notes": [
+          "us_china: 言及あり",
+          "taiwan: 言及あり"
+        ]
+      },
       "earnings": {
         "date": "7/30",
         "days": 83,
@@ -1579,6 +1697,43 @@ const SCAN_DATA = {
         "note": "",
         "eps_estimate": 0.61,
         "revenue_estimate": 239999780
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 144.68,
+          "ma50": 113.86,
+          "ma150": 79.06,
+          "ma200": 67.13,
+          "pct_above_52w_low": 423.8,
+          "pct_to_52w_high": 0.9329,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 79.06,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 22.73,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0671,
+        "days_since_break": null,
+        "break_volume_surge": false
       }
     },
     "KEYS": {
@@ -1596,10 +1751,36 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$338.17",
       "stop_loss_8pct": "$326.66",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "AIテスト機器需要の言及",
+          "アナリスト目標の再評価が進行",
+          "Stage 2 維持"
+        ]
+      },
       "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
+      "gemini": {
+        "rank": 10,
+        "score": 73,
+        "revenue_growth": "12.0%",
+        "eps_growth": "10.0%",
+        "net_margin": "22.0%",
+        "roe": "28.0%",
+        "per": 24.0,
+        "debt_equity": 0.4,
+        "filter_status": "Pass (Price far above analyst targets, Overextended but > 30w MA)"
+      },
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "中",
+        "geo_notes": [
+          "us_china: 言及あり"
+        ]
+      },
       "earnings": {
         "date": "5/20",
         "days": 12,
@@ -1607,6 +1788,43 @@ const SCAN_DATA = {
         "note": "",
         "eps_estimate": 2.32049,
         "revenue_estimate": 1705224330
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 355.06,
+          "ma50": 311.14,
+          "ma150": 237.48,
+          "ma200": 220.03,
+          "pct_above_52w_low": 137.4,
+          "pct_to_52w_high": 0.9683,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 237.48,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 10.98,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0317,
+        "days_since_break": null,
+        "break_volume_surge": false
       }
     },
     "ASX": {
@@ -1627,7 +1845,13 @@ const SCAN_DATA = {
       "grok": null,
       "perplexity": null,
       "gemini": null,
-      "chatgpt": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
       "earnings": {
         "date": "7/30",
         "days": 83,
@@ -1635,6 +1859,43 @@ const SCAN_DATA = {
         "note": "",
         "eps_estimate": 0.23908,
         "revenue_estimate": 189190693550
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 33.34,
+          "ma50": 25.31,
+          "ma150": 19.46,
+          "ma200": 17.23,
+          "pct_above_52w_low": 279.5,
+          "pct_to_52w_high": 0.976,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 19.46,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 15.4,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.024,
+        "days_since_break": null,
+        "break_volume_surge": false
       }
     },
     "ATEYY": {
@@ -1652,11 +1913,62 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$177.76",
       "stop_loss_8pct": "$171.20",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "Advantest ADR 半導体テストの中核",
+          "Stage 2 初動候補 (26日前ブレイク)",
+          "日本株の中で AI半導体受益代表"
+        ]
+      },
       "perplexity": null,
       "gemini": null,
-      "chatgpt": null,
-      "earnings": null
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 186.09,
+          "ma50": 162.26,
+          "ma150": 145.63,
+          "ma200": 129.79,
+          "pct_above_52w_low": 315.3,
+          "pct_to_52w_high": 0.9446,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": true,
+        "ma30w": 145.63,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 8.8,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0554,
+        "days_since_break": 27,
+        "break_volume_surge": false
+      }
     },
     "AEHR": {
       "ticker": "AEHR",
@@ -1676,8 +1988,51 @@ const SCAN_DATA = {
       "grok": null,
       "perplexity": null,
       "gemini": null,
-      "chatgpt": null,
-      "earnings": null
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 91.26,
+          "ma50": 59.19,
+          "ma150": 36.75,
+          "ma200": 33.53,
+          "pct_above_52w_low": 991.6,
+          "pct_to_52w_high": 0.9373,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 36.75,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 27.52,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0627,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "TVTX": {
       "ticker": "TVTX",
@@ -1694,11 +2049,62 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$40.01",
       "stop_loss_8pct": "$39.25",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "Stage 2 初動 (出来高急増ブレイク 18日前)",
+          "希少疾患カタリスト前のロング候補",
+          "RS 99 で先導性高い"
+        ]
+      },
       "perplexity": null,
       "gemini": null,
-      "chatgpt": null,
-      "earnings": null
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 42.66,
+          "ma50": 33.41,
+          "ma150": 32.51,
+          "ma200": 29.34,
+          "pct_above_52w_low": 202.9,
+          "pct_to_52w_high": 0.9499,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": true,
+        "ma30w": 32.51,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 7.59,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0501,
+        "days_since_break": 19,
+        "break_volume_surge": true
+      }
     },
     "NVT": {
       "ticker": "NVT",
@@ -1715,10 +2121,54 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$146.03",
       "stop_loss_8pct": "$153.39",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
+      "grok": {
+        "score": 7,
+        "judgment": "強気",
+        "reasons": [
+          "AIデータセンター電力の決算ビート連発",
+          "Q1 EPS+50% で再評価",
+          "電力テーマの中核として再注目"
+        ]
+      },
+      "perplexity": {
+        "judgment": "Buy (目標株価上方修正連発)",
+        "reason": null,
+        "drivers": [
+          "AIデータセンター電力 / 液冷の構造的需要",
+          "送配電・産業設備の電化トレンド",
+          "Stage 2 上昇継続"
+        ],
+        "risks": [
+          "AI投資サイクル変動",
+          "PER 35 倍の高値圏",
+          "為替・鋼材コスト"
+        ],
+        "latest_earnings": {
+          "latest_quarter": "Q1: 売上+53%, EPS+50% で大幅ビート",
+          "next_quarter": "Q2 推定 EPS $1.05",
+          "yoy_eps_growth_estimate": "+45%"
+        },
+        "next_earnings": null,
+        "analyst_ratings": null
+      },
+      "gemini": {
+        "rank": 3,
+        "score": 89,
+        "revenue_growth": "53.0%",
+        "eps_growth": "50.0%",
+        "net_margin": "18.0%",
+        "roe": "22.0%",
+        "per": 35.0,
+        "debt_equity": 0.3,
+        "filter_status": "Pass (Strong Q1 Beat, Price > 30w MA)"
+      },
+      "chatgpt": {
+        "base": "+15-20%",
+        "bull": "+25-35%",
+        "bear": "-15-25%",
+        "geo_risk": "低",
+        "geo_notes": []
+      },
       "earnings": {
         "date": "7/31",
         "days": 84,
@@ -1726,6 +2176,43 @@ const SCAN_DATA = {
         "note": "電力需要増テーマの確認",
         "eps_estimate": 1.15843,
         "revenue_estimate": 1254105320
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 166.73,
+          "ma50": 127.67,
+          "ma150": 113.64,
+          "ma200": 107.79,
+          "pct_above_52w_low": 179.4,
+          "pct_to_52w_high": 0.9666,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 113.64,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 6.26,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0334,
+        "days_since_break": null,
+        "break_volume_surge": false
       }
     },
     "SLB": {
@@ -1746,7 +2233,13 @@ const SCAN_DATA = {
       "grok": null,
       "perplexity": null,
       "gemini": null,
-      "chatgpt": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
       "earnings": {
         "date": "7/24",
         "days": 77,
@@ -1754,6 +2247,43 @@ const SCAN_DATA = {
         "note": "",
         "eps_estimate": 0.52551,
         "revenue_estimate": 8689539640
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 53.0,
+          "ma50": 51.11,
+          "ma150": 44.0,
+          "ma200": 41.5,
+          "pct_above_52w_low": 69.4,
+          "pct_to_52w_high": 0.9311,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 44.0,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 6.58,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0689,
+        "days_since_break": null,
+        "break_volume_surge": false
       }
     },
     "ROKU": {
@@ -1771,10 +2301,34 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$115.61",
       "stop_loss_8pct": "$116.54",
-      "grok": null,
+      "grok": {
+        "score": 4,
+        "judgment": "中立",
+        "reasons": [
+          "広告市場次第でアップサイド限定",
+          "EPS赤字継続が重し",
+          "X 上の言及は限定的"
+        ]
+      },
       "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
+      "gemini": {
+        "rank": 11,
+        "score": 70,
+        "revenue_growth": "18.0%",
+        "eps_growth": "N/A (Loss)",
+        "net_margin": "45.0% (Gross)",
+        "roe": "-10.0%",
+        "per": null,
+        "debt_equity": 0.2,
+        "filter_status": "Pass (Consensus Buy, Price > 30w MA)"
+      },
+      "chatgpt": {
+        "base": "-5-+10%",
+        "bull": "+15-30%",
+        "bear": "-30-50%",
+        "geo_risk": "低",
+        "geo_notes": []
+      },
       "earnings": {
         "date": "7/31",
         "days": 84,
@@ -1782,6 +2336,43 @@ const SCAN_DATA = {
         "note": "",
         "eps_estimate": 0.56375,
         "revenue_estimate": 1297260450
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 126.67,
+          "ma50": 103.96,
+          "ma150": 101.59,
+          "ma200": 99.52,
+          "pct_above_52w_low": 111.5,
+          "pct_to_52w_high": 0.9898,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 101.59,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 2.38,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0102,
+        "days_since_break": 22,
+        "break_volume_surge": false
       }
     },
     "MP": {
@@ -1799,10 +2390,34 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$63.67",
       "stop_loss_8pct": "$63.60",
-      "grok": null,
+      "grok": {
+        "score": 4,
+        "judgment": "中立",
+        "reasons": [
+          "レアアーステーマで政府支援継続",
+          "ただし足元の業績低調 (Caution)",
+          "中期テクニカル弱含み"
+        ]
+      },
       "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
+      "gemini": {
+        "rank": 12,
+        "score": 65,
+        "revenue_growth": "5.0%",
+        "eps_growth": "-10.0%",
+        "net_margin": "15.0%",
+        "roe": "5.0%",
+        "per": 50.0,
+        "debt_equity": 0.3,
+        "filter_status": "Caution (Technical weakness in mid-term, though > 30w MA)"
+      },
+      "chatgpt": {
+        "base": "-5-+5%",
+        "bull": "+15-30%",
+        "bear": "-30-45%",
+        "geo_risk": "低",
+        "geo_notes": []
+      },
       "earnings": {
         "date": "5/8",
         "days": 0,
@@ -1810,6 +2425,43 @@ const SCAN_DATA = {
         "note": "売上$627M、純利益$110M予想。変曲点",
         "eps_estimate": -0.03646,
         "revenue_estimate": 75456000
+      },
+      "stage_info": {
+        "stage": 3,
+        "stage_label": "天井圏",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": false,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": false,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": false,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 69.13,
+          "ma50": 58.85,
+          "ma150": 61.47,
+          "ma200": 63.14,
+          "pct_above_52w_low": 268.3,
+          "pct_to_52w_high": 0.7008,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 61.47,
+        "ma30w_trend": "down",
+        "ma30w_slope_pct": -0.99,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.2992,
+        "days_since_break": null,
+        "break_volume_surge": false
       }
     },
     "COHR": {
@@ -1827,11 +2479,72 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$317.09",
       "stop_loss_8pct": "$293.65",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "光通信・コヒーレント光学の AI需要",
+          "高 PER 警戒は残るも momentum 継続",
+          "ANET と並ぶ AI ネットワーク受益"
+        ]
+      },
       "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
-      "earnings": null
+      "gemini": {
+        "rank": 7,
+        "score": 80,
+        "revenue_growth": "15.0%",
+        "eps_growth": "12.0%",
+        "net_margin": "10.0%",
+        "roe": "5.0%",
+        "per": 341.1,
+        "debt_equity": 0.6,
+        "filter_status": "Pass (High momentum, Price above resistance)"
+      },
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 319.19,
+          "ma50": 284.8,
+          "ma150": 210.28,
+          "ma200": 183.15,
+          "pct_above_52w_low": 358.5,
+          "pct_to_52w_high": 0.9107,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 210.28,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 17.18,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0893,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "ROIV": {
       "ticker": "ROIV",
@@ -1851,7 +2564,13 @@ const SCAN_DATA = {
       "grok": null,
       "perplexity": null,
       "gemini": null,
-      "chatgpt": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
       "earnings": {
         "date": "5/28",
         "days": 20,
@@ -1859,6 +2578,43 @@ const SCAN_DATA = {
         "note": "",
         "eps_estimate": -0.34975,
         "revenue_estimate": 3912900
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": false
+        },
+        "tt_metrics": {
+          "price": 28.28,
+          "ma50": 28.33,
+          "ma150": 23.69,
+          "ma200": 20.96,
+          "pct_above_52w_low": 166.3,
+          "pct_to_52w_high": 0.948,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 23.69,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 9.18,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.052,
+        "days_since_break": null,
+        "break_volume_surge": false
       }
     },
     "FCX": {
@@ -1876,10 +2632,34 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$61.00",
       "stop_loss_8pct": "$55.76",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "やや強気",
+        "reasons": [
+          "AI データセンター用銅需要の構造的増加",
+          "銅価格の構造的逼迫",
+          "コモディティ全体は流出加速だが個別評価高め"
+        ]
+      },
       "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
+      "gemini": {
+        "rank": 6,
+        "score": 82,
+        "revenue_growth": "10.4%",
+        "eps_growth": "30.0%",
+        "net_margin": "40.4%",
+        "roe": "15.0%",
+        "per": 22.8,
+        "debt_equity": 0.5,
+        "filter_status": "Pass (Copper cycle tailwind, Price > 30w MA)"
+      },
+      "chatgpt": {
+        "base": "+5-10%",
+        "bull": "+15-25%",
+        "bear": "-20-30%",
+        "geo_risk": "低",
+        "geo_notes": []
+      },
       "earnings": {
         "date": "7/22",
         "days": 75,
@@ -1887,6 +2667,43 @@ const SCAN_DATA = {
         "note": "",
         "eps_estimate": 0.56347,
         "revenue_estimate": 6572700380
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": false
+        },
+        "tt_metrics": {
+          "price": 60.61,
+          "ma50": 61.35,
+          "ma150": 53.59,
+          "ma200": 50.78,
+          "pct_above_52w_low": 72.9,
+          "pct_to_52w_high": 0.8614,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 53.59,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 5.72,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.1386,
+        "days_since_break": null,
+        "break_volume_surge": false
       }
     },
     "AG": {
@@ -1907,13 +2724,56 @@ const SCAN_DATA = {
       "grok": null,
       "perplexity": null,
       "gemini": null,
-      "chatgpt": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
       "earnings": {
         "date": "5/12",
         "days": 4,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.31333
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": false,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": false
+        },
+        "tt_metrics": {
+          "price": 21.37,
+          "ma50": 22.2,
+          "ma150": 18.8,
+          "ma200": 16.48,
+          "pct_above_52w_low": 288.3,
+          "pct_to_52w_high": 0.6676,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 18.8,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 7.86,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.3324,
+        "days_since_break": null,
+        "break_volume_surge": false
       }
     },
     "CDE": {
@@ -1931,10 +2791,36 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$18.60",
       "stop_loss_8pct": "$16.67",
-      "grok": null,
+      "grok": {
+        "score": 5,
+        "judgment": "中立",
+        "reasons": [
+          "金銀貴金属テーマからの資金流出加速 (テーマローテーション)",
+          "ただし企業ファンダは Pass 判定 (Gemini)",
+          "恩株化目標 $16.72 既達済み"
+        ]
+      },
       "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
+      "gemini": {
+        "rank": 9,
+        "score": 75,
+        "revenue_growth": "15.0%",
+        "eps_growth": "20.0%",
+        "net_margin": "10.0%",
+        "roe": "8.0%",
+        "per": 19.6,
+        "debt_equity": 0.4,
+        "filter_status": "Pass (Significant YTD market cap growth)"
+      },
+      "chatgpt": {
+        "base": "+5-10%",
+        "bull": "+15-30%",
+        "bear": "-10-20%",
+        "geo_risk": "中",
+        "geo_notes": [
+          "middle_east: 言及あり"
+        ]
+      },
       "earnings": {
         "date": "8/6",
         "days": 90,
@@ -1942,6 +2828,43 @@ const SCAN_DATA = {
         "note": "金銀価格上昇の業績反映確認",
         "eps_estimate": 0.54,
         "revenue_estimate": 1206000000
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇内押し目 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": false,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": false,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": false
+        },
+        "tt_metrics": {
+          "price": 18.12,
+          "ma50": 19.95,
+          "ma150": 19.43,
+          "ma200": 17.9,
+          "pct_above_52w_low": 216.2,
+          "pct_to_52w_high": 0.6674,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 19.43,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 1.79,
+        "price_above_ma30w": false,
+        "pct_from_52w_high": 0.3326,
+        "days_since_break": null,
+        "break_volume_surge": false
       }
     },
     "ERO": {
@@ -1962,7 +2885,13 @@ const SCAN_DATA = {
       "grok": null,
       "perplexity": null,
       "gemini": null,
-      "chatgpt": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
       "earnings": {
         "date": "7/31",
         "days": 84,
@@ -1970,6 +2899,449 @@ const SCAN_DATA = {
         "note": "",
         "eps_estimate": 0.89835,
         "revenue_estimate": 338757000
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": false,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": false
+        },
+        "tt_metrics": {
+          "price": 27.1,
+          "ma50": 27.81,
+          "ma150": 26.89,
+          "ma200": 24.0,
+          "pct_above_52w_low": 108.8,
+          "pct_to_52w_high": 0.7126,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 26.89,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 5.87,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.2874,
+        "days_since_break": 2,
+        "break_volume_surge": false
+      }
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "theme": "AIランキング上位",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "AIコンセンサス上位",
+      "price": 211.5,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": {
+        "score": 9,
+        "judgment": "強気",
+        "reasons": [
+          "IREN $3.4B deal とAIパートナーシップでセンチメント急上昇",
+          "AI半導体の盟主として継続して機関買い",
+          "5/7 のコンセンサス Top1 を維持"
+        ]
+      },
+      "perplexity": {
+        "judgment": "Strong Buy",
+        "reason": null,
+        "drivers": [
+          "Blackwell Ultra/Rubin ロードマップ通り出荷",
+          "Hyperscaler CAPEX が 2026年も+30%以上",
+          "Sovereign AI / 推論市場の拡大"
+        ],
+        "risks": [
+          "対中輸出規制が強化",
+          "PER 41 倍の高値圏",
+          "AI需要のピークアウト懸念"
+        ],
+        "latest_earnings": {
+          "next_quarter": "FY2026 Q1 (5月後半発表)",
+          "consensus_eps": "0.86",
+          "yoy_eps_growth_estimate": "+24%",
+          "beat_history": "8四半期連続ビート"
+        },
+        "next_earnings": null,
+        "analyst_ratings": null
+      },
+      "gemini": {
+        "rank": 1,
+        "score": 98,
+        "revenue_growth": "73.0%",
+        "eps_growth": "82.0%",
+        "net_margin": "55.0%",
+        "roe": "108.4%",
+        "per": 41.1,
+        "debt_equity": 0.15,
+        "filter_status": "Pass (Price > 30w MA, MA Up, Strong RS)"
+      },
+      "chatgpt": {
+        "base": "+15-25%",
+        "bull": "+30-50%",
+        "bear": "-25-40%",
+        "geo_risk": "中",
+        "geo_notes": [
+          "us_china: 言及あり",
+          "taiwan: 言及あり"
+        ]
+      },
+      "earnings": null,
+      "ai_only": true,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 211.5,
+          "ma50": 188.04,
+          "ma150": 186.85,
+          "ma200": 184.49,
+          "pct_above_52w_low": 81.4,
+          "pct_to_52w_high": 0.9764,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 186.85,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 1.87,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0236,
+        "days_since_break": 21,
+        "break_volume_surge": false
+      }
+    },
+    "AVGO": {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "theme": "AIランキング上位",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "AIコンセンサス上位",
+      "price": 412.56,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "カスタムAIチップ・ネットワーキングで言及多数",
+          "Backlog $73B の visibility が買いシグナル",
+          "AI議論で常に前向き"
+        ]
+      },
+      "perplexity": {
+        "judgment": "Buy",
+        "reason": null,
+        "drivers": [
+          "カスタム AI ASIC でハイパースケーラー獲得拡大",
+          "ネットワーキング (Tomahawk/Jericho) の AI 需要",
+          "VMware 統合効果が利益に反映"
+        ],
+        "risks": [
+          "PER 82 倍の高評価",
+          "負債比率 1.2 (VMware 買収負債)",
+          "AI ASIC 市場の競合激化"
+        ],
+        "latest_earnings": {
+          "next_quarter": "FY2026 Q2",
+          "consensus_eps": "1.78",
+          "yoy_eps_growth_estimate": "+22%",
+          "beat_history": "Backlog visibility $73B"
+        },
+        "next_earnings": null,
+        "analyst_ratings": null
+      },
+      "gemini": {
+        "rank": 2,
+        "score": 92,
+        "revenue_growth": "106.0% (AI)",
+        "eps_growth": "25.0%",
+        "net_margin": "38.0%",
+        "roe": "45.0%",
+        "per": 82.2,
+        "debt_equity": 1.2,
+        "filter_status": "Pass (Price > 30w MA, Backlog $73B visibility)"
+      },
+      "chatgpt": {
+        "base": "+10-20%",
+        "bull": "+25-35%",
+        "bear": "-25-40%",
+        "geo_risk": "中",
+        "geo_notes": [
+          "us_china: 言及あり",
+          "taiwan: 言及あり"
+        ]
+      },
+      "earnings": null,
+      "ai_only": true,
+      "leader_score": 95,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 20
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9654,
+        "return_12m": 1.0017,
+        "contraction_ratio": 0.265,
+        "pullback_pct": 0.0346,
+        "roe": 0.334,
+        "revenue_growth": 0.295,
+        "eps_growth": 0.316,
+        "op_margin": 0.449,
+        "accumulation": "weak"
+      },
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 412.56,
+          "ma50": 356.47,
+          "ma150": 350.86,
+          "ma200": 341.77,
+          "pct_above_52w_low": 103.1,
+          "pct_to_52w_high": 0.9654,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": true,
+        "ma30w": 350.86,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 2.7,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0346,
+        "days_since_break": 22,
+        "break_volume_surge": false
+      }
+    },
+    "TSM": {
+      "ticker": "TSM",
+      "name": "Taiwan Semiconductor Manufactur",
+      "theme": "AIランキング上位",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "AIコンセンサス上位",
+      "price": 414.15,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "AI半導体ファウンドリで最も安全な選択肢と評価",
+          "capacity constrained で需給タイト",
+          "RS が NVDA を上回るタイミングでの強さ"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 4,
+        "score": 88,
+        "revenue_growth": "35.0%",
+        "eps_growth": "34.0%",
+        "net_margin": "42.0%",
+        "roe": "30.0%",
+        "per": 34.0,
+        "debt_equity": 0.25,
+        "filter_status": "Pass (RS outperforming NVDA YTD, Price > 30w MA)"
+      },
+      "chatgpt": {
+        "base": "+10-20%",
+        "bull": "+25-35%",
+        "bear": "-30-50%",
+        "geo_risk": "中",
+        "geo_notes": [
+          "us_china: 言及あり",
+          "taiwan: 言及あり"
+        ]
+      },
+      "earnings": null,
+      "ai_only": true,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 414.15,
+          "ma50": 362.33,
+          "ma150": 327.95,
+          "ma200": 307.65,
+          "pct_above_52w_low": 140.2,
+          "pct_to_52w_high": 0.9872,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 327.95,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 5.63,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0128,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
+    },
+    "WPM": {
+      "ticker": "WPM",
+      "name": "Wheaton Precious Metals Corp",
+      "theme": "AIランキング上位",
+      "sector": "Basic Materials",
+      "position": null,
+      "rating": "",
+      "signal": "AIコンセンサス上位",
+      "price": 131.56,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": {
+        "score": 5,
+        "judgment": "中立",
+        "reasons": [
+          "貴金属ストリーミングとして安定キャッシュフロー",
+          "資金流出加速テーマ但し Stage 2 維持",
+          "1日前ブレイク (5/7 早期 Stage 2 候補だった)"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 8,
+        "score": 78,
+        "revenue_growth": "8.0%",
+        "eps_growth": "12.0%",
+        "net_margin": "70.0%",
+        "roe": "10.0%",
+        "per": 45.0,
+        "debt_equity": 0.05,
+        "filter_status": "Pass (Stable precious metals play, Price > 30w MA)"
+      },
+      "chatgpt": {
+        "base": "+0-10%",
+        "bull": "+10-20%",
+        "bear": "-5-+10%",
+        "geo_risk": "中",
+        "geo_notes": [
+          "middle_east: 言及あり"
+        ]
+      },
+      "earnings": null,
+      "ai_only": true,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": false
+        },
+        "tt_metrics": {
+          "price": 131.56,
+          "ma50": 138.03,
+          "ma150": 125.21,
+          "ma200": 118.92,
+          "pct_above_52w_low": 72.6,
+          "pct_to_52w_high": 0.7951,
+          "rs_rating": 97.1
+        },
+        "rs_rating": 97.1,
+        "early_stage_2": false,
+        "ma30w": 125.21,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 3.65,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.2049,
+        "days_since_break": 3,
+        "break_volume_surge": false
       }
     },
     "CARE": {
@@ -2014,7 +3386,44 @@ const SCAN_DATA = {
         "op_margin": 0.791,
         "accumulation": "strong"
       },
-      "market_cap": 580369920
+      "market_cap": 580369920,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 26.19,
+          "ma50": 22.77,
+          "ma150": 20.57,
+          "ma200": 20.14,
+          "pct_above_52w_low": 69.0,
+          "pct_to_52w_high": 1.0,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 20.57,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 3.64,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "DHT": {
       "ticker": "DHT",
@@ -2058,7 +3467,44 @@ const SCAN_DATA = {
         "op_margin": 0.68,
         "accumulation": "mild"
       },
-      "market_cap": 3063011840
+      "market_cap": 3063011840,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 19.02,
+          "ma50": 18.16,
+          "ma150": 14.72,
+          "ma200": 13.91,
+          "pct_above_52w_low": 81.9,
+          "pct_to_52w_high": 0.9679,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 14.72,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 6.15,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0321,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "ATEN": {
       "ticker": "ATEN",
@@ -2102,51 +3548,44 @@ const SCAN_DATA = {
         "op_margin": 0.173,
         "accumulation": "mild"
       },
-      "market_cap": 1956867968
-    },
-    "AVGO": {
-      "ticker": "AVGO",
-      "name": "Broadcom Inc.",
-      "theme": "Semiconductors",
-      "sector": "Technology",
-      "position": null,
-      "rating": "",
-      "signal": "先導株候補 95pt",
-      "price": 412.56,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": null,
-      "earnings": null,
-      "leader_only": true,
-      "leader_score": 95,
-      "leader_breakdown": {
-        "stage2": 30,
-        "leadership": 25,
-        "vcp_pullback": 20,
-        "fundamentals": 20
-      },
-      "leader_details": {
-        "ma_alignment": "full",
-        "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9654,
-        "return_12m": 1.0017,
-        "contraction_ratio": 0.265,
-        "pullback_pct": 0.0346,
-        "roe": 0.334,
-        "revenue_growth": 0.295,
-        "eps_growth": 0.316,
-        "op_margin": 0.449,
-        "accumulation": "weak"
-      },
-      "market_cap": 1953334689792
+      "market_cap": 1956867968,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 27.27,
+          "ma50": 23.84,
+          "ma150": 19.88,
+          "ma200": 19.34,
+          "pct_above_52w_low": 65.3,
+          "pct_to_52w_high": 0.9694,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 19.88,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 6.65,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0306,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "CUBI": {
       "ticker": "CUBI",
@@ -2190,7 +3629,44 @@ const SCAN_DATA = {
         "op_margin": 0.487,
         "accumulation": "mild"
       },
-      "market_cap": 2624082432
+      "market_cap": 2624082432,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 77.91,
+          "ma50": 71.8,
+          "ma150": 71.5,
+          "ma200": 70.21,
+          "pct_above_52w_low": 55.2,
+          "pct_to_52w_high": 0.9594,
+          "rs_rating": 96.7
+        },
+        "rs_rating": 96.7,
+        "early_stage_2": false,
+        "ma30w": 71.5,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 1.83,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0406,
+        "days_since_break": 26,
+        "break_volume_surge": false
+      }
     },
     "AAMI": {
       "ticker": "AAMI",
@@ -2234,7 +3710,44 @@ const SCAN_DATA = {
         "op_margin": 0.251,
         "accumulation": "mild"
       },
-      "market_cap": 2370396416
+      "market_cap": 2370396416,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 66.53,
+          "ma50": 58.61,
+          "ma150": 51.85,
+          "ma200": 50.46,
+          "pct_above_52w_low": 131.1,
+          "pct_to_52w_high": 0.9735,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 51.85,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 5.29,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0265,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "CASY": {
       "ticker": "CASY",
@@ -2278,7 +3791,44 @@ const SCAN_DATA = {
         "op_margin": 0.05,
         "accumulation": "strong"
       },
-      "market_cap": 31542106112
+      "market_cap": 31542106112,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 850.95,
+          "ma50": 734.19,
+          "ma150": 630.59,
+          "ma200": 603.93,
+          "pct_above_52w_low": 98.3,
+          "pct_to_52w_high": 0.9868,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 630.59,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 5.82,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0132,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "CAT": {
       "ticker": "CAT",
@@ -2322,7 +3872,44 @@ const SCAN_DATA = {
         "op_margin": 0.178,
         "accumulation": "weak"
       },
-      "market_cap": 412547612672
+      "market_cap": 412547612672,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 895.69,
+          "ma50": 760.37,
+          "ma150": 654.25,
+          "ma200": 598.58,
+          "pct_above_52w_low": 182.7,
+          "pct_to_52w_high": 0.9663,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 654.25,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 8.94,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0337,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "CBL": {
       "ticker": "CBL",
@@ -2366,7 +3953,44 @@ const SCAN_DATA = {
         "op_margin": 0.324,
         "accumulation": "mild"
       },
-      "market_cap": 1360023680
+      "market_cap": 1360023680,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 43.95,
+          "ma50": 40.36,
+          "ma150": 35.75,
+          "ma200": 34.02,
+          "pct_above_52w_low": 91.9,
+          "pct_to_52w_high": 0.9736,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 35.75,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 5.7,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0264,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "ADI": {
       "ticker": "ADI",
@@ -2410,7 +4034,44 @@ const SCAN_DATA = {
         "op_margin": 0.331,
         "accumulation": "mild"
       },
-      "market_cap": 199441154048
+      "market_cap": 199441154048,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 408.52,
+          "ma50": 347.06,
+          "ma150": 298.44,
+          "ma200": 283.27,
+          "pct_above_52w_low": 107.5,
+          "pct_to_52w_high": 0.9829,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 298.44,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 6.84,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0171,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "BK": {
       "ticker": "BK",
@@ -2454,7 +4115,44 @@ const SCAN_DATA = {
         "op_margin": 0.376,
         "accumulation": "mild"
       },
-      "market_cap": 89702875136
+      "market_cap": 89702875136,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 130.69,
+          "ma50": 123.91,
+          "ma150": 116.86,
+          "ma200": 113.36,
+          "pct_above_52w_low": 58.6,
+          "pct_to_52w_high": 0.9513,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 116.86,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 3.37,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0487,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "ECPG": {
       "ticker": "ECPG",
@@ -2498,7 +4196,44 @@ const SCAN_DATA = {
         "op_margin": 0.366,
         "accumulation": "mild"
       },
-      "market_cap": 1765418368
+      "market_cap": 1765418368,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 82.22,
+          "ma50": 74.72,
+          "ma150": 59.13,
+          "ma200": 54.72,
+          "pct_above_52w_low": 149.8,
+          "pct_to_52w_high": 0.9741,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 59.13,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 9.82,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0259,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "CARG": {
       "ticker": "CARG",
@@ -2542,7 +4277,44 @@ const SCAN_DATA = {
         "op_margin": 0.287,
         "accumulation": "strong"
       },
-      "market_cap": 3441530112
+      "market_cap": 3441530112,
+      "stage_info": {
+        "stage": 3,
+        "stage_label": "天井圏",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": false,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 38.16,
+          "ma50": 34.8,
+          "ma150": 34.72,
+          "ma200": 34.63,
+          "pct_above_52w_low": 41.5,
+          "pct_to_52w_high": 0.9777,
+          "rs_rating": 55.5
+        },
+        "rs_rating": 55.5,
+        "early_stage_2": false,
+        "ma30w": 34.72,
+        "ma30w_trend": "flat",
+        "ma30w_slope_pct": 0.01,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0223,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "CSCO": {
       "ticker": "CSCO",
@@ -2586,7 +4358,44 @@ const SCAN_DATA = {
         "op_margin": 0.249,
         "accumulation": "weak"
       },
-      "market_cap": 364022169600
+      "market_cap": 364022169600,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 92.16,
+          "ma50": 82.64,
+          "ma150": 77.52,
+          "ma200": 74.88,
+          "pct_above_52w_low": 58.3,
+          "pct_to_52w_high": 0.9773,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 77.52,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 4.03,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0227,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "CSX": {
       "ticker": "CSX",
@@ -2630,7 +4439,44 @@ const SCAN_DATA = {
         "op_margin": 0.362,
         "accumulation": "weak"
       },
-      "market_cap": 82612854784
+      "market_cap": 82612854784,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 44.46,
+          "ma50": 42.04,
+          "ma150": 38.41,
+          "ma200": 37.29,
+          "pct_above_52w_low": 59.1,
+          "pct_to_52w_high": 0.9628,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 38.41,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 4.18,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0372,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "ARWR": {
       "ticker": "ARWR",
@@ -2674,7 +4520,44 @@ const SCAN_DATA = {
         "op_margin": 0.155,
         "accumulation": "weak"
       },
-      "market_cap": 10915509248
+      "market_cap": 10915509248,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 77.95,
+          "ma50": 64.87,
+          "ma150": 58.52,
+          "ma200": 49.8,
+          "pct_above_52w_low": 498.2,
+          "pct_to_52w_high": 0.985,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 58.52,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 10.88,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.015,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "CBOE": {
       "ticker": "CBOE",
@@ -2718,7 +4601,44 @@ const SCAN_DATA = {
         "op_margin": 0.397,
         "accumulation": "mild"
       },
-      "market_cap": 35441004544
+      "market_cap": 35441004544,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 338.65,
+          "ma50": 298.21,
+          "ma150": 270.46,
+          "ma200": 263.16,
+          "pct_above_52w_low": 59.4,
+          "pct_to_52w_high": 0.9788,
+          "rs_rating": 76.9
+        },
+        "rs_rating": 76.9,
+        "early_stage_2": false,
+        "ma30w": 270.46,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 3.94,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0212,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "CCNE": {
       "ticker": "CCNE",
@@ -2762,7 +4682,44 @@ const SCAN_DATA = {
         "op_margin": 0.425,
         "accumulation": "strong"
       },
-      "market_cap": 917802880
+      "market_cap": 917802880,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 30.97,
+          "ma50": 29.3,
+          "ma150": 27.16,
+          "ma200": 26.48,
+          "pct_above_52w_low": 48.0,
+          "pct_to_52w_high": 0.9879,
+          "rs_rating": 72.1
+        },
+        "rs_rating": 72.1,
+        "early_stage_2": false,
+        "ma30w": 27.16,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 2.9,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0121,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "COCO": {
       "ticker": "COCO",
@@ -2806,7 +4763,44 @@ const SCAN_DATA = {
         "op_margin": 0.187,
         "accumulation": "weak"
       },
-      "market_cap": 3895367936
+      "market_cap": 3895367936,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 68.21,
+          "ma50": 54.15,
+          "ma150": 51.28,
+          "ma200": 47.69,
+          "pct_above_52w_low": 111.2,
+          "pct_to_52w_high": 0.9937,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": true,
+        "ma30w": 51.28,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 4.36,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0063,
+        "days_since_break": 10,
+        "break_volume_surge": false
+      }
     },
     "BTSG": {
       "ticker": "BTSG",
@@ -2850,7 +4844,44 @@ const SCAN_DATA = {
         "op_margin": 0.034,
         "accumulation": "mild"
       },
-      "market_cap": 10266040320
+      "market_cap": 10266040320,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 52.94,
+          "ma50": 44.66,
+          "ma150": 38.71,
+          "ma200": 35.06,
+          "pct_above_52w_low": 173.5,
+          "pct_to_52w_high": 0.9888,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 38.71,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 8.34,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0112,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "CATY": {
       "ticker": "CATY",
@@ -2894,7 +4925,44 @@ const SCAN_DATA = {
         "op_margin": 0.615,
         "accumulation": "mild"
       },
-      "market_cap": 3821539072
+      "market_cap": 3821539072,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": false,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 56.99,
+          "ma50": 51.62,
+          "ma150": 49.81,
+          "ma200": 49.16,
+          "pct_above_52w_low": 40.1,
+          "pct_to_52w_high": 0.9942,
+          "rs_rating": 66.5
+        },
+        "rs_rating": 66.5,
+        "early_stage_2": false,
+        "ma30w": 49.81,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 1.9,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0058,
+        "days_since_break": 32,
+        "break_volume_surge": false
+      }
     },
     "CNOB": {
       "ticker": "CNOB",
@@ -2938,7 +5006,44 @@ const SCAN_DATA = {
         "op_margin": 0.539,
         "accumulation": "mild"
       },
-      "market_cap": 1504128896
+      "market_cap": 1504128896,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": false,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 29.91,
+          "ma50": 27.46,
+          "ma150": 26.39,
+          "ma200": 25.84,
+          "pct_above_52w_low": 39.6,
+          "pct_to_52w_high": 0.9917,
+          "rs_rating": 48.8
+        },
+        "rs_rating": 48.8,
+        "early_stage_2": false,
+        "ma30w": 26.39,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 2.18,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0083,
+        "days_since_break": 35,
+        "break_volume_surge": true
+      }
     },
     "ASC": {
       "ticker": "ASC",
@@ -2982,7 +5087,44 @@ const SCAN_DATA = {
         "op_margin": 0.174,
         "accumulation": "mild"
       },
-      "market_cap": 769945408
+      "market_cap": 769945408,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 18.87,
+          "ma50": 15.95,
+          "ma150": 13.4,
+          "ma200": 12.91,
+          "pct_above_52w_low": 102.7,
+          "pct_to_52w_high": 0.99,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 13.4,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 4.82,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.01,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "BEN": {
       "ticker": "BEN",
@@ -3026,7 +5168,44 @@ const SCAN_DATA = {
         "op_margin": 0.172,
         "accumulation": "mild"
       },
-      "market_cap": 15859325952
+      "market_cap": 15859325952,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 30.52,
+          "ma50": 25.87,
+          "ma150": 24.41,
+          "ma200": 24.23,
+          "pct_above_52w_low": 57.7,
+          "pct_to_52w_high": 0.9795,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": true,
+        "ma30w": 24.41,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 2.77,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0205,
+        "days_since_break": 23,
+        "break_volume_surge": false
+      }
     },
     "CPRX": {
       "ticker": "CPRX",
@@ -3070,7 +5249,44 @@ const SCAN_DATA = {
         "op_margin": 0.405,
         "accumulation": "strong"
       },
-      "market_cap": 3812914432
+      "market_cap": 3812914432,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": false,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 31.17,
+          "ma50": 25.47,
+          "ma150": 23.74,
+          "ma200": 22.89,
+          "pct_above_52w_low": 62.9,
+          "pct_to_52w_high": 1.0,
+          "rs_rating": 52.0
+        },
+        "rs_rating": 52.0,
+        "early_stage_2": false,
+        "ma30w": 23.74,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 4.7,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0,
+        "days_since_break": 34,
+        "break_volume_surge": true
+      }
     },
     "DIOD": {
       "ticker": "DIOD",
@@ -3114,7 +5330,44 @@ const SCAN_DATA = {
         "op_margin": 0.034,
         "accumulation": "strong"
       },
-      "market_cap": 5179878912
+      "market_cap": 5179878912,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 112.59,
+          "ma50": 80.88,
+          "ma150": 63.19,
+          "ma200": 60.6,
+          "pct_above_52w_low": 187.1,
+          "pct_to_52w_high": 0.9702,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 63.19,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 11.19,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0298,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "AFL": {
       "ticker": "AFL",
@@ -3158,7 +5411,44 @@ const SCAN_DATA = {
         "op_margin": 0.296,
         "accumulation": "weak"
       },
-      "market_cap": 57996206080
+      "market_cap": 57996206080,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": false,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": false,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 113.6,
+          "ma50": 111.5,
+          "ma150": 110.48,
+          "ma200": 109.01,
+          "pct_above_52w_low": 17.7,
+          "pct_to_52w_high": 0.9722,
+          "rs_rating": 3.3
+        },
+        "rs_rating": 3.3,
+        "early_stage_2": false,
+        "ma30w": 110.48,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 0.83,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0278,
+        "days_since_break": 27,
+        "break_volume_surge": false
+      }
     },
     "ALRS": {
       "ticker": "ALRS",
@@ -3202,7 +5492,44 @@ const SCAN_DATA = {
         "op_margin": 0.4,
         "accumulation": "mild"
       },
-      "market_cap": 676211840
+      "market_cap": 676211840,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": false,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 26.91,
+          "ma50": 24.67,
+          "ma150": 23.2,
+          "ma200": 22.78,
+          "pct_above_52w_low": 35.3,
+          "pct_to_52w_high": 0.993,
+          "rs_rating": 52.0
+        },
+        "rs_rating": 52.0,
+        "early_stage_2": false,
+        "ma30w": 23.2,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 2.35,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.007,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     },
     "AMZN": {
       "ticker": "AMZN",
@@ -3246,7 +5573,44 @@ const SCAN_DATA = {
         "op_margin": 0.131,
         "accumulation": "weak"
       },
-      "market_cap": 2917005524992
+      "market_cap": 2917005524992,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 271.17,
+          "ma50": 229.94,
+          "ma150": 228.75,
+          "ma200": 228.3,
+          "pct_above_52w_low": 43.7,
+          "pct_to_52w_high": 0.9861,
+          "rs_rating": 73.7
+        },
+        "rs_rating": 73.7,
+        "early_stage_2": false,
+        "ma30w": 228.75,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 1.8,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0139,
+        "days_since_break": 21,
+        "break_volume_surge": false
+      }
     },
     "CTO": {
       "ticker": "CTO",
@@ -3290,7 +5654,44 @@ const SCAN_DATA = {
         "op_margin": 0.25,
         "accumulation": "mild"
       },
-      "market_cap": 685806912
+      "market_cap": 685806912,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇途中 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": false,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 20.3,
+          "ma50": 19.3,
+          "ma150": 17.82,
+          "ma200": 17.31,
+          "pct_above_52w_low": 38.6,
+          "pct_to_52w_high": 0.9864,
+          "rs_rating": 34.8
+        },
+        "rs_rating": 34.8,
+        "early_stage_2": false,
+        "ma30w": 17.82,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 3.37,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0136,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
     }
   },
   "leaders": {
