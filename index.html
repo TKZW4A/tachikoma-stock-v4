@@ -1224,7 +1224,7 @@ body {
 // Scan Data (embedded — updated by daily scan pipeline)
 // ============================================================
 const SCAN_DATA = {
-  "scan_date": "2026-05-09 10:16",
+  "scan_date": "2026-05-09 22:33",
   "market_health": {
     "S&P500": {
       "price": 737.6199951171875,
@@ -1339,6 +1339,36 @@ const SCAN_DATA = {
       "rank": 8
     },
     {
+      "ticker": "ALB",
+      "name": "Albemarle",
+      "type": "BUY",
+      "price": 203.52000427246094,
+      "sepa": "9.0",
+      "theme": "EVバッテリー材料",
+      "note": "EVバッテリー材料",
+      "rank": 9
+    },
+    {
+      "ticker": "RKLB",
+      "name": "Rocket Lab",
+      "type": "BUY",
+      "price": 105.47000122070312,
+      "sepa": "9.0",
+      "theme": "商業宇宙",
+      "note": "商業宇宙",
+      "rank": 10
+    },
+    {
+      "ticker": "LUNR",
+      "name": "Intuitive Machines",
+      "type": "BUY",
+      "price": 28.969999313354492,
+      "sepa": "9.0",
+      "theme": "商業宇宙",
+      "note": "商業宇宙",
+      "rank": 11
+    },
+    {
       "ticker": "NVT",
       "name": "nVent Electric",
       "type": "BUY",
@@ -1346,7 +1376,7 @@ const SCAN_DATA = {
       "sepa": "8.6",
       "theme": "電力",
       "note": "RSI80.5過熱",
-      "rank": 9
+      "rank": 12
     },
     {
       "ticker": "COHR",
@@ -1356,7 +1386,7 @@ const SCAN_DATA = {
       "sepa": "8.0",
       "theme": "半導体・光学",
       "note": "半導体・光学",
-      "rank": 10
+      "rank": 13
     },
     {
       "ticker": "MP",
@@ -1366,7 +1396,7 @@ const SCAN_DATA = {
       "sepa": "8.0",
       "theme": "資源・銅",
       "note": "資源・銅",
-      "rank": 11
+      "rank": 14
     },
     {
       "ticker": "ROIV",
@@ -1376,7 +1406,17 @@ const SCAN_DATA = {
       "sepa": "8.0",
       "theme": "バイオ",
       "note": "バイオ",
-      "rank": 12
+      "rank": 15
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla",
+      "type": "BUY",
+      "price": 428.3500061035156,
+      "sepa": "7.0",
+      "theme": "EV・自動運転",
+      "note": "EV・自動運転",
+      "rank": 16
     },
     {
       "ticker": "AG",
@@ -1404,6 +1444,42 @@ const SCAN_DATA = {
       "sepa": "6.0",
       "theme": "資源・銅",
       "note": "RSI35.1低下"
+    },
+    {
+      "ticker": "ASTS",
+      "name": "AST SpaceMobile",
+      "type": "HOLD",
+      "price": 75.05000305175781,
+      "sepa": "5.0",
+      "theme": "商業宇宙",
+      "note": "商業宇宙"
+    },
+    {
+      "ticker": "SYM",
+      "name": "Symbotic",
+      "type": "HOLD",
+      "price": 52.290000915527344,
+      "sepa": "3.0",
+      "theme": "ロボティクス",
+      "note": "RSI25.3低下"
+    },
+    {
+      "ticker": "PATH",
+      "name": "UiPath",
+      "type": "HOLD",
+      "price": 10.789999961853027,
+      "sepa": "1.5",
+      "theme": "ロボティクス",
+      "note": "ロボティクス"
+    },
+    {
+      "ticker": "AVAV",
+      "name": "AeroVironment",
+      "type": "HOLD",
+      "price": 168.2899932861328,
+      "sepa": "0.4",
+      "theme": "防衛",
+      "note": "RSI34.5低下"
     }
   ],
   "ai_consensus": [
@@ -2284,6 +2360,198 @@ const SCAN_DATA = {
         "break_volume_surge": false
       }
     },
+    "ALB": {
+      "ticker": "ALB",
+      "name": "Albemarle",
+      "theme": "EVバッテリー材料",
+      "sector": "リチウム",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 203.52000427246094,
+      "sepa_score": "9.0/9.0",
+      "rsi": "56.2",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$191.86",
+      "stop_loss_8pct": "$187.24",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 203.52,
+          "ma50": 180.14,
+          "ma150": 150.47,
+          "ma200": 132.45,
+          "pct_above_52w_low": 275.9,
+          "pct_to_52w_high": 0.9439,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 150.47,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 11.77,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0561,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
+    },
+    "RKLB": {
+      "ticker": "RKLB",
+      "name": "Rocket Lab",
+      "theme": "商業宇宙",
+      "sector": "宇宙打上",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 105.47000122070312,
+      "sepa_score": "9.0/9.0",
+      "rsi": "60.6",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$81.21",
+      "stop_loss_8pct": "$97.03",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 105.47,
+          "ma50": 73.96,
+          "ma150": 68.54,
+          "ma200": 63.01,
+          "pct_above_52w_low": 414.2,
+          "pct_to_52w_high": 1.0,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": true,
+        "ma30w": 68.54,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 7.24,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0,
+        "days_since_break": 28,
+        "break_volume_surge": false
+      }
+    },
+    "LUNR": {
+      "ticker": "LUNR",
+      "name": "Intuitive Machines",
+      "theme": "商業宇宙",
+      "sector": "宇宙探査",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 28.969999313354492,
+      "sepa_score": "9.0/9.0",
+      "rsi": "53.7",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$25.22",
+      "stop_loss_8pct": "$26.65",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇 (TT全条件適合)",
+        "tt_pass": true,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": true,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 28.97,
+          "ma50": 21.96,
+          "ma150": 16.83,
+          "ma200": 15.07,
+          "pct_above_52w_low": 259.9,
+          "pct_to_52w_high": 0.9676,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 16.83,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 15.86,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.0324,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
+    },
     "NVT": {
       "ticker": "NVT",
       "name": "nVent Electric",
@@ -2615,6 +2883,70 @@ const SCAN_DATA = {
         "break_volume_surge": false
       }
     },
+    "TSLA": {
+      "ticker": "TSLA",
+      "name": "Tesla",
+      "theme": "EV・自動運転",
+      "sector": "EV・自動運転",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 428.3500061035156,
+      "sepa_score": "7.0/9.0",
+      "rsi": "69.1",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$388.91",
+      "stop_loss_8pct": "$394.08",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 3,
+        "stage_label": "天井圏",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": true,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": false,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": true,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": true,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": true
+        },
+        "tt_metrics": {
+          "price": 428.35,
+          "ma50": 383.19,
+          "ma150": 418.79,
+          "ma200": 404.39,
+          "pct_above_52w_low": 50.5,
+          "pct_to_52w_high": 0.8744,
+          "rs_rating": 86.7
+        },
+        "rs_rating": 86.7,
+        "early_stage_2": false,
+        "ma30w": 418.79,
+        "ma30w_trend": "down",
+        "ma30w_slope_pct": -0.73,
+        "price_above_ma30w": true,
+        "pct_from_52w_high": 0.1256,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
+    },
     "AG": {
       "ticker": "AG",
       "name": "First Majestic Silver",
@@ -2932,6 +3264,262 @@ const SCAN_DATA = {
         "ma30w_slope_pct": 1.58,
         "price_above_ma30w": false,
         "pct_from_52w_high": 0.3164,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
+    },
+    "ASTS": {
+      "ticker": "ASTS",
+      "name": "AST SpaceMobile",
+      "theme": "商業宇宙",
+      "sector": "宇宙通信",
+      "position": null,
+      "rating": "△",
+      "signal": "様子見",
+      "price": 75.05000305175781,
+      "sepa_score": "5.0/9.0",
+      "rsi": "44.9",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$76.44",
+      "stop_loss_8pct": "$69.05",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇内押し目 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": false,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": true,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": false,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": false
+        },
+        "tt_metrics": {
+          "price": 75.05,
+          "ma50": 84.92,
+          "ma150": 82.71,
+          "ma200": 74.07,
+          "pct_above_52w_low": 225.3,
+          "pct_to_52w_high": 0.6147,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 82.71,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 5.89,
+        "price_above_ma30w": false,
+        "pct_from_52w_high": 0.3853,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
+    },
+    "SYM": {
+      "ticker": "SYM",
+      "name": "Symbotic",
+      "theme": "ロボティクス",
+      "sector": "倉庫ロボット",
+      "position": null,
+      "rating": "×",
+      "signal": "見送り",
+      "price": 52.290000915527344,
+      "sepa_score": "3.0/9.0",
+      "rsi": "25.3",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$57.59",
+      "stop_loss_8pct": "$48.11",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 2,
+        "stage_label": "上昇内押し目 (TT未適合)",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": false,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": true,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": false,
+          "c5_above_52w_low_25pct": true,
+          "c6_within_25pct_of_52w_high": false,
+          "c7_rs_rating_70plus": true,
+          "c7_rs_rating_90plus": true,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": false
+        },
+        "tt_metrics": {
+          "price": 52.29,
+          "ma50": 54.86,
+          "ma150": 61.04,
+          "ma200": 58.68,
+          "pct_above_52w_low": 118.4,
+          "pct_to_52w_high": 0.599,
+          "rs_rating": 99.0
+        },
+        "rs_rating": 99.0,
+        "early_stage_2": false,
+        "ma30w": 61.04,
+        "ma30w_trend": "up",
+        "ma30w_slope_pct": 1.56,
+        "price_above_ma30w": false,
+        "pct_from_52w_high": 0.401,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
+    },
+    "PATH": {
+      "ticker": "PATH",
+      "name": "UiPath",
+      "theme": "ロボティクス",
+      "sector": "RPA・自動化",
+      "position": null,
+      "rating": "×",
+      "signal": "見送り",
+      "price": 10.789999961853027,
+      "sepa_score": "1.5/9.0",
+      "rsi": "53.5",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$10.65",
+      "stop_loss_8pct": "$9.93",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 4,
+        "stage_label": "下落",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": false,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": false,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": false,
+          "c5_above_52w_low_25pct": false,
+          "c6_within_25pct_of_52w_high": false,
+          "c7_rs_rating_70plus": false,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": false
+        },
+        "tt_metrics": {
+          "price": 10.79,
+          "ma50": 10.97,
+          "ma150": 13.55,
+          "ma200": 13.05,
+          "pct_above_52w_low": 15.0,
+          "pct_to_52w_high": 0.5594,
+          "rs_rating": 1.0
+        },
+        "rs_rating": 1.0,
+        "early_stage_2": false,
+        "ma30w": 13.55,
+        "ma30w_trend": "down",
+        "ma30w_slope_pct": -1.64,
+        "price_above_ma30w": false,
+        "pct_from_52w_high": 0.4406,
+        "days_since_break": null,
+        "break_volume_surge": false
+      }
+    },
+    "AVAV": {
+      "ticker": "AVAV",
+      "name": "AeroVironment",
+      "theme": "防衛",
+      "sector": "ドローン・防衛",
+      "position": null,
+      "rating": "×",
+      "signal": "見送り",
+      "price": 168.2899932861328,
+      "sepa_score": "0.4/9.0",
+      "rsi": "34.5",
+      "vcp": "収縮8回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$186.28",
+      "stop_loss_8pct": "$154.83",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null,
+      "stage_info": {
+        "stage": 4,
+        "stage_label": "下落",
+        "tt_pass": false,
+        "tt_conditions": {
+          "c1_price_above_150_200": false,
+          "c2_150_above_200": true,
+          "c3_200_uptrend_1mo": false,
+          "c3_200_uptrend_4_5mo": true,
+          "c4_50_above_150_200": false,
+          "c5_above_52w_low_25pct": false,
+          "c6_within_25pct_of_52w_high": false,
+          "c7_rs_rating_70plus": false,
+          "c7_rs_rating_90plus": false,
+          "c7_rs_line_up_6w": false,
+          "c7_rs_line_up_13w": false,
+          "c8_above_50ma": false
+        },
+        "tt_metrics": {
+          "price": 168.29,
+          "ma50": 198.73,
+          "ma150": 270.52,
+          "ma200": 268.61,
+          "pct_above_52w_low": 4.5,
+          "pct_to_52w_high": 0.4106,
+          "rs_rating": 1.0
+        },
+        "rs_rating": 1.0,
+        "early_stage_2": false,
+        "ma30w": 270.52,
+        "ma30w_trend": "down",
+        "ma30w_slope_pct": -4.34,
+        "price_above_ma30w": false,
+        "pct_from_52w_high": 0.5894,
         "days_since_break": null,
         "break_volume_surge": false
       }
@@ -9356,6 +9944,9 @@ function render() {
   // Market Pulse (P/C Ratio)
   renderMarketPulse(d);
 
+  // Phase 3 銘柄を既存 watchlist に自動マージ（1回限り）
+  ensurePhase3InWatchlist();
+
   // My tab (watchlist + holdings + cash)
   renderMyTab();
 
@@ -9669,9 +10260,28 @@ const LS_KEYS = {
 const FX_DEFAULT = 150;
 
 const SEED_WATCHLIST = [
+  // 既存16銘柄
   'FORM','KEYS','ASX','ATEYY','AEHR','COHR','ROIV','TVTX',
-  'AG','CDE','MP','FCX','ERO','NVT','SLB','ROKU'
+  'AG','CDE','MP','FCX','ERO','NVT','SLB','ROKU',
+  // AI Supercycle Phase 3 (物理世界×AI) — 2026-05-09 追加（MP/FCXは既存に含まれるため重複なし）
+  'ALB','ASTS','RKLB','LUNR','AVAV','TSLA','PATH','SYM'
 ];
+
+// AI Supercycle Phase 3 銘柄を既存ユーザーの WATCHLIST にも自動マージ
+// （リセットしないとSEED変更が反映されないため、起動時に1回だけ追加）
+const PHASE3_TICKERS = ['ALB','ASTS','RKLB','LUNR','AVAV','TSLA','PATH','SYM'];
+const PHASE3_MERGE_FLAG = 'tachikoma.phase3_merged_v1';
+function ensurePhase3InWatchlist() {
+  if (lsGet(PHASE3_MERGE_FLAG, false)) return;
+  const wl = lsGet(LS_KEYS.watchlist, null);
+  if (wl == null) { lsSet(PHASE3_MERGE_FLAG, true); return; }  // SEED で初期化される
+  let added = 0;
+  for (const t of PHASE3_TICKERS) {
+    if (!wl.includes(t)) { wl.push(t); added++; }
+  }
+  if (added > 0) lsSet(LS_KEYS.watchlist, wl);
+  lsSet(PHASE3_MERGE_FLAG, true);
+}
 
 function lsGet(key, fallback) {
   try {
