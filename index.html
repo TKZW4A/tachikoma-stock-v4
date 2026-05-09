@@ -362,6 +362,71 @@ body {
   cursor: pointer;
 }
 
+/* Watchlist table view */
+.wl-table { font-size: 11px; }
+.wl-row {
+  display: grid;
+  grid-template-columns: 56px 1fr 64px 56px 76px 20px;
+  gap: 6px;
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  cursor: pointer;
+}
+.wl-row:active { background: rgba(88,166,255,0.06); }
+.wl-row.header {
+  font-size: 9px;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--cyan);
+  cursor: default;
+  padding: 6px 4px;
+}
+.wl-row.header:active { background: transparent; }
+.wl-sector { font-size: 10px; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wl-tic { font-weight: 800; color: var(--cyan); font-size: 13px; }
+.wl-name { font-size: 9px; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wl-price { text-align: right; font-weight: 700; font-size: 12px; }
+.wl-stage-cell { text-align: center; }
+.wl-recommend { font-size: 10px; font-weight: 700; white-space: nowrap; }
+.wl-recommend.buy-strong { color: var(--green); }
+.wl-recommend.buy { color: var(--green); }
+.wl-recommend.watch { color: var(--cyan); }
+.wl-recommend.trim { color: var(--orange); }
+.wl-recommend.avoid { color: var(--red); }
+.wl-recommend.neutral { color: var(--text2); }
+.wl-del-btn {
+  width: 20px; height: 20px;
+  background: rgba(248,81,73,0.15);
+  color: var(--red);
+  border: none; border-radius: 50%;
+  font-size: 12px; font-weight: 700;
+  cursor: pointer; padding: 0;
+  text-align: center; line-height: 1;
+}
+.wl-empty { color: var(--text2); font-size: 12px; text-align: center; padding: 20px 0; }
+.wl-summary {
+  font-size: 10px;
+  color: var(--text2);
+  padding: 8px 4px 4px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.wl-summary .pill {
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.wl-summary .pill.green { background: rgba(63,185,80,0.15); color: var(--green); }
+.wl-summary .pill.cyan { background: rgba(88,166,255,0.15); color: var(--cyan); }
+.wl-summary .pill.orange { background: rgba(210,153,34,0.15); color: var(--orange); }
+.wl-summary .pill.red { background: rgba(248,81,73,0.15); color: var(--red); }
+.wl-summary .pill.gray { background: rgba(139,148,158,0.15); color: var(--text2); }
+
 .hold-row {
   background: rgba(255,255,255,0.02);
   border: 1px solid var(--border);
@@ -10578,9 +10643,59 @@ function renderMyTab() {
   // Watchlist
   const wl = getWatchlist();
   document.getElementById('watchlistCount').textContent = `${wl.length}銘柄`;
-  document.getElementById('watchlistChips').innerHTML = wl.length === 0
-    ? '<span style="color:var(--text2);font-size:12px">空。ティッカーを入力して追加してください</span>'
-    : wl.map(t => `<span class="wl-chip" onclick="openDetail('${t}')">${t}<span class="x" onclick="event.stopPropagation();removeFromWatchlist('${t}')">×</span></span>`).join('');
+  // Watchlist テーブル描画（セクター/銘柄/価格/Stage/推奨/削除）
+  const summary = { 'buy-strong': 0, 'buy': 0, 'watch': 0, 'trim': 0, 'avoid': 0, 'neutral': 0 };
+  const wlBody = document.getElementById('watchlistChips');
+  if (wl.length === 0) {
+    wlBody.innerHTML = '<div class="wl-empty">空。ティッカーを入力して追加してください</div>';
+  } else {
+    // 並べ替え: 推奨カテゴリの強さ順 → 同カテゴリ内は ticker 名順
+    const order = { 'buy-strong': 0, 'buy': 1, 'watch': 2, 'neutral': 3, 'trim': 4, 'avoid': 5 };
+    const sorted = [...wl].sort((a, b) => {
+      const ra = getRecommendation(a), rb = getRecommendation(b);
+      const oa = order[ra.cls] ?? 9, ob = order[rb.cls] ?? 9;
+      if (oa !== ob) return oa - ob;
+      return a.localeCompare(b);
+    });
+    const header = `<div class="wl-row header">
+      <div>セクター</div>
+      <div>銘柄</div>
+      <div style="text-align:right">価格</div>
+      <div style="text-align:center">Stage</div>
+      <div>推奨</div>
+      <div></div>
+    </div>`;
+    const rows = sorted.map(t => {
+      const d = (SCAN_DATA.details || {})[t] || {};
+      const sector = sectorAbbrev(d.sector, d.theme);
+      const name = (d.name || '').slice(0, 22);
+      const price = (d.price && d.price > 0) ? '$' + d.price.toFixed(2) : '—';
+      const stageChip = stageChipHtml(t) || '<span class="stage-chip" style="background:rgba(139,148,158,0.12);color:var(--text2)">—</span>';
+      const rec = getRecommendation(t);
+      summary[rec.cls] = (summary[rec.cls] || 0) + 1;
+      return `<div class="wl-row" data-ticker="${t}">
+        <div class="wl-sector">${sector}</div>
+        <div>
+          <div class="wl-tic">${t}</div>
+          <div class="wl-name">${name}</div>
+        </div>
+        <div class="wl-price">${price}</div>
+        <div class="wl-stage-cell">${stageChip}</div>
+        <div class="wl-recommend ${rec.cls}">${rec.label}</div>
+        <button class="wl-del-btn" onclick="event.stopPropagation();removeFromWatchlist('${t}')" title="削除">×</button>
+      </div>`;
+    }).join('');
+    // サマリ pill (推奨カテゴリ別件数)
+    const pills = [];
+    if (summary['buy-strong']) pills.push(`<span class="pill green">🚀 初動 ${summary['buy-strong']}</span>`);
+    if (summary['buy']) pills.push(`<span class="pill green">✅ 買い ${summary['buy']}</span>`);
+    if (summary['watch']) pills.push(`<span class="pill cyan">🟢 押し目 ${summary['watch']}</span>`);
+    if (summary['neutral']) pills.push(`<span class="pill gray">⚪ 中立 ${summary['neutral']}</span>`);
+    if (summary['trim']) pills.push(`<span class="pill orange">🟠 利確 ${summary['trim']}</span>`);
+    if (summary['avoid']) pills.push(`<span class="pill red">🔴 回避 ${summary['avoid']}</span>`);
+    const summaryHtml = pills.length ? `<div class="wl-summary">${pills.join('')}</div>` : '';
+    wlBody.innerHTML = `<div class="wl-table">${header}${rows}</div>${summaryHtml}`;
+  }
 
   // Cash + FX
   const cash = getCash();
@@ -10774,6 +10889,66 @@ function stageChipHtml(ticker) {
 function stageRowClass(ticker) {
   const si = getStageInfo(ticker);
   return si && si.early_stage_2 ? ' has-early2' : '';
+}
+
+// 銘柄ごとの推奨アクション（ステージ + シグナル + Trend Template から派生）
+function getRecommendation(ticker) {
+  const d = (SCAN_DATA.details || {})[ticker];
+  if (!d) return { label: '—', cls: 'neutral' };
+  const si = d.stage_info;
+  // Stage 2 初動 → 最強買い
+  if (si && si.early_stage_2) return { label: '🚀 初動買い', cls: 'buy-strong' };
+  // Stage 2 + Trend Template 全条件適合 → 買い候補
+  if (si && si.stage === 2 && si.tt_pass) return { label: '✅ 買い候補', cls: 'buy' };
+  // Stage 2 押し目 (TT 未適合 or 価格が30wMA下) → 押し目買い候補
+  if (si && si.stage === 2) return { label: '🟢 押し目', cls: 'watch' };
+  // Stage 3 → 利確検討
+  if (si && si.stage === 3) return { label: '🟠 利確検討', cls: 'trim' };
+  // Stage 4 → 回避
+  if (si && si.stage === 4) return { label: '🔴 回避', cls: 'avoid' };
+  // Stage 1 → 待機
+  if (si && si.stage === 1) return { label: '⚪ 待機', cls: 'neutral' };
+  // Signal ベースのフォールバック
+  if (d.signal === '買いシグナル') return { label: '✅ 買い候補', cls: 'buy' };
+  if (d.signal === 'ウォッチ') return { label: '🟢 ウォッチ', cls: 'watch' };
+  if (d.signal === '様子見' || d.signal === '見送り') return { label: '⚪ 様子見', cls: 'neutral' };
+  return { label: '—', cls: 'neutral' };
+}
+
+// セクター名を狭幅セルに収まるよう短縮
+function sectorAbbrev(sector, theme) {
+  const s = sector || theme || '';
+  if (!s) return '—';
+  const map = {
+    '半導体': '半導体',
+    '半導体・テスト': '半導テ',
+    '半導体・計測': '計測',
+    '半導体パッケージ': 'パケ',
+    '半導体・光学': '光学',
+    '光学・レーザー': '光学',
+    'バイオテック': 'バイオ',
+    '貴金属・金銀': '金銀',
+    '貴金属・銀': '銀',
+    '電力インフラ': '電力',
+    'エネルギー': 'エネ',
+    'テック': 'テック',
+    '銅': '銅',
+    'レアアース': 'レア',
+    'リチウム': 'Li',
+    '宇宙通信': '宇宙',
+    '宇宙打上': '宇宙',
+    '宇宙探査': '宇宙',
+    'ドローン・防衛': '防衛',
+    'EV・自動運転': 'EV',
+    'RPA・自動化': 'RPA',
+    '倉庫ロボット': 'ロボ',
+    'Technology': 'テック',
+    'Financial Services': '金融',
+    'Industrials': '工業',
+    'Energy': 'エネ',
+    'Communication Services': '通信',
+  };
+  return map[s] || s.slice(0, 4);
 }
 
 function openDetail(ticker) {
@@ -11259,7 +11434,7 @@ function switchPageProgrammatic(name) {
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   render();
-  ['signalList', 'aiConsensus', 'teamLineup', 'earningsList', 'leadersList'].forEach(id => {
+  ['signalList', 'aiConsensus', 'teamLineup', 'earningsList', 'leadersList', 'watchlistChips'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
     el.addEventListener('click', (e) => {
