@@ -1,6 +1,10 @@
 # ローカル運用ツール（GitHub Pages には不要）
 update_app.py
 auto_deploy.sh
+requirements.txt
+
+# Python venv (Phase 11 で導入)
+.venv/
 
 # Python キャッシュ
 __pycache__/
