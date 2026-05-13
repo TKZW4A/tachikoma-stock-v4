@@ -1289,15 +1289,15 @@ body {
 // Scan Data (embedded — updated by daily scan pipeline)
 // ============================================================
 const SCAN_DATA = {
-  "scan_date": "2026-05-12 16:54",
+  "scan_date": "2026-05-12 22:04",
   "market_health": {
     "S&P500": {
-      "price": 739.2999877929688,
+      "price": 738.1799926757812,
       "above_21MA": true,
       "status": "リスクオン"
     },
     "Russell2000": {
-      "price": 285.3299865722656,
+      "price": 282.57000732421875,
       "above_21MA": true,
       "status": "リスクオン"
     }
@@ -1305,20 +1305,20 @@ const SCAN_DATA = {
   "vix": 0,
   "silver": "",
   "cde": {
-    "price": 19.799999237060547,
+    "price": 20.170000076293945,
     "change_pct": 0,
     "shares": 1020,
     "avg_cost": 8.3573,
     "onkabu_target": 16.72,
     "earnings_date": "8/6",
-    "days_until": 86
+    "days_until": 85
   },
   "signals": [
     {
       "ticker": "CDE",
       "name": "Coeur Mining",
       "type": "SELL_PARTIAL",
-      "price": 19.799999237060547,
+      "price": 20.170000076293945,
       "sepa": "6.0",
       "theme": "金銀",
       "note": "金銀"
@@ -1327,27 +1327,27 @@ const SCAN_DATA = {
       "ticker": "SLB",
       "name": "Schlumberger",
       "type": "BUY",
-      "price": 54.93000030517578,
+      "price": 55.63999938964844,
       "sepa": "9.0",
       "theme": "エネルギー",
       "note": "エネルギー",
       "rank": 1
     },
     {
-      "ticker": "FORM",
-      "name": "FormFactor",
+      "ticker": "NVT",
+      "name": "nVent Electric",
       "type": "BUY",
-      "price": 151.39999389648438,
+      "price": 170.74000549316406,
       "sepa": "9.0",
-      "theme": "CPO",
-      "note": "持ち場:PG",
+      "theme": "電力",
+      "note": "RSI76.6過熱",
       "rank": 2
     },
     {
       "ticker": "KEYS",
       "name": "Keysight Technologies",
       "type": "BUY",
-      "price": 366.3599853515625,
+      "price": 361.6499938964844,
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:SG",
@@ -1357,7 +1357,7 @@ const SCAN_DATA = {
       "ticker": "ASX",
       "name": "ASE Technology",
       "type": "BUY",
-      "price": 35.29999923706055,
+      "price": 34.279998779296875,
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:SF",
@@ -1367,37 +1367,37 @@ const SCAN_DATA = {
       "ticker": "ATEYY",
       "name": "Advantest (ADR)",
       "type": "BUY",
-      "price": 185.3000030517578,
+      "price": 179.08999633789062,
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:PF",
       "rank": 5
     },
     {
-      "ticker": "AEHR",
-      "name": "Aehr Test Systems",
-      "type": "BUY",
-      "price": 104.55999755859375,
-      "sepa": "9.0",
-      "theme": "CPO",
-      "note": "持ち場:C",
-      "rank": 6
-    },
-    {
       "ticker": "COHR",
       "name": "Coherent Corp",
       "type": "BUY",
-      "price": 379.69000244140625,
+      "price": 374.010009765625,
       "sepa": "9.0",
       "theme": "半導体・光学",
       "note": "半導体・光学",
+      "rank": 6
+    },
+    {
+      "ticker": "ROIV",
+      "name": "Roivant Sciences",
+      "type": "BUY",
+      "price": 29.389999389648438,
+      "sepa": "9.0",
+      "theme": "バイオ",
+      "note": "バイオ",
       "rank": 7
     },
     {
       "ticker": "TVTX",
       "name": "Travere Therapeutics",
       "type": "BUY",
-      "price": 43.5099983215332,
+      "price": 42.84000015258789,
       "sepa": "9.0",
       "theme": "バイオ",
       "note": "バイオ",
@@ -1407,7 +1407,7 @@ const SCAN_DATA = {
       "ticker": "ROKU",
       "name": "Roku",
       "type": "BUY",
-      "price": 128.07000732421875,
+      "price": 127.62999725341797,
       "sepa": "9.0",
       "theme": "テック",
       "note": "テック",
@@ -1417,7 +1417,7 @@ const SCAN_DATA = {
       "ticker": "ALB",
       "name": "Albemarle",
       "type": "BUY",
-      "price": 209.99000549316406,
+      "price": 205.52000427246094,
       "sepa": "9.0",
       "theme": "EVバッテリー材料",
       "note": "EVバッテリー材料",
@@ -1427,7 +1427,7 @@ const SCAN_DATA = {
       "ticker": "RKLB",
       "name": "Rocket Lab",
       "type": "BUY",
-      "price": 117.3499984741211,
+      "price": 117.55999755859375,
       "sepa": "9.0",
       "theme": "商業宇宙",
       "note": "商業宇宙",
@@ -1437,232 +1437,218 @@ const SCAN_DATA = {
       "ticker": "LUNR",
       "name": "Intuitive Machines",
       "type": "BUY",
-      "price": 32.41999816894531,
+      "price": 32.09000015258789,
       "sepa": "9.0",
       "theme": "商業宇宙",
       "note": "商業宇宙",
       "rank": 12
     },
     {
-      "ticker": "NVT",
-      "name": "nVent Electric",
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan",
       "type": "BUY",
-      "price": 173.38999938964844,
-      "sepa": "8.6",
-      "theme": "電力",
-      "note": "RSI81.3過熱",
-      "rank": 13
-    },
-    {
-      "ticker": "MP",
-      "name": "MP Materials",
-      "type": "BUY",
-      "price": 67.41000366210938,
+      "price": 66.02999877929688,
       "sepa": "8.0",
       "theme": "資源・銅",
       "note": "資源・銅",
+      "rank": 13
+    },
+    {
+      "ticker": "AEHR",
+      "name": "Aehr Test Systems",
+      "type": "BUY",
+      "price": 96.72000122070312,
+      "sepa": "8.0",
+      "theme": "CPO",
+      "note": "持ち場:C",
       "rank": 14
     },
     {
-      "ticker": "ROIV",
-      "name": "Roivant Sciences",
+      "ticker": "FORM",
+      "name": "FormFactor",
       "type": "BUY",
-      "price": 28.959999084472656,
+      "price": 132.02000427246094,
       "sepa": "8.0",
-      "theme": "バイオ",
-      "note": "バイオ",
+      "theme": "CPO",
+      "note": "持ち場:PG",
       "rank": 15
+    },
+    {
+      "ticker": "ERO",
+      "name": "Ero Copper",
+      "type": "BUY",
+      "price": 31.889999389648438,
+      "sepa": "7.0",
+      "theme": "資源・銅",
+      "note": "資源・銅",
+      "rank": 16
     },
     {
       "ticker": "TSLA",
       "name": "Tesla",
       "type": "BUY",
-      "price": 445.0,
+      "price": 433.45001220703125,
       "sepa": "7.0",
       "theme": "EV・自動運転",
-      "note": "RSI78.1過熱",
-      "rank": 16
+      "note": "EV・自動運転",
+      "rank": 17
     },
     {
       "ticker": "AG",
       "name": "First Majestic Silver",
-      "type": "WATCH",
-      "price": 23.579999923706055,
-      "sepa": "6.0",
+      "type": "BUY",
+      "price": 24.209999084472656,
+      "sepa": "7.0",
       "theme": "金銀",
-      "note": "金銀"
+      "note": "金銀",
+      "rank": 18
     },
     {
-      "ticker": "ERO",
-      "name": "Ero Copper",
+      "ticker": "MP",
+      "name": "MP Materials",
       "type": "WATCH",
-      "price": 28.969999313354492,
-      "sepa": "6.0",
+      "price": 65.58999633789062,
+      "sepa": "7.0",
       "theme": "資源・銅",
       "note": "資源・銅"
     },
     {
       "ticker": "ASTS",
       "name": "AST SpaceMobile",
-      "type": "WATCH",
-      "price": 82.55000305175781,
-      "sepa": "6.0",
+      "type": "HOLD",
+      "price": 72.95999908447266,
+      "sepa": "3.0",
       "theme": "商業宇宙",
       "note": "商業宇宙"
-    },
-    {
-      "ticker": "FCX",
-      "name": "Freeport-McMoRan",
-      "type": "WATCH",
-      "price": 64.37000274658203,
-      "sepa": "6.0",
-      "theme": "資源・銅",
-      "note": "資源・銅"
     },
     {
       "ticker": "SYM",
       "name": "Symbotic",
       "type": "HOLD",
-      "price": 51.709999084472656,
+      "price": 51.31999969482422,
       "sepa": "3.0",
       "theme": "ロボティクス",
-      "note": "RSI26.9低下"
+      "note": "RSI25.7低下"
     },
     {
       "ticker": "AVAV",
       "name": "AeroVironment",
       "type": "HOLD",
-      "price": 166.4499969482422,
+      "price": 168.86000061035156,
       "sepa": "0.4",
       "theme": "防衛",
-      "note": "RSI23.5低下"
+      "note": "RSI25.6低下"
     },
     {
       "ticker": "PATH",
       "name": "UiPath",
       "type": "HOLD",
-      "price": 10.65999984741211,
+      "price": 10.010000228881836,
       "sepa": "0.4",
       "theme": "ロボティクス",
-      "note": "ロボティクス"
+      "note": "RSI38.2低下"
     }
   ],
   "ai_consensus": [
     {
       "rank": 1,
-      "ticker": "NVDA",
-      "sepa": "—",
-      "grok": "+8",
-      "gemini": "96pt",
-      "gpt": "—",
+      "ticker": "FCX",
+      "sepa": "8.0",
+      "grok": "+7",
+      "gemini": "85pt",
+      "gpt": "Major beneficia",
       "verdict": ""
     },
     {
       "rank": 2,
-      "ticker": "TSM",
-      "sepa": "—",
-      "grok": "+7",
-      "gemini": "92pt",
-      "gpt": "—",
+      "ticker": "SLB",
+      "sepa": "9.0",
+      "grok": "+6",
+      "gemini": "84pt",
+      "gpt": "Oil-service cap",
       "verdict": ""
     },
     {
       "rank": 3,
-      "ticker": "AVGO",
-      "sepa": "—",
-      "grok": "+8",
-      "gemini": "89pt",
-      "gpt": "—",
+      "ticker": "NVT",
+      "sepa": "9.0",
+      "grok": "+4",
+      "gemini": "82pt",
+      "gpt": "Electrification",
       "verdict": ""
     },
     {
       "rank": 4,
-      "ticker": "NVT",
-      "sepa": "8.6",
-      "grok": "+5",
-      "gemini": "84pt",
-      "gpt": "—",
+      "ticker": "ERO",
+      "sepa": "7.0",
+      "grok": "+8",
+      "gemini": "80pt",
+      "gpt": "Copper cycle po",
       "verdict": ""
     },
     {
       "rank": 5,
-      "ticker": "SLB",
+      "ticker": "KEYS",
       "sepa": "9.0",
-      "grok": "+2",
-      "gemini": "81pt",
-      "gpt": "—",
+      "grok": "—",
+      "gemini": "78pt",
+      "gpt": "Benefits from A",
       "verdict": ""
     },
     {
       "rank": 6,
-      "ticker": "FORM",
+      "ticker": "ASX",
       "sepa": "9.0",
-      "grok": "+6",
-      "gemini": "78pt",
-      "gpt": "—",
+      "grok": "+4",
+      "gemini": "76pt",
+      "gpt": "Memory/legacy s",
       "verdict": ""
     },
     {
       "rank": 7,
-      "ticker": "KEYS",
-      "sepa": "9.0",
-      "grok": "+6",
+      "ticker": "TSLA",
+      "sepa": "7.0",
+      "grok": "+5",
       "gemini": "75pt",
-      "gpt": "—",
+      "gpt": "High-rate envir",
       "verdict": ""
     },
     {
       "rank": 8,
-      "ticker": "ASX",
+      "ticker": "ATEYY",
       "sepa": "9.0",
-      "grok": "+5",
-      "gemini": "72pt",
-      "gpt": "—",
+      "grok": "+7",
+      "gemini": "74pt",
+      "gpt": "Defense/aerospa",
       "verdict": ""
     },
     {
       "rank": 9,
-      "ticker": "WPM",
-      "sepa": "—",
-      "grok": "+6",
-      "gemini": "70pt",
-      "gpt": "—",
+      "ticker": "MP",
+      "sepa": "7.0",
+      "grok": "+3",
+      "gemini": "72pt",
+      "gpt": "Rare-earth resh",
       "verdict": ""
     },
     {
       "rank": 10,
-      "ticker": "FCX",
-      "sepa": "6.0",
-      "grok": "+6",
-      "gemini": "68pt",
-      "gpt": "—",
+      "ticker": "AEHR",
+      "sepa": "8.0",
+      "grok": "+7",
+      "gemini": "70pt",
+      "gpt": "SiC/AI test dem",
       "verdict": ""
     }
   ],
   "earnings": [
-    {
-      "date": "5/12",
-      "ticker": "AG",
-      "name": "First Majestic Silver",
-      "strategy": "決算カタリスト狙い",
-      "note": "",
-      "days": 0
-    },
-    {
-      "date": "5/12",
-      "ticker": "ASTS",
-      "name": "AST SpaceMobile",
-      "strategy": "決算カタリスト狙い",
-      "note": "",
-      "days": 0
-    },
     {
       "date": "5/14",
       "ticker": "LUNR",
       "name": "Intuitive Machines",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 2
+      "days": 1
     },
     {
       "date": "5/20",
@@ -1670,7 +1656,7 @@ const SCAN_DATA = {
       "name": "Keysight Technologies",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 8
+      "days": 7
     },
     {
       "date": "5/20",
@@ -1678,7 +1664,7 @@ const SCAN_DATA = {
       "name": "Roivant Sciences",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 8
+      "days": 7
     },
     {
       "date": "5/29",
@@ -1686,7 +1672,7 @@ const SCAN_DATA = {
       "name": "UiPath",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 17
+      "days": 16
     },
     {
       "date": "6/24",
@@ -1694,7 +1680,7 @@ const SCAN_DATA = {
       "name": "AeroVironment",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 43
+      "days": 42
     },
     {
       "date": "7/22",
@@ -1702,7 +1688,7 @@ const SCAN_DATA = {
       "name": "Freeport-McMoRan",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 71
+      "days": 70
     },
     {
       "date": "7/23",
@@ -1710,7 +1696,7 @@ const SCAN_DATA = {
       "name": "Tesla",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 72
+      "days": 71
     },
     {
       "date": "7/24",
@@ -1718,7 +1704,7 @@ const SCAN_DATA = {
       "name": "Schlumberger",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 73
+      "days": 72
     },
     {
       "date": "7/28",
@@ -1726,7 +1712,7 @@ const SCAN_DATA = {
       "name": "Symbotic",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 77
+      "days": 76
     },
     {
       "date": "7/30",
@@ -1734,7 +1720,7 @@ const SCAN_DATA = {
       "name": "FormFactor",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 79
+      "days": 78
     },
     {
       "date": "7/30",
@@ -1742,7 +1728,7 @@ const SCAN_DATA = {
       "name": "ASE Technology",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 79
+      "days": 78
     },
     {
       "date": "7/30",
@@ -1750,7 +1736,7 @@ const SCAN_DATA = {
       "name": "Albemarle",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 79
+      "days": 78
     },
     {
       "date": "7/31",
@@ -1758,7 +1744,7 @@ const SCAN_DATA = {
       "name": "Ero Copper",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 80
+      "days": 79
     },
     {
       "date": "7/31",
@@ -1766,7 +1752,7 @@ const SCAN_DATA = {
       "name": "nVent Electric",
       "strategy": "決算前ポジション構築",
       "note": "電力需要増テーマの確認",
-      "days": 80
+      "days": 79
     },
     {
       "date": "7/31",
@@ -1774,7 +1760,7 @@ const SCAN_DATA = {
       "name": "Roku",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 80
+      "days": 79
     },
     {
       "date": "8/6",
@@ -1782,7 +1768,7 @@ const SCAN_DATA = {
       "name": "Coeur Mining",
       "strategy": "決算カタリスト狙い",
       "note": "金銀価格上昇の業績反映確認",
-      "days": 86
+      "days": 85
     },
     {
       "date": "8/7",
@@ -1790,7 +1776,7 @@ const SCAN_DATA = {
       "name": "MP Materials",
       "strategy": "黒字転換確認",
       "note": "売上$627M、純利益$110M予想。変曲点",
-      "days": 87
+      "days": 86
     },
     {
       "date": "8/7",
@@ -1798,25 +1784,16 @@ const SCAN_DATA = {
       "name": "Rocket Lab",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 87
+      "days": 86
     }
   ],
   "team": [
     {
-      "pos": "PG",
-      "role": "司令塔",
-      "ticker": "FORM",
-      "price": 151.39999389648438,
-      "rsi": 57.1,
-      "sepa": "9.0",
-      "status": "安定推移"
-    },
-    {
       "pos": "SG",
       "role": "攻撃",
       "ticker": "KEYS",
-      "price": 366.3599853515625,
-      "rsi": 66.4,
+      "price": 361.6499938964844,
+      "rsi": 63.1,
       "sepa": "9.0",
       "status": "安定推移"
     },
@@ -1824,8 +1801,8 @@ const SCAN_DATA = {
       "pos": "SF",
       "role": "万能",
       "ticker": "ASX",
-      "price": 35.29999923706055,
-      "rsi": 74.9,
+      "price": 34.279998779296875,
+      "rsi": 67.8,
       "sepa": "9.0",
       "status": "安定推移"
     },
@@ -1833,49 +1810,58 @@ const SCAN_DATA = {
       "pos": "PF",
       "role": "土台",
       "ticker": "ATEYY",
-      "price": 185.3000030517578,
-      "rsi": 58.0,
+      "price": 179.08999633789062,
+      "rsi": 50.5,
       "sepa": "9.0",
+      "status": "安定推移"
+    },
+    {
+      "pos": "PG",
+      "role": "司令塔",
+      "ticker": "FORM",
+      "price": 132.02000427246094,
+      "rsi": 41.3,
+      "sepa": "8.0",
       "status": "安定推移"
     },
     {
       "pos": "C",
       "role": "守備",
       "ticker": "AEHR",
-      "price": 104.55999755859375,
-      "rsi": 57.9,
-      "sepa": "9.0",
+      "price": 96.72000122070312,
+      "rsi": 49.6,
+      "sepa": "8.0",
       "status": "安定推移"
     }
   ],
   "details": {
-    "FORM": {
-      "ticker": "FORM",
-      "name": "FormFactor",
+    "KEYS": {
+      "ticker": "KEYS",
+      "name": "Keysight Technologies",
       "theme": "CPO",
-      "sector": "半導体",
-      "position": "PG",
+      "sector": "半導体・計測",
+      "position": "SG",
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 151.39999389648438,
+      "price": 361.6499938964844,
       "sepa_score": "9.0/9.0",
-      "rsi": "57.1",
+      "rsi": "63.1",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$137.39",
-      "stop_loss_8pct": "$139.29",
+      "stop_loss_21ma": "$344.29",
+      "stop_loss_8pct": "$332.72",
       "grok": {
-        "score": 6,
-        "judgment": "強気",
+        "score": null,
+        "judgment": "中立",
         "reasons": [
-          "半導体テスト需要の拡大がAIブームの恩恵として注目",
-          "サイクル回復期の設備投資増加が好材料視",
-          "中小型半導体銘柄としてセクター全体の強気ムードに連動"
+          "X上で$KEYSの最近の投資家言及がほとんど見当たらない",
+          "議論の活発さが低く明確な強弱を示す投稿なし",
+          "セクター全体のAIテスト需要はあるが個別センチメントは薄い"
         ]
       },
       "perplexity": null,
       "gemini": {
-        "rank": 6,
+        "rank": 5,
         "score": 78,
         "revenue_growth": null,
         "eps_growth": null,
@@ -1893,60 +1879,8 @@ const SCAN_DATA = {
         "geo_notes": []
       },
       "earnings": {
-        "date": "7/30",
-        "days": 79,
-        "strategy": "決算カタリスト狙い",
-        "note": "",
-        "eps_estimate": 0.61,
-        "revenue_estimate": 239999780
-      }
-    },
-    "KEYS": {
-      "ticker": "KEYS",
-      "name": "Keysight Technologies",
-      "theme": "CPO",
-      "sector": "半導体・計測",
-      "position": "SG",
-      "rating": "◎",
-      "signal": "買いシグナル",
-      "price": 366.3599853515625,
-      "sepa_score": "9.0/9.0",
-      "rsi": "66.4",
-      "vcp": "収縮9回, 出来高枯渇=いいえ",
-      "short_cover": "問題なし",
-      "stop_loss_21ma": "$342.56",
-      "stop_loss_8pct": "$337.05",
-      "grok": {
-        "score": 6,
-        "judgment": "強気",
-        "reasons": [
-          "電子測定・テスト機器のAIインフラ需要が堅調",
-          "5G/6Gや自動車向け成長期待が投資家に支持",
-          "半導体関連セクターのポジティブ波及効果"
-        ]
-      },
-      "perplexity": null,
-      "gemini": {
-        "rank": 7,
-        "score": 75,
-        "revenue_growth": null,
-        "eps_growth": null,
-        "net_margin": null,
-        "roe": null,
-        "per": null,
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": {
         "date": "5/20",
-        "days": 8,
+        "days": 7,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 2.32049,
@@ -1961,26 +1895,26 @@ const SCAN_DATA = {
       "position": "SF",
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 35.29999923706055,
+      "price": 34.279998779296875,
       "sepa_score": "9.0/9.0",
-      "rsi": "74.9",
+      "rsi": "67.8",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$30.73",
-      "stop_loss_8pct": "$32.48",
+      "stop_loss_21ma": "$31.06",
+      "stop_loss_8pct": "$31.54",
       "grok": {
-        "score": 5,
+        "score": 4,
         "judgment": "強気",
         "reasons": [
-          "半導体パッケージング・テストの需要拡大",
-          "TSMCなど大手とのサプライチェーン関係",
-          "アジア半導体セクターの回復ムード"
+          "半導体/AIパッケージングセクターの成長恩恵",
+          "長期保有で利益実現の成功事例投稿",
+          "関連株としてAIブームの波及期待"
         ]
       },
       "perplexity": null,
       "gemini": {
-        "rank": 8,
-        "score": 72,
+        "rank": 6,
+        "score": 76,
         "revenue_growth": null,
         "eps_growth": null,
         "net_margin": null,
@@ -1998,7 +1932,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/30",
-        "days": 79,
+        "days": 78,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.23908,
@@ -2013,71 +1947,26 @@ const SCAN_DATA = {
       "position": "PF",
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 185.3000030517578,
+      "price": 179.08999633789062,
       "sepa_score": "9.0/9.0",
-      "rsi": "58.0",
+      "rsi": "50.5",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$180.14",
-      "stop_loss_8pct": "$170.48",
+      "stop_loss_21ma": "$180.05",
+      "stop_loss_8pct": "$164.76",
       "grok": {
-        "score": 4,
+        "score": 7,
         "judgment": "強気",
         "reasons": [
-          "半導体テスト装置大手としてのポジション",
-          "Advantestの本業がAIテスト需要で恩恵",
-          "セクター全体の強気波及効果（言及はやや少ない）"
+          "AIプローブカード/テスト需要で注目",
+          "underfollowedながらポジティブ評価多数",
+          "半導体テストセクター全体の強気波及"
         ]
       },
       "perplexity": null,
       "gemini": {
-        "rank": 13,
-        "score": 61,
-        "revenue_growth": null,
-        "eps_growth": null,
-        "net_margin": null,
-        "roe": null,
-        "per": null,
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": null
-    },
-    "AEHR": {
-      "ticker": "AEHR",
-      "name": "Aehr Test Systems",
-      "theme": "CPO",
-      "sector": "半導体テスト",
-      "position": "C",
-      "rating": "◎",
-      "signal": "買いシグナル",
-      "price": 104.55999755859375,
-      "sepa_score": "9.0/9.0",
-      "rsi": "57.9",
-      "vcp": "収縮9回, 出来高枯渇=いいえ",
-      "short_cover": "問題なし",
-      "stop_loss_21ma": "$85.51",
-      "stop_loss_8pct": "$96.20",
-      "grok": {
-        "score": 6,
-        "judgment": "強気",
-        "reasons": [
-          "半導体テスト・バーンイン装置のAI需要急増",
-          "先進パッケージング向け設備投資期待",
-          "半導体テストセクターの強気サイクルに連動"
-        ]
-      },
-      "perplexity": null,
-      "gemini": {
-        "rank": 19,
-        "score": 42,
+        "rank": 8,
+        "score": 74,
         "revenue_growth": null,
         "eps_growth": null,
         "net_margin": null,
@@ -2103,26 +1992,26 @@ const SCAN_DATA = {
       "position": null,
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 379.69000244140625,
+      "price": 374.010009765625,
       "sepa_score": "9.0/9.0",
-      "rsi": "60.0",
+      "rsi": "56.6",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$324.28",
-      "stop_loss_8pct": "$349.31",
+      "stop_loss_21ma": "$328.80",
+      "stop_loss_8pct": "$344.09",
       "grok": {
-        "score": 6,
+        "score": 2,
         "judgment": "強気",
         "reasons": [
-          "光学部品・レーザー技術のAIデータセンター需要が急増",
-          "産業・防衛用途の安定成長が評価",
-          "半導体サプライチェーン拡大の恩恵銘柄として注目"
+          "AI/optical chipsテーマでプロモ投稿に複数登場しポジティブ文脈",
+          "投資家が利益獲得の例として挙げるケースが見られる",
+          "スパム中心だがネガティブ投稿はなく軽い好感"
         ]
       },
       "perplexity": null,
       "gemini": {
         "rank": 12,
-        "score": 63,
+        "score": 65,
         "revenue_growth": null,
         "eps_growth": null,
         "net_margin": null,
@@ -2139,6 +2028,58 @@ const SCAN_DATA = {
         "geo_notes": []
       },
       "earnings": null
+    },
+    "ROIV": {
+      "ticker": "ROIV",
+      "name": "Roivant Sciences",
+      "theme": "バイオ",
+      "sector": "バイオテック",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 29.389999389648438,
+      "sepa_score": "9.0/9.0",
+      "rsi": "51.7",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$28.48",
+      "stop_loss_8pct": "$27.04",
+      "grok": {
+        "score": 5,
+        "judgment": "強気",
+        "reasons": [
+          "バイオテク株のVCP/consolidation breakoutを試みる動き",
+          "CANSLIMスタイル投資家からテクニカル好感",
+          "Strong Buyコンセンサスが支え"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 16,
+        "score": 50,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": null
+      },
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "5/20",
+        "days": 7,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": -0.34975,
+        "revenue_estimate": 3912900
+      }
     },
     "TVTX": {
       "ticker": "TVTX",
@@ -2148,26 +2089,26 @@ const SCAN_DATA = {
       "position": null,
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 43.5099983215332,
+      "price": 42.84000015258789,
       "sepa_score": "9.0/9.0",
-      "rsi": "70.4",
+      "rsi": "62.6",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
-      "short_cover": "ショートカバー（偽物）",
-      "stop_loss_21ma": "$40.54",
-      "stop_loss_8pct": "$40.03",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$40.75",
+      "stop_loss_8pct": "$39.41",
       "grok": {
-        "score": 2,
-        "judgment": "中立",
+        "score": 6,
+        "judgment": "強気",
         "reasons": [
-          "最近のX上での投資家議論が極めて少ない",
-          "バイオ製薬特有の臨床ニュース待ちの状況",
-          "具体的な触媒やセンチメント変化の言及なし"
+          "アナリストStrong Buyコンセンサス",
+          "次世代リーダー銘柄候補としてブレイクアウト期待",
+          "長期成長テーマでポジティブ投稿"
         ]
       },
       "perplexity": null,
       "gemini": {
-        "rank": 20,
-        "score": 38,
+        "rank": 18,
+        "score": 40,
         "revenue_growth": null,
         "eps_growth": null,
         "net_margin": null,
@@ -2185,6 +2126,58 @@ const SCAN_DATA = {
       },
       "earnings": null
     },
+    "NVT": {
+      "ticker": "NVT",
+      "name": "nVent Electric",
+      "theme": "電力",
+      "sector": "電力インフラ",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 170.74000549316406,
+      "sepa_score": "9.0/9.0",
+      "rsi": "76.6",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$152.34",
+      "stop_loss_8pct": "$157.08",
+      "grok": {
+        "score": 4,
+        "judgment": "強気",
+        "reasons": [
+          "AIデータセンター/電力関連で強気トレンドと明記",
+          "市場形成のポジティブ文脈で投資家が言及",
+          "セクター全体の成長期待が反映されている"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 3,
+        "score": 82,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": null
+      },
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "7/31",
+        "days": 79,
+        "strategy": "決算前ポジション構築",
+        "note": "電力需要増テーマの確認",
+        "eps_estimate": 1.15843,
+        "revenue_estimate": 1254105320
+      }
+    },
     "SLB": {
       "ticker": "SLB",
       "name": "Schlumberger",
@@ -2193,26 +2186,26 @@ const SCAN_DATA = {
       "position": null,
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 54.93000030517578,
+      "price": 55.63999938964844,
       "sepa_score": "9.0/9.0",
-      "rsi": "58.6",
+      "rsi": "55.5",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$54.07",
-      "stop_loss_8pct": "$50.54",
+      "stop_loss_21ma": "$54.22",
+      "stop_loss_8pct": "$51.19",
       "grok": {
-        "score": 2,
-        "judgment": "中立",
+        "score": 6,
+        "judgment": "強気",
         "reasons": [
-          "エネルギー・油田サービスセクターの議論が低調",
-          "原油価格動向次第だが具体的な強気材料なし",
-          "投資家投稿が少なく中立的な観測が主流"
+          "アナリスト目標株価大幅引き上げ($71)",
+          "月足ブレイクアウトでテクニカル強気",
+          "Outperform維持の市場評価"
         ]
       },
       "perplexity": null,
       "gemini": {
-        "rank": 5,
-        "score": 81,
+        "rank": 2,
+        "score": 84,
         "revenue_growth": null,
         "eps_growth": null,
         "net_margin": null,
@@ -2230,7 +2223,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/24",
-        "days": 73,
+        "days": 72,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.52531,
@@ -2245,25 +2238,25 @@ const SCAN_DATA = {
       "position": null,
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 128.07000732421875,
+      "price": 127.62999725341797,
       "sepa_score": "9.0/9.0",
-      "rsi": "69.7",
+      "rsi": "64.7",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$117.89",
-      "stop_loss_8pct": "$117.82",
+      "stop_loss_21ma": "$118.78",
+      "stop_loss_8pct": "$117.42",
       "grok": {
-        "score": 5,
-        "judgment": "強気",
+        "score": null,
+        "judgment": "中立",
         "reasons": [
-          "株価テクニカルブレイクアウトとユーザー増加が話題",
-          "ストリーミング広告回復のファンダメンタル改善",
-          "メディア・テックセクターの選好銘柄として言及"
+          "X上で$ROKUの最近の投資家投稿がほとんどない",
+          "ストリーミング関連の議論が活発化しておらず材料不足",
+          "明確な強弱を示すセンチメントが見当たらない"
         ]
       },
       "perplexity": null,
       "gemini": {
-        "rank": 18,
+        "rank": 17,
         "score": 45,
         "revenue_growth": null,
         "eps_growth": null,
@@ -2282,7 +2275,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/31",
-        "days": 80,
+        "days": 79,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.56375,
@@ -2297,26 +2290,26 @@ const SCAN_DATA = {
       "position": null,
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 209.99000549316406,
+      "price": 205.52000427246094,
       "sepa_score": "9.0/9.0",
-      "rsi": "57.9",
+      "rsi": "57.7",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$193.51",
-      "stop_loss_8pct": "$193.19",
+      "stop_loss_21ma": "$194.60",
+      "stop_loss_8pct": "$189.08",
       "grok": {
-        "score": 5,
+        "score": 3,
         "judgment": "強気",
         "reasons": [
-          "リチウム価格安定とEVバッテリー長期需要",
-          "材料セクターのクリティカルミネラル政策恩恵",
-          "中程度の投資家言及ながらセクター尾行"
+          "most undervalued projectと割安評価",
+          "リチウムrebound期待の投稿あり",
+          "セクター回復局面での注目が集まる"
         ]
       },
       "perplexity": null,
       "gemini": {
-        "rank": 16,
-        "score": 52,
+        "rank": 13,
+        "score": 65,
         "revenue_growth": null,
         "eps_growth": null,
         "net_margin": null,
@@ -2334,7 +2327,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/30",
-        "days": 79,
+        "days": 78,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 2.71161,
@@ -2349,26 +2342,26 @@ const SCAN_DATA = {
       "position": null,
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 117.3499984741211,
+      "price": 117.55999755859375,
       "sepa_score": "9.0/9.0",
-      "rsi": "68.1",
+      "rsi": "66.9",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$84.50",
-      "stop_loss_8pct": "$107.96",
+      "stop_loss_21ma": "$87.50",
+      "stop_loss_8pct": "$108.16",
       "grok": {
-        "score": 9,
+        "score": 8,
         "judgment": "強気",
         "reasons": [
-          "スペースセクター全体の熱狂と大型契約受注期待",
-          "株価急騰と高CAGR成長予想が投資家間で話題",
-          "打ち上げ成功と将来性に対する強い支持"
+          "スペース株ポートフォリオの必須銘柄として複数投資家が推奨",
+          "相対的強さを評価し追加買いや収益成長を指摘",
+          "Neutron遅延でも分散収益でリスク低減と高評価"
         ]
       },
       "perplexity": null,
       "gemini": {
-        "rank": 17,
-        "score": 48,
+        "rank": 19,
+        "score": 35,
         "revenue_growth": null,
         "eps_growth": null,
         "net_margin": null,
@@ -2386,7 +2379,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/7",
-        "days": 87,
+        "days": 86,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": -0.025,
@@ -2401,26 +2394,26 @@ const SCAN_DATA = {
       "position": null,
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 32.41999816894531,
+      "price": 32.09000015258789,
       "sepa_score": "9.0/9.0",
-      "rsi": "60.1",
+      "rsi": "55.1",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$25.87",
-      "stop_loss_8pct": "$29.83",
+      "stop_loss_21ma": "$26.44",
+      "stop_loss_8pct": "$29.52",
       "grok": {
-        "score": 8,
+        "score": 6,
         "judgment": "強気",
         "reasons": [
-          "月面探査ミッション進捗とNASA契約がポジティブ材料",
-          "スペース株ブームの代表銘柄として注目",
-          "高成長ポテンシャルに対する投資家期待"
+          "スペース関連企業として$RKLB等と並んでポートフォリオ推奨",
+          "投資家が買い意欲を示す投稿が確認",
+          "宇宙インフラ成長期待が背景にある"
         ]
       },
       "perplexity": null,
       "gemini": {
-        "rank": 22,
-        "score": 30,
+        "rank": 20,
+        "score": 25,
         "revenue_growth": null,
         "eps_growth": null,
         "net_margin": null,
@@ -2438,41 +2431,235 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "5/14",
-        "days": 2,
+        "days": 1,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": -0.06,
         "revenue_estimate": 205311450
       }
     },
-    "NVT": {
-      "ticker": "NVT",
-      "name": "nVent Electric",
-      "theme": "電力",
-      "sector": "電力インフラ",
+    "FORM": {
+      "ticker": "FORM",
+      "name": "FormFactor",
+      "theme": "CPO",
+      "sector": "半導体",
+      "position": "PG",
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 132.02000427246094,
+      "sepa_score": "8.0/9.0",
+      "rsi": "41.3",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$136.90",
+      "stop_loss_8pct": "$121.46",
+      "grok": {
+        "score": 7,
+        "judgment": "強気",
+        "reasons": [
+          "アナリストがBuyアップグレードと目標株価引き上げ",
+          "AIチップのテスト/メトロロジー需要で重要視",
+          "過去9ヶ月で大幅上昇の勢いを投資家が指摘"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 11,
+        "score": 68,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": null
+      },
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "7/30",
+        "days": 78,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.61,
+        "revenue_estimate": 239999780
+      }
+    },
+    "AEHR": {
+      "ticker": "AEHR",
+      "name": "Aehr Test Systems",
+      "theme": "CPO",
+      "sector": "半導体テスト",
+      "position": "C",
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 96.72000122070312,
+      "sepa_score": "8.0/9.0",
+      "rsi": "49.6",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$86.53",
+      "stop_loss_8pct": "$88.98",
+      "grok": {
+        "score": 7,
+        "judgment": "強気",
+        "reasons": [
+          "AI/photonicsインフラテーマの好み銘柄として複数言及",
+          "チャートセットアップ有効と回転投資対象に挙がる",
+          "フォトニクス関連で長期成長期待が高い"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 10,
+        "score": 70,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": null
+      },
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null
+    },
+    "FCX": {
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan",
+      "theme": "資源・銅",
+      "sector": "銅",
       "position": null,
       "rating": "◎",
       "signal": "買いシグナル",
-      "price": 173.38999938964844,
-      "sepa_score": "8.6/9.0",
-      "rsi": "81.3",
+      "price": 66.02999877929688,
+      "sepa_score": "8.0/9.0",
+      "rsi": "42.1",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$150.50",
-      "stop_loss_8pct": "$159.52",
+      "stop_loss_21ma": "$61.78",
+      "stop_loss_8pct": "$60.75",
       "grok": {
-        "score": 5,
+        "score": 7,
         "judgment": "強気",
         "reasons": [
-          "電気設備・データセンター向け需要がAI関連で増加",
-          "産業用電気製品の安定成長期待",
-          "半導体・インフラセクターの全体的な強気センチメントに連動"
+          "銅価格高騰ラリーでlooks readyと投資家が評価",
+          "メタルセクター回復期待が強い",
+          "チャートが魅力的と買い意欲の投稿多数"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 1,
+        "score": 85,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": null
+      },
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "7/22",
+        "days": 70,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.56347,
+        "revenue_estimate": 6572700380
+      }
+    },
+    "AG": {
+      "ticker": "AG",
+      "name": "First Majestic Silver",
+      "theme": "金銀",
+      "sector": "貴金属・銀",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 24.209999084472656,
+      "sepa_score": "7.0/9.0",
+      "rsi": "67.7",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$21.21",
+      "stop_loss_8pct": "$22.27",
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "驚異的決算(EPS大幅増)と配当増で再評価期待",
+          "ポジション追加やmoon投稿が活発",
+          "銀価格上昇で必然的な上昇と見る投資家多数"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 14,
+        "score": 60,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": null
+      },
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": null
+    },
+    "ERO": {
+      "ticker": "ERO",
+      "name": "Ero Copper",
+      "theme": "資源・銅",
+      "sector": "銅",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 31.889999389648438,
+      "sepa_score": "7.0/9.0",
+      "rsi": "69.0",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$27.77",
+      "stop_loss_8pct": "$29.34",
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "銅bull runのbest alpha playと投資家が評価",
+          "breakout確認とロングポジション報告",
+          "主要上昇銘柄として活発な買い議論"
         ]
       },
       "perplexity": null,
       "gemini": {
         "rank": 4,
-        "score": 84,
+        "score": 80,
         "revenue_growth": null,
         "eps_growth": null,
         "net_margin": null,
@@ -2490,11 +2677,63 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/31",
-        "days": 80,
-        "strategy": "決算前ポジション構築",
-        "note": "電力需要増テーマの確認",
-        "eps_estimate": 1.15843,
-        "revenue_estimate": 1254105320
+        "days": 79,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.89835,
+        "revenue_estimate": 338757000
+      }
+    },
+    "TSLA": {
+      "ticker": "TSLA",
+      "name": "Tesla",
+      "theme": "EV・自動運転",
+      "sector": "EV・自動運転",
+      "position": null,
+      "rating": "◎",
+      "signal": "買いシグナル",
+      "price": 433.45001220703125,
+      "sepa_score": "7.0/9.0",
+      "rsi": "70.0",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$397.59",
+      "stop_loss_8pct": "$398.77",
+      "grok": {
+        "score": 5,
+        "judgment": "強気",
+        "reasons": [
+          "複数の投資家が今年のトップピックに挙げる",
+          "強気派の継続保有・追加意欲が目立つ",
+          "市場ボラティリティの中でbull activeな議論"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 7,
+        "score": 75,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": null
+      },
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "7/23",
+        "days": 71,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": 0.45438,
+        "revenue_estimate": 24620391710
       }
     },
     "MP": {
@@ -2503,22 +2742,74 @@ const SCAN_DATA = {
       "theme": "資源・銅",
       "sector": "レアアース",
       "position": null,
-      "rating": "◎",
-      "signal": "買いシグナル",
-      "price": 67.41000366210938,
-      "sepa_score": "8.0/9.0",
-      "rsi": "52.2",
+      "rating": "○",
+      "signal": "ウォッチ",
+      "price": 65.58999633789062,
+      "sepa_score": "7.0/9.0",
+      "rsi": "44.9",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$64.32",
-      "stop_loss_8pct": "$62.02",
+      "stop_loss_21ma": "$64.43",
+      "stop_loss_8pct": "$60.34",
+      "grok": {
+        "score": 3,
+        "judgment": "強気",
+        "reasons": [
+          "rare earth/AI関連でポートフォリオに含まれる言及",
+          "スパム投稿中心だがポジティブリスト入り",
+          "セクター全体のEV/磁石需要期待が背景"
+        ]
+      },
+      "perplexity": null,
+      "gemini": {
+        "rank": 9,
+        "score": 72,
+        "revenue_growth": null,
+        "eps_growth": null,
+        "net_margin": null,
+        "roe": null,
+        "per": null,
+        "debt_equity": null,
+        "filter_status": null
+      },
+      "chatgpt": {
+        "base": null,
+        "bull": null,
+        "bear": null,
+        "geo_risk": "低",
+        "geo_notes": []
+      },
+      "earnings": {
+        "date": "8/7",
+        "days": 86,
+        "strategy": "黒字転換確認",
+        "note": "売上$627M、純利益$110M予想。変曲点",
+        "eps_estimate": 0.05143,
+        "revenue_estimate": 98599010
+      }
+    },
+    "CDE": {
+      "ticker": "CDE",
+      "name": "Coeur Mining",
+      "theme": "金銀",
+      "sector": "貴金属・金銀",
+      "position": null,
+      "rating": "○",
+      "signal": "ウォッチ",
+      "price": 20.170000076293945,
+      "sepa_score": "6.0/9.0",
+      "rsi": "54.8",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
+      "short_cover": "問題なし",
+      "stop_loss_21ma": "$18.84",
+      "stop_loss_8pct": "$18.56",
       "grok": {
         "score": 6,
         "judgment": "強気",
         "reasons": [
-          "希土類・クリティカルミネラル需要の政策支援期待",
-          "EV・防衛用途の長期成長ストーリー",
-          "材料セクターの強気リストに頻出"
+          "bull signal確認でロング維持利益確定後も強気",
+          "週次大幅上昇を投資家が実績として報告",
+          "銀メタルテーマのポジティブ波及"
         ]
       },
       "perplexity": null,
@@ -2541,235 +2832,12 @@ const SCAN_DATA = {
         "geo_notes": []
       },
       "earnings": {
-        "date": "8/7",
-        "days": 87,
-        "strategy": "黒字転換確認",
-        "note": "売上$627M、純利益$110M予想。変曲点",
-        "eps_estimate": 0.05143,
-        "revenue_estimate": 98599010
-      }
-    },
-    "ROIV": {
-      "ticker": "ROIV",
-      "name": "Roivant Sciences",
-      "theme": "バイオ",
-      "sector": "バイオテック",
-      "position": null,
-      "rating": "◎",
-      "signal": "買いシグナル",
-      "price": 28.959999084472656,
-      "sepa_score": "8.0/9.0",
-      "rsi": "47.5",
-      "vcp": "収縮9回, 出来高枯渇=いいえ",
-      "short_cover": "問題なし",
-      "stop_loss_21ma": "$28.39",
-      "stop_loss_8pct": "$26.64",
-      "grok": {
-        "score": 2,
-        "judgment": "中立",
-        "reasons": [
-          "バイオ製薬セクター内で目立った投資家言及なし",
-          "パイプライン進捗待ちの静かな状況",
-          "X上の取引・センチメント活動が極めて低い"
-        ]
-      },
-      "perplexity": null,
-      "gemini": {
-        "rank": 14,
-        "score": 58,
-        "revenue_growth": null,
-        "eps_growth": null,
-        "net_margin": null,
-        "roe": null,
-        "per": null,
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": {
-        "date": "5/20",
-        "days": 8,
-        "strategy": "決算カタリスト狙い",
-        "note": "",
-        "eps_estimate": -0.34975,
-        "revenue_estimate": 3912900
-      }
-    },
-    "TSLA": {
-      "ticker": "TSLA",
-      "name": "Tesla",
-      "theme": "EV・自動運転",
-      "sector": "EV・自動運転",
-      "position": null,
-      "rating": "◎",
-      "signal": "買いシグナル",
-      "price": 445.0,
-      "sepa_score": "7.0/9.0",
-      "rsi": "78.1",
-      "vcp": "収縮9回, 出来高枯渇=いいえ",
-      "short_cover": "問題なし",
-      "stop_loss_21ma": "$394.01",
-      "stop_loss_8pct": "$409.40",
-      "grok": {
-        "score": 6,
-        "judgment": "強気",
-        "reasons": [
-          "FSD（完全自動運転）採用拡大とサブスクリプション成長",
-          "株価モメンタムとSpaceX関連の間接的ハイプ",
-          "長期EV・エネルギー戦略に対する投資家支持（短期は分かれる）"
-        ]
-      },
-      "perplexity": null,
-      "gemini": {
-        "rank": 11,
-        "score": 65,
-        "revenue_growth": null,
-        "eps_growth": null,
-        "net_margin": null,
-        "roe": null,
-        "per": null,
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": {
-        "date": "7/23",
-        "days": 72,
-        "strategy": "決算カタリスト狙い",
-        "note": "",
-        "eps_estimate": 0.45438,
-        "revenue_estimate": 24620391710
-      }
-    },
-    "AG": {
-      "ticker": "AG",
-      "name": "First Majestic Silver",
-      "theme": "金銀",
-      "sector": "貴金属・銀",
-      "position": null,
-      "rating": "○",
-      "signal": "ウォッチ",
-      "price": 23.579999923706055,
-      "sepa_score": "6.0/9.0",
-      "rsi": "68.3",
-      "vcp": "収縮9回, 出来高枯渇=いいえ",
-      "short_cover": "問題なし",
-      "stop_loss_21ma": "$20.90",
-      "stop_loss_8pct": "$21.69",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": {
-        "date": "5/12",
-        "days": 0,
-        "strategy": "決算カタリスト狙い",
-        "note": "",
-        "eps_estimate": 0.31333
-      }
-    },
-    "CDE": {
-      "ticker": "CDE",
-      "name": "Coeur Mining",
-      "theme": "金銀",
-      "sector": "貴金属・金銀",
-      "position": null,
-      "rating": "○",
-      "signal": "ウォッチ",
-      "price": 19.799999237060547,
-      "sepa_score": "6.0/9.0",
-      "rsi": "57.4",
-      "vcp": "収縮9回, 出来高枯渇=いいえ",
-      "short_cover": "問題なし",
-      "stop_loss_21ma": "$18.71",
-      "stop_loss_8pct": "$18.22",
-      "grok": {
-        "score": 5,
-        "judgment": "強気",
-        "reasons": [
-          "貴金属生産量増加と価格環境の改善",
-          "金・銀市場の好調が投資家投稿で言及",
-          "鉱山株全体のモメンタムに連動"
-        ]
-      },
-      "perplexity": null,
-      "gemini": {
-        "rank": 21,
-        "score": 35,
-        "revenue_growth": null,
-        "eps_growth": null,
-        "net_margin": null,
-        "roe": null,
-        "per": null,
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": {
         "date": "8/6",
-        "days": 86,
+        "days": 85,
         "strategy": "決算カタリスト狙い",
         "note": "金銀価格上昇の業績反映確認",
         "eps_estimate": 0.3829,
         "revenue_estimate": 1328250000
-      }
-    },
-    "ERO": {
-      "ticker": "ERO",
-      "name": "Ero Copper",
-      "theme": "資源・銅",
-      "sector": "銅",
-      "position": null,
-      "rating": "○",
-      "signal": "ウォッチ",
-      "price": 28.969999313354492,
-      "sepa_score": "6.0/9.0",
-      "rsi": "61.2",
-      "vcp": "収縮9回, 出来高枯渇=いいえ",
-      "short_cover": "問題なし",
-      "stop_loss_21ma": "$27.36",
-      "stop_loss_8pct": "$26.65",
-      "grok": null,
-      "perplexity": null,
-      "gemini": null,
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": {
-        "date": "7/31",
-        "days": 80,
-        "strategy": "決算カタリスト狙い",
-        "note": "",
-        "eps_estimate": 0.89835,
-        "revenue_estimate": 338757000
       }
     },
     "ASTS": {
@@ -2778,15 +2846,15 @@ const SCAN_DATA = {
       "theme": "商業宇宙",
       "sector": "宇宙通信",
       "position": null,
-      "rating": "○",
-      "signal": "ウォッチ",
-      "price": 82.55000305175781,
-      "sepa_score": "6.0/9.0",
-      "rsi": "52.0",
+      "rating": "×",
+      "signal": "見送り",
+      "price": 72.95999908447266,
+      "sepa_score": "3.0/9.0",
+      "rsi": "41.6",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$77.00",
-      "stop_loss_8pct": "$75.95",
+      "stop_loss_21ma": "$76.63",
+      "stop_loss_8pct": "$67.12",
       "grok": null,
       "perplexity": null,
       "gemini": null,
@@ -2797,66 +2865,7 @@ const SCAN_DATA = {
         "geo_risk": "低",
         "geo_notes": []
       },
-      "earnings": {
-        "date": "5/12",
-        "days": 0,
-        "strategy": "決算カタリスト狙い",
-        "note": "",
-        "eps_estimate": -0.18666,
-        "revenue_estimate": 40951940
-      }
-    },
-    "FCX": {
-      "ticker": "FCX",
-      "name": "Freeport-McMoRan",
-      "theme": "資源・銅",
-      "sector": "銅",
-      "position": null,
-      "rating": "○",
-      "signal": "ウォッチ",
-      "price": 64.37000274658203,
-      "sepa_score": "6.0/9.0",
-      "rsi": "44.4",
-      "vcp": "収縮9回, 出来高枯渇=いいえ",
-      "short_cover": "問題なし",
-      "stop_loss_21ma": "$61.36",
-      "stop_loss_8pct": "$59.22",
-      "grok": {
-        "score": 6,
-        "judgment": "強気",
-        "reasons": [
-          "銅価格高騰と需要拡大（AIデータセンター・EV）が好材料",
-          "クリティカルミネラル政策支援の期待",
-          "鉱業セクター全体の強気相場が投資家に支持"
-        ]
-      },
-      "perplexity": null,
-      "gemini": {
-        "rank": 10,
-        "score": 68,
-        "revenue_growth": null,
-        "eps_growth": null,
-        "net_margin": null,
-        "roe": null,
-        "per": null,
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": {
-        "date": "7/22",
-        "days": 71,
-        "strategy": "決算カタリスト狙い",
-        "note": "",
-        "eps_estimate": 0.56347,
-        "revenue_estimate": 6572700380
-      }
+      "earnings": null
     },
     "SYM": {
       "ticker": "SYM",
@@ -2866,13 +2875,13 @@ const SCAN_DATA = {
       "position": null,
       "rating": "×",
       "signal": "見送り",
-      "price": 51.709999084472656,
+      "price": 51.31999969482422,
       "sepa_score": "3.0/9.0",
-      "rsi": "26.9",
+      "rsi": "25.7",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$57.06",
-      "stop_loss_8pct": "$47.57",
+      "stop_loss_21ma": "$56.53",
+      "stop_loss_8pct": "$47.21",
       "grok": null,
       "perplexity": null,
       "gemini": null,
@@ -2885,7 +2894,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/28",
-        "days": 77,
+        "days": 76,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.1262,
@@ -2900,13 +2909,13 @@ const SCAN_DATA = {
       "position": null,
       "rating": "×",
       "signal": "見送り",
-      "price": 166.4499969482422,
+      "price": 168.86000061035156,
       "sepa_score": "0.4/9.0",
-      "rsi": "23.5",
-      "vcp": "収縮8回, 出来高枯渇=いいえ",
+      "rsi": "25.6",
+      "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$184.48",
-      "stop_loss_8pct": "$153.13",
+      "stop_loss_21ma": "$183.06",
+      "stop_loss_8pct": "$155.35",
       "grok": null,
       "perplexity": null,
       "gemini": null,
@@ -2919,7 +2928,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "6/24",
-        "days": 43,
+        "days": 42,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 1.47206,
@@ -2934,13 +2943,13 @@ const SCAN_DATA = {
       "position": null,
       "rating": "×",
       "signal": "見送り",
-      "price": 10.65999984741211,
+      "price": 10.010000228881836,
       "sepa_score": "0.4/9.0",
-      "rsi": "48.1",
+      "rsi": "38.2",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$10.65",
-      "stop_loss_8pct": "$9.81",
+      "stop_loss_21ma": "$10.59",
+      "stop_loss_8pct": "$9.21",
       "grok": null,
       "perplexity": null,
       "gemini": null,
@@ -2953,217 +2962,12 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "5/29",
-        "days": 17,
+        "days": 16,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.15874,
         "revenue_estimate": 397476670
       }
-    },
-    "NVDA": {
-      "ticker": "NVDA",
-      "name": "",
-      "theme": "AIランキング上位",
-      "sector": "",
-      "position": null,
-      "rating": "",
-      "signal": "AIコンセンサス上位",
-      "price": 0,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": {
-        "score": 8,
-        "judgment": "強気",
-        "reasons": [
-          "AI需要の爆発的拡大とデータセンター投資が継続的に言及され、長期成長期待が高い",
-          "アナリストによる目標株価の上方修正と強気レポートが頻出",
-          "投資家コミュニティでAIセクターのリーダーとして頻繁にポジティブリスト入り"
-        ]
-      },
-      "perplexity": null,
-      "gemini": {
-        "rank": 1,
-        "score": 96,
-        "revenue_growth": null,
-        "eps_growth": null,
-        "net_margin": null,
-        "roe": null,
-        "per": null,
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": null,
-      "ai_only": true
-    },
-    "TSM": {
-      "ticker": "TSM",
-      "name": "",
-      "theme": "AIランキング上位",
-      "sector": "",
-      "position": null,
-      "rating": "",
-      "signal": "AIコンセンサス上位",
-      "price": 0,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": {
-        "score": 7,
-        "judgment": "強気",
-        "reasons": [
-          "AIチップ供給チェーンの中心としてNVDAとの連携が強く評価",
-          "半導体市場全体の回復と先進プロセス需要が好材料",
-          "投資家投稿で安定した成長期待が繰り返し共有"
-        ]
-      },
-      "perplexity": null,
-      "gemini": {
-        "rank": 2,
-        "score": 92,
-        "revenue_growth": null,
-        "eps_growth": null,
-        "net_margin": null,
-        "roe": null,
-        "per": null,
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": null,
-      "ai_only": true
-    },
-    "AVGO": {
-      "ticker": "AVGO",
-      "name": "",
-      "theme": "AIランキング上位",
-      "sector": "",
-      "position": null,
-      "rating": "",
-      "signal": "AIコンセンサス上位",
-      "price": 0,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": {
-        "score": 8,
-        "judgment": "強気",
-        "reasons": [
-          "AIアクセラレータとカスタムチップ需要が急拡大中と評価",
-          "好決算期待と配当・自社株買いが投資家に支持",
-          "セクター内でNVDAに次ぐAIプレーヤーとしてポジティブ言及多数"
-        ]
-      },
-      "perplexity": null,
-      "gemini": {
-        "rank": 3,
-        "score": 89,
-        "revenue_growth": null,
-        "eps_growth": null,
-        "net_margin": null,
-        "roe": null,
-        "per": null,
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": null,
-      "ai_only": true,
-      "leader_score": 95,
-      "leader_breakdown": {
-        "stage2": 30,
-        "leadership": 25,
-        "vcp_pullback": 20,
-        "fundamentals": 20
-      },
-      "leader_details": {
-        "ma_alignment": "full",
-        "ma_stacking": true,
-        "ma_slopes_up": "both",
-        "pct_to_52w_high": 0.9963,
-        "return_12m": 0.9492,
-        "contraction_ratio": 0.354,
-        "pullback_pct": 0.0037,
-        "roe": 0.334,
-        "revenue_growth": 0.295,
-        "eps_growth": 0.316,
-        "op_margin": 0.449,
-        "accumulation": "weak"
-      }
-    },
-    "WPM": {
-      "ticker": "WPM",
-      "name": "",
-      "theme": "AIランキング上位",
-      "sector": "",
-      "position": null,
-      "rating": "",
-      "signal": "AIコンセンサス上位",
-      "price": 0,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": {
-        "score": 6,
-        "judgment": "強気",
-        "reasons": [
-          "金銀ストリーミング事業の安定キャッシュフロー",
-          "金属価格上昇によるロイヤリティ収入増期待",
-          "鉱業セクターのポジティブレビュー多数"
-        ]
-      },
-      "perplexity": null,
-      "gemini": {
-        "rank": 9,
-        "score": 70,
-        "revenue_growth": null,
-        "eps_growth": null,
-        "net_margin": null,
-        "roe": null,
-        "per": null,
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": null,
-      "ai_only": true
     },
     "CARE": {
       "ticker": "CARE",
@@ -3296,6 +3100,50 @@ const SCAN_DATA = {
         "accumulation": "mild"
       },
       "market_cap": 10213948416
+    },
+    "AVGO": {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "theme": "Semiconductors",
+      "sector": "Technology",
+      "position": null,
+      "rating": "",
+      "signal": "先導株候補 95pt",
+      "price": 428.43,
+      "sepa_score": "",
+      "rsi": "",
+      "vcp": "",
+      "short_cover": "",
+      "stop_loss_21ma": "",
+      "stop_loss_8pct": "",
+      "grok": null,
+      "perplexity": null,
+      "gemini": null,
+      "chatgpt": null,
+      "earnings": null,
+      "leader_only": true,
+      "leader_score": 95,
+      "leader_breakdown": {
+        "stage2": 30,
+        "leadership": 25,
+        "vcp_pullback": 20,
+        "fundamentals": 20
+      },
+      "leader_details": {
+        "ma_alignment": "full",
+        "ma_stacking": true,
+        "ma_slopes_up": "both",
+        "pct_to_52w_high": 0.9963,
+        "return_12m": 0.9492,
+        "contraction_ratio": 0.354,
+        "pullback_pct": 0.0037,
+        "roe": 0.334,
+        "revenue_growth": 0.295,
+        "eps_growth": 0.316,
+        "op_margin": 0.449,
+        "accumulation": "weak"
+      },
+      "market_cap": 2028473942016
     },
     "COCO": {
       "ticker": "COCO",
