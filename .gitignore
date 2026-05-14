@@ -6,6 +6,9 @@ requirements.txt
 # Python venv (Phase 11 で導入)
 .venv/
 
+# Stage 判定キャッシュ (Phase 11 で導入、ローカル fallback 用)
+stages_cache/
+
 # Python キャッシュ
 __pycache__/
 *.pyc
