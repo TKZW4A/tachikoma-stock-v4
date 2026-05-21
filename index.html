@@ -1289,7 +1289,7 @@ body {
 // Scan Data (embedded — updated by daily scan pipeline)
 // ============================================================
 const SCAN_DATA = {
-  "scan_date": "2026-05-21 12:40",
+  "scan_date": "2026-05-21 21:56",
   "market_health": {
     "S&P500": {
       "price": 741.25,
@@ -1766,6 +1766,14 @@ const SCAN_DATA = {
       "days": 78
     },
     {
+      "date": "8/10",
+      "ticker": "ROIV",
+      "name": "Roivant Sciences",
+      "strategy": "決算カタリスト狙い",
+      "note": "",
+      "days": 81
+    },
+    {
       "date": "8/11",
       "ticker": "ASTS",
       "name": "AST SpaceMobile",
@@ -2064,7 +2072,14 @@ const SCAN_DATA = {
         "geo_risk": "低",
         "geo_notes": []
       },
-      "earnings": null,
+      "earnings": {
+        "date": "8/10",
+        "days": 81,
+        "strategy": "決算カタリスト狙い",
+        "note": "",
+        "eps_estimate": -0.33347,
+        "revenue_estimate": 0
+      },
       "stage_info": {
         "stage": 2,
         "stage_label": "上昇 (TT全条件適合)",
@@ -3013,10 +3028,10 @@ const SCAN_DATA = {
       "signal": "ウォッチ",
       "price": 19.940000534057617,
       "sepa_score": "6.0/9.0",
-      "rsi": "50.9",
+      "rsi": "51.0",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "ショートカバー（偽物）",
-      "stop_loss_21ma": "$20.97",
+      "stop_loss_21ma": "$20.96",
       "stop_loss_8pct": "$18.34",
       "grok": null,
       "perplexity": null,
@@ -3056,20 +3071,20 @@ const SCAN_DATA = {
         },
         "tt_metrics": {
           "price": 19.94,
-          "ma50": 20.97,
-          "ma150": 19.31,
-          "ma200": 17.08,
-          "pct_above_52w_low": 239.8,
-          "pct_to_52w_high": 0.6229,
+          "ma50": 20.95,
+          "ma150": 19.29,
+          "ma200": 17.06,
+          "pct_above_52w_low": 240.1,
+          "pct_to_52w_high": 0.6235,
           "rs_rating": 99.0
         },
         "rs_rating": 99.0,
         "early_stage_2": false,
-        "ma30w": 19.31,
+        "ma30w": 19.29,
         "ma30w_trend": "up",
         "ma30w_slope_pct": 6.66,
         "price_above_ma30w": true,
-        "pct_from_52w_high": 0.3771,
+        "pct_from_52w_high": 0.3765,
         "days_since_break": 1,
         "break_volume_surge": false
       }
@@ -7019,7 +7034,7 @@ const SCAN_DATA = {
     ]
   },
   "market_pulse": {
-    "updated_at": "2026-05-21T12:39:10",
+    "updated_at": "2026-05-21T21:57:13",
     "methodology": "CBOE-Equity-equivalent: aggregate option volume of 15 large-cap individual stocks (nearest 2 expiries each)",
     "equity_basket": {
       "label": "equity",
@@ -7044,10 +7059,10 @@ const SCAN_DATA = {
       "expiries_per_ticker": 2,
       "put_volume": 1370997,
       "call_volume": 2983980,
-      "put_oi": 1865472,
-      "call_oi": 2781273,
+      "put_oi": 2174994,
+      "call_oi": 3294874,
       "pcr_volume": 0.459,
-      "pcr_oi": 0.671
+      "pcr_oi": 0.66
     },
     "index_basket": {
       "label": "index",
@@ -7060,10 +7075,10 @@ const SCAN_DATA = {
       "expiries_per_ticker": 2,
       "put_volume": 1525267,
       "call_volume": 1437715,
-      "put_oi": 1886541,
-      "call_oi": 818939,
+      "put_oi": 1885061,
+      "call_oi": 1034087,
       "pcr_volume": 1.061,
-      "pcr_oi": 2.304
+      "pcr_oi": 1.823
     },
     "equity_classification": {
       "level": "bullish",
@@ -7098,10 +7113,10 @@ const SCAN_DATA = {
       "expiries_per_ticker": 2,
       "put_volume": 1370997,
       "call_volume": 2983980,
-      "put_oi": 1865472,
-      "call_oi": 2781273,
+      "put_oi": 2174994,
+      "call_oi": 3294874,
       "pcr_volume": 0.459,
-      "pcr_oi": 0.671,
+      "pcr_oi": 0.66,
       "symbol": "EQUITY-BASKET"
     },
     "qqq": {
@@ -7115,10 +7130,10 @@ const SCAN_DATA = {
       "expiries_per_ticker": 2,
       "put_volume": 1525267,
       "call_volume": 1437715,
-      "put_oi": 1886541,
-      "call_oi": 818939,
+      "put_oi": 1885061,
+      "call_oi": 1034087,
       "pcr_volume": 1.061,
-      "pcr_oi": 2.304,
+      "pcr_oi": 1.823,
       "symbol": "INDEX-BASKET"
     },
     "spy_classification": {
@@ -7141,7 +7156,7 @@ const SCAN_DATA = {
   },
   "themes": {
     "scan_date": "20260521",
-    "updated_at": "2026-05-21T12:39:43",
+    "updated_at": "2026-05-21T21:57:48",
     "theme_count": 34,
     "unique_tickers_analyzed": 134,
     "duration_sec": 15,
@@ -7321,7 +7336,7 @@ const SCAN_DATA = {
         "avg_return_1m": 28.0,
         "avg_return_3m": 63.94,
         "avg_return_6m": 171.73,
-        "avg_vol_accel": 1.32,
+        "avg_vol_accel": 1.33,
         "winners_1m": 3,
         "winners_3m": 3,
         "winners_6m": 3,
@@ -7352,7 +7367,7 @@ const SCAN_DATA = {
             "return_1m": 17.05,
             "return_3m": 112.79,
             "return_6m": 246.88,
-            "vol_accel": 1.36,
+            "vol_accel": 1.37,
             "above_200ma": null
           },
           {
@@ -7816,7 +7831,7 @@ const SCAN_DATA = {
         "avg_return_1m": 15.03,
         "avg_return_3m": 31.08,
         "avg_return_6m": 87.61,
-        "avg_vol_accel": 1.12,
+        "avg_vol_accel": 1.14,
         "winners_1m": 4,
         "winners_3m": 4,
         "winners_6m": 4,
@@ -7856,7 +7871,7 @@ const SCAN_DATA = {
             "return_1m": 7.06,
             "return_3m": 36.71,
             "return_6m": 121.61,
-            "vol_accel": 0.99,
+            "vol_accel": 1.01,
             "above_200ma": null
           },
           {
@@ -7874,7 +7889,7 @@ const SCAN_DATA = {
             "return_1m": 1.53,
             "return_3m": 2.52,
             "return_6m": 35.48,
-            "vol_accel": 1.06,
+            "vol_accel": 1.09,
             "above_200ma": null
           }
         ],
@@ -7934,7 +7949,7 @@ const SCAN_DATA = {
             "return_1m": 10.65,
             "return_3m": 17.77,
             "return_6m": 57.64,
-            "vol_accel": 0.9,
+            "vol_accel": 0.91,
             "above_200ma": null
           },
           {
@@ -7963,7 +7978,7 @@ const SCAN_DATA = {
         "avg_return_1m": 7.95,
         "avg_return_3m": 22.49,
         "avg_return_6m": 54.47,
-        "avg_vol_accel": 0.9,
+        "avg_vol_accel": 0.91,
         "winners_1m": 4,
         "winners_3m": 5,
         "winners_6m": 5,
@@ -8012,7 +8027,7 @@ const SCAN_DATA = {
             "return_1m": 7.99,
             "return_3m": 21.52,
             "return_6m": 60.71,
-            "vol_accel": 0.69,
+            "vol_accel": 0.71,
             "above_200ma": null
           },
           {
@@ -8030,7 +8045,7 @@ const SCAN_DATA = {
             "return_1m": -7.07,
             "return_3m": 1.22,
             "return_6m": 11.43,
-            "vol_accel": 0.96,
+            "vol_accel": 0.97,
             "above_200ma": null
           }
         ],
@@ -8221,7 +8236,7 @@ const SCAN_DATA = {
             "return_1m": 12.93,
             "return_3m": 48.09,
             "return_6m": 74.67,
-            "vol_accel": 1.5,
+            "vol_accel": 1.51,
             "above_200ma": null
           },
           {
@@ -8562,7 +8577,7 @@ const SCAN_DATA = {
         "avg_return_1m": -2.67,
         "avg_return_3m": 11.67,
         "avg_return_6m": -15.15,
-        "avg_vol_accel": 1.26,
+        "avg_vol_accel": 1.27,
         "winners_1m": 1,
         "winners_3m": 2,
         "winners_6m": 1,
@@ -8611,7 +8626,7 @@ const SCAN_DATA = {
             "return_1m": -11.35,
             "return_3m": -11.56,
             "return_6m": -23.29,
-            "vol_accel": 1.09,
+            "vol_accel": 1.1,
             "above_200ma": null
           },
           {
@@ -8640,7 +8655,7 @@ const SCAN_DATA = {
         "avg_return_1m": 4.77,
         "avg_return_3m": 9.84,
         "avg_return_6m": 35.25,
-        "avg_vol_accel": 0.77,
+        "avg_vol_accel": 0.78,
         "winners_1m": 5,
         "winners_3m": 5,
         "winners_6m": 5,
@@ -8671,7 +8686,7 @@ const SCAN_DATA = {
             "return_1m": 4.51,
             "return_3m": 14.79,
             "return_6m": 42.7,
-            "vol_accel": 0.76,
+            "vol_accel": 0.77,
             "above_200ma": null
           },
           {
@@ -8680,7 +8695,7 @@ const SCAN_DATA = {
             "return_1m": 2.5,
             "return_3m": 10.47,
             "return_6m": 40.02,
-            "vol_accel": 0.83,
+            "vol_accel": 0.84,
             "above_200ma": null
           },
           {
@@ -8836,7 +8851,7 @@ const SCAN_DATA = {
             "return_1m": -11.67,
             "return_3m": -2.76,
             "return_6m": 23.12,
-            "vol_accel": 1.07,
+            "vol_accel": 1.08,
             "above_200ma": null
           },
           {
@@ -8954,7 +8969,7 @@ const SCAN_DATA = {
         "avg_return_1m": -2.81,
         "avg_return_3m": 2.16,
         "avg_return_6m": -10.96,
-        "avg_vol_accel": 0.79,
+        "avg_vol_accel": 0.8,
         "winners_1m": 1,
         "winners_3m": 2,
         "winners_6m": 1,
@@ -8985,7 +9000,7 @@ const SCAN_DATA = {
             "return_1m": 6.94,
             "return_3m": 3.92,
             "return_6m": 1.96,
-            "vol_accel": 0.87,
+            "vol_accel": 0.89,
             "above_200ma": null
           },
           {
@@ -9023,7 +9038,7 @@ const SCAN_DATA = {
         "avg_return_1m": 13.68,
         "avg_return_3m": -1.91,
         "avg_return_6m": -1.76,
-        "avg_vol_accel": 0.85,
+        "avg_vol_accel": 0.86,
         "winners_1m": 2,
         "winners_3m": 0,
         "winners_6m": 1,
@@ -9054,7 +9069,7 @@ const SCAN_DATA = {
             "return_1m": 13.02,
             "return_3m": -0.25,
             "return_6m": 0.06,
-            "vol_accel": 1.0,
+            "vol_accel": 1.01,
             "above_200ma": null
           },
           {
@@ -9142,15 +9157,15 @@ const SCAN_DATA = {
         "description": "REGN/VRTX/BIIB/GILD — 安定収益のバイオ",
         "member_count": 4,
         "tickers_failed": [],
-        "avg_return_1m": -3.86,
-        "avg_return_3m": -10.1,
-        "avg_return_6m": 3.08,
+        "avg_return_1m": -3.82,
+        "avg_return_3m": -10.06,
+        "avg_return_6m": 3.11,
         "avg_vol_accel": 0.93,
         "winners_1m": 1,
         "winners_3m": 0,
         "winners_6m": 2,
         "concentration_1m": 0.0,
-        "concentration_3m": 0.375,
+        "concentration_3m": 0.377,
         "concentration_6m": 0.0,
         "inst_signal_1m": {
           "level": "neutral",
@@ -9200,10 +9215,10 @@ const SCAN_DATA = {
           {
             "ticker": "REGN",
             "price": 649.76,
-            "return_1m": -13.06,
-            "return_3m": -16.85,
-            "return_6m": -7.52,
-            "vol_accel": 1.19,
+            "return_1m": -12.93,
+            "return_3m": -16.73,
+            "return_6m": -7.38,
+            "vol_accel": 1.2,
             "above_200ma": null
           }
         ],
@@ -9223,7 +9238,7 @@ const SCAN_DATA = {
         "avg_return_1m": -11.43,
         "avg_return_3m": -10.73,
         "avg_return_6m": -20.44,
-        "avg_vol_accel": 1.31,
+        "avg_vol_accel": 1.32,
         "winners_1m": 1,
         "winners_3m": 2,
         "winners_6m": 1,
@@ -9263,7 +9278,7 @@ const SCAN_DATA = {
             "return_1m": -19.94,
             "return_3m": -11.93,
             "return_6m": -7.67,
-            "vol_accel": 0.94,
+            "vol_accel": 0.95,
             "above_200ma": null
           },
           {
@@ -9272,7 +9287,7 @@ const SCAN_DATA = {
             "return_1m": -13.06,
             "return_3m": 13.39,
             "return_6m": -8.06,
-            "vol_accel": 0.74,
+            "vol_accel": 0.75,
             "above_200ma": null
           },
           {
@@ -9307,9 +9322,9 @@ const SCAN_DATA = {
         "description": "銀価格・産業需要（太陽光・EV）+貴金属性",
         "member_count": 5,
         "tickers_failed": [],
-        "avg_return_1m": -1.34,
-        "avg_return_3m": -11.19,
-        "avg_return_6m": 49.51,
+        "avg_return_1m": -1.32,
+        "avg_return_3m": -11.17,
+        "avg_return_6m": 49.54,
         "avg_vol_accel": 0.6,
         "winners_1m": 1,
         "winners_3m": 1,
@@ -9347,9 +9362,9 @@ const SCAN_DATA = {
           {
             "ticker": "AG",
             "price": 19.94,
-            "return_1m": -0.7,
-            "return_3m": -19.51,
-            "return_6m": 72.69,
+            "return_1m": -0.61,
+            "return_3m": -19.44,
+            "return_6m": 72.84,
             "vol_accel": 0.54,
             "above_200ma": null
           },
@@ -9477,7 +9492,7 @@ const SCAN_DATA = {
         "avg_return_1m": -5.31,
         "avg_return_3m": -12.52,
         "avg_return_6m": -1.63,
-        "avg_vol_accel": 0.93,
+        "avg_vol_accel": 0.94,
         "winners_1m": 1,
         "winners_3m": 1,
         "winners_6m": 3,
@@ -9517,7 +9532,7 @@ const SCAN_DATA = {
             "return_1m": -6.58,
             "return_3m": -14.59,
             "return_6m": 0.28,
-            "vol_accel": 0.92,
+            "vol_accel": 0.93,
             "above_200ma": null
           },
           {
@@ -9526,7 +9541,7 @@ const SCAN_DATA = {
             "return_1m": 4.37,
             "return_3m": -3.67,
             "return_6m": 0.28,
-            "vol_accel": 1.07,
+            "vol_accel": 1.08,
             "above_200ma": null
           },
           {
@@ -9535,7 +9550,7 @@ const SCAN_DATA = {
             "return_1m": -9.65,
             "return_3m": -24.83,
             "return_6m": -1.22,
-            "vol_accel": 0.87,
+            "vol_accel": 0.88,
             "above_200ma": null
           },
           {
@@ -9717,40 +9732,40 @@ const SCAN_DATA = {
         "description": "金価格・利下げ期待・地政学プレイ",
         "member_count": 5,
         "tickers_failed": [],
-        "avg_return_1m": -8.57,
-        "avg_return_3m": -18.24,
-        "avg_return_6m": 26.66,
-        "avg_vol_accel": 0.69,
+        "avg_return_1m": -8.48,
+        "avg_return_3m": -18.17,
+        "avg_return_6m": 26.82,
+        "avg_vol_accel": 0.7,
         "winners_1m": 0,
         "winners_3m": 0,
         "winners_6m": 5,
         "concentration_1m": 0.514,
-        "concentration_3m": 0.606,
-        "concentration_6m": 0.194,
+        "concentration_3m": 0.612,
+        "concentration_6m": 0.186,
         "inst_signal_1m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
         },
         "inst_signal_3m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
         },
         "inst_signal_6m": {
-          "level": "fading",
-          "label": "🟡 関心薄れ",
-          "color": "yellow"
+          "level": "neutral",
+          "label": "⚪ 中立",
+          "color": "gray"
         },
         "top_ticker": "GOLD",
-        "top_return_6m": 63.41,
+        "top_return_6m": 64.24,
         "members": [
           {
             "ticker": "GOLD",
             "price": 41.01,
-            "return_1m": -10.46,
-            "return_3m": -29.86,
-            "return_6m": 63.41,
+            "return_1m": -10.0,
+            "return_3m": -29.51,
+            "return_6m": 64.24,
             "vol_accel": 0.71,
             "above_200ma": null
           },
@@ -9760,7 +9775,7 @@ const SCAN_DATA = {
             "return_1m": -1.75,
             "return_3m": -14.19,
             "return_6m": 23.92,
-            "vol_accel": 0.68,
+            "vol_accel": 0.69,
             "above_200ma": null
           },
           {
@@ -9827,7 +9842,7 @@ const SCAN_DATA = {
           "avg_return_1m": 13.68,
           "avg_return_3m": -1.91,
           "avg_return_6m": -1.76,
-          "avg_vol_accel": 0.85,
+          "avg_vol_accel": 0.86,
           "rank_1m": 7,
           "rank_3m": 25,
           "rank_6m": 29,
@@ -9949,7 +9964,7 @@ const SCAN_DATA = {
           "avg_return_1m": 28.0,
           "avg_return_3m": 63.94,
           "avg_return_6m": 171.73,
-          "avg_vol_accel": 1.32,
+          "avg_vol_accel": 1.33,
           "rank_1m": 4,
           "rank_3m": 3,
           "rank_6m": 2,
@@ -9989,7 +10004,7 @@ const SCAN_DATA = {
           "avg_return_1m": 15.03,
           "avg_return_3m": 31.08,
           "avg_return_6m": 87.61,
-          "avg_vol_accel": 1.12,
+          "avg_vol_accel": 1.14,
           "rank_1m": 6,
           "rank_3m": 9,
           "rank_6m": 6,
@@ -10088,10 +10103,10 @@ const SCAN_DATA = {
           "id": "gold_miners",
           "name": "金鉱（採掘大手）",
           "icon": "🥇",
-          "avg_return_1m": -8.57,
-          "avg_return_3m": -18.24,
-          "avg_return_6m": 26.66,
-          "avg_vol_accel": 0.69,
+          "avg_return_1m": -8.48,
+          "avg_return_3m": -18.17,
+          "avg_return_6m": 26.82,
+          "avg_vol_accel": 0.7,
           "rank_1m": 31,
           "rank_3m": 34,
           "rank_6m": 20,
@@ -10099,9 +10114,9 @@ const SCAN_DATA = {
           "rotation_3m_to_1m": 3,
           "top_ticker": "GOLD",
           "inst_signal_3m": {
-            "level": "fading",
-            "label": "🟡 関心薄れ",
-            "color": "yellow"
+            "level": "neutral",
+            "label": "⚪ 中立",
+            "color": "gray"
           }
         }
       ],
@@ -10113,7 +10128,7 @@ const SCAN_DATA = {
           "avg_return_1m": -2.81,
           "avg_return_3m": 2.16,
           "avg_return_6m": -10.96,
-          "avg_vol_accel": 0.79,
+          "avg_vol_accel": 0.8,
           "rank_1m": 24,
           "rank_3m": 24,
           "rank_6m": 30,
