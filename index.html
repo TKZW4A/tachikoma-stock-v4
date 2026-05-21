@@ -12136,8 +12136,14 @@ function pivotBreakoutChipHtml(ticker) {
 }
 
 // 銘柄詳細ページ向け: pivot/breakout の説明セクション (HTML 文字列を返す)
-function pivotBreakoutSectionHtml(ticker) {
-  const d = (SCAN_DATA.details || {})[ticker];
+// 引数は ticker でも detail object でも受けられる (renderDetail から d を直接渡すため)
+function pivotBreakoutSectionHtml(tickerOrD) {
+  let d;
+  if (typeof tickerOrD === 'string') {
+    d = (SCAN_DATA.details || {})[tickerOrD];
+  } else if (tickerOrD && typeof tickerOrD === 'object') {
+    d = tickerOrD;
+  }
   if (!d) return '';
   const pv = d.pivot_info;
   const fbo = d.false_breakout_info;
@@ -12374,7 +12380,7 @@ function renderDetail(d) {
   }
 
   // Phase 11: PIVOT / ブレイクアウト分析セクション (Minervini ステージの直後)
-  html += pivotBreakoutSectionHtml(ticker);
+  html += pivotBreakoutSectionHtml(d);
 
   // Leader-only / AI-only / Technical の3分岐
   if (d.leader_only) {
