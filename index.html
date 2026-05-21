@@ -12729,7 +12729,9 @@ function switchPageProgrammatic(name) {
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   render();
-  ['signalList', 'aiConsensus', 'teamLineup', 'earningsList', 'leadersList', 'watchlistChips'].forEach(id => {
+  // Phase 11: earlyStage2List を追加 (発見タブの Stage 2 初動候補バナー)
+  ['signalList', 'aiConsensus', 'teamLineup', 'earningsList', 'leadersList',
+   'watchlistChips', 'earlyStage2List'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
     el.addEventListener('click', (e) => {
