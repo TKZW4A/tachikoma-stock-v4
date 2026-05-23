@@ -1250,6 +1250,63 @@ body {
   </div>
 </div>
 
+<!-- ===== Page Quantum: 量子コンピューター銘柄 特集 ===== -->
+<div class="page" id="page-quantum">
+  <div class="card" style="border:1px solid #b366ff;background:linear-gradient(135deg,rgba(179,102,255,0.12),rgba(88,166,255,0.06))">
+    <div class="card-title" style="color:#b366ff"><span class="emoji">🔮</span> 量子コンピューター銘柄 特集</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.7;margin-top:6px">
+      量子コンピューターは「実用化前夜」の最有望テーマ。3 つの方式 (超伝導 / イオントラップ / 光・アニーリング) と
+      <strong style="color:#b366ff">純粋プレーヤー (5社)</strong> + <strong>大手参入組 (4社)</strong> + <strong>ハイブリッド (1社)</strong> の 10 銘柄を一覧化。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⚠️ 投資前に知っておくべきこと</div>
+    <div style="font-size:12px;line-height:1.7">
+      <div style="margin-bottom:6px"><strong style="color:var(--red)">🚨 高ボラティリティ</strong>: 純粋プレーヤーは年率ボラ 80-120%、1日 ±10% も日常茶飯事。</div>
+      <div style="margin-bottom:6px"><strong style="color:var(--orange)">📉 利益化遠い</strong>: D-Wave 以外は売上規模小、赤字継続。バリュエーション期待先行。</div>
+      <div style="margin-bottom:6px"><strong style="color:var(--cyan)">🎯 ポートフォリオ配分</strong>: 純粋プレーヤーは合計 <strong>5%以下</strong>を推奨。大手 (IBM/GOOG/MSFT/NVDA) で量子エクスポージャーを得るのも一手。</div>
+      <div><strong style="color:var(--green)">💡 ホライズン</strong>: 量子優位性の証明は 2027-2030 予想。短期トレード or 5年保有の二極戦略。</div>
+    </div>
+  </div>
+
+  <div class="card" id="quantumPure">
+    <div class="card-title"><span class="emoji">💎</span> 純粋プレーヤー (Pure Plays)</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:8px">
+      量子事業が売上の大半を占める銘柄。株価が量子テーマに直結。<strong style="color:var(--red)">ハイリスクハイリターン</strong>。
+    </div>
+    <div id="quantumPureList"></div>
+  </div>
+
+  <div class="card" id="quantumBigtech">
+    <div class="card-title"><span class="emoji">🏢</span> 大手参入組 (Big Tech)</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:8px">
+      量子は売上の数%未満。本業の利益で量子研究を支える「分散済みエクスポージャー」。
+    </div>
+    <div id="quantumBigtechList"></div>
+  </div>
+
+  <div class="card" id="quantumHybrid">
+    <div class="card-title"><span class="emoji">🔀</span> ハイブリッド</div>
+    <div id="quantumHybridList"></div>
+  </div>
+
+  <div class="card" id="quantumComparison">
+    <div class="card-title"><span class="emoji">⚖️</span> 方式比較マトリクス</div>
+    <div id="quantumComparisonTable" style="overflow-x:auto"></div>
+  </div>
+
+  <div class="card" style="border-color:rgba(102,178,255,0.3)">
+    <div class="card-title" style="color:#66b2ff">📘 量子コンピューターの基礎</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.7">
+      <strong style="color:var(--text)">量子超越性 (Quantum Supremacy)</strong>: 古典コンピュータで現実時間内に解けない問題を量子が解く。Google が 2019 年に Sycamore で達成、IBM/Google が継続的に挑戦中。<br><br>
+      <strong style="color:var(--text)">論理 qubit vs 物理 qubit</strong>: ノイズに弱い物理 qubit を多数組み合わせて 1 つの安定した論理 qubit を作る (誤り訂正)。IBM の 1,121 物理 qubit ≒ 数十論理 qubit と見做せる。<br><br>
+      <strong style="color:var(--text)">商業化のロードマップ</strong>: 2025-2027 で <strong>NISQ (Noisy Intermediate-Scale Quantum)</strong> の有用性実証 → 2028-2030 で <strong>誤り耐性量子計算 (FTQC)</strong> 実用化目標 (IBM/Google ロードマップ)。<br><br>
+      <strong style="color:var(--text)">主要用途</strong>: ① 創薬・材料設計 (分子シミュレーション) ② 金融最適化 (リスク管理・ポートフォリオ最適化) ③ 暗号解読 (RSA → 2030+ で脅威) ④ AI 加速 (量子機械学習)。
+    </div>
+  </div>
+</div>
+
 <!-- ===== Detail Modal (Bottom Sheet) ===== -->
 <div class="detail-overlay" id="detailOverlay" onclick="closeDetail()"></div>
 <div class="detail-sheet" id="detailSheet" onclick="event.stopPropagation()">
@@ -1281,6 +1338,9 @@ body {
   </button>
   <button class="tab" onclick="switchPage('leaders')">
     <span class="icon">🔍</span>発見
+  </button>
+  <button class="tab" onclick="switchPage('quantum')">
+    <span class="icon">🔮</span>量子
   </button>
 </div>
 
@@ -5792,15 +5852,8 @@ const SCAN_DATA = {
         "above_21ma": false,
         "above_50ma": true,
         "above_200ma": false,
-        "vcp_stages": 2,
+        "vcp_stages": 1,
         "vcp_contractions": [
-          {
-            "peak_idx": 25,
-            "peak_price": 13.91,
-            "trough_idx": 29,
-            "trough_price": 13.12,
-            "depth_pct": 5.7
-          },
           {
             "peak_idx": 35,
             "peak_price": 14.71,
@@ -5810,8 +5863,8 @@ const SCAN_DATA = {
           }
         ],
         "vcp_decreasing": false,
-        "base_shape": "double_bottom",
-        "base_shape_label": "Double Bottom (ダブルボトム型)",
+        "base_shape": "saucer",
+        "base_shape_label": "Saucer (浅い U 字型)",
         "pct_from_52w_high": 11.72,
         "left_right_volume": {
           "left_avg": 364962.0,
@@ -5820,7 +5873,7 @@ const SCAN_DATA = {
           "healthy": false
         },
         "left_right_healthy": false,
-        "buy_point_quality": 37,
+        "buy_point_quality": 30,
         "interpretation": null
       },
       "false_breakout_info": {
@@ -13232,6 +13285,1114 @@ const SCAN_DATA = {
         }
       ]
     }
+  },
+  "quantum": {
+    "all": [
+      {
+        "ticker": "QBTS",
+        "name": "D-Wave Quantum Inc.",
+        "category": "pure",
+        "approach": "量子アニーリング (Quantum Annealing)",
+        "approach_short": "アニール",
+        "purity": "pure",
+        "commercialization": "production",
+        "qubit_max": 5000,
+        "qubit_type": "annealing qubits (different)",
+        "leader": "Alan Baratz (CEO)",
+        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+        "market": {
+          "price": 29.4,
+          "high_52w": 44.78,
+          "low_52w": 12.98,
+          "pct_from_52w_high": 34.3,
+          "ret_1m": 59.0,
+          "ret_3m": 57.6,
+          "ret_6m": 43.3,
+          "ret_1y": null,
+          "volatility_annual": 120.7,
+          "market_cap_b": 10.89,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "RGTI",
+        "name": "Rigetti Computing",
+        "category": "pure",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 84,
+        "qubit_type": "physical",
+        "leader": "Subodh Kulkarni (CEO)",
+        "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
+        "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
+        "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
+        "market": {
+          "price": 26.42,
+          "high_52w": 56.34,
+          "low_52w": 10.79,
+          "pct_from_52w_high": 53.1,
+          "ret_1m": 59.1,
+          "ret_3m": 60.3,
+          "ret_6m": 15.9,
+          "ret_1y": null,
+          "volatility_annual": 109.6,
+          "market_cap_b": 8.78,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "IONQ",
+        "name": "IonQ, Inc.",
+        "category": "pure",
+        "approach": "イオントラップ (Trapped Ion)",
+        "approach_short": "イオン",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 64,
+        "qubit_type": "logical (high-fidelity)",
+        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "market": {
+          "price": 63.64,
+          "high_52w": 82.09,
+          "low_52w": 26.59,
+          "pct_from_52w_high": 22.5,
+          "ret_1m": 49.1,
+          "ret_3m": 101.3,
+          "ret_6m": 55.2,
+          "ret_1y": null,
+          "volatility_annual": 98.9,
+          "market_cap_b": 23.75,
+          "pe_trailing": 163.17949,
+          "revenue_b": 0.19,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "ARQQ",
+        "name": "Arqit Quantum",
+        "category": "pure",
+        "approach": "量子暗号通信 (QKD)",
+        "approach_short": "量子暗号",
+        "purity": "pure",
+        "commercialization": "pilot",
+        "qubit_max": null,
+        "qubit_type": "n/a (encryption-focused)",
+        "leader": "David Williams (CEO)",
+        "highlight": "量子暗号(QKD)に特化。量子計算ではなく「量子セキュリティ」。",
+        "risk": "業界全体が PQC (post-quantum cryptography) にシフト傾向。",
+        "thesis": "国防・金融機関の暗号アップグレード需要。",
+        "market": {
+          "price": 17.49,
+          "high_52w": 58.27,
+          "low_52w": 11.78,
+          "pct_from_52w_high": 70.0,
+          "ret_1m": 20.4,
+          "ret_3m": 6.7,
+          "ret_6m": -27.9,
+          "ret_1y": null,
+          "volatility_annual": 94.9,
+          "market_cap_b": 0.3,
+          "pe_trailing": null,
+          "revenue_b": 0.0,
+          "sector": "Technology",
+          "industry": "Software - Infrastructure"
+        }
+      },
+      {
+        "ticker": "GOOG",
+        "name": "Alphabet (Google)",
+        "category": "bigtech",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "minor",
+        "commercialization": "researchOnly",
+        "qubit_max": 70,
+        "qubit_type": "physical, high coherence",
+        "leader": "Hartmut Neven (Quantum AI lead)",
+        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+        "market": {
+          "price": 379.38,
+          "high_52w": 399.04,
+          "low_52w": 165.64,
+          "pct_from_52w_high": 4.9,
+          "ret_1m": 10.8,
+          "ret_3m": 22.1,
+          "ret_6m": 31.0,
+          "ret_1y": null,
+          "volatility_annual": 34.0,
+          "market_cap_b": 4596.36,
+          "pe_trailing": 28.894136,
+          "revenue_b": 422.5,
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information"
+        }
+      },
+      {
+        "ticker": "IBM",
+        "name": "International Business Machines",
+        "category": "bigtech",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "minor",
+        "commercialization": "production",
+        "qubit_max": 1121,
+        "qubit_type": "physical",
+        "leader": "Arvind Krishna (CEO), Jay Gambetta (Quantum lead)",
+        "highlight": "Condor (1121 qubits) で量子優位性目標。 Quantum Network 顧客 280社+。",
+        "risk": "量子は IBM 売上の数% で、IBM 株は AI / Hybrid Cloud に左右される。",
+        "thesis": "量子分野の総合リーダー。安定配当付き量子エクスポージャー。",
+        "market": {
+          "price": 253.84,
+          "high_52w": 310.91,
+          "low_52w": 214.64,
+          "pct_from_52w_high": 18.4,
+          "ret_1m": 10.2,
+          "ret_3m": 11.5,
+          "ret_6m": -11.4,
+          "ret_1y": null,
+          "volatility_annual": 40.8,
+          "market_cap_b": 238.58,
+          "pe_trailing": 22.443853,
+          "revenue_b": 68.91,
+          "sector": "Technology",
+          "industry": "Information Technology Services"
+        }
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "category": "bigtech",
+        "approach": "CUDA Quantum (Hybrid)",
+        "approach_short": "ハイブリッド",
+        "purity": "minor",
+        "commercialization": "production",
+        "qubit_max": null,
+        "qubit_type": "classical simulation of quantum",
+        "leader": "Jensen Huang (CEO), Tim Costa (Quantum lead)",
+        "highlight": "GPU で量子計算をシミュレート + 量子ハードと連携する CUDA-Q。ハードを作らない戦略。",
+        "risk": "NVDA 株は AI 半導体で量子寄与ほぼなし。",
+        "thesis": "量子と古典の橋渡し役 = いずれの方式が勝っても恩恵。",
+        "market": {
+          "price": 215.33,
+          "high_52w": 235.74,
+          "low_52w": 131.26,
+          "pct_from_52w_high": 8.7,
+          "ret_1m": 3.4,
+          "ret_3m": 11.7,
+          "ret_6m": 19.2,
+          "ret_1y": null,
+          "volatility_annual": 37.4,
+          "market_cap_b": 5215.51,
+          "pe_trailing": 33.026073,
+          "revenue_b": 253.49,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "MSFT",
+        "name": "Microsoft",
+        "category": "bigtech",
+        "approach": "Topological (Majorana)",
+        "approach_short": "トポロジカル",
+        "purity": "minor",
+        "commercialization": "researchOnly",
+        "qubit_max": null,
+        "qubit_type": "topological (新方式)",
+        "leader": "Satya Nadella (CEO), Krysta Svore (Quantum lead)",
+        "highlight": "Azure Quantum で IonQ/Quantinuum と提携。独自方式 Majorana 1 (2025) で勝負。",
+        "risk": "MSFT 株は Azure + AI で量子寄与なし。",
+        "thesis": "Majorana が成功すれば誤り耐性で支配可能。",
+        "market": {
+          "price": 418.57,
+          "high_52w": 538.66,
+          "low_52w": 356.0,
+          "pct_from_52w_high": 22.3,
+          "ret_1m": -1.2,
+          "ret_3m": 7.8,
+          "ret_6m": -12.1,
+          "ret_1y": null,
+          "volatility_annual": 26.6,
+          "market_cap_b": 3109.32,
+          "pe_trailing": 24.90006,
+          "revenue_b": 318.27,
+          "sector": "Technology",
+          "industry": "Software - Infrastructure"
+        }
+      },
+      {
+        "ticker": "HON",
+        "name": "Honeywell International",
+        "category": "hybrid",
+        "approach": "イオントラップ (via Quantinuum)",
+        "approach_short": "イオン",
+        "purity": "minor",
+        "commercialization": "cloudAccess",
+        "qubit_max": 56,
+        "qubit_type": "high-fidelity logical",
+        "leader": "Vimal Kapur (CEO), Quantinuum: Rajeeb Hazra (CEO)",
+        "highlight": "子会社 Quantinuum (Cambridge Quantum + Honeywell Quantum 統合) で世界トップクラス。",
+        "risk": "HON 全体は航空・産業オートメで量子比率小。",
+        "thesis": "Quantinuum IPO の可能性 (2025-2026 観測あり) でアップサイド。",
+        "market": {
+          "price": 227.92,
+          "high_52w": 246.68,
+          "low_52w": 186.19,
+          "pct_from_52w_high": 7.6,
+          "ret_1m": 7.5,
+          "ret_3m": -5.5,
+          "ret_6m": 22.4,
+          "ret_1y": null,
+          "volatility_annual": 25.2,
+          "market_cap_b": 144.42,
+          "pe_trailing": 36.350876,
+          "revenue_b": 37.66,
+          "sector": "Industrials",
+          "industry": "Conglomerates"
+        }
+      },
+      {
+        "ticker": "QUBT",
+        "name": "Quantum Computing Inc.",
+        "category": "pure",
+        "approach": "フォトニック (Photonic)",
+        "approach_short": "光",
+        "purity": "pure",
+        "commercialization": "pilot",
+        "qubit_max": null,
+        "qubit_type": "photonic",
+        "leader": "William McGann (CEO)",
+        "highlight": "光量子方式。室温動作の可能性が魅力。",
+        "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
+        "thesis": "光方式が成功すれば low-cost で展開可能。",
+        "market": {
+          "price": 12.31,
+          "high_52w": 24.62,
+          "low_52w": 6.31,
+          "pct_from_52w_high": 50.0,
+          "ret_1m": 37.7,
+          "ret_3m": 51.8,
+          "ret_6m": 19.9,
+          "ret_1y": null,
+          "volatility_annual": 98.6,
+          "market_cap_b": 2.78,
+          "pe_trailing": null,
+          "revenue_b": 0.0,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      }
+    ],
+    "by_category": {
+      "pure": [
+        {
+          "ticker": "QBTS",
+          "name": "D-Wave Quantum Inc.",
+          "category": "pure",
+          "approach": "量子アニーリング (Quantum Annealing)",
+          "approach_short": "アニール",
+          "purity": "pure",
+          "commercialization": "production",
+          "qubit_max": 5000,
+          "qubit_type": "annealing qubits (different)",
+          "leader": "Alan Baratz (CEO)",
+          "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+          "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+          "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+          "market": {
+            "price": 29.4,
+            "high_52w": 44.78,
+            "low_52w": 12.98,
+            "pct_from_52w_high": 34.3,
+            "ret_1m": 59.0,
+            "ret_3m": 57.6,
+            "ret_6m": 43.3,
+            "ret_1y": null,
+            "volatility_annual": 120.7,
+            "market_cap_b": 10.89,
+            "pe_trailing": null,
+            "revenue_b": 0.01,
+            "sector": "Technology",
+            "industry": "Computer Hardware"
+          }
+        },
+        {
+          "ticker": "RGTI",
+          "name": "Rigetti Computing",
+          "category": "pure",
+          "approach": "超伝導 (Superconducting)",
+          "approach_short": "超伝導",
+          "purity": "pure",
+          "commercialization": "cloudAccess",
+          "qubit_max": 84,
+          "qubit_type": "physical",
+          "leader": "Subodh Kulkarni (CEO)",
+          "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
+          "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
+          "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
+          "market": {
+            "price": 26.42,
+            "high_52w": 56.34,
+            "low_52w": 10.79,
+            "pct_from_52w_high": 53.1,
+            "ret_1m": 59.1,
+            "ret_3m": 60.3,
+            "ret_6m": 15.9,
+            "ret_1y": null,
+            "volatility_annual": 109.6,
+            "market_cap_b": 8.78,
+            "pe_trailing": null,
+            "revenue_b": 0.01,
+            "sector": "Technology",
+            "industry": "Computer Hardware"
+          }
+        },
+        {
+          "ticker": "IONQ",
+          "name": "IonQ, Inc.",
+          "category": "pure",
+          "approach": "イオントラップ (Trapped Ion)",
+          "approach_short": "イオン",
+          "purity": "pure",
+          "commercialization": "cloudAccess",
+          "qubit_max": 64,
+          "qubit_type": "logical (high-fidelity)",
+          "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+          "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+          "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+          "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+          "market": {
+            "price": 63.64,
+            "high_52w": 82.09,
+            "low_52w": 26.59,
+            "pct_from_52w_high": 22.5,
+            "ret_1m": 49.1,
+            "ret_3m": 101.3,
+            "ret_6m": 55.2,
+            "ret_1y": null,
+            "volatility_annual": 98.9,
+            "market_cap_b": 23.75,
+            "pe_trailing": 163.17949,
+            "revenue_b": 0.19,
+            "sector": "Technology",
+            "industry": "Computer Hardware"
+          }
+        },
+        {
+          "ticker": "ARQQ",
+          "name": "Arqit Quantum",
+          "category": "pure",
+          "approach": "量子暗号通信 (QKD)",
+          "approach_short": "量子暗号",
+          "purity": "pure",
+          "commercialization": "pilot",
+          "qubit_max": null,
+          "qubit_type": "n/a (encryption-focused)",
+          "leader": "David Williams (CEO)",
+          "highlight": "量子暗号(QKD)に特化。量子計算ではなく「量子セキュリティ」。",
+          "risk": "業界全体が PQC (post-quantum cryptography) にシフト傾向。",
+          "thesis": "国防・金融機関の暗号アップグレード需要。",
+          "market": {
+            "price": 17.49,
+            "high_52w": 58.27,
+            "low_52w": 11.78,
+            "pct_from_52w_high": 70.0,
+            "ret_1m": 20.4,
+            "ret_3m": 6.7,
+            "ret_6m": -27.9,
+            "ret_1y": null,
+            "volatility_annual": 94.9,
+            "market_cap_b": 0.3,
+            "pe_trailing": null,
+            "revenue_b": 0.0,
+            "sector": "Technology",
+            "industry": "Software - Infrastructure"
+          }
+        },
+        {
+          "ticker": "QUBT",
+          "name": "Quantum Computing Inc.",
+          "category": "pure",
+          "approach": "フォトニック (Photonic)",
+          "approach_short": "光",
+          "purity": "pure",
+          "commercialization": "pilot",
+          "qubit_max": null,
+          "qubit_type": "photonic",
+          "leader": "William McGann (CEO)",
+          "highlight": "光量子方式。室温動作の可能性が魅力。",
+          "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
+          "thesis": "光方式が成功すれば low-cost で展開可能。",
+          "market": {
+            "price": 12.31,
+            "high_52w": 24.62,
+            "low_52w": 6.31,
+            "pct_from_52w_high": 50.0,
+            "ret_1m": 37.7,
+            "ret_3m": 51.8,
+            "ret_6m": 19.9,
+            "ret_1y": null,
+            "volatility_annual": 98.6,
+            "market_cap_b": 2.78,
+            "pe_trailing": null,
+            "revenue_b": 0.0,
+            "sector": "Technology",
+            "industry": "Computer Hardware"
+          }
+        }
+      ],
+      "bigtech": [
+        {
+          "ticker": "GOOG",
+          "name": "Alphabet (Google)",
+          "category": "bigtech",
+          "approach": "超伝導 (Superconducting)",
+          "approach_short": "超伝導",
+          "purity": "minor",
+          "commercialization": "researchOnly",
+          "qubit_max": 70,
+          "qubit_type": "physical, high coherence",
+          "leader": "Hartmut Neven (Quantum AI lead)",
+          "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+          "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+          "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+          "market": {
+            "price": 379.38,
+            "high_52w": 399.04,
+            "low_52w": 165.64,
+            "pct_from_52w_high": 4.9,
+            "ret_1m": 10.8,
+            "ret_3m": 22.1,
+            "ret_6m": 31.0,
+            "ret_1y": null,
+            "volatility_annual": 34.0,
+            "market_cap_b": 4596.36,
+            "pe_trailing": 28.894136,
+            "revenue_b": 422.5,
+            "sector": "Communication Services",
+            "industry": "Internet Content & Information"
+          }
+        },
+        {
+          "ticker": "IBM",
+          "name": "International Business Machines",
+          "category": "bigtech",
+          "approach": "超伝導 (Superconducting)",
+          "approach_short": "超伝導",
+          "purity": "minor",
+          "commercialization": "production",
+          "qubit_max": 1121,
+          "qubit_type": "physical",
+          "leader": "Arvind Krishna (CEO), Jay Gambetta (Quantum lead)",
+          "highlight": "Condor (1121 qubits) で量子優位性目標。 Quantum Network 顧客 280社+。",
+          "risk": "量子は IBM 売上の数% で、IBM 株は AI / Hybrid Cloud に左右される。",
+          "thesis": "量子分野の総合リーダー。安定配当付き量子エクスポージャー。",
+          "market": {
+            "price": 253.84,
+            "high_52w": 310.91,
+            "low_52w": 214.64,
+            "pct_from_52w_high": 18.4,
+            "ret_1m": 10.2,
+            "ret_3m": 11.5,
+            "ret_6m": -11.4,
+            "ret_1y": null,
+            "volatility_annual": 40.8,
+            "market_cap_b": 238.58,
+            "pe_trailing": 22.443853,
+            "revenue_b": 68.91,
+            "sector": "Technology",
+            "industry": "Information Technology Services"
+          }
+        },
+        {
+          "ticker": "NVDA",
+          "name": "NVIDIA",
+          "category": "bigtech",
+          "approach": "CUDA Quantum (Hybrid)",
+          "approach_short": "ハイブリッド",
+          "purity": "minor",
+          "commercialization": "production",
+          "qubit_max": null,
+          "qubit_type": "classical simulation of quantum",
+          "leader": "Jensen Huang (CEO), Tim Costa (Quantum lead)",
+          "highlight": "GPU で量子計算をシミュレート + 量子ハードと連携する CUDA-Q。ハードを作らない戦略。",
+          "risk": "NVDA 株は AI 半導体で量子寄与ほぼなし。",
+          "thesis": "量子と古典の橋渡し役 = いずれの方式が勝っても恩恵。",
+          "market": {
+            "price": 215.33,
+            "high_52w": 235.74,
+            "low_52w": 131.26,
+            "pct_from_52w_high": 8.7,
+            "ret_1m": 3.4,
+            "ret_3m": 11.7,
+            "ret_6m": 19.2,
+            "ret_1y": null,
+            "volatility_annual": 37.4,
+            "market_cap_b": 5215.51,
+            "pe_trailing": 33.026073,
+            "revenue_b": 253.49,
+            "sector": "Technology",
+            "industry": "Semiconductors"
+          }
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft",
+          "category": "bigtech",
+          "approach": "Topological (Majorana)",
+          "approach_short": "トポロジカル",
+          "purity": "minor",
+          "commercialization": "researchOnly",
+          "qubit_max": null,
+          "qubit_type": "topological (新方式)",
+          "leader": "Satya Nadella (CEO), Krysta Svore (Quantum lead)",
+          "highlight": "Azure Quantum で IonQ/Quantinuum と提携。独自方式 Majorana 1 (2025) で勝負。",
+          "risk": "MSFT 株は Azure + AI で量子寄与なし。",
+          "thesis": "Majorana が成功すれば誤り耐性で支配可能。",
+          "market": {
+            "price": 418.57,
+            "high_52w": 538.66,
+            "low_52w": 356.0,
+            "pct_from_52w_high": 22.3,
+            "ret_1m": -1.2,
+            "ret_3m": 7.8,
+            "ret_6m": -12.1,
+            "ret_1y": null,
+            "volatility_annual": 26.6,
+            "market_cap_b": 3109.32,
+            "pe_trailing": 24.90006,
+            "revenue_b": 318.27,
+            "sector": "Technology",
+            "industry": "Software - Infrastructure"
+          }
+        }
+      ],
+      "hybrid": [
+        {
+          "ticker": "HON",
+          "name": "Honeywell International",
+          "category": "hybrid",
+          "approach": "イオントラップ (via Quantinuum)",
+          "approach_short": "イオン",
+          "purity": "minor",
+          "commercialization": "cloudAccess",
+          "qubit_max": 56,
+          "qubit_type": "high-fidelity logical",
+          "leader": "Vimal Kapur (CEO), Quantinuum: Rajeeb Hazra (CEO)",
+          "highlight": "子会社 Quantinuum (Cambridge Quantum + Honeywell Quantum 統合) で世界トップクラス。",
+          "risk": "HON 全体は航空・産業オートメで量子比率小。",
+          "thesis": "Quantinuum IPO の可能性 (2025-2026 観測あり) でアップサイド。",
+          "market": {
+            "price": 227.92,
+            "high_52w": 246.68,
+            "low_52w": 186.19,
+            "pct_from_52w_high": 7.6,
+            "ret_1m": 7.5,
+            "ret_3m": -5.5,
+            "ret_6m": 22.4,
+            "ret_1y": null,
+            "volatility_annual": 25.2,
+            "market_cap_b": 144.42,
+            "pe_trailing": 36.350876,
+            "revenue_b": 37.66,
+            "sector": "Industrials",
+            "industry": "Conglomerates"
+          }
+        }
+      ]
+    },
+    "by_1y_return": [],
+    "by_commercialization": [
+      {
+        "ticker": "QBTS",
+        "name": "D-Wave Quantum Inc.",
+        "category": "pure",
+        "approach": "量子アニーリング (Quantum Annealing)",
+        "approach_short": "アニール",
+        "purity": "pure",
+        "commercialization": "production",
+        "qubit_max": 5000,
+        "qubit_type": "annealing qubits (different)",
+        "leader": "Alan Baratz (CEO)",
+        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+        "market": {
+          "price": 29.4,
+          "high_52w": 44.78,
+          "low_52w": 12.98,
+          "pct_from_52w_high": 34.3,
+          "ret_1m": 59.0,
+          "ret_3m": 57.6,
+          "ret_6m": 43.3,
+          "ret_1y": null,
+          "volatility_annual": 120.7,
+          "market_cap_b": 10.89,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "IBM",
+        "name": "International Business Machines",
+        "category": "bigtech",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "minor",
+        "commercialization": "production",
+        "qubit_max": 1121,
+        "qubit_type": "physical",
+        "leader": "Arvind Krishna (CEO), Jay Gambetta (Quantum lead)",
+        "highlight": "Condor (1121 qubits) で量子優位性目標。 Quantum Network 顧客 280社+。",
+        "risk": "量子は IBM 売上の数% で、IBM 株は AI / Hybrid Cloud に左右される。",
+        "thesis": "量子分野の総合リーダー。安定配当付き量子エクスポージャー。",
+        "market": {
+          "price": 253.84,
+          "high_52w": 310.91,
+          "low_52w": 214.64,
+          "pct_from_52w_high": 18.4,
+          "ret_1m": 10.2,
+          "ret_3m": 11.5,
+          "ret_6m": -11.4,
+          "ret_1y": null,
+          "volatility_annual": 40.8,
+          "market_cap_b": 238.58,
+          "pe_trailing": 22.443853,
+          "revenue_b": 68.91,
+          "sector": "Technology",
+          "industry": "Information Technology Services"
+        }
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "category": "bigtech",
+        "approach": "CUDA Quantum (Hybrid)",
+        "approach_short": "ハイブリッド",
+        "purity": "minor",
+        "commercialization": "production",
+        "qubit_max": null,
+        "qubit_type": "classical simulation of quantum",
+        "leader": "Jensen Huang (CEO), Tim Costa (Quantum lead)",
+        "highlight": "GPU で量子計算をシミュレート + 量子ハードと連携する CUDA-Q。ハードを作らない戦略。",
+        "risk": "NVDA 株は AI 半導体で量子寄与ほぼなし。",
+        "thesis": "量子と古典の橋渡し役 = いずれの方式が勝っても恩恵。",
+        "market": {
+          "price": 215.33,
+          "high_52w": 235.74,
+          "low_52w": 131.26,
+          "pct_from_52w_high": 8.7,
+          "ret_1m": 3.4,
+          "ret_3m": 11.7,
+          "ret_6m": 19.2,
+          "ret_1y": null,
+          "volatility_annual": 37.4,
+          "market_cap_b": 5215.51,
+          "pe_trailing": 33.026073,
+          "revenue_b": 253.49,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "RGTI",
+        "name": "Rigetti Computing",
+        "category": "pure",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 84,
+        "qubit_type": "physical",
+        "leader": "Subodh Kulkarni (CEO)",
+        "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
+        "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
+        "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
+        "market": {
+          "price": 26.42,
+          "high_52w": 56.34,
+          "low_52w": 10.79,
+          "pct_from_52w_high": 53.1,
+          "ret_1m": 59.1,
+          "ret_3m": 60.3,
+          "ret_6m": 15.9,
+          "ret_1y": null,
+          "volatility_annual": 109.6,
+          "market_cap_b": 8.78,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "IONQ",
+        "name": "IonQ, Inc.",
+        "category": "pure",
+        "approach": "イオントラップ (Trapped Ion)",
+        "approach_short": "イオン",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 64,
+        "qubit_type": "logical (high-fidelity)",
+        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "market": {
+          "price": 63.64,
+          "high_52w": 82.09,
+          "low_52w": 26.59,
+          "pct_from_52w_high": 22.5,
+          "ret_1m": 49.1,
+          "ret_3m": 101.3,
+          "ret_6m": 55.2,
+          "ret_1y": null,
+          "volatility_annual": 98.9,
+          "market_cap_b": 23.75,
+          "pe_trailing": 163.17949,
+          "revenue_b": 0.19,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      }
+    ],
+    "by_purity": [
+      {
+        "ticker": "QBTS",
+        "name": "D-Wave Quantum Inc.",
+        "category": "pure",
+        "approach": "量子アニーリング (Quantum Annealing)",
+        "approach_short": "アニール",
+        "purity": "pure",
+        "commercialization": "production",
+        "qubit_max": 5000,
+        "qubit_type": "annealing qubits (different)",
+        "leader": "Alan Baratz (CEO)",
+        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+        "market": {
+          "price": 29.4,
+          "high_52w": 44.78,
+          "low_52w": 12.98,
+          "pct_from_52w_high": 34.3,
+          "ret_1m": 59.0,
+          "ret_3m": 57.6,
+          "ret_6m": 43.3,
+          "ret_1y": null,
+          "volatility_annual": 120.7,
+          "market_cap_b": 10.89,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "RGTI",
+        "name": "Rigetti Computing",
+        "category": "pure",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 84,
+        "qubit_type": "physical",
+        "leader": "Subodh Kulkarni (CEO)",
+        "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
+        "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
+        "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
+        "market": {
+          "price": 26.42,
+          "high_52w": 56.34,
+          "low_52w": 10.79,
+          "pct_from_52w_high": 53.1,
+          "ret_1m": 59.1,
+          "ret_3m": 60.3,
+          "ret_6m": 15.9,
+          "ret_1y": null,
+          "volatility_annual": 109.6,
+          "market_cap_b": 8.78,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "IONQ",
+        "name": "IonQ, Inc.",
+        "category": "pure",
+        "approach": "イオントラップ (Trapped Ion)",
+        "approach_short": "イオン",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 64,
+        "qubit_type": "logical (high-fidelity)",
+        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "market": {
+          "price": 63.64,
+          "high_52w": 82.09,
+          "low_52w": 26.59,
+          "pct_from_52w_high": 22.5,
+          "ret_1m": 49.1,
+          "ret_3m": 101.3,
+          "ret_6m": 55.2,
+          "ret_1y": null,
+          "volatility_annual": 98.9,
+          "market_cap_b": 23.75,
+          "pe_trailing": 163.17949,
+          "revenue_b": 0.19,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "ARQQ",
+        "name": "Arqit Quantum",
+        "category": "pure",
+        "approach": "量子暗号通信 (QKD)",
+        "approach_short": "量子暗号",
+        "purity": "pure",
+        "commercialization": "pilot",
+        "qubit_max": null,
+        "qubit_type": "n/a (encryption-focused)",
+        "leader": "David Williams (CEO)",
+        "highlight": "量子暗号(QKD)に特化。量子計算ではなく「量子セキュリティ」。",
+        "risk": "業界全体が PQC (post-quantum cryptography) にシフト傾向。",
+        "thesis": "国防・金融機関の暗号アップグレード需要。",
+        "market": {
+          "price": 17.49,
+          "high_52w": 58.27,
+          "low_52w": 11.78,
+          "pct_from_52w_high": 70.0,
+          "ret_1m": 20.4,
+          "ret_3m": 6.7,
+          "ret_6m": -27.9,
+          "ret_1y": null,
+          "volatility_annual": 94.9,
+          "market_cap_b": 0.3,
+          "pe_trailing": null,
+          "revenue_b": 0.0,
+          "sector": "Technology",
+          "industry": "Software - Infrastructure"
+        }
+      },
+      {
+        "ticker": "QUBT",
+        "name": "Quantum Computing Inc.",
+        "category": "pure",
+        "approach": "フォトニック (Photonic)",
+        "approach_short": "光",
+        "purity": "pure",
+        "commercialization": "pilot",
+        "qubit_max": null,
+        "qubit_type": "photonic",
+        "leader": "William McGann (CEO)",
+        "highlight": "光量子方式。室温動作の可能性が魅力。",
+        "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
+        "thesis": "光方式が成功すれば low-cost で展開可能。",
+        "market": {
+          "price": 12.31,
+          "high_52w": 24.62,
+          "low_52w": 6.31,
+          "pct_from_52w_high": 50.0,
+          "ret_1m": 37.7,
+          "ret_3m": 51.8,
+          "ret_6m": 19.9,
+          "ret_1y": null,
+          "volatility_annual": 98.6,
+          "market_cap_b": 2.78,
+          "pe_trailing": null,
+          "revenue_b": 0.0,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "GOOG",
+        "name": "Alphabet (Google)",
+        "category": "bigtech",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "minor",
+        "commercialization": "researchOnly",
+        "qubit_max": 70,
+        "qubit_type": "physical, high coherence",
+        "leader": "Hartmut Neven (Quantum AI lead)",
+        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+        "market": {
+          "price": 379.38,
+          "high_52w": 399.04,
+          "low_52w": 165.64,
+          "pct_from_52w_high": 4.9,
+          "ret_1m": 10.8,
+          "ret_3m": 22.1,
+          "ret_6m": 31.0,
+          "ret_1y": null,
+          "volatility_annual": 34.0,
+          "market_cap_b": 4596.36,
+          "pe_trailing": 28.894136,
+          "revenue_b": 422.5,
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information"
+        }
+      },
+      {
+        "ticker": "IBM",
+        "name": "International Business Machines",
+        "category": "bigtech",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "minor",
+        "commercialization": "production",
+        "qubit_max": 1121,
+        "qubit_type": "physical",
+        "leader": "Arvind Krishna (CEO), Jay Gambetta (Quantum lead)",
+        "highlight": "Condor (1121 qubits) で量子優位性目標。 Quantum Network 顧客 280社+。",
+        "risk": "量子は IBM 売上の数% で、IBM 株は AI / Hybrid Cloud に左右される。",
+        "thesis": "量子分野の総合リーダー。安定配当付き量子エクスポージャー。",
+        "market": {
+          "price": 253.84,
+          "high_52w": 310.91,
+          "low_52w": 214.64,
+          "pct_from_52w_high": 18.4,
+          "ret_1m": 10.2,
+          "ret_3m": 11.5,
+          "ret_6m": -11.4,
+          "ret_1y": null,
+          "volatility_annual": 40.8,
+          "market_cap_b": 238.58,
+          "pe_trailing": 22.443853,
+          "revenue_b": 68.91,
+          "sector": "Technology",
+          "industry": "Information Technology Services"
+        }
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "category": "bigtech",
+        "approach": "CUDA Quantum (Hybrid)",
+        "approach_short": "ハイブリッド",
+        "purity": "minor",
+        "commercialization": "production",
+        "qubit_max": null,
+        "qubit_type": "classical simulation of quantum",
+        "leader": "Jensen Huang (CEO), Tim Costa (Quantum lead)",
+        "highlight": "GPU で量子計算をシミュレート + 量子ハードと連携する CUDA-Q。ハードを作らない戦略。",
+        "risk": "NVDA 株は AI 半導体で量子寄与ほぼなし。",
+        "thesis": "量子と古典の橋渡し役 = いずれの方式が勝っても恩恵。",
+        "market": {
+          "price": 215.33,
+          "high_52w": 235.74,
+          "low_52w": 131.26,
+          "pct_from_52w_high": 8.7,
+          "ret_1m": 3.4,
+          "ret_3m": 11.7,
+          "ret_6m": 19.2,
+          "ret_1y": null,
+          "volatility_annual": 37.4,
+          "market_cap_b": 5215.51,
+          "pe_trailing": 33.026073,
+          "revenue_b": 253.49,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "MSFT",
+        "name": "Microsoft",
+        "category": "bigtech",
+        "approach": "Topological (Majorana)",
+        "approach_short": "トポロジカル",
+        "purity": "minor",
+        "commercialization": "researchOnly",
+        "qubit_max": null,
+        "qubit_type": "topological (新方式)",
+        "leader": "Satya Nadella (CEO), Krysta Svore (Quantum lead)",
+        "highlight": "Azure Quantum で IonQ/Quantinuum と提携。独自方式 Majorana 1 (2025) で勝負。",
+        "risk": "MSFT 株は Azure + AI で量子寄与なし。",
+        "thesis": "Majorana が成功すれば誤り耐性で支配可能。",
+        "market": {
+          "price": 418.57,
+          "high_52w": 538.66,
+          "low_52w": 356.0,
+          "pct_from_52w_high": 22.3,
+          "ret_1m": -1.2,
+          "ret_3m": 7.8,
+          "ret_6m": -12.1,
+          "ret_1y": null,
+          "volatility_annual": 26.6,
+          "market_cap_b": 3109.32,
+          "pe_trailing": 24.90006,
+          "revenue_b": 318.27,
+          "sector": "Technology",
+          "industry": "Software - Infrastructure"
+        }
+      },
+      {
+        "ticker": "HON",
+        "name": "Honeywell International",
+        "category": "hybrid",
+        "approach": "イオントラップ (via Quantinuum)",
+        "approach_short": "イオン",
+        "purity": "minor",
+        "commercialization": "cloudAccess",
+        "qubit_max": 56,
+        "qubit_type": "high-fidelity logical",
+        "leader": "Vimal Kapur (CEO), Quantinuum: Rajeeb Hazra (CEO)",
+        "highlight": "子会社 Quantinuum (Cambridge Quantum + Honeywell Quantum 統合) で世界トップクラス。",
+        "risk": "HON 全体は航空・産業オートメで量子比率小。",
+        "thesis": "Quantinuum IPO の可能性 (2025-2026 観測あり) でアップサイド。",
+        "market": {
+          "price": 227.92,
+          "high_52w": 246.68,
+          "low_52w": 186.19,
+          "pct_from_52w_high": 7.6,
+          "ret_1m": 7.5,
+          "ret_3m": -5.5,
+          "ret_6m": 22.4,
+          "ret_1y": null,
+          "volatility_annual": 25.2,
+          "market_cap_b": 144.42,
+          "pe_trailing": 36.350876,
+          "revenue_b": 37.66,
+          "sector": "Industrials",
+          "industry": "Conglomerates"
+        }
+      }
+    ],
+    "summary": {
+      "total_tickers": 10,
+      "pure_count": 5,
+      "bigtech_count": 4,
+      "hybrid_count": 1
+    }
   }
 };
 
@@ -13362,6 +14523,9 @@ function render() {
 
   // Themes
   renderThemes(d);
+
+  // Quantum (量子コンピューター特集)
+  renderQuantum(d);
 
   // Market Pulse (P/C Ratio)
   renderMarketPulse(d);
@@ -13627,6 +14791,183 @@ function renderEarlyStage2(d) {
       </div>
     </div>`;
   }).join('');
+}
+
+// ============================================================
+// Quantum Special (量子コンピューター銘柄特集)
+// ============================================================
+function renderQuantum(d) {
+  const q = d.quantum;
+  const pureEl = document.getElementById('quantumPureList');
+  const bigEl = document.getElementById('quantumBigtechList');
+  const hybEl = document.getElementById('quantumHybridList');
+  const cmpEl = document.getElementById('quantumComparisonTable');
+  if (!pureEl) return;
+  if (!q || !q.all || !q.all.length) {
+    pureEl.innerHTML = '<div style="padding:14px;color:var(--text2);font-size:12px">データなし (quantum_special が実行されていません)</div>';
+    return;
+  }
+
+  const card = (e) => {
+    const m = e.market || {};
+    if (m.error) return `<div style="padding:8px;color:var(--text2);font-size:11px">${e.ticker}: ${m.error}</div>`;
+    const commLabel = {
+      production: { label: '商用化済', color: 'var(--green)' },
+      cloudAccess: { label: 'クラウド経由', color: 'var(--cyan)' },
+      pilot: { label: 'パイロット', color: 'var(--orange)' },
+      researchOnly: { label: '研究段階', color: 'var(--text2)' },
+    }[e.commercialization] || { label: '?', color: 'var(--text2)' };
+    const purityLabel = {
+      pure: { label: '純粋 100%', color: '#b366ff' },
+      hybrid: { label: 'ハイブリッド', color: 'var(--cyan)' },
+      minor: { label: '量子は数%', color: 'var(--text2)' },
+    }[e.purity] || { label: '?', color: 'var(--text2)' };
+    const ret1y = m.ret_1y != null ? m.ret_1y : null;
+    const ret1yColor = ret1y == null ? 'var(--text2)' : ret1y > 0 ? 'var(--green)' : 'var(--red)';
+    const vol = m.volatility_annual;
+    const volColor = vol == null ? 'var(--text2)' : vol > 80 ? 'var(--red)' : vol > 50 ? 'var(--orange)' : 'var(--green)';
+    const distHigh = m.pct_from_52w_high;
+    return `<div style="padding:12px;border-bottom:1px solid var(--border)" data-ticker="${e.ticker}">
+      <div style="display:flex;justify-content:space-between;align-items:start">
+        <div>
+          <div style="font-size:14px;font-weight:800">${e.ticker} <span style="font-size:11px;color:var(--text2);font-weight:400">${e.name}</span></div>
+          <div style="font-size:11px;color:var(--text2);margin-top:2px">${e.approach}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:16px;font-weight:800">$${m.price}</div>
+          ${m.market_cap_b ? `<div style="font-size:10px;color:var(--text2)">時価総額 $${m.market_cap_b}B</div>` : ''}
+        </div>
+      </div>
+      <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px">
+        <span style="padding:2px 8px;background:rgba(179,102,255,0.18);color:${purityLabel.color};border-radius:3px;font-size:11px;font-weight:700">${purityLabel.label}</span>
+        <span style="padding:2px 8px;background:rgba(${commLabel.color === 'var(--green)' ? '63,185,80' : '102,178,255'},0.15);color:${commLabel.color};border-radius:3px;font-size:11px;font-weight:700">${commLabel.label}</span>
+        ${e.qubit_max ? `<span style="padding:2px 8px;background:rgba(139,148,158,0.12);border-radius:3px;font-size:11px">${e.qubit_max} qubit</span>` : ''}
+      </div>
+      <div style="margin-top:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:11px">
+        <div><div style="color:var(--text2);font-size:10px">1M</div><div style="color:${ret1yColor};font-weight:700">${m.ret_1m != null ? (m.ret_1m >= 0 ? '+' : '') + m.ret_1m + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">3M</div><div style="color:${ret1yColor};font-weight:700">${m.ret_3m != null ? (m.ret_3m >= 0 ? '+' : '') + m.ret_3m + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">1Y</div><div style="color:${ret1yColor};font-weight:700">${ret1y != null ? (ret1y >= 0 ? '+' : '') + ret1y + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">ボラ</div><div style="color:${volColor};font-weight:700">${vol != null ? vol + '%' : '—'}</div></div>
+      </div>
+      ${distHigh != null ? `<div style="margin-top:4px;font-size:10px;color:var(--text2)">52w高値: $${m.high_52w} (現値は${(100 - distHigh).toFixed(0)}%, 安値: $${m.low_52w})</div>` : ''}
+      <div style="margin-top:8px;font-size:11px;line-height:1.5">
+        <div><strong>👤 リーダー:</strong> <span style="color:var(--text2)">${e.leader}</span></div>
+        <div style="margin-top:4px"><strong style="color:var(--green)">💡 強み:</strong> ${e.highlight}</div>
+        <div style="margin-top:4px"><strong style="color:var(--orange)">⚠️ リスク:</strong> ${e.risk}</div>
+        <div style="margin-top:4px"><strong style="color:var(--cyan)">🎯 投資論点:</strong> ${e.thesis}</div>
+      </div>
+    </div>`;
+  };
+
+  pureEl.innerHTML = q.by_category.pure.map(card).join('');
+  bigEl.innerHTML = q.by_category.bigtech.map(card).join('');
+  hybEl.innerHTML = q.by_category.hybrid.map(card).join('');
+
+  // 比較マトリクス
+  const rows = q.all.map(e => {
+    const m = e.market || {};
+    const purityEmoji = { pure: '💎', hybrid: '🔀', minor: '🏢' }[e.purity] || '';
+    return `<tr>
+      <td style="padding:6px;font-weight:700">${purityEmoji} ${e.ticker}</td>
+      <td style="padding:6px;font-size:11px">${e.approach_short}</td>
+      <td style="padding:6px;font-size:11px">${e.qubit_max || '—'}</td>
+      <td style="padding:6px;font-size:11px">${e.commercialization}</td>
+      <td style="padding:6px;font-size:11px;text-align:right">$${m.price || '—'}</td>
+      <td style="padding:6px;font-size:11px;text-align:right;color:${m.ret_1y > 0 ? 'var(--green)' : m.ret_1y < 0 ? 'var(--red)' : 'var(--text2)'}">${m.ret_1y != null ? (m.ret_1y >= 0 ? '+' : '') + m.ret_1y + '%' : '—'}</td>
+      <td style="padding:6px;font-size:11px;text-align:right">${m.volatility_annual != null ? m.volatility_annual + '%' : '—'}</td>
+      <td style="padding:6px;font-size:11px;text-align:right">${m.market_cap_b != null ? '$' + m.market_cap_b + 'B' : '—'}</td>
+    </tr>`;
+  }).join('');
+  cmpEl.innerHTML = `<table style="width:100%;font-size:11px;border-collapse:collapse">
+    <thead><tr style="background:rgba(255,255,255,0.04)">
+      <th style="padding:6px;text-align:left">銘柄</th>
+      <th style="padding:6px;text-align:left">方式</th>
+      <th style="padding:6px;text-align:left">qubit</th>
+      <th style="padding:6px;text-align:left">商用化</th>
+      <th style="padding:6px;text-align:right">価格</th>
+      <th style="padding:6px;text-align:right">1Y</th>
+      <th style="padding:6px;text-align:right">ボラ</th>
+      <th style="padding:6px;text-align:right">時価総額</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+
+  // クリック委譲 (詳細シートを開く)
+  ['quantumPureList', 'quantumBigtechList', 'quantumHybridList'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el || el._listenerAdded) return;
+    el._listenerAdded = true;
+    el.addEventListener('click', (e) => {
+      const target = e.target.closest('[data-ticker]');
+      if (target && target.dataset.ticker) {
+        const ticker = target.dataset.ticker;
+        // SCAN_DATA.details にあれば既存の詳細を開く、無ければアラートで案内
+        if ((SCAN_DATA.details || {})[ticker]) {
+          openDetail(ticker);
+        } else {
+          // details に無い銘柄: 簡易詳細を生成して表示
+          openQuantumOnlyDetail(ticker);
+        }
+      }
+    });
+  });
+}
+
+function openQuantumOnlyDetail(ticker) {
+  const q = SCAN_DATA.quantum || {};
+  const all = q.all || [];
+  const e = all.find(x => x.ticker === ticker);
+  if (!e) return;
+  const m = e.market || {};
+  const html = `
+    <div class="detail-header">
+      <div class="detail-close" onclick="closeDetail()">✕</div>
+      <div class="detail-ticker">${ticker}</div>
+      <div class="detail-name">${e.name} ・ 量子コンピューター</div>
+      <div class="detail-price">$${m.price || '—'}</div>
+      <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
+        <span class="detail-tag" style="background:rgba(179,102,255,0.18);color:#b366ff">${e.approach}</span>
+        <span class="detail-tag">${e.commercialization}</span>
+        <span class="detail-tag" style="background:rgba(63,185,80,0.12);color:var(--green)">純粋度: ${e.purity}</span>
+      </div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-title">🔮 量子事業の概要</div>
+      <div style="font-size:13px;line-height:1.7">${e.highlight}</div>
+      <div style="margin-top:8px;font-size:11px;color:var(--text2)">
+        <strong>方式:</strong> ${e.approach}<br>
+        <strong>最大 qubit 数:</strong> ${e.qubit_max || '非公表'} (${e.qubit_type})<br>
+        <strong>商用化:</strong> ${e.commercialization}<br>
+        <strong>リーダー:</strong> ${e.leader}
+      </div>
+    </div>
+    <div class="detail-section" style="background:rgba(255,165,0,0.05);border-color:rgba(255,165,0,0.3)">
+      <div class="detail-section-title" style="color:var(--orange)">⚠️ リスク</div>
+      <div style="font-size:13px;line-height:1.6">${e.risk}</div>
+    </div>
+    <div class="detail-section" style="background:rgba(102,178,255,0.05);border-color:rgba(102,178,255,0.3)">
+      <div class="detail-section-title" style="color:#66b2ff">🎯 投資論点</div>
+      <div style="font-size:13px;line-height:1.6">${e.thesis}</div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-title">📊 マーケットデータ</div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;font-size:12px">
+        <div><div style="color:var(--text2);font-size:10px">現値</div><div style="font-weight:700">$${m.price || '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">時価総額</div><div style="font-weight:700">${m.market_cap_b ? '$' + m.market_cap_b + 'B' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">52w 高値</div><div style="font-weight:700">$${m.high_52w || '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">52w 安値</div><div style="font-weight:700">$${m.low_52w || '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">1M リターン</div><div style="font-weight:700;color:${m.ret_1m > 0 ? 'var(--green)' : 'var(--red)'}">${m.ret_1m != null ? (m.ret_1m >= 0 ? '+' : '') + m.ret_1m + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">3M リターン</div><div style="font-weight:700;color:${m.ret_3m > 0 ? 'var(--green)' : 'var(--red)'}">${m.ret_3m != null ? (m.ret_3m >= 0 ? '+' : '') + m.ret_3m + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">1Y リターン</div><div style="font-weight:700;color:${m.ret_1y > 0 ? 'var(--green)' : 'var(--red)'}">${m.ret_1y != null ? (m.ret_1y >= 0 ? '+' : '') + m.ret_1y + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">年率ボラ</div><div style="font-weight:700;color:${m.volatility_annual > 80 ? 'var(--red)' : 'var(--orange)'}">${m.volatility_annual || '—'}%</div></div>
+      </div>
+    </div>
+  `;
+  document.getElementById('detailContent').innerHTML = html;
+  document.getElementById('detailOverlay').classList.add('show');
+  document.getElementById('detailSheet').classList.add('show');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('detailSheet').scrollTop = 0;
 }
 
 function renderLeaders(d) {
