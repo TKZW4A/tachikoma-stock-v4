@@ -940,6 +940,19 @@ body {
     </div>
   </div>
 
+  <!-- 🏆 総合ランキング Top 10 -->
+  <div class="card" id="compositeRankingCard" style="border:1px solid #ffd700;background:linear-gradient(135deg,rgba(255,215,0,0.10),rgba(63,185,80,0.04))">
+    <div class="card-title" style="color:#ffd700">
+      <span class="emoji">🏆</span> 総合ランキング Top 10
+      <span style="font-size:10px;color:var(--text2);font-weight:400;margin-left:8px">ファンダ40% + テクニカル25% + PIVOT20% + モメンタム15%</span>
+    </div>
+    <div id="compositeRankingList" style="margin-top:8px"></div>
+    <div style="font-size:10px;color:var(--text2);margin-top:8px;line-height:1.5">
+      💡 タップで詳細表示。Unified Score = 各軸 0-100 の重み付き加重平均。
+      <strong>70+ 強い買い候補 / 55-70 買い候補 / 40-55 ウォッチ / -40 見送り</strong>
+    </div>
+  </div>
+
   <!-- Market Pulse (Put/Call Ratio) -->
   <div class="pulse-card pulse-gray" id="pulseCard">
     <div class="card-title"><span class="emoji">⚖️</span> マーケットパルス（P/C Ratio）</div>
@@ -977,6 +990,29 @@ body {
 
 <!-- ===== Page MY: Watchlist + Holdings + Cash ===== -->
 <div class="page" id="page-my">
+  <!-- カスタム監視リスト (任意ティッカー追加) -->
+  <div class="my-section" style="border-color:rgba(255,205,87,0.3);background:linear-gradient(135deg,rgba(255,205,87,0.08),rgba(102,178,255,0.04))">
+    <div class="my-section-title">
+      <span>⭐</span> カスタム監視リスト
+      <span class="count" id="customWatchlistCount">0件</span>
+    </div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:10px">
+      ダッシュボードに無い任意のティッカーを追加できます。次回スキャンで本格分析されます。
+      <br>追加後すぐは外部リンク (Yahoo Finance / TradingView / StockAnalysis) で価格確認できます。
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:10px">
+      <input id="customTickerInput" placeholder="ティッカー (例: PLTR, NEM, BRK-B)" maxlength="10"
+             style="padding:8px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px;font-weight:700;text-transform:uppercase"
+             autocomplete="off" autocorrect="off">
+      <input id="customNoteInput" placeholder="メモ (任意、例: 決算注目)" maxlength="80"
+             style="padding:8px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:12px">
+      <button onclick="submitCustomTicker()" class="my-btn primary" style="padding:8px;background:rgba(255,205,87,0.18);color:#ffcd57;border:1px solid #ffcd57;border-radius:6px;font-size:13px;font-weight:700;cursor:pointer">
+        ➕ 監視リストに追加
+      </button>
+    </div>
+    <div id="customWatchlist" style="margin-top:6px"></div>
+  </div>
+
   <!-- Manual Run -->
   <div class="my-section" style="border-color:rgba(63,185,80,0.3);background:linear-gradient(135deg,rgba(63,185,80,0.06),rgba(88,166,255,0.04))">
     <div class="my-section-title">
@@ -2019,7 +2055,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 1.86,
         "left_right_volume": {
           "left_avg": 7728977.0,
-          "right_avg": 8771944.0,
+          "right_avg": 8772250.0,
           "ratio": 1.13,
           "healthy": false
         },
@@ -2141,7 +2177,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 10.65,
         "left_right_volume": {
           "left_avg": 3238915.0,
-          "right_avg": 2690721.0,
+          "right_avg": 2691692.0,
           "ratio": 0.83,
           "healthy": true
         },
@@ -2285,7 +2321,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 6.76,
         "left_right_volume": {
           "left_avg": 5976262.0,
-          "right_avg": 6677454.0,
+          "right_avg": 6677658.0,
           "ratio": 1.12,
           "healthy": false
         },
@@ -2387,7 +2423,7 @@ const SCAN_DATA = {
         "base_low": 27.06,
         "base_range_pct": 21.2,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.65,
+        "vol_tail_vs_base": 1.67,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -2414,8 +2450,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 7.56,
         "left_right_volume": {
           "left_avg": 5089131.0,
-          "right_avg": 7386638.0,
-          "ratio": 1.45,
+          "right_avg": 7457242.0,
+          "ratio": 1.47,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -2546,7 +2582,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 5.35,
         "left_right_volume": {
           "left_avg": 2592346.0,
-          "right_avg": 1892516.0,
+          "right_avg": 1894567.0,
           "ratio": 0.73,
           "healthy": true
         },
@@ -2648,7 +2684,7 @@ const SCAN_DATA = {
         "base_low": 51.26,
         "base_range_pct": 12.9,
         "vol_dryup": false,
-        "vol_tail_vs_base": 0.92,
+        "vol_tail_vs_base": 0.96,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -2682,8 +2718,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.0,
         "left_right_volume": {
           "left_avg": 14244823.0,
-          "right_avg": 11270670.0,
-          "ratio": 0.79,
+          "right_avg": 11547283.0,
+          "ratio": 0.81,
           "healthy": true
         },
         "left_right_healthy": true,
@@ -2784,7 +2820,7 @@ const SCAN_DATA = {
         "base_low": 63.43,
         "base_range_pct": 69.6,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.14,
+        "vol_tail_vs_base": 1.15,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -2811,8 +2847,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 13.29,
         "left_right_volume": {
           "left_avg": 17831408.0,
-          "right_avg": 24985252.0,
-          "ratio": 1.4,
+          "right_avg": 25062650.0,
+          "ratio": 1.41,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -2825,7 +2861,7 @@ const SCAN_DATA = {
         "breakout_date": "2026-05-22",
         "breakout_price": 105.86,
         "breakout_level": 97.64,
-        "breakout_volume_ratio": 1.72,
+        "breakout_volume_ratio": 1.77,
         "current_price": 105.86,
         "current_vs_breakout_pct": 8.41,
         "max_after_breakout": 105.86,
@@ -2963,7 +2999,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.0,
         "left_right_volume": {
           "left_avg": 20091815.0,
-          "right_avg": 34707003.0,
+          "right_avg": 34721525.0,
           "ratio": 1.73,
           "healthy": false
         },
@@ -3099,7 +3135,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.0,
         "left_right_volume": {
           "left_avg": 11102523.0,
-          "right_avg": 14316340.0,
+          "right_avg": 14333225.0,
           "ratio": 1.29,
           "healthy": false
         },
@@ -3211,7 +3247,7 @@ const SCAN_DATA = {
         "base_low": 324.27,
         "base_range_pct": 14.2,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.78,
+        "vol_tail_vs_base": 1.82,
         "above_21ma": false,
         "above_50ma": true,
         "above_200ma": false,
@@ -3231,8 +3267,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 5.49,
         "left_right_volume": {
           "left_avg": 1090431.0,
-          "right_avg": 1898282.0,
-          "ratio": 1.74,
+          "right_avg": 1935408.0,
+          "ratio": 1.77,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -3360,7 +3396,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 1.07,
         "left_right_volume": {
           "left_avg": 1980138.0,
-          "right_avg": 2612148.0,
+          "right_avg": 2612167.0,
           "ratio": 1.32,
           "healthy": false
         },
@@ -3472,7 +3508,7 @@ const SCAN_DATA = {
         "base_low": 110.1,
         "base_range_pct": 19.3,
         "vol_dryup": true,
-        "vol_tail_vs_base": 0.68,
+        "vol_tail_vs_base": 0.69,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -3506,7 +3542,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 3.07,
         "left_right_volume": {
           "left_avg": 3194738.0,
-          "right_avg": 1985375.0,
+          "right_avg": 1992708.0,
           "ratio": 0.62,
           "healthy": true
         },
@@ -3638,7 +3674,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 11.9,
         "left_right_volume": {
           "left_avg": 16837877.0,
-          "right_avg": 13501766.0,
+          "right_avg": 13503283.0,
           "ratio": 0.8,
           "healthy": true
         },
@@ -3767,7 +3803,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 13.04,
         "left_right_volume": {
           "left_avg": 58751577.0,
-          "right_avg": 55608897.0,
+          "right_avg": 55681867.0,
           "ratio": 0.95,
           "healthy": true
         },
@@ -3869,7 +3905,7 @@ const SCAN_DATA = {
         "base_low": 18.61,
         "base_range_pct": 31.6,
         "vol_dryup": false,
-        "vol_tail_vs_base": 0.88,
+        "vol_tail_vs_base": 0.89,
         "above_21ma": false,
         "above_50ma": false,
         "above_200ma": false,
@@ -3896,8 +3932,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 39.18,
         "left_right_volume": {
           "left_avg": 10777200.0,
-          "right_avg": 15952937.0,
-          "ratio": 1.48,
+          "right_avg": 16024083.0,
+          "ratio": 1.49,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -3998,7 +4034,7 @@ const SCAN_DATA = {
         "base_low": 24.41,
         "base_range_pct": 34.2,
         "vol_dryup": true,
-        "vol_tail_vs_base": 0.77,
+        "vol_tail_vs_base": 0.78,
         "above_21ma": false,
         "above_50ma": false,
         "above_200ma": false,
@@ -4018,7 +4054,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 29.06,
         "left_right_volume": {
           "left_avg": 1124900.0,
-          "right_avg": 1495540.0,
+          "right_avg": 1498008.0,
           "ratio": 1.33,
           "healthy": false
         },
@@ -4130,7 +4166,7 @@ const SCAN_DATA = {
         "base_low": 112.31,
         "base_range_pct": 41.7,
         "vol_dryup": true,
-        "vol_tail_vs_base": 0.68,
+        "vol_tail_vs_base": 0.71,
         "above_21ma": false,
         "above_50ma": true,
         "above_200ma": false,
@@ -4157,8 +4193,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 16.82,
         "left_right_volume": {
           "left_avg": 2159092.0,
-          "right_avg": 2258644.0,
-          "ratio": 1.05,
+          "right_avg": 2288133.0,
+          "ratio": 1.06,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -4252,7 +4288,7 @@ const SCAN_DATA = {
         "base_low": 156.16,
         "base_range_pct": 27.0,
         "vol_dryup": true,
-        "vol_tail_vs_base": 0.73,
+        "vol_tail_vs_base": 0.83,
         "above_21ma": false,
         "above_50ma": true,
         "above_200ma": false,
@@ -4272,8 +4308,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 14.57,
         "left_right_volume": {
           "left_avg": 78477.0,
-          "right_avg": 68753.0,
-          "ratio": 0.88,
+          "right_avg": 72300.0,
+          "ratio": 0.92,
           "healthy": true
         },
         "left_right_healthy": true,
@@ -4408,7 +4444,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 20.42,
         "left_right_volume": {
           "left_avg": 1751362.0,
-          "right_avg": 2339175.0,
+          "right_avg": 2340683.0,
           "ratio": 1.34,
           "healthy": false
         },
@@ -4520,7 +4556,7 @@ const SCAN_DATA = {
         "base_low": 53.57,
         "base_range_pct": 43.4,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.12,
+        "vol_tail_vs_base": 1.13,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -4540,8 +4576,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 11.27,
         "left_right_volume": {
           "left_avg": 6130131.0,
-          "right_avg": 7802163.0,
-          "ratio": 1.27,
+          "right_avg": 7846708.0,
+          "ratio": 1.28,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -4625,34 +4661,34 @@ const SCAN_DATA = {
         },
         "tt_metrics": {
           "price": 17.63,
-          "ma50": 18.72,
-          "ma150": 19.29,
-          "ma200": 18.4,
-          "pct_above_52w_low": 128.4,
-          "pct_to_52w_high": 0.6494,
+          "ma50": 18.7,
+          "ma150": 19.27,
+          "ma200": 18.38,
+          "pct_above_52w_low": 128.6,
+          "pct_to_52w_high": 0.6501,
           "rs_rating": 99.0
         },
         "rs_rating": 99.0,
         "early_stage_2": false,
-        "ma30w": 19.29,
+        "ma30w": 19.27,
         "ma30w_trend": "down",
         "ma30w_slope_pct": -0.71,
         "price_above_ma30w": false,
-        "pct_from_52w_high": 0.3506,
+        "pct_from_52w_high": 0.3499,
         "days_since_break": null,
         "break_volume_surge": false
       },
       "pivot_info": {
         "is_near_pivot": false,
-        "pivot_price": 20.4,
+        "pivot_price": 20.38,
         "current_price": 17.63,
-        "distance_pct": 15.71,
+        "distance_pct": 15.58,
         "base_length_days": 25,
         "weeks_in_base": 5,
-        "base_low": 16.55,
+        "base_low": 16.53,
         "base_range_pct": 23.3,
         "vol_dryup": false,
-        "vol_tail_vs_base": 0.89,
+        "vol_tail_vs_base": 0.91,
         "above_21ma": false,
         "above_50ma": false,
         "above_200ma": false,
@@ -4660,19 +4696,19 @@ const SCAN_DATA = {
         "vcp_contractions": [
           {
             "peak_idx": 31,
-            "peak_price": 21.47,
+            "peak_price": 21.45,
             "trough_idx": 46,
-            "trough_price": 17.0,
+            "trough_price": 16.98,
             "depth_pct": 20.8
           }
         ],
         "vcp_decreasing": false,
         "base_shape": "irregular",
         "base_shape_label": "不規則 (高値圏の踊り場 / 整理中)",
-        "pct_from_52w_high": 35.06,
+        "pct_from_52w_high": 34.99,
         "left_right_volume": {
           "left_avg": 17970423.0,
-          "right_avg": 20406411.0,
+          "right_avg": 20570758.0,
           "ratio": 1.14,
           "healthy": false
         },
@@ -4685,13 +4721,13 @@ const SCAN_DATA = {
         "status": "below_high",
         "breakout_date": null,
         "breakout_price": null,
-        "breakout_level": 20.4,
+        "breakout_level": 20.38,
         "breakout_volume_ratio": null,
         "current_price": 17.63,
-        "current_vs_breakout_pct": -15.71,
+        "current_vs_breakout_pct": -15.58,
         "max_after_breakout": null,
         "drawdown_from_peak_pct": null,
-        "interpretation": "📊 ブレイクアウト追跡: 20日高値 $20.40 から 15.7% 下。ブレイクアウト圏外。"
+        "interpretation": "📊 ブレイクアウト追跡: 20日高値 $20.38 から 15.6% 下。ブレイクアウト圏外。"
       }
     },
     "SYM": {
@@ -4794,7 +4830,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 38.11,
         "left_right_volume": {
           "left_avg": 1460708.0,
-          "right_avg": 2190518.0,
+          "right_avg": 2190667.0,
           "ratio": 1.5,
           "healthy": false
         },
@@ -4937,7 +4973,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 43.34,
         "left_right_volume": {
           "left_avg": 25226969.0,
-          "right_avg": 35445942.0,
+          "right_avg": 35449225.0,
           "ratio": 1.41,
           "healthy": false
         },
@@ -5059,7 +5095,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 55.65,
         "left_right_volume": {
           "left_avg": 1210869.0,
-          "right_avg": 1004112.0,
+          "right_avg": 1005458.0,
           "ratio": 0.83,
           "healthy": true
         },
@@ -5192,7 +5228,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 8.66,
         "left_right_volume": {
           "left_avg": 148823631.0,
-          "right_avg": 164875938.0,
+          "right_avg": 164993033.0,
           "ratio": 1.11,
           "healthy": false
         },
@@ -5325,7 +5361,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 3.57,
         "left_right_volume": {
           "left_avg": 13706969.0,
-          "right_avg": 13398956.0,
+          "right_avg": 13399883.0,
           "ratio": 0.98,
           "healthy": false
         },
@@ -5458,7 +5494,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 5.83,
         "left_right_volume": {
           "left_avg": 19119446.0,
-          "right_avg": 18547153.0,
+          "right_avg": 18550867.0,
           "ratio": 0.97,
           "healthy": false
         },
@@ -5570,7 +5606,7 @@ const SCAN_DATA = {
         "base_low": 23.42,
         "base_range_pct": 17.3,
         "vol_dryup": true,
-        "vol_tail_vs_base": 0.77,
+        "vol_tail_vs_base": 0.78,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -5597,8 +5633,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.0,
         "left_right_volume": {
           "left_avg": 345469.0,
-          "right_avg": 318201.0,
-          "ratio": 0.92,
+          "right_avg": 320600.0,
+          "ratio": 0.93,
           "healthy": true
         },
         "left_right_healthy": true,
@@ -5611,7 +5647,7 @@ const SCAN_DATA = {
         "breakout_date": "2026-05-22",
         "breakout_price": 27.44,
         "breakout_level": 27.24,
-        "breakout_volume_ratio": 0.76,
+        "breakout_volume_ratio": 0.86,
         "current_price": 27.44,
         "current_vs_breakout_pct": 0.73,
         "max_after_breakout": 27.44,
@@ -5709,7 +5745,7 @@ const SCAN_DATA = {
         "base_low": 16.53,
         "base_range_pct": 63.1,
         "vol_dryup": true,
-        "vol_tail_vs_base": 0.84,
+        "vol_tail_vs_base": 0.85,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -5736,8 +5772,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 3.79,
         "left_right_volume": {
           "left_avg": 82092.0,
-          "right_avg": 157985.0,
-          "ratio": 1.92,
+          "right_avg": 158625.0,
+          "ratio": 1.93,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -5848,7 +5884,7 @@ const SCAN_DATA = {
         "base_low": 12.99,
         "base_range_pct": 27.2,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.09,
+        "vol_tail_vs_base": 1.11,
         "above_21ma": false,
         "above_50ma": true,
         "above_200ma": false,
@@ -5868,8 +5904,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 11.72,
         "left_right_volume": {
           "left_avg": 364962.0,
-          "right_avg": 362087.0,
-          "ratio": 0.99,
+          "right_avg": 365742.0,
+          "ratio": 1.0,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -6007,7 +6043,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 4.03,
         "left_right_volume": {
           "left_avg": 1830708.0,
-          "right_avg": 1259741.0,
+          "right_avg": 1259742.0,
           "ratio": 0.69,
           "healthy": true
         },
@@ -6119,7 +6155,7 @@ const SCAN_DATA = {
         "base_low": 62.48,
         "base_range_pct": 19.3,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.21,
+        "vol_tail_vs_base": 1.24,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -6139,8 +6175,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 1.36,
         "left_right_volume": {
           "left_avg": 346538.0,
-          "right_avg": 397915.0,
-          "ratio": 1.15,
+          "right_avg": 405192.0,
+          "ratio": 1.17,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -6251,7 +6287,7 @@ const SCAN_DATA = {
         "base_low": 42.51,
         "base_range_pct": 14.4,
         "vol_dryup": false,
-        "vol_tail_vs_base": 0.92,
+        "vol_tail_vs_base": 0.94,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -6278,8 +6314,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 1.54,
         "left_right_volume": {
           "left_avg": 206954.0,
-          "right_avg": 211675.0,
-          "ratio": 1.02,
+          "right_avg": 214267.0,
+          "ratio": 1.04,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -6417,7 +6453,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 8.72,
         "left_right_volume": {
           "left_avg": 1160562.0,
-          "right_avg": 1855859.0,
+          "right_avg": 1855858.0,
           "ratio": 1.6,
           "healthy": false
         },
@@ -6549,7 +6585,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 5.39,
         "left_right_volume": {
           "left_avg": 244677.0,
-          "right_avg": 190493.0,
+          "right_avg": 190492.0,
           "ratio": 0.78,
           "healthy": true
         },
@@ -6661,7 +6697,7 @@ const SCAN_DATA = {
         "base_low": 25.55,
         "base_range_pct": 27.4,
         "vol_dryup": false,
-        "vol_tail_vs_base": 0.86,
+        "vol_tail_vs_base": 0.87,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -6695,7 +6731,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.06,
         "left_right_volume": {
           "left_avg": 2322992.0,
-          "right_avg": 3991719.0,
+          "right_avg": 4001850.0,
           "ratio": 1.72,
           "healthy": false
         },
@@ -6807,7 +6843,7 @@ const SCAN_DATA = {
         "base_low": 28.97,
         "base_range_pct": 7.8,
         "vol_dryup": false,
-        "vol_tail_vs_base": 0.95,
+        "vol_tail_vs_base": 0.96,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -6834,8 +6870,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.49,
         "left_right_volume": {
           "left_avg": 797546.0,
-          "right_avg": 785519.0,
-          "ratio": 0.98,
+          "right_avg": 787208.0,
+          "ratio": 0.99,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -6946,7 +6982,7 @@ const SCAN_DATA = {
         "base_low": 15.38,
         "base_range_pct": 30.2,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.21,
+        "vol_tail_vs_base": 1.24,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -6973,8 +7009,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 4.32,
         "left_right_volume": {
           "left_avg": 666315.0,
-          "right_avg": 802441.0,
-          "ratio": 1.2,
+          "right_avg": 811050.0,
+          "ratio": 1.22,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -7085,7 +7121,7 @@ const SCAN_DATA = {
         "base_low": 19.35,
         "base_range_pct": 5.9,
         "vol_dryup": true,
-        "vol_tail_vs_base": 0.8,
+        "vol_tail_vs_base": 0.83,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -7119,8 +7155,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.15,
         "left_right_volume": {
           "left_avg": 2249169.0,
-          "right_avg": 1672339.0,
-          "ratio": 0.74,
+          "right_avg": 1703875.0,
+          "ratio": 0.76,
           "healthy": true
         },
         "left_right_healthy": true,
@@ -7258,7 +7294,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 11.41,
         "left_right_volume": {
           "left_avg": 273015.0,
-          "right_avg": 288746.0,
+          "right_avg": 288758.0,
           "ratio": 1.06,
           "healthy": false
         },
@@ -7390,7 +7426,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.15,
         "left_right_volume": {
           "left_avg": 3391938.0,
-          "right_avg": 2300701.0,
+          "right_avg": 2309942.0,
           "ratio": 0.68,
           "healthy": true
         },
@@ -7501,8 +7537,8 @@ const SCAN_DATA = {
         "weeks_in_base": 5,
         "base_low": 53.17,
         "base_range_pct": 9.1,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.85,
+        "vol_dryup": false,
+        "vol_tail_vs_base": 0.87,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -7522,13 +7558,13 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.31,
         "left_right_volume": {
           "left_avg": 425746.0,
-          "right_avg": 382835.0,
-          "ratio": 0.9,
+          "right_avg": 387142.0,
+          "ratio": 0.91,
           "healthy": true
         },
         "left_right_healthy": true,
-        "buy_point_quality": 80,
-        "interpretation": "🎯 **最強 near PIVOT** (BP Quality 80/100): ピボット $58.00 まであと 1.3%。Flat Base (横ばい型) / VCP 1段 / 出来高乾燥 / 左右出来高健全。ブレイク直前の理想形。"
+        "buy_point_quality": 65,
+        "interpretation": "🎯 near PIVOT (BP Quality 65/100): ピボット $58.00 まであと 1.3%。Flat Base (横ばい型), VCP 1段。出来高乾燥なし(売り手残存可能性)"
       },
       "false_breakout_info": {
         "is_false_breakout": false,
@@ -7646,7 +7682,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 10.18,
         "left_right_volume": {
           "left_avg": 401738.0,
-          "right_avg": 383056.0,
+          "right_avg": 383058.0,
           "ratio": 0.95,
           "healthy": false
         },
@@ -7758,7 +7794,7 @@ const SCAN_DATA = {
         "base_low": 89.3,
         "base_range_pct": 15.9,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.2,
+        "vol_tail_vs_base": 1.22,
         "above_21ma": false,
         "above_50ma": true,
         "above_200ma": false,
@@ -7792,8 +7828,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 6.93,
         "left_right_volume": {
           "left_avg": 137146.0,
-          "right_avg": 219671.0,
-          "ratio": 1.6,
+          "right_avg": 221375.0,
+          "ratio": 1.61,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -7931,8 +7967,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 4.99,
         "left_right_volume": {
           "left_avg": 260131.0,
-          "right_avg": 435156.0,
-          "ratio": 1.67,
+          "right_avg": 436083.0,
+          "ratio": 1.68,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -8055,7 +8091,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.0,
         "left_right_volume": {
           "left_avg": 1397115.0,
-          "right_avg": 1195626.0,
+          "right_avg": 1196267.0,
           "ratio": 0.86,
           "healthy": true
         },
@@ -8167,7 +8203,7 @@ const SCAN_DATA = {
         "base_low": 29.41,
         "base_range_pct": 14.6,
         "vol_dryup": true,
-        "vol_tail_vs_base": 0.79,
+        "vol_tail_vs_base": 0.81,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -8194,8 +8230,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 3.78,
         "left_right_volume": {
           "left_avg": 519831.0,
-          "right_avg": 463097.0,
-          "ratio": 0.89,
+          "right_avg": 468050.0,
+          "ratio": 0.9,
           "healthy": true
         },
         "left_right_healthy": true,
@@ -8306,7 +8342,7 @@ const SCAN_DATA = {
         "base_low": 24.84,
         "base_range_pct": 14.3,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.03,
+        "vol_tail_vs_base": 1.04,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -8333,7 +8369,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.57,
         "left_right_volume": {
           "left_avg": 155800.0,
-          "right_avg": 168684.0,
+          "right_avg": 168775.0,
           "ratio": 1.08,
           "healthy": false
         },
@@ -8445,7 +8481,7 @@ const SCAN_DATA = {
         "base_low": 17.75,
         "base_range_pct": 15.1,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.35,
+        "vol_tail_vs_base": 1.36,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -8472,7 +8508,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.0,
         "left_right_volume": {
           "left_avg": 289592.0,
-          "right_avg": 451622.0,
+          "right_avg": 451875.0,
           "ratio": 1.56,
           "healthy": false
         },
@@ -8486,7 +8522,7 @@ const SCAN_DATA = {
         "breakout_date": "2026-05-22",
         "breakout_price": 20.36,
         "breakout_level": 20.25,
-        "breakout_volume_ratio": 1.39,
+        "breakout_volume_ratio": 1.4,
         "current_price": 20.36,
         "current_vs_breakout_pct": 0.54,
         "max_after_breakout": 20.36,
@@ -8584,7 +8620,7 @@ const SCAN_DATA = {
         "base_low": 15.51,
         "base_range_pct": 1.4,
         "vol_dryup": true,
-        "vol_tail_vs_base": 0.77,
+        "vol_tail_vs_base": 0.81,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -8596,8 +8632,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.0,
         "left_right_volume": {
           "left_avg": 3639585.0,
-          "right_avg": 3025186.0,
-          "ratio": 0.83,
+          "right_avg": 3086150.0,
+          "ratio": 0.85,
           "healthy": true
         },
         "left_right_healthy": true,
@@ -8735,7 +8771,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 6.89,
         "left_right_volume": {
           "left_avg": 381623.0,
-          "right_avg": 429651.0,
+          "right_avg": 430017.0,
           "ratio": 1.13,
           "healthy": false
         },
@@ -8847,7 +8883,7 @@ const SCAN_DATA = {
         "base_low": 120.02,
         "base_range_pct": 20.8,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.45,
+        "vol_tail_vs_base": 1.46,
         "above_21ma": false,
         "above_50ma": true,
         "above_200ma": false,
@@ -8867,8 +8903,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 9.21,
         "left_right_volume": {
           "left_avg": 628300.0,
-          "right_avg": 841082.0,
-          "ratio": 1.34,
+          "right_avg": 847908.0,
+          "ratio": 1.35,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -8979,7 +9015,7 @@ const SCAN_DATA = {
         "base_low": 19.67,
         "base_range_pct": 74.5,
         "vol_dryup": false,
-        "vol_tail_vs_base": 1.04,
+        "vol_tail_vs_base": 1.05,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -8999,8 +9035,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.0,
         "left_right_volume": {
           "left_avg": 2962892.0,
-          "right_avg": 3327522.0,
-          "ratio": 1.12,
+          "right_avg": 3338575.0,
+          "ratio": 1.13,
           "healthy": false
         },
         "left_right_healthy": false,
@@ -9145,7 +9181,7 @@ const SCAN_DATA = {
         "pct_from_52w_high": 0.0,
         "left_right_volume": {
           "left_avg": 314262.0,
-          "right_avg": 372164.0,
+          "right_avg": 372167.0,
           "ratio": 1.18,
           "healthy": false
         },
@@ -9284,8 +9320,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 6.43,
         "left_right_volume": {
           "left_avg": 574731.0,
-          "right_avg": 421097.0,
-          "ratio": 0.73,
+          "right_avg": 422767.0,
+          "ratio": 0.74,
           "healthy": true
         },
         "left_right_healthy": true,
@@ -9396,7 +9432,7 @@ const SCAN_DATA = {
         "base_low": 204.17,
         "base_range_pct": 15.4,
         "vol_dryup": true,
-        "vol_tail_vs_base": 0.68,
+        "vol_tail_vs_base": 0.69,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -9423,8 +9459,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 2.14,
         "left_right_volume": {
           "left_avg": 379438.0,
-          "right_avg": 297661.0,
-          "ratio": 0.78,
+          "right_avg": 298258.0,
+          "ratio": 0.79,
           "healthy": true
         },
         "left_right_healthy": true,
@@ -9535,7 +9571,7 @@ const SCAN_DATA = {
         "base_low": 82.47,
         "base_range_pct": 20.2,
         "vol_dryup": false,
-        "vol_tail_vs_base": 0.89,
+        "vol_tail_vs_base": 0.92,
         "above_21ma": true,
         "above_50ma": true,
         "above_200ma": false,
@@ -9569,8 +9605,8 @@ const SCAN_DATA = {
         "pct_from_52w_high": 6.32,
         "left_right_volume": {
           "left_avg": 697977.0,
-          "right_avg": 522024.0,
-          "ratio": 0.75,
+          "right_avg": 529608.0,
+          "ratio": 0.76,
           "healthy": true
         },
         "left_right_healthy": true,
@@ -9599,7 +9635,7 @@ const SCAN_DATA = {
       "position": null,
       "rating": "",
       "signal": "持ち株",
-      "price": 26.86,
+      "price": 26.85,
       "sepa_score": "",
       "rsi": "",
       "vcp": "",
@@ -9638,12 +9674,12 @@ const SCAN_DATA = {
           "c8_above_50ma": false
         },
         "tt_metrics": {
-          "price": 26.86,
+          "price": 26.85,
           "ma50": 27.44,
           "ma150": 20.27,
           "ma200": 19.13,
           "pct_above_52w_low": 130.2,
-          "pct_to_52w_high": 0.7987,
+          "pct_to_52w_high": 0.7984,
           "rs_rating": 99.0
         },
         "rs_rating": 99.0,
@@ -9652,15 +9688,15 @@ const SCAN_DATA = {
         "ma30w_trend": "up",
         "ma30w_slope_pct": 9.86,
         "price_above_ma30w": true,
-        "pct_from_52w_high": 0.2013,
+        "pct_from_52w_high": 0.2016,
         "days_since_break": null,
         "break_volume_surge": false
       },
       "pivot_info": {
         "is_near_pivot": false,
         "pivot_price": 34.34,
-        "current_price": 26.86,
-        "distance_pct": 27.85,
+        "current_price": 26.85,
+        "distance_pct": 27.9,
         "base_length_days": 25,
         "weeks_in_base": 5,
         "base_low": 25.71,
@@ -9690,10 +9726,10 @@ const SCAN_DATA = {
         "vcp_decreasing": false,
         "base_shape": "saucer",
         "base_shape_label": "Saucer (浅い U 字型)",
-        "pct_from_52w_high": 20.13,
+        "pct_from_52w_high": 20.16,
         "left_right_volume": {
           "left_avg": 1934515.0,
-          "right_avg": 2378216.0,
+          "right_avg": 2378171.0,
           "ratio": 1.23,
           "healthy": false
         },
@@ -9708,11 +9744,11 @@ const SCAN_DATA = {
         "breakout_price": 33.63,
         "breakout_level": 33.38,
         "breakout_volume_ratio": 3.27,
-        "current_price": 26.86,
-        "current_vs_breakout_pct": -19.54,
+        "current_price": 26.85,
+        "current_vs_breakout_pct": -19.57,
         "max_after_breakout": 33.63,
-        "drawdown_from_peak_pct": 20.13,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-05-04 に $33.38 を 突破するも、現在 $26.86 はブレイク水準を **19.5% 下回る**。高値 $33.63 から 20.1% 下落。出来高は充分だった = 撤退推奨。"
+        "drawdown_from_peak_pct": 20.16,
+        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-05-04 に $33.38 を 突破するも、現在 $26.85 はブレイク水準を **19.6% 下回る**。高値 $33.63 から 20.2% 下落。出来高は充分だった = 撤退推奨。"
       }
     }
   },
@@ -13289,32 +13325,32 @@ const SCAN_DATA = {
   "quantum": {
     "all": [
       {
-        "ticker": "QBTS",
-        "name": "D-Wave Quantum Inc.",
+        "ticker": "QUBT",
+        "name": "Quantum Computing Inc.",
         "category": "pure",
-        "approach": "量子アニーリング (Quantum Annealing)",
-        "approach_short": "アニール",
+        "approach": "フォトニック (Photonic)",
+        "approach_short": "光",
         "purity": "pure",
-        "commercialization": "production",
-        "qubit_max": 5000,
-        "qubit_type": "annealing qubits (different)",
-        "leader": "Alan Baratz (CEO)",
-        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
-        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
-        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+        "commercialization": "pilot",
+        "qubit_max": null,
+        "qubit_type": "photonic",
+        "leader": "William McGann (CEO)",
+        "highlight": "光量子方式。室温動作の可能性が魅力。",
+        "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
+        "thesis": "光方式が成功すれば low-cost で展開可能。",
         "market": {
-          "price": 29.4,
-          "high_52w": 44.78,
-          "low_52w": 12.98,
-          "pct_from_52w_high": 34.3,
-          "ret_1m": 59.0,
-          "ret_3m": 57.6,
-          "ret_6m": 43.3,
+          "price": 12.31,
+          "high_52w": 24.62,
+          "low_52w": 6.31,
+          "pct_from_52w_high": 50.0,
+          "ret_1m": 37.7,
+          "ret_3m": 51.8,
+          "ret_6m": 19.9,
           "ret_1y": null,
-          "volatility_annual": 120.7,
-          "market_cap_b": 10.89,
+          "volatility_annual": 98.6,
+          "market_cap_b": 2.78,
           "pe_trailing": null,
-          "revenue_b": 0.01,
+          "revenue_b": 0.0,
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
@@ -13377,6 +13413,37 @@ const SCAN_DATA = {
           "market_cap_b": 23.75,
           "pe_trailing": 163.17949,
           "revenue_b": 0.19,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "QBTS",
+        "name": "D-Wave Quantum Inc.",
+        "category": "pure",
+        "approach": "量子アニーリング (Quantum Annealing)",
+        "approach_short": "アニール",
+        "purity": "pure",
+        "commercialization": "production",
+        "qubit_max": 5000,
+        "qubit_type": "annealing qubits (different)",
+        "leader": "Alan Baratz (CEO)",
+        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+        "market": {
+          "price": 29.4,
+          "high_52w": 44.78,
+          "low_52w": 12.98,
+          "pct_from_52w_high": 34.3,
+          "ret_1m": 59.0,
+          "ret_3m": 57.6,
+          "ret_6m": 43.3,
+          "ret_1y": null,
+          "volatility_annual": 120.7,
+          "market_cap_b": 10.89,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
@@ -13468,7 +13535,7 @@ const SCAN_DATA = {
           "ret_1y": null,
           "volatility_annual": 40.8,
           "market_cap_b": 238.58,
-          "pe_trailing": 22.443853,
+          "pe_trailing": 22.463717,
           "revenue_b": 68.91,
           "sector": "Technology",
           "industry": "Information Technology Services"
@@ -13530,7 +13597,7 @@ const SCAN_DATA = {
           "ret_1y": null,
           "volatility_annual": 26.6,
           "market_cap_b": 3109.32,
-          "pe_trailing": 24.90006,
+          "pe_trailing": 24.944576,
           "revenue_b": 318.27,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
@@ -13566,68 +13633,37 @@ const SCAN_DATA = {
           "sector": "Industrials",
           "industry": "Conglomerates"
         }
-      },
-      {
-        "ticker": "QUBT",
-        "name": "Quantum Computing Inc.",
-        "category": "pure",
-        "approach": "フォトニック (Photonic)",
-        "approach_short": "光",
-        "purity": "pure",
-        "commercialization": "pilot",
-        "qubit_max": null,
-        "qubit_type": "photonic",
-        "leader": "William McGann (CEO)",
-        "highlight": "光量子方式。室温動作の可能性が魅力。",
-        "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
-        "thesis": "光方式が成功すれば low-cost で展開可能。",
-        "market": {
-          "price": 12.31,
-          "high_52w": 24.62,
-          "low_52w": 6.31,
-          "pct_from_52w_high": 50.0,
-          "ret_1m": 37.7,
-          "ret_3m": 51.8,
-          "ret_6m": 19.9,
-          "ret_1y": null,
-          "volatility_annual": 98.6,
-          "market_cap_b": 2.78,
-          "pe_trailing": null,
-          "revenue_b": 0.0,
-          "sector": "Technology",
-          "industry": "Computer Hardware"
-        }
       }
     ],
     "by_category": {
       "pure": [
         {
-          "ticker": "QBTS",
-          "name": "D-Wave Quantum Inc.",
+          "ticker": "QUBT",
+          "name": "Quantum Computing Inc.",
           "category": "pure",
-          "approach": "量子アニーリング (Quantum Annealing)",
-          "approach_short": "アニール",
+          "approach": "フォトニック (Photonic)",
+          "approach_short": "光",
           "purity": "pure",
-          "commercialization": "production",
-          "qubit_max": 5000,
-          "qubit_type": "annealing qubits (different)",
-          "leader": "Alan Baratz (CEO)",
-          "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
-          "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
-          "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+          "commercialization": "pilot",
+          "qubit_max": null,
+          "qubit_type": "photonic",
+          "leader": "William McGann (CEO)",
+          "highlight": "光量子方式。室温動作の可能性が魅力。",
+          "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
+          "thesis": "光方式が成功すれば low-cost で展開可能。",
           "market": {
-            "price": 29.4,
-            "high_52w": 44.78,
-            "low_52w": 12.98,
-            "pct_from_52w_high": 34.3,
-            "ret_1m": 59.0,
-            "ret_3m": 57.6,
-            "ret_6m": 43.3,
+            "price": 12.31,
+            "high_52w": 24.62,
+            "low_52w": 6.31,
+            "pct_from_52w_high": 50.0,
+            "ret_1m": 37.7,
+            "ret_3m": 51.8,
+            "ret_6m": 19.9,
             "ret_1y": null,
-            "volatility_annual": 120.7,
-            "market_cap_b": 10.89,
+            "volatility_annual": 98.6,
+            "market_cap_b": 2.78,
             "pe_trailing": null,
-            "revenue_b": 0.01,
+            "revenue_b": 0.0,
             "sector": "Technology",
             "industry": "Computer Hardware"
           }
@@ -13695,6 +13731,37 @@ const SCAN_DATA = {
           }
         },
         {
+          "ticker": "QBTS",
+          "name": "D-Wave Quantum Inc.",
+          "category": "pure",
+          "approach": "量子アニーリング (Quantum Annealing)",
+          "approach_short": "アニール",
+          "purity": "pure",
+          "commercialization": "production",
+          "qubit_max": 5000,
+          "qubit_type": "annealing qubits (different)",
+          "leader": "Alan Baratz (CEO)",
+          "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+          "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+          "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+          "market": {
+            "price": 29.4,
+            "high_52w": 44.78,
+            "low_52w": 12.98,
+            "pct_from_52w_high": 34.3,
+            "ret_1m": 59.0,
+            "ret_3m": 57.6,
+            "ret_6m": 43.3,
+            "ret_1y": null,
+            "volatility_annual": 120.7,
+            "market_cap_b": 10.89,
+            "pe_trailing": null,
+            "revenue_b": 0.01,
+            "sector": "Technology",
+            "industry": "Computer Hardware"
+          }
+        },
+        {
           "ticker": "ARQQ",
           "name": "Arqit Quantum",
           "category": "pure",
@@ -13723,37 +13790,6 @@ const SCAN_DATA = {
             "revenue_b": 0.0,
             "sector": "Technology",
             "industry": "Software - Infrastructure"
-          }
-        },
-        {
-          "ticker": "QUBT",
-          "name": "Quantum Computing Inc.",
-          "category": "pure",
-          "approach": "フォトニック (Photonic)",
-          "approach_short": "光",
-          "purity": "pure",
-          "commercialization": "pilot",
-          "qubit_max": null,
-          "qubit_type": "photonic",
-          "leader": "William McGann (CEO)",
-          "highlight": "光量子方式。室温動作の可能性が魅力。",
-          "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
-          "thesis": "光方式が成功すれば low-cost で展開可能。",
-          "market": {
-            "price": 12.31,
-            "high_52w": 24.62,
-            "low_52w": 6.31,
-            "pct_from_52w_high": 50.0,
-            "ret_1m": 37.7,
-            "ret_3m": 51.8,
-            "ret_6m": 19.9,
-            "ret_1y": null,
-            "volatility_annual": 98.6,
-            "market_cap_b": 2.78,
-            "pe_trailing": null,
-            "revenue_b": 0.0,
-            "sector": "Technology",
-            "industry": "Computer Hardware"
           }
         }
       ],
@@ -13814,7 +13850,7 @@ const SCAN_DATA = {
             "ret_1y": null,
             "volatility_annual": 40.8,
             "market_cap_b": 238.58,
-            "pe_trailing": 22.443853,
+            "pe_trailing": 22.463717,
             "revenue_b": 68.91,
             "sector": "Technology",
             "industry": "Information Technology Services"
@@ -13876,7 +13912,7 @@ const SCAN_DATA = {
             "ret_1y": null,
             "volatility_annual": 26.6,
             "market_cap_b": 3109.32,
-            "pe_trailing": 24.90006,
+            "pe_trailing": 24.944576,
             "revenue_b": 318.27,
             "sector": "Technology",
             "industry": "Software - Infrastructure"
@@ -13975,7 +14011,7 @@ const SCAN_DATA = {
           "ret_1y": null,
           "volatility_annual": 40.8,
           "market_cap_b": 238.58,
-          "pe_trailing": 22.443853,
+          "pe_trailing": 22.463717,
           "revenue_b": 68.91,
           "sector": "Technology",
           "industry": "Information Technology Services"
@@ -14077,32 +14113,32 @@ const SCAN_DATA = {
     ],
     "by_purity": [
       {
-        "ticker": "QBTS",
-        "name": "D-Wave Quantum Inc.",
+        "ticker": "QUBT",
+        "name": "Quantum Computing Inc.",
         "category": "pure",
-        "approach": "量子アニーリング (Quantum Annealing)",
-        "approach_short": "アニール",
+        "approach": "フォトニック (Photonic)",
+        "approach_short": "光",
         "purity": "pure",
-        "commercialization": "production",
-        "qubit_max": 5000,
-        "qubit_type": "annealing qubits (different)",
-        "leader": "Alan Baratz (CEO)",
-        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
-        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
-        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+        "commercialization": "pilot",
+        "qubit_max": null,
+        "qubit_type": "photonic",
+        "leader": "William McGann (CEO)",
+        "highlight": "光量子方式。室温動作の可能性が魅力。",
+        "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
+        "thesis": "光方式が成功すれば low-cost で展開可能。",
         "market": {
-          "price": 29.4,
-          "high_52w": 44.78,
-          "low_52w": 12.98,
-          "pct_from_52w_high": 34.3,
-          "ret_1m": 59.0,
-          "ret_3m": 57.6,
-          "ret_6m": 43.3,
+          "price": 12.31,
+          "high_52w": 24.62,
+          "low_52w": 6.31,
+          "pct_from_52w_high": 50.0,
+          "ret_1m": 37.7,
+          "ret_3m": 51.8,
+          "ret_6m": 19.9,
           "ret_1y": null,
-          "volatility_annual": 120.7,
-          "market_cap_b": 10.89,
+          "volatility_annual": 98.6,
+          "market_cap_b": 2.78,
           "pe_trailing": null,
-          "revenue_b": 0.01,
+          "revenue_b": 0.0,
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
@@ -14170,6 +14206,37 @@ const SCAN_DATA = {
         }
       },
       {
+        "ticker": "QBTS",
+        "name": "D-Wave Quantum Inc.",
+        "category": "pure",
+        "approach": "量子アニーリング (Quantum Annealing)",
+        "approach_short": "アニール",
+        "purity": "pure",
+        "commercialization": "production",
+        "qubit_max": 5000,
+        "qubit_type": "annealing qubits (different)",
+        "leader": "Alan Baratz (CEO)",
+        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+        "market": {
+          "price": 29.4,
+          "high_52w": 44.78,
+          "low_52w": 12.98,
+          "pct_from_52w_high": 34.3,
+          "ret_1m": 59.0,
+          "ret_3m": 57.6,
+          "ret_6m": 43.3,
+          "ret_1y": null,
+          "volatility_annual": 120.7,
+          "market_cap_b": 10.89,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
         "ticker": "ARQQ",
         "name": "Arqit Quantum",
         "category": "pure",
@@ -14198,37 +14265,6 @@ const SCAN_DATA = {
           "revenue_b": 0.0,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
-        }
-      },
-      {
-        "ticker": "QUBT",
-        "name": "Quantum Computing Inc.",
-        "category": "pure",
-        "approach": "フォトニック (Photonic)",
-        "approach_short": "光",
-        "purity": "pure",
-        "commercialization": "pilot",
-        "qubit_max": null,
-        "qubit_type": "photonic",
-        "leader": "William McGann (CEO)",
-        "highlight": "光量子方式。室温動作の可能性が魅力。",
-        "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
-        "thesis": "光方式が成功すれば low-cost で展開可能。",
-        "market": {
-          "price": 12.31,
-          "high_52w": 24.62,
-          "low_52w": 6.31,
-          "pct_from_52w_high": 50.0,
-          "ret_1m": 37.7,
-          "ret_3m": 51.8,
-          "ret_6m": 19.9,
-          "ret_1y": null,
-          "volatility_annual": 98.6,
-          "market_cap_b": 2.78,
-          "pe_trailing": null,
-          "revenue_b": 0.0,
-          "sector": "Technology",
-          "industry": "Computer Hardware"
         }
       },
       {
@@ -14287,7 +14323,7 @@ const SCAN_DATA = {
           "ret_1y": null,
           "volatility_annual": 40.8,
           "market_cap_b": 238.58,
-          "pe_trailing": 22.443853,
+          "pe_trailing": 22.463717,
           "revenue_b": 68.91,
           "sector": "Technology",
           "industry": "Information Technology Services"
@@ -14349,7 +14385,7 @@ const SCAN_DATA = {
           "ret_1y": null,
           "volatility_annual": 26.6,
           "market_cap_b": 3109.32,
-          "pe_trailing": 24.90006,
+          "pe_trailing": 24.944576,
           "revenue_b": 318.27,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
@@ -14393,7 +14429,409 @@ const SCAN_DATA = {
       "bigtech_count": 4,
       "hybrid_count": 1
     }
-  }
+  },
+  "composite_ranking": [
+    {
+      "ticker": "LUNR",
+      "name": "Intuitive Machines",
+      "price": 38.2599983215332,
+      "signal": "買いシグナル",
+      "unified_score": 50.3,
+      "fund_score": 5,
+      "tech_score": 70,
+      "pivot_score": 79,
+      "momentum_score": 100,
+      "sector": "宇宙探査",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 69,
+      "fbo_status": "healthy_breakout"
+    },
+    {
+      "ticker": "ASTS",
+      "name": "AST SpaceMobile",
+      "price": 105.86000061035156,
+      "signal": "買いシグナル",
+      "unified_score": 49.9,
+      "fund_score": 5,
+      "tech_score": 80,
+      "pivot_score": 69,
+      "momentum_score": 94.0,
+      "sector": "宇宙通信",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 59,
+      "fbo_status": "healthy_breakout"
+    },
+    {
+      "ticker": "ROKU",
+      "name": "Roku",
+      "price": 125.55000305175781,
+      "signal": "買いシグナル",
+      "unified_score": 48.4,
+      "fund_score": 10,
+      "tech_score": 70,
+      "pivot_score": 65,
+      "momentum_score": 92.4,
+      "sector": "テック",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 65,
+      "fbo_status": "post_breakout"
+    },
+    {
+      "ticker": "TVTX",
+      "name": "Travere Therapeutics",
+      "price": 44.43000030517578,
+      "signal": "買いシグナル",
+      "unified_score": 48.1,
+      "fund_score": 5,
+      "tech_score": 80,
+      "pivot_score": 60,
+      "momentum_score": 94.3,
+      "sector": "バイオテック",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 60,
+      "fbo_status": "post_breakout"
+    },
+    {
+      "ticker": "RKLB",
+      "name": "Rocket Lab",
+      "price": 135.75999450683594,
+      "signal": "買いシグナル",
+      "unified_score": 47.4,
+      "fund_score": 5,
+      "tech_score": 80,
+      "pivot_score": 52,
+      "momentum_score": 100,
+      "sector": "宇宙打上",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 42,
+      "fbo_status": "healthy_breakout"
+    },
+    {
+      "ticker": "NVT",
+      "name": "nVent Electric",
+      "price": 164.66000366210938,
+      "signal": "買いシグナル",
+      "unified_score": 44.5,
+      "fund_score": 25,
+      "tech_score": 70,
+      "pivot_score": 10,
+      "momentum_score": 100,
+      "sector": "電力インフラ",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 40,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "COHR",
+      "name": "Coherent Corp",
+      "price": 377.57000732421875,
+      "signal": "買いシグナル",
+      "unified_score": 44.3,
+      "fund_score": 16,
+      "tech_score": 70,
+      "pivot_score": 27,
+      "momentum_score": 100,
+      "sector": "光学・レーザー",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 57,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "SLB",
+      "name": "Schlumberger",
+      "price": 57.279998779296875,
+      "signal": "買いシグナル",
+      "unified_score": 44.1,
+      "fund_score": 5,
+      "tech_score": 70,
+      "pivot_score": 77,
+      "momentum_score": 61.3,
+      "sector": "エネルギー",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 77,
+      "fbo_status": "near_high"
+    },
+    {
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan",
+      "price": 61.9900016784668,
+      "signal": "買いシグナル",
+      "unified_score": 43.6,
+      "fund_score": 22,
+      "tech_score": 70,
+      "pivot_score": 50,
+      "momentum_score": 48.8,
+      "sector": "銅",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 50,
+      "fbo_status": "below_high"
+    },
+    {
+      "ticker": "ASX",
+      "name": "ASE Technology",
+      "price": 34.810001373291016,
+      "signal": "買いシグナル",
+      "unified_score": 40.3,
+      "fund_score": 5,
+      "tech_score": 70,
+      "pivot_score": 35,
+      "momentum_score": 92.0,
+      "sector": "半導体パッケージ",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 35,
+      "fbo_status": "post_breakout"
+    },
+    {
+      "ticker": "ROIV",
+      "name": "Roivant Sciences",
+      "price": 29.959999084472656,
+      "signal": "買いシグナル",
+      "unified_score": 36.4,
+      "fund_score": 5,
+      "tech_score": 70,
+      "pivot_score": 27,
+      "momentum_score": 76.9,
+      "sector": "バイオテック",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 42,
+      "fbo_status": "stalling"
+    },
+    {
+      "ticker": "AEHR",
+      "name": "Aehr Test Systems",
+      "price": 95.0199966430664,
+      "signal": "買いシグナル",
+      "unified_score": 36.1,
+      "fund_score": 5,
+      "tech_score": 70,
+      "pivot_score": 32,
+      "momentum_score": 67.7,
+      "sector": "半導体テスト",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 62,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "KEYS",
+      "name": "Keysight Technologies",
+      "price": 346.55999755859375,
+      "signal": "買いシグナル",
+      "unified_score": 32.4,
+      "fund_score": 19,
+      "tech_score": 60,
+      "pivot_score": 5,
+      "momentum_score": 58.7,
+      "sector": "半導体・計測",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 35,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "FORM",
+      "name": "FormFactor",
+      "price": 128.99000549316406,
+      "signal": "ウォッチ",
+      "unified_score": 32.2,
+      "fund_score": 11,
+      "tech_score": 53,
+      "pivot_score": 45,
+      "momentum_score": 36.9,
+      "sector": "半導体",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 45,
+      "fbo_status": "below_high"
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla",
+      "price": 426.010009765625,
+      "signal": "買いシグナル",
+      "unified_score": 26.9,
+      "fund_score": 5,
+      "tech_score": 30,
+      "pivot_score": 25,
+      "momentum_score": 82.4,
+      "sector": "EV・自動運転",
+      "stage": 3,
+      "tt_pass": false,
+      "pivot_bpq": 55,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "ATEYY",
+      "name": "Advantest (ADR)",
+      "price": 169.42999267578125,
+      "signal": "ウォッチ",
+      "unified_score": 24.3,
+      "fund_score": 3,
+      "tech_score": 63,
+      "pivot_score": 20,
+      "momentum_score": 22.5,
+      "sector": "半導体テスト",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 50,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "PATH",
+      "name": "UiPath",
+      "price": 10.930000305175781,
+      "signal": "見送り",
+      "unified_score": 22.3,
+      "fund_score": 0,
+      "tech_score": 20,
+      "pivot_score": 35,
+      "momentum_score": 68.4,
+      "sector": "RPA・自動化",
+      "stage": 4,
+      "tt_pass": false,
+      "pivot_bpq": 35,
+      "fbo_status": "near_high"
+    },
+    {
+      "ticker": "ERO",
+      "name": "Ero Copper",
+      "price": 26.979999542236328,
+      "signal": "ウォッチ",
+      "unified_score": 18.5,
+      "fund_score": 3,
+      "tech_score": 28,
+      "pivot_score": 25,
+      "momentum_score": 35.3,
+      "sector": "銅",
+      "stage": 2,
+      "tt_pass": false,
+      "pivot_bpq": 25,
+      "fbo_status": "below_high"
+    },
+    {
+      "ticker": "ALB",
+      "name": "Albemarle",
+      "price": 171.5800018310547,
+      "signal": "ウォッチ",
+      "unified_score": 17.7,
+      "fund_score": 3,
+      "tech_score": 28,
+      "pivot_score": 30,
+      "momentum_score": 23.0,
+      "sector": "リチウム",
+      "stage": 2,
+      "tt_pass": false,
+      "pivot_bpq": 30,
+      "fbo_status": "below_high"
+    },
+    {
+      "ticker": "MP",
+      "name": "MP Materials",
+      "price": 64.45999908447266,
+      "signal": "様子見",
+      "unified_score": 15.5,
+      "fund_score": 0,
+      "tech_score": 15,
+      "pivot_score": 5,
+      "momentum_score": 71.5,
+      "sector": "レアアース",
+      "stage": 3,
+      "tt_pass": false,
+      "pivot_bpq": 35,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "ADEA",
+      "name": "Adeia Inc.",
+      "price": 26.85,
+      "signal": "持ち株",
+      "unified_score": 14.5,
+      "fund_score": 0,
+      "tech_score": 25,
+      "pivot_score": 10,
+      "momentum_score": 41.5,
+      "sector": "Technology",
+      "stage": 2,
+      "tt_pass": false,
+      "pivot_bpq": 40,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "CDE",
+      "name": "Coeur Mining",
+      "price": 17.6299991607666,
+      "signal": "様子見",
+      "unified_score": 12.9,
+      "fund_score": 23,
+      "tech_score": 0,
+      "pivot_score": 10,
+      "momentum_score": 11.2,
+      "sector": "貴金属・金銀",
+      "stage": 4,
+      "tt_pass": false,
+      "pivot_bpq": 10,
+      "fbo_status": "below_high"
+    },
+    {
+      "ticker": "AG",
+      "name": "First Majestic Silver",
+      "price": 19.450000762939453,
+      "signal": "ウォッチ",
+      "unified_score": 10.7,
+      "fund_score": 3,
+      "tech_score": 28,
+      "pivot_score": 0,
+      "momentum_score": 16.7,
+      "sector": "貴金属・銀",
+      "stage": 2,
+      "tt_pass": false,
+      "pivot_bpq": 20,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "AVAV",
+      "name": "AeroVironment",
+      "price": 174.22999572753906,
+      "signal": "見送り",
+      "unified_score": 9.8,
+      "fund_score": 0,
+      "tech_score": 10,
+      "pivot_score": 35,
+      "momentum_score": 1.9,
+      "sector": "ドローン・防衛",
+      "stage": 4,
+      "tt_pass": false,
+      "pivot_bpq": 35,
+      "fbo_status": "below_high"
+    },
+    {
+      "ticker": "SYM",
+      "name": "Symbotic",
+      "price": 54.029998779296875,
+      "signal": "見送り",
+      "unified_score": 6.8,
+      "fund_score": 0,
+      "tech_score": 0,
+      "pivot_score": 15,
+      "momentum_score": 25.0,
+      "sector": "倉庫ロボット",
+      "stage": 4,
+      "tt_pass": false,
+      "pivot_bpq": 15,
+      "fbo_status": "below_high"
+    }
+  ]
 };
 
 // ============================================================
@@ -14526,6 +14964,12 @@ function render() {
 
   // Quantum (量子コンピューター特集)
   renderQuantum(d);
+
+  // Phase 11: 総合ランキング Top 10
+  renderCompositeRanking(d);
+
+  // Phase 11: カスタム監視リスト (任意ティッカー追加)
+  renderCustomWatchlist();
 
   // Market Pulse (P/C Ratio)
   renderMarketPulse(d);
@@ -14796,6 +15240,174 @@ function renderEarlyStage2(d) {
 // ============================================================
 // Quantum Special (量子コンピューター銘柄特集)
 // ============================================================
+// ============================================================
+// Composite Ranking (総合ランキング Top 10)
+// ============================================================
+function renderCompositeRanking(d) {
+  const list = document.getElementById('compositeRankingList');
+  if (!list) return;
+  const ranking = d.composite_ranking || [];
+  if (!ranking.length) {
+    list.innerHTML = '<div style="padding:8px;color:var(--text2);font-size:12px">データなし (composite_ranking 未生成)</div>';
+    return;
+  }
+  const top10 = ranking.slice(0, 10);
+  const html = top10.map((r, i) => {
+    const u = r.unified_score;
+    const uColor = u >= 70 ? 'var(--green)' : u >= 55 ? '#ffd700' : u >= 40 ? '#66b2ff' : 'var(--text2)';
+    const rankBadge = i < 3 ? ['🥇','🥈','🥉'][i] : `<span style="display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;background:rgba(139,148,158,0.12);border-radius:50%;font-size:11px">${i+1}</span>`;
+    const sigShort = (r.signal || '').replace('シグナル','');
+    const ttBadge = r.tt_pass ? '<span style="color:var(--green);font-size:10px">S2✓</span>' :
+                    r.stage === 2 ? '<span style="color:var(--cyan);font-size:10px">S2途</span>' :
+                    r.stage ? `<span style="color:var(--text2);font-size:10px">S${r.stage}</span>` : '';
+    const fboBadge = r.fbo_status === 'false_breakout' ? '<span style="color:#ff6363;font-size:10px;margin-left:3px">🪤</span>' :
+                     r.fbo_status === 'healthy_breakout' ? '<span style="color:var(--green);font-size:10px;margin-left:3px">🟢</span>' : '';
+    const pivBadge = r.pivot_bpq >= 65 ? `<span style="color:#ffcd57;font-size:10px;margin-left:3px">🎯${r.pivot_bpq}</span>` : '';
+    return `<div class="signal-item" data-ticker="${r.ticker}" style="cursor:pointer;padding:8px 0;border-bottom:1px solid var(--border)">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <div style="font-size:18px;width:28px;text-align:center">${rankBadge}</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:800">${r.ticker} ${ttBadge}${fboBadge}${pivBadge}
+            <span style="font-size:10px;color:var(--text2);font-weight:400">${(r.sector || '')}</span>
+          </div>
+          <div style="font-size:10px;color:var(--text2);margin-top:1px">${r.name || ''}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:18px;font-weight:800;color:${uColor}">${u}</div>
+          <div style="font-size:9px;color:var(--text2)">$${(r.price || 0).toFixed(2)}</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:6px;padding-left:36px">
+        <div style="font-size:10px;color:var(--text2)">📊 ファンダ <strong style="color:${r.fund_score >= 60 ? 'var(--green)' : 'var(--text)'}">${r.fund_score}</strong></div>
+        <div style="font-size:10px;color:var(--text2)">📈 テクニカル <strong style="color:${r.tech_score >= 60 ? 'var(--green)' : 'var(--text)'}">${r.tech_score}</strong></div>
+        <div style="font-size:10px;color:var(--text2)">🎯 PIVOT <strong style="color:${r.pivot_score >= 60 ? 'var(--green)' : 'var(--text)'}">${r.pivot_score}</strong></div>
+        <div style="font-size:10px;color:var(--text2)">🚀 モメンタム <strong style="color:${r.momentum_score >= 60 ? 'var(--green)' : 'var(--text)'}">${r.momentum_score}</strong></div>
+      </div>
+    </div>`;
+  }).join('');
+  list.innerHTML = html;
+
+  // クリック委譲
+  if (!list._listenerAdded) {
+    list._listenerAdded = true;
+    list.addEventListener('click', (e) => {
+      const target = e.target.closest('[data-ticker]');
+      if (target && target.dataset.ticker) {
+        openDetail(target.dataset.ticker);
+      }
+    });
+  }
+}
+
+// ============================================================
+// カスタム監視リスト (任意ティッカー追加)
+// ============================================================
+function getCustomWatchlist() {
+  try {
+    return JSON.parse(localStorage.getItem('custom_watchlist') || '[]');
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveCustomWatchlist(list) {
+  localStorage.setItem('custom_watchlist', JSON.stringify(list));
+}
+
+function addCustomTicker(ticker, note) {
+  ticker = (ticker || '').toUpperCase().trim();
+  if (!ticker || !/^[A-Z][A-Z0-9.-]{0,9}$/.test(ticker)) {
+    alert('有効なティッカー (例: PLTR, BRK-B) を入力してください');
+    return false;
+  }
+  const list = getCustomWatchlist();
+  if (list.find(x => x.ticker === ticker)) {
+    alert(`${ticker} はすでに登録されています`);
+    return false;
+  }
+  list.push({
+    ticker,
+    note: note || '',
+    added: new Date().toISOString().split('T')[0],
+  });
+  saveCustomWatchlist(list);
+  return true;
+}
+
+function removeCustomTicker(ticker) {
+  const list = getCustomWatchlist().filter(x => x.ticker !== ticker);
+  saveCustomWatchlist(list);
+  renderCustomWatchlist();
+}
+
+function renderCustomWatchlist() {
+  const container = document.getElementById('customWatchlist');
+  if (!container) return;
+  const list = getCustomWatchlist();
+  const details = SCAN_DATA.details || {};
+
+  let html = '';
+  if (list.length === 0) {
+    html = '<div style="padding:8px;color:var(--text2);font-size:12px">登録銘柄なし。下のフォームから任意のティッカー (例: PLTR, NEM, AVAV) を追加できます。</div>';
+  } else {
+    html = list.map(item => {
+      const d = details[item.ticker];
+      const inScan = !!d;
+      const price = d?.price ? `$${d.price.toFixed(2)}` : '—';
+      const signal = d?.signal || '';
+      const si = d?.stage_info;
+      const stageChip = si && si.stage ? stageChipHtml(item.ticker) : '';
+      const pvChip = inScan ? pivotBreakoutChipHtml(item.ticker) : '';
+      const statusBadge = inScan
+        ? `<span style="color:var(--green);font-size:10px;font-weight:700">✓ 分析済</span>`
+        : `<span style="color:var(--orange);font-size:10px;font-weight:700">⏳ 次回スキャン待ち</span>`;
+      const links = `
+        <a href="https://finance.yahoo.com/quote/${item.ticker}" target="_blank" rel="noopener" style="color:#66b2ff;font-size:10px;text-decoration:none">Yahoo↗</a>
+        <a href="https://www.tradingview.com/symbols/${item.ticker}/" target="_blank" rel="noopener" style="color:#66b2ff;font-size:10px;text-decoration:none;margin-left:6px">TV↗</a>
+        <a href="https://stockanalysis.com/stocks/${item.ticker}/" target="_blank" rel="noopener" style="color:#66b2ff;font-size:10px;text-decoration:none;margin-left:6px">SA↗</a>`;
+      return `<div style="padding:10px;border-bottom:1px solid var(--border);${inScan ? 'cursor:pointer' : ''}" ${inScan ? `data-ticker="${item.ticker}"` : ''}>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+          <div style="flex:1;min-width:0">
+            <div style="font-size:14px;font-weight:800">${item.ticker} ${stageChip}${pvChip} ${statusBadge}</div>
+            ${item.note ? `<div style="font-size:11px;color:var(--text2);margin-top:2px">📝 ${item.note}</div>` : ''}
+            <div style="font-size:10px;color:var(--text2);margin-top:4px">追加: ${item.added}</div>
+          </div>
+          <div style="text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+            <div style="font-size:14px;font-weight:700">${price}</div>
+            ${signal ? `<div style="font-size:10px;color:var(--text2)">${signal}</div>` : ''}
+            <div style="margin-top:2px">${links}</div>
+            <button onclick="event.stopPropagation();removeCustomTicker('${item.ticker}')" style="background:transparent;border:1px solid var(--red);color:var(--red);padding:2px 8px;border-radius:4px;font-size:10px;margin-top:2px;cursor:pointer">削除</button>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+  container.innerHTML = html;
+
+  // クリック委譲: 分析済みのものは詳細を開く
+  if (!container._listenerAdded) {
+    container._listenerAdded = true;
+    container.addEventListener('click', (e) => {
+      const target = e.target.closest('[data-ticker]');
+      if (target && target.dataset.ticker && (SCAN_DATA.details || {})[target.dataset.ticker]) {
+        openDetail(target.dataset.ticker);
+      }
+    });
+  }
+}
+
+function submitCustomTicker() {
+  const tickerInput = document.getElementById('customTickerInput');
+  const noteInput = document.getElementById('customNoteInput');
+  const ticker = tickerInput.value;
+  const note = noteInput.value;
+  if (addCustomTicker(ticker, note)) {
+    tickerInput.value = '';
+    noteInput.value = '';
+    renderCustomWatchlist();
+  }
+}
+
 function renderQuantum(d) {
   const q = d.quantum;
   const pureEl = document.getElementById('quantumPureList');
