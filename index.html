@@ -1343,6 +1343,95 @@ body {
   </div>
 </div>
 
+<!-- ===== Page Optical: 光通信銘柄 特集 ===== -->
+<div class="page" id="page-optical">
+  <div class="card" style="border:1px solid #ffd700;background:linear-gradient(135deg,rgba(255,215,0,0.12),rgba(255,165,0,0.04))">
+    <div class="card-title" style="color:#ffd700"><span class="emoji">💡</span> 光通信銘柄 特集 — AI データセンター爆騰テーマ</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.7;margin-top:6px">
+      AI データセンター需要で <strong style="color:#ffd700">800G → 1.6T → 3.2T → CPO</strong> ロードマップが加速。
+      NVIDIA H100/B200/B300 出荷増 → 光トランシーバー指数関数的需要。
+      <strong>12 銘柄</strong> を 4 カテゴリで網羅。
+    </div>
+  </div>
+
+  <div class="card" style="border:1px solid rgba(63,185,80,0.3);background:rgba(63,185,80,0.04)">
+    <div class="card-title" style="color:var(--green)">🔥 なぜ今 光通信なのか</div>
+    <div style="font-size:12px;line-height:1.7">
+      <div style="margin-bottom:8px"><strong style="color:#ffd700">🚀 1.6T 移行</strong>: 2025-2026 でデータセンター主力が 800G から 1.6T に移行。光トランシーバー単価 1.6-2x。</div>
+      <div style="margin-bottom:8px"><strong style="color:var(--cyan)">⚡ CPO (Co-Packaged Optics)</strong>: NVIDIA / Marvell が 2026-2027 量産化。GPU と光モジュールを 1 つのパッケージ化 → 電力 30-50% 削減。</div>
+      <div style="margin-bottom:8px"><strong style="color:#b366ff">🧠 Silicon Photonics</strong>: HBM + 光接続でメモリボトルネック解消。次世代 AI クラスタの中心技術。</div>
+      <div><strong style="color:var(--green)">💰 ハイパースケーラ CAPEX</strong>: Meta / Microsoft / Google / Amazon の 2026 設備投資 $250B+。光通信機器の純粋プレーヤーが最大の恩恵。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⚠️ 投資前のチェックポイント</div>
+    <div style="font-size:12px;line-height:1.7">
+      <div style="margin-bottom:6px"><strong style="color:var(--red)">🚨 既に大幅高</strong>: 3M リターン 100-200% 超の銘柄多数。押し目買いを推奨。</div>
+      <div style="margin-bottom:6px"><strong style="color:var(--orange)">📉 顧客集中リスク</strong>: AAOI (Microsoft 50%超) や ANET (3社で40%超) は顧客 CAPEX 削減で急落リスク。</div>
+      <div style="margin-bottom:6px"><strong style="color:var(--cyan)">🎯 純粋 vs 多角化</strong>: 純粋プレーヤー (AAOI/POET) はハイベータ。多角化 (NVDA/MRVL/COHR) で分散も。</div>
+      <div><strong style="color:var(--green)">💡 ホライズン</strong>: 2026-2028 が CPO 商用化のピーク予想。中期 (1-3年) 保有が王道。</div>
+    </div>
+  </div>
+
+  <div class="card" id="opticalTransceiver">
+    <div class="card-title"><span class="emoji">📡</span> A. 光トランシーバー (純粋プレーヤー)</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:8px">
+      AI データセンター用 800G/1.6T トランシーバーの主要サプライヤー。<strong style="color:var(--red)">ハイベータ・最熱</strong>。
+    </div>
+    <div id="opticalTransceiverList"></div>
+  </div>
+
+  <div class="card" id="opticalSemi">
+    <div class="card-title"><span class="emoji">🔌</span> B. 光半導体 / DSP</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:8px">
+      光信号処理の心臓部 (DSP / Si Photonics)。Marvell が市場 80% 独占、NVIDIA が CPO で参入。
+    </div>
+    <div id="opticalSemiList"></div>
+  </div>
+
+  <div class="card" id="opticalNetwork">
+    <div class="card-title"><span class="emoji">🌐</span> C. ネットワーキング機器</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:8px">
+      光モジュールを大量採用するスイッチ / 光伝送機器。光通信銘柄の最大顧客。
+    </div>
+    <div id="opticalNetworkList"></div>
+  </div>
+
+  <div class="card" id="opticalFiber">
+    <div class="card-title"><span class="emoji">🧵</span> D. ファイバー / レーザー / 計測 (周辺)</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.6;margin-bottom:8px">
+      光通信のインフラ・原材料・計測。データセンター需要の二次恩恵組。
+    </div>
+    <div id="opticalFiberList"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="emoji">⚖️</span> 12銘柄比較マトリクス</div>
+    <div id="opticalComparisonTable" style="overflow-x:auto"></div>
+  </div>
+
+  <div class="card" style="border-color:rgba(102,178,255,0.3)">
+    <div class="card-title" style="color:#66b2ff">📘 光通信の基礎知識</div>
+    <div style="font-size:11px;color:var(--text2);line-height:1.7">
+      <strong style="color:var(--text)">800G/1.6T トランシーバー</strong>: 1 本のファイバーで 800Gbps / 1.6Tbps の伝送。AI クラスタでは GPU 間接続に大量採用。1 GPU あたり 6-8 個の光トランシーバーを使用。<br><br>
+
+      <strong style="color:var(--text)">PAM4 (Pulse Amplitude Modulation 4-level)</strong>: 光信号を 4 段階で符号化する技術。50G/100G/200G レーン速度を実現。Marvell の DSP が市場標準。<br><br>
+
+      <strong style="color:var(--text)">CPO (Co-Packaged Optics)</strong>: 光モジュールを ASIC / GPU のパッケージ内に組み込む次世代技術。距離短縮で消費電力 30-50% 削減、コスト削減も。NVIDIA Quantum-X800 で 2026 商用化目標。<br><br>
+
+      <strong style="color:var(--text)">LPO (Linear-drive Pluggable Optics)</strong>: DSP を省略した安価で省電力な光モジュール。短距離 (100m 以内) で採用拡大。<br><br>
+
+      <strong style="color:var(--text)">投資マップ</strong>:<br>
+      ① 光トランシーバー → AAOI/COHR/LITE (純粋恩恵)<br>
+      ② 光半導体 → MRVL (DSP 80% 独占) / NVDA (Si Photonics 内製)<br>
+      ③ スイッチ → ANET (Ethernet) / CIEN (Coherent)<br>
+      ④ EMS → FN (NVIDIA 製造受託の隠れた巨人)<br>
+      ⑤ 周辺 → GLW (ファイバー世界トップ) / IPGP (レーザー) / VIAV (計測)
+    </div>
+  </div>
+</div>
+
 <!-- ===== Detail Modal (Bottom Sheet) ===== -->
 <div class="detail-overlay" id="detailOverlay" onclick="closeDetail()"></div>
 <div class="detail-sheet" id="detailSheet" onclick="event.stopPropagation()">
@@ -1378,6 +1467,9 @@ body {
   <button class="tab" onclick="switchPage('quantum')">
     <span class="icon">🔮</span>量子
   </button>
+  <button class="tab" onclick="switchPage('optical')">
+    <span class="icon">💡</span>光通信
+  </button>
 </div>
 
 <script>
@@ -1385,7 +1477,7 @@ body {
 // Scan Data (embedded — updated by daily scan pipeline)
 // ============================================================
 const SCAN_DATA = {
-  "scan_date": "2026-05-23 11:01",
+  "scan_date": "2026-05-24 10:47",
   "market_health": {
     "S&P500": {
       "price": 745.6400146484375,
@@ -1407,7 +1499,7 @@ const SCAN_DATA = {
     "avg_cost": 8.3573,
     "onkabu_target": 16.72,
     "earnings_date": "8/6",
-    "days_until": 75
+    "days_until": 74
   },
   "signals": [
     {
@@ -1740,7 +1832,7 @@ const SCAN_DATA = {
       "name": "UiPath",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 6
+      "days": 5
     },
     {
       "date": "6/24",
@@ -1748,7 +1840,7 @@ const SCAN_DATA = {
       "name": "AeroVironment",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 32
+      "days": 31
     },
     {
       "date": "7/22",
@@ -1756,7 +1848,7 @@ const SCAN_DATA = {
       "name": "Freeport-McMoRan",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 60
+      "days": 59
     },
     {
       "date": "7/23",
@@ -1764,7 +1856,7 @@ const SCAN_DATA = {
       "name": "Tesla",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 61
+      "days": 60
     },
     {
       "date": "7/24",
@@ -1772,7 +1864,7 @@ const SCAN_DATA = {
       "name": "Schlumberger",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 62
+      "days": 61
     },
     {
       "date": "7/28",
@@ -1780,7 +1872,7 @@ const SCAN_DATA = {
       "name": "Symbotic",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 66
+      "days": 65
     },
     {
       "date": "7/30",
@@ -1788,7 +1880,7 @@ const SCAN_DATA = {
       "name": "FormFactor",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 68
+      "days": 67
     },
     {
       "date": "7/30",
@@ -1796,7 +1888,7 @@ const SCAN_DATA = {
       "name": "ASE Technology",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 68
+      "days": 67
     },
     {
       "date": "7/30",
@@ -1804,7 +1896,7 @@ const SCAN_DATA = {
       "name": "Albemarle",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 68
+      "days": 67
     },
     {
       "date": "7/31",
@@ -1812,7 +1904,7 @@ const SCAN_DATA = {
       "name": "Ero Copper",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 69
+      "days": 68
     },
     {
       "date": "7/31",
@@ -1820,7 +1912,7 @@ const SCAN_DATA = {
       "name": "nVent Electric",
       "strategy": "決算前ポジション構築",
       "note": "電力需要増テーマの確認",
-      "days": 69
+      "days": 68
     },
     {
       "date": "7/31",
@@ -1828,7 +1920,7 @@ const SCAN_DATA = {
       "name": "Roku",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 69
+      "days": 68
     },
     {
       "date": "8/6",
@@ -1836,7 +1928,7 @@ const SCAN_DATA = {
       "name": "Coeur Mining",
       "strategy": "決算カタリスト狙い",
       "note": "金銀価格上昇の業績反映確認",
-      "days": 75
+      "days": 74
     },
     {
       "date": "8/6",
@@ -1844,7 +1936,7 @@ const SCAN_DATA = {
       "name": "Intuitive Machines",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 75
+      "days": 74
     },
     {
       "date": "8/7",
@@ -1852,7 +1944,7 @@ const SCAN_DATA = {
       "name": "MP Materials",
       "strategy": "黒字転換確認",
       "note": "売上$627M、純利益$110M予想。変曲点",
-      "days": 76
+      "days": 75
     },
     {
       "date": "8/7",
@@ -1860,7 +1952,7 @@ const SCAN_DATA = {
       "name": "Rocket Lab",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 76
+      "days": 75
     },
     {
       "date": "8/10",
@@ -1868,7 +1960,7 @@ const SCAN_DATA = {
       "name": "Roivant Sciences",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 79
+      "days": 78
     },
     {
       "date": "8/11",
@@ -1876,7 +1968,7 @@ const SCAN_DATA = {
       "name": "AST SpaceMobile",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 80
+      "days": 79
     },
     {
       "date": "8/13",
@@ -1884,7 +1976,7 @@ const SCAN_DATA = {
       "name": "First Majestic Silver",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 82
+      "days": 81
     },
     {
       "date": "8/19",
@@ -1892,7 +1984,7 @@ const SCAN_DATA = {
       "name": "Keysight Technologies",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 88
+      "days": 87
     }
   ],
   "team": [
@@ -1982,7 +2074,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/30",
-        "days": 68,
+        "days": 67,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.23908,
@@ -2370,7 +2462,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/10",
-        "days": 79,
+        "days": 78,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": -0.35566,
@@ -2509,7 +2601,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/31",
-        "days": 69,
+        "days": 68,
         "strategy": "決算前ポジション構築",
         "note": "電力需要増テーマの確認",
         "eps_estimate": 1.15842,
@@ -2631,11 +2723,11 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/24",
-        "days": 62,
+        "days": 61,
         "strategy": "決算カタリスト狙い",
         "note": "",
-        "eps_estimate": 0.52622,
-        "revenue_estimate": 8692583550
+        "eps_estimate": 0.52576,
+        "revenue_estimate": 8695133550
       },
       "stage_info": {
         "stage": 2,
@@ -2767,10 +2859,10 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/11",
-        "days": 80,
+        "days": 79,
         "strategy": "決算カタリスト狙い",
         "note": "",
-        "eps_estimate": -0.23456,
+        "eps_estimate": -0.23184,
         "revenue_estimate": 34595830
       },
       "stage_info": {
@@ -2919,7 +3011,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/7",
-        "days": 76,
+        "days": 75,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": -0.03381,
@@ -3048,7 +3140,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/6",
-        "days": 75,
+        "days": 74,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": -0.0975,
@@ -3194,7 +3286,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/19",
-        "days": 88,
+        "days": 87,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 2.48236,
@@ -3455,7 +3547,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/31",
-        "days": 69,
+        "days": 68,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.56333,
@@ -3601,11 +3693,11 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/22",
-        "days": 60,
+        "days": 59,
         "strategy": "決算カタリスト狙い",
         "note": "",
-        "eps_estimate": 0.56401,
-        "revenue_estimate": 6556844780
+        "eps_estimate": 0.56647,
+        "revenue_estimate": 6636225750
       },
       "stage_info": {
         "stage": 2,
@@ -3723,7 +3815,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/23",
-        "days": 61,
+        "days": 60,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.45396,
@@ -3852,7 +3944,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/13",
-        "days": 82,
+        "days": 81,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.265,
@@ -3981,7 +4073,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/31",
-        "days": 69,
+        "days": 68,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.92696,
@@ -4113,7 +4205,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/30",
-        "days": 68,
+        "days": 67,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.61,
@@ -4357,7 +4449,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/30",
-        "days": 68,
+        "days": 67,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 2.98793,
@@ -4503,10 +4595,10 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/7",
-        "days": 76,
+        "days": 75,
         "strategy": "黒字転換確認",
         "note": "売上$627M、純利益$110M予想。変曲点",
-        "eps_estimate": 0.05074,
+        "eps_estimate": 0.06333,
         "revenue_estimate": 99544510
       },
       "stage_info": {
@@ -4608,10 +4700,10 @@ const SCAN_DATA = {
       "signal": "様子見",
       "price": 17.6299991607666,
       "sepa_score": "4.0/9.0",
-      "rsi": "50.4",
+      "rsi": "50.5",
       "vcp": "収縮9回, 出来高枯渇=いいえ",
       "short_cover": "問題なし",
-      "stop_loss_21ma": "$18.34",
+      "stop_loss_21ma": "$18.32",
       "stop_loss_8pct": "$16.22",
       "grok": null,
       "perplexity": null,
@@ -4635,7 +4727,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/6",
-        "days": 75,
+        "days": 74,
         "strategy": "決算カタリスト狙い",
         "note": "金銀価格上昇の業績反映確認",
         "eps_estimate": 0.40387,
@@ -4757,7 +4849,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/28",
-        "days": 66,
+        "days": 65,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.12509,
@@ -4879,7 +4971,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "5/29",
-        "days": 6,
+        "days": 5,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.15874,
@@ -5022,7 +5114,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "6/24",
-        "days": 32,
+        "days": 31,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 1.47206,
@@ -10212,7 +10304,7 @@ const SCAN_DATA = {
     ]
   },
   "market_pulse": {
-    "updated_at": "2026-05-23T11:01:42",
+    "updated_at": "2026-05-24T10:47:54",
     "methodology": "CBOE-Equity-equivalent: aggregate option volume of 15 large-cap individual stocks (nearest 2 expiries each)",
     "equity_basket": {
       "label": "equity",
@@ -10333,11 +10425,11 @@ const SCAN_DATA = {
     }
   },
   "themes": {
-    "scan_date": "20260523",
-    "updated_at": "2026-05-23T11:02:16",
+    "scan_date": "20260524",
+    "updated_at": "2026-05-24T10:48:29",
     "theme_count": 34,
     "unique_tickers_analyzed": 134,
-    "duration_sec": 15,
+    "duration_sec": 16,
     "themes": [
       {
         "id": "ai_gpu",
@@ -10494,7 +10586,7 @@ const SCAN_DATA = {
             "return_1m": 34.43,
             "return_3m": 26.17,
             "return_6m": 82.49,
-            "vol_accel": 1.49,
+            "vol_accel": 1.5,
             "above_200ma": null
           }
         ],
@@ -10632,7 +10724,7 @@ const SCAN_DATA = {
             "return_1m": 34.55,
             "return_3m": 89.11,
             "return_6m": 84.71,
-            "vol_accel": 0.86,
+            "vol_accel": 0.87,
             "above_200ma": null
           },
           {
@@ -10661,7 +10753,7 @@ const SCAN_DATA = {
         "avg_return_1m": 41.37,
         "avg_return_3m": 62.26,
         "avg_return_6m": 12.81,
-        "avg_vol_accel": 1.51,
+        "avg_vol_accel": 1.52,
         "winners_1m": 4,
         "winners_3m": 4,
         "winners_6m": 3,
@@ -10701,7 +10793,7 @@ const SCAN_DATA = {
             "return_1m": 52.25,
             "return_3m": 62.88,
             "return_6m": 25.43,
-            "vol_accel": 1.48,
+            "vol_accel": 1.49,
             "above_200ma": null
           },
           {
@@ -10719,7 +10811,7 @@ const SCAN_DATA = {
             "return_1m": 10.66,
             "return_3m": 14.49,
             "return_6m": -10.87,
-            "vol_accel": 1.27,
+            "vol_accel": 1.28,
             "above_200ma": null
           }
         ],
@@ -10875,7 +10967,7 @@ const SCAN_DATA = {
             "return_1m": -13.06,
             "return_3m": 34.2,
             "return_6m": 155.83,
-            "vol_accel": 1.48,
+            "vol_accel": 1.49,
             "above_200ma": null
           },
           {
@@ -10902,7 +10994,7 @@ const SCAN_DATA = {
             "return_1m": 0.01,
             "return_3m": 41.45,
             "return_6m": 98.48,
-            "vol_accel": 0.94,
+            "vol_accel": 0.95,
             "above_200ma": null
           }
         ],
@@ -11158,7 +11250,7 @@ const SCAN_DATA = {
         "avg_return_1m": 17.86,
         "avg_return_3m": 33.85,
         "avg_return_6m": 94.7,
-        "avg_vol_accel": 1.12,
+        "avg_vol_accel": 1.13,
         "winners_1m": 3,
         "winners_3m": 4,
         "winners_6m": 4,
@@ -11216,7 +11308,7 @@ const SCAN_DATA = {
             "return_1m": -2.86,
             "return_3m": 2.67,
             "return_6m": 35.33,
-            "vol_accel": 1.04,
+            "vol_accel": 1.06,
             "above_200ma": null
           }
         ],
@@ -11267,7 +11359,7 @@ const SCAN_DATA = {
             "return_1m": 73.88,
             "return_3m": 116.65,
             "return_6m": 26.1,
-            "vol_accel": 1.04,
+            "vol_accel": 1.05,
             "above_200ma": null
           },
           {
@@ -11354,7 +11446,7 @@ const SCAN_DATA = {
             "return_1m": 11.76,
             "return_3m": 38.95,
             "return_6m": 69.2,
-            "vol_accel": 0.77,
+            "vol_accel": 0.78,
             "above_200ma": null
           },
           {
@@ -11492,7 +11584,7 @@ const SCAN_DATA = {
             "return_1m": 0.74,
             "return_3m": 18.7,
             "return_6m": 92.33,
-            "vol_accel": 0.69,
+            "vol_accel": 0.7,
             "above_200ma": null
           },
           {
@@ -11501,7 +11593,7 @@ const SCAN_DATA = {
             "return_1m": 6.47,
             "return_3m": 7.93,
             "return_6m": 47.3,
-            "vol_accel": 0.97,
+            "vol_accel": 0.98,
             "above_200ma": null
           },
           {
@@ -11717,7 +11809,7 @@ const SCAN_DATA = {
             "return_1m": 4.64,
             "return_3m": 11.79,
             "return_6m": 61.94,
-            "vol_accel": 0.64,
+            "vol_accel": 0.65,
             "above_200ma": null
           },
           {
@@ -11735,7 +11827,7 @@ const SCAN_DATA = {
             "return_1m": 2.92,
             "return_3m": 3.11,
             "return_6m": 38.02,
-            "vol_accel": 0.97,
+            "vol_accel": 0.98,
             "above_200ma": null
           },
           {
@@ -11924,7 +12016,7 @@ const SCAN_DATA = {
             "return_1m": 1.69,
             "return_3m": 12.7,
             "return_6m": 43.38,
-            "vol_accel": 0.75,
+            "vol_accel": 0.76,
             "above_200ma": null
           },
           {
@@ -11933,7 +12025,7 @@ const SCAN_DATA = {
             "return_1m": -2.42,
             "return_3m": 10.44,
             "return_6m": 39.01,
-            "vol_accel": 0.8,
+            "vol_accel": 0.81,
             "above_200ma": null
           },
           {
@@ -11942,7 +12034,7 @@ const SCAN_DATA = {
             "return_1m": 5.49,
             "return_3m": 16.36,
             "return_6m": 34.16,
-            "vol_accel": 0.67,
+            "vol_accel": 0.68,
             "above_200ma": null
           },
           {
@@ -11980,7 +12072,7 @@ const SCAN_DATA = {
         "avg_return_1m": 16.49,
         "avg_return_3m": 9.2,
         "avg_return_6m": -1.53,
-        "avg_vol_accel": 0.88,
+        "avg_vol_accel": 0.89,
         "winners_1m": 2,
         "winners_3m": 2,
         "winners_6m": 1,
@@ -12011,7 +12103,7 @@ const SCAN_DATA = {
             "return_1m": 16.26,
             "return_3m": 0.78,
             "return_6m": 1.81,
-            "vol_accel": 1.04,
+            "vol_accel": 1.05,
             "above_200ma": null
           },
           {
@@ -12107,7 +12199,7 @@ const SCAN_DATA = {
             "return_1m": -8.74,
             "return_3m": -6.71,
             "return_6m": -0.73,
-            "vol_accel": 0.95,
+            "vol_accel": 0.96,
             "above_200ma": null
           }
         ],
@@ -12569,9 +12661,9 @@ const SCAN_DATA = {
         "description": "PLTR/RTX/LMT/NOC — 国防予算+地政学",
         "member_count": 5,
         "tickers_failed": [],
-        "avg_return_1m": -0.36,
-        "avg_return_3m": -10.22,
-        "avg_return_6m": 0.03,
+        "avg_return_1m": -0.28,
+        "avg_return_3m": -10.14,
+        "avg_return_6m": 0.12,
         "avg_vol_accel": 0.92,
         "winners_1m": 2,
         "winners_3m": 1,
@@ -12609,9 +12701,9 @@ const SCAN_DATA = {
           {
             "ticker": "RTX",
             "price": 177.01,
-            "return_1m": -1.28,
-            "return_3m": -12.34,
-            "return_6m": 2.61,
+            "return_1m": -0.87,
+            "return_3m": -11.97,
+            "return_6m": 3.03,
             "vol_accel": 0.96,
             "above_200ma": null
           },
@@ -12875,7 +12967,7 @@ const SCAN_DATA = {
             "return_1m": -6.32,
             "return_3m": -23.91,
             "return_6m": 13.22,
-            "vol_accel": 0.68,
+            "vol_accel": 0.69,
             "above_200ma": null
           },
           {
@@ -12910,16 +13002,16 @@ const SCAN_DATA = {
         "description": "銀価格・産業需要（太陽光・EV）+貴金属性",
         "member_count": 5,
         "tickers_failed": [],
-        "avg_return_1m": -4.47,
-        "avg_return_3m": -22.19,
-        "avg_return_6m": 42.6,
-        "avg_vol_accel": 0.6,
+        "avg_return_1m": -4.45,
+        "avg_return_3m": -22.17,
+        "avg_return_6m": 42.63,
+        "avg_vol_accel": 0.61,
         "winners_1m": 0,
         "winners_3m": 0,
         "winners_6m": 5,
-        "concentration_1m": 0.439,
+        "concentration_1m": 0.441,
         "concentration_3m": 0.482,
-        "concentration_6m": 0.31,
+        "concentration_6m": 0.311,
         "inst_signal_1m": {
           "level": "fading",
           "label": "🟡 関心薄れ",
@@ -12968,10 +13060,10 @@ const SCAN_DATA = {
           {
             "ticker": "CDE",
             "price": 17.63,
-            "return_1m": -6.52,
-            "return_3m": -27.83,
-            "return_6m": 19.93,
-            "vol_accel": 0.63,
+            "return_1m": -6.42,
+            "return_3m": -27.75,
+            "return_6m": 20.07,
+            "vol_accel": 0.64,
             "above_200ma": null
           },
           {
@@ -13020,7 +13112,7 @@ const SCAN_DATA = {
           "avg_return_1m": 41.37,
           "avg_return_3m": 62.26,
           "avg_return_6m": 12.81,
-          "avg_vol_accel": 1.51,
+          "avg_vol_accel": 1.52,
           "rank_1m": 2,
           "rank_3m": 5,
           "rank_6m": 25,
@@ -13040,7 +13132,7 @@ const SCAN_DATA = {
           "avg_return_1m": 16.49,
           "avg_return_3m": 9.2,
           "avg_return_6m": -1.53,
-          "avg_vol_accel": 0.88,
+          "avg_vol_accel": 0.89,
           "rank_1m": 9,
           "rank_3m": 22,
           "rank_6m": 30,
@@ -13182,7 +13274,7 @@ const SCAN_DATA = {
           "avg_return_1m": 17.86,
           "avg_return_3m": 33.85,
           "avg_return_6m": 94.7,
-          "avg_vol_accel": 1.12,
+          "avg_vol_accel": 1.13,
           "rank_1m": 8,
           "rank_3m": 11,
           "rank_6m": 6,
@@ -13261,10 +13353,10 @@ const SCAN_DATA = {
           "id": "silver_miners",
           "name": "銀鉱（採掘）",
           "icon": "🥈",
-          "avg_return_1m": -4.47,
-          "avg_return_3m": -22.19,
-          "avg_return_6m": 42.6,
-          "avg_vol_accel": 0.6,
+          "avg_return_1m": -4.45,
+          "avg_return_3m": -22.17,
+          "avg_return_6m": 42.63,
+          "avg_vol_accel": 0.61,
           "rank_1m": 27,
           "rank_3m": 34,
           "rank_6m": 14,
@@ -13325,32 +13417,32 @@ const SCAN_DATA = {
   "quantum": {
     "all": [
       {
-        "ticker": "QUBT",
-        "name": "Quantum Computing Inc.",
+        "ticker": "IONQ",
+        "name": "IonQ, Inc.",
         "category": "pure",
-        "approach": "フォトニック (Photonic)",
-        "approach_short": "光",
+        "approach": "イオントラップ (Trapped Ion)",
+        "approach_short": "イオン",
         "purity": "pure",
-        "commercialization": "pilot",
-        "qubit_max": null,
-        "qubit_type": "photonic",
-        "leader": "William McGann (CEO)",
-        "highlight": "光量子方式。室温動作の可能性が魅力。",
-        "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
-        "thesis": "光方式が成功すれば low-cost で展開可能。",
+        "commercialization": "cloudAccess",
+        "qubit_max": 64,
+        "qubit_type": "logical (high-fidelity)",
+        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
         "market": {
-          "price": 12.31,
-          "high_52w": 24.62,
-          "low_52w": 6.31,
-          "pct_from_52w_high": 50.0,
-          "ret_1m": 37.7,
-          "ret_3m": 51.8,
-          "ret_6m": 19.9,
+          "price": 63.64,
+          "high_52w": 82.09,
+          "low_52w": 26.59,
+          "pct_from_52w_high": 22.5,
+          "ret_1m": 49.1,
+          "ret_3m": 101.3,
+          "ret_6m": 55.2,
           "ret_1y": null,
-          "volatility_annual": 98.6,
-          "market_cap_b": 2.78,
-          "pe_trailing": null,
-          "revenue_b": 0.0,
+          "volatility_annual": 98.9,
+          "market_cap_b": 23.75,
+          "pe_trailing": 163.17949,
+          "revenue_b": 0.19,
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
@@ -13387,32 +13479,32 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "IONQ",
-        "name": "IonQ, Inc.",
+        "ticker": "QUBT",
+        "name": "Quantum Computing Inc.",
         "category": "pure",
-        "approach": "イオントラップ (Trapped Ion)",
-        "approach_short": "イオン",
+        "approach": "フォトニック (Photonic)",
+        "approach_short": "光",
         "purity": "pure",
-        "commercialization": "cloudAccess",
-        "qubit_max": 64,
-        "qubit_type": "logical (high-fidelity)",
-        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
-        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
-        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
-        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "commercialization": "pilot",
+        "qubit_max": null,
+        "qubit_type": "photonic",
+        "leader": "William McGann (CEO)",
+        "highlight": "光量子方式。室温動作の可能性が魅力。",
+        "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
+        "thesis": "光方式が成功すれば low-cost で展開可能。",
         "market": {
-          "price": 63.64,
-          "high_52w": 82.09,
-          "low_52w": 26.59,
-          "pct_from_52w_high": 22.5,
-          "ret_1m": 49.1,
-          "ret_3m": 101.3,
-          "ret_6m": 55.2,
+          "price": 12.31,
+          "high_52w": 24.62,
+          "low_52w": 6.31,
+          "pct_from_52w_high": 50.0,
+          "ret_1m": 37.7,
+          "ret_3m": 51.8,
+          "ret_6m": 19.9,
           "ret_1y": null,
-          "volatility_annual": 98.9,
-          "market_cap_b": 23.75,
-          "pe_trailing": 163.17949,
-          "revenue_b": 0.19,
+          "volatility_annual": 98.6,
+          "market_cap_b": 2.78,
+          "pe_trailing": null,
+          "revenue_b": 0.0,
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
@@ -13542,37 +13634,6 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "NVDA",
-        "name": "NVIDIA",
-        "category": "bigtech",
-        "approach": "CUDA Quantum (Hybrid)",
-        "approach_short": "ハイブリッド",
-        "purity": "minor",
-        "commercialization": "production",
-        "qubit_max": null,
-        "qubit_type": "classical simulation of quantum",
-        "leader": "Jensen Huang (CEO), Tim Costa (Quantum lead)",
-        "highlight": "GPU で量子計算をシミュレート + 量子ハードと連携する CUDA-Q。ハードを作らない戦略。",
-        "risk": "NVDA 株は AI 半導体で量子寄与ほぼなし。",
-        "thesis": "量子と古典の橋渡し役 = いずれの方式が勝っても恩恵。",
-        "market": {
-          "price": 215.33,
-          "high_52w": 235.74,
-          "low_52w": 131.26,
-          "pct_from_52w_high": 8.7,
-          "ret_1m": 3.4,
-          "ret_3m": 11.7,
-          "ret_6m": 19.2,
-          "ret_1y": null,
-          "volatility_annual": 37.4,
-          "market_cap_b": 5215.51,
-          "pe_trailing": 33.026073,
-          "revenue_b": 253.49,
-          "sector": "Technology",
-          "industry": "Semiconductors"
-        }
-      },
-      {
         "ticker": "MSFT",
         "name": "Microsoft",
         "category": "bigtech",
@@ -13601,6 +13662,37 @@ const SCAN_DATA = {
           "revenue_b": 318.27,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
+        }
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "category": "bigtech",
+        "approach": "CUDA Quantum (Hybrid)",
+        "approach_short": "ハイブリッド",
+        "purity": "minor",
+        "commercialization": "production",
+        "qubit_max": null,
+        "qubit_type": "classical simulation of quantum",
+        "leader": "Jensen Huang (CEO), Tim Costa (Quantum lead)",
+        "highlight": "GPU で量子計算をシミュレート + 量子ハードと連携する CUDA-Q。ハードを作らない戦略。",
+        "risk": "NVDA 株は AI 半導体で量子寄与ほぼなし。",
+        "thesis": "量子と古典の橋渡し役 = いずれの方式が勝っても恩恵。",
+        "market": {
+          "price": 215.33,
+          "high_52w": 235.74,
+          "low_52w": 131.26,
+          "pct_from_52w_high": 8.7,
+          "ret_1m": 3.4,
+          "ret_3m": 11.7,
+          "ret_6m": 19.2,
+          "ret_1y": null,
+          "volatility_annual": 37.4,
+          "market_cap_b": 5215.51,
+          "pe_trailing": 33.026073,
+          "revenue_b": 253.49,
+          "sector": "Technology",
+          "industry": "Semiconductors"
         }
       },
       {
@@ -13638,32 +13730,32 @@ const SCAN_DATA = {
     "by_category": {
       "pure": [
         {
-          "ticker": "QUBT",
-          "name": "Quantum Computing Inc.",
+          "ticker": "IONQ",
+          "name": "IonQ, Inc.",
           "category": "pure",
-          "approach": "フォトニック (Photonic)",
-          "approach_short": "光",
+          "approach": "イオントラップ (Trapped Ion)",
+          "approach_short": "イオン",
           "purity": "pure",
-          "commercialization": "pilot",
-          "qubit_max": null,
-          "qubit_type": "photonic",
-          "leader": "William McGann (CEO)",
-          "highlight": "光量子方式。室温動作の可能性が魅力。",
-          "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
-          "thesis": "光方式が成功すれば low-cost で展開可能。",
+          "commercialization": "cloudAccess",
+          "qubit_max": 64,
+          "qubit_type": "logical (high-fidelity)",
+          "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+          "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+          "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+          "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
           "market": {
-            "price": 12.31,
-            "high_52w": 24.62,
-            "low_52w": 6.31,
-            "pct_from_52w_high": 50.0,
-            "ret_1m": 37.7,
-            "ret_3m": 51.8,
-            "ret_6m": 19.9,
+            "price": 63.64,
+            "high_52w": 82.09,
+            "low_52w": 26.59,
+            "pct_from_52w_high": 22.5,
+            "ret_1m": 49.1,
+            "ret_3m": 101.3,
+            "ret_6m": 55.2,
             "ret_1y": null,
-            "volatility_annual": 98.6,
-            "market_cap_b": 2.78,
-            "pe_trailing": null,
-            "revenue_b": 0.0,
+            "volatility_annual": 98.9,
+            "market_cap_b": 23.75,
+            "pe_trailing": 163.17949,
+            "revenue_b": 0.19,
             "sector": "Technology",
             "industry": "Computer Hardware"
           }
@@ -13700,32 +13792,32 @@ const SCAN_DATA = {
           }
         },
         {
-          "ticker": "IONQ",
-          "name": "IonQ, Inc.",
+          "ticker": "QUBT",
+          "name": "Quantum Computing Inc.",
           "category": "pure",
-          "approach": "イオントラップ (Trapped Ion)",
-          "approach_short": "イオン",
+          "approach": "フォトニック (Photonic)",
+          "approach_short": "光",
           "purity": "pure",
-          "commercialization": "cloudAccess",
-          "qubit_max": 64,
-          "qubit_type": "logical (high-fidelity)",
-          "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
-          "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
-          "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
-          "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+          "commercialization": "pilot",
+          "qubit_max": null,
+          "qubit_type": "photonic",
+          "leader": "William McGann (CEO)",
+          "highlight": "光量子方式。室温動作の可能性が魅力。",
+          "risk": "技術成熟度低く、製品実証少ない。投機的銘柄。",
+          "thesis": "光方式が成功すれば low-cost で展開可能。",
           "market": {
-            "price": 63.64,
-            "high_52w": 82.09,
-            "low_52w": 26.59,
-            "pct_from_52w_high": 22.5,
-            "ret_1m": 49.1,
-            "ret_3m": 101.3,
-            "ret_6m": 55.2,
+            "price": 12.31,
+            "high_52w": 24.62,
+            "low_52w": 6.31,
+            "pct_from_52w_high": 50.0,
+            "ret_1m": 37.7,
+            "ret_3m": 51.8,
+            "ret_6m": 19.9,
             "ret_1y": null,
-            "volatility_annual": 98.9,
-            "market_cap_b": 23.75,
-            "pe_trailing": 163.17949,
-            "revenue_b": 0.19,
+            "volatility_annual": 98.6,
+            "market_cap_b": 2.78,
+            "pe_trailing": null,
+            "revenue_b": 0.0,
             "sector": "Technology",
             "industry": "Computer Hardware"
           }
@@ -13857,37 +13949,6 @@ const SCAN_DATA = {
           }
         },
         {
-          "ticker": "NVDA",
-          "name": "NVIDIA",
-          "category": "bigtech",
-          "approach": "CUDA Quantum (Hybrid)",
-          "approach_short": "ハイブリッド",
-          "purity": "minor",
-          "commercialization": "production",
-          "qubit_max": null,
-          "qubit_type": "classical simulation of quantum",
-          "leader": "Jensen Huang (CEO), Tim Costa (Quantum lead)",
-          "highlight": "GPU で量子計算をシミュレート + 量子ハードと連携する CUDA-Q。ハードを作らない戦略。",
-          "risk": "NVDA 株は AI 半導体で量子寄与ほぼなし。",
-          "thesis": "量子と古典の橋渡し役 = いずれの方式が勝っても恩恵。",
-          "market": {
-            "price": 215.33,
-            "high_52w": 235.74,
-            "low_52w": 131.26,
-            "pct_from_52w_high": 8.7,
-            "ret_1m": 3.4,
-            "ret_3m": 11.7,
-            "ret_6m": 19.2,
-            "ret_1y": null,
-            "volatility_annual": 37.4,
-            "market_cap_b": 5215.51,
-            "pe_trailing": 33.026073,
-            "revenue_b": 253.49,
-            "sector": "Technology",
-            "industry": "Semiconductors"
-          }
-        },
-        {
           "ticker": "MSFT",
           "name": "Microsoft",
           "category": "bigtech",
@@ -13916,6 +13977,37 @@ const SCAN_DATA = {
             "revenue_b": 318.27,
             "sector": "Technology",
             "industry": "Software - Infrastructure"
+          }
+        },
+        {
+          "ticker": "NVDA",
+          "name": "NVIDIA",
+          "category": "bigtech",
+          "approach": "CUDA Quantum (Hybrid)",
+          "approach_short": "ハイブリッド",
+          "purity": "minor",
+          "commercialization": "production",
+          "qubit_max": null,
+          "qubit_type": "classical simulation of quantum",
+          "leader": "Jensen Huang (CEO), Tim Costa (Quantum lead)",
+          "highlight": "GPU で量子計算をシミュレート + 量子ハードと連携する CUDA-Q。ハードを作らない戦略。",
+          "risk": "NVDA 株は AI 半導体で量子寄与ほぼなし。",
+          "thesis": "量子と古典の橋渡し役 = いずれの方式が勝っても恩恵。",
+          "market": {
+            "price": 215.33,
+            "high_52w": 235.74,
+            "low_52w": 131.26,
+            "pct_from_52w_high": 8.7,
+            "ret_1m": 3.4,
+            "ret_3m": 11.7,
+            "ret_6m": 19.2,
+            "ret_1y": null,
+            "volatility_annual": 37.4,
+            "market_cap_b": 5215.51,
+            "pe_trailing": 33.026073,
+            "revenue_b": 253.49,
+            "sector": "Technology",
+            "industry": "Semiconductors"
           }
         }
       ],
@@ -14049,6 +14141,37 @@ const SCAN_DATA = {
         }
       },
       {
+        "ticker": "IONQ",
+        "name": "IonQ, Inc.",
+        "category": "pure",
+        "approach": "イオントラップ (Trapped Ion)",
+        "approach_short": "イオン",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 64,
+        "qubit_type": "logical (high-fidelity)",
+        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "market": {
+          "price": 63.64,
+          "high_52w": 82.09,
+          "low_52w": 26.59,
+          "pct_from_52w_high": 22.5,
+          "ret_1m": 49.1,
+          "ret_3m": 101.3,
+          "ret_6m": 55.2,
+          "ret_1y": null,
+          "volatility_annual": 98.9,
+          "market_cap_b": 23.75,
+          "pe_trailing": 163.17949,
+          "revenue_b": 0.19,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
         "ticker": "RGTI",
         "name": "Rigetti Computing",
         "category": "pure",
@@ -14078,7 +14201,9 @@ const SCAN_DATA = {
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
-      },
+      }
+    ],
+    "by_purity": [
       {
         "ticker": "IONQ",
         "name": "IonQ, Inc.",
@@ -14109,9 +14234,38 @@ const SCAN_DATA = {
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
-      }
-    ],
-    "by_purity": [
+      },
+      {
+        "ticker": "RGTI",
+        "name": "Rigetti Computing",
+        "category": "pure",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 84,
+        "qubit_type": "physical",
+        "leader": "Subodh Kulkarni (CEO)",
+        "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
+        "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
+        "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
+        "market": {
+          "price": 26.42,
+          "high_52w": 56.34,
+          "low_52w": 10.79,
+          "pct_from_52w_high": 53.1,
+          "ret_1m": 59.1,
+          "ret_3m": 60.3,
+          "ret_6m": 15.9,
+          "ret_1y": null,
+          "volatility_annual": 109.6,
+          "market_cap_b": 8.78,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
       {
         "ticker": "QUBT",
         "name": "Quantum Computing Inc.",
@@ -14139,68 +14293,6 @@ const SCAN_DATA = {
           "market_cap_b": 2.78,
           "pe_trailing": null,
           "revenue_b": 0.0,
-          "sector": "Technology",
-          "industry": "Computer Hardware"
-        }
-      },
-      {
-        "ticker": "RGTI",
-        "name": "Rigetti Computing",
-        "category": "pure",
-        "approach": "超伝導 (Superconducting)",
-        "approach_short": "超伝導",
-        "purity": "pure",
-        "commercialization": "cloudAccess",
-        "qubit_max": 84,
-        "qubit_type": "physical",
-        "leader": "Subodh Kulkarni (CEO)",
-        "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
-        "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
-        "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
-        "market": {
-          "price": 26.42,
-          "high_52w": 56.34,
-          "low_52w": 10.79,
-          "pct_from_52w_high": 53.1,
-          "ret_1m": 59.1,
-          "ret_3m": 60.3,
-          "ret_6m": 15.9,
-          "ret_1y": null,
-          "volatility_annual": 109.6,
-          "market_cap_b": 8.78,
-          "pe_trailing": null,
-          "revenue_b": 0.01,
-          "sector": "Technology",
-          "industry": "Computer Hardware"
-        }
-      },
-      {
-        "ticker": "IONQ",
-        "name": "IonQ, Inc.",
-        "category": "pure",
-        "approach": "イオントラップ (Trapped Ion)",
-        "approach_short": "イオン",
-        "purity": "pure",
-        "commercialization": "cloudAccess",
-        "qubit_max": 64,
-        "qubit_type": "logical (high-fidelity)",
-        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
-        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
-        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
-        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
-        "market": {
-          "price": 63.64,
-          "high_52w": 82.09,
-          "low_52w": 26.59,
-          "pct_from_52w_high": 22.5,
-          "ret_1m": 49.1,
-          "ret_3m": 101.3,
-          "ret_6m": 55.2,
-          "ret_1y": null,
-          "volatility_annual": 98.9,
-          "market_cap_b": 23.75,
-          "pe_trailing": 163.17949,
-          "revenue_b": 0.19,
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
@@ -14330,37 +14422,6 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "NVDA",
-        "name": "NVIDIA",
-        "category": "bigtech",
-        "approach": "CUDA Quantum (Hybrid)",
-        "approach_short": "ハイブリッド",
-        "purity": "minor",
-        "commercialization": "production",
-        "qubit_max": null,
-        "qubit_type": "classical simulation of quantum",
-        "leader": "Jensen Huang (CEO), Tim Costa (Quantum lead)",
-        "highlight": "GPU で量子計算をシミュレート + 量子ハードと連携する CUDA-Q。ハードを作らない戦略。",
-        "risk": "NVDA 株は AI 半導体で量子寄与ほぼなし。",
-        "thesis": "量子と古典の橋渡し役 = いずれの方式が勝っても恩恵。",
-        "market": {
-          "price": 215.33,
-          "high_52w": 235.74,
-          "low_52w": 131.26,
-          "pct_from_52w_high": 8.7,
-          "ret_1m": 3.4,
-          "ret_3m": 11.7,
-          "ret_6m": 19.2,
-          "ret_1y": null,
-          "volatility_annual": 37.4,
-          "market_cap_b": 5215.51,
-          "pe_trailing": 33.026073,
-          "revenue_b": 253.49,
-          "sector": "Technology",
-          "industry": "Semiconductors"
-        }
-      },
-      {
         "ticker": "MSFT",
         "name": "Microsoft",
         "category": "bigtech",
@@ -14389,6 +14450,37 @@ const SCAN_DATA = {
           "revenue_b": 318.27,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
+        }
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "category": "bigtech",
+        "approach": "CUDA Quantum (Hybrid)",
+        "approach_short": "ハイブリッド",
+        "purity": "minor",
+        "commercialization": "production",
+        "qubit_max": null,
+        "qubit_type": "classical simulation of quantum",
+        "leader": "Jensen Huang (CEO), Tim Costa (Quantum lead)",
+        "highlight": "GPU で量子計算をシミュレート + 量子ハードと連携する CUDA-Q。ハードを作らない戦略。",
+        "risk": "NVDA 株は AI 半導体で量子寄与ほぼなし。",
+        "thesis": "量子と古典の橋渡し役 = いずれの方式が勝っても恩恵。",
+        "market": {
+          "price": 215.33,
+          "high_52w": 235.74,
+          "low_52w": 131.26,
+          "pct_from_52w_high": 8.7,
+          "ret_1m": 3.4,
+          "ret_3m": 11.7,
+          "ret_6m": 19.2,
+          "ret_1y": null,
+          "volatility_annual": 37.4,
+          "market_cap_b": 5215.51,
+          "pe_trailing": 33.026073,
+          "revenue_b": 253.49,
+          "sector": "Technology",
+          "industry": "Semiconductors"
         }
       },
       {
@@ -14428,6 +14520,900 @@ const SCAN_DATA = {
       "pure_count": 5,
       "bigtech_count": 4,
       "hybrid_count": 1
+    }
+  },
+  "optical": {
+    "all": [
+      {
+        "ticker": "AAOI",
+        "name": "Applied Optoelectronics",
+        "category": "transceiver",
+        "approach": "800G/1.6T DR4・DR8 トランシーバー",
+        "approach_short": "Transceiver",
+        "purity": "pure",
+        "primary_customer": "Microsoft / Amazon AWS",
+        "leader": "Thompson Lin (CEO)",
+        "highlight": "Microsoft Azure 向け 400G/800G 光トランシーバーで大型受注。Quanta との提携で量産能力拡大。",
+        "risk": "顧客集中 (Microsoft 売上比 50%超)。価格競争激化リスク。",
+        "thesis": "AI データセンター 1.6T 移行の最有力サプライヤー。受注残拡大中。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 181.49,
+          "high_52w": 223.1,
+          "low_52w": 15.42,
+          "pct_from_52w_high": 18.7,
+          "ret_1m": 11.9,
+          "ret_3m": 222.5,
+          "ret_6m": 831.2,
+          "ret_1y": null,
+          "volatility_annual": 192.3,
+          "market_cap_b": 14.56,
+          "pe_trailing": null,
+          "revenue_b": 0.51,
+          "sector": "Technology",
+          "industry": "Communication Equipment"
+        }
+      },
+      {
+        "ticker": "COHR",
+        "name": "Coherent Corp",
+        "category": "transceiver",
+        "approach": "高速光トランシーバー + 産業レーザー",
+        "approach_short": "Transceiver/Laser",
+        "purity": "hybrid",
+        "primary_customer": "NVIDIA / Amazon / Meta",
+        "leader": "Jim Anderson (CEO)",
+        "highlight": "II-VI と統合後の総合光半導体トップ。NVIDIA 向け 800G InfiniBand 大規模納入。",
+        "risk": "産業レーザー部門の鈍化。統合シナジーまだ途上。",
+        "thesis": "NVIDIA H100/B200 出荷に直接連動。多角化で安定収益。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 377.57,
+          "high_52w": 404.94,
+          "low_52w": 75.63,
+          "pct_from_52w_high": 6.8,
+          "ret_1m": 12.3,
+          "ret_3m": 48.1,
+          "ret_6m": 178.4,
+          "ret_1y": null,
+          "volatility_annual": 86.0,
+          "market_cap_b": 73.87,
+          "pe_trailing": 178.94315,
+          "revenue_b": 6.6,
+          "sector": "Technology",
+          "industry": "Scientific & Technical Instruments"
+        }
+      },
+      {
+        "ticker": "POET",
+        "name": "POET Technologies",
+        "category": "transceiver",
+        "approach": "光インターポーザー (Silicon Photonics)",
+        "approach_short": "Si Photonics",
+        "purity": "pure",
+        "primary_customer": "(評価中、量産前)",
+        "leader": "Suresh Venkatesan (CEO)",
+        "highlight": "光インターポーザー技術で 800G/1.6T 製品開発中。Mitsubishi Electric などと提携。",
+        "risk": "量産前で売上規模小。技術検証段階。投機的銘柄。",
+        "thesis": "Silicon Photonics の競合は限定的。成功すれば 10x の可能性。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 14.59,
+          "high_52w": 20.57,
+          "low_52w": 3.96,
+          "pct_from_52w_high": 29.1,
+          "ret_1m": -3.4,
+          "ret_3m": 138.8,
+          "ret_6m": 247.4,
+          "ret_1y": null,
+          "volatility_annual": 213.4,
+          "market_cap_b": 2.52,
+          "pe_trailing": null,
+          "revenue_b": 0.0,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "LITE",
+        "name": "Lumentum Holdings",
+        "category": "transceiver",
+        "approach": "光半導体 + 3D センシング + データセンター",
+        "approach_short": "Photonics",
+        "purity": "pure",
+        "primary_customer": "Cisco / Arista / Apple (3D センシング)",
+        "leader": "Alan Lowe (CEO)",
+        "highlight": "光半導体 (TIA, レーザー) で 1.6T 製品ロードマップ進行。NeoPhotonics 統合済。",
+        "risk": "3D センシング (Apple) の需要鈍化が継続。",
+        "thesis": "データセンター光通信は 2026 で記録的成長見込み。コア事業に集中。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 946.9,
+          "high_52w": 1053.09,
+          "low_52w": 72.28,
+          "pct_from_52w_high": 10.1,
+          "ret_1m": 7.4,
+          "ret_3m": 37.6,
+          "ret_6m": 306.0,
+          "ret_1y": null,
+          "volatility_annual": 107.3,
+          "market_cap_b": 73.67,
+          "pe_trailing": 166.70775,
+          "revenue_b": 2.49,
+          "sector": "Technology",
+          "industry": "Communication Equipment"
+        }
+      },
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "category": "semiconductor",
+        "approach": "Silicon Photonics + NVLink Switch",
+        "approach_short": "Si Photonics",
+        "purity": "minor",
+        "primary_customer": "(自社 H100/B200/B300 接続)",
+        "leader": "Jensen Huang (CEO)",
+        "highlight": "Quantum-2 InfiniBand と NVLink Switch で AI クラスター内光接続を支配。CPO 商用化リード。",
+        "risk": "NVDA 株は GPU 売上で動き、光通信は数% 程度。",
+        "thesis": "光通信を「自社設計+EMS 製造」で内製化。AI フルスタックの最終ピース。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 215.33,
+          "high_52w": 235.74,
+          "low_52w": 131.26,
+          "pct_from_52w_high": 8.7,
+          "ret_1m": 3.4,
+          "ret_3m": 11.7,
+          "ret_6m": 19.2,
+          "ret_1y": null,
+          "volatility_annual": 37.4,
+          "market_cap_b": 5215.51,
+          "pe_trailing": 33.026073,
+          "revenue_b": 253.49,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "FN",
+        "name": "Fabrinet",
+        "category": "transceiver",
+        "approach": "光通信機器の受託製造 (EMS)",
+        "approach_short": "EMS",
+        "purity": "hybrid",
+        "primary_customer": "NVIDIA / Cisco / Lumentum / Ciena",
+        "leader": "Seamus Grady (CEO)",
+        "highlight": "光通信の隠れた巨人。NVIDIA NVLink Switch 製造を担当との観測。",
+        "risk": "顧客の在庫調整局面で売上ボラ。EMS のためマージン低い。",
+        "thesis": "光業界全体の波に乗れる「ピックアンドショベル」銘柄。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 703.86,
+          "high_52w": 746.47,
+          "low_52w": 230.28,
+          "pct_from_52w_high": 5.7,
+          "ret_1m": -2.3,
+          "ret_3m": 20.1,
+          "ret_6m": 81.8,
+          "ret_1y": null,
+          "volatility_annual": 80.9,
+          "market_cap_b": 25.22,
+          "pe_trailing": 60.625324,
+          "revenue_b": 4.24,
+          "sector": "Technology",
+          "industry": "Electronic Components"
+        }
+      },
+      {
+        "ticker": "MRVL",
+        "name": "Marvell Technology",
+        "category": "semiconductor",
+        "approach": "光 DSP + Co-Packaged Optics + AI ASIC",
+        "approach_short": "Optical DSP",
+        "purity": "hybrid",
+        "primary_customer": "AWS / Microsoft Azure / 各 EMS",
+        "leader": "Matt Murphy (CEO)",
+        "highlight": "光 DSP (PAM4) で市場 80% 独占。AWS Trainium 設計受託 + CPO で次世代も席巻。",
+        "risk": "ストレージ事業の鈍化。Broadcom の競合参入。",
+        "thesis": "Custom ASIC + 光 DSP の二本柱。1.6T/CPO で 2026-2028 加速。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 196.33,
+          "high_52w": 196.33,
+          "low_52w": 60.03,
+          "pct_from_52w_high": 0.0,
+          "ret_1m": 19.5,
+          "ret_3m": 150.6,
+          "ret_6m": 156.4,
+          "ret_1y": null,
+          "volatility_annual": 71.5,
+          "market_cap_b": 171.9,
+          "pe_trailing": 64.16013,
+          "revenue_b": 8.19,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "ANET",
+        "name": "Arista Networks",
+        "category": "network",
+        "approach": "AI Backend ネットワーク (Ethernet + 800G)",
+        "approach_short": "Ethernet",
+        "purity": "hybrid",
+        "primary_customer": "Meta / Microsoft / Oracle",
+        "leader": "Jayshree Ullal (CEO)",
+        "highlight": "AI クラスタ向け 800G スイッチで NVIDIA InfiniBand と双璧。Meta が UEC (Ultra Ethernet) 主導。",
+        "risk": "InfiniBand との競合。3 大顧客集中 (>40%)。",
+        "thesis": "Ethernet 派が AI バックエンドで巻き返し。COHR/AAOI/LITE 光モジュールを大量採用。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 154.03,
+          "high_52w": 177.73,
+          "low_52w": 86.25,
+          "pct_from_52w_high": 13.3,
+          "ret_1m": -12.9,
+          "ret_3m": 19.6,
+          "ret_6m": 28.8,
+          "ret_1y": null,
+          "volatility_annual": 61.5,
+          "market_cap_b": 193.95,
+          "pe_trailing": 52.93127,
+          "revenue_b": 9.71,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "CIEN",
+        "name": "Ciena Corp",
+        "category": "network",
+        "approach": "コヒーレント光伝送 / ロングホール / DCI",
+        "approach_short": "Coherent",
+        "purity": "pure",
+        "primary_customer": "Verizon / AT&T / Equinix",
+        "leader": "Gary Smith (CEO)",
+        "highlight": "800G ZR/ZR+ コヒーレント光伝送で長距離 DCI (Data Center Interconnect) を支配。",
+        "risk": "従来通信キャリア向けが主、ハイパースケーラ移行で需要変動。",
+        "thesis": "AI 時代の DCI 需要拡大。800G ZR+ で量産ピーク。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 583.74,
+          "high_52w": 591.57,
+          "low_52w": 72.16,
+          "pct_from_52w_high": 1.3,
+          "ret_1m": 12.1,
+          "ret_3m": 70.3,
+          "ret_6m": 230.8,
+          "ret_1y": null,
+          "volatility_annual": 79.9,
+          "market_cap_b": 82.54,
+          "pe_trailing": 369.4557,
+          "revenue_b": 5.12,
+          "sector": "Technology",
+          "industry": "Communication Equipment"
+        }
+      },
+      {
+        "ticker": "GLW",
+        "name": "Corning Incorporated",
+        "category": "fiber",
+        "approach": "光ファイバー + Gorilla Glass",
+        "approach_short": "Fiber",
+        "purity": "minor",
+        "primary_customer": "AT&T / Verizon / 各データセンター",
+        "leader": "Wendell Weeks (CEO)",
+        "highlight": "光ファイバー世界トップ。GenAI でデータセンター向け高密度ファイバー大型受注。",
+        "risk": "Gorilla Glass / TV ガラスなど他事業が安定だが成長遅い。",
+        "thesis": "AI バックボーンの『水道管』。長期保有向きの安定銘柄。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 194.05,
+          "high_52w": 208.28,
+          "low_52w": 47.64,
+          "pct_from_52w_high": 6.8,
+          "ret_1m": 10.3,
+          "ret_3m": 28.2,
+          "ret_6m": 149.2,
+          "ret_1y": null,
+          "volatility_annual": 77.0,
+          "market_cap_b": 167.01,
+          "pe_trailing": 93.293274,
+          "revenue_b": 16.32,
+          "sector": "Technology",
+          "industry": "Electronic Components"
+        }
+      },
+      {
+        "ticker": "IPGP",
+        "name": "IPG Photonics",
+        "category": "fiber",
+        "approach": "高出力ファイバーレーザー",
+        "approach_short": "Laser",
+        "purity": "pure",
+        "primary_customer": "自動車 / EV / 産業 / 医療",
+        "leader": "Eugene Scherbakov (CEO)",
+        "highlight": "ファイバーレーザー世界トップ。EV バッテリー溶接で需要拡大。",
+        "risk": "中国市場依存 (~30%) と 中国国産化進展リスク。",
+        "thesis": "光通信ではなく『光産業全般』エクスポージャー。EV 加速で復活余地。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 119.0,
+          "high_52w": 153.91,
+          "low_52w": 64.6,
+          "pct_from_52w_high": 22.7,
+          "ret_1m": -4.5,
+          "ret_3m": -9.6,
+          "ret_6m": 64.2,
+          "ret_1y": null,
+          "volatility_annual": 81.7,
+          "market_cap_b": 5.05,
+          "pe_trailing": 175.0,
+          "revenue_b": 1.04,
+          "sector": "Technology",
+          "industry": "Semiconductor Equipment & Materials"
+        }
+      },
+      {
+        "ticker": "VIAV",
+        "name": "Viavi Solutions",
+        "category": "fiber",
+        "approach": "光計測 / 5G テスト",
+        "approach_short": "Test/Measure",
+        "purity": "hybrid",
+        "primary_customer": "通信機器メーカー / 通信キャリア",
+        "leader": "Oleg Khaykin (CEO)",
+        "highlight": "光通信機器のテスト・診断装置で世界トップ。5G + 光ネットワーク監視で安定収益。",
+        "risk": "光通信業界が CAPEX 削減局面でテスト需要も縮小。",
+        "thesis": "光通信投資の『裏方』。ピックアンドショベル銘柄。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 49.51,
+          "high_52w": 55.33,
+          "low_52w": 9.09,
+          "pct_from_52w_high": 10.5,
+          "ret_1m": 3.7,
+          "ret_3m": 70.0,
+          "ret_6m": 211.0,
+          "ret_1y": null,
+          "volatility_annual": 85.6,
+          "market_cap_b": 12.21,
+          "pe_trailing": null,
+          "revenue_b": 1.37,
+          "sector": "Technology",
+          "industry": "Communication Equipment"
+        }
+      }
+    ],
+    "by_category": {
+      "transceiver": [
+        {
+          "ticker": "AAOI",
+          "name": "Applied Optoelectronics",
+          "category": "transceiver",
+          "approach": "800G/1.6T DR4・DR8 トランシーバー",
+          "approach_short": "Transceiver",
+          "purity": "pure",
+          "primary_customer": "Microsoft / Amazon AWS",
+          "leader": "Thompson Lin (CEO)",
+          "highlight": "Microsoft Azure 向け 400G/800G 光トランシーバーで大型受注。Quanta との提携で量産能力拡大。",
+          "risk": "顧客集中 (Microsoft 売上比 50%超)。価格競争激化リスク。",
+          "thesis": "AI データセンター 1.6T 移行の最有力サプライヤー。受注残拡大中。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 181.49,
+            "high_52w": 223.1,
+            "low_52w": 15.42,
+            "pct_from_52w_high": 18.7,
+            "ret_1m": 11.9,
+            "ret_3m": 222.5,
+            "ret_6m": 831.2,
+            "ret_1y": null,
+            "volatility_annual": 192.3,
+            "market_cap_b": 14.56,
+            "pe_trailing": null,
+            "revenue_b": 0.51,
+            "sector": "Technology",
+            "industry": "Communication Equipment"
+          }
+        },
+        {
+          "ticker": "COHR",
+          "name": "Coherent Corp",
+          "category": "transceiver",
+          "approach": "高速光トランシーバー + 産業レーザー",
+          "approach_short": "Transceiver/Laser",
+          "purity": "hybrid",
+          "primary_customer": "NVIDIA / Amazon / Meta",
+          "leader": "Jim Anderson (CEO)",
+          "highlight": "II-VI と統合後の総合光半導体トップ。NVIDIA 向け 800G InfiniBand 大規模納入。",
+          "risk": "産業レーザー部門の鈍化。統合シナジーまだ途上。",
+          "thesis": "NVIDIA H100/B200 出荷に直接連動。多角化で安定収益。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 377.57,
+            "high_52w": 404.94,
+            "low_52w": 75.63,
+            "pct_from_52w_high": 6.8,
+            "ret_1m": 12.3,
+            "ret_3m": 48.1,
+            "ret_6m": 178.4,
+            "ret_1y": null,
+            "volatility_annual": 86.0,
+            "market_cap_b": 73.87,
+            "pe_trailing": 178.94315,
+            "revenue_b": 6.6,
+            "sector": "Technology",
+            "industry": "Scientific & Technical Instruments"
+          }
+        },
+        {
+          "ticker": "POET",
+          "name": "POET Technologies",
+          "category": "transceiver",
+          "approach": "光インターポーザー (Silicon Photonics)",
+          "approach_short": "Si Photonics",
+          "purity": "pure",
+          "primary_customer": "(評価中、量産前)",
+          "leader": "Suresh Venkatesan (CEO)",
+          "highlight": "光インターポーザー技術で 800G/1.6T 製品開発中。Mitsubishi Electric などと提携。",
+          "risk": "量産前で売上規模小。技術検証段階。投機的銘柄。",
+          "thesis": "Silicon Photonics の競合は限定的。成功すれば 10x の可能性。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 14.59,
+            "high_52w": 20.57,
+            "low_52w": 3.96,
+            "pct_from_52w_high": 29.1,
+            "ret_1m": -3.4,
+            "ret_3m": 138.8,
+            "ret_6m": 247.4,
+            "ret_1y": null,
+            "volatility_annual": 213.4,
+            "market_cap_b": 2.52,
+            "pe_trailing": null,
+            "revenue_b": 0.0,
+            "sector": "Technology",
+            "industry": "Semiconductors"
+          }
+        },
+        {
+          "ticker": "LITE",
+          "name": "Lumentum Holdings",
+          "category": "transceiver",
+          "approach": "光半導体 + 3D センシング + データセンター",
+          "approach_short": "Photonics",
+          "purity": "pure",
+          "primary_customer": "Cisco / Arista / Apple (3D センシング)",
+          "leader": "Alan Lowe (CEO)",
+          "highlight": "光半導体 (TIA, レーザー) で 1.6T 製品ロードマップ進行。NeoPhotonics 統合済。",
+          "risk": "3D センシング (Apple) の需要鈍化が継続。",
+          "thesis": "データセンター光通信は 2026 で記録的成長見込み。コア事業に集中。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 946.9,
+            "high_52w": 1053.09,
+            "low_52w": 72.28,
+            "pct_from_52w_high": 10.1,
+            "ret_1m": 7.4,
+            "ret_3m": 37.6,
+            "ret_6m": 306.0,
+            "ret_1y": null,
+            "volatility_annual": 107.3,
+            "market_cap_b": 73.67,
+            "pe_trailing": 166.70775,
+            "revenue_b": 2.49,
+            "sector": "Technology",
+            "industry": "Communication Equipment"
+          }
+        },
+        {
+          "ticker": "FN",
+          "name": "Fabrinet",
+          "category": "transceiver",
+          "approach": "光通信機器の受託製造 (EMS)",
+          "approach_short": "EMS",
+          "purity": "hybrid",
+          "primary_customer": "NVIDIA / Cisco / Lumentum / Ciena",
+          "leader": "Seamus Grady (CEO)",
+          "highlight": "光通信の隠れた巨人。NVIDIA NVLink Switch 製造を担当との観測。",
+          "risk": "顧客の在庫調整局面で売上ボラ。EMS のためマージン低い。",
+          "thesis": "光業界全体の波に乗れる「ピックアンドショベル」銘柄。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 703.86,
+            "high_52w": 746.47,
+            "low_52w": 230.28,
+            "pct_from_52w_high": 5.7,
+            "ret_1m": -2.3,
+            "ret_3m": 20.1,
+            "ret_6m": 81.8,
+            "ret_1y": null,
+            "volatility_annual": 80.9,
+            "market_cap_b": 25.22,
+            "pe_trailing": 60.625324,
+            "revenue_b": 4.24,
+            "sector": "Technology",
+            "industry": "Electronic Components"
+          }
+        }
+      ],
+      "semiconductor": [
+        {
+          "ticker": "NVDA",
+          "name": "NVIDIA",
+          "category": "semiconductor",
+          "approach": "Silicon Photonics + NVLink Switch",
+          "approach_short": "Si Photonics",
+          "purity": "minor",
+          "primary_customer": "(自社 H100/B200/B300 接続)",
+          "leader": "Jensen Huang (CEO)",
+          "highlight": "Quantum-2 InfiniBand と NVLink Switch で AI クラスター内光接続を支配。CPO 商用化リード。",
+          "risk": "NVDA 株は GPU 売上で動き、光通信は数% 程度。",
+          "thesis": "光通信を「自社設計+EMS 製造」で内製化。AI フルスタックの最終ピース。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 215.33,
+            "high_52w": 235.74,
+            "low_52w": 131.26,
+            "pct_from_52w_high": 8.7,
+            "ret_1m": 3.4,
+            "ret_3m": 11.7,
+            "ret_6m": 19.2,
+            "ret_1y": null,
+            "volatility_annual": 37.4,
+            "market_cap_b": 5215.51,
+            "pe_trailing": 33.026073,
+            "revenue_b": 253.49,
+            "sector": "Technology",
+            "industry": "Semiconductors"
+          }
+        },
+        {
+          "ticker": "MRVL",
+          "name": "Marvell Technology",
+          "category": "semiconductor",
+          "approach": "光 DSP + Co-Packaged Optics + AI ASIC",
+          "approach_short": "Optical DSP",
+          "purity": "hybrid",
+          "primary_customer": "AWS / Microsoft Azure / 各 EMS",
+          "leader": "Matt Murphy (CEO)",
+          "highlight": "光 DSP (PAM4) で市場 80% 独占。AWS Trainium 設計受託 + CPO で次世代も席巻。",
+          "risk": "ストレージ事業の鈍化。Broadcom の競合参入。",
+          "thesis": "Custom ASIC + 光 DSP の二本柱。1.6T/CPO で 2026-2028 加速。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 196.33,
+            "high_52w": 196.33,
+            "low_52w": 60.03,
+            "pct_from_52w_high": 0.0,
+            "ret_1m": 19.5,
+            "ret_3m": 150.6,
+            "ret_6m": 156.4,
+            "ret_1y": null,
+            "volatility_annual": 71.5,
+            "market_cap_b": 171.9,
+            "pe_trailing": 64.16013,
+            "revenue_b": 8.19,
+            "sector": "Technology",
+            "industry": "Semiconductors"
+          }
+        }
+      ],
+      "network": [
+        {
+          "ticker": "ANET",
+          "name": "Arista Networks",
+          "category": "network",
+          "approach": "AI Backend ネットワーク (Ethernet + 800G)",
+          "approach_short": "Ethernet",
+          "purity": "hybrid",
+          "primary_customer": "Meta / Microsoft / Oracle",
+          "leader": "Jayshree Ullal (CEO)",
+          "highlight": "AI クラスタ向け 800G スイッチで NVIDIA InfiniBand と双璧。Meta が UEC (Ultra Ethernet) 主導。",
+          "risk": "InfiniBand との競合。3 大顧客集中 (>40%)。",
+          "thesis": "Ethernet 派が AI バックエンドで巻き返し。COHR/AAOI/LITE 光モジュールを大量採用。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 154.03,
+            "high_52w": 177.73,
+            "low_52w": 86.25,
+            "pct_from_52w_high": 13.3,
+            "ret_1m": -12.9,
+            "ret_3m": 19.6,
+            "ret_6m": 28.8,
+            "ret_1y": null,
+            "volatility_annual": 61.5,
+            "market_cap_b": 193.95,
+            "pe_trailing": 52.93127,
+            "revenue_b": 9.71,
+            "sector": "Technology",
+            "industry": "Computer Hardware"
+          }
+        },
+        {
+          "ticker": "CIEN",
+          "name": "Ciena Corp",
+          "category": "network",
+          "approach": "コヒーレント光伝送 / ロングホール / DCI",
+          "approach_short": "Coherent",
+          "purity": "pure",
+          "primary_customer": "Verizon / AT&T / Equinix",
+          "leader": "Gary Smith (CEO)",
+          "highlight": "800G ZR/ZR+ コヒーレント光伝送で長距離 DCI (Data Center Interconnect) を支配。",
+          "risk": "従来通信キャリア向けが主、ハイパースケーラ移行で需要変動。",
+          "thesis": "AI 時代の DCI 需要拡大。800G ZR+ で量産ピーク。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 583.74,
+            "high_52w": 591.57,
+            "low_52w": 72.16,
+            "pct_from_52w_high": 1.3,
+            "ret_1m": 12.1,
+            "ret_3m": 70.3,
+            "ret_6m": 230.8,
+            "ret_1y": null,
+            "volatility_annual": 79.9,
+            "market_cap_b": 82.54,
+            "pe_trailing": 369.4557,
+            "revenue_b": 5.12,
+            "sector": "Technology",
+            "industry": "Communication Equipment"
+          }
+        }
+      ],
+      "fiber": [
+        {
+          "ticker": "GLW",
+          "name": "Corning Incorporated",
+          "category": "fiber",
+          "approach": "光ファイバー + Gorilla Glass",
+          "approach_short": "Fiber",
+          "purity": "minor",
+          "primary_customer": "AT&T / Verizon / 各データセンター",
+          "leader": "Wendell Weeks (CEO)",
+          "highlight": "光ファイバー世界トップ。GenAI でデータセンター向け高密度ファイバー大型受注。",
+          "risk": "Gorilla Glass / TV ガラスなど他事業が安定だが成長遅い。",
+          "thesis": "AI バックボーンの『水道管』。長期保有向きの安定銘柄。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 194.05,
+            "high_52w": 208.28,
+            "low_52w": 47.64,
+            "pct_from_52w_high": 6.8,
+            "ret_1m": 10.3,
+            "ret_3m": 28.2,
+            "ret_6m": 149.2,
+            "ret_1y": null,
+            "volatility_annual": 77.0,
+            "market_cap_b": 167.01,
+            "pe_trailing": 93.293274,
+            "revenue_b": 16.32,
+            "sector": "Technology",
+            "industry": "Electronic Components"
+          }
+        },
+        {
+          "ticker": "IPGP",
+          "name": "IPG Photonics",
+          "category": "fiber",
+          "approach": "高出力ファイバーレーザー",
+          "approach_short": "Laser",
+          "purity": "pure",
+          "primary_customer": "自動車 / EV / 産業 / 医療",
+          "leader": "Eugene Scherbakov (CEO)",
+          "highlight": "ファイバーレーザー世界トップ。EV バッテリー溶接で需要拡大。",
+          "risk": "中国市場依存 (~30%) と 中国国産化進展リスク。",
+          "thesis": "光通信ではなく『光産業全般』エクスポージャー。EV 加速で復活余地。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 119.0,
+            "high_52w": 153.91,
+            "low_52w": 64.6,
+            "pct_from_52w_high": 22.7,
+            "ret_1m": -4.5,
+            "ret_3m": -9.6,
+            "ret_6m": 64.2,
+            "ret_1y": null,
+            "volatility_annual": 81.7,
+            "market_cap_b": 5.05,
+            "pe_trailing": 175.0,
+            "revenue_b": 1.04,
+            "sector": "Technology",
+            "industry": "Semiconductor Equipment & Materials"
+          }
+        },
+        {
+          "ticker": "VIAV",
+          "name": "Viavi Solutions",
+          "category": "fiber",
+          "approach": "光計測 / 5G テスト",
+          "approach_short": "Test/Measure",
+          "purity": "hybrid",
+          "primary_customer": "通信機器メーカー / 通信キャリア",
+          "leader": "Oleg Khaykin (CEO)",
+          "highlight": "光通信機器のテスト・診断装置で世界トップ。5G + 光ネットワーク監視で安定収益。",
+          "risk": "光通信業界が CAPEX 削減局面でテスト需要も縮小。",
+          "thesis": "光通信投資の『裏方』。ピックアンドショベル銘柄。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 49.51,
+            "high_52w": 55.33,
+            "low_52w": 9.09,
+            "pct_from_52w_high": 10.5,
+            "ret_1m": 3.7,
+            "ret_3m": 70.0,
+            "ret_6m": 211.0,
+            "ret_1y": null,
+            "volatility_annual": 85.6,
+            "market_cap_b": 12.21,
+            "pe_trailing": null,
+            "revenue_b": 1.37,
+            "sector": "Technology",
+            "industry": "Communication Equipment"
+          }
+        }
+      ]
+    },
+    "by_1y_return": [],
+    "by_3m_return": [
+      {
+        "ticker": "AAOI",
+        "name": "Applied Optoelectronics",
+        "category": "transceiver",
+        "approach": "800G/1.6T DR4・DR8 トランシーバー",
+        "approach_short": "Transceiver",
+        "purity": "pure",
+        "primary_customer": "Microsoft / Amazon AWS",
+        "leader": "Thompson Lin (CEO)",
+        "highlight": "Microsoft Azure 向け 400G/800G 光トランシーバーで大型受注。Quanta との提携で量産能力拡大。",
+        "risk": "顧客集中 (Microsoft 売上比 50%超)。価格競争激化リスク。",
+        "thesis": "AI データセンター 1.6T 移行の最有力サプライヤー。受注残拡大中。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 181.49,
+          "high_52w": 223.1,
+          "low_52w": 15.42,
+          "pct_from_52w_high": 18.7,
+          "ret_1m": 11.9,
+          "ret_3m": 222.5,
+          "ret_6m": 831.2,
+          "ret_1y": null,
+          "volatility_annual": 192.3,
+          "market_cap_b": 14.56,
+          "pe_trailing": null,
+          "revenue_b": 0.51,
+          "sector": "Technology",
+          "industry": "Communication Equipment"
+        }
+      },
+      {
+        "ticker": "MRVL",
+        "name": "Marvell Technology",
+        "category": "semiconductor",
+        "approach": "光 DSP + Co-Packaged Optics + AI ASIC",
+        "approach_short": "Optical DSP",
+        "purity": "hybrid",
+        "primary_customer": "AWS / Microsoft Azure / 各 EMS",
+        "leader": "Matt Murphy (CEO)",
+        "highlight": "光 DSP (PAM4) で市場 80% 独占。AWS Trainium 設計受託 + CPO で次世代も席巻。",
+        "risk": "ストレージ事業の鈍化。Broadcom の競合参入。",
+        "thesis": "Custom ASIC + 光 DSP の二本柱。1.6T/CPO で 2026-2028 加速。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 196.33,
+          "high_52w": 196.33,
+          "low_52w": 60.03,
+          "pct_from_52w_high": 0.0,
+          "ret_1m": 19.5,
+          "ret_3m": 150.6,
+          "ret_6m": 156.4,
+          "ret_1y": null,
+          "volatility_annual": 71.5,
+          "market_cap_b": 171.9,
+          "pe_trailing": 64.16013,
+          "revenue_b": 8.19,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "POET",
+        "name": "POET Technologies",
+        "category": "transceiver",
+        "approach": "光インターポーザー (Silicon Photonics)",
+        "approach_short": "Si Photonics",
+        "purity": "pure",
+        "primary_customer": "(評価中、量産前)",
+        "leader": "Suresh Venkatesan (CEO)",
+        "highlight": "光インターポーザー技術で 800G/1.6T 製品開発中。Mitsubishi Electric などと提携。",
+        "risk": "量産前で売上規模小。技術検証段階。投機的銘柄。",
+        "thesis": "Silicon Photonics の競合は限定的。成功すれば 10x の可能性。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 14.59,
+          "high_52w": 20.57,
+          "low_52w": 3.96,
+          "pct_from_52w_high": 29.1,
+          "ret_1m": -3.4,
+          "ret_3m": 138.8,
+          "ret_6m": 247.4,
+          "ret_1y": null,
+          "volatility_annual": 213.4,
+          "market_cap_b": 2.52,
+          "pe_trailing": null,
+          "revenue_b": 0.0,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "CIEN",
+        "name": "Ciena Corp",
+        "category": "network",
+        "approach": "コヒーレント光伝送 / ロングホール / DCI",
+        "approach_short": "Coherent",
+        "purity": "pure",
+        "primary_customer": "Verizon / AT&T / Equinix",
+        "leader": "Gary Smith (CEO)",
+        "highlight": "800G ZR/ZR+ コヒーレント光伝送で長距離 DCI (Data Center Interconnect) を支配。",
+        "risk": "従来通信キャリア向けが主、ハイパースケーラ移行で需要変動。",
+        "thesis": "AI 時代の DCI 需要拡大。800G ZR+ で量産ピーク。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 583.74,
+          "high_52w": 591.57,
+          "low_52w": 72.16,
+          "pct_from_52w_high": 1.3,
+          "ret_1m": 12.1,
+          "ret_3m": 70.3,
+          "ret_6m": 230.8,
+          "ret_1y": null,
+          "volatility_annual": 79.9,
+          "market_cap_b": 82.54,
+          "pe_trailing": 369.4557,
+          "revenue_b": 5.12,
+          "sector": "Technology",
+          "industry": "Communication Equipment"
+        }
+      },
+      {
+        "ticker": "VIAV",
+        "name": "Viavi Solutions",
+        "category": "fiber",
+        "approach": "光計測 / 5G テスト",
+        "approach_short": "Test/Measure",
+        "purity": "hybrid",
+        "primary_customer": "通信機器メーカー / 通信キャリア",
+        "leader": "Oleg Khaykin (CEO)",
+        "highlight": "光通信機器のテスト・診断装置で世界トップ。5G + 光ネットワーク監視で安定収益。",
+        "risk": "光通信業界が CAPEX 削減局面でテスト需要も縮小。",
+        "thesis": "光通信投資の『裏方』。ピックアンドショベル銘柄。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 49.51,
+          "high_52w": 55.33,
+          "low_52w": 9.09,
+          "pct_from_52w_high": 10.5,
+          "ret_1m": 3.7,
+          "ret_3m": 70.0,
+          "ret_6m": 211.0,
+          "ret_1y": null,
+          "volatility_annual": 85.6,
+          "market_cap_b": 12.21,
+          "pe_trailing": null,
+          "revenue_b": 1.37,
+          "sector": "Technology",
+          "industry": "Communication Equipment"
+        }
+      }
+    ],
+    "summary": {
+      "total_tickers": 12,
+      "transceiver_count": 5,
+      "semiconductor_count": 2,
+      "network_count": 2,
+      "fiber_count": 3
     }
   },
   "composite_ranking": [
@@ -14965,6 +15951,9 @@ function render() {
   // Quantum (量子コンピューター特集)
   renderQuantum(d);
 
+  // Optical (光通信銘柄特集)
+  renderOptical(d);
+
   // Phase 11: 総合ランキング Top 10
   renderCompositeRanking(d);
 
@@ -15406,6 +16395,187 @@ function submitCustomTicker() {
     noteInput.value = '';
     renderCustomWatchlist();
   }
+}
+
+// ============================================================
+// Optical Special (光通信銘柄特集)
+// ============================================================
+function renderOptical(d) {
+  const o = d.optical;
+  const containers = {
+    transceiver: document.getElementById('opticalTransceiverList'),
+    semiconductor: document.getElementById('opticalSemiList'),
+    network: document.getElementById('opticalNetworkList'),
+    fiber: document.getElementById('opticalFiberList'),
+  };
+  const cmpEl = document.getElementById('opticalComparisonTable');
+  if (!containers.transceiver) return;
+  if (!o || !o.all || !o.all.length) {
+    Object.values(containers).forEach(c => { if (c) c.innerHTML = '<div style="padding:14px;color:var(--text2);font-size:12px">データなし</div>'; });
+    return;
+  }
+
+  const card = (e) => {
+    const m = e.market || {};
+    if (m.error) return `<div style="padding:8px;color:var(--text2);font-size:11px">${e.ticker}: ${m.error}</div>`;
+    const purityLabel = {
+      pure: { label: '純粋', color: '#ffd700' },
+      hybrid: { label: 'ハイブリッド', color: 'var(--cyan)' },
+      minor: { label: '量子比小', color: 'var(--text2)' },
+    }[e.purity] || { label: '?', color: 'var(--text2)' };
+
+    const ret3m = m.ret_3m;
+    const ret3mColor = ret3m == null ? 'var(--text2)' : ret3m > 50 ? '#ffd700' : ret3m > 10 ? 'var(--green)' : ret3m > 0 ? 'var(--cyan)' : 'var(--red)';
+    const ret1y = m.ret_1y;
+    const ret1yColor = ret1y == null ? 'var(--text2)' : ret1y > 0 ? 'var(--green)' : 'var(--red)';
+
+    return `<div style="padding:12px;border-bottom:1px solid var(--border);cursor:pointer" data-ticker="${e.ticker}">
+      <div style="display:flex;justify-content:space-between;align-items:start">
+        <div>
+          <div style="font-size:14px;font-weight:800">${e.ticker} <span style="font-size:11px;color:var(--text2);font-weight:400">${e.name}</span></div>
+          <div style="font-size:11px;color:var(--text2);margin-top:2px">${e.approach}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:16px;font-weight:800">$${m.price}</div>
+          ${m.market_cap_b ? `<div style="font-size:10px;color:var(--text2)">時価総額 $${m.market_cap_b}B</div>` : ''}
+        </div>
+      </div>
+      <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px">
+        <span style="padding:2px 8px;background:rgba(255,215,0,0.15);color:${purityLabel.color};border-radius:3px;font-size:11px;font-weight:700">${purityLabel.label}</span>
+        <span style="padding:2px 8px;background:rgba(139,148,158,0.12);border-radius:3px;font-size:11px">${e.approach_short}</span>
+        ${e.primary_customer ? `<span style="padding:2px 6px;background:rgba(102,178,255,0.12);color:#66b2ff;border-radius:3px;font-size:10px">顧客: ${e.primary_customer}</span>` : ''}
+      </div>
+      <div style="margin-top:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:11px">
+        <div><div style="color:var(--text2);font-size:10px">1M</div><div style="color:${ret3mColor};font-weight:700">${m.ret_1m != null ? (m.ret_1m >= 0 ? '+' : '') + m.ret_1m + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">3M</div><div style="color:${ret3mColor};font-weight:800">${m.ret_3m != null ? (m.ret_3m >= 0 ? '+' : '') + m.ret_3m + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">6M</div><div style="color:${ret1yColor};font-weight:700">${m.ret_6m != null ? (m.ret_6m >= 0 ? '+' : '') + m.ret_6m + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">1Y</div><div style="color:${ret1yColor};font-weight:700">${ret1y != null ? (ret1y >= 0 ? '+' : '') + ret1y + '%' : '—'}</div></div>
+      </div>
+      ${m.pct_from_52w_high != null ? `<div style="margin-top:4px;font-size:10px;color:var(--text2)">52w高値: $${m.high_52w} (現値は${(100 - m.pct_from_52w_high).toFixed(0)}%) / 安値 $${m.low_52w} / ボラ ${m.volatility_annual || '?'}%</div>` : ''}
+      <div style="margin-top:8px;font-size:11px;line-height:1.5">
+        <div><strong>👤 リーダー:</strong> <span style="color:var(--text2)">${e.leader}</span></div>
+        <div style="margin-top:4px"><strong style="color:var(--green)">💡 強み:</strong> ${e.highlight}</div>
+        <div style="margin-top:4px"><strong style="color:var(--orange)">⚠️ リスク:</strong> ${e.risk}</div>
+        <div style="margin-top:4px"><strong style="color:var(--cyan)">🎯 投資論点:</strong> ${e.thesis}</div>
+      </div>
+    </div>`;
+  };
+
+  containers.transceiver.innerHTML = o.by_category.transceiver.map(card).join('');
+  containers.semiconductor.innerHTML = o.by_category.semiconductor.map(card).join('');
+  containers.network.innerHTML = o.by_category.network.map(card).join('');
+  containers.fiber.innerHTML = o.by_category.fiber.map(card).join('');
+
+  // 比較マトリクス
+  const catEmoji = { transceiver: '📡', semiconductor: '🔌', network: '🌐', fiber: '🧵' };
+  const rows = o.all.map(e => {
+    const m = e.market || {};
+    return `<tr>
+      <td style="padding:6px;font-weight:700">${catEmoji[e.category]} ${e.ticker}</td>
+      <td style="padding:6px;font-size:11px">${e.approach_short}</td>
+      <td style="padding:6px;font-size:11px;text-align:right">$${m.price || '—'}</td>
+      <td style="padding:6px;font-size:11px;text-align:right;color:${m.ret_3m > 50 ? '#ffd700' : m.ret_3m > 0 ? 'var(--green)' : 'var(--red)'};font-weight:700">${m.ret_3m != null ? (m.ret_3m >= 0 ? '+' : '') + m.ret_3m + '%' : '—'}</td>
+      <td style="padding:6px;font-size:11px;text-align:right;color:${m.ret_1y > 0 ? 'var(--green)' : 'var(--red)'}">${m.ret_1y != null ? (m.ret_1y >= 0 ? '+' : '') + m.ret_1y + '%' : '—'}</td>
+      <td style="padding:6px;font-size:11px;text-align:right">${m.volatility_annual != null ? m.volatility_annual + '%' : '—'}</td>
+      <td style="padding:6px;font-size:11px;text-align:right">${m.market_cap_b != null ? '$' + m.market_cap_b + 'B' : '—'}</td>
+    </tr>`;
+  }).join('');
+  cmpEl.innerHTML = `<table style="width:100%;font-size:11px;border-collapse:collapse">
+    <thead><tr style="background:rgba(255,255,255,0.04)">
+      <th style="padding:6px;text-align:left">銘柄</th>
+      <th style="padding:6px;text-align:left">分野</th>
+      <th style="padding:6px;text-align:right">価格</th>
+      <th style="padding:6px;text-align:right">3M</th>
+      <th style="padding:6px;text-align:right">1Y</th>
+      <th style="padding:6px;text-align:right">ボラ</th>
+      <th style="padding:6px;text-align:right">時価総額</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+
+  // クリック委譲 (詳細シート展開)
+  ['opticalTransceiverList', 'opticalSemiList', 'opticalNetworkList', 'opticalFiberList'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el || el._listenerAdded) return;
+    el._listenerAdded = true;
+    el.addEventListener('click', (e) => {
+      const target = e.target.closest('[data-ticker]');
+      if (target && target.dataset.ticker) {
+        const ticker = target.dataset.ticker;
+        if ((SCAN_DATA.details || {})[ticker]) {
+          openDetail(ticker);
+        } else {
+          openOpticalOnlyDetail(ticker);
+        }
+      }
+    });
+  });
+}
+
+function openOpticalOnlyDetail(ticker) {
+  const o = SCAN_DATA.optical || {};
+  const all = o.all || [];
+  const e = all.find(x => x.ticker === ticker);
+  if (!e) return;
+  const m = e.market || {};
+  const html = `
+    <div class="detail-header">
+      <div class="detail-close" onclick="closeDetail()">✕</div>
+      <div class="detail-ticker">${ticker}</div>
+      <div class="detail-name">${e.name} ・ 光通信</div>
+      <div class="detail-price">$${m.price || '—'}</div>
+      <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
+        <span class="detail-tag" style="background:rgba(255,215,0,0.18);color:#ffd700">${e.approach}</span>
+        <span class="detail-tag">${e.category}</span>
+        ${e.primary_customer ? `<span class="detail-tag" style="background:rgba(102,178,255,0.12);color:#66b2ff">顧客: ${e.primary_customer}</span>` : ''}
+      </div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-title">💡 事業の特徴</div>
+      <div style="font-size:13px;line-height:1.7">${e.highlight}</div>
+      <div style="margin-top:8px;font-size:11px;color:var(--text2)">
+        <strong>事業分野:</strong> ${e.approach}<br>
+        <strong>主要顧客:</strong> ${e.primary_customer || '非開示'}<br>
+        <strong>リーダー:</strong> ${e.leader}
+      </div>
+    </div>
+    <div class="detail-section" style="background:rgba(255,165,0,0.05);border-color:rgba(255,165,0,0.3)">
+      <div class="detail-section-title" style="color:var(--orange)">⚠️ リスク</div>
+      <div style="font-size:13px;line-height:1.6">${e.risk}</div>
+    </div>
+    <div class="detail-section" style="background:rgba(102,178,255,0.05);border-color:rgba(102,178,255,0.3)">
+      <div class="detail-section-title" style="color:#66b2ff">🎯 投資論点</div>
+      <div style="font-size:13px;line-height:1.6">${e.thesis}</div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-title">📊 マーケットデータ</div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;font-size:12px">
+        <div><div style="color:var(--text2);font-size:10px">現値</div><div style="font-weight:700">$${m.price || '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">時価総額</div><div style="font-weight:700">${m.market_cap_b ? '$' + m.market_cap_b + 'B' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">52w 高値</div><div style="font-weight:700">$${m.high_52w || '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">52w 安値</div><div style="font-weight:700">$${m.low_52w || '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">1M リターン</div><div style="font-weight:700;color:${m.ret_1m > 0 ? 'var(--green)' : 'var(--red)'}">${m.ret_1m != null ? (m.ret_1m >= 0 ? '+' : '') + m.ret_1m + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">3M リターン</div><div style="font-weight:800;color:${m.ret_3m > 50 ? '#ffd700' : m.ret_3m > 0 ? 'var(--green)' : 'var(--red)'}">${m.ret_3m != null ? (m.ret_3m >= 0 ? '+' : '') + m.ret_3m + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">6M リターン</div><div style="font-weight:700;color:${m.ret_6m > 0 ? 'var(--green)' : 'var(--red)'}">${m.ret_6m != null ? (m.ret_6m >= 0 ? '+' : '') + m.ret_6m + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">1Y リターン</div><div style="font-weight:700;color:${m.ret_1y > 0 ? 'var(--green)' : 'var(--red)'}">${m.ret_1y != null ? (m.ret_1y >= 0 ? '+' : '') + m.ret_1y + '%' : '—'}</div></div>
+        <div><div style="color:var(--text2);font-size:10px">年率ボラ</div><div style="font-weight:700;color:${m.volatility_annual > 80 ? 'var(--red)' : 'var(--orange)'}">${m.volatility_annual || '—'}%</div></div>
+        ${m.revenue_b ? `<div><div style="color:var(--text2);font-size:10px">売上 (TTM)</div><div style="font-weight:700">$${m.revenue_b}B</div></div>` : ''}
+      </div>
+    </div>
+    <div class="detail-section">
+      <div class="detail-section-title">🔗 外部チャート / 詳細</div>
+      <div style="display:flex;gap:8px;font-size:13px">
+        <a href="https://finance.yahoo.com/quote/${ticker}" target="_blank" rel="noopener" style="color:#66b2ff;text-decoration:none">Yahoo Finance ↗</a>
+        <a href="https://www.tradingview.com/symbols/${ticker}/" target="_blank" rel="noopener" style="color:#66b2ff;text-decoration:none">TradingView ↗</a>
+        <a href="https://stockanalysis.com/stocks/${ticker}/" target="_blank" rel="noopener" style="color:#66b2ff;text-decoration:none">StockAnalysis ↗</a>
+      </div>
+    </div>
+  `;
+  document.getElementById('detailContent').innerHTML = html;
+  document.getElementById('detailOverlay').classList.add('show');
+  document.getElementById('detailSheet').classList.add('show');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('detailSheet').scrollTop = 0;
 }
 
 function renderQuantum(d) {
