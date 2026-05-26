@@ -1477,7 +1477,7 @@ body {
 // Scan Data (embedded — updated by daily scan pipeline)
 // ============================================================
 const SCAN_DATA = {
-  "scan_date": "2026-05-24 10:58",
+  "scan_date": "2026-05-26 09:59",
   "market_health": {
     "S&P500": {
       "price": 745.6400146484375,
@@ -1499,7 +1499,7 @@ const SCAN_DATA = {
     "avg_cost": 8.3573,
     "onkabu_target": 16.72,
     "earnings_date": "8/6",
-    "days_until": 74
+    "days_until": 72
   },
   "signals": [
     {
@@ -1512,26 +1512,6 @@ const SCAN_DATA = {
       "note": "金銀"
     },
     {
-      "ticker": "NVT",
-      "name": "nVent Electric",
-      "type": "BUY",
-      "price": 164.66000366210938,
-      "sepa": "9.0",
-      "theme": "電力",
-      "note": "電力",
-      "rank": 1
-    },
-    {
-      "ticker": "COHR",
-      "name": "Coherent Corp",
-      "type": "BUY",
-      "price": 377.57000732421875,
-      "sepa": "9.0",
-      "theme": "半導体・光学",
-      "note": "半導体・光学",
-      "rank": 2
-    },
-    {
       "ticker": "ASX",
       "name": "ASE Technology",
       "type": "BUY",
@@ -1539,7 +1519,7 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:SF",
-      "rank": 3
+      "rank": 1
     },
     {
       "ticker": "AEHR",
@@ -1549,7 +1529,17 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "CPO",
       "note": "持ち場:C",
-      "rank": 4
+      "rank": 2
+    },
+    {
+      "ticker": "COHR",
+      "name": "Coherent Corp",
+      "type": "BUY",
+      "price": 377.57000732421875,
+      "sepa": "9.0",
+      "theme": "半導体・光学",
+      "note": "半導体・光学",
+      "rank": 3
     },
     {
       "ticker": "ROIV",
@@ -1559,6 +1549,16 @@ const SCAN_DATA = {
       "sepa": "9.0",
       "theme": "バイオ",
       "note": "バイオ",
+      "rank": 4
+    },
+    {
+      "ticker": "NVT",
+      "name": "nVent Electric",
+      "type": "BUY",
+      "price": 164.66000366210938,
+      "sepa": "9.0",
+      "theme": "電力",
+      "note": "電力",
       "rank": 5
     },
     {
@@ -1612,16 +1612,6 @@ const SCAN_DATA = {
       "rank": 10
     },
     {
-      "ticker": "ROKU",
-      "name": "Roku",
-      "type": "BUY",
-      "price": 125.55000305175781,
-      "sepa": "8.0",
-      "theme": "テック",
-      "note": "テック",
-      "rank": 11
-    },
-    {
       "ticker": "TVTX",
       "name": "Travere Therapeutics",
       "type": "BUY",
@@ -1629,6 +1619,16 @@ const SCAN_DATA = {
       "sepa": "8.0",
       "theme": "バイオ",
       "note": "バイオ",
+      "rank": 11
+    },
+    {
+      "ticker": "ROKU",
+      "name": "Roku",
+      "type": "BUY",
+      "price": 125.55000305175781,
+      "sepa": "8.0",
+      "theme": "テック",
+      "note": "テック",
       "rank": 12
     },
     {
@@ -1733,98 +1733,7 @@ const SCAN_DATA = {
       "note": "防衛"
     }
   ],
-  "ai_consensus": [
-    {
-      "rank": 1,
-      "ticker": "NVDA",
-      "sepa": "—",
-      "grok": "—",
-      "gemini": "98pt",
-      "gpt": "—",
-      "verdict": ""
-    },
-    {
-      "rank": 2,
-      "ticker": "TSM",
-      "sepa": "—",
-      "grok": "—",
-      "gemini": "92pt",
-      "gpt": "—",
-      "verdict": ""
-    },
-    {
-      "rank": 3,
-      "ticker": "AVGO",
-      "sepa": "—",
-      "grok": "—",
-      "gemini": "85pt",
-      "gpt": "—",
-      "verdict": ""
-    },
-    {
-      "rank": 4,
-      "ticker": "CDE",
-      "sepa": "4.0",
-      "grok": "—",
-      "gemini": "79pt",
-      "gpt": "—",
-      "verdict": ""
-    },
-    {
-      "rank": 5,
-      "ticker": "NVT",
-      "sepa": "9.0",
-      "grok": "—",
-      "gemini": "74pt",
-      "gpt": "—",
-      "verdict": ""
-    },
-    {
-      "rank": 6,
-      "ticker": "FCX",
-      "sepa": "7.0",
-      "grok": "—",
-      "gemini": "68pt",
-      "gpt": "—",
-      "verdict": ""
-    },
-    {
-      "rank": 7,
-      "ticker": "KEYS",
-      "sepa": "8.0",
-      "grok": "—",
-      "gemini": "65pt",
-      "gpt": "—",
-      "verdict": ""
-    },
-    {
-      "rank": 8,
-      "ticker": "COHR",
-      "sepa": "9.0",
-      "grok": "—",
-      "gemini": "62pt",
-      "gpt": "—",
-      "verdict": ""
-    },
-    {
-      "rank": 9,
-      "ticker": "FORM",
-      "sepa": "6.0",
-      "grok": "—",
-      "gemini": "58pt",
-      "gpt": "—",
-      "verdict": ""
-    },
-    {
-      "rank": 10,
-      "ticker": "ROKU",
-      "sepa": "8.0",
-      "grok": "—",
-      "gemini": "52pt",
-      "gpt": "—",
-      "verdict": ""
-    }
-  ],
+  "ai_consensus": [],
   "earnings": [
     {
       "date": "5/29",
@@ -1832,7 +1741,7 @@ const SCAN_DATA = {
       "name": "UiPath",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 5
+      "days": 3
     },
     {
       "date": "6/24",
@@ -1840,7 +1749,7 @@ const SCAN_DATA = {
       "name": "AeroVironment",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 31
+      "days": 29
     },
     {
       "date": "7/22",
@@ -1848,7 +1757,7 @@ const SCAN_DATA = {
       "name": "Freeport-McMoRan",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 59
+      "days": 57
     },
     {
       "date": "7/23",
@@ -1856,7 +1765,7 @@ const SCAN_DATA = {
       "name": "Tesla",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 60
+      "days": 58
     },
     {
       "date": "7/24",
@@ -1864,7 +1773,7 @@ const SCAN_DATA = {
       "name": "Schlumberger",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 61
+      "days": 59
     },
     {
       "date": "7/28",
@@ -1872,7 +1781,7 @@ const SCAN_DATA = {
       "name": "Symbotic",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 65
+      "days": 63
     },
     {
       "date": "7/30",
@@ -1880,7 +1789,7 @@ const SCAN_DATA = {
       "name": "FormFactor",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 67
+      "days": 65
     },
     {
       "date": "7/30",
@@ -1888,7 +1797,7 @@ const SCAN_DATA = {
       "name": "ASE Technology",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 67
+      "days": 65
     },
     {
       "date": "7/30",
@@ -1896,7 +1805,7 @@ const SCAN_DATA = {
       "name": "Albemarle",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 67
+      "days": 65
     },
     {
       "date": "7/31",
@@ -1904,7 +1813,7 @@ const SCAN_DATA = {
       "name": "Ero Copper",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 68
+      "days": 66
     },
     {
       "date": "7/31",
@@ -1912,7 +1821,7 @@ const SCAN_DATA = {
       "name": "nVent Electric",
       "strategy": "決算前ポジション構築",
       "note": "電力需要増テーマの確認",
-      "days": 68
+      "days": 66
     },
     {
       "date": "7/31",
@@ -1920,7 +1829,7 @@ const SCAN_DATA = {
       "name": "Roku",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 68
+      "days": 66
     },
     {
       "date": "8/6",
@@ -1928,7 +1837,7 @@ const SCAN_DATA = {
       "name": "Coeur Mining",
       "strategy": "決算カタリスト狙い",
       "note": "金銀価格上昇の業績反映確認",
-      "days": 74
+      "days": 72
     },
     {
       "date": "8/6",
@@ -1936,7 +1845,7 @@ const SCAN_DATA = {
       "name": "Intuitive Machines",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 74
+      "days": 72
     },
     {
       "date": "8/7",
@@ -1944,7 +1853,7 @@ const SCAN_DATA = {
       "name": "MP Materials",
       "strategy": "黒字転換確認",
       "note": "売上$627M、純利益$110M予想。変曲点",
-      "days": 75
+      "days": 73
     },
     {
       "date": "8/7",
@@ -1952,7 +1861,7 @@ const SCAN_DATA = {
       "name": "Rocket Lab",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 75
+      "days": 73
     },
     {
       "date": "8/10",
@@ -1960,7 +1869,7 @@ const SCAN_DATA = {
       "name": "Roivant Sciences",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 78
+      "days": 76
     },
     {
       "date": "8/11",
@@ -1968,7 +1877,7 @@ const SCAN_DATA = {
       "name": "AST SpaceMobile",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 79
+      "days": 77
     },
     {
       "date": "8/13",
@@ -1976,7 +1885,7 @@ const SCAN_DATA = {
       "name": "First Majestic Silver",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 81
+      "days": 79
     },
     {
       "date": "8/19",
@@ -1984,7 +1893,7 @@ const SCAN_DATA = {
       "name": "Keysight Technologies",
       "strategy": "決算カタリスト狙い",
       "note": "",
-      "days": 87
+      "days": 85
     }
   ],
   "team": [
@@ -2050,20 +1959,16 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$32.18",
       "stop_loss_8pct": "$32.03",
-      "grok": null,
-      "perplexity": {
-        "judgment": null,
-        "reason": null,
-        "drivers": [],
-        "risks": [
-          "米中半導体規制強化による中国顧客向け売上減少リスク",
-          "先端パッケージング設備投資の回収遅延リスク",
-          "為替リスク（NTD/USD変動）"
-        ],
-        "latest_earnings": null,
-        "next_earnings": null,
-        "analyst_ratings": null
+      "grok": {
+        "score": 1,
+        "judgment": "中立",
+        "reasons": [
+          "スパム投稿が多く本物の投資家議論が少ない",
+          "最近の具体的なニュースやセンチメントが見当たらない",
+          "低ボリュームで注目度低い"
+        ]
       },
+      "perplexity": null,
       "gemini": null,
       "chatgpt": {
         "base": null,
@@ -2074,7 +1979,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/30",
-        "days": 67,
+        "days": 65,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.23908,
@@ -2184,7 +2089,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$89.36",
       "stop_loss_8pct": "$87.42",
-      "grok": null,
+      "grok": {
+        "score": 7,
+        "judgment": "強気",
+        "reasons": [
+          "AIチップテストの大型注文とバックログ倍増でポジティブ",
+          "ウォッチリストや成長ポートフォリオに登場",
+          "AIハイパースケーラーとのつながりが強調される"
+        ]
+      },
       "perplexity": null,
       "gemini": null,
       "chatgpt": {
@@ -2306,31 +2219,17 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$353.77",
       "stop_loss_8pct": "$347.36",
-      "grok": null,
-      "perplexity": {
-        "judgment": null,
-        "reason": null,
-        "drivers": [],
-        "risks": [
-          "データセンター設備投資サイクルのピークアウトリスク",
-          "負債比率が高い（0.80）ため金利上昇に脆弱",
-          "光学部品の価格競争激化"
-        ],
-        "latest_earnings": null,
-        "next_earnings": null,
-        "analyst_ratings": null
+      "grok": {
+        "score": 7,
+        "judgment": "強気",
+        "reasons": [
+          "AI/フォトニクスプレイとしてトップYTDパフォーマー",
+          "買いの言及と高いターゲットプライス",
+          "データセンター光学システムの重要性"
+        ]
       },
-      "gemini": {
-        "rank": 8,
-        "score": 62,
-        "revenue_growth": "21.00%",
-        "eps_growth": "55.00%",
-        "net_margin": null,
-        "roe": "4.10%",
-        "per": "N/A",
-        "debt_equity": null,
-        "filter_status": null
-      },
+      "perplexity": null,
+      "gemini": null,
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -2450,7 +2349,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$29.23",
       "stop_loss_8pct": "$27.56",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "アナリストによるターゲットプライス引き上げ（$40超）",
+          "バイオテク成長リストに登場",
+          "FDA関連進展期待"
+        ]
+      },
       "perplexity": null,
       "gemini": null,
       "chatgpt": {
@@ -2462,7 +2369,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/10",
-        "days": 78,
+        "days": 76,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": -0.35566,
@@ -2579,19 +2486,17 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$159.03",
       "stop_loss_8pct": "$151.49",
-      "grok": null,
-      "perplexity": null,
-      "gemini": {
-        "rank": 5,
-        "score": 74,
-        "revenue_growth": "10.90%",
-        "eps_growth": "15.10%",
-        "net_margin": null,
-        "roe": "12.70%",
-        "per": "39.0",
-        "debt_equity": null,
-        "filter_status": null
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "AIデータセンター電源/インフラのブレイクアウト銘柄として言及",
+          "VRT等と一緒にポジティブ",
+          "電力関連需要"
+        ]
       },
+      "perplexity": null,
+      "gemini": null,
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -2601,7 +2506,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/31",
-        "days": 68,
+        "days": 66,
         "strategy": "決算前ポジション構築",
         "note": "電力需要増テーマの確認",
         "eps_estimate": 1.15842,
@@ -2711,19 +2616,29 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$55.53",
       "stop_loss_8pct": "$52.70",
-      "grok": null,
+      "grok": {
+        "score": 4,
+        "judgment": "中立",
+        "reasons": [
+          "石油サービスがオイルトレードの次のレグとして言及されるが議論量は少ない",
+          "エネルギー長期需要の文脈はあるものの具体的な盛り上がりなし",
+          "Q1決算混合でセンチメントにばらつき"
+        ]
+      },
       "perplexity": null,
       "gemini": null,
       "chatgpt": {
         "base": null,
         "bull": null,
         "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
+        "geo_risk": "中",
+        "geo_notes": [
+          "Middle_East: 言及あり"
+        ]
       },
       "earnings": {
         "date": "7/24",
-        "days": 61,
+        "days": 59,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.52576,
@@ -2847,7 +2762,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$83.94",
       "stop_loss_8pct": "$97.39",
-      "grok": null,
+      "grok": {
+        "score": 9,
+        "judgment": "強気",
+        "reasons": [
+          "スペース/衛星テーマの強いモメンタムとラリー",
+          "SpaceX IPOシンパシーで高PT（$150-500）",
+          "BlueBird打ち上げ進展"
+        ]
+      },
       "perplexity": null,
       "gemini": null,
       "chatgpt": {
@@ -2859,7 +2782,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/11",
-        "days": 79,
+        "days": 77,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": -0.23184,
@@ -2976,32 +2899,17 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$110.10",
       "stop_loss_8pct": "$124.90",
-      "grok": null,
-      "perplexity": {
-        "judgment": null,
-        "reason": null,
-        "drivers": [],
-        "risks": [
-          "赤字継続（利益率-22.5%、ROE -9.04%）",
-          "Neutron開発遅延リスク",
-          "SpaceXとの競争激化",
-          "高バリュエーション（PER N/A、赤字企業）"
-        ],
-        "latest_earnings": null,
-        "next_earnings": null,
-        "analyst_ratings": null
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "スペース株ラリー参加、契約ポテンシャル",
+          "ターゲット$130超言及",
+          "ASTSと並ぶスペースリーダー"
+        ]
       },
-      "gemini": {
-        "rank": 11,
-        "score": 46,
-        "revenue_growth": "42.50%",
-        "eps_growth": "-16.39%",
-        "net_margin": null,
-        "roe": "-9.04%",
-        "per": "N/A",
-        "debt_equity": null,
-        "filter_status": null
-      },
+      "perplexity": null,
+      "gemini": null,
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -3011,11 +2919,11 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/7",
-        "days": 75,
+        "days": 73,
         "strategy": "決算カタリスト狙い",
         "note": "",
-        "eps_estimate": -0.03381,
-        "revenue_estimate": 229458760
+        "eps_estimate": -0.03327,
+        "revenue_estimate": 229775990
       },
       "stage_info": {
         "stage": 2,
@@ -3128,7 +3036,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$30.93",
       "stop_loss_8pct": "$35.20",
-      "grok": null,
+      "grok": {
+        "score": 7,
+        "judgment": "強気",
+        "reasons": [
+          "チャートブレイクアウト（Darvas Box）",
+          "スペースポートフォリオ/ターゲット$36",
+          "SpaceXハイプトレード"
+        ]
+      },
       "perplexity": null,
       "gemini": null,
       "chatgpt": {
@@ -3140,7 +3056,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/6",
-        "days": 74,
+        "days": 72,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": -0.0975,
@@ -3264,19 +3180,17 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$345.47",
       "stop_loss_8pct": "$318.84",
-      "grok": null,
-      "perplexity": null,
-      "gemini": {
-        "rank": 7,
-        "score": 65,
-        "revenue_growth": "15.34%",
-        "eps_growth": "-1.39%",
-        "net_margin": null,
-        "roe": "15.81%",
-        "per": "30.0",
-        "debt_equity": null,
-        "filter_status": null
+      "grok": {
+        "score": 9,
+        "judgment": "強気",
+        "reasons": [
+          "記録的決算、注文56%増、ガイダンス上方修正",
+          "AIデータセンター需要加速の強いリードスルー",
+          "半導体/防衛もポジティブ"
+        ]
       },
+      "perplexity": null,
+      "gemini": null,
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -3286,7 +3200,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/19",
-        "days": 87,
+        "days": 85,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 2.48236,
@@ -3396,7 +3310,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$42.31",
       "stop_loss_8pct": "$40.88",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "IBD50リスト候補、PT引き上げ",
+          "FSGS承認でアドレス可能市場拡大",
+          "患者スタート記録的"
+        ]
+      },
       "perplexity": null,
       "gemini": null,
       "chatgpt": {
@@ -3525,19 +3447,17 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$121.76",
       "stop_loss_8pct": "$115.51",
-      "grok": null,
-      "perplexity": null,
-      "gemini": {
-        "rank": 10,
-        "score": 52,
-        "revenue_growth": "15.20%",
-        "eps_growth": "N/A",
-        "net_margin": null,
-        "roe": "3.20%",
-        "per": "N/A",
-        "debt_equity": null,
-        "filter_status": null
+      "grok": {
+        "score": 2,
+        "judgment": "中立",
+        "reasons": [
+          "機関投資家アキュムレーションの言及はあるが全体的に低調",
+          "ARKK保有だが一部売り",
+          "ストリーミング/AI関連で穏やかな興味のみ"
+        ]
       },
+      "perplexity": null,
+      "gemini": null,
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -3547,7 +3467,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/31",
-        "days": 68,
+        "days": 66,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.56333,
@@ -3671,29 +3591,29 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$62.03",
       "stop_loss_8pct": "$57.03",
-      "grok": null,
-      "perplexity": null,
-      "gemini": {
-        "rank": 6,
-        "score": 68,
-        "revenue_growth": "5.60%",
-        "eps_growth": "-14.37%",
-        "net_margin": null,
-        "roe": "15.06%",
-        "per": "32.0",
-        "debt_equity": null,
-        "filter_status": null
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "銅の構造的強気（AI/データセンター/電化）",
+          "供給制約と需要テールウィンド",
+          "チャートブレイクアウトセットアップ"
+        ]
       },
+      "perplexity": null,
+      "gemini": null,
       "chatgpt": {
         "base": null,
         "bull": null,
         "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
+        "geo_risk": "中",
+        "geo_notes": [
+          "Middle_East: 言及あり"
+        ]
       },
       "earnings": {
         "date": "7/22",
-        "days": 59,
+        "days": 57,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.56647,
@@ -3803,7 +3723,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$410.50",
       "stop_loss_8pct": "$391.93",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "Robotaxi/Optimus進展言及",
+          "テクニカルで高ターゲット、dip買い",
+          "Mag7として買いの推奨がある一方で評価の高さへの懐疑も混在"
+        ]
+      },
       "perplexity": null,
       "gemini": null,
       "chatgpt": {
@@ -3815,7 +3743,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/23",
-        "days": 60,
+        "days": 58,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.45396,
@@ -3944,7 +3872,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/13",
-        "days": 81,
+        "days": 79,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.265,
@@ -4073,7 +4001,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/31",
-        "days": 68,
+        "days": 66,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.92696,
@@ -4185,17 +4113,7 @@ const SCAN_DATA = {
       "stop_loss_8pct": "$118.67",
       "grok": null,
       "perplexity": null,
-      "gemini": {
-        "rank": 9,
-        "score": 58,
-        "revenue_growth": "10.30%",
-        "eps_growth": "36.00%",
-        "net_margin": null,
-        "roe": "5.60%",
-        "per": "25.0",
-        "debt_equity": null,
-        "filter_status": null
-      },
+      "gemini": null,
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -4205,7 +4123,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/30",
-        "days": 67,
+        "days": 65,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.61,
@@ -4449,7 +4367,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/30",
-        "days": 67,
+        "days": 65,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 2.98793,
@@ -4575,17 +4493,7 @@ const SCAN_DATA = {
       "stop_loss_8pct": "$59.30",
       "grok": null,
       "perplexity": null,
-      "gemini": {
-        "rank": 12,
-        "score": 35,
-        "revenue_growth": "N/A",
-        "eps_growth": "N/A",
-        "net_margin": null,
-        "roe": "N/A",
-        "per": "N/A",
-        "debt_equity": null,
-        "filter_status": null
-      },
+      "gemini": null,
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -4595,10 +4503,10 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/7",
-        "days": 75,
+        "days": 73,
         "strategy": "黒字転換確認",
         "note": "売上$627M、純利益$110M予想。変曲点",
-        "eps_estimate": 0.06333,
+        "eps_estimate": 0.06874,
         "revenue_estimate": 99544510
       },
       "stage_info": {
@@ -4707,17 +4615,7 @@ const SCAN_DATA = {
       "stop_loss_8pct": "$16.22",
       "grok": null,
       "perplexity": null,
-      "gemini": {
-        "rank": 4,
-        "score": 79,
-        "revenue_growth": "26.40%",
-        "eps_growth": "51.52%",
-        "net_margin": null,
-        "roe": "7.68%",
-        "per": "14.7",
-        "debt_equity": null,
-        "filter_status": null
-      },
+      "gemini": null,
       "chatgpt": {
         "base": null,
         "bull": null,
@@ -4727,7 +4625,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "8/6",
-        "days": 74,
+        "days": 72,
         "strategy": "決算カタリスト狙い",
         "note": "金銀価格上昇の業績反映確認",
         "eps_estimate": 0.40387,
@@ -4849,7 +4747,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "7/28",
-        "days": 65,
+        "days": 63,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.12509,
@@ -4971,7 +4869,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "5/29",
-        "days": 5,
+        "days": 3,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 0.15874,
@@ -5114,7 +5012,7 @@ const SCAN_DATA = {
       },
       "earnings": {
         "date": "6/24",
-        "days": 31,
+        "days": 29,
         "strategy": "決算カタリスト狙い",
         "note": "",
         "eps_estimate": 1.47206,
@@ -5207,405 +5105,6 @@ const SCAN_DATA = {
         "max_after_breakout": null,
         "drawdown_from_peak_pct": null,
         "interpretation": "📊 ブレイクアウト追跡: 20日高値 $200.86 から 15.3% 下。ブレイクアウト圏外。"
-      }
-    },
-    "NVDA": {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "theme": "AIランキング上位",
-      "sector": "Technology",
-      "position": null,
-      "rating": "",
-      "signal": "AIコンセンサス上位",
-      "price": 215.33,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": {
-        "rank": 1,
-        "score": 98,
-        "revenue_growth": "65.47%",
-        "eps_growth": "66.00%",
-        "net_margin": null,
-        "roe": "101.50%",
-        "per": "44.1",
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": null,
-      "ai_only": true,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇 (TT全条件適合)",
-        "tt_pass": true,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": true,
-          "c7_rs_rating_90plus": true,
-          "c7_rs_line_up_6w": true,
-          "c7_rs_line_up_13w": true,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 215.33,
-          "ma50": 196.81,
-          "ma150": 189.53,
-          "ma200": 187.02,
-          "pct_above_52w_low": 64.0,
-          "pct_to_52w_high": 0.9134,
-          "rs_rating": 99.0
-        },
-        "rs_rating": 99.0,
-        "early_stage_2": false,
-        "ma30w": 189.53,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 2.37,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0866,
-        "days_since_break": 32,
-        "break_volume_surge": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 236.54,
-        "current_price": 215.33,
-        "distance_pct": 9.85,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 194.74,
-        "base_range_pct": 21.5,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 1.08,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 11,
-            "peak_price": 188.88,
-            "trough_idx": 21,
-            "trough_price": 164.27,
-            "depth_pct": 13.0
-          },
-          {
-            "peak_idx": 40,
-            "peak_price": 216.83,
-            "trough_idx": 45,
-            "trough_price": 194.74,
-            "depth_pct": 10.2
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "saucer",
-        "base_shape_label": "Saucer (浅い U 字型)",
-        "pct_from_52w_high": 8.66,
-        "left_right_volume": {
-          "left_avg": 148823631.0,
-          "right_avg": 164993033.0,
-          "ratio": 1.11,
-          "healthy": false
-        },
-        "left_right_healthy": false,
-        "buy_point_quality": 40,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-05-14",
-        "breakout_price": 235.74,
-        "breakout_level": 227.84,
-        "breakout_volume_ratio": 1.12,
-        "current_price": 215.33,
-        "current_vs_breakout_pct": -5.49,
-        "max_after_breakout": 235.74,
-        "drawdown_from_peak_pct": 8.66,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-05-14 に $227.84 を 突破するも、現在 $215.33 はブレイク水準を **5.5% 下回る**。高値 $235.74 から 8.7% 下落。出来高薄かった = 撤退推奨。"
-      }
-    },
-    "TSM": {
-      "ticker": "TSM",
-      "name": "Taiwan Semiconductor Manufactur",
-      "theme": "AIランキング上位",
-      "sector": "Technology",
-      "position": null,
-      "rating": "",
-      "signal": "AIコンセンサス上位",
-      "price": 404.52,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": {
-        "rank": 2,
-        "score": 92,
-        "revenue_growth": "35.10%",
-        "eps_growth": "58.30%",
-        "net_margin": null,
-        "roe": "30.00%",
-        "per": "34.2",
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": null,
-      "ai_only": true,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇 (TT全条件適合)",
-        "tt_pass": true,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": true,
-          "c7_rs_rating_90plus": true,
-          "c7_rs_line_up_6w": true,
-          "c7_rs_line_up_13w": true,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 404.52,
-          "ma50": 373.07,
-          "ma150": 335.88,
-          "ma200": 316.78,
-          "pct_above_52w_low": 113.3,
-          "pct_to_52w_high": 0.9643,
-          "rs_rating": 99.0
-        },
-        "rs_rating": 99.0,
-        "early_stage_2": false,
-        "ma30w": 335.88,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 5.14,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0357,
-        "days_since_break": null,
-        "break_volume_surge": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 421.97,
-        "current_price": 404.52,
-        "distance_pct": 4.31,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 364.25,
-        "base_range_pct": 15.8,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.77,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 18,
-            "peak_price": 350.45,
-            "trough_idx": 21,
-            "trough_price": 313.8,
-            "depth_pct": 10.5
-          },
-          {
-            "peak_idx": 31,
-            "peak_price": 382.16,
-            "trough_idx": 33,
-            "trough_price": 360.55,
-            "depth_pct": 5.7
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "saucer",
-        "base_shape_label": "Saucer (浅い U 字型)",
-        "pct_from_52w_high": 3.57,
-        "left_right_volume": {
-          "left_avg": 13706969.0,
-          "right_avg": 13399883.0,
-          "ratio": 0.98,
-          "healthy": false
-        },
-        "left_right_healthy": false,
-        "buy_point_quality": 55,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-05-06",
-        "breakout_price": 419.5,
-        "breakout_level": 414.5,
-        "breakout_volume_ratio": 1.29,
-        "current_price": 404.52,
-        "current_vs_breakout_pct": -2.41,
-        "max_after_breakout": 419.5,
-        "drawdown_from_peak_pct": 3.57,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-05-06 に $414.50 を 突破するも、現在 $404.52 はブレイク水準を **2.4% 下回る**。高値 $419.50 から 3.6% 下落。出来高薄かった = 撤退推奨。"
-      }
-    },
-    "AVGO": {
-      "ticker": "AVGO",
-      "name": "Broadcom Inc.",
-      "theme": "AIランキング上位",
-      "sector": "Technology",
-      "position": null,
-      "rating": "",
-      "signal": "AIコンセンサス上位",
-      "price": 414.14,
-      "sepa_score": "",
-      "rsi": "",
-      "vcp": "",
-      "short_cover": "",
-      "stop_loss_21ma": "",
-      "stop_loss_8pct": "",
-      "grok": null,
-      "perplexity": null,
-      "gemini": {
-        "rank": 3,
-        "score": 85,
-        "revenue_growth": "16.40%",
-        "eps_growth": "15.00%",
-        "net_margin": null,
-        "roe": "33.37%",
-        "per": "82.7",
-        "debt_equity": null,
-        "filter_status": null
-      },
-      "chatgpt": {
-        "base": null,
-        "bull": null,
-        "bear": null,
-        "geo_risk": "低",
-        "geo_notes": []
-      },
-      "earnings": null,
-      "ai_only": true,
-      "stage_info": {
-        "stage": 2,
-        "stage_label": "上昇 (TT全条件適合)",
-        "tt_pass": true,
-        "tt_conditions": {
-          "c1_price_above_150_200": true,
-          "c2_150_above_200": true,
-          "c3_200_uptrend_1mo": true,
-          "c3_200_uptrend_4_5mo": true,
-          "c4_50_above_150_200": true,
-          "c5_above_52w_low_25pct": true,
-          "c6_within_25pct_of_52w_high": true,
-          "c7_rs_rating_70plus": true,
-          "c7_rs_rating_90plus": true,
-          "c7_rs_line_up_6w": true,
-          "c7_rs_line_up_13w": true,
-          "c8_above_50ma": true
-        },
-        "tt_metrics": {
-          "price": 414.14,
-          "ma50": 376.96,
-          "ma150": 356.75,
-          "ma200": 348.89,
-          "pct_above_52w_low": 82.5,
-          "pct_to_52w_high": 0.9417,
-          "rs_rating": 99.0
-        },
-        "rs_rating": 99.0,
-        "early_stage_2": true,
-        "ma30w": 356.75,
-        "ma30w_trend": "up",
-        "ma30w_slope_pct": 3.27,
-        "price_above_ma30w": true,
-        "pct_from_52w_high": 0.0583,
-        "days_since_break": 33,
-        "break_volume_surge": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 442.36,
-        "current_price": 414.14,
-        "distance_pct": 6.81,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 394.57,
-        "base_range_pct": 12.1,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 0.91,
-        "above_21ma": false,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 7,
-            "peak_price": 352.4,
-            "trough_idx": 21,
-            "trough_price": 289.96,
-            "depth_pct": 17.7
-          },
-          {
-            "peak_idx": 47,
-            "peak_price": 437.68,
-            "trough_idx": 52,
-            "trough_price": 404.8,
-            "depth_pct": 7.5
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 5.83,
-        "left_right_volume": {
-          "left_avg": 19119446.0,
-          "right_avg": 18550867.0,
-          "ratio": 0.97,
-          "healthy": false
-        },
-        "left_right_healthy": false,
-        "buy_point_quality": 40,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "below_high",
-        "breakout_date": null,
-        "breakout_price": null,
-        "breakout_level": 442.36,
-        "breakout_volume_ratio": null,
-        "current_price": 414.14,
-        "current_vs_breakout_pct": -6.81,
-        "max_after_breakout": null,
-        "drawdown_from_peak_pct": null,
-        "interpretation": "📊 ブレイクアウト追跡: 20日高値 $442.36 から 6.8% 下。ブレイクアウト圏外。"
       }
     },
     "CARE": {
@@ -5980,15 +5479,8 @@ const SCAN_DATA = {
         "above_21ma": false,
         "above_50ma": true,
         "above_200ma": false,
-        "vcp_stages": 2,
+        "vcp_stages": 1,
         "vcp_contractions": [
-          {
-            "peak_idx": 25,
-            "peak_price": 13.91,
-            "trough_idx": 29,
-            "trough_price": 13.12,
-            "depth_pct": 5.7
-          },
           {
             "peak_idx": 35,
             "peak_price": 14.71,
@@ -5998,8 +5490,8 @@ const SCAN_DATA = {
           }
         ],
         "vcp_decreasing": false,
-        "base_shape": "double_bottom",
-        "base_shape_label": "Double Bottom (ダブルボトム型)",
+        "base_shape": "saucer",
+        "base_shape_label": "Saucer (浅い U 字型)",
         "pct_from_52w_high": 11.72,
         "left_right_volume": {
           "left_avg": 364962.0,
@@ -6008,7 +5500,7 @@ const SCAN_DATA = {
           "healthy": false
         },
         "left_right_healthy": false,
-        "buy_point_quality": 37,
+        "buy_point_quality": 30,
         "interpretation": null
       },
       "false_breakout_info": {
@@ -10311,7 +9803,7 @@ const SCAN_DATA = {
     ]
   },
   "market_pulse": {
-    "updated_at": "2026-05-24T10:59:21",
+    "updated_at": "2026-05-26T10:00:11",
     "methodology": "CBOE-Equity-equivalent: aggregate option volume of 15 large-cap individual stocks (nearest 2 expiries each)",
     "equity_basket": {
       "label": "equity",
@@ -10334,12 +9826,12 @@ const SCAN_DATA = {
       ],
       "tickers_failed": [],
       "expiries_per_ticker": 2,
-      "put_volume": 763846,
-      "call_volume": 1470349,
-      "put_oi": 568168,
-      "call_oi": 914961,
-      "pcr_volume": 0.519,
-      "pcr_oi": 0.621
+      "put_volume": 784271,
+      "call_volume": 1507097,
+      "put_oi": 596972,
+      "call_oi": 931341,
+      "pcr_volume": 0.52,
+      "pcr_oi": 0.641
     },
     "index_basket": {
       "label": "index",
@@ -10350,12 +9842,12 @@ const SCAN_DATA = {
       ],
       "tickers_failed": [],
       "expiries_per_ticker": 2,
-      "put_volume": 1342689,
-      "call_volume": 990877,
-      "put_oi": 471265,
-      "call_oi": 259873,
-      "pcr_volume": 1.355,
-      "pcr_oi": 1.813
+      "put_volume": 1358346,
+      "call_volume": 1011722,
+      "put_oi": 483598,
+      "call_oi": 263946,
+      "pcr_volume": 1.343,
+      "pcr_oi": 1.832
     },
     "equity_classification": {
       "level": "bullish",
@@ -10388,12 +9880,12 @@ const SCAN_DATA = {
       ],
       "tickers_failed": [],
       "expiries_per_ticker": 2,
-      "put_volume": 763846,
-      "call_volume": 1470349,
-      "put_oi": 568168,
-      "call_oi": 914961,
-      "pcr_volume": 0.519,
-      "pcr_oi": 0.621,
+      "put_volume": 784271,
+      "call_volume": 1507097,
+      "put_oi": 596972,
+      "call_oi": 931341,
+      "pcr_volume": 0.52,
+      "pcr_oi": 0.641,
       "symbol": "EQUITY-BASKET"
     },
     "qqq": {
@@ -10405,12 +9897,12 @@ const SCAN_DATA = {
       ],
       "tickers_failed": [],
       "expiries_per_ticker": 2,
-      "put_volume": 1342689,
-      "call_volume": 990877,
-      "put_oi": 471265,
-      "call_oi": 259873,
-      "pcr_volume": 1.355,
-      "pcr_oi": 1.813,
+      "put_volume": 1358346,
+      "call_volume": 1011722,
+      "put_oi": 483598,
+      "call_oi": 263946,
+      "pcr_volume": 1.343,
+      "pcr_oi": 1.832,
       "symbol": "INDEX-BASKET"
     },
     "spy_classification": {
@@ -10432,11 +9924,11 @@ const SCAN_DATA = {
     }
   },
   "themes": {
-    "scan_date": "20260524",
-    "updated_at": "2026-05-24T10:59:55",
+    "scan_date": "20260526",
+    "updated_at": "2026-05-26T10:00:47",
     "theme_count": 34,
     "unique_tickers_analyzed": 134,
-    "duration_sec": 15,
+    "duration_sec": 16,
     "themes": [
       {
         "id": "ai_gpu",
@@ -13424,32 +12916,32 @@ const SCAN_DATA = {
   "quantum": {
     "all": [
       {
-        "ticker": "IONQ",
-        "name": "IonQ, Inc.",
+        "ticker": "QBTS",
+        "name": "D-Wave Quantum Inc.",
         "category": "pure",
-        "approach": "イオントラップ (Trapped Ion)",
-        "approach_short": "イオン",
+        "approach": "量子アニーリング (Quantum Annealing)",
+        "approach_short": "アニール",
         "purity": "pure",
-        "commercialization": "cloudAccess",
-        "qubit_max": 64,
-        "qubit_type": "logical (high-fidelity)",
-        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
-        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
-        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
-        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "commercialization": "production",
+        "qubit_max": 5000,
+        "qubit_type": "annealing qubits (different)",
+        "leader": "Alan Baratz (CEO)",
+        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
         "market": {
-          "price": 63.64,
-          "high_52w": 82.09,
-          "low_52w": 26.59,
-          "pct_from_52w_high": 22.5,
-          "ret_1m": 49.1,
-          "ret_3m": 101.3,
-          "ret_6m": 55.2,
+          "price": 29.4,
+          "high_52w": 44.78,
+          "low_52w": 12.98,
+          "pct_from_52w_high": 34.3,
+          "ret_1m": 59.0,
+          "ret_3m": 57.6,
+          "ret_6m": 43.3,
           "ret_1y": null,
-          "volatility_annual": 98.9,
-          "market_cap_b": 23.75,
-          "pe_trailing": 163.17949,
-          "revenue_b": 0.19,
+          "volatility_annual": 120.7,
+          "market_cap_b": 10.89,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
@@ -13486,6 +12978,37 @@ const SCAN_DATA = {
         }
       },
       {
+        "ticker": "IONQ",
+        "name": "IonQ, Inc.",
+        "category": "pure",
+        "approach": "イオントラップ (Trapped Ion)",
+        "approach_short": "イオン",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 64,
+        "qubit_type": "logical (high-fidelity)",
+        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "market": {
+          "price": 63.64,
+          "high_52w": 82.09,
+          "low_52w": 26.59,
+          "pct_from_52w_high": 22.5,
+          "ret_1m": 49.1,
+          "ret_3m": 101.3,
+          "ret_6m": 55.2,
+          "ret_1y": null,
+          "volatility_annual": 98.9,
+          "market_cap_b": 23.75,
+          "pe_trailing": 163.17949,
+          "revenue_b": 0.19,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
         "ticker": "RGTI",
         "name": "Rigetti Computing",
         "category": "pure",
@@ -13517,63 +13040,63 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "QBTS",
-        "name": "D-Wave Quantum Inc.",
-        "category": "pure",
-        "approach": "量子アニーリング (Quantum Annealing)",
-        "approach_short": "アニール",
-        "purity": "pure",
+        "ticker": "IBM",
+        "name": "International Business Machines",
+        "category": "bigtech",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "minor",
         "commercialization": "production",
-        "qubit_max": 5000,
-        "qubit_type": "annealing qubits (different)",
-        "leader": "Alan Baratz (CEO)",
-        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
-        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
-        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
+        "qubit_max": 1121,
+        "qubit_type": "physical",
+        "leader": "Arvind Krishna (CEO), Jay Gambetta (Quantum lead)",
+        "highlight": "Condor (1121 qubits) で量子優位性目標。 Quantum Network 顧客 280社+。",
+        "risk": "量子は IBM 売上の数% で、IBM 株は AI / Hybrid Cloud に左右される。",
+        "thesis": "量子分野の総合リーダー。安定配当付き量子エクスポージャー。",
         "market": {
-          "price": 29.4,
-          "high_52w": 44.78,
-          "low_52w": 12.98,
-          "pct_from_52w_high": 34.3,
-          "ret_1m": 59.0,
-          "ret_3m": 57.6,
-          "ret_6m": 43.3,
+          "price": 253.84,
+          "high_52w": 310.91,
+          "low_52w": 214.64,
+          "pct_from_52w_high": 18.4,
+          "ret_1m": 10.2,
+          "ret_3m": 11.5,
+          "ret_6m": -11.4,
           "ret_1y": null,
-          "volatility_annual": 120.7,
-          "market_cap_b": 10.89,
-          "pe_trailing": null,
-          "revenue_b": 0.01,
+          "volatility_annual": 40.8,
+          "market_cap_b": 238.58,
+          "pe_trailing": 22.463717,
+          "revenue_b": 68.91,
           "sector": "Technology",
-          "industry": "Computer Hardware"
+          "industry": "Information Technology Services"
         }
       },
       {
-        "ticker": "ARQQ",
-        "name": "Arqit Quantum",
-        "category": "pure",
-        "approach": "量子暗号通信 (QKD)",
-        "approach_short": "量子暗号",
-        "purity": "pure",
-        "commercialization": "pilot",
+        "ticker": "MSFT",
+        "name": "Microsoft",
+        "category": "bigtech",
+        "approach": "Topological (Majorana)",
+        "approach_short": "トポロジカル",
+        "purity": "minor",
+        "commercialization": "researchOnly",
         "qubit_max": null,
-        "qubit_type": "n/a (encryption-focused)",
-        "leader": "David Williams (CEO)",
-        "highlight": "量子暗号(QKD)に特化。量子計算ではなく「量子セキュリティ」。",
-        "risk": "業界全体が PQC (post-quantum cryptography) にシフト傾向。",
-        "thesis": "国防・金融機関の暗号アップグレード需要。",
+        "qubit_type": "topological (新方式)",
+        "leader": "Satya Nadella (CEO), Krysta Svore (Quantum lead)",
+        "highlight": "Azure Quantum で IonQ/Quantinuum と提携。独自方式 Majorana 1 (2025) で勝負。",
+        "risk": "MSFT 株は Azure + AI で量子寄与なし。",
+        "thesis": "Majorana が成功すれば誤り耐性で支配可能。",
         "market": {
-          "price": 17.49,
-          "high_52w": 58.27,
-          "low_52w": 11.78,
-          "pct_from_52w_high": 70.0,
-          "ret_1m": 20.4,
-          "ret_3m": 6.7,
-          "ret_6m": -27.9,
+          "price": 418.57,
+          "high_52w": 538.66,
+          "low_52w": 356.0,
+          "pct_from_52w_high": 22.3,
+          "ret_1m": -1.2,
+          "ret_3m": 7.8,
+          "ret_6m": -12.1,
           "ret_1y": null,
-          "volatility_annual": 94.9,
-          "market_cap_b": 0.3,
-          "pe_trailing": null,
-          "revenue_b": 0.0,
+          "volatility_annual": 26.6,
+          "market_cap_b": 3109.32,
+          "pe_trailing": 24.944576,
+          "revenue_b": 318.27,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
         }
@@ -13610,65 +13133,34 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "MSFT",
-        "name": "Microsoft",
-        "category": "bigtech",
-        "approach": "Topological (Majorana)",
-        "approach_short": "トポロジカル",
-        "purity": "minor",
-        "commercialization": "researchOnly",
+        "ticker": "ARQQ",
+        "name": "Arqit Quantum",
+        "category": "pure",
+        "approach": "量子暗号通信 (QKD)",
+        "approach_short": "量子暗号",
+        "purity": "pure",
+        "commercialization": "pilot",
         "qubit_max": null,
-        "qubit_type": "topological (新方式)",
-        "leader": "Satya Nadella (CEO), Krysta Svore (Quantum lead)",
-        "highlight": "Azure Quantum で IonQ/Quantinuum と提携。独自方式 Majorana 1 (2025) で勝負。",
-        "risk": "MSFT 株は Azure + AI で量子寄与なし。",
-        "thesis": "Majorana が成功すれば誤り耐性で支配可能。",
+        "qubit_type": "n/a (encryption-focused)",
+        "leader": "David Williams (CEO)",
+        "highlight": "量子暗号(QKD)に特化。量子計算ではなく「量子セキュリティ」。",
+        "risk": "業界全体が PQC (post-quantum cryptography) にシフト傾向。",
+        "thesis": "国防・金融機関の暗号アップグレード需要。",
         "market": {
-          "price": 418.57,
-          "high_52w": 538.66,
-          "low_52w": 356.0,
-          "pct_from_52w_high": 22.3,
-          "ret_1m": -1.2,
-          "ret_3m": 7.8,
-          "ret_6m": -12.1,
+          "price": 17.49,
+          "high_52w": 58.27,
+          "low_52w": 11.78,
+          "pct_from_52w_high": 70.0,
+          "ret_1m": 20.4,
+          "ret_3m": 6.7,
+          "ret_6m": -27.9,
           "ret_1y": null,
-          "volatility_annual": 26.6,
-          "market_cap_b": 3109.32,
-          "pe_trailing": 24.944576,
-          "revenue_b": 318.27,
+          "volatility_annual": 94.9,
+          "market_cap_b": 0.3,
+          "pe_trailing": null,
+          "revenue_b": 0.0,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
-        }
-      },
-      {
-        "ticker": "IBM",
-        "name": "International Business Machines",
-        "category": "bigtech",
-        "approach": "超伝導 (Superconducting)",
-        "approach_short": "超伝導",
-        "purity": "minor",
-        "commercialization": "production",
-        "qubit_max": 1121,
-        "qubit_type": "physical",
-        "leader": "Arvind Krishna (CEO), Jay Gambetta (Quantum lead)",
-        "highlight": "Condor (1121 qubits) で量子優位性目標。 Quantum Network 顧客 280社+。",
-        "risk": "量子は IBM 売上の数% で、IBM 株は AI / Hybrid Cloud に左右される。",
-        "thesis": "量子分野の総合リーダー。安定配当付き量子エクスポージャー。",
-        "market": {
-          "price": 253.84,
-          "high_52w": 310.91,
-          "low_52w": 214.64,
-          "pct_from_52w_high": 18.4,
-          "ret_1m": 10.2,
-          "ret_3m": 11.5,
-          "ret_6m": -11.4,
-          "ret_1y": null,
-          "volatility_annual": 40.8,
-          "market_cap_b": 238.58,
-          "pe_trailing": 22.463717,
-          "revenue_b": 68.91,
-          "sector": "Technology",
-          "industry": "Information Technology Services"
         }
       },
       {
@@ -13737,32 +13229,32 @@ const SCAN_DATA = {
     "by_category": {
       "pure": [
         {
-          "ticker": "IONQ",
-          "name": "IonQ, Inc.",
+          "ticker": "QBTS",
+          "name": "D-Wave Quantum Inc.",
           "category": "pure",
-          "approach": "イオントラップ (Trapped Ion)",
-          "approach_short": "イオン",
+          "approach": "量子アニーリング (Quantum Annealing)",
+          "approach_short": "アニール",
           "purity": "pure",
-          "commercialization": "cloudAccess",
-          "qubit_max": 64,
-          "qubit_type": "logical (high-fidelity)",
-          "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
-          "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
-          "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
-          "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+          "commercialization": "production",
+          "qubit_max": 5000,
+          "qubit_type": "annealing qubits (different)",
+          "leader": "Alan Baratz (CEO)",
+          "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+          "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+          "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
           "market": {
-            "price": 63.64,
-            "high_52w": 82.09,
-            "low_52w": 26.59,
-            "pct_from_52w_high": 22.5,
-            "ret_1m": 49.1,
-            "ret_3m": 101.3,
-            "ret_6m": 55.2,
+            "price": 29.4,
+            "high_52w": 44.78,
+            "low_52w": 12.98,
+            "pct_from_52w_high": 34.3,
+            "ret_1m": 59.0,
+            "ret_3m": 57.6,
+            "ret_6m": 43.3,
             "ret_1y": null,
-            "volatility_annual": 98.9,
-            "market_cap_b": 23.75,
-            "pe_trailing": 163.17949,
-            "revenue_b": 0.19,
+            "volatility_annual": 120.7,
+            "market_cap_b": 10.89,
+            "pe_trailing": null,
+            "revenue_b": 0.01,
             "sector": "Technology",
             "industry": "Computer Hardware"
           }
@@ -13799,6 +13291,37 @@ const SCAN_DATA = {
           }
         },
         {
+          "ticker": "IONQ",
+          "name": "IonQ, Inc.",
+          "category": "pure",
+          "approach": "イオントラップ (Trapped Ion)",
+          "approach_short": "イオン",
+          "purity": "pure",
+          "commercialization": "cloudAccess",
+          "qubit_max": 64,
+          "qubit_type": "logical (high-fidelity)",
+          "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+          "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+          "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+          "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+          "market": {
+            "price": 63.64,
+            "high_52w": 82.09,
+            "low_52w": 26.59,
+            "pct_from_52w_high": 22.5,
+            "ret_1m": 49.1,
+            "ret_3m": 101.3,
+            "ret_6m": 55.2,
+            "ret_1y": null,
+            "volatility_annual": 98.9,
+            "market_cap_b": 23.75,
+            "pe_trailing": 163.17949,
+            "revenue_b": 0.19,
+            "sector": "Technology",
+            "industry": "Computer Hardware"
+          }
+        },
+        {
           "ticker": "RGTI",
           "name": "Rigetti Computing",
           "category": "pure",
@@ -13823,37 +13346,6 @@ const SCAN_DATA = {
             "ret_1y": null,
             "volatility_annual": 109.6,
             "market_cap_b": 8.78,
-            "pe_trailing": null,
-            "revenue_b": 0.01,
-            "sector": "Technology",
-            "industry": "Computer Hardware"
-          }
-        },
-        {
-          "ticker": "QBTS",
-          "name": "D-Wave Quantum Inc.",
-          "category": "pure",
-          "approach": "量子アニーリング (Quantum Annealing)",
-          "approach_short": "アニール",
-          "purity": "pure",
-          "commercialization": "production",
-          "qubit_max": 5000,
-          "qubit_type": "annealing qubits (different)",
-          "leader": "Alan Baratz (CEO)",
-          "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
-          "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
-          "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
-          "market": {
-            "price": 29.4,
-            "high_52w": 44.78,
-            "low_52w": 12.98,
-            "pct_from_52w_high": 34.3,
-            "ret_1m": 59.0,
-            "ret_3m": 57.6,
-            "ret_6m": 43.3,
-            "ret_1y": null,
-            "volatility_annual": 120.7,
-            "market_cap_b": 10.89,
             "pe_trailing": null,
             "revenue_b": 0.01,
             "sector": "Technology",
@@ -13894,34 +13386,34 @@ const SCAN_DATA = {
       ],
       "bigtech": [
         {
-          "ticker": "GOOG",
-          "name": "Alphabet (Google)",
+          "ticker": "IBM",
+          "name": "International Business Machines",
           "category": "bigtech",
           "approach": "超伝導 (Superconducting)",
           "approach_short": "超伝導",
           "purity": "minor",
-          "commercialization": "researchOnly",
-          "qubit_max": 70,
-          "qubit_type": "physical, high coherence",
-          "leader": "Hartmut Neven (Quantum AI lead)",
-          "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
-          "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
-          "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+          "commercialization": "production",
+          "qubit_max": 1121,
+          "qubit_type": "physical",
+          "leader": "Arvind Krishna (CEO), Jay Gambetta (Quantum lead)",
+          "highlight": "Condor (1121 qubits) で量子優位性目標。 Quantum Network 顧客 280社+。",
+          "risk": "量子は IBM 売上の数% で、IBM 株は AI / Hybrid Cloud に左右される。",
+          "thesis": "量子分野の総合リーダー。安定配当付き量子エクスポージャー。",
           "market": {
-            "price": 379.38,
-            "high_52w": 399.04,
-            "low_52w": 165.64,
-            "pct_from_52w_high": 4.9,
-            "ret_1m": 10.8,
-            "ret_3m": 22.1,
-            "ret_6m": 31.0,
+            "price": 253.84,
+            "high_52w": 310.91,
+            "low_52w": 214.64,
+            "pct_from_52w_high": 18.4,
+            "ret_1m": 10.2,
+            "ret_3m": 11.5,
+            "ret_6m": -11.4,
             "ret_1y": null,
-            "volatility_annual": 34.0,
-            "market_cap_b": 4596.36,
-            "pe_trailing": 28.894136,
-            "revenue_b": 422.5,
-            "sector": "Communication Services",
-            "industry": "Internet Content & Information"
+            "volatility_annual": 40.8,
+            "market_cap_b": 238.58,
+            "pe_trailing": 22.463717,
+            "revenue_b": 68.91,
+            "sector": "Technology",
+            "industry": "Information Technology Services"
           }
         },
         {
@@ -13956,34 +13448,34 @@ const SCAN_DATA = {
           }
         },
         {
-          "ticker": "IBM",
-          "name": "International Business Machines",
+          "ticker": "GOOG",
+          "name": "Alphabet (Google)",
           "category": "bigtech",
           "approach": "超伝導 (Superconducting)",
           "approach_short": "超伝導",
           "purity": "minor",
-          "commercialization": "production",
-          "qubit_max": 1121,
-          "qubit_type": "physical",
-          "leader": "Arvind Krishna (CEO), Jay Gambetta (Quantum lead)",
-          "highlight": "Condor (1121 qubits) で量子優位性目標。 Quantum Network 顧客 280社+。",
-          "risk": "量子は IBM 売上の数% で、IBM 株は AI / Hybrid Cloud に左右される。",
-          "thesis": "量子分野の総合リーダー。安定配当付き量子エクスポージャー。",
+          "commercialization": "researchOnly",
+          "qubit_max": 70,
+          "qubit_type": "physical, high coherence",
+          "leader": "Hartmut Neven (Quantum AI lead)",
+          "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+          "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+          "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
           "market": {
-            "price": 253.84,
-            "high_52w": 310.91,
-            "low_52w": 214.64,
-            "pct_from_52w_high": 18.4,
-            "ret_1m": 10.2,
-            "ret_3m": 11.5,
-            "ret_6m": -11.4,
+            "price": 379.38,
+            "high_52w": 399.04,
+            "low_52w": 165.64,
+            "pct_from_52w_high": 4.9,
+            "ret_1m": 10.8,
+            "ret_3m": 22.1,
+            "ret_6m": 31.0,
             "ret_1y": null,
-            "volatility_annual": 40.8,
-            "market_cap_b": 238.58,
-            "pe_trailing": 22.463717,
-            "revenue_b": 68.91,
-            "sector": "Technology",
-            "industry": "Information Technology Services"
+            "volatility_annual": 34.0,
+            "market_cap_b": 4596.36,
+            "pe_trailing": 28.894136,
+            "revenue_b": 422.5,
+            "sector": "Communication Services",
+            "industry": "Internet Content & Information"
           }
         },
         {
@@ -14212,32 +13704,32 @@ const SCAN_DATA = {
     ],
     "by_purity": [
       {
-        "ticker": "IONQ",
-        "name": "IonQ, Inc.",
+        "ticker": "QBTS",
+        "name": "D-Wave Quantum Inc.",
         "category": "pure",
-        "approach": "イオントラップ (Trapped Ion)",
-        "approach_short": "イオン",
+        "approach": "量子アニーリング (Quantum Annealing)",
+        "approach_short": "アニール",
         "purity": "pure",
-        "commercialization": "cloudAccess",
-        "qubit_max": 64,
-        "qubit_type": "logical (high-fidelity)",
-        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
-        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
-        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
-        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "commercialization": "production",
+        "qubit_max": 5000,
+        "qubit_type": "annealing qubits (different)",
+        "leader": "Alan Baratz (CEO)",
+        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
         "market": {
-          "price": 63.64,
-          "high_52w": 82.09,
-          "low_52w": 26.59,
-          "pct_from_52w_high": 22.5,
-          "ret_1m": 49.1,
-          "ret_3m": 101.3,
-          "ret_6m": 55.2,
+          "price": 29.4,
+          "high_52w": 44.78,
+          "low_52w": 12.98,
+          "pct_from_52w_high": 34.3,
+          "ret_1m": 59.0,
+          "ret_3m": 57.6,
+          "ret_6m": 43.3,
           "ret_1y": null,
-          "volatility_annual": 98.9,
-          "market_cap_b": 23.75,
-          "pe_trailing": 163.17949,
-          "revenue_b": 0.19,
+          "volatility_annual": 120.7,
+          "market_cap_b": 10.89,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
@@ -14274,6 +13766,37 @@ const SCAN_DATA = {
         }
       },
       {
+        "ticker": "IONQ",
+        "name": "IonQ, Inc.",
+        "category": "pure",
+        "approach": "イオントラップ (Trapped Ion)",
+        "approach_short": "イオン",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 64,
+        "qubit_type": "logical (high-fidelity)",
+        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "market": {
+          "price": 63.64,
+          "high_52w": 82.09,
+          "low_52w": 26.59,
+          "pct_from_52w_high": 22.5,
+          "ret_1m": 49.1,
+          "ret_3m": 101.3,
+          "ret_6m": 55.2,
+          "ret_1y": null,
+          "volatility_annual": 98.9,
+          "market_cap_b": 23.75,
+          "pe_trailing": 163.17949,
+          "revenue_b": 0.19,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
         "ticker": "RGTI",
         "name": "Rigetti Computing",
         "category": "pure",
@@ -14298,37 +13821,6 @@ const SCAN_DATA = {
           "ret_1y": null,
           "volatility_annual": 109.6,
           "market_cap_b": 8.78,
-          "pe_trailing": null,
-          "revenue_b": 0.01,
-          "sector": "Technology",
-          "industry": "Computer Hardware"
-        }
-      },
-      {
-        "ticker": "QBTS",
-        "name": "D-Wave Quantum Inc.",
-        "category": "pure",
-        "approach": "量子アニーリング (Quantum Annealing)",
-        "approach_short": "アニール",
-        "purity": "pure",
-        "commercialization": "production",
-        "qubit_max": 5000,
-        "qubit_type": "annealing qubits (different)",
-        "leader": "Alan Baratz (CEO)",
-        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
-        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
-        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
-        "market": {
-          "price": 29.4,
-          "high_52w": 44.78,
-          "low_52w": 12.98,
-          "pct_from_52w_high": 34.3,
-          "ret_1m": 59.0,
-          "ret_3m": 57.6,
-          "ret_6m": 43.3,
-          "ret_1y": null,
-          "volatility_annual": 120.7,
-          "market_cap_b": 10.89,
           "pe_trailing": null,
           "revenue_b": 0.01,
           "sector": "Technology",
@@ -14367,34 +13859,34 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "GOOG",
-        "name": "Alphabet (Google)",
+        "ticker": "IBM",
+        "name": "International Business Machines",
         "category": "bigtech",
         "approach": "超伝導 (Superconducting)",
         "approach_short": "超伝導",
         "purity": "minor",
-        "commercialization": "researchOnly",
-        "qubit_max": 70,
-        "qubit_type": "physical, high coherence",
-        "leader": "Hartmut Neven (Quantum AI lead)",
-        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
-        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
-        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+        "commercialization": "production",
+        "qubit_max": 1121,
+        "qubit_type": "physical",
+        "leader": "Arvind Krishna (CEO), Jay Gambetta (Quantum lead)",
+        "highlight": "Condor (1121 qubits) で量子優位性目標。 Quantum Network 顧客 280社+。",
+        "risk": "量子は IBM 売上の数% で、IBM 株は AI / Hybrid Cloud に左右される。",
+        "thesis": "量子分野の総合リーダー。安定配当付き量子エクスポージャー。",
         "market": {
-          "price": 379.38,
-          "high_52w": 399.04,
-          "low_52w": 165.64,
-          "pct_from_52w_high": 4.9,
-          "ret_1m": 10.8,
-          "ret_3m": 22.1,
-          "ret_6m": 31.0,
+          "price": 253.84,
+          "high_52w": 310.91,
+          "low_52w": 214.64,
+          "pct_from_52w_high": 18.4,
+          "ret_1m": 10.2,
+          "ret_3m": 11.5,
+          "ret_6m": -11.4,
           "ret_1y": null,
-          "volatility_annual": 34.0,
-          "market_cap_b": 4596.36,
-          "pe_trailing": 28.894136,
-          "revenue_b": 422.5,
-          "sector": "Communication Services",
-          "industry": "Internet Content & Information"
+          "volatility_annual": 40.8,
+          "market_cap_b": 238.58,
+          "pe_trailing": 22.463717,
+          "revenue_b": 68.91,
+          "sector": "Technology",
+          "industry": "Information Technology Services"
         }
       },
       {
@@ -14429,34 +13921,34 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "IBM",
-        "name": "International Business Machines",
+        "ticker": "GOOG",
+        "name": "Alphabet (Google)",
         "category": "bigtech",
         "approach": "超伝導 (Superconducting)",
         "approach_short": "超伝導",
         "purity": "minor",
-        "commercialization": "production",
-        "qubit_max": 1121,
-        "qubit_type": "physical",
-        "leader": "Arvind Krishna (CEO), Jay Gambetta (Quantum lead)",
-        "highlight": "Condor (1121 qubits) で量子優位性目標。 Quantum Network 顧客 280社+。",
-        "risk": "量子は IBM 売上の数% で、IBM 株は AI / Hybrid Cloud に左右される。",
-        "thesis": "量子分野の総合リーダー。安定配当付き量子エクスポージャー。",
+        "commercialization": "researchOnly",
+        "qubit_max": 70,
+        "qubit_type": "physical, high coherence",
+        "leader": "Hartmut Neven (Quantum AI lead)",
+        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
         "market": {
-          "price": 253.84,
-          "high_52w": 310.91,
-          "low_52w": 214.64,
-          "pct_from_52w_high": 18.4,
-          "ret_1m": 10.2,
-          "ret_3m": 11.5,
-          "ret_6m": -11.4,
+          "price": 379.38,
+          "high_52w": 399.04,
+          "low_52w": 165.64,
+          "pct_from_52w_high": 4.9,
+          "ret_1m": 10.8,
+          "ret_3m": 22.1,
+          "ret_6m": 31.0,
           "ret_1y": null,
-          "volatility_annual": 40.8,
-          "market_cap_b": 238.58,
-          "pe_trailing": 22.463717,
-          "revenue_b": 68.91,
-          "sector": "Technology",
-          "industry": "Information Technology Services"
+          "volatility_annual": 34.0,
+          "market_cap_b": 4596.36,
+          "pe_trailing": 28.894136,
+          "revenue_b": 422.5,
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information"
         }
       },
       {
@@ -14562,36 +14054,6 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "COHR",
-        "name": "Coherent Corp",
-        "category": "transceiver",
-        "approach": "高速光トランシーバー + 産業レーザー",
-        "approach_short": "Transceiver/Laser",
-        "purity": "hybrid",
-        "primary_customer": "NVIDIA / Amazon / Meta",
-        "leader": "Jim Anderson (CEO)",
-        "highlight": "II-VI と統合後の総合光半導体トップ。NVIDIA 向け 800G InfiniBand 大規模納入。",
-        "risk": "産業レーザー部門の鈍化。統合シナジーまだ途上。",
-        "thesis": "NVIDIA H100/B200 出荷に直接連動。多角化で安定収益。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 377.57,
-          "high_52w": 404.94,
-          "low_52w": 75.63,
-          "pct_from_52w_high": 6.8,
-          "ret_1m": 12.3,
-          "ret_3m": 48.1,
-          "ret_6m": 178.4,
-          "ret_1y": null,
-          "volatility_annual": 86.0,
-          "market_cap_b": 73.87,
-          "pe_trailing": 178.94315,
-          "revenue_b": 6.6,
-          "sector": "Technology",
-          "industry": "Scientific & Technical Instruments"
-        }
-      },
-      {
         "ticker": "LITE",
         "name": "Lumentum Holdings",
         "category": "transceiver",
@@ -14652,93 +14114,33 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "NVDA",
-        "name": "NVIDIA",
-        "category": "semiconductor",
-        "approach": "Silicon Photonics + NVLink Switch",
-        "approach_short": "Si Photonics",
-        "purity": "minor",
-        "primary_customer": "(自社 H100/B200/B300 接続)",
-        "leader": "Jensen Huang (CEO)",
-        "highlight": "Quantum-2 InfiniBand と NVLink Switch で AI クラスター内光接続を支配。CPO 商用化リード。",
-        "risk": "NVDA 株は GPU 売上で動き、光通信は数% 程度。",
-        "thesis": "光通信を「自社設計+EMS 製造」で内製化。AI フルスタックの最終ピース。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 215.33,
-          "high_52w": 235.74,
-          "low_52w": 131.26,
-          "pct_from_52w_high": 8.7,
-          "ret_1m": 3.4,
-          "ret_3m": 11.7,
-          "ret_6m": 19.2,
-          "ret_1y": null,
-          "volatility_annual": 37.4,
-          "market_cap_b": 5215.51,
-          "pe_trailing": 33.026073,
-          "revenue_b": 253.49,
-          "sector": "Technology",
-          "industry": "Semiconductors"
-        }
-      },
-      {
-        "ticker": "ANET",
-        "name": "Arista Networks",
-        "category": "network",
-        "approach": "AI Backend ネットワーク (Ethernet + 800G)",
-        "approach_short": "Ethernet",
+        "ticker": "COHR",
+        "name": "Coherent Corp",
+        "category": "transceiver",
+        "approach": "高速光トランシーバー + 産業レーザー",
+        "approach_short": "Transceiver/Laser",
         "purity": "hybrid",
-        "primary_customer": "Meta / Microsoft / Oracle",
-        "leader": "Jayshree Ullal (CEO)",
-        "highlight": "AI クラスタ向け 800G スイッチで NVIDIA InfiniBand と双璧。Meta が UEC (Ultra Ethernet) 主導。",
-        "risk": "InfiniBand との競合。3 大顧客集中 (>40%)。",
-        "thesis": "Ethernet 派が AI バックエンドで巻き返し。COHR/AAOI/LITE 光モジュールを大量採用。",
+        "primary_customer": "NVIDIA / Amazon / Meta",
+        "leader": "Jim Anderson (CEO)",
+        "highlight": "II-VI と統合後の総合光半導体トップ。NVIDIA 向け 800G InfiniBand 大規模納入。",
+        "risk": "産業レーザー部門の鈍化。統合シナジーまだ途上。",
+        "thesis": "NVIDIA H100/B200 出荷に直接連動。多角化で安定収益。",
         "ticker_extra_links": true,
         "market": {
-          "price": 154.03,
-          "high_52w": 177.73,
-          "low_52w": 86.25,
-          "pct_from_52w_high": 13.3,
-          "ret_1m": -12.9,
-          "ret_3m": 19.6,
-          "ret_6m": 28.8,
+          "price": 377.57,
+          "high_52w": 404.94,
+          "low_52w": 75.63,
+          "pct_from_52w_high": 6.8,
+          "ret_1m": 12.3,
+          "ret_3m": 48.1,
+          "ret_6m": 178.4,
           "ret_1y": null,
-          "volatility_annual": 61.5,
-          "market_cap_b": 193.95,
-          "pe_trailing": 52.93127,
-          "revenue_b": 9.71,
+          "volatility_annual": 86.0,
+          "market_cap_b": 73.87,
+          "pe_trailing": 178.94315,
+          "revenue_b": 6.6,
           "sector": "Technology",
-          "industry": "Computer Hardware"
-        }
-      },
-      {
-        "ticker": "MRVL",
-        "name": "Marvell Technology",
-        "category": "semiconductor",
-        "approach": "光 DSP + Co-Packaged Optics + AI ASIC",
-        "approach_short": "Optical DSP",
-        "purity": "hybrid",
-        "primary_customer": "AWS / Microsoft Azure / 各 EMS",
-        "leader": "Matt Murphy (CEO)",
-        "highlight": "光 DSP (PAM4) で市場 80% 独占。AWS Trainium 設計受託 + CPO で次世代も席巻。",
-        "risk": "ストレージ事業の鈍化。Broadcom の競合参入。",
-        "thesis": "Custom ASIC + 光 DSP の二本柱。1.6T/CPO で 2026-2028 加速。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 196.33,
-          "high_52w": 196.33,
-          "low_52w": 60.03,
-          "pct_from_52w_high": 0.0,
-          "ret_1m": 19.5,
-          "ret_3m": 150.6,
-          "ret_6m": 156.4,
-          "ret_1y": null,
-          "volatility_annual": 71.5,
-          "market_cap_b": 171.9,
-          "pe_trailing": 64.16013,
-          "revenue_b": 8.19,
-          "sector": "Technology",
-          "industry": "Semiconductors"
+          "industry": "Scientific & Technical Instruments"
         }
       },
       {
@@ -14772,33 +14174,93 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "IPGP",
-        "name": "IPG Photonics",
-        "category": "fiber",
-        "approach": "高出力ファイバーレーザー",
-        "approach_short": "Laser",
-        "purity": "pure",
-        "primary_customer": "自動車 / EV / 産業 / 医療",
-        "leader": "Eugene Scherbakov (CEO)",
-        "highlight": "ファイバーレーザー世界トップ。EV バッテリー溶接で需要拡大。",
-        "risk": "中国市場依存 (~30%) と 中国国産化進展リスク。",
-        "thesis": "光通信ではなく『光産業全般』エクスポージャー。EV 加速で復活余地。",
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "category": "semiconductor",
+        "approach": "Silicon Photonics + NVLink Switch",
+        "approach_short": "Si Photonics",
+        "purity": "minor",
+        "primary_customer": "(自社 H100/B200/B300 接続)",
+        "leader": "Jensen Huang (CEO)",
+        "highlight": "Quantum-2 InfiniBand と NVLink Switch で AI クラスター内光接続を支配。CPO 商用化リード。",
+        "risk": "NVDA 株は GPU 売上で動き、光通信は数% 程度。",
+        "thesis": "光通信を「自社設計+EMS 製造」で内製化。AI フルスタックの最終ピース。",
         "ticker_extra_links": true,
         "market": {
-          "price": 119.0,
-          "high_52w": 153.91,
-          "low_52w": 64.6,
-          "pct_from_52w_high": 22.7,
-          "ret_1m": -4.5,
-          "ret_3m": -9.6,
-          "ret_6m": 64.2,
+          "price": 215.33,
+          "high_52w": 235.74,
+          "low_52w": 131.26,
+          "pct_from_52w_high": 8.7,
+          "ret_1m": 3.4,
+          "ret_3m": 11.7,
+          "ret_6m": 19.2,
           "ret_1y": null,
-          "volatility_annual": 81.7,
-          "market_cap_b": 5.05,
-          "pe_trailing": 175.0,
-          "revenue_b": 1.04,
+          "volatility_annual": 37.4,
+          "market_cap_b": 5215.51,
+          "pe_trailing": 33.026073,
+          "revenue_b": 253.49,
           "sector": "Technology",
-          "industry": "Semiconductor Equipment & Materials"
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "MRVL",
+        "name": "Marvell Technology",
+        "category": "semiconductor",
+        "approach": "光 DSP + Co-Packaged Optics + AI ASIC",
+        "approach_short": "Optical DSP",
+        "purity": "hybrid",
+        "primary_customer": "AWS / Microsoft Azure / 各 EMS",
+        "leader": "Matt Murphy (CEO)",
+        "highlight": "光 DSP (PAM4) で市場 80% 独占。AWS Trainium 設計受託 + CPO で次世代も席巻。",
+        "risk": "ストレージ事業の鈍化。Broadcom の競合参入。",
+        "thesis": "Custom ASIC + 光 DSP の二本柱。1.6T/CPO で 2026-2028 加速。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 196.33,
+          "high_52w": 196.33,
+          "low_52w": 60.03,
+          "pct_from_52w_high": 0.0,
+          "ret_1m": 19.5,
+          "ret_3m": 150.6,
+          "ret_6m": 156.4,
+          "ret_1y": null,
+          "volatility_annual": 71.5,
+          "market_cap_b": 171.9,
+          "pe_trailing": 64.16013,
+          "revenue_b": 8.19,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "ANET",
+        "name": "Arista Networks",
+        "category": "network",
+        "approach": "AI Backend ネットワーク (Ethernet + 800G)",
+        "approach_short": "Ethernet",
+        "purity": "hybrid",
+        "primary_customer": "Meta / Microsoft / Oracle",
+        "leader": "Jayshree Ullal (CEO)",
+        "highlight": "AI クラスタ向け 800G スイッチで NVIDIA InfiniBand と双璧。Meta が UEC (Ultra Ethernet) 主導。",
+        "risk": "InfiniBand との競合。3 大顧客集中 (>40%)。",
+        "thesis": "Ethernet 派が AI バックエンドで巻き返し。COHR/AAOI/LITE 光モジュールを大量採用。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 154.03,
+          "high_52w": 177.73,
+          "low_52w": 86.25,
+          "pct_from_52w_high": 13.3,
+          "ret_1m": -12.9,
+          "ret_3m": 19.6,
+          "ret_6m": 28.8,
+          "ret_1y": null,
+          "volatility_annual": 61.5,
+          "market_cap_b": 193.95,
+          "pe_trailing": 52.93127,
+          "revenue_b": 9.71,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
         }
       },
       {
@@ -14890,6 +14352,36 @@ const SCAN_DATA = {
           "sector": "Technology",
           "industry": "Communication Equipment"
         }
+      },
+      {
+        "ticker": "IPGP",
+        "name": "IPG Photonics",
+        "category": "fiber",
+        "approach": "高出力ファイバーレーザー",
+        "approach_short": "Laser",
+        "purity": "pure",
+        "primary_customer": "自動車 / EV / 産業 / 医療",
+        "leader": "Eugene Scherbakov (CEO)",
+        "highlight": "ファイバーレーザー世界トップ。EV バッテリー溶接で需要拡大。",
+        "risk": "中国市場依存 (~30%) と 中国国産化進展リスク。",
+        "thesis": "光通信ではなく『光産業全般』エクスポージャー。EV 加速で復活余地。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 119.0,
+          "high_52w": 153.91,
+          "low_52w": 64.6,
+          "pct_from_52w_high": 22.7,
+          "ret_1m": -4.5,
+          "ret_3m": -9.6,
+          "ret_6m": 64.2,
+          "ret_1y": null,
+          "volatility_annual": 81.7,
+          "market_cap_b": 5.05,
+          "pe_trailing": 175.0,
+          "revenue_b": 1.04,
+          "sector": "Technology",
+          "industry": "Semiconductor Equipment & Materials"
+        }
       }
     ],
     "by_category": {
@@ -14922,36 +14414,6 @@ const SCAN_DATA = {
             "revenue_b": 0.0,
             "sector": "Technology",
             "industry": "Semiconductors"
-          }
-        },
-        {
-          "ticker": "COHR",
-          "name": "Coherent Corp",
-          "category": "transceiver",
-          "approach": "高速光トランシーバー + 産業レーザー",
-          "approach_short": "Transceiver/Laser",
-          "purity": "hybrid",
-          "primary_customer": "NVIDIA / Amazon / Meta",
-          "leader": "Jim Anderson (CEO)",
-          "highlight": "II-VI と統合後の総合光半導体トップ。NVIDIA 向け 800G InfiniBand 大規模納入。",
-          "risk": "産業レーザー部門の鈍化。統合シナジーまだ途上。",
-          "thesis": "NVIDIA H100/B200 出荷に直接連動。多角化で安定収益。",
-          "ticker_extra_links": true,
-          "market": {
-            "price": 377.57,
-            "high_52w": 404.94,
-            "low_52w": 75.63,
-            "pct_from_52w_high": 6.8,
-            "ret_1m": 12.3,
-            "ret_3m": 48.1,
-            "ret_6m": 178.4,
-            "ret_1y": null,
-            "volatility_annual": 86.0,
-            "market_cap_b": 73.87,
-            "pe_trailing": 178.94315,
-            "revenue_b": 6.6,
-            "sector": "Technology",
-            "industry": "Scientific & Technical Instruments"
           }
         },
         {
@@ -15012,6 +14474,36 @@ const SCAN_DATA = {
             "revenue_b": 0.51,
             "sector": "Technology",
             "industry": "Communication Equipment"
+          }
+        },
+        {
+          "ticker": "COHR",
+          "name": "Coherent Corp",
+          "category": "transceiver",
+          "approach": "高速光トランシーバー + 産業レーザー",
+          "approach_short": "Transceiver/Laser",
+          "purity": "hybrid",
+          "primary_customer": "NVIDIA / Amazon / Meta",
+          "leader": "Jim Anderson (CEO)",
+          "highlight": "II-VI と統合後の総合光半導体トップ。NVIDIA 向け 800G InfiniBand 大規模納入。",
+          "risk": "産業レーザー部門の鈍化。統合シナジーまだ途上。",
+          "thesis": "NVIDIA H100/B200 出荷に直接連動。多角化で安定収益。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 377.57,
+            "high_52w": 404.94,
+            "low_52w": 75.63,
+            "pct_from_52w_high": 6.8,
+            "ret_1m": 12.3,
+            "ret_3m": 48.1,
+            "ret_6m": 178.4,
+            "ret_1y": null,
+            "volatility_annual": 86.0,
+            "market_cap_b": 73.87,
+            "pe_trailing": 178.94315,
+            "revenue_b": 6.6,
+            "sector": "Technology",
+            "industry": "Scientific & Technical Instruments"
           }
         },
         {
@@ -15171,36 +14663,6 @@ const SCAN_DATA = {
       ],
       "fiber": [
         {
-          "ticker": "IPGP",
-          "name": "IPG Photonics",
-          "category": "fiber",
-          "approach": "高出力ファイバーレーザー",
-          "approach_short": "Laser",
-          "purity": "pure",
-          "primary_customer": "自動車 / EV / 産業 / 医療",
-          "leader": "Eugene Scherbakov (CEO)",
-          "highlight": "ファイバーレーザー世界トップ。EV バッテリー溶接で需要拡大。",
-          "risk": "中国市場依存 (~30%) と 中国国産化進展リスク。",
-          "thesis": "光通信ではなく『光産業全般』エクスポージャー。EV 加速で復活余地。",
-          "ticker_extra_links": true,
-          "market": {
-            "price": 119.0,
-            "high_52w": 153.91,
-            "low_52w": 64.6,
-            "pct_from_52w_high": 22.7,
-            "ret_1m": -4.5,
-            "ret_3m": -9.6,
-            "ret_6m": 64.2,
-            "ret_1y": null,
-            "volatility_annual": 81.7,
-            "market_cap_b": 5.05,
-            "pe_trailing": 175.0,
-            "revenue_b": 1.04,
-            "sector": "Technology",
-            "industry": "Semiconductor Equipment & Materials"
-          }
-        },
-        {
           "ticker": "GLW",
           "name": "Corning Incorporated",
           "category": "fiber",
@@ -15258,6 +14720,36 @@ const SCAN_DATA = {
             "revenue_b": 1.37,
             "sector": "Technology",
             "industry": "Communication Equipment"
+          }
+        },
+        {
+          "ticker": "IPGP",
+          "name": "IPG Photonics",
+          "category": "fiber",
+          "approach": "高出力ファイバーレーザー",
+          "approach_short": "Laser",
+          "purity": "pure",
+          "primary_customer": "自動車 / EV / 産業 / 医療",
+          "leader": "Eugene Scherbakov (CEO)",
+          "highlight": "ファイバーレーザー世界トップ。EV バッテリー溶接で需要拡大。",
+          "risk": "中国市場依存 (~30%) と 中国国産化進展リスク。",
+          "thesis": "光通信ではなく『光産業全般』エクスポージャー。EV 加速で復活余地。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 119.0,
+            "high_52w": 153.91,
+            "low_52w": 64.6,
+            "pct_from_52w_high": 22.7,
+            "ret_1m": -4.5,
+            "ret_3m": -9.6,
+            "ret_6m": 64.2,
+            "ret_1y": null,
+            "volatility_annual": 81.7,
+            "market_cap_b": 5.05,
+            "pe_trailing": 175.0,
+            "revenue_b": 1.04,
+            "sector": "Technology",
+            "industry": "Semiconductor Equipment & Materials"
           }
         }
       ]
@@ -15457,22 +14949,6 @@ const SCAN_DATA = {
       "fbo_status": "healthy_breakout"
     },
     {
-      "ticker": "ROKU",
-      "name": "Roku",
-      "price": 125.55000305175781,
-      "signal": "買いシグナル",
-      "unified_score": 48.4,
-      "fund_score": 10,
-      "tech_score": 70,
-      "pivot_score": 65,
-      "momentum_score": 92.4,
-      "sector": "テック",
-      "stage": 2,
-      "tt_pass": true,
-      "pivot_bpq": 65,
-      "fbo_status": "post_breakout"
-    },
-    {
       "ticker": "TVTX",
       "name": "Travere Therapeutics",
       "price": 44.43000030517578,
@@ -15505,36 +14981,20 @@ const SCAN_DATA = {
       "fbo_status": "healthy_breakout"
     },
     {
-      "ticker": "NVT",
-      "name": "nVent Electric",
-      "price": 164.66000366210938,
+      "ticker": "ROKU",
+      "name": "Roku",
+      "price": 125.55000305175781,
       "signal": "買いシグナル",
-      "unified_score": 44.5,
-      "fund_score": 25,
+      "unified_score": 46.4,
+      "fund_score": 5,
       "tech_score": 70,
-      "pivot_score": 10,
-      "momentum_score": 100,
-      "sector": "電力インフラ",
+      "pivot_score": 65,
+      "momentum_score": 92.4,
+      "sector": "テック",
       "stage": 2,
       "tt_pass": true,
-      "pivot_bpq": 40,
-      "fbo_status": "false_breakout"
-    },
-    {
-      "ticker": "COHR",
-      "name": "Coherent Corp",
-      "price": 377.57000732421875,
-      "signal": "買いシグナル",
-      "unified_score": 44.3,
-      "fund_score": 16,
-      "tech_score": 70,
-      "pivot_score": 27,
-      "momentum_score": 100,
-      "sector": "光学・レーザー",
-      "stage": 2,
-      "tt_pass": true,
-      "pivot_bpq": 57,
-      "fbo_status": "false_breakout"
+      "pivot_bpq": 65,
+      "fbo_status": "post_breakout"
     },
     {
       "ticker": "SLB",
@@ -15553,22 +15013,6 @@ const SCAN_DATA = {
       "fbo_status": "near_high"
     },
     {
-      "ticker": "FCX",
-      "name": "Freeport-McMoRan",
-      "price": 61.9900016784668,
-      "signal": "買いシグナル",
-      "unified_score": 43.6,
-      "fund_score": 22,
-      "tech_score": 70,
-      "pivot_score": 50,
-      "momentum_score": 48.8,
-      "sector": "銅",
-      "stage": 2,
-      "tt_pass": true,
-      "pivot_bpq": 50,
-      "fbo_status": "below_high"
-    },
-    {
       "ticker": "ASX",
       "name": "ASE Technology",
       "price": 34.810001373291016,
@@ -15583,6 +15027,54 @@ const SCAN_DATA = {
       "tt_pass": true,
       "pivot_bpq": 35,
       "fbo_status": "post_breakout"
+    },
+    {
+      "ticker": "COHR",
+      "name": "Coherent Corp",
+      "price": 377.57000732421875,
+      "signal": "買いシグナル",
+      "unified_score": 39.9,
+      "fund_score": 5,
+      "tech_score": 70,
+      "pivot_score": 27,
+      "momentum_score": 100,
+      "sector": "光学・レーザー",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 57,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan",
+      "price": 61.9900016784668,
+      "signal": "買いシグナル",
+      "unified_score": 36.8,
+      "fund_score": 5,
+      "tech_score": 70,
+      "pivot_score": 50,
+      "momentum_score": 48.8,
+      "sector": "銅",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 50,
+      "fbo_status": "below_high"
+    },
+    {
+      "ticker": "NVT",
+      "name": "nVent Electric",
+      "price": 164.66000366210938,
+      "signal": "買いシグナル",
+      "unified_score": 36.5,
+      "fund_score": 5,
+      "tech_score": 70,
+      "pivot_score": 10,
+      "momentum_score": 100,
+      "sector": "電力インフラ",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 40,
+      "fbo_status": "false_breakout"
     },
     {
       "ticker": "ROIV",
@@ -15617,28 +15109,12 @@ const SCAN_DATA = {
       "fbo_status": "false_breakout"
     },
     {
-      "ticker": "KEYS",
-      "name": "Keysight Technologies",
-      "price": 346.55999755859375,
-      "signal": "買いシグナル",
-      "unified_score": 32.4,
-      "fund_score": 19,
-      "tech_score": 60,
-      "pivot_score": 5,
-      "momentum_score": 58.7,
-      "sector": "半導体・計測",
-      "stage": 2,
-      "tt_pass": true,
-      "pivot_bpq": 35,
-      "fbo_status": "false_breakout"
-    },
-    {
       "ticker": "FORM",
       "name": "FormFactor",
       "price": 128.99000549316406,
       "signal": "ウォッチ",
-      "unified_score": 32.2,
-      "fund_score": 11,
+      "unified_score": 29.0,
+      "fund_score": 3,
       "tech_score": 53,
       "pivot_score": 45,
       "momentum_score": 36.9,
@@ -15662,6 +15138,22 @@ const SCAN_DATA = {
       "stage": 3,
       "tt_pass": false,
       "pivot_bpq": 55,
+      "fbo_status": "false_breakout"
+    },
+    {
+      "ticker": "KEYS",
+      "name": "Keysight Technologies",
+      "price": 346.55999755859375,
+      "signal": "買いシグナル",
+      "unified_score": 26.8,
+      "fund_score": 5,
+      "tech_score": 60,
+      "pivot_score": 5,
+      "momentum_score": 58.7,
+      "sector": "半導体・計測",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": 35,
       "fbo_status": "false_breakout"
     },
     {
@@ -15761,22 +15253,6 @@ const SCAN_DATA = {
       "fbo_status": "false_breakout"
     },
     {
-      "ticker": "CDE",
-      "name": "Coeur Mining",
-      "price": 17.6299991607666,
-      "signal": "様子見",
-      "unified_score": 12.9,
-      "fund_score": 23,
-      "tech_score": 0,
-      "pivot_score": 10,
-      "momentum_score": 11.2,
-      "sector": "貴金属・金銀",
-      "stage": 4,
-      "tt_pass": false,
-      "pivot_bpq": 10,
-      "fbo_status": "below_high"
-    },
-    {
       "ticker": "AG",
       "name": "First Majestic Silver",
       "price": 19.450000762939453,
@@ -15822,6 +15298,22 @@ const SCAN_DATA = {
       "stage": 4,
       "tt_pass": false,
       "pivot_bpq": 15,
+      "fbo_status": "below_high"
+    },
+    {
+      "ticker": "CDE",
+      "name": "Coeur Mining",
+      "price": 17.6299991607666,
+      "signal": "様子見",
+      "unified_score": 3.7,
+      "fund_score": 0,
+      "tech_score": 0,
+      "pivot_score": 10,
+      "momentum_score": 11.2,
+      "sector": "貴金属・金銀",
+      "stage": 4,
+      "tt_pass": false,
+      "pivot_bpq": 10,
       "fbo_status": "below_high"
     }
   ]
