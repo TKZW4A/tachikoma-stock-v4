@@ -1511,8 +1511,8 @@ const SCAN_DATA = {
       "status": "リスクオフ"
     }
   },
-  "vix": 18.79,
-  "silver": "$58.78",
+  "vix": 18.8,
+  "silver": "$58.76",
   "cde": {
     "price": 15.239999771118164,
     "change_pct": 0,
@@ -1753,91 +1753,91 @@ const SCAN_DATA = {
       "rank": 1,
       "ticker": "NVDA",
       "sepa": "—",
-      "grok": "—",
+      "grok": "+8",
       "gemini": "96pt",
       "gpt": "18%",
-      "verdict": ""
+      "verdict": "強気"
     },
     {
       "rank": 2,
       "ticker": "TSM",
       "sepa": "—",
-      "grok": "—",
+      "grok": "+3",
       "gemini": "91pt",
       "gpt": "13%",
-      "verdict": ""
+      "verdict": "中立"
     },
     {
       "rank": 3,
       "ticker": "AVGO",
       "sepa": "—",
-      "grok": "—",
+      "grok": "+8",
       "gemini": "87pt",
       "gpt": "14%",
-      "verdict": ""
+      "verdict": "強気"
     },
     {
       "rank": 4,
       "ticker": "WPM",
       "sepa": "—",
-      "grok": "—",
+      "grok": "+6",
       "gemini": "79pt",
       "gpt": "8%",
-      "verdict": ""
+      "verdict": "強気"
     },
     {
       "rank": 5,
       "ticker": "NVT",
       "sepa": "7.0",
-      "grok": "—",
+      "grok": "+1",
       "gemini": "74pt",
       "gpt": "6%",
-      "verdict": ""
+      "verdict": "中立"
     },
     {
       "rank": 6,
       "ticker": "KEYS",
       "sepa": "7.0",
-      "grok": "—",
+      "grok": "+3",
       "gemini": "69pt",
       "gpt": "5%",
-      "verdict": ""
+      "verdict": "中立"
     },
     {
       "rank": 7,
       "ticker": "FORM",
       "sepa": "5.0",
-      "grok": "—",
+      "grok": "+7",
       "gemini": "66pt",
       "gpt": "6%",
-      "verdict": ""
+      "verdict": "強気"
     },
     {
       "rank": 8,
       "ticker": "FCX",
       "sepa": "7.0",
-      "grok": "—",
+      "grok": "+6",
       "gemini": "63pt",
       "gpt": "8%",
-      "verdict": ""
+      "verdict": "強気"
     },
     {
       "rank": 9,
       "ticker": "COHR",
       "sepa": "5.0",
-      "grok": "—",
+      "grok": "+7",
       "gemini": "61pt",
       "gpt": "7%",
-      "verdict": ""
+      "verdict": "強気"
     },
     {
       "rank": 10,
       "ticker": "MP",
       "sepa": "0.4",
-      "grok": "—",
+      "grok": "+8",
       "gemini": "52pt",
       "gpt": "8%",
-      "verdict": ""
+      "verdict": "強気"
     }
   ],
   "earnings": [
@@ -2090,7 +2090,15 @@ const SCAN_DATA = {
       "stop_loss_21ma": "$34.29",
       "stop_loss_8pct": "$32.29",
       "grok": null,
-      "perplexity": null,
+      "perplexity": {
+        "judgment": null,
+        "reason": "",
+        "drivers": [],
+        "risks": [],
+        "latest_earnings": null,
+        "next_earnings": null,
+        "analyst_ratings": null
+      },
       "gemini": null,
       "chatgpt": {
         "base": null,
@@ -2364,8 +2372,24 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$140.41",
       "stop_loss_8pct": "$130.34",
-      "grok": null,
-      "perplexity": null,
+      "grok": {
+        "score": 5,
+        "judgment": "中立",
+        "reasons": [
+          "決算後テクニカルで変化の兆し（higher low形成・アップトレンド）と広告回復期待がポジティブ",
+          "Foxとの提携で反トラスト審査の動きやプットオプション増加など短期ノイズあり",
+          "アナリストは中立（Citi PT引き上げもNeutral維持）で明確に強気とは言えない"
+        ]
+      },
+      "perplexity": {
+        "judgment": null,
+        "reason": "",
+        "drivers": [],
+        "risks": [],
+        "latest_earnings": null,
+        "next_earnings": null,
+        "analyst_ratings": null
+      },
       "gemini": {
         "rank": 12,
         "score": 40,
@@ -2515,7 +2539,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$326.96",
       "stop_loss_8pct": "$299.12",
-      "grok": null,
+      "grok": {
+        "score": 3,
+        "judgment": "中立",
+        "reasons": [
+          "AIインフラ・CPOテスト需要でFORM等と言及も具体的な強気材料は少ない",
+          "ハードウェアグループの収益モメンタムは加速も市場リターンを下回る指摘",
+          "テクニカル目標は上向きだが短期は弱くショート言及も散見"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 6,
@@ -2800,7 +2832,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$61.83",
       "stop_loss_8pct": "$58.42",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "銅価格の長期強気（AI・電力・EV需要）と在庫逼迫が最大のテールウィンド",
+          "Grasberg鉱山の生産遅延・コスト上昇に懐疑的な声もあるが銅高でカバー",
+          "オプションflow活発とテクニカルでダブルボトムや上昇トレンド支持"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 8,
@@ -2951,7 +2991,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$159.77",
       "stop_loss_8pct": "$146.08",
-      "grok": null,
+      "grok": {
+        "score": 1,
+        "judgment": "中立",
+        "reasons": [
+          "アナリスト目標株価引き上げ（RBC:180→193 Outperform）はあるが議論量が極めて少ない",
+          "一部でショート言及があるものの全体として活発なセンチメントはほぼ見られない",
+          "低ボリュームで具体的材料が少なく中立的な位置づけ"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 5,
@@ -3378,7 +3426,15 @@ const SCAN_DATA = {
       "stop_loss_21ma": "$39.88",
       "stop_loss_8pct": "$36.30",
       "grok": null,
-      "perplexity": null,
+      "perplexity": {
+        "judgment": null,
+        "reason": "",
+        "drivers": [],
+        "risks": [],
+        "latest_earnings": null,
+        "next_earnings": null,
+        "analyst_ratings": null
+      },
       "gemini": null,
       "chatgpt": {
         "base": null,
@@ -3525,7 +3581,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$119.01",
       "stop_loss_8pct": "$103.73",
-      "grok": null,
+      "grok": {
+        "score": 7,
+        "judgment": "強気",
+        "reasons": [
+          "AI半導体インフラの見落とされたピック＆ショベルとしてHBM・先進パッケージング需要で高評価",
+          "プローブカード世界シェア高くテキサス新工場によるキャパ拡大・レバレッジが期待材料",
+          "高値から30%調整でサポート近辺、2030年売上16億ドル目標などの長期成長ストーリー支持"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 7,
@@ -3676,7 +3740,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$325.63",
       "stop_loss_8pct": "$288.16",
-      "grok": null,
+      "grok": {
+        "score": 7,
+        "judgment": "強気",
+        "reasons": [
+          "AI光通信・フォトニクスのキープレイヤーとして注目",
+          "NVIDIA出資や強力なブック・トゥ・ビル、Google capex好材料でアフターマーケット上昇",
+          "フォトニクス株全体がオーバーソールドで押し目買い推奨の声が多い"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 9,
@@ -4637,7 +4709,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$15.81",
       "stop_loss_8pct": "$14.02",
-      "grok": null,
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "銀・金鉱山としてテクニカルで底打ち（フィボナッチ・ブルishキッカー・サポート奪還）が明確",
+          "銅生産ボーナス（$10/lbで6.5億ドル規模）もプラス評価",
+          "ショートスクイーズ可能性や金鉱山セクター全体の強気モメンタムと連動した上昇期待が高い"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 11,
@@ -4795,7 +4875,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$50.38",
       "stop_loss_8pct": "$41.08",
-      "grok": null,
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "米国唯一の希土類鉱山として国家安全保障・サプライチェーン独立の戦略的チャンピオン",
+          "政府支援（DoD・DOE）、垂直統合（マグネット生産開始）、短期的ショートスクイーズ設定が強い",
+          "中国依存脱却・国防・EV需要で長期成長ストーリーが強く最近の調整を押し目買いの好機と見る声多数"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 10,
@@ -5489,7 +5577,15 @@ const SCAN_DATA = {
       "short_cover": "",
       "stop_loss_21ma": "",
       "stop_loss_8pct": "",
-      "grok": null,
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "AI需要の強さとエコシステム全体の言及が非常に多く長期成長期待が高い",
+          "テクニカルでfalling wedgeブレイクアウトやheatmapのブルish継続シグナルが目立つ",
+          "オプションflow（大規模コールウォール）と機関投資家の買い姿勢がポジティブ"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 1,
@@ -5634,7 +5730,15 @@ const SCAN_DATA = {
       "short_cover": "",
       "stop_loss_21ma": "",
       "stop_loss_8pct": "",
-      "grok": null,
+      "grok": {
+        "score": 3,
+        "judgment": "中立",
+        "reasons": [
+          "2027年からの最大10%価格引き上げ発表で一部ショック（セミコン・データセンター下落）",
+          "強力な決算・AI需要継続のファンダは評価も株価は売られる展開",
+          "長期ではTSMCの優位性を指摘する声はあるが短期センチメントは慎重"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 2,
@@ -5779,7 +5883,15 @@ const SCAN_DATA = {
       "short_cover": "",
       "stop_loss_21ma": "",
       "stop_loss_8pct": "",
-      "grok": null,
+      "grok": {
+        "score": 8,
+        "judgment": "強気",
+        "reasons": [
+          "インサイダー買いや割安感（低PER・高EPS成長）が強調",
+          "カップアンドハンドル形成や390ドル超えの強気テクニカルパターン複数指摘",
+          "モメンタム強く400ドル台や430ドルEOWなどの強気目標が散見"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 3,
@@ -5924,7 +6036,15 @@ const SCAN_DATA = {
       "short_cover": "",
       "stop_loss_21ma": "",
       "stop_loss_8pct": "",
-      "grok": null,
+      "grok": {
+        "score": 6,
+        "judgment": "強気",
+        "reasons": [
+          "金・銀・PGMストリーミングモデルがディフェンシブかつ配当利回りありで割安との声多数",
+          "伝統的鉱山よりコスト変動に強い要塞のようなバランスシートが評価",
+          "貴金属価格上昇時のベータ捕捉と長期保有向きのロイヤリティモデルが支持"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 4,
@@ -6426,64 +6546,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 4.66,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": true,
-        "pivot_price": 92.07,
-        "current_price": 91.35,
-        "distance_pct": 0.79,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 75.05,
-        "base_range_pct": 22.7,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.83,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 8,
-            "peak_price": 87.55,
-            "trough_idx": 22,
-            "trough_price": 70.95,
-            "depth_pct": 19.0
-          },
-          {
-            "peak_idx": 39,
-            "peak_price": 90.75,
-            "trough_idx": 43,
-            "trough_price": 75.05,
-            "depth_pct": 17.3
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "irregular",
-        "base_shape_label": "不規則 (高値圏の踊り場 / 整理中)",
-        "pct_from_52w_high": 0.0,
-        "left_right_volume": {
-          "left_avg": 751469.0,
-          "right_avg": 483567.0,
-          "ratio": 0.64,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 79,
-        "interpretation": "🎯 **最強 near PIVOT** (BP Quality 79/100): ピボット $92.07 まであと 0.8%。不規則 (高値圏の踊り場 / 整理中) / VCP 2段★ / 出来高乾燥 / 左右出来高健全。ブレイク直前の理想形。"
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "near_high",
-        "breakout_date": null,
-        "breakout_price": null,
-        "breakout_level": 92.07,
-        "breakout_volume_ratio": null,
-        "current_price": 91.35,
-        "current_vs_breakout_pct": -0.79,
-        "max_after_breakout": null,
-        "drawdown_from_peak_pct": null,
-        "interpretation": "📊 ブレイクアウト追跡: 直近 20日 内に 20日高値ブレイクなし。現在価格は 20日高値 $92.07 の 0.8% 下。ベース形成中の可能性。"
       }
     },
     "CPRX": {
@@ -6570,49 +6632,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 5.56,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": true,
-        "pivot_price": 31.5,
-        "current_price": 31.49,
-        "distance_pct": 0.05,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 31.34,
-        "base_range_pct": 0.5,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.0,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 0,
-        "vcp_contractions": [],
-        "vcp_decreasing": false,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 0.03,
-        "left_right_volume": {
-          "left_avg": 2253476.0,
-          "right_avg": 2305650.0,
-          "ratio": 1.02,
-          "healthy": false
-        },
-        "left_right_healthy": false,
-        "buy_point_quality": 79,
-        "interpretation": "🎯 **最強 near PIVOT** (BP Quality 79/100): ピボット $31.50 まであと 0.0%。Flat Base (横ばい型) / VCP 0段 / 出来高乾燥 / 左右出来高警戒。ブレイク直前の理想形。"
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "near_high",
-        "breakout_date": null,
-        "breakout_price": null,
-        "breakout_level": 31.5,
-        "breakout_volume_ratio": null,
-        "current_price": 31.49,
-        "current_vs_breakout_pct": -0.05,
-        "max_after_breakout": null,
-        "drawdown_from_peak_pct": null,
-        "interpretation": "📊 ブレイクアウト追跡: 直近 20日 内に 20日高値ブレイクなし。現在価格は 20日高値 $31.50 の 0.0% 下。ベース形成中の可能性。"
       }
     },
     "GS": {
@@ -6699,64 +6718,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 6.13,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 1153.99,
-        "current_price": 1074.72,
-        "distance_pct": 7.38,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 1003.0,
-        "base_range_pct": 15.1,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.83,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 27,
-            "peak_price": 1098.36,
-            "trough_idx": 30,
-            "trough_price": 1000.04,
-            "depth_pct": 9.0
-          },
-          {
-            "peak_idx": 36,
-            "peak_price": 1125.0,
-            "trough_idx": 44,
-            "trough_price": 1003.0,
-            "depth_pct": 10.8
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "double_bottom",
-        "base_shape_label": "Double Bottom (ダブルボトム型)",
-        "pct_from_52w_high": 6.71,
-        "left_right_volume": {
-          "left_avg": 2305269.0,
-          "right_avg": 1991567.0,
-          "ratio": 0.86,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 62,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-15",
-        "breakout_price": 1152.07,
-        "breakout_level": 1143.84,
-        "breakout_volume_ratio": 1.25,
-        "current_price": 1074.72,
-        "current_vs_breakout_pct": -6.04,
-        "max_after_breakout": 1152.07,
-        "drawdown_from_peak_pct": 6.71,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-15 に $1143.84 を 突破するも、現在 $1074.72 はブレイク水準を **6.0% 下回る**。高値 $1152.07 から 6.7% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "HALO": {
@@ -6843,71 +6804,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 6.97,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": true,
-        "pivot_price": 82.26,
-        "current_price": 80.84,
-        "distance_pct": 1.76,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 67.02,
-        "base_range_pct": 22.7,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.79,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 3,
-        "vcp_contractions": [
-          {
-            "peak_idx": 10,
-            "peak_price": 73.89,
-            "trough_idx": 24,
-            "trough_price": 65.6,
-            "depth_pct": 11.2
-          },
-          {
-            "peak_idx": 29,
-            "peak_price": 72.29,
-            "trough_idx": 36,
-            "trough_price": 67.02,
-            "depth_pct": 7.3
-          },
-          {
-            "peak_idx": 47,
-            "peak_price": 82.26,
-            "trough_idx": 53,
-            "trough_price": 73.89,
-            "depth_pct": 10.2
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "saucer",
-        "base_shape_label": "Saucer (浅い U 字型)",
-        "pct_from_52w_high": 0.89,
-        "left_right_volume": {
-          "left_avg": 2102923.0,
-          "right_avg": 1674350.0,
-          "ratio": 0.8,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 81,
-        "interpretation": "🎯 **最強 near PIVOT** (BP Quality 81/100): ピボット $82.26 まであと 1.8%。Saucer (浅い U 字型) / VCP 3段 / 出来高乾燥 / 左右出来高健全。ブレイク直前の理想形。"
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-07",
-        "breakout_price": 81.57,
-        "breakout_level": 81.01,
-        "breakout_volume_ratio": 1.1,
-        "current_price": 80.84,
-        "current_vs_breakout_pct": -0.21,
-        "max_after_breakout": 81.57,
-        "drawdown_from_peak_pct": 0.89,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-07 に $81.01 を 突破するも、現在 $80.84 はブレイク水準を **0.2% 下回る**。高値 $81.57 から 0.9% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "AAPL": {
@@ -6994,64 +6890,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 5.32,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 334.99,
-        "current_price": 321.66,
-        "distance_pct": 4.14,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 273.75,
-        "base_range_pct": 22.4,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.76,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 28,
-            "peak_price": 317.4,
-            "trough_idx": 30,
-            "trough_price": 287.38,
-            "depth_pct": 9.5
-          },
-          {
-            "peak_idx": 37,
-            "peak_price": 302.42,
-            "trough_idx": 40,
-            "trough_price": 273.75,
-            "depth_pct": 9.5
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "double_bottom",
-        "base_shape_label": "Double Bottom (ダブルボトム型)",
-        "pct_from_52w_high": 3.62,
-        "left_right_volume": {
-          "left_avg": 76968723.0,
-          "right_avg": 47073767.0,
-          "ratio": 0.61,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 62,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-16",
-        "breakout_price": 333.26,
-        "breakout_level": 328.73,
-        "breakout_volume_ratio": 1.13,
-        "current_price": 321.66,
-        "current_vs_breakout_pct": -2.15,
-        "max_after_breakout": 333.74,
-        "drawdown_from_peak_pct": 3.62,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-16 に $328.73 を 突破するも、現在 $321.66 はブレイク水準を **2.2% 下回る**。高値 $333.74 から 3.6% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "BNL": {
@@ -7138,64 +6976,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 4.26,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 23.1,
-        "current_price": 22.36,
-        "distance_pct": 3.31,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 19.99,
-        "base_range_pct": 15.6,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.6,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 20,
-            "peak_price": 20.47,
-            "trough_idx": 23,
-            "trough_price": 19.52,
-            "depth_pct": 4.6
-          },
-          {
-            "peak_idx": 31,
-            "peak_price": 21.2,
-            "trough_idx": 35,
-            "trough_price": 19.99,
-            "depth_pct": 5.7
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "double_bottom",
-        "base_shape_label": "Double Bottom (ダブルボトム型)",
-        "pct_from_52w_high": 2.1,
-        "left_right_volume": {
-          "left_avg": 2352877.0,
-          "right_avg": 1746458.0,
-          "ratio": 0.74,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 62,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "post_breakout",
-        "breakout_date": "2026-07-16",
-        "breakout_price": 22.79,
-        "breakout_level": 22.15,
-        "breakout_volume_ratio": 0.85,
-        "current_price": 22.36,
-        "current_vs_breakout_pct": 0.97,
-        "max_after_breakout": 22.84,
-        "drawdown_from_peak_pct": 2.1,
-        "interpretation": "📊 ブレイク後 (2026-07-16, 水準 $22.15): 現在 +1.0%、高値からの戻し 2.1%。"
       }
     },
     "INCY": {
@@ -7282,78 +7062,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 7.7,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 119.6,
-        "current_price": 116.69,
-        "distance_pct": 2.49,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 96.09,
-        "base_range_pct": 24.5,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.8,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 4,
-        "vcp_contractions": [
-          {
-            "peak_idx": 9,
-            "peak_price": 103.01,
-            "trough_idx": 15,
-            "trough_price": 94.1,
-            "depth_pct": 8.6
-          },
-          {
-            "peak_idx": 20,
-            "peak_price": 98.85,
-            "trough_idx": 24,
-            "trough_price": 92.18,
-            "depth_pct": 6.7
-          },
-          {
-            "peak_idx": 30,
-            "peak_price": 110.34,
-            "trough_idx": 36,
-            "trough_price": 96.09,
-            "depth_pct": 12.9
-          },
-          {
-            "peak_idx": 49,
-            "peak_price": 118.97,
-            "trough_idx": 53,
-            "trough_price": 110.56,
-            "depth_pct": 7.1
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "saucer",
-        "base_shape_label": "Saucer (浅い U 字型)",
-        "pct_from_52w_high": 1.54,
-        "left_right_volume": {
-          "left_avg": 2145554.0,
-          "right_avg": 1494825.0,
-          "ratio": 0.7,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 65,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "post_breakout",
-        "breakout_date": "2026-07-02",
-        "breakout_price": 116.86,
-        "breakout_level": 116.0,
-        "breakout_volume_ratio": 1.49,
-        "current_price": 116.69,
-        "current_vs_breakout_pct": 0.59,
-        "max_after_breakout": 118.52,
-        "drawdown_from_peak_pct": 1.54,
-        "interpretation": "📊 ブレイク後 (2026-07-02, 水準 $116.00): 現在 +0.6%、高値からの戻し 1.5%。"
       }
     },
     "DAVE": {
@@ -7440,57 +7148,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 22.01,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 458.25,
-        "current_price": 408.59,
-        "distance_pct": 12.15,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 283.86,
-        "base_range_pct": 61.4,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.82,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 1,
-        "vcp_contractions": [
-          {
-            "peak_idx": 23,
-            "peak_price": 293.9,
-            "trough_idx": 25,
-            "trough_price": 242.01,
-            "depth_pct": 17.7
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "saucer",
-        "base_shape_label": "Saucer (浅い U 字型)",
-        "pct_from_52w_high": 7.67,
-        "left_right_volume": {
-          "left_avg": 656238.0,
-          "right_avg": 466550.0,
-          "ratio": 0.71,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 55,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-15",
-        "breakout_price": 438.19,
-        "breakout_level": 419.86,
-        "breakout_volume_ratio": 1.27,
-        "current_price": 408.59,
-        "current_vs_breakout_pct": -2.68,
-        "max_after_breakout": 442.53,
-        "drawdown_from_peak_pct": 7.67,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-15 に $419.86 を 突破するも、現在 $408.59 はブレイク水準を **2.7% 下回る**。高値 $442.53 から 7.7% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "EXEL": {
@@ -7577,78 +7234,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 8.5,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 57.57,
-        "current_price": 55.65,
-        "distance_pct": 3.45,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 50.8,
-        "base_range_pct": 13.3,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.73,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 4,
-        "vcp_contractions": [
-          {
-            "peak_idx": 12,
-            "peak_price": 51.63,
-            "trough_idx": 15,
-            "trough_price": 48.21,
-            "depth_pct": 6.6
-          },
-          {
-            "peak_idx": 21,
-            "peak_price": 52.96,
-            "trough_idx": 25,
-            "trough_price": 48.1,
-            "depth_pct": 9.2
-          },
-          {
-            "peak_idx": 31,
-            "peak_price": 53.93,
-            "trough_idx": 37,
-            "trough_price": 50.8,
-            "depth_pct": 5.8
-          },
-          {
-            "peak_idx": 47,
-            "peak_price": 57.57,
-            "trough_idx": 53,
-            "trough_price": 54.39,
-            "depth_pct": 5.5
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 2.54,
-        "left_right_volume": {
-          "left_avg": 3279323.0,
-          "right_avg": 2179892.0,
-          "ratio": 0.66,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 70,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-07",
-        "breakout_price": 57.08,
-        "breakout_level": 56.21,
-        "breakout_volume_ratio": 1.21,
-        "current_price": 55.65,
-        "current_vs_breakout_pct": -1.0,
-        "max_after_breakout": 57.1,
-        "drawdown_from_peak_pct": 2.54,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-07 に $56.21 を 突破するも、現在 $55.65 はブレイク水準を **1.0% 下回る**。高値 $57.10 から 2.5% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "JPM": {
@@ -7735,71 +7320,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 3.89,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": true,
-        "pivot_price": 351.24,
-        "current_price": 349.9,
-        "distance_pct": 0.38,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 322.71,
-        "base_range_pct": 8.8,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.78,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 3,
-        "vcp_contractions": [
-          {
-            "peak_idx": 7,
-            "peak_price": 314.88,
-            "trough_idx": 16,
-            "trough_price": 292.35,
-            "depth_pct": 7.2
-          },
-          {
-            "peak_idx": 19,
-            "peak_price": 308.54,
-            "trough_idx": 22,
-            "trough_price": 293.88,
-            "depth_pct": 4.8
-          },
-          {
-            "peak_idx": 40,
-            "peak_price": 341.91,
-            "trough_idx": 44,
-            "trough_price": 323.55,
-            "depth_pct": 5.4
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 0.0,
-        "left_right_volume": {
-          "left_avg": 10860677.0,
-          "right_avg": 10596183.0,
-          "ratio": 0.98,
-          "healthy": false
-        },
-        "left_right_healthy": false,
-        "buy_point_quality": 92,
-        "interpretation": "🎯 **最強 near PIVOT** (BP Quality 92/100): ピボット $351.24 まであと 0.4%。Flat Base (横ばい型) / VCP 3段 / 出来高乾燥 / 左右出来高警戒。ブレイク直前の理想形。"
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "post_breakout",
-        "breakout_date": "2026-07-15",
-        "breakout_price": 346.91,
-        "breakout_level": 344.73,
-        "breakout_volume_ratio": 1.12,
-        "current_price": 349.9,
-        "current_vs_breakout_pct": 1.5,
-        "max_after_breakout": 349.9,
-        "drawdown_from_peak_pct": 0.0,
-        "interpretation": "📊 ブレイク後 (2026-07-15, 水準 $344.73): 現在 +1.5%、高値からの戻し 0.0%。"
       }
     },
     "AFL": {
@@ -7886,64 +7406,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 2.86,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": true,
-        "pivot_price": 125.93,
-        "current_price": 124.34,
-        "distance_pct": 1.28,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 114.47,
-        "base_range_pct": 10.0,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 0.93,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 15,
-            "peak_price": 119.19,
-            "trough_idx": 23,
-            "trough_price": 110.54,
-            "depth_pct": 7.3
-          },
-          {
-            "peak_idx": 27,
-            "peak_price": 118.83,
-            "trough_idx": 36,
-            "trough_price": 114.47,
-            "depth_pct": 3.7
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 0.3,
-        "left_right_volume": {
-          "left_avg": 2756577.0,
-          "right_avg": 1957592.0,
-          "ratio": 0.71,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 70,
-        "interpretation": "🎯 **最強 near PIVOT** (BP Quality 70/100): ピボット $125.93 まであと 1.3%。Flat Base (横ばい型) / VCP 2段★ / 出来高残存 / 左右出来高健全。ブレイク直前の理想形。"
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "post_breakout",
-        "breakout_date": "2026-07-17",
-        "breakout_price": 124.72,
-        "breakout_level": 124.0,
-        "breakout_volume_ratio": 1.62,
-        "current_price": 124.34,
-        "current_vs_breakout_pct": 0.27,
-        "max_after_breakout": 124.72,
-        "drawdown_from_peak_pct": 0.3,
-        "interpretation": "📊 ブレイク後 (2026-07-17, 水準 $124.00): 現在 +0.3%、高値からの戻し 0.3%。"
       }
     },
     "COLB": {
@@ -8030,78 +7492,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 4.56,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 33.68,
-        "current_price": 32.26,
-        "distance_pct": 4.4,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 29.77,
-        "base_range_pct": 13.1,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 1.06,
-        "above_21ma": false,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 4,
-        "vcp_contractions": [
-          {
-            "peak_idx": 7,
-            "peak_price": 30.08,
-            "trough_idx": 13,
-            "trough_price": 28.13,
-            "depth_pct": 6.5
-          },
-          {
-            "peak_idx": 20,
-            "peak_price": 29.86,
-            "trough_idx": 25,
-            "trough_price": 28.55,
-            "depth_pct": 4.4
-          },
-          {
-            "peak_idx": 33,
-            "peak_price": 31.84,
-            "trough_idx": 35,
-            "trough_price": 29.77,
-            "depth_pct": 6.5
-          },
-          {
-            "peak_idx": 45,
-            "peak_price": 32.77,
-            "trough_idx": 48,
-            "trough_price": 30.84,
-            "depth_pct": 5.9
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 4.02,
-        "left_right_volume": {
-          "left_avg": 3230092.0,
-          "right_avg": 2825767.0,
-          "ratio": 0.87,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 50,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-16",
-        "breakout_price": 33.61,
-        "breakout_level": 32.77,
-        "breakout_volume_ratio": 1.21,
-        "current_price": 32.26,
-        "current_vs_breakout_pct": -1.56,
-        "max_after_breakout": 33.61,
-        "drawdown_from_peak_pct": 4.02,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-16 に $32.77 を 突破するも、現在 $32.26 はブレイク水準を **1.6% 下回る**。高値 $33.61 から 4.0% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "GL": {
@@ -8188,71 +7578,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 7.51,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 191.55,
-        "current_price": 171.08,
-        "distance_pct": 11.97,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 168.17,
-        "base_range_pct": 13.9,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 1.15,
-        "above_21ma": false,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 3,
-        "vcp_contractions": [
-          {
-            "peak_idx": 6,
-            "peak_price": 156.4,
-            "trough_idx": 8,
-            "trough_price": 150.53,
-            "depth_pct": 3.8
-          },
-          {
-            "peak_idx": 15,
-            "peak_price": 157.63,
-            "trough_idx": 25,
-            "trough_price": 148.07,
-            "depth_pct": 6.1
-          },
-          {
-            "peak_idx": 44,
-            "peak_price": 181.99,
-            "trough_idx": 48,
-            "trough_price": 174.84,
-            "depth_pct": 3.9
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 7.4,
-        "left_right_volume": {
-          "left_avg": 807646.0,
-          "right_avg": 652208.0,
-          "ratio": 0.81,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 50,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-16",
-        "breakout_price": 184.56,
-        "breakout_level": 181.99,
-        "breakout_volume_ratio": 1.09,
-        "current_price": 171.08,
-        "current_vs_breakout_pct": -5.99,
-        "max_after_breakout": 184.76,
-        "drawdown_from_peak_pct": 7.4,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-16 に $181.99 を 突破するも、現在 $171.08 はブレイク水準を **6.0% 下回る**。高値 $184.76 から 7.4% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "BNY": {
@@ -8339,57 +7664,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 5.79,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 163.77,
-        "current_price": 160.11,
-        "distance_pct": 2.29,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 141.78,
-        "base_range_pct": 15.5,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 0.91,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 1,
-        "vcp_contractions": [
-          {
-            "peak_idx": 38,
-            "peak_price": 148.5,
-            "trough_idx": 41,
-            "trough_price": 141.78,
-            "depth_pct": 4.5
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "irregular",
-        "base_shape_label": "不規則 (高値圏の踊り場 / 整理中)",
-        "pct_from_52w_high": 1.38,
-        "left_right_volume": {
-          "left_avg": 4770069.0,
-          "right_avg": 4510183.0,
-          "ratio": 0.95,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 35,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "healthy_breakout",
-        "breakout_date": "2026-07-15",
-        "breakout_price": 162.35,
-        "breakout_level": 155.09,
-        "breakout_volume_ratio": 2.12,
-        "current_price": 160.11,
-        "current_vs_breakout_pct": 3.24,
-        "max_after_breakout": 162.35,
-        "drawdown_from_peak_pct": 1.38,
-        "interpretation": "🟢 健全なブレイクアウト継続: 2026-07-15 のブレイクから 高値 $162.35、現在水準は +3.2%。押し目買い候補。"
       }
     },
     "DVA": {
@@ -8476,64 +7750,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 16.0,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 239.64,
-        "current_price": 234.27,
-        "distance_pct": 2.29,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 206.85,
-        "base_range_pct": 15.9,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.76,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 10,
-            "peak_price": 202.69,
-            "trough_idx": 13,
-            "trough_price": 191.57,
-            "depth_pct": 5.5
-          },
-          {
-            "peak_idx": 18,
-            "peak_price": 202.56,
-            "trough_idx": 25,
-            "trough_price": 186.61,
-            "depth_pct": 7.9
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "double_bottom",
-        "base_shape_label": "Double Bottom (ダブルボトム型)",
-        "pct_from_52w_high": 1.27,
-        "left_right_volume": {
-          "left_avg": 911908.0,
-          "right_avg": 664158.0,
-          "ratio": 0.73,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 62,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "post_breakout",
-        "breakout_date": "2026-07-02",
-        "breakout_price": 234.91,
-        "breakout_level": 229.8,
-        "breakout_volume_ratio": 0.93,
-        "current_price": 234.27,
-        "current_vs_breakout_pct": 1.95,
-        "max_after_breakout": 237.28,
-        "drawdown_from_peak_pct": 1.27,
-        "interpretation": "📊 ブレイク後 (2026-07-02, 水準 $229.80): 現在 +1.9%、高値からの戻し 1.3%。"
       }
     },
     "IBKR": {
@@ -8620,64 +7836,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 6.36,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 97.77,
-        "current_price": 91.76,
-        "distance_pct": 6.55,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 86.66,
-        "base_range_pct": 12.9,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 1.02,
-        "above_21ma": false,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 12,
-            "peak_price": 88.35,
-            "trough_idx": 21,
-            "trough_price": 79.04,
-            "depth_pct": 10.5
-          },
-          {
-            "peak_idx": 37,
-            "peak_price": 97.84,
-            "trough_idx": 43,
-            "trough_price": 86.66,
-            "depth_pct": 11.4
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 5.8,
-        "left_right_volume": {
-          "left_avg": 5339092.0,
-          "right_avg": 3836842.0,
-          "ratio": 0.72,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 45,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "below_high",
-        "breakout_date": null,
-        "breakout_price": null,
-        "breakout_level": 97.77,
-        "breakout_volume_ratio": null,
-        "current_price": 91.76,
-        "current_vs_breakout_pct": -6.55,
-        "max_after_breakout": null,
-        "drawdown_from_peak_pct": null,
-        "interpretation": "📊 ブレイクアウト追跡: 20日高値 $97.77 から 6.5% 下。ブレイクアウト圏外。"
       }
     },
     "JBHT": {
@@ -8764,64 +7922,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 6.57,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 299.76,
-        "current_price": 289.37,
-        "distance_pct": 3.59,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 265.37,
-        "base_range_pct": 13.0,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 1.03,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 29,
-            "peak_price": 293.54,
-            "trough_idx": 35,
-            "trough_price": 265.37,
-            "depth_pct": 9.6
-          },
-          {
-            "peak_idx": 44,
-            "peak_price": 294.98,
-            "trough_idx": 48,
-            "trough_price": 269.39,
-            "depth_pct": 8.7
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 3.03,
-        "left_right_volume": {
-          "left_avg": 1059154.0,
-          "right_avg": 1194850.0,
-          "ratio": 1.13,
-          "healthy": false
-        },
-        "left_right_healthy": false,
-        "buy_point_quality": 45,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-16",
-        "breakout_price": 298.41,
-        "breakout_level": 294.98,
-        "breakout_volume_ratio": 2.48,
-        "current_price": 289.37,
-        "current_vs_breakout_pct": -1.9,
-        "max_after_breakout": 298.41,
-        "drawdown_from_peak_pct": 3.03,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-16 に $294.98 を 突破するも、現在 $289.37 はブレイク水準を **1.9% 下回る**。高値 $298.41 から 3.0% 下落。出来高は充分だった = 撤退推奨。"
       }
     },
     "BRC": {
@@ -8908,64 +8008,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 4.85,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 95.61,
-        "current_price": 93.68,
-        "distance_pct": 2.06,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 82.58,
-        "base_range_pct": 15.8,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.7,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 27,
-            "peak_price": 90.75,
-            "trough_idx": 28,
-            "trough_price": 73.01,
-            "depth_pct": 19.5
-          },
-          {
-            "peak_idx": 47,
-            "peak_price": 95.61,
-            "trough_idx": 49,
-            "trough_price": 88.55,
-            "depth_pct": 7.4
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "irregular",
-        "base_shape_label": "不規則 (高値圏の踊り場 / 整理中)",
-        "pct_from_52w_high": 2.2,
-        "left_right_volume": {
-          "left_avg": 293969.0,
-          "right_avg": 175950.0,
-          "ratio": 0.6,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 55,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "healthy_breakout",
-        "breakout_date": "2026-06-30",
-        "breakout_price": 91.32,
-        "breakout_level": 90.75,
-        "breakout_volume_ratio": 0.57,
-        "current_price": 93.68,
-        "current_vs_breakout_pct": 3.23,
-        "max_after_breakout": 93.82,
-        "drawdown_from_peak_pct": 0.15,
-        "interpretation": "🟢 健全なブレイクアウト継続: 2026-06-30 のブレイクから 高値 $93.82、現在水準は +3.2%。押し目買い候補。"
       }
     },
     "CRS": {
@@ -9052,57 +8094,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 13.87,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 625.99,
-        "current_price": 601.54,
-        "distance_pct": 4.06,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 532.58,
-        "base_range_pct": 17.5,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.75,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 1,
-        "vcp_contractions": [
-          {
-            "peak_idx": 7,
-            "peak_price": 475.69,
-            "trough_idx": 15,
-            "trough_price": 390.0,
-            "depth_pct": 18.0
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "saucer",
-        "base_shape_label": "Saucer (浅い U 字型)",
-        "pct_from_52w_high": 2.86,
-        "left_right_volume": {
-          "left_avg": 1072538.0,
-          "right_avg": 557833.0,
-          "ratio": 0.52,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 55,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-06-30",
-        "breakout_price": 616.84,
-        "breakout_level": 608.52,
-        "breakout_volume_ratio": 1.11,
-        "current_price": 601.54,
-        "current_vs_breakout_pct": -1.15,
-        "max_after_breakout": 619.25,
-        "drawdown_from_peak_pct": 2.86,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-06-30 に $608.52 を 突破するも、現在 $601.54 はブレイク水準を **1.1% 下回る**。高値 $619.25 から 2.9% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "FRT": {
@@ -9189,71 +8180,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 4.2,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": true,
-        "pivot_price": 126.86,
-        "current_price": 124.83,
-        "distance_pct": 1.63,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 118.94,
-        "base_range_pct": 6.7,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 1.22,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 3,
-        "vcp_contractions": [
-          {
-            "peak_idx": 6,
-            "peak_price": 116.15,
-            "trough_idx": 13,
-            "trough_price": 111.64,
-            "depth_pct": 3.9
-          },
-          {
-            "peak_idx": 32,
-            "peak_price": 125.25,
-            "trough_idx": 35,
-            "trough_price": 118.94,
-            "depth_pct": 5.0
-          },
-          {
-            "peak_idx": 41,
-            "peak_price": 125.02,
-            "trough_idx": 44,
-            "trough_price": 119.97,
-            "depth_pct": 4.0
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 0.94,
-        "left_right_volume": {
-          "left_avg": 938162.0,
-          "right_avg": 742017.0,
-          "ratio": 0.79,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 72,
-        "interpretation": "🎯 **最強 near PIVOT** (BP Quality 72/100): ピボット $126.86 まであと 1.6%。Flat Base (横ばい型) / VCP 3段 / 出来高残存 / 左右出来高健全。ブレイク直前の理想形。"
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-17",
-        "breakout_price": 126.02,
-        "breakout_level": 125.37,
-        "breakout_volume_ratio": 1.83,
-        "current_price": 124.83,
-        "current_vs_breakout_pct": -0.43,
-        "max_after_breakout": 126.02,
-        "drawdown_from_peak_pct": 0.94,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-17 に $125.37 を 突破するも、現在 $124.83 はブレイク水準を **0.4% 下回る**。高値 $126.02 から 0.9% 下落。出来高は充分だった = 撤退推奨。"
       }
     },
     "FR": {
@@ -9340,78 +8266,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 2.14,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 69.88,
-        "current_price": 66.33,
-        "distance_pct": 5.35,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 59.93,
-        "base_range_pct": 16.6,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 0.89,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 4,
-        "vcp_contractions": [
-          {
-            "peak_idx": 10,
-            "peak_price": 62.89,
-            "trough_idx": 13,
-            "trough_price": 59.77,
-            "depth_pct": 5.0
-          },
-          {
-            "peak_idx": 20,
-            "peak_price": 64.12,
-            "trough_idx": 24,
-            "trough_price": 58.64,
-            "depth_pct": 8.5
-          },
-          {
-            "peak_idx": 34,
-            "peak_price": 63.65,
-            "trough_idx": 35,
-            "trough_price": 59.93,
-            "depth_pct": 5.8
-          },
-          {
-            "peak_idx": 40,
-            "peak_price": 63.65,
-            "trough_idx": 44,
-            "trough_price": 60.96,
-            "depth_pct": 4.2
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "irregular",
-        "base_shape_label": "不規則 (高値圏の踊り場 / 整理中)",
-        "pct_from_52w_high": 3.67,
-        "left_right_volume": {
-          "left_avg": 1317977.0,
-          "right_avg": 1365483.0,
-          "ratio": 1.04,
-          "healthy": false
-        },
-        "left_right_healthy": false,
-        "buy_point_quality": 40,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "post_breakout",
-        "breakout_date": "2026-07-16",
-        "breakout_price": 68.68,
-        "breakout_level": 66.17,
-        "breakout_volume_ratio": 1.11,
-        "current_price": 66.33,
-        "current_vs_breakout_pct": 0.24,
-        "max_after_breakout": 68.86,
-        "drawdown_from_peak_pct": 3.67,
-        "interpretation": "📊 ブレイク後 (2026-07-16, 水準 $66.17): 現在 +0.2%、高値からの戻し 3.7%。"
       }
     },
     "ACA": {
@@ -9498,64 +8352,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 8.25,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": true,
-        "pivot_price": 145.71,
-        "current_price": 145.11,
-        "distance_pct": 0.41,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 132.57,
-        "base_range_pct": 10.8,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 0.86,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 6,
-            "peak_price": 135.53,
-            "trough_idx": 15,
-            "trough_price": 115.55,
-            "depth_pct": 14.7
-          },
-          {
-            "peak_idx": 21,
-            "peak_price": 128.81,
-            "trough_idx": 28,
-            "trough_price": 121.11,
-            "depth_pct": 6.0
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 0.15,
-        "left_right_volume": {
-          "left_avg": 1457992.0,
-          "right_avg": 821992.0,
-          "ratio": 0.56,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 76,
-        "interpretation": "🎯 **最強 near PIVOT** (BP Quality 76/100): ピボット $145.71 まであと 0.4%。Flat Base (横ばい型) / VCP 2段★ / 出来高残存 / 左右出来高健全。ブレイク直前の理想形。"
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "near_high",
-        "breakout_date": null,
-        "breakout_price": null,
-        "breakout_level": 145.95,
-        "breakout_volume_ratio": null,
-        "current_price": 145.11,
-        "current_vs_breakout_pct": -0.58,
-        "max_after_breakout": null,
-        "drawdown_from_peak_pct": null,
-        "interpretation": "📊 ブレイクアウト追跡: 直近 20日 内に 20日高値ブレイクなし。現在価格は 20日高値 $145.95 の 0.6% 下。ベース形成中の可能性。"
       }
     },
     "CPAY": {
@@ -9642,64 +8438,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 4.16,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 374.09,
-        "current_price": 364.8,
-        "distance_pct": 2.55,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 321.19,
-        "base_range_pct": 16.5,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.64,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 23,
-            "peak_price": 367.43,
-            "trough_idx": 25,
-            "trough_price": 339.95,
-            "depth_pct": 7.5
-          },
-          {
-            "peak_idx": 35,
-            "peak_price": 364.29,
-            "trough_idx": 41,
-            "trough_price": 321.19,
-            "depth_pct": 11.8
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "irregular",
-        "base_shape_label": "不規則 (高値圏の踊り場 / 整理中)",
-        "pct_from_52w_high": 1.89,
-        "left_right_volume": {
-          "left_avg": 929354.0,
-          "right_avg": 448300.0,
-          "ratio": 0.48,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 55,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "near_high",
-        "breakout_date": null,
-        "breakout_price": null,
-        "breakout_level": 374.09,
-        "breakout_volume_ratio": null,
-        "current_price": 364.8,
-        "current_vs_breakout_pct": -2.55,
-        "max_after_breakout": null,
-        "drawdown_from_peak_pct": null,
-        "interpretation": "📊 ブレイクアウト追跡: 直近 20日 内に 20日高値ブレイクなし。現在価格は 20日高値 $374.09 の 2.5% 下。ベース形成中の可能性。"
       }
     },
     "CSX": {
@@ -9786,71 +8524,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 4.62,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": true,
-        "pivot_price": 53.31,
-        "current_price": 52.81,
-        "distance_pct": 0.95,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 45.15,
-        "base_range_pct": 18.1,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 1.35,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 3,
-        "vcp_contractions": [
-          {
-            "peak_idx": 6,
-            "peak_price": 45.67,
-            "trough_idx": 10,
-            "trough_price": 44.09,
-            "depth_pct": 3.4
-          },
-          {
-            "peak_idx": 20,
-            "peak_price": 47.04,
-            "trough_idx": 23,
-            "trough_price": 44.79,
-            "depth_pct": 4.8
-          },
-          {
-            "peak_idx": 32,
-            "peak_price": 48.03,
-            "trough_idx": 35,
-            "trough_price": 45.15,
-            "depth_pct": 6.0
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "irregular",
-        "base_shape_label": "不規則 (高値圏の踊り場 / 整理中)",
-        "pct_from_52w_high": 0.0,
-        "left_right_volume": {
-          "left_avg": 13155346.0,
-          "right_avg": 13433650.0,
-          "ratio": 1.02,
-          "healthy": false
-        },
-        "left_right_healthy": false,
-        "buy_point_quality": 62,
-        "interpretation": "🎯 near PIVOT (BP Quality 62/100): ピボット $53.31 まであと 0.9%。不規則 (高値圏の踊り場 / 整理中), VCP 3段。出来高乾燥なし(売り手残存可能性)"
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "post_breakout",
-        "breakout_date": "2026-07-23",
-        "breakout_price": 52.81,
-        "breakout_level": 51.29,
-        "breakout_volume_ratio": 2.3,
-        "current_price": 52.81,
-        "current_vs_breakout_pct": 2.96,
-        "max_after_breakout": 52.81,
-        "drawdown_from_peak_pct": 0.0,
-        "interpretation": "📊 ブレイク後 (2026-07-23, 水準 $51.29): 現在 +3.0%、高値からの戻し 0.0%。"
       }
     },
     "AIZ": {
@@ -9937,64 +8610,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 7.52,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 284.12,
-        "current_price": 273.8,
-        "distance_pct": 3.77,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 258.44,
-        "base_range_pct": 9.9,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.77,
-        "above_21ma": false,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 14,
-            "peak_price": 260.08,
-            "trough_idx": 22,
-            "trough_price": 244.71,
-            "depth_pct": 5.9
-          },
-          {
-            "peak_idx": 47,
-            "peak_price": 284.12,
-            "trough_idx": 53,
-            "trough_price": 271.75,
-            "depth_pct": 4.4
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 2.25,
-        "left_right_volume": {
-          "left_avg": 421746.0,
-          "right_avg": 313167.0,
-          "ratio": 0.74,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 60,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-02",
-        "breakout_price": 279.48,
-        "breakout_level": 276.06,
-        "breakout_volume_ratio": 0.6,
-        "current_price": 273.8,
-        "current_vs_breakout_pct": -0.82,
-        "max_after_breakout": 280.11,
-        "drawdown_from_peak_pct": 2.25,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-02 に $276.06 を 突破するも、現在 $273.80 はブレイク水準を **0.8% 下回る**。高値 $280.11 から 2.3% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "ANET": {
@@ -10081,64 +8696,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 2.4,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 189.82,
-        "current_price": 176.61,
-        "distance_pct": 7.48,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 154.74,
-        "base_range_pct": 22.7,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.68,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 24,
-            "peak_price": 177.48,
-            "trough_idx": 29,
-            "trough_price": 145.32,
-            "depth_pct": 18.1
-          },
-          {
-            "peak_idx": 37,
-            "peak_price": 175.2,
-            "trough_idx": 41,
-            "trough_price": 154.74,
-            "depth_pct": 11.7
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "irregular",
-        "base_shape_label": "不規則 (高値圏の踊り場 / 整理中)",
-        "pct_from_52w_high": 5.54,
-        "left_right_volume": {
-          "left_avg": 8940777.0,
-          "right_avg": 7357083.0,
-          "ratio": 0.82,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 55,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-09",
-        "breakout_price": 184.69,
-        "breakout_level": 181.27,
-        "breakout_volume_ratio": 0.96,
-        "current_price": 176.61,
-        "current_vs_breakout_pct": -2.57,
-        "max_after_breakout": 186.96,
-        "drawdown_from_peak_pct": 5.54,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-09 に $181.27 を 突破するも、現在 $176.61 はブレイク水準を **2.6% 下回る**。高値 $186.96 から 5.5% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "ATEN": {
@@ -10225,57 +8782,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 13.6,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 38.49,
-        "current_price": 34.66,
-        "distance_pct": 11.05,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 32.05,
-        "base_range_pct": 20.1,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.83,
-        "above_21ma": false,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 1,
-        "vcp_contractions": [
-          {
-            "peak_idx": 24,
-            "peak_price": 32.95,
-            "trough_idx": 29,
-            "trough_price": 29.83,
-            "depth_pct": 9.5
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "saucer",
-        "base_shape_label": "Saucer (浅い U 字型)",
-        "pct_from_52w_high": 9.05,
-        "left_right_volume": {
-          "left_avg": 1447238.0,
-          "right_avg": 1146050.0,
-          "ratio": 0.79,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 50,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": true,
-        "status": "false_breakout",
-        "breakout_date": "2026-07-01",
-        "breakout_price": 38.0,
-        "breakout_level": 37.67,
-        "breakout_volume_ratio": 0.92,
-        "current_price": 34.66,
-        "current_vs_breakout_pct": -7.99,
-        "max_after_breakout": 38.11,
-        "drawdown_from_peak_pct": 9.05,
-        "interpretation": "🪤 **騙しブレイク (Bull Trap)**: 2026-07-01 に $37.67 を 突破するも、現在 $34.66 はブレイク水準を **8.0% 下回る**。高値 $38.11 から 9.1% 下落。出来高薄かった = 撤退推奨。"
       }
     },
     "BAC": {
@@ -10362,64 +8868,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 5.51,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": true,
-        "pivot_price": 62.12,
-        "current_price": 61.28,
-        "distance_pct": 1.37,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 56.03,
-        "base_range_pct": 10.9,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 1.02,
-        "above_21ma": true,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 6,
-            "peak_price": 53.92,
-            "trough_idx": 13,
-            "trough_price": 49.05,
-            "depth_pct": 9.0
-          },
-          {
-            "peak_idx": 40,
-            "peak_price": 59.2,
-            "trough_idx": 43,
-            "trough_price": 56.84,
-            "depth_pct": 4.0
-          }
-        ],
-        "vcp_decreasing": true,
-        "base_shape": "flat_base",
-        "base_shape_label": "Flat Base (横ばい型)",
-        "pct_from_52w_high": 0.55,
-        "left_right_volume": {
-          "left_avg": 37786346.0,
-          "right_avg": 35588250.0,
-          "ratio": 0.94,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 69,
-        "interpretation": "🎯 near PIVOT (BP Quality 69/100): ピボット $62.12 まであと 1.4%。Flat Base (横ばい型), VCP 2段。出来高乾燥なし(売り手残存可能性)"
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "post_breakout",
-        "breakout_date": "2026-07-15",
-        "breakout_price": 61.59,
-        "breakout_level": 61.21,
-        "breakout_volume_ratio": 1.19,
-        "current_price": 61.28,
-        "current_vs_breakout_pct": 0.11,
-        "max_after_breakout": 61.62,
-        "drawdown_from_peak_pct": 0.55,
-        "interpretation": "📊 ブレイク後 (2026-07-15, 水準 $61.21): 現在 +0.1%、高値からの戻し 0.6%。"
       }
     },
     "ADEA": {
@@ -10491,64 +8939,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": -1.07,
         "price_below_ma50": true,
         "weinstein_no_buy": true
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 32.43,
-        "current_price": 26.92,
-        "distance_pct": 20.47,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 24.37,
-        "base_range_pct": 40.0,
-        "vol_dryup": true,
-        "vol_tail_vs_base": 0.8,
-        "above_21ma": false,
-        "above_50ma": false,
-        "above_200ma": false,
-        "vcp_stages": 2,
-        "vcp_contractions": [
-          {
-            "peak_idx": 29,
-            "peak_price": 33.61,
-            "trough_idx": 39,
-            "trough_price": 28.93,
-            "depth_pct": 13.9
-          },
-          {
-            "peak_idx": 43,
-            "peak_price": 34.12,
-            "trough_idx": 47,
-            "trough_price": 27.05,
-            "depth_pct": 20.7
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "saucer",
-        "base_shape_label": "Saucer (浅い U 字型)",
-        "pct_from_52w_high": 19.8,
-        "left_right_volume": {
-          "left_avg": 2093536.0,
-          "right_avg": 1177345.0,
-          "ratio": 0.56,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 45,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "below_high",
-        "breakout_date": null,
-        "breakout_price": null,
-        "breakout_level": 34.12,
-        "breakout_volume_ratio": null,
-        "current_price": 26.92,
-        "current_vs_breakout_pct": -26.75,
-        "max_after_breakout": null,
-        "drawdown_from_peak_pct": null,
-        "interpretation": "📊 ブレイクアウト追跡: 20日高値 $34.12 から 26.7% 下。ブレイクアウト圏外。"
       }
     },
     "MU": {
@@ -10620,71 +9010,6 @@ const SCAN_DATA = {
         "ma50_slope_pct": 25.11,
         "price_below_ma50": false,
         "weinstein_no_buy": false
-      },
-      "pivot_info": {
-        "is_near_pivot": false,
-        "pivot_price": 1064.48,
-        "current_price": 990.21,
-        "distance_pct": 7.5,
-        "base_length_days": 25,
-        "weeks_in_base": 5,
-        "base_low": 804.0,
-        "base_range_pct": 56.1,
-        "vol_dryup": false,
-        "vol_tail_vs_base": 0.87,
-        "above_21ma": false,
-        "above_50ma": true,
-        "above_200ma": false,
-        "vcp_stages": 3,
-        "vcp_contractions": [
-          {
-            "peak_idx": 9,
-            "peak_price": 818.54,
-            "trough_idx": 15,
-            "trough_price": 652.11,
-            "depth_pct": 20.3
-          },
-          {
-            "peak_idx": 25,
-            "peak_price": 1089.12,
-            "trough_idx": 29,
-            "trough_price": 854.22,
-            "depth_pct": 21.6
-          },
-          {
-            "peak_idx": 40,
-            "peak_price": 1254.81,
-            "trough_idx": 47,
-            "trough_price": 891.66,
-            "depth_pct": 28.9
-          }
-        ],
-        "vcp_decreasing": false,
-        "base_shape": "cup",
-        "base_shape_label": "Cup (カップ型)",
-        "pct_from_52w_high": 18.39,
-        "left_right_volume": {
-          "left_avg": 58971977.0,
-          "right_avg": 42145325.0,
-          "ratio": 0.71,
-          "healthy": true
-        },
-        "left_right_healthy": true,
-        "buy_point_quality": 42,
-        "interpretation": null
-      },
-      "false_breakout_info": {
-        "is_false_breakout": false,
-        "status": "below_high",
-        "breakout_date": null,
-        "breakout_price": null,
-        "breakout_level": 1254.81,
-        "breakout_volume_ratio": null,
-        "current_price": 990.21,
-        "current_vs_breakout_pct": -26.72,
-        "max_after_breakout": null,
-        "drawdown_from_peak_pct": null,
-        "interpretation": "📊 ブレイクアウト追跡: 20日高値 $1254.81 から 26.7% 下。ブレイクアウト圏外。"
       }
     }
   },
@@ -14221,6 +12546,37 @@ const SCAN_DATA = {
   "quantum": {
     "all": [
       {
+        "ticker": "IONQ",
+        "name": "IonQ, Inc.",
+        "category": "pure",
+        "approach": "イオントラップ (Trapped Ion)",
+        "approach_short": "イオン",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 64,
+        "qubit_type": "logical (high-fidelity)",
+        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "market": {
+          "price": 34.07,
+          "high_52w": 82.09,
+          "low_52w": 26.59,
+          "pct_from_52w_high": 58.5,
+          "ret_1m": -36.4,
+          "ret_3m": -21.9,
+          "ret_6m": -30.9,
+          "ret_1y": null,
+          "volatility_annual": 93.6,
+          "market_cap_b": 12.72,
+          "pe_trailing": 87.35898,
+          "revenue_b": 0.19,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
         "ticker": "QBTS",
         "name": "D-Wave Quantum Inc.",
         "category": "pure",
@@ -14283,37 +12639,6 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "IONQ",
-        "name": "IonQ, Inc.",
-        "category": "pure",
-        "approach": "イオントラップ (Trapped Ion)",
-        "approach_short": "イオン",
-        "purity": "pure",
-        "commercialization": "cloudAccess",
-        "qubit_max": 64,
-        "qubit_type": "logical (high-fidelity)",
-        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
-        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
-        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
-        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
-        "market": {
-          "price": 34.07,
-          "high_52w": 82.09,
-          "low_52w": 26.59,
-          "pct_from_52w_high": 58.5,
-          "ret_1m": -36.4,
-          "ret_3m": -21.9,
-          "ret_6m": -30.9,
-          "ret_1y": null,
-          "volatility_annual": 93.6,
-          "market_cap_b": 12.72,
-          "pe_trailing": 87.35898,
-          "revenue_b": 0.19,
-          "sector": "Technology",
-          "industry": "Computer Hardware"
-        }
-      },
-      {
         "ticker": "QUBT",
         "name": "Quantum Computing Inc.",
         "category": "pure",
@@ -14342,37 +12667,6 @@ const SCAN_DATA = {
           "revenue_b": 0.0,
           "sector": "Technology",
           "industry": "Computer Hardware"
-        }
-      },
-      {
-        "ticker": "GOOG",
-        "name": "Alphabet (Google)",
-        "category": "bigtech",
-        "approach": "超伝導 (Superconducting)",
-        "approach_short": "超伝導",
-        "purity": "minor",
-        "commercialization": "researchOnly",
-        "qubit_max": 70,
-        "qubit_type": "physical, high coherence",
-        "leader": "Hartmut Neven (Quantum AI lead)",
-        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
-        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
-        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
-        "market": {
-          "price": 318.34,
-          "high_52w": 398.8,
-          "low_52w": 189.41,
-          "pct_from_52w_high": 20.2,
-          "ret_1m": -7.7,
-          "ret_3m": -5.7,
-          "ret_6m": -3.7,
-          "ret_1y": null,
-          "volatility_annual": 39.6,
-          "market_cap_b": 3893.28,
-          "pe_trailing": 17.15194,
-          "revenue_b": 445.87,
-          "sector": "Communication Services",
-          "industry": "Internet Content & Information"
         }
       },
       {
@@ -14407,6 +12701,37 @@ const SCAN_DATA = {
         }
       },
       {
+        "ticker": "GOOG",
+        "name": "Alphabet (Google)",
+        "category": "bigtech",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "minor",
+        "commercialization": "researchOnly",
+        "qubit_max": 70,
+        "qubit_type": "physical, high coherence",
+        "leader": "Hartmut Neven (Quantum AI lead)",
+        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+        "market": {
+          "price": 318.34,
+          "high_52w": 398.8,
+          "low_52w": 189.41,
+          "pct_from_52w_high": 20.2,
+          "ret_1m": -7.7,
+          "ret_3m": -5.7,
+          "ret_6m": -3.7,
+          "ret_1y": null,
+          "volatility_annual": 39.6,
+          "market_cap_b": 3893.28,
+          "pe_trailing": 17.15194,
+          "revenue_b": 445.87,
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information"
+        }
+      },
+      {
         "ticker": "IBM",
         "name": "International Business Machines",
         "category": "bigtech",
@@ -14435,37 +12760,6 @@ const SCAN_DATA = {
           "revenue_b": 69.09,
           "sector": "Technology",
           "industry": "Information Technology Services"
-        }
-      },
-      {
-        "ticker": "ARQQ",
-        "name": "Arqit Quantum",
-        "category": "pure",
-        "approach": "量子暗号通信 (QKD)",
-        "approach_short": "量子暗号",
-        "purity": "pure",
-        "commercialization": "pilot",
-        "qubit_max": null,
-        "qubit_type": "n/a (encryption-focused)",
-        "leader": "David Williams (CEO)",
-        "highlight": "量子暗号(QKD)に特化。量子計算ではなく「量子セキュリティ」。",
-        "risk": "業界全体が PQC (post-quantum cryptography) にシフト傾向。",
-        "thesis": "国防・金融機関の暗号アップグレード需要。",
-        "market": {
-          "price": 18.35,
-          "high_52w": 58.27,
-          "low_52w": 11.78,
-          "pct_from_52w_high": 68.5,
-          "ret_1m": -35.9,
-          "ret_3m": 27.0,
-          "ret_6m": -27.6,
-          "ret_1y": null,
-          "volatility_annual": 152.0,
-          "market_cap_b": 0.32,
-          "pe_trailing": null,
-          "revenue_b": 0.0,
-          "sector": "Technology",
-          "industry": "Software - Infrastructure"
         }
       },
       {
@@ -14529,10 +12823,72 @@ const SCAN_DATA = {
           "sector": "Industrials",
           "industry": "Conglomerates"
         }
+      },
+      {
+        "ticker": "ARQQ",
+        "name": "Arqit Quantum",
+        "category": "pure",
+        "approach": "量子暗号通信 (QKD)",
+        "approach_short": "量子暗号",
+        "purity": "pure",
+        "commercialization": "pilot",
+        "qubit_max": null,
+        "qubit_type": "n/a (encryption-focused)",
+        "leader": "David Williams (CEO)",
+        "highlight": "量子暗号(QKD)に特化。量子計算ではなく「量子セキュリティ」。",
+        "risk": "業界全体が PQC (post-quantum cryptography) にシフト傾向。",
+        "thesis": "国防・金融機関の暗号アップグレード需要。",
+        "market": {
+          "price": 18.35,
+          "high_52w": 58.27,
+          "low_52w": 11.78,
+          "pct_from_52w_high": 68.5,
+          "ret_1m": -35.9,
+          "ret_3m": 27.0,
+          "ret_6m": -27.6,
+          "ret_1y": null,
+          "volatility_annual": 152.0,
+          "market_cap_b": 0.32,
+          "pe_trailing": null,
+          "revenue_b": 0.0,
+          "sector": "Technology",
+          "industry": "Software - Infrastructure"
+        }
       }
     ],
     "by_category": {
       "pure": [
+        {
+          "ticker": "IONQ",
+          "name": "IonQ, Inc.",
+          "category": "pure",
+          "approach": "イオントラップ (Trapped Ion)",
+          "approach_short": "イオン",
+          "purity": "pure",
+          "commercialization": "cloudAccess",
+          "qubit_max": 64,
+          "qubit_type": "logical (high-fidelity)",
+          "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+          "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+          "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+          "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+          "market": {
+            "price": 34.07,
+            "high_52w": 82.09,
+            "low_52w": 26.59,
+            "pct_from_52w_high": 58.5,
+            "ret_1m": -36.4,
+            "ret_3m": -21.9,
+            "ret_6m": -30.9,
+            "ret_1y": null,
+            "volatility_annual": 93.6,
+            "market_cap_b": 12.72,
+            "pe_trailing": 87.35898,
+            "revenue_b": 0.19,
+            "sector": "Technology",
+            "industry": "Computer Hardware"
+          }
+        },
         {
           "ticker": "QBTS",
           "name": "D-Wave Quantum Inc.",
@@ -14591,37 +12947,6 @@ const SCAN_DATA = {
             "market_cap_b": 4.94,
             "pe_trailing": null,
             "revenue_b": 0.01,
-            "sector": "Technology",
-            "industry": "Computer Hardware"
-          }
-        },
-        {
-          "ticker": "IONQ",
-          "name": "IonQ, Inc.",
-          "category": "pure",
-          "approach": "イオントラップ (Trapped Ion)",
-          "approach_short": "イオン",
-          "purity": "pure",
-          "commercialization": "cloudAccess",
-          "qubit_max": 64,
-          "qubit_type": "logical (high-fidelity)",
-          "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
-          "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
-          "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
-          "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
-          "market": {
-            "price": 34.07,
-            "high_52w": 82.09,
-            "low_52w": 26.59,
-            "pct_from_52w_high": 58.5,
-            "ret_1m": -36.4,
-            "ret_3m": -21.9,
-            "ret_6m": -30.9,
-            "ret_1y": null,
-            "volatility_annual": 93.6,
-            "market_cap_b": 12.72,
-            "pe_trailing": 87.35898,
-            "revenue_b": 0.19,
             "sector": "Technology",
             "industry": "Computer Hardware"
           }
@@ -14691,37 +13016,6 @@ const SCAN_DATA = {
       ],
       "bigtech": [
         {
-          "ticker": "GOOG",
-          "name": "Alphabet (Google)",
-          "category": "bigtech",
-          "approach": "超伝導 (Superconducting)",
-          "approach_short": "超伝導",
-          "purity": "minor",
-          "commercialization": "researchOnly",
-          "qubit_max": 70,
-          "qubit_type": "physical, high coherence",
-          "leader": "Hartmut Neven (Quantum AI lead)",
-          "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
-          "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
-          "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
-          "market": {
-            "price": 318.34,
-            "high_52w": 398.8,
-            "low_52w": 189.41,
-            "pct_from_52w_high": 20.2,
-            "ret_1m": -7.7,
-            "ret_3m": -5.7,
-            "ret_6m": -3.7,
-            "ret_1y": null,
-            "volatility_annual": 39.6,
-            "market_cap_b": 3893.28,
-            "pe_trailing": 17.15194,
-            "revenue_b": 445.87,
-            "sector": "Communication Services",
-            "industry": "Internet Content & Information"
-          }
-        },
-        {
           "ticker": "MSFT",
           "name": "Microsoft",
           "category": "bigtech",
@@ -14750,6 +13044,37 @@ const SCAN_DATA = {
             "revenue_b": 318.27,
             "sector": "Technology",
             "industry": "Software - Infrastructure"
+          }
+        },
+        {
+          "ticker": "GOOG",
+          "name": "Alphabet (Google)",
+          "category": "bigtech",
+          "approach": "超伝導 (Superconducting)",
+          "approach_short": "超伝導",
+          "purity": "minor",
+          "commercialization": "researchOnly",
+          "qubit_max": 70,
+          "qubit_type": "physical, high coherence",
+          "leader": "Hartmut Neven (Quantum AI lead)",
+          "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+          "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+          "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+          "market": {
+            "price": 318.34,
+            "high_52w": 398.8,
+            "low_52w": 189.41,
+            "pct_from_52w_high": 20.2,
+            "ret_1m": -7.7,
+            "ret_3m": -5.7,
+            "ret_6m": -3.7,
+            "ret_1y": null,
+            "volatility_annual": 39.6,
+            "market_cap_b": 3893.28,
+            "pe_trailing": 17.15194,
+            "revenue_b": 445.87,
+            "sector": "Communication Services",
+            "industry": "Internet Content & Information"
           }
         },
         {
@@ -14945,6 +13270,37 @@ const SCAN_DATA = {
         }
       },
       {
+        "ticker": "IONQ",
+        "name": "IonQ, Inc.",
+        "category": "pure",
+        "approach": "イオントラップ (Trapped Ion)",
+        "approach_short": "イオン",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 64,
+        "qubit_type": "logical (high-fidelity)",
+        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "market": {
+          "price": 34.07,
+          "high_52w": 82.09,
+          "low_52w": 26.59,
+          "pct_from_52w_high": 58.5,
+          "ret_1m": -36.4,
+          "ret_3m": -21.9,
+          "ret_6m": -30.9,
+          "ret_1y": null,
+          "volatility_annual": 93.6,
+          "market_cap_b": 12.72,
+          "pe_trailing": 87.35898,
+          "revenue_b": 0.19,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
         "ticker": "RGTI",
         "name": "Rigetti Computing",
         "category": "pure",
@@ -14974,7 +13330,9 @@ const SCAN_DATA = {
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
-      },
+      }
+    ],
+    "by_purity": [
       {
         "ticker": "IONQ",
         "name": "IonQ, Inc.",
@@ -15005,9 +13363,7 @@ const SCAN_DATA = {
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
-      }
-    ],
-    "by_purity": [
+      },
       {
         "ticker": "QBTS",
         "name": "D-Wave Quantum Inc.",
@@ -15066,37 +13422,6 @@ const SCAN_DATA = {
           "market_cap_b": 4.94,
           "pe_trailing": null,
           "revenue_b": 0.01,
-          "sector": "Technology",
-          "industry": "Computer Hardware"
-        }
-      },
-      {
-        "ticker": "IONQ",
-        "name": "IonQ, Inc.",
-        "category": "pure",
-        "approach": "イオントラップ (Trapped Ion)",
-        "approach_short": "イオン",
-        "purity": "pure",
-        "commercialization": "cloudAccess",
-        "qubit_max": 64,
-        "qubit_type": "logical (high-fidelity)",
-        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
-        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
-        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
-        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
-        "market": {
-          "price": 34.07,
-          "high_52w": 82.09,
-          "low_52w": 26.59,
-          "pct_from_52w_high": 58.5,
-          "ret_1m": -36.4,
-          "ret_3m": -21.9,
-          "ret_6m": -30.9,
-          "ret_1y": null,
-          "volatility_annual": 93.6,
-          "market_cap_b": 12.72,
-          "pe_trailing": 87.35898,
-          "revenue_b": 0.19,
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
@@ -15164,37 +13489,6 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "GOOG",
-        "name": "Alphabet (Google)",
-        "category": "bigtech",
-        "approach": "超伝導 (Superconducting)",
-        "approach_short": "超伝導",
-        "purity": "minor",
-        "commercialization": "researchOnly",
-        "qubit_max": 70,
-        "qubit_type": "physical, high coherence",
-        "leader": "Hartmut Neven (Quantum AI lead)",
-        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
-        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
-        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
-        "market": {
-          "price": 318.34,
-          "high_52w": 398.8,
-          "low_52w": 189.41,
-          "pct_from_52w_high": 20.2,
-          "ret_1m": -7.7,
-          "ret_3m": -5.7,
-          "ret_6m": -3.7,
-          "ret_1y": null,
-          "volatility_annual": 39.6,
-          "market_cap_b": 3893.28,
-          "pe_trailing": 17.15194,
-          "revenue_b": 445.87,
-          "sector": "Communication Services",
-          "industry": "Internet Content & Information"
-        }
-      },
-      {
         "ticker": "MSFT",
         "name": "Microsoft",
         "category": "bigtech",
@@ -15223,6 +13517,37 @@ const SCAN_DATA = {
           "revenue_b": 318.27,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
+        }
+      },
+      {
+        "ticker": "GOOG",
+        "name": "Alphabet (Google)",
+        "category": "bigtech",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "minor",
+        "commercialization": "researchOnly",
+        "qubit_max": 70,
+        "qubit_type": "physical, high coherence",
+        "leader": "Hartmut Neven (Quantum AI lead)",
+        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+        "market": {
+          "price": 318.34,
+          "high_52w": 398.8,
+          "low_52w": 189.41,
+          "pct_from_52w_high": 20.2,
+          "ret_1m": -7.7,
+          "ret_3m": -5.7,
+          "ret_6m": -3.7,
+          "ret_1y": null,
+          "volatility_annual": 39.6,
+          "market_cap_b": 3893.28,
+          "pe_trailing": 17.15194,
+          "revenue_b": 445.87,
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information"
         }
       },
       {
@@ -15329,6 +13654,36 @@ const SCAN_DATA = {
   "optical": {
     "all": [
       {
+        "ticker": "COHR",
+        "name": "Coherent Corp",
+        "category": "transceiver",
+        "approach": "高速光トランシーバー + 産業レーザー",
+        "approach_short": "Transceiver/Laser",
+        "purity": "hybrid",
+        "primary_customer": "NVIDIA / Amazon / Meta",
+        "leader": "Jim Anderson (CEO)",
+        "highlight": "II-VI と統合後の総合光半導体トップ。NVIDIA 向け 800G InfiniBand 大規模納入。",
+        "risk": "産業レーザー部門の鈍化。統合シナジーまだ途上。",
+        "thesis": "NVIDIA H100/B200 出荷に直接連動。多角化で安定収益。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 313.22,
+          "high_52w": 426.89,
+          "low_52w": 86.55,
+          "pct_from_52w_high": 26.6,
+          "ret_1m": -20.2,
+          "ret_3m": -7.2,
+          "ret_6m": 54.5,
+          "ret_1y": null,
+          "volatility_annual": 91.6,
+          "market_cap_b": 61.28,
+          "pe_trailing": 149.15239,
+          "revenue_b": 6.6,
+          "sector": "Technology",
+          "industry": "Scientific & Technical Instruments"
+        }
+      },
+      {
         "ticker": "LITE",
         "name": "Lumentum Holdings",
         "category": "transceiver",
@@ -15389,63 +13744,33 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "COHR",
-        "name": "Coherent Corp",
-        "category": "transceiver",
-        "approach": "高速光トランシーバー + 産業レーザー",
-        "approach_short": "Transceiver/Laser",
-        "purity": "hybrid",
-        "primary_customer": "NVIDIA / Amazon / Meta",
-        "leader": "Jim Anderson (CEO)",
-        "highlight": "II-VI と統合後の総合光半導体トップ。NVIDIA 向け 800G InfiniBand 大規模納入。",
-        "risk": "産業レーザー部門の鈍化。統合シナジーまだ途上。",
-        "thesis": "NVIDIA H100/B200 出荷に直接連動。多角化で安定収益。",
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "category": "semiconductor",
+        "approach": "Silicon Photonics + NVLink Switch",
+        "approach_short": "Si Photonics",
+        "purity": "minor",
+        "primary_customer": "(自社 H100/B200/B300 接続)",
+        "leader": "Jensen Huang (CEO)",
+        "highlight": "Quantum-2 InfiniBand と NVLink Switch で AI クラスター内光接続を支配。CPO 商用化リード。",
+        "risk": "NVDA 株は GPU 売上で動き、光通信は数% 程度。",
+        "thesis": "光通信を「自社設計+EMS 製造」で内製化。AI フルスタックの最終ピース。",
         "ticker_extra_links": true,
         "market": {
-          "price": 313.22,
-          "high_52w": 426.89,
-          "low_52w": 86.55,
-          "pct_from_52w_high": 26.6,
-          "ret_1m": -20.2,
-          "ret_3m": -7.2,
-          "ret_6m": 54.5,
+          "price": 208.76,
+          "high_52w": 235.47,
+          "low_52w": 164.98,
+          "pct_from_52w_high": 11.3,
+          "ret_1m": 4.9,
+          "ret_3m": 4.7,
+          "ret_6m": 13.1,
           "ret_1y": null,
-          "volatility_annual": 91.6,
-          "market_cap_b": 61.28,
-          "pe_trailing": 149.15239,
-          "revenue_b": 6.6,
+          "volatility_annual": 41.0,
+          "market_cap_b": 5056.38,
+          "pe_trailing": 31.96937,
+          "revenue_b": 253.49,
           "sector": "Technology",
-          "industry": "Scientific & Technical Instruments"
-        }
-      },
-      {
-        "ticker": "AAOI",
-        "name": "Applied Optoelectronics",
-        "category": "transceiver",
-        "approach": "800G/1.6T DR4・DR8 トランシーバー",
-        "approach_short": "Transceiver",
-        "purity": "pure",
-        "primary_customer": "Microsoft / Amazon AWS",
-        "leader": "Thompson Lin (CEO)",
-        "highlight": "Microsoft Azure 向け 400G/800G 光トランシーバーで大型受注。Quanta との提携で量産能力拡大。",
-        "risk": "顧客集中 (Microsoft 売上比 50%超)。価格競争激化リスク。",
-        "thesis": "AI データセンター 1.6T 移行の最有力サプライヤー。受注残拡大中。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 112.02,
-          "high_52w": 223.1,
-          "low_52w": 19.49,
-          "pct_from_52w_high": 49.8,
-          "ret_1m": -23.8,
-          "ret_3m": -18.7,
-          "ret_6m": 193.6,
-          "ret_1y": null,
-          "volatility_annual": 143.2,
-          "market_cap_b": 8.99,
-          "pe_trailing": null,
-          "revenue_b": 0.51,
-          "sector": "Technology",
-          "industry": "Communication Equipment"
+          "industry": "Semiconductors"
         }
       },
       {
@@ -15479,33 +13804,20 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "NVDA",
-        "name": "NVIDIA",
-        "category": "semiconductor",
-        "approach": "Silicon Photonics + NVLink Switch",
-        "approach_short": "Si Photonics",
-        "purity": "minor",
-        "primary_customer": "(自社 H100/B200/B300 接続)",
-        "leader": "Jensen Huang (CEO)",
-        "highlight": "Quantum-2 InfiniBand と NVLink Switch で AI クラスター内光接続を支配。CPO 商用化リード。",
-        "risk": "NVDA 株は GPU 売上で動き、光通信は数% 程度。",
-        "thesis": "光通信を「自社設計+EMS 製造」で内製化。AI フルスタックの最終ピース。",
+        "ticker": "AAOI",
+        "name": "Applied Optoelectronics",
+        "category": "transceiver",
+        "approach": "800G/1.6T DR4・DR8 トランシーバー",
+        "approach_short": "Transceiver",
+        "purity": "pure",
+        "primary_customer": "Microsoft / Amazon AWS",
+        "leader": "Thompson Lin (CEO)",
+        "highlight": "Microsoft Azure 向け 400G/800G 光トランシーバーで大型受注。Quanta との提携で量産能力拡大。",
+        "risk": "顧客集中 (Microsoft 売上比 50%超)。価格競争激化リスク。",
+        "thesis": "AI データセンター 1.6T 移行の最有力サプライヤー。受注残拡大中。",
         "ticker_extra_links": true,
         "market": {
-          "price": 208.76,
-          "high_52w": 235.47,
-          "low_52w": 164.98,
-          "pct_from_52w_high": 11.3,
-          "ret_1m": 4.9,
-          "ret_3m": 4.7,
-          "ret_6m": 13.1,
-          "ret_1y": null,
-          "volatility_annual": 41.0,
-          "market_cap_b": 5056.38,
-          "pe_trailing": 31.96937,
-          "revenue_b": 253.49,
-          "sector": "Technology",
-          "industry": "Semiconductors"
+          "error": "insufficient data"
         }
       },
       {
@@ -15539,36 +13851,6 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "CIEN",
-        "name": "Ciena Corp",
-        "category": "network",
-        "approach": "コヒーレント光伝送 / ロングホール / DCI",
-        "approach_short": "Coherent",
-        "purity": "pure",
-        "primary_customer": "Verizon / AT&T / Equinix",
-        "leader": "Gary Smith (CEO)",
-        "highlight": "800G ZR/ZR+ コヒーレント光伝送で長距離 DCI (Data Center Interconnect) を支配。",
-        "risk": "従来通信キャリア向けが主、ハイパースケーラ移行で需要変動。",
-        "thesis": "AI 時代の DCI 需要拡大。800G ZR+ で量産ピーク。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 407.53,
-          "high_52w": 627.0,
-          "low_52w": 86.64,
-          "pct_from_52w_high": 35.0,
-          "ret_1m": -12.1,
-          "ret_3m": -21.0,
-          "ret_6m": 77.2,
-          "ret_1y": null,
-          "volatility_annual": 77.2,
-          "market_cap_b": 57.69,
-          "pe_trailing": 131.46129,
-          "revenue_b": 5.57,
-          "sector": "Technology",
-          "industry": "Communication Equipment"
-        }
-      },
-      {
         "ticker": "MRVL",
         "name": "Marvell Technology",
         "category": "semiconductor",
@@ -15582,20 +13864,7 @@ const SCAN_DATA = {
         "thesis": "Custom ASIC + 光 DSP の二本柱。1.6T/CPO で 2026-2028 加速。",
         "ticker_extra_links": true,
         "market": {
-          "price": 209.32,
-          "high_52w": 316.35,
-          "low_52w": 62.18,
-          "pct_from_52w_high": 33.8,
-          "ret_1m": -24.3,
-          "ret_3m": 26.5,
-          "ret_6m": 152.1,
-          "ret_1y": null,
-          "volatility_annual": 114.6,
-          "market_cap_b": 187.87,
-          "pe_trailing": 72.42906,
-          "revenue_b": 8.72,
-          "sector": "Technology",
-          "industry": "Semiconductors"
+          "error": "TypeError: object of type 'NoneType' has no len()"
         }
       },
       {
@@ -15629,36 +13898,6 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "IPGP",
-        "name": "IPG Photonics",
-        "category": "fiber",
-        "approach": "高出力ファイバーレーザー",
-        "approach_short": "Laser",
-        "purity": "pure",
-        "primary_customer": "自動車 / EV / 産業 / 医療",
-        "leader": "Eugene Scherbakov (CEO)",
-        "highlight": "ファイバーレーザー世界トップ。EV バッテリー溶接で需要拡大。",
-        "risk": "中国市場依存 (~30%) と 中国国産化進展リスク。",
-        "thesis": "光通信ではなく『光産業全般』エクスポージャー。EV 加速で復活余地。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 96.46,
-          "high_52w": 153.91,
-          "low_52w": 71.6,
-          "pct_from_52w_high": 37.3,
-          "ret_1m": -10.5,
-          "ret_3m": -21.9,
-          "ret_6m": 11.5,
-          "ret_1y": null,
-          "volatility_annual": 87.5,
-          "market_cap_b": 4.09,
-          "pe_trailing": 141.85294,
-          "revenue_b": 1.04,
-          "sector": "Technology",
-          "industry": "Semiconductor Equipment & Materials"
-        }
-      },
-      {
         "ticker": "VIAV",
         "name": "Viavi Solutions",
         "category": "fiber",
@@ -15687,10 +13926,87 @@ const SCAN_DATA = {
           "sector": "Technology",
           "industry": "Communication Equipment"
         }
+      },
+      {
+        "ticker": "CIEN",
+        "name": "Ciena Corp",
+        "category": "network",
+        "approach": "コヒーレント光伝送 / ロングホール / DCI",
+        "approach_short": "Coherent",
+        "purity": "pure",
+        "primary_customer": "Verizon / AT&T / Equinix",
+        "leader": "Gary Smith (CEO)",
+        "highlight": "800G ZR/ZR+ コヒーレント光伝送で長距離 DCI (Data Center Interconnect) を支配。",
+        "risk": "従来通信キャリア向けが主、ハイパースケーラ移行で需要変動。",
+        "thesis": "AI 時代の DCI 需要拡大。800G ZR+ で量産ピーク。",
+        "ticker_extra_links": true,
+        "market": {
+          "error": "TypeError: object of type 'NoneType' has no len()"
+        }
+      },
+      {
+        "ticker": "IPGP",
+        "name": "IPG Photonics",
+        "category": "fiber",
+        "approach": "高出力ファイバーレーザー",
+        "approach_short": "Laser",
+        "purity": "pure",
+        "primary_customer": "自動車 / EV / 産業 / 医療",
+        "leader": "Eugene Scherbakov (CEO)",
+        "highlight": "ファイバーレーザー世界トップ。EV バッテリー溶接で需要拡大。",
+        "risk": "中国市場依存 (~30%) と 中国国産化進展リスク。",
+        "thesis": "光通信ではなく『光産業全般』エクスポージャー。EV 加速で復活余地。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 96.46,
+          "high_52w": 153.91,
+          "low_52w": 71.6,
+          "pct_from_52w_high": 37.3,
+          "ret_1m": -10.5,
+          "ret_3m": -21.9,
+          "ret_6m": 11.5,
+          "ret_1y": null,
+          "volatility_annual": 87.5,
+          "market_cap_b": 4.09,
+          "pe_trailing": 141.85294,
+          "revenue_b": 1.04,
+          "sector": "Technology",
+          "industry": "Semiconductor Equipment & Materials"
+        }
       }
     ],
     "by_category": {
       "transceiver": [
+        {
+          "ticker": "COHR",
+          "name": "Coherent Corp",
+          "category": "transceiver",
+          "approach": "高速光トランシーバー + 産業レーザー",
+          "approach_short": "Transceiver/Laser",
+          "purity": "hybrid",
+          "primary_customer": "NVIDIA / Amazon / Meta",
+          "leader": "Jim Anderson (CEO)",
+          "highlight": "II-VI と統合後の総合光半導体トップ。NVIDIA 向け 800G InfiniBand 大規模納入。",
+          "risk": "産業レーザー部門の鈍化。統合シナジーまだ途上。",
+          "thesis": "NVIDIA H100/B200 出荷に直接連動。多角化で安定収益。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 313.22,
+            "high_52w": 426.89,
+            "low_52w": 86.55,
+            "pct_from_52w_high": 26.6,
+            "ret_1m": -20.2,
+            "ret_3m": -7.2,
+            "ret_6m": 54.5,
+            "ret_1y": null,
+            "volatility_annual": 91.6,
+            "market_cap_b": 61.28,
+            "pe_trailing": 149.15239,
+            "revenue_b": 6.6,
+            "sector": "Technology",
+            "industry": "Scientific & Technical Instruments"
+          }
+        },
         {
           "ticker": "LITE",
           "name": "Lumentum Holdings",
@@ -15752,66 +14068,6 @@ const SCAN_DATA = {
           }
         },
         {
-          "ticker": "COHR",
-          "name": "Coherent Corp",
-          "category": "transceiver",
-          "approach": "高速光トランシーバー + 産業レーザー",
-          "approach_short": "Transceiver/Laser",
-          "purity": "hybrid",
-          "primary_customer": "NVIDIA / Amazon / Meta",
-          "leader": "Jim Anderson (CEO)",
-          "highlight": "II-VI と統合後の総合光半導体トップ。NVIDIA 向け 800G InfiniBand 大規模納入。",
-          "risk": "産業レーザー部門の鈍化。統合シナジーまだ途上。",
-          "thesis": "NVIDIA H100/B200 出荷に直接連動。多角化で安定収益。",
-          "ticker_extra_links": true,
-          "market": {
-            "price": 313.22,
-            "high_52w": 426.89,
-            "low_52w": 86.55,
-            "pct_from_52w_high": 26.6,
-            "ret_1m": -20.2,
-            "ret_3m": -7.2,
-            "ret_6m": 54.5,
-            "ret_1y": null,
-            "volatility_annual": 91.6,
-            "market_cap_b": 61.28,
-            "pe_trailing": 149.15239,
-            "revenue_b": 6.6,
-            "sector": "Technology",
-            "industry": "Scientific & Technical Instruments"
-          }
-        },
-        {
-          "ticker": "AAOI",
-          "name": "Applied Optoelectronics",
-          "category": "transceiver",
-          "approach": "800G/1.6T DR4・DR8 トランシーバー",
-          "approach_short": "Transceiver",
-          "purity": "pure",
-          "primary_customer": "Microsoft / Amazon AWS",
-          "leader": "Thompson Lin (CEO)",
-          "highlight": "Microsoft Azure 向け 400G/800G 光トランシーバーで大型受注。Quanta との提携で量産能力拡大。",
-          "risk": "顧客集中 (Microsoft 売上比 50%超)。価格競争激化リスク。",
-          "thesis": "AI データセンター 1.6T 移行の最有力サプライヤー。受注残拡大中。",
-          "ticker_extra_links": true,
-          "market": {
-            "price": 112.02,
-            "high_52w": 223.1,
-            "low_52w": 19.49,
-            "pct_from_52w_high": 49.8,
-            "ret_1m": -23.8,
-            "ret_3m": -18.7,
-            "ret_6m": 193.6,
-            "ret_1y": null,
-            "volatility_annual": 143.2,
-            "market_cap_b": 8.99,
-            "pe_trailing": null,
-            "revenue_b": 0.51,
-            "sector": "Technology",
-            "industry": "Communication Equipment"
-          }
-        },
-        {
           "ticker": "FN",
           "name": "Fabrinet",
           "category": "transceiver",
@@ -15839,6 +14095,23 @@ const SCAN_DATA = {
             "revenue_b": 4.24,
             "sector": "Technology",
             "industry": "Electronic Components"
+          }
+        },
+        {
+          "ticker": "AAOI",
+          "name": "Applied Optoelectronics",
+          "category": "transceiver",
+          "approach": "800G/1.6T DR4・DR8 トランシーバー",
+          "approach_short": "Transceiver",
+          "purity": "pure",
+          "primary_customer": "Microsoft / Amazon AWS",
+          "leader": "Thompson Lin (CEO)",
+          "highlight": "Microsoft Azure 向け 400G/800G 光トランシーバーで大型受注。Quanta との提携で量産能力拡大。",
+          "risk": "顧客集中 (Microsoft 売上比 50%超)。価格競争激化リスク。",
+          "thesis": "AI データセンター 1.6T 移行の最有力サプライヤー。受注残拡大中。",
+          "ticker_extra_links": true,
+          "market": {
+            "error": "insufficient data"
           }
         }
       ],
@@ -15887,20 +14160,7 @@ const SCAN_DATA = {
           "thesis": "Custom ASIC + 光 DSP の二本柱。1.6T/CPO で 2026-2028 加速。",
           "ticker_extra_links": true,
           "market": {
-            "price": 209.32,
-            "high_52w": 316.35,
-            "low_52w": 62.18,
-            "pct_from_52w_high": 33.8,
-            "ret_1m": -24.3,
-            "ret_3m": 26.5,
-            "ret_6m": 152.1,
-            "ret_1y": null,
-            "volatility_annual": 114.6,
-            "market_cap_b": 187.87,
-            "pe_trailing": 72.42906,
-            "revenue_b": 8.72,
-            "sector": "Technology",
-            "industry": "Semiconductors"
+            "error": "TypeError: object of type 'NoneType' has no len()"
           }
         }
       ],
@@ -15949,20 +14209,7 @@ const SCAN_DATA = {
           "thesis": "AI 時代の DCI 需要拡大。800G ZR+ で量産ピーク。",
           "ticker_extra_links": true,
           "market": {
-            "price": 407.53,
-            "high_52w": 627.0,
-            "low_52w": 86.64,
-            "pct_from_52w_high": 35.0,
-            "ret_1m": -12.1,
-            "ret_3m": -21.0,
-            "ret_6m": 77.2,
-            "ret_1y": null,
-            "volatility_annual": 77.2,
-            "market_cap_b": 57.69,
-            "pe_trailing": 131.46129,
-            "revenue_b": 5.57,
-            "sector": "Technology",
-            "industry": "Communication Equipment"
+            "error": "TypeError: object of type 'NoneType' has no len()"
           }
         }
       ],
@@ -15998,36 +14245,6 @@ const SCAN_DATA = {
           }
         },
         {
-          "ticker": "IPGP",
-          "name": "IPG Photonics",
-          "category": "fiber",
-          "approach": "高出力ファイバーレーザー",
-          "approach_short": "Laser",
-          "purity": "pure",
-          "primary_customer": "自動車 / EV / 産業 / 医療",
-          "leader": "Eugene Scherbakov (CEO)",
-          "highlight": "ファイバーレーザー世界トップ。EV バッテリー溶接で需要拡大。",
-          "risk": "中国市場依存 (~30%) と 中国国産化進展リスク。",
-          "thesis": "光通信ではなく『光産業全般』エクスポージャー。EV 加速で復活余地。",
-          "ticker_extra_links": true,
-          "market": {
-            "price": 96.46,
-            "high_52w": 153.91,
-            "low_52w": 71.6,
-            "pct_from_52w_high": 37.3,
-            "ret_1m": -10.5,
-            "ret_3m": -21.9,
-            "ret_6m": 11.5,
-            "ret_1y": null,
-            "volatility_annual": 87.5,
-            "market_cap_b": 4.09,
-            "pe_trailing": 141.85294,
-            "revenue_b": 1.04,
-            "sector": "Technology",
-            "industry": "Semiconductor Equipment & Materials"
-          }
-        },
-        {
           "ticker": "VIAV",
           "name": "Viavi Solutions",
           "category": "fiber",
@@ -16056,41 +14273,41 @@ const SCAN_DATA = {
             "sector": "Technology",
             "industry": "Communication Equipment"
           }
+        },
+        {
+          "ticker": "IPGP",
+          "name": "IPG Photonics",
+          "category": "fiber",
+          "approach": "高出力ファイバーレーザー",
+          "approach_short": "Laser",
+          "purity": "pure",
+          "primary_customer": "自動車 / EV / 産業 / 医療",
+          "leader": "Eugene Scherbakov (CEO)",
+          "highlight": "ファイバーレーザー世界トップ。EV バッテリー溶接で需要拡大。",
+          "risk": "中国市場依存 (~30%) と 中国国産化進展リスク。",
+          "thesis": "光通信ではなく『光産業全般』エクスポージャー。EV 加速で復活余地。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 96.46,
+            "high_52w": 153.91,
+            "low_52w": 71.6,
+            "pct_from_52w_high": 37.3,
+            "ret_1m": -10.5,
+            "ret_3m": -21.9,
+            "ret_6m": 11.5,
+            "ret_1y": null,
+            "volatility_annual": 87.5,
+            "market_cap_b": 4.09,
+            "pe_trailing": 141.85294,
+            "revenue_b": 1.04,
+            "sector": "Technology",
+            "industry": "Semiconductor Equipment & Materials"
+          }
         }
       ]
     },
     "by_1y_return": [],
     "by_3m_return": [
-      {
-        "ticker": "MRVL",
-        "name": "Marvell Technology",
-        "category": "semiconductor",
-        "approach": "光 DSP + Co-Packaged Optics + AI ASIC",
-        "approach_short": "Optical DSP",
-        "purity": "hybrid",
-        "primary_customer": "AWS / Microsoft Azure / 各 EMS",
-        "leader": "Matt Murphy (CEO)",
-        "highlight": "光 DSP (PAM4) で市場 80% 独占。AWS Trainium 設計受託 + CPO で次世代も席巻。",
-        "risk": "ストレージ事業の鈍化。Broadcom の競合参入。",
-        "thesis": "Custom ASIC + 光 DSP の二本柱。1.6T/CPO で 2026-2028 加速。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 209.32,
-          "high_52w": 316.35,
-          "low_52w": 62.18,
-          "pct_from_52w_high": 33.8,
-          "ret_1m": -24.3,
-          "ret_3m": 26.5,
-          "ret_6m": 152.1,
-          "ret_1y": null,
-          "volatility_annual": 114.6,
-          "market_cap_b": 187.87,
-          "pe_trailing": 72.42906,
-          "revenue_b": 8.72,
-          "sector": "Technology",
-          "industry": "Semiconductors"
-        }
-      },
       {
         "ticker": "NVDA",
         "name": "NVIDIA",
@@ -16209,6 +14426,36 @@ const SCAN_DATA = {
           "revenue_b": 6.6,
           "sector": "Technology",
           "industry": "Scientific & Technical Instruments"
+        }
+      },
+      {
+        "ticker": "GLW",
+        "name": "Corning Incorporated",
+        "category": "fiber",
+        "approach": "光ファイバー + Gorilla Glass",
+        "approach_short": "Fiber",
+        "purity": "minor",
+        "primary_customer": "AT&T / Verizon / 各データセンター",
+        "leader": "Wendell Weeks (CEO)",
+        "highlight": "光ファイバー世界トップ。GenAI でデータセンター向け高密度ファイバー大型受注。",
+        "risk": "Gorilla Glass / TV ガラスなど他事業が安定だが成長遅い。",
+        "thesis": "AI バックボーンの『水道管』。長期保有向きの安定銘柄。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 156.06,
+          "high_52w": 255.69,
+          "low_52w": 54.76,
+          "pct_from_52w_high": 39.0,
+          "ret_1m": -24.2,
+          "ret_3m": -7.8,
+          "ret_6m": 66.1,
+          "ret_1y": null,
+          "volatility_annual": 100.2,
+          "market_cap_b": 134.31,
+          "pe_trailing": 73.96209,
+          "revenue_b": 16.32,
+          "sector": "Technology",
+          "industry": "Electronic Components"
         }
       }
     ],
@@ -16318,22 +14565,6 @@ const SCAN_DATA = {
       "fbo_status": "false_breakout"
     },
     {
-      "ticker": "MU",
-      "name": "Micron Technology, Inc.",
-      "price": 990.21,
-      "signal": "持ち株",
-      "unified_score": 29.3,
-      "fund_score": 0,
-      "tech_score": 50,
-      "pivot_score": 42,
-      "momentum_score": 56.1,
-      "sector": "Technology",
-      "stage": 2,
-      "tt_pass": true,
-      "pivot_bpq": 42,
-      "fbo_status": "below_high"
-    },
-    {
       "ticker": "FCX",
       "name": "Freeport-McMoRan",
       "price": 63.5,
@@ -16396,6 +14627,22 @@ const SCAN_DATA = {
       "tt_pass": false,
       "pivot_bpq": 40,
       "fbo_status": "below_high"
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "price": 990.21,
+      "signal": "持ち株",
+      "unified_score": 18.4,
+      "fund_score": 0,
+      "tech_score": 40,
+      "pivot_score": 0,
+      "momentum_score": 56.1,
+      "sector": "Technology",
+      "stage": 2,
+      "tt_pass": true,
+      "pivot_bpq": null,
+      "fbo_status": null
     },
     {
       "ticker": "SLB",
@@ -16491,22 +14738,6 @@ const SCAN_DATA = {
       "stage": 2,
       "tt_pass": false,
       "pivot_bpq": 37,
-      "fbo_status": "below_high"
-    },
-    {
-      "ticker": "ADEA",
-      "name": "Adeia Inc.",
-      "price": 26.92,
-      "signal": "持ち株",
-      "unified_score": 11.6,
-      "fund_score": 0,
-      "tech_score": 0,
-      "pivot_score": 45,
-      "momentum_score": 17.6,
-      "sector": "Technology",
-      "stage": 2,
-      "tt_pass": false,
-      "pivot_bpq": 45,
       "fbo_status": "below_high"
     },
     {
@@ -16636,6 +14867,22 @@ const SCAN_DATA = {
       "tt_pass": false,
       "pivot_bpq": 27,
       "fbo_status": "below_high"
+    },
+    {
+      "ticker": "ADEA",
+      "name": "Adeia Inc.",
+      "price": 26.92,
+      "signal": "持ち株",
+      "unified_score": 2.6,
+      "fund_score": 0,
+      "tech_score": 0,
+      "pivot_score": 0,
+      "momentum_score": 17.6,
+      "sector": "Technology",
+      "stage": 2,
+      "tt_pass": false,
+      "pivot_bpq": null,
+      "fbo_status": null
     }
   ],
   "market_topics": {
