@@ -2637,91 +2637,91 @@ const SCAN_DATA = {
       "rank": 1,
       "ticker": "NVDA",
       "sepa": "3.0",
-      "grok": "—",
+      "grok": "+4",
       "gemini": "95pt",
-      "gpt": "—",
-      "verdict": ""
+      "gpt": "15%",
+      "verdict": "強気（やや慎重）"
     },
     {
       "rank": 2,
       "ticker": "TSM",
       "sepa": "4.0",
-      "grok": "—",
+      "grok": "+5",
       "gemini": "92pt",
-      "gpt": "—",
-      "verdict": ""
+      "gpt": "12%",
+      "verdict": "強気"
     },
     {
       "rank": 3,
       "ticker": "AVGO",
       "sepa": "0.4",
-      "grok": "—",
+      "grok": "+2",
       "gemini": "88pt",
-      "gpt": "—",
-      "verdict": ""
+      "gpt": "12%",
+      "verdict": "中立"
     },
     {
       "rank": 4,
       "ticker": "WPM",
       "sepa": "7.0",
-      "grok": "—",
+      "grok": "+4",
       "gemini": "86pt",
-      "gpt": "—",
-      "verdict": ""
+      "gpt": "8%",
+      "verdict": "強気"
     },
     {
       "rank": 5,
       "ticker": "CDE",
       "sepa": "1.5",
-      "grok": "—",
+      "grok": "+0",
       "gemini": "82pt",
-      "gpt": "—",
-      "verdict": ""
+      "gpt": "4%",
+      "verdict": "中立"
     },
     {
       "rank": 6,
       "ticker": "NVT",
       "sepa": "1.9",
-      "grok": "—",
+      "grok": "+0",
       "gemini": "78pt",
-      "gpt": "—",
-      "verdict": ""
+      "gpt": "8%",
+      "verdict": "中立"
     },
     {
       "rank": 7,
       "ticker": "FCX",
       "sepa": "3.0",
-      "grok": "—",
+      "grok": "+1",
       "gemini": "76pt",
-      "gpt": "—",
-      "verdict": ""
+      "gpt": "9%",
+      "verdict": "中立"
     },
     {
       "rank": 8,
       "ticker": "COHR",
       "sepa": "3.0",
-      "grok": "—",
+      "grok": "+2",
       "gemini": "71pt",
-      "gpt": "—",
-      "verdict": ""
+      "gpt": "9%",
+      "verdict": "中立〜弱めの強気"
     },
     {
       "rank": 9,
       "ticker": "KEYS",
       "sepa": "3.0",
-      "grok": "—",
+      "grok": "+1",
       "gemini": "68pt",
-      "gpt": "—",
-      "verdict": ""
+      "gpt": "6%",
+      "verdict": "中立"
     },
     {
       "rank": 10,
       "ticker": "FORM",
       "sepa": "3.0",
-      "grok": "—",
+      "grok": "+1",
       "gemini": "65pt",
-      "gpt": "—",
-      "verdict": ""
+      "gpt": "7%",
+      "verdict": "中立"
     }
   ],
   "earnings": [
@@ -3038,7 +3038,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$157.24",
       "stop_loss_8pct": "$147.68",
-      "grok": null,
+      "grok": {
+        "score": -1,
+        "judgment": "弱気〜中立",
+        "reasons": [
+          "ストリーミング関連として言及は散見されるが明確な強気材料が少ない",
+          "高金利環境や広告市場への懸念が残る",
+          "X上の議論量自体が少なく、熱狂的なセンチメントは見られない"
+        ]
+      },
       "perplexity": {
         "judgment": null,
         "reason": "",
@@ -4631,7 +4639,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$129.16",
       "stop_loss_8pct": "$125.41",
-      "grok": null,
+      "grok": {
+        "score": 4,
+        "judgment": "強気",
+        "reasons": [
+          "Q3 2026決算で売上高+62%、営業CF大幅増、生産ガイダンス据え置き。Koné初金産出などプロジェクト進捗が好材料",
+          "ストリーミング銘柄の「ブルーチップ」としてFNV・AEMと並べて挙げる声",
+          "サポートでのハンマー、50/200EMA奪還を指摘する投稿。一方で金生産の一時的落ち込みやAntamina買収に伴う負債増を指摘する声も"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 4,
@@ -8006,7 +8022,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$413.76",
       "stop_loss_8pct": "$345.40",
-      "grok": null,
+      "grok": {
+        "score": 5,
+        "judgment": "強気",
+        "reasons": [
+          "本日の反発が強く（+6%前後）、AI半導体の必須インフラとして堅調視",
+          "3D DRAM検討などポジティブな技術ニュースへの言及",
+          "「実際に製造できる唯一のファウンドリ」との評価が残りやすい"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 2,
@@ -9427,7 +9451,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$100.80",
       "stop_loss_8pct": "$74.63",
-      "grok": null,
+      "grok": {
+        "score": 1,
+        "judgment": "中立",
+        "reasons": [
+          "半導体テスト機器としてAI・先端プロセス需要の恩恵を受けるとの間接的見方",
+          "個別の活発な議論は少なく、言及の多くはリストアップやスパム",
+          "半導体全体のボラティリティに連動しやすいとの慎重姿勢"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 10,
@@ -9549,7 +9581,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$317.42",
       "stop_loss_8pct": "$250.36",
-      "grok": null,
+      "grok": {
+        "score": 1,
+        "judgment": "中立",
+        "reasons": [
+          "AIインフラ投資の「ピック＆ショベル」的な位置づけ",
+          "X上での具体的なセンチメント議論が非常に少ない",
+          "半導体サイクル全体の影響を受けやすい"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 9,
@@ -10074,7 +10114,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$228.75",
       "stop_loss_8pct": "$177.39",
-      "grok": null,
+      "grok": {
+        "score": 2,
+        "judgment": "中立〜弱めの強気",
+        "reasons": [
+          "AIデータセンター向け光学・レーザー需要でポジティブな言及",
+          "800G/1.6Tトランシーバー需要拡大の文脈で取り上げられる",
+          "個別の議論量は少なく、半導体全体の動きに左右されやすい"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 8,
@@ -10225,7 +10273,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$65.26",
       "stop_loss_8pct": "$54.67",
-      "grok": null,
+      "grok": {
+        "score": 1,
+        "judgment": "中立",
+        "reasons": [
+          "銅需要（電化・インフラ・AI電力）を背景に長期的にポジティブな見方",
+          "個別の活発なセンチメント投稿は少なく、コモディティ価格連動",
+          "マクロ金利や景気懸念の影響を受けやすい"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 7,
@@ -10616,7 +10672,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$209.28",
       "stop_loss_8pct": "$171.71",
-      "grok": null,
+      "grok": {
+        "score": 4,
+        "judgment": "強気（やや慎重）",
+        "reasons": [
+          "急落後の「割安」指摘が多く、フォワードPERが歴史的に低い水準との声",
+          "本日の反発（+3〜7%）で「買い場」「ディップ買い」の意見が目立つ",
+          "テクニカルでさらに下値を警戒する声、AI支出のROI・規制懸念も残る"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 1,
@@ -13815,7 +13879,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$131.88",
       "stop_loss_8pct": "$97.72",
-      "grok": null,
+      "grok": {
+        "score": 0,
+        "judgment": "中立",
+        "reasons": [
+          "データセンター向け電気接続・インフラとして間接的にAI関連と見なされる程度",
+          "X上での投資家議論がほぼ見当たらない",
+          "ディフェンシブ寄りのインフラ銘柄としての性格が強い"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 6,
@@ -14615,7 +14687,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$14.97",
       "stop_loss_8pct": "$14.23",
-      "grok": null,
+      "grok": {
+        "score": 0,
+        "judgment": "中立",
+        "reasons": [
+          "銀・金関連として言及されるがAI銘柄ほどの熱量はない",
+          "X上の議論量が極めて少ない",
+          "貴金属価格と金利動向に左右されやすい"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 5,
@@ -15902,7 +15982,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$39.75",
       "stop_loss_8pct": "$32.58",
-      "grok": null,
+      "grok": {
+        "score": 2,
+        "judgment": "中立〜弱めの強気",
+        "reasons": [
+          "レアアース供給の戦略的重要性（テック・EV・国防）を背景にしたポジティブな見方",
+          "個別の活発な議論は限定的",
+          "政策・地政学リスクや価格変動の影響を受けやすい"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 12,
@@ -16716,7 +16804,15 @@ const SCAN_DATA = {
       "short_cover": "問題なし",
       "stop_loss_21ma": "$330.69",
       "stop_loss_8pct": "$270.19",
-      "grok": null,
+      "grok": {
+        "score": 2,
+        "judgment": "中立",
+        "reasons": [
+          "カスタムAIチップ＋ネットワーキングで防御的ポジションと評価する声",
+          "反発は他社に比べ遅れ気味で、ドローダウンが大きい点を指摘する投稿",
+          "AI CapEx減速時にネットワーキングが先に影響を受けやすいとの懸念"
+        ]
+      },
       "perplexity": null,
       "gemini": {
         "rank": 3,
@@ -20355,9 +20451,9 @@ const SCAN_DATA = {
           "ma200": 159.7,
           "pct_above_52w_low": 21.5,
           "pct_to_52w_high": 0.8466,
-          "rs_rating": 68.7
+          "rs_rating": 68.6
         },
-        "rs_rating": 68.7,
+        "rs_rating": 68.6,
         "early_stage_2": false,
         "ma30w": 166.05,
         "ma30w_trend": "up",
@@ -26273,6 +26369,37 @@ const SCAN_DATA = {
   "quantum": {
     "all": [
       {
+        "ticker": "RGTI",
+        "name": "Rigetti Computing",
+        "category": "pure",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 84,
+        "qubit_type": "physical",
+        "leader": "Subodh Kulkarni (CEO)",
+        "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
+        "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
+        "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
+        "market": {
+          "price": 11.75,
+          "high_52w": 33.77,
+          "low_52w": 9.85,
+          "pct_from_52w_high": 65.2,
+          "ret_1m": -16.3,
+          "ret_3m": -35.0,
+          "ret_6m": -42.7,
+          "ret_1y": null,
+          "volatility_annual": 80.4,
+          "market_cap_b": 3.92,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
         "ticker": "QUBT",
         "name": "Quantum Computing Inc.",
         "category": "pure",
@@ -26297,37 +26424,6 @@ const SCAN_DATA = {
           "ret_1y": null,
           "volatility_annual": 67.5,
           "market_cap_b": 1.43,
-          "pe_trailing": null,
-          "revenue_b": 0.01,
-          "sector": "Technology",
-          "industry": "Computer Hardware"
-        }
-      },
-      {
-        "ticker": "QBTS",
-        "name": "D-Wave Quantum Inc.",
-        "category": "pure",
-        "approach": "量子アニーリング (Quantum Annealing)",
-        "approach_short": "アニール",
-        "purity": "pure",
-        "commercialization": "production",
-        "qubit_max": 5000,
-        "qubit_type": "annealing qubits (different)",
-        "leader": "Alan Baratz (CEO)",
-        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
-        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
-        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
-        "market": {
-          "price": 10.68,
-          "high_52w": 32.19,
-          "low_52w": 9.05,
-          "pct_from_52w_high": 66.8,
-          "ret_1m": -26.7,
-          "ret_3m": -47.2,
-          "ret_6m": -55.6,
-          "ret_1y": null,
-          "volatility_annual": 79.1,
-          "market_cap_b": 4.05,
           "pe_trailing": null,
           "revenue_b": 0.01,
           "sector": "Technology",
@@ -26366,96 +26462,34 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "RGTI",
-        "name": "Rigetti Computing",
+        "ticker": "QBTS",
+        "name": "D-Wave Quantum Inc.",
         "category": "pure",
-        "approach": "超伝導 (Superconducting)",
-        "approach_short": "超伝導",
+        "approach": "量子アニーリング (Quantum Annealing)",
+        "approach_short": "アニール",
         "purity": "pure",
-        "commercialization": "cloudAccess",
-        "qubit_max": 84,
-        "qubit_type": "physical",
-        "leader": "Subodh Kulkarni (CEO)",
-        "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
-        "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
-        "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
+        "commercialization": "production",
+        "qubit_max": 5000,
+        "qubit_type": "annealing qubits (different)",
+        "leader": "Alan Baratz (CEO)",
+        "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+        "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+        "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
         "market": {
-          "price": 11.75,
-          "high_52w": 33.77,
-          "low_52w": 9.85,
-          "pct_from_52w_high": 65.2,
-          "ret_1m": -16.3,
-          "ret_3m": -35.0,
-          "ret_6m": -42.7,
+          "price": 10.68,
+          "high_52w": 32.19,
+          "low_52w": 9.05,
+          "pct_from_52w_high": 66.8,
+          "ret_1m": -26.7,
+          "ret_3m": -47.2,
+          "ret_6m": -55.6,
           "ret_1y": null,
-          "volatility_annual": 80.4,
-          "market_cap_b": 3.92,
+          "volatility_annual": 79.1,
+          "market_cap_b": 4.05,
           "pe_trailing": null,
           "revenue_b": 0.01,
           "sector": "Technology",
           "industry": "Computer Hardware"
-        }
-      },
-      {
-        "ticker": "ARQQ",
-        "name": "Arqit Quantum",
-        "category": "pure",
-        "approach": "量子暗号通信 (QKD)",
-        "approach_short": "量子暗号",
-        "purity": "pure",
-        "commercialization": "pilot",
-        "qubit_max": null,
-        "qubit_type": "n/a (encryption-focused)",
-        "leader": "David Williams (CEO)",
-        "highlight": "量子暗号(QKD)に特化。量子計算ではなく「量子セキュリティ」。",
-        "risk": "業界全体が PQC (post-quantum cryptography) にシフト傾向。",
-        "thesis": "国防・金融機関の暗号アップグレード需要。",
-        "market": {
-          "price": 15.96,
-          "high_52w": 33.84,
-          "low_52w": 11.78,
-          "pct_from_52w_high": 52.8,
-          "ret_1m": -7.4,
-          "ret_3m": -34.6,
-          "ret_6m": 6.4,
-          "ret_1y": null,
-          "volatility_annual": 123.2,
-          "market_cap_b": 0.28,
-          "pe_trailing": null,
-          "revenue_b": 0.0,
-          "sector": "Technology",
-          "industry": "Software - Infrastructure"
-        }
-      },
-      {
-        "ticker": "GOOG",
-        "name": "Alphabet (Google)",
-        "category": "bigtech",
-        "approach": "超伝導 (Superconducting)",
-        "approach_short": "超伝導",
-        "purity": "minor",
-        "commercialization": "researchOnly",
-        "qubit_max": 70,
-        "qubit_type": "physical, high coherence",
-        "leader": "Hartmut Neven (Quantum AI lead)",
-        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
-        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
-        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
-        "market": {
-          "price": 283.93,
-          "high_52w": 398.54,
-          "low_52w": 272.8,
-          "pct_from_52w_high": 28.8,
-          "ret_1m": -18.4,
-          "ret_3m": -17.2,
-          "ret_6m": -26.5,
-          "ret_1y": null,
-          "volatility_annual": 33.2,
-          "market_cap_b": 3490.64,
-          "pe_trailing": 14.826632,
-          "revenue_b": 471.1,
-          "sector": "Communication Services",
-          "industry": "Internet Content & Information"
         }
       },
       {
@@ -26490,6 +26524,37 @@ const SCAN_DATA = {
         }
       },
       {
+        "ticker": "ARQQ",
+        "name": "Arqit Quantum",
+        "category": "pure",
+        "approach": "量子暗号通信 (QKD)",
+        "approach_short": "量子暗号",
+        "purity": "pure",
+        "commercialization": "pilot",
+        "qubit_max": null,
+        "qubit_type": "n/a (encryption-focused)",
+        "leader": "David Williams (CEO)",
+        "highlight": "量子暗号(QKD)に特化。量子計算ではなく「量子セキュリティ」。",
+        "risk": "業界全体が PQC (post-quantum cryptography) にシフト傾向。",
+        "thesis": "国防・金融機関の暗号アップグレード需要。",
+        "market": {
+          "price": 15.96,
+          "high_52w": 33.84,
+          "low_52w": 11.78,
+          "pct_from_52w_high": 52.8,
+          "ret_1m": -7.4,
+          "ret_3m": -34.6,
+          "ret_6m": 6.4,
+          "ret_1y": null,
+          "volatility_annual": 123.2,
+          "market_cap_b": 0.28,
+          "pe_trailing": null,
+          "revenue_b": 0.0,
+          "sector": "Technology",
+          "industry": "Software - Infrastructure"
+        }
+      },
+      {
         "ticker": "MSFT",
         "name": "Microsoft",
         "category": "bigtech",
@@ -26518,6 +26583,37 @@ const SCAN_DATA = {
           "revenue_b": 346.44,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
+        }
+      },
+      {
+        "ticker": "GOOG",
+        "name": "Alphabet (Google)",
+        "category": "bigtech",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "minor",
+        "commercialization": "researchOnly",
+        "qubit_max": 70,
+        "qubit_type": "physical, high coherence",
+        "leader": "Hartmut Neven (Quantum AI lead)",
+        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+        "market": {
+          "price": 283.93,
+          "high_52w": 398.54,
+          "low_52w": 272.8,
+          "pct_from_52w_high": 28.8,
+          "ret_1m": -18.4,
+          "ret_3m": -17.2,
+          "ret_6m": -26.5,
+          "ret_1y": null,
+          "volatility_annual": 33.2,
+          "market_cap_b": 3490.64,
+          "pe_trailing": 14.826632,
+          "revenue_b": 471.1,
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information"
         }
       },
       {
@@ -26586,6 +26682,37 @@ const SCAN_DATA = {
     "by_category": {
       "pure": [
         {
+          "ticker": "RGTI",
+          "name": "Rigetti Computing",
+          "category": "pure",
+          "approach": "超伝導 (Superconducting)",
+          "approach_short": "超伝導",
+          "purity": "pure",
+          "commercialization": "cloudAccess",
+          "qubit_max": 84,
+          "qubit_type": "physical",
+          "leader": "Subodh Kulkarni (CEO)",
+          "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
+          "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
+          "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
+          "market": {
+            "price": 11.75,
+            "high_52w": 33.77,
+            "low_52w": 9.85,
+            "pct_from_52w_high": 65.2,
+            "ret_1m": -16.3,
+            "ret_3m": -35.0,
+            "ret_6m": -42.7,
+            "ret_1y": null,
+            "volatility_annual": 80.4,
+            "market_cap_b": 3.92,
+            "pe_trailing": null,
+            "revenue_b": 0.01,
+            "sector": "Technology",
+            "industry": "Computer Hardware"
+          }
+        },
+        {
           "ticker": "QUBT",
           "name": "Quantum Computing Inc.",
           "category": "pure",
@@ -26610,37 +26737,6 @@ const SCAN_DATA = {
             "ret_1y": null,
             "volatility_annual": 67.5,
             "market_cap_b": 1.43,
-            "pe_trailing": null,
-            "revenue_b": 0.01,
-            "sector": "Technology",
-            "industry": "Computer Hardware"
-          }
-        },
-        {
-          "ticker": "QBTS",
-          "name": "D-Wave Quantum Inc.",
-          "category": "pure",
-          "approach": "量子アニーリング (Quantum Annealing)",
-          "approach_short": "アニール",
-          "purity": "pure",
-          "commercialization": "production",
-          "qubit_max": 5000,
-          "qubit_type": "annealing qubits (different)",
-          "leader": "Alan Baratz (CEO)",
-          "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
-          "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
-          "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
-          "market": {
-            "price": 10.68,
-            "high_52w": 32.19,
-            "low_52w": 9.05,
-            "pct_from_52w_high": 66.8,
-            "ret_1m": -26.7,
-            "ret_3m": -47.2,
-            "ret_6m": -55.6,
-            "ret_1y": null,
-            "volatility_annual": 79.1,
-            "market_cap_b": 4.05,
             "pe_trailing": null,
             "revenue_b": 0.01,
             "sector": "Technology",
@@ -26679,30 +26775,30 @@ const SCAN_DATA = {
           }
         },
         {
-          "ticker": "RGTI",
-          "name": "Rigetti Computing",
+          "ticker": "QBTS",
+          "name": "D-Wave Quantum Inc.",
           "category": "pure",
-          "approach": "超伝導 (Superconducting)",
-          "approach_short": "超伝導",
+          "approach": "量子アニーリング (Quantum Annealing)",
+          "approach_short": "アニール",
           "purity": "pure",
-          "commercialization": "cloudAccess",
-          "qubit_max": 84,
-          "qubit_type": "physical",
-          "leader": "Subodh Kulkarni (CEO)",
-          "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
-          "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
-          "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
+          "commercialization": "production",
+          "qubit_max": 5000,
+          "qubit_type": "annealing qubits (different)",
+          "leader": "Alan Baratz (CEO)",
+          "highlight": "唯一の商用量子アニーリング機。最適化問題に特化。商業顧客実績豊富。",
+          "risk": "汎用量子計算ではないため、量子優位性の証明が難しい。",
+          "thesis": "実用化で先行。物流最適化・金融ポートフォリオで実績。",
           "market": {
-            "price": 11.75,
-            "high_52w": 33.77,
-            "low_52w": 9.85,
-            "pct_from_52w_high": 65.2,
-            "ret_1m": -16.3,
-            "ret_3m": -35.0,
-            "ret_6m": -42.7,
+            "price": 10.68,
+            "high_52w": 32.19,
+            "low_52w": 9.05,
+            "pct_from_52w_high": 66.8,
+            "ret_1m": -26.7,
+            "ret_3m": -47.2,
+            "ret_6m": -55.6,
             "ret_1y": null,
-            "volatility_annual": 80.4,
-            "market_cap_b": 3.92,
+            "volatility_annual": 79.1,
+            "market_cap_b": 4.05,
             "pe_trailing": null,
             "revenue_b": 0.01,
             "sector": "Technology",
@@ -26742,37 +26838,6 @@ const SCAN_DATA = {
         }
       ],
       "bigtech": [
-        {
-          "ticker": "GOOG",
-          "name": "Alphabet (Google)",
-          "category": "bigtech",
-          "approach": "超伝導 (Superconducting)",
-          "approach_short": "超伝導",
-          "purity": "minor",
-          "commercialization": "researchOnly",
-          "qubit_max": 70,
-          "qubit_type": "physical, high coherence",
-          "leader": "Hartmut Neven (Quantum AI lead)",
-          "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
-          "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
-          "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
-          "market": {
-            "price": 283.93,
-            "high_52w": 398.54,
-            "low_52w": 272.8,
-            "pct_from_52w_high": 28.8,
-            "ret_1m": -18.4,
-            "ret_3m": -17.2,
-            "ret_6m": -26.5,
-            "ret_1y": null,
-            "volatility_annual": 33.2,
-            "market_cap_b": 3490.64,
-            "pe_trailing": 14.826632,
-            "revenue_b": 471.1,
-            "sector": "Communication Services",
-            "industry": "Internet Content & Information"
-          }
-        },
         {
           "ticker": "IBM",
           "name": "International Business Machines",
@@ -26833,6 +26898,37 @@ const SCAN_DATA = {
             "revenue_b": 346.44,
             "sector": "Technology",
             "industry": "Software - Infrastructure"
+          }
+        },
+        {
+          "ticker": "GOOG",
+          "name": "Alphabet (Google)",
+          "category": "bigtech",
+          "approach": "超伝導 (Superconducting)",
+          "approach_short": "超伝導",
+          "purity": "minor",
+          "commercialization": "researchOnly",
+          "qubit_max": 70,
+          "qubit_type": "physical, high coherence",
+          "leader": "Hartmut Neven (Quantum AI lead)",
+          "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+          "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+          "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+          "market": {
+            "price": 283.93,
+            "high_52w": 398.54,
+            "low_52w": 272.8,
+            "pct_from_52w_high": 28.8,
+            "ret_1m": -18.4,
+            "ret_3m": -17.2,
+            "ret_6m": -26.5,
+            "ret_1y": null,
+            "volatility_annual": 33.2,
+            "market_cap_b": 3490.64,
+            "pe_trailing": 14.826632,
+            "revenue_b": 471.1,
+            "sector": "Communication Services",
+            "industry": "Internet Content & Information"
           }
         },
         {
@@ -26997,6 +27093,37 @@ const SCAN_DATA = {
         }
       },
       {
+        "ticker": "RGTI",
+        "name": "Rigetti Computing",
+        "category": "pure",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 84,
+        "qubit_type": "physical",
+        "leader": "Subodh Kulkarni (CEO)",
+        "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
+        "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
+        "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
+        "market": {
+          "price": 11.75,
+          "high_52w": 33.77,
+          "low_52w": 9.85,
+          "pct_from_52w_high": 65.2,
+          "ret_1m": -16.3,
+          "ret_3m": -35.0,
+          "ret_6m": -42.7,
+          "ret_1y": null,
+          "volatility_annual": 80.4,
+          "market_cap_b": 3.92,
+          "pe_trailing": null,
+          "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
         "ticker": "IONQ",
         "name": "IonQ, Inc.",
         "category": "pure",
@@ -27026,7 +27153,9 @@ const SCAN_DATA = {
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
-      },
+      }
+    ],
+    "by_purity": [
       {
         "ticker": "RGTI",
         "name": "Rigetti Computing",
@@ -27057,9 +27186,7 @@ const SCAN_DATA = {
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
-      }
-    ],
-    "by_purity": [
+      },
       {
         "ticker": "QUBT",
         "name": "Quantum Computing Inc.",
@@ -27087,6 +27214,37 @@ const SCAN_DATA = {
           "market_cap_b": 1.43,
           "pe_trailing": null,
           "revenue_b": 0.01,
+          "sector": "Technology",
+          "industry": "Computer Hardware"
+        }
+      },
+      {
+        "ticker": "IONQ",
+        "name": "IonQ, Inc.",
+        "category": "pure",
+        "approach": "イオントラップ (Trapped Ion)",
+        "approach_short": "イオン",
+        "purity": "pure",
+        "commercialization": "cloudAccess",
+        "qubit_max": 64,
+        "qubit_type": "logical (high-fidelity)",
+        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
+        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
+        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
+        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
+        "market": {
+          "price": 32.62,
+          "high_52w": 72.07,
+          "low_52w": 26.43,
+          "pct_from_52w_high": 54.7,
+          "ret_1m": -18.2,
+          "ret_3m": -24.9,
+          "ret_6m": -42.7,
+          "ret_1y": null,
+          "volatility_annual": 88.6,
+          "market_cap_b": 15.16,
+          "pe_trailing": 18.85549,
+          "revenue_b": 0.38,
           "sector": "Technology",
           "industry": "Computer Hardware"
         }
@@ -27123,68 +27281,6 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "IONQ",
-        "name": "IonQ, Inc.",
-        "category": "pure",
-        "approach": "イオントラップ (Trapped Ion)",
-        "approach_short": "イオン",
-        "purity": "pure",
-        "commercialization": "cloudAccess",
-        "qubit_max": 64,
-        "qubit_type": "logical (high-fidelity)",
-        "leader": "Niccolo de Masi (CEO), Peter Chapman (former CEO/Chairman)",
-        "highlight": "量子純粋プレーヤーの最大手。AQ (Algorithmic Qubits) で fidelity を重視。",
-        "risk": "売上規模が小さく、利益化見通し遠い。バリュエーション高い。",
-        "thesis": "イオントラップ方式は誤り耐性で有利。商業利用への移行が早い可能性。",
-        "market": {
-          "price": 32.62,
-          "high_52w": 72.07,
-          "low_52w": 26.43,
-          "pct_from_52w_high": 54.7,
-          "ret_1m": -18.2,
-          "ret_3m": -24.9,
-          "ret_6m": -42.7,
-          "ret_1y": null,
-          "volatility_annual": 88.6,
-          "market_cap_b": 15.16,
-          "pe_trailing": 18.85549,
-          "revenue_b": 0.38,
-          "sector": "Technology",
-          "industry": "Computer Hardware"
-        }
-      },
-      {
-        "ticker": "RGTI",
-        "name": "Rigetti Computing",
-        "category": "pure",
-        "approach": "超伝導 (Superconducting)",
-        "approach_short": "超伝導",
-        "purity": "pure",
-        "commercialization": "cloudAccess",
-        "qubit_max": 84,
-        "qubit_type": "physical",
-        "leader": "Subodh Kulkarni (CEO)",
-        "highlight": "超伝導方式の小型機を継続リリース。米国 NIST との連携も。",
-        "risk": "競合 (IBM/Google) が圧倒的に多 qubit。差別化が課題。",
-        "thesis": "コンパクト量子コンピュータでエッジ展開の可能性。",
-        "market": {
-          "price": 11.75,
-          "high_52w": 33.77,
-          "low_52w": 9.85,
-          "pct_from_52w_high": 65.2,
-          "ret_1m": -16.3,
-          "ret_3m": -35.0,
-          "ret_6m": -42.7,
-          "ret_1y": null,
-          "volatility_annual": 80.4,
-          "market_cap_b": 3.92,
-          "pe_trailing": null,
-          "revenue_b": 0.01,
-          "sector": "Technology",
-          "industry": "Computer Hardware"
-        }
-      },
-      {
         "ticker": "ARQQ",
         "name": "Arqit Quantum",
         "category": "pure",
@@ -27213,37 +27309,6 @@ const SCAN_DATA = {
           "revenue_b": 0.0,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
-        }
-      },
-      {
-        "ticker": "GOOG",
-        "name": "Alphabet (Google)",
-        "category": "bigtech",
-        "approach": "超伝導 (Superconducting)",
-        "approach_short": "超伝導",
-        "purity": "minor",
-        "commercialization": "researchOnly",
-        "qubit_max": 70,
-        "qubit_type": "physical, high coherence",
-        "leader": "Hartmut Neven (Quantum AI lead)",
-        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
-        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
-        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
-        "market": {
-          "price": 283.93,
-          "high_52w": 398.54,
-          "low_52w": 272.8,
-          "pct_from_52w_high": 28.8,
-          "ret_1m": -18.4,
-          "ret_3m": -17.2,
-          "ret_6m": -26.5,
-          "ret_1y": null,
-          "volatility_annual": 33.2,
-          "market_cap_b": 3490.64,
-          "pe_trailing": 14.826632,
-          "revenue_b": 471.1,
-          "sector": "Communication Services",
-          "industry": "Internet Content & Information"
         }
       },
       {
@@ -27306,6 +27371,37 @@ const SCAN_DATA = {
           "revenue_b": 346.44,
           "sector": "Technology",
           "industry": "Software - Infrastructure"
+        }
+      },
+      {
+        "ticker": "GOOG",
+        "name": "Alphabet (Google)",
+        "category": "bigtech",
+        "approach": "超伝導 (Superconducting)",
+        "approach_short": "超伝導",
+        "purity": "minor",
+        "commercialization": "researchOnly",
+        "qubit_max": 70,
+        "qubit_type": "physical, high coherence",
+        "leader": "Hartmut Neven (Quantum AI lead)",
+        "highlight": "量子優位性 (Quantum Supremacy) を世界初実証 (2019)。誤り訂正で論理 qubit 安定化。",
+        "risk": "Google 株は広告事業 + AI で量子寄与ほぼなし。",
+        "thesis": "技術リーダーシップは圧倒的。長期的に量子産業の支配者候補。",
+        "market": {
+          "price": 283.93,
+          "high_52w": 398.54,
+          "low_52w": 272.8,
+          "pct_from_52w_high": 28.8,
+          "ret_1m": -18.4,
+          "ret_3m": -17.2,
+          "ret_6m": -26.5,
+          "ret_1y": null,
+          "volatility_annual": 33.2,
+          "market_cap_b": 3490.64,
+          "pe_trailing": 14.826632,
+          "revenue_b": 471.1,
+          "sector": "Communication Services",
+          "industry": "Internet Content & Information"
         }
       },
       {
@@ -27381,6 +27477,36 @@ const SCAN_DATA = {
   "optical": {
     "all": [
       {
+        "ticker": "LITE",
+        "name": "Lumentum Holdings",
+        "category": "transceiver",
+        "approach": "光半導体 + 3D センシング + データセンター",
+        "approach_short": "Photonics",
+        "purity": "pure",
+        "primary_customer": "Cisco / Arista / Apple (3D センシング)",
+        "leader": "Alan Lowe (CEO)",
+        "highlight": "光半導体 (TIA, レーザー) で 1.6T 製品ロードマップ進行。NeoPhotonics 統合済。",
+        "risk": "3D センシング (Apple) の需要鈍化が継続。",
+        "thesis": "データセンター光通信は 2026 で記録的成長見込み。コア事業に集中。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 538.59,
+          "high_52w": 1133.4,
+          "low_52w": 226.86,
+          "pct_from_52w_high": 52.5,
+          "ret_1m": -51.2,
+          "ret_3m": -34.4,
+          "ret_6m": -48.9,
+          "ret_1y": null,
+          "volatility_annual": 99.5,
+          "market_cap_b": 48.84,
+          "pe_trailing": null,
+          "revenue_b": 3.74,
+          "sector": "Technology",
+          "industry": "Communication Equipment"
+        }
+      },
+      {
         "ticker": "COHR",
         "name": "Coherent Corp",
         "category": "transceiver",
@@ -27441,36 +27567,6 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "LITE",
-        "name": "Lumentum Holdings",
-        "category": "transceiver",
-        "approach": "光半導体 + 3D センシング + データセンター",
-        "approach_short": "Photonics",
-        "purity": "pure",
-        "primary_customer": "Cisco / Arista / Apple (3D センシング)",
-        "leader": "Alan Lowe (CEO)",
-        "highlight": "光半導体 (TIA, レーザー) で 1.6T 製品ロードマップ進行。NeoPhotonics 統合済。",
-        "risk": "3D センシング (Apple) の需要鈍化が継続。",
-        "thesis": "データセンター光通信は 2026 で記録的成長見込み。コア事業に集中。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 538.59,
-          "high_52w": 1133.4,
-          "low_52w": 226.86,
-          "pct_from_52w_high": 52.5,
-          "ret_1m": -51.2,
-          "ret_3m": -34.4,
-          "ret_6m": -48.9,
-          "ret_1y": null,
-          "volatility_annual": 99.5,
-          "market_cap_b": 48.84,
-          "pe_trailing": null,
-          "revenue_b": 3.74,
-          "sector": "Technology",
-          "industry": "Communication Equipment"
-        }
-      },
-      {
         "ticker": "AAOI",
         "name": "Applied Optoelectronics",
         "category": "transceiver",
@@ -27498,66 +27594,6 @@ const SCAN_DATA = {
           "revenue_b": 0.75,
           "sector": "Technology",
           "industry": "Communication Equipment"
-        }
-      },
-      {
-        "ticker": "NVDA",
-        "name": "NVIDIA",
-        "category": "semiconductor",
-        "approach": "Silicon Photonics + NVLink Switch",
-        "approach_short": "Si Photonics",
-        "purity": "minor",
-        "primary_customer": "(自社 H100/B200/B300 接続)",
-        "leader": "Jensen Huang (CEO)",
-        "highlight": "Quantum-2 InfiniBand と NVLink Switch で AI クラスター内光接続を支配。CPO 商用化リード。",
-        "risk": "NVDA 株は GPU 売上で動き、光通信は数% 程度。",
-        "thesis": "光通信を「自社設計+EMS 製造」で内製化。AI フルスタックの最終ピース。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 186.64,
-          "high_52w": 239.24,
-          "low_52w": 164.79,
-          "pct_from_52w_high": 22.0,
-          "ret_1m": -18.6,
-          "ret_3m": -14.1,
-          "ret_6m": -14.8,
-          "ret_1y": null,
-          "volatility_annual": 40.1,
-          "market_cap_b": 4506.8,
-          "pe_trailing": 23.59545,
-          "revenue_b": 302.97,
-          "sector": "Technology",
-          "industry": "Semiconductors"
-        }
-      },
-      {
-        "ticker": "MRVL",
-        "name": "Marvell Technology",
-        "category": "semiconductor",
-        "approach": "光 DSP + Co-Packaged Optics + AI ASIC",
-        "approach_short": "Optical DSP",
-        "purity": "hybrid",
-        "primary_customer": "AWS / Microsoft Azure / 各 EMS",
-        "leader": "Matt Murphy (CEO)",
-        "highlight": "光 DSP (PAM4) で市場 80% 独占。AWS Trainium 設計受託 + CPO で次世代も席巻。",
-        "risk": "ストレージ事業の鈍化。Broadcom の競合参入。",
-        "thesis": "Custom ASIC + 光 DSP の二本柱。1.6T/CPO で 2026-2028 加速。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 141.2,
-          "high_52w": 316.28,
-          "low_52w": 73.66,
-          "pct_from_52w_high": 55.4,
-          "ret_1m": -48.7,
-          "ret_3m": -33.5,
-          "ret_6m": -17.3,
-          "ret_1y": null,
-          "volatility_annual": 86.4,
-          "market_cap_b": 127.05,
-          "pe_trailing": 46.44737,
-          "revenue_b": 9.45,
-          "sector": "Technology",
-          "industry": "Semiconductors"
         }
       },
       {
@@ -27621,6 +27657,66 @@ const SCAN_DATA = {
         }
       },
       {
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "category": "semiconductor",
+        "approach": "Silicon Photonics + NVLink Switch",
+        "approach_short": "Si Photonics",
+        "purity": "minor",
+        "primary_customer": "(自社 H100/B200/B300 接続)",
+        "leader": "Jensen Huang (CEO)",
+        "highlight": "Quantum-2 InfiniBand と NVLink Switch で AI クラスター内光接続を支配。CPO 商用化リード。",
+        "risk": "NVDA 株は GPU 売上で動き、光通信は数% 程度。",
+        "thesis": "光通信を「自社設計+EMS 製造」で内製化。AI フルスタックの最終ピース。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 186.64,
+          "high_52w": 239.24,
+          "low_52w": 164.79,
+          "pct_from_52w_high": 22.0,
+          "ret_1m": -18.6,
+          "ret_3m": -14.1,
+          "ret_6m": -14.8,
+          "ret_1y": null,
+          "volatility_annual": 40.1,
+          "market_cap_b": 4506.8,
+          "pe_trailing": 23.59545,
+          "revenue_b": 302.97,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
+        "ticker": "MRVL",
+        "name": "Marvell Technology",
+        "category": "semiconductor",
+        "approach": "光 DSP + Co-Packaged Optics + AI ASIC",
+        "approach_short": "Optical DSP",
+        "purity": "hybrid",
+        "primary_customer": "AWS / Microsoft Azure / 各 EMS",
+        "leader": "Matt Murphy (CEO)",
+        "highlight": "光 DSP (PAM4) で市場 80% 独占。AWS Trainium 設計受託 + CPO で次世代も席巻。",
+        "risk": "ストレージ事業の鈍化。Broadcom の競合参入。",
+        "thesis": "Custom ASIC + 光 DSP の二本柱。1.6T/CPO で 2026-2028 加速。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 141.2,
+          "high_52w": 316.28,
+          "low_52w": 73.66,
+          "pct_from_52w_high": 55.4,
+          "ret_1m": -48.7,
+          "ret_3m": -33.5,
+          "ret_6m": -17.3,
+          "ret_1y": null,
+          "volatility_annual": 86.4,
+          "market_cap_b": 127.05,
+          "pe_trailing": 46.44737,
+          "revenue_b": 9.45,
+          "sector": "Technology",
+          "industry": "Semiconductors"
+        }
+      },
+      {
         "ticker": "CIEN",
         "name": "Ciena Corp",
         "category": "network",
@@ -27651,36 +27747,6 @@ const SCAN_DATA = {
         }
       },
       {
-        "ticker": "GLW",
-        "name": "Corning Incorporated",
-        "category": "fiber",
-        "approach": "光ファイバー + Gorilla Glass",
-        "approach_short": "Fiber",
-        "purity": "minor",
-        "primary_customer": "AT&T / Verizon / 各データセンター",
-        "leader": "Wendell Weeks (CEO)",
-        "highlight": "光ファイバー世界トップ。GenAI でデータセンター向け高密度ファイバー大型受注。",
-        "risk": "Gorilla Glass / TV ガラスなど他事業が安定だが成長遅い。",
-        "thesis": "AI バックボーンの『水道管』。長期保有向きの安定銘柄。",
-        "ticker_extra_links": true,
-        "market": {
-          "price": 106.13,
-          "high_52w": 255.21,
-          "low_52w": 77.62,
-          "pct_from_52w_high": 58.4,
-          "ret_1m": -32.3,
-          "ret_3m": -33.2,
-          "ret_6m": -48.7,
-          "ret_1y": null,
-          "volatility_annual": 68.0,
-          "market_cap_b": 91.42,
-          "pe_trailing": 42.96761,
-          "revenue_b": 17.72,
-          "sector": "Technology",
-          "industry": "Electronic Components"
-        }
-      },
-      {
         "ticker": "IPGP",
         "name": "IPG Photonics",
         "category": "fiber",
@@ -27708,6 +27774,36 @@ const SCAN_DATA = {
           "revenue_b": 1.11,
           "sector": "Technology",
           "industry": "Semiconductor Equipment & Materials"
+        }
+      },
+      {
+        "ticker": "GLW",
+        "name": "Corning Incorporated",
+        "category": "fiber",
+        "approach": "光ファイバー + Gorilla Glass",
+        "approach_short": "Fiber",
+        "purity": "minor",
+        "primary_customer": "AT&T / Verizon / 各データセンター",
+        "leader": "Wendell Weeks (CEO)",
+        "highlight": "光ファイバー世界トップ。GenAI でデータセンター向け高密度ファイバー大型受注。",
+        "risk": "Gorilla Glass / TV ガラスなど他事業が安定だが成長遅い。",
+        "thesis": "AI バックボーンの『水道管』。長期保有向きの安定銘柄。",
+        "ticker_extra_links": true,
+        "market": {
+          "price": 106.13,
+          "high_52w": 255.21,
+          "low_52w": 77.62,
+          "pct_from_52w_high": 58.4,
+          "ret_1m": -32.3,
+          "ret_3m": -33.2,
+          "ret_6m": -48.7,
+          "ret_1y": null,
+          "volatility_annual": 68.0,
+          "market_cap_b": 91.42,
+          "pe_trailing": 42.96761,
+          "revenue_b": 17.72,
+          "sector": "Technology",
+          "industry": "Electronic Components"
         }
       },
       {
@@ -27743,6 +27839,36 @@ const SCAN_DATA = {
     ],
     "by_category": {
       "transceiver": [
+        {
+          "ticker": "LITE",
+          "name": "Lumentum Holdings",
+          "category": "transceiver",
+          "approach": "光半導体 + 3D センシング + データセンター",
+          "approach_short": "Photonics",
+          "purity": "pure",
+          "primary_customer": "Cisco / Arista / Apple (3D センシング)",
+          "leader": "Alan Lowe (CEO)",
+          "highlight": "光半導体 (TIA, レーザー) で 1.6T 製品ロードマップ進行。NeoPhotonics 統合済。",
+          "risk": "3D センシング (Apple) の需要鈍化が継続。",
+          "thesis": "データセンター光通信は 2026 で記録的成長見込み。コア事業に集中。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 538.59,
+            "high_52w": 1133.4,
+            "low_52w": 226.86,
+            "pct_from_52w_high": 52.5,
+            "ret_1m": -51.2,
+            "ret_3m": -34.4,
+            "ret_6m": -48.9,
+            "ret_1y": null,
+            "volatility_annual": 99.5,
+            "market_cap_b": 48.84,
+            "pe_trailing": null,
+            "revenue_b": 3.74,
+            "sector": "Technology",
+            "industry": "Communication Equipment"
+          }
+        },
         {
           "ticker": "COHR",
           "name": "Coherent Corp",
@@ -27801,36 +27927,6 @@ const SCAN_DATA = {
             "revenue_b": 0.0,
             "sector": "Technology",
             "industry": "Semiconductors"
-          }
-        },
-        {
-          "ticker": "LITE",
-          "name": "Lumentum Holdings",
-          "category": "transceiver",
-          "approach": "光半導体 + 3D センシング + データセンター",
-          "approach_short": "Photonics",
-          "purity": "pure",
-          "primary_customer": "Cisco / Arista / Apple (3D センシング)",
-          "leader": "Alan Lowe (CEO)",
-          "highlight": "光半導体 (TIA, レーザー) で 1.6T 製品ロードマップ進行。NeoPhotonics 統合済。",
-          "risk": "3D センシング (Apple) の需要鈍化が継続。",
-          "thesis": "データセンター光通信は 2026 で記録的成長見込み。コア事業に集中。",
-          "ticker_extra_links": true,
-          "market": {
-            "price": 538.59,
-            "high_52w": 1133.4,
-            "low_52w": 226.86,
-            "pct_from_52w_high": 52.5,
-            "ret_1m": -51.2,
-            "ret_3m": -34.4,
-            "ret_6m": -48.9,
-            "ret_1y": null,
-            "volatility_annual": 99.5,
-            "market_cap_b": 48.84,
-            "pe_trailing": null,
-            "revenue_b": 3.74,
-            "sector": "Technology",
-            "industry": "Communication Equipment"
           }
         },
         {
@@ -28020,36 +28116,6 @@ const SCAN_DATA = {
       ],
       "fiber": [
         {
-          "ticker": "GLW",
-          "name": "Corning Incorporated",
-          "category": "fiber",
-          "approach": "光ファイバー + Gorilla Glass",
-          "approach_short": "Fiber",
-          "purity": "minor",
-          "primary_customer": "AT&T / Verizon / 各データセンター",
-          "leader": "Wendell Weeks (CEO)",
-          "highlight": "光ファイバー世界トップ。GenAI でデータセンター向け高密度ファイバー大型受注。",
-          "risk": "Gorilla Glass / TV ガラスなど他事業が安定だが成長遅い。",
-          "thesis": "AI バックボーンの『水道管』。長期保有向きの安定銘柄。",
-          "ticker_extra_links": true,
-          "market": {
-            "price": 106.13,
-            "high_52w": 255.21,
-            "low_52w": 77.62,
-            "pct_from_52w_high": 58.4,
-            "ret_1m": -32.3,
-            "ret_3m": -33.2,
-            "ret_6m": -48.7,
-            "ret_1y": null,
-            "volatility_annual": 68.0,
-            "market_cap_b": 91.42,
-            "pe_trailing": 42.96761,
-            "revenue_b": 17.72,
-            "sector": "Technology",
-            "industry": "Electronic Components"
-          }
-        },
-        {
           "ticker": "IPGP",
           "name": "IPG Photonics",
           "category": "fiber",
@@ -28077,6 +28143,36 @@ const SCAN_DATA = {
             "revenue_b": 1.11,
             "sector": "Technology",
             "industry": "Semiconductor Equipment & Materials"
+          }
+        },
+        {
+          "ticker": "GLW",
+          "name": "Corning Incorporated",
+          "category": "fiber",
+          "approach": "光ファイバー + Gorilla Glass",
+          "approach_short": "Fiber",
+          "purity": "minor",
+          "primary_customer": "AT&T / Verizon / 各データセンター",
+          "leader": "Wendell Weeks (CEO)",
+          "highlight": "光ファイバー世界トップ。GenAI でデータセンター向け高密度ファイバー大型受注。",
+          "risk": "Gorilla Glass / TV ガラスなど他事業が安定だが成長遅い。",
+          "thesis": "AI バックボーンの『水道管』。長期保有向きの安定銘柄。",
+          "ticker_extra_links": true,
+          "market": {
+            "price": 106.13,
+            "high_52w": 255.21,
+            "low_52w": 77.62,
+            "pct_from_52w_high": 58.4,
+            "ret_1m": -32.3,
+            "ret_3m": -33.2,
+            "ret_6m": -48.7,
+            "ret_1y": null,
+            "volatility_annual": 68.0,
+            "market_cap_b": 91.42,
+            "pe_trailing": 42.96761,
+            "revenue_b": 17.72,
+            "sector": "Technology",
+            "industry": "Electronic Components"
           }
         },
         {
